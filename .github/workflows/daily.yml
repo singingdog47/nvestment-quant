@@ -1,0 +1,61 @@
+name: Daily Quant Screen
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_tickers:
+        description: "動作確認用。0=全銘柄、例: 20"
+        required: false
+        default: "0"
+  schedule:
+    - cron: "0 23 * * 0-5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-quant-screen
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      MAX_TICKERS: ${{ inputs.max_tickers || '0' }}
+      OUTPUT_TOP_N: "100"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: Run screen
+        run: python -m src.main
+
+      - name: Preserve quality report in run logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-report
+          path: data/quality_report.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Commit outputs
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json
+          git diff --cached --quiet || git commit -m "data: daily screening update"
+          git push
