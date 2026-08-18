@@ -26,3 +26,21 @@ def test_low_factor_coverage_is_unscored():
     scored = add_final_scores(frame)
     assert scored.loc[scored.ticker.eq("A"), "total_score"].notna().all()
     assert scored.loc[scored.ticker.eq("B"), "total_score"].isna().all()
+
+
+def test_concentration_guard_and_mreit_watch_only():
+    frame = pd.DataFrame(
+        [
+            {"ticker": "AGNC", "code": "AGNC", "market": "US", "name": "AGNC Investment Corp.", "price_status": "ok", "fundamental_status": "ok", "momentum_score": 80, "risk_score": 70, "pe": 10, "pb": 1, "roe": .2, "profit_margin": .15, "revenue_growth": .1, "earnings_growth": .1},
+            {"ticker": "AAA", "code": "AAA", "market": "US", "name": "Example Bank", "price_status": "ok", "fundamental_status": "ok", "momentum_score": 80, "risk_score": 70, "pe": 10, "pb": 1, "roe": .2, "profit_margin": .15, "revenue_growth": .1, "earnings_growth": .1},
+            {"ticker": "BBB", "code": "BBB", "market": "US", "name": "Second Bank", "price_status": "ok", "fundamental_status": "ok", "momentum_score": 80, "risk_score": 70, "pe": 10, "pb": 1, "roe": .2, "profit_margin": .15, "revenue_growth": .1, "earnings_growth": .1},
+            {"ticker": "CCC", "code": "CCC", "market": "US", "name": "Third Bank", "price_status": "ok", "fundamental_status": "ok", "momentum_score": 80, "risk_score": 70, "pe": 10, "pb": 1, "roe": .2, "profit_margin": .15, "revenue_growth": .1, "earnings_growth": .1},
+            {"ticker": "DHT", "code": "DHT", "market": "US", "name": "DHT Holdings", "price_status": "ok", "fundamental_status": "ok", "momentum_score": 80, "risk_score": 70, "pe": 10, "pb": 1, "roe": .2, "profit_margin": .15, "revenue_growth": .1, "earnings_growth": .1},
+        ]
+    )
+    scored = add_final_scores(frame)
+    assert scored.loc[scored.ticker.eq("AGNC"), "research_status"].iloc[0] == "watch_only_mreit"
+    financials = scored[scored.theme.eq("Financials")]
+    assert financials["research_candidate"].sum() == 2
+    assert financials["research_status"].eq("held_back_theme_cap").sum() == 1
+    assert scored.loc[scored.ticker.eq("DHT"), "theme"].iloc[0] == "Shipping"

@@ -8,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 
 from .config import SETTINGS
+from .reporting import add_daily_changes, daily_report_markdown, select_diversified_candidates
 from .scoring import add_final_scores, add_technical_scores
 from .tradingview import download_market_snapshot
 from .universe import load_universe
@@ -41,7 +42,7 @@ def quality_report(
         "run_status": run_status,
         "failure_reason": failure_reason,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "mode": "MVP: official universe cross-check + full-universe TradingView snapshot",
+        "mode": "v1.3: official universe cross-check + full-universe TradingView snapshot + concentration guard",
         "universe_count": int(len(universe)),
         "universe_by_market": {str(k): int(v) for k, v in market_counts.items()},
         "universe_errors": universe.attrs.get("errors", []),
@@ -59,6 +60,8 @@ def quality_report(
             "The exact exchange timestamp of the close field is unavailable; verify executable prices separately.",
             "A high score is a relative comparison, not a buy signal.",
             "Missing values are not silently imputed; low-coverage rows are left unscored.",
+            "Theme labels are conservative keyword-based concentration guards, not official sector classifications.",
+            "No official cross-market earnings calendar is connected; earnings-date alerts are unavailable rather than guessed.",
         ],
     }
 
@@ -91,20 +94,16 @@ def main() -> None:
     full_path = DATA / "screening_full.csv.gz"
     latest_path = DATA / "screening_latest.csv"
     report_path = DATA / "quality_report.json"
+    daily_report_path = DATA / "daily_report.md"
+    previous_path = latest_path
+    final = add_daily_changes(final, previous_path)
     technical.to_csv(full_path, index=False, compression="gzip")
-    market_count = max(1, final["market"].nunique())
-    per_market = max(1, SETTINGS.output_top_n // market_count)
-    selected = (
-        final.sort_values(["market", "total_score"], ascending=[True, False])
-        .groupby("market", group_keys=False)
-        .head(per_market)
-        .sort_values("total_score", ascending=False)
-        .head(SETTINGS.output_top_n)
-    )
+    selected = select_diversified_candidates(final)
     selected.to_csv(latest_path, index=False)
     report = quality_report(universe, technical, final)
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    LOG.info("wrote %s, %s, %s", full_path, latest_path, report_path)
+    daily_report_path.write_text(daily_report_markdown(final, selected, report), encoding="utf-8")
+    LOG.info("wrote %s, %s, %s, %s", full_path, latest_path, report_path, daily_report_path)
 
 
 if __name__ == "__main__":

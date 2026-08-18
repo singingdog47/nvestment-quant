@@ -6,6 +6,34 @@ import pandas as pd
 from .config import SETTINGS
 
 
+MORTGAGE_REIT_TICKERS = {"AGNC", "ARR", "DX", "EFC", "IVR", "NLY", "ORC"}
+TANKER_TICKERS = {"DHT", "ECO", "INSW", "STNG", "TNK"}
+CONCENTRATION_CAPPED_THEMES = {"Financials", "Shipping"}
+
+
+def add_concentration_labels(frame: pd.DataFrame) -> pd.DataFrame:
+    """Add conservative, explainable theme labels used only as a concentration guard.
+
+    These labels are intentionally not represented as official sector classifications.
+    Unknown companies remain ``Other`` rather than being guessed into a sector.
+    """
+    result = frame.copy()
+    searchable = (
+        result.get("name", pd.Series("", index=result.index)).fillna("")
+        + " "
+        + result.get("source_description", pd.Series("", index=result.index)).fillna("")
+    ).str.lower()
+    ticker = result.get("code", result.get("ticker", pd.Series("", index=result.index))).fillna("").astype(str).str.replace(".T", "", regex=False)
+    result["theme"] = "Other"
+    result.loc[searchable.str.contains(r"tanker|seaways|shipping|maritime", regex=True), "theme"] = "Shipping"
+    result.loc[ticker.isin(TANKER_TICKERS), "theme"] = "Shipping"
+    result.loc[searchable.str.contains(r"bank|bancorp|financial|securities|insurance|asset management", regex=True), "theme"] = "Financials"
+    result.loc[ticker.isin(MORTGAGE_REIT_TICKERS), "theme"] = "Mortgage REIT"
+    result["theme_source"] = "concentration_guard_keyword_v1"
+    result["is_mortgage_reit"] = result["theme"].eq("Mortgage REIT")
+    return result
+
+
 def _percentile(series: pd.Series, higher_is_better: bool = True) -> pd.Series:
     numeric = pd.to_numeric(series, errors="coerce")
     ranked = numeric.rank(pct=True, method="average")
@@ -80,4 +108,17 @@ def add_final_scores(frame: pd.DataFrame) -> pd.DataFrame:
     result["market_rank"] = result.groupby("market")["total_score"].rank(
         ascending=False, method="first", na_option="bottom"
     )
+    result = add_concentration_labels(result)
+    result["theme_rank"] = result.groupby(["market", "theme"])["total_score"].rank(
+        ascending=False, method="first", na_option="bottom"
+    )
+    result["research_status"] = "research_candidate"
+    result.loc[result["is_mortgage_reit"], "research_status"] = "watch_only_mreit"
+    result.loc[
+        (~result["is_mortgage_reit"])
+        & result["theme"].isin(CONCENTRATION_CAPPED_THEMES)
+        & result["theme_rank"].gt(SETTINGS.max_per_theme),
+        "research_status",
+    ] = "held_back_theme_cap"
+    result["research_candidate"] = result["research_status"].eq("research_candidate")
     return result.sort_values("total_score", ascending=False, na_position="last").reset_index(drop=True)

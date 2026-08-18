@@ -20,9 +20,11 @@ class Settings:
     min_price_us: float = _float("MIN_PRICE_US", 2.0)
     min_turnover_jp: float = _float("MIN_TURNOVER_JP", 50_000_000.0)
     min_turnover_us: float = _float("MIN_TURNOVER_US", 1_000_000.0)
+    max_per_theme: int = _int("MAX_PER_THEME", 2)
+    rank_alert_threshold: int = _int("RANK_ALERT_THRESHOLD", 15)
     request_timeout: int = _int("REQUEST_TIMEOUT", 30)
     http_user_agent: str = os.getenv(
-        "HTTP_USER_AGENT", "investment-quant-v1.2 personal-research"
+        "HTTP_USER_AGENT", "investment-quant-v1.3 personal-research"
     )
 
 
