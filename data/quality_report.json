@@ -1,28 +1,29 @@
 {
   "run_status": "ok",
   "failure_reason": null,
-  "generated_at_utc": "2026-08-18T02:24:58.372325+00:00",
+  "generated_at_utc": "2026-08-18T02:25:45.752627+00:00",
   "mode": "MVP: official universe cross-check + full-universe TradingView snapshot",
-  "universe_count": 20,
+  "universe_count": 9585,
   "universe_by_market": {
-    "JP": 10,
-    "US": 10
+    "JP": 3706,
+    "US": 5879
   },
   "universe_errors": [],
-  "price_ok_count": 18,
-  "price_missing_count": 2,
-  "price_missing_rate": 0.1,
-  "eligible_count": 14,
-  "data_retrieved_at_utc": "2026-08-18T02:24:57.316400+00:00",
+  "price_ok_count": 8681,
+  "price_missing_count": 904,
+  "price_missing_rate": 0.09431403234220136,
+  "eligible_count": 5352,
+  "data_retrieved_at_utc": "2026-08-18T02:25:44.133853+00:00",
   "price_timestamp_status": "unverified_exact_exchange_timestamp",
   "fundamental_status": {
-    "ok": 12,
-    "partial": 2
+    "ok": 4923,
+    "partial": 401,
+    "missing": 28
   },
-  "scored_count": 14,
+  "scored_count": 5346,
   "settings": {
     "output_top_n": 100,
-    "max_tickers": 10,
+    "max_tickers": 0,
     "min_price_jp": 100.0,
     "min_price_us": 2.0,
     "min_turnover_jp": 50000000.0,
