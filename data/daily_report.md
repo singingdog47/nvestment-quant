@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-18T08:18:54.727470+00:00
+- Data retrieved (UTC): 2026-08-19T08:17:24.542401+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -24,26 +24,26 @@
 
 | Market | Rank | Ticker | Name | Theme | Score | Daily change |
 |---|---:|---|---|---|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 78.0 | unchanged |
-| JP | 2 | 3932.T | Akatsuki Inc. | Other | 77.7 | unchanged |
-| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.6 | unchanged |
-| JP | 7 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.2 | unchanged |
-| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.8 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.2 | unchanged |
-| JP | 11 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 71.4 | unchanged |
-| JP | 12 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.0 | unchanged |
-| JP | 13 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.7 | unchanged |
-| JP | 14 | 8789.T | FinTech Global Incorporated | Other | 70.7 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | unchanged |
-| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.3 | unchanged |
+| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.6 | unchanged |
+| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.8 | unchanged |
+| JP | 3 | 3932.T | Akatsuki Inc. | Other | 76.3 | unchanged |
+| JP | 6 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.8 | unchanged |
+| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 74.2 | unchanged |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.0 | unchanged |
+| JP | 11 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.5 | unchanged |
+| JP | 12 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 71.2 | unchanged |
+| JP | 13 | 8789.T | FinTech Global Incorporated | Other | 70.8 | unchanged |
+| JP | 14 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.7 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.1 | unchanged |
+| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.4 | unchanged |
 | US | 3 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 82.6 | unchanged |
-| US | 4 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 81.8 | unchanged |
-| US | 6 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 81.5 | unchanged |
+| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 82.2 | new_entry |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.7 | unchanged |
 | US | 7 | WSBC | WesBanco, Inc. - Common Stock | Other | 81.4 | unchanged |
-| US | 8 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.4 | unchanged |
+| US | 8 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 81.4 | unchanged |
 | US | 9 | BUSE | First Busey Corporation - Common Stock | Other | 81.3 | unchanged |
-| US | 24 | ACNB | ACNB Corporation - Common Stock | Other | 78.3 | unchanged |
-| US | 26 | DBRG | DigitalBridge Group, Inc. | Other | 78.0 | unchanged |
+| US | 24 | ACNB | ACNB Corporation - Common Stock | Other | 78.4 | unchanged |
+| US | 28 | NKLR | Terra Innovatum Global N.V. - Ordinary shares | Other | 78.1 | unchanged |
 
 ## Required manual checks before an order
 
