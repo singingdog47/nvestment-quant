@@ -9,7 +9,7 @@ on:
         default: "0"
   schedule:
     # UTC月〜金07:17 = 日本時間 月〜金16:17。日本株の引け後に実行。
-　　- cron: "17 7 * * 1-5"
+    - cron: "17 7 * * 1-5"
 
 permissions:
   contents: write
