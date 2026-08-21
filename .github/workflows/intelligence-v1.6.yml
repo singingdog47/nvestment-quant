@@ -5,7 +5,9 @@ on:
   schedule:
     # 07:15 JST weekdays (22:15 UTC previous day)
     - cron: '15 22 * * 0-4'
-    # 16:30 JST weekdays, after existing v1.3 Daily Quant Screen at 16:17 JST
+
+    # 16:30 JST weekdays
+    # Existing v1.3 Daily Quant Screen runs at approximately 16:17 JST.
     - cron: '30 7 * * 1-5'
 
 permissions:
@@ -19,20 +21,56 @@ jobs:
   intelligence:
     runs-on: ubuntu-latest
     timeout-minutes: 25
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      # ------------------------------------------------------------
+      # 1. Checkout
+      # ------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ------------------------------------------------------------
+      # 2. Python
+      # ------------------------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
+
+      # ------------------------------------------------------------
+      # 3. Dependencies
+      # pytest is explicitly installed because v1.6 smoke tests
+      # require it.
+      # ------------------------------------------------------------
       - name: Install v1.5/v1.6 dependencies
         run: |
-          pip install -r requirements-regime.txt
-          pip install -r requirements-intelligence.txt
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-regime.txt
+          python -m pip install -r requirements-intelligence.txt
+          python -m pip install pytest
+
+      # ------------------------------------------------------------
+      # 4. v1.3 compatibility check
+      # Existing v1.3 screening output is treated as upstream input.
+      # ------------------------------------------------------------
       - name: Preflight v1.3 compatibility
-        run: python tools/preflight_v1_3.py --ci
+        run: |
+          python tools/preflight_v1_3.py --ci
+
+      # ------------------------------------------------------------
+      # 5. Market Regime Engine v1.5
+      # ------------------------------------------------------------
       - name: Update Market Regime Engine v1.5
-        run: python src/run_market_regime.py
+        run: |
+          python src/run_market_regime.py
+
+      # ------------------------------------------------------------
+      # 6. Company Intelligence v1.6
+      # Portfolio-sensitive information is not written to the repo.
+      # Missing optional secrets should be handled by the Python
+      # layer as missing/unavailable data rather than fabricated data.
+      # ------------------------------------------------------------
       - name: Update Company Intelligence v1.6
         env:
           EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
@@ -40,14 +78,44 @@ jobs:
           GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
           GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
           ALLOW_REPO_PORTFOLIO: '0'
-        run: python src/run_company_intel.py
+        run: |
+          python src/run_company_intel.py
+
+      # ------------------------------------------------------------
+      # 7. Smoke tests
+      # Use python -m pytest so the test runner is resolved through
+      # the active Python environment.
+      # ------------------------------------------------------------
       - name: Run v1.6 smoke tests
-        run: pytest -q tests
+        run: |
+          python -m pytest -q tests
+
+      # ------------------------------------------------------------
+      # 8. Verify required outputs
+      # ------------------------------------------------------------
+      - name: Verify v1.6 outputs
+        run: |
+          python tools/verify_outputs.py
+
+      # ------------------------------------------------------------
+      # 9. Commit only public-safe generated outputs
+      # ------------------------------------------------------------
       - name: Commit public-safe outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/regime data/intelligence data/state data/ai_context_latest.md data/decision_context_latest.json
-          git diff --cached --quiet && exit 0
+
+          git add -- \
+            data/regime \
+            data/intelligence \
+            data/state \
+            data/ai_context_latest.md \
+            data/decision_context_latest.json
+
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+            exit 0
+          fi
+
           git commit -m "data: refresh v1.6 intelligence"
           git push
