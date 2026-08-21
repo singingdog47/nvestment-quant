@@ -1,0 +1,10 @@
+pandas>=2.2,<3
+requests>=2.32,<3
+beautifulsoup4>=4.12,<5
+lxml>=5.2,<7
+pypdf>=5,<7
+feedparser>=6.0,<7
+PyYAML>=6.0,<7
+yfinance>=0.2.65,<1
+google-api-python-client>=2.140,<3
+google-auth>=2.30,<3

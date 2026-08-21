@@ -1,0 +1,10 @@
+# User-defined investment guardrails. This file never places orders.
+absolute_defense_cash_jpy: 500000
+cash_target_normal: [0.08, 0.12]
+cash_target_overheated_or_waiting: [0.15, 0.18]
+max_single_stock_weight: 0.05
+lifestyle_bucket_max_weight: 0.05
+exploration_bucket_max_weight: 0.10
+new_capital_top_rank_only: 5
+allow_do_nothing: true
+block_action_if_data_quality_below: 0.72

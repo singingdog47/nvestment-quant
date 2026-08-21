@@ -1,0 +1,62 @@
+version: 1.5.0
+compatibility_base: 1.3
+market_symbols:
+  JP_NIKKEI: "^N225"
+  JP_TOPIX_PROXY: "1306.T"
+  US_SP500: "^GSPC"
+  US_NASDAQ: "^IXIC"
+  VIX: "^VIX"
+  USDJPY: "JPY=X"
+  US10Y: "^TNX"
+  GOLD: "GC=F"
+  WTI: "CL=F"
+  COPPER: "HG=F"
+  TLT: "TLT"
+  HYG: "HYG"
+  LQD: "LQD"
+market_history_period: "1y"
+market_history_interval: "1d"
+fred_series:
+  HY_OAS: "BAMLH0A0HYM2"
+  IG_OAS: "BAMLC0A0CM"
+  NFCI: "NFCI"
+  FED_FUNDS: "DFF"
+jpx_sources:
+  investor_type:
+    enabled: true
+    pages: ["https://www.jpx.co.jp/english/markets/statistics-equities/investor-type/index.html", "https://www.jpx.co.jp/markets/statistics-equities/investor-type/index.html"]
+    keywords: ["xls", "xlsx", "csv"]
+  short_selling:
+    enabled: true
+    pages: ["https://www.jpx.co.jp/english/markets/statistics-equities/short-selling/index.html", "https://www.jpx.co.jp/markets/statistics-equities/short-selling/index.html"]
+    keywords: ["xls", "xlsx", "csv"]
+  margin:
+    enabled: true
+    pages: ["https://www.jpx.co.jp/english/markets/statistics-equities/margin/index.html", "https://www.jpx.co.jp/markets/statistics-equities/margin/index.html"]
+    keywords: ["xls", "xlsx", "csv"]
+cftc:
+  enabled: true
+  contracts: ["S&P 500", "NASDAQ", "JAPANESE YEN", "U.S. DOLLAR INDEX", "10-YEAR U.S. TREASURY"]
+breadth:
+  source_candidates: ["data/screening_full.csv.gz", "data/screening_latest.csv"]
+  min_universe: 100
+scoring:
+  weights:
+    trend: 0.30
+    stress: 0.25
+    participation: 0.20
+    liquidity: 0.15
+    positioning: 0.10
+  labels:
+    risk_on: 70
+    constructive: 58
+    neutral: 42
+    defensive: 30
+freshness:
+  market_hours: 36
+  fred_hours: 96
+  jpx_hours: 240
+  cftc_hours: 240
+outputs:
+  directory: data/regime
+  state_directory: data/state

@@ -1,0 +1,41 @@
+version: 1.6.0
+compatibility_base: 1.3
+universe:
+  include_portfolio: true
+  include_watchlist: true
+  screening_top_n: 30
+  max_targets: 80
+sources:
+  tdnet:
+    enabled: true
+    lookback_days: 7
+    pdf_extract: true
+    max_pdf_pages: 5
+  edinet:
+    enabled: true
+    lookback_days: 7
+  sec:
+    enabled: true
+    forms: ["10-K", "10-Q", "8-K", "20-F", "6-K"]
+    lookback_days: 45
+  company_ir:
+    enabled: true
+    timeout_seconds: 15
+  news_rss:
+    enabled: true
+    priority_only: true
+    max_items_per_company: 5
+  yfinance:
+    enabled: true
+    max_targets: 40
+freshness:
+  market_days: 3
+  event_days: 14
+  fundamentals_days: 120
+quality:
+  minimum_actionable_score: 0.72
+  minimum_primary_source_coverage: 0.50
+outputs:
+  directory: data/intelligence
+  state_directory: data/state
+  history_directory: data/history
