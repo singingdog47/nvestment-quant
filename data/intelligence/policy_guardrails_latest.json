@@ -1,0 +1,14 @@
+{
+  "regime_label": "risk_on",
+  "absolute_defense_cash_jpy": 500000,
+  "cash_target_range": [
+    0.08,
+    0.12
+  ],
+  "max_single_stock_weight": 0.05,
+  "lifestyle_bucket_max_weight": 0.05,
+  "exploration_bucket_max_weight": 0.1,
+  "new_capital_top_rank_only": 5,
+  "decision_gate": "OPEN_FOR_ANALYSIS",
+  "note": "Guardrail only. This file never places orders."
+}
