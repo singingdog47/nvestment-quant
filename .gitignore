@@ -3,3 +3,10 @@ __pycache__/
 .venv/
 *.pyc
 data/yf_cache/
+
+# Local repair files
+.DS_Store
+_repair_backup_*/
+payload/
+repair_v1_6_1.command
+README_SAFE_REPAIR.md
