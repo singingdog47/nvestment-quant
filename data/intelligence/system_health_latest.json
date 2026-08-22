@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-21T23:46:37+00:00",
+  "components": {
+    "market_regime": {
+      "status": "ok",
+      "path": "data/regime/market_regime_latest.json",
+      "age_hours": 0.0,
+      "stale_limit_hours": 36
+    },
+    "v1_3_screening": {
+      "status": "ok",
+      "path": "data/screening_latest.csv",
+      "age_hours": 0.03,
+      "stale_limit_hours": 36
+    },
+    "v1_3_screening_full": {
+      "status": "ok",
+      "path": "data/screening_full.csv.gz",
+      "age_hours": 0.03,
+      "stale_limit_hours": 36
+    },
+    "v1_3_quality": {
+      "status": "ok",
+      "path": "data/quality_report.json",
+      "age_hours": 0.03,
+      "stale_limit_hours": 36
+    },
+    "v1_3_daily_report": {
+      "status": "ok",
+      "path": "data/daily_report.md",
+      "age_hours": 0.03,
+      "stale_limit_hours": 36
+    },
+    "fundamentals": {
+      "status": "missing",
+      "path": "",
+      "age_hours": null,
+      "stale_limit_hours": 3600
+    }
+  },
+  "system_status": "ok"
+}
