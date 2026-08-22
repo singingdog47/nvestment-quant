@@ -1,23 +1,23 @@
 ﻿source,status,records,fetched_at,error,source_tier
-yfinance:^N225,ok,244,2026-08-21T23:45:04+00:00,,secondary
-yfinance:1306.T,ok,244,2026-08-21T23:45:04+00:00,,secondary
-yfinance:^GSPC,ok,251,2026-08-21T23:45:04+00:00,,secondary
-yfinance:^IXIC,ok,251,2026-08-21T23:45:04+00:00,,secondary
-yfinance:^VIX,ok,253,2026-08-21T23:45:04+00:00,,secondary
-yfinance:JPY=X,ok,260,2026-08-21T23:45:04+00:00,,secondary
-yfinance:^TNX,ok,252,2026-08-21T23:45:04+00:00,,secondary
-yfinance:GC=F,ok,252,2026-08-21T23:45:04+00:00,,secondary
-yfinance:CL=F,ok,252,2026-08-21T23:45:04+00:00,,secondary
-yfinance:HG=F,ok,252,2026-08-21T23:45:04+00:00,,secondary
-yfinance:TLT,ok,251,2026-08-21T23:45:04+00:00,,secondary
-yfinance:HYG,ok,251,2026-08-21T23:45:04+00:00,,secondary
-yfinance:LQD,ok,251,2026-08-21T23:45:04+00:00,,secondary
-FRED:BAMLH0A0HYM2,error,0,2026-08-21T23:45:08+00:00,"ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)",primary
-FRED:BAMLC0A0CM,error,0,2026-08-21T23:45:08+00:00,"ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)",primary
-FRED:NFCI,error,0,2026-08-21T23:45:08+00:00,"ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)",primary
-FRED:DFF,error,0,2026-08-21T23:45:08+00:00,"ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=20)",primary
-v1.3 breadth adapter,ok,9584,2026-08-21T23:46:29+00:00,no compatible return/momentum column; participation missing,internal
-JPX:investor_type,error,0,2026-08-21T23:46:29+00:00,ImportError: Missing optional dependency 'xlrd'. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install xlrd.,primary
-JPX:short_selling,error,0,2026-08-21T23:46:29+00:00,ValueError: no downloadable table link found; last_error=None,primary
-JPX:margin,error,0,2026-08-21T23:46:29+00:00,ImportError: Missing optional dependency 'xlrd'. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install xlrd.,primary
-CFTC:COT,ok,11,2026-08-21T23:46:31+00:00,,primary
+yfinance:^N225,ok,244,2026-08-22T00:33:50+00:00,,secondary
+yfinance:1306.T,ok,244,2026-08-22T00:33:50+00:00,,secondary
+yfinance:^GSPC,ok,251,2026-08-22T00:33:50+00:00,,secondary
+yfinance:^IXIC,ok,251,2026-08-22T00:33:50+00:00,,secondary
+yfinance:^VIX,ok,253,2026-08-22T00:33:50+00:00,,secondary
+yfinance:JPY=X,ok,260,2026-08-22T00:33:50+00:00,,secondary
+yfinance:^TNX,ok,252,2026-08-22T00:33:50+00:00,,secondary
+yfinance:GC=F,ok,252,2026-08-22T00:33:50+00:00,,secondary
+yfinance:CL=F,ok,252,2026-08-22T00:33:50+00:00,,secondary
+yfinance:HG=F,ok,252,2026-08-22T00:33:50+00:00,,secondary
+yfinance:TLT,ok,251,2026-08-22T00:33:50+00:00,,secondary
+yfinance:HYG,ok,251,2026-08-22T00:33:50+00:00,,secondary
+yfinance:LQD,ok,251,2026-08-22T00:33:50+00:00,,secondary
+FRED:BAMLH0A0HYM2,error,0,2026-08-22T00:33:53+00:00,"ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",primary
+FRED:BAMLC0A0CM,error,0,2026-08-22T00:33:53+00:00,"ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",primary
+FRED:NFCI,error,0,2026-08-22T00:33:53+00:00,"ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",primary
+FRED:DFF,error,0,2026-08-22T00:33:53+00:00,"ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=30)",primary
+v1.3 breadth adapter,ok,9584,2026-08-22T00:38:13+00:00,,internal
+JPX:investor_type,ok,69,2026-08-22T00:38:13+00:00,,primary
+JPX:short_selling,ok,14,2026-08-22T00:38:13+00:00,,primary
+JPX:margin,ok,243,2026-08-22T00:38:13+00:00,,primary
+CFTC:COT,ok,11,2026-08-22T00:38:15+00:00,,primary

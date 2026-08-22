@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-21T23:46:37+00:00",
+  "generated_at": "2026-08-22T00:38:26+00:00",
   "targets": 36,
   "portfolio_targets": 0,
   "events": 15,
   "primary_source_health": 0.5,
-  "fundamental_coverage": 1.0,
+  "fundamental_coverage": 0.0,
   "portfolio_primary_event_presence": 1.0,
-  "quality_score": 0.725,
-  "actionable": true,
+  "quality_score": 0.325,
+  "actionable": false,
   "rule": "If actionable=false, AI must not turn missing data into a buy/sell conclusion."
 }

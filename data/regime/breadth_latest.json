@@ -1,7 +1,16 @@
 {
   "status": "ok",
-  "fetched_at": "2026-08-21T23:46:29+00:00",
+  "fetched_at": "2026-08-22T00:38:13+00:00",
   "source": "data/screening_full.csv.gz",
   "n": 9584,
-  "participation_proxy": null
+  "pct_positive_return_1m": 0.5907362599377809,
+  "pct_positive_return_3m": 0.5898144947574605,
+  "pct_positive_return_6m": 0.4800092176518032,
+  "pct_positive_return_12m": 0.5625072012904713,
+  "participation_proxy": 0.555766793409379,
+  "participation_columns": "return_1m,return_3m,return_6m,return_12m",
+  "turnover_metric_column": "avg_turnover_30d",
+  "turnover_universe_sum": 10949119197079.027,
+  "turnover_universe_median": 22130671.488999996,
+  "turnover_coverage": 0.9008764607679466
 }

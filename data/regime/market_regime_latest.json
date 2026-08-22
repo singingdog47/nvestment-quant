@@ -1,9 +1,9 @@
 {
   "version": "1.5.0",
-  "generated_at": "2026-08-21T23:45:04+00:00",
-  "regime_label": "RISK_ON",
-  "regime_score": 70.15,
-  "confidence": 0.8,
+  "generated_at": "2026-08-22T00:33:50+00:00",
+  "regime_label": "CONSTRUCTIVE",
+  "regime_score": 67.24,
+  "confidence": 1.0,
   "actionable": true,
   "overheated_flag": false,
   "stress_flag": false,
@@ -12,7 +12,7 @@
   "components": {
     "trend": 80.89879760143045,
     "stress": 84.60999965667725,
-    "participation": null,
+    "participation": 55.57667934093789,
     "liquidity": 38.91707117431707,
     "positioning": 48.60196300007342
   },
@@ -25,7 +25,7 @@
     "nfci": null,
     "volume_ratio20_mean": 0.7783414234863415,
     "positioning_sources": {
-      "jpx_raw_healthy": 0,
+      "jpx_raw_healthy": 3,
       "cftc_normalized_values": 22
     }
   },

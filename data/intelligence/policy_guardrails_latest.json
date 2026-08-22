@@ -1,5 +1,5 @@
 {
-  "regime_label": "risk_on",
+  "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
     0.08,
@@ -9,6 +9,6 @@
   "lifestyle_bucket_max_weight": 0.05,
   "exploration_bucket_max_weight": 0.1,
   "new_capital_top_rank_only": 5,
-  "decision_gate": "OPEN_FOR_ANALYSIS",
+  "decision_gate": "BLOCK_DATA_QUALITY",
   "note": "Guardrail only. This file never places orders."
 }

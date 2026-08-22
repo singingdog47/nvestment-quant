@@ -1,14 +1,14 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.725** / actionable=True
+Generated quality score: **0.325** / actionable=False
 
 ## Market Regime v1.5
 {
   "version": "1.5.0",
-  "generated_at": "2026-08-21T23:45:04+00:00",
-  "regime_label": "RISK_ON",
-  "regime_score": 70.15,
-  "confidence": 0.8,
+  "generated_at": "2026-08-22T00:33:50+00:00",
+  "regime_label": "CONSTRUCTIVE",
+  "regime_score": 67.24,
+  "confidence": 1.0,
   "actionable": true,
   "overheated_flag": false,
   "stress_flag": false,
@@ -17,7 +17,7 @@ Generated quality score: **0.725** / actionable=True
   "components": {
     "trend": 80.89879760143045,
     "stress": 84.60999965667725,
-    "participation": null,
+    "participation": 55.57667934093789,
     "liquidity": 38.91707117431707,
     "positioning": 48.60196300007342
   },
@@ -30,7 +30,7 @@ Generated quality score: **0.725** / actionable=True
     "nfci": null,
     "volume_ratio20_mean": 0.7783414234863415,
     "positioning_sources": {
-      "jpx_raw_healthy": 0,
+      "jpx_raw_healthy": 3,
       "cftc_normalized_values": 22
     }
   },
@@ -40,7 +40,7 @@ Generated quality score: **0.725** / actionable=True
 
 ## Policy guardrails
 {
-  "regime_label": "risk_on",
+  "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
     0.08,
@@ -50,13 +50,13 @@ Generated quality score: **0.725** / actionable=True
   "lifestyle_bucket_max_weight": 0.05,
   "exploration_bucket_max_weight": 0.1,
   "new_capital_top_rank_only": 5,
-  "decision_gate": "OPEN_FOR_ANALYSIS",
+  "decision_gate": "BLOCK_DATA_QUALITY",
   "note": "Guardrail only. This file never places orders."
 }
 
 ## Integration health
 {
-  "generated_at": "2026-08-21T23:46:37+00:00",
+  "generated_at": "2026-08-22T00:38:26+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -67,25 +67,25 @@ Generated quality score: **0.725** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.03,
+      "age_hours": 0.08,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.03,
+      "age_hours": 0.08,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.03,
+      "age_hours": 0.08,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.03,
+      "age_hours": 0.08,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -104,7 +104,7 @@ Generated quality score: **0.725** / actionable=True
 - SEC: missing / records=0 / tier=primary / SEC_USER_AGENT not set
 - CompanyIR: ok / records=0 / tier=primary
 - NewsRSS: ok / records=15 / tier=secondary
-- yfinance: ok / records=0 / tier=secondary
+- yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report

@@ -1,15 +1,15 @@
 # Market Regime v1.5
 
-- Label: **RISK_ON**
-- Score: **70.15**
-- Confidence: **0.8**
+- Label: **CONSTRUCTIVE**
+- Score: **67.24**
+- Confidence: **1.0**
 - Actionable: **True**
 - Flags: none
 
 ## Components
 - trend: 80.89879760143045
 - stress: 84.60999965667725
-- participation: None
+- participation: 55.57667934093789
 - liquidity: 38.91707117431707
 - positioning: 48.60196300007342
 
@@ -23,7 +23,7 @@
   "nfci": null,
   "volume_ratio20_mean": 0.7783414234863415,
   "positioning_sources": {
-    "jpx_raw_healthy": 0,
+    "jpx_raw_healthy": 3,
     "cftc_normalized_values": 22
   }
 }
