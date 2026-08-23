@@ -4,6 +4,11 @@ __pycache__/
 *.pyc
 data/yf_cache/
 
+# Private portfolio inputs / outputs
+.private/
+private_output/
+portfolio_latest.csv
+
 # Local repair files
 .DS_Store
 _repair_backup_*/
