@@ -7,16 +7,14 @@ on:
         description: "動作確認用。0=全銘柄、例: 20"
         required: false
         default: "0"
-  schedule:
-    # UTC月〜金07:17 = 日本時間 月〜金16:17。日本株の引け後に実行。
-    - cron: "17 7 * * 1-5"
+
+# Scheduled post-close execution moved to post-close-pipeline-v2.2.yml.
+# This component workflow remains available for manual diagnosis/recovery only.
 
 permissions:
   contents: write
 
 concurrency:
-  # Both scheduled workflows commit generated files to the same branch. Serialize
-  # them so the 16:30 intelligence run cannot invalidate this job's checkout.
   group: repository-output-writer
   cancel-in-progress: false
 
