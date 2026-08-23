@@ -5,9 +5,9 @@ Generated quality score: **0.325** / actionable=False
 ## Market Regime v1.5
 {
   "version": "1.5.0",
-  "generated_at": "2026-08-22T00:33:50+00:00",
+  "generated_at": "2026-08-23T13:11:59+00:00",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 67.24,
+  "regime_score": 67.84,
   "confidence": 1.0,
   "actionable": true,
   "overheated_flag": false,
@@ -15,10 +15,10 @@ Generated quality score: **0.325** / actionable=False
   "thin_liquidity_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 80.89879760143045,
+    "trend": 80.41362399703866,
     "stress": 84.60999965667725,
-    "participation": 55.57667934093789,
-    "liquidity": 38.91707117431707,
+    "participation": 56.23128311448975,
+    "liquidity": 43.02708929807408,
     "positioning": 48.60196300007342
   },
   "evidence": {
@@ -28,7 +28,7 @@ Generated quality score: **0.325** / actionable=False
     "ig_oas": null,
     "breadth_n": 9584,
     "nfci": null,
-    "volume_ratio20_mean": 0.7783414234863415,
+    "volume_ratio20_mean": 0.8605417859614816,
     "positioning_sources": {
       "jpx_raw_healthy": 3,
       "cftc_normalized_values": 22
@@ -56,7 +56,7 @@ Generated quality score: **0.325** / actionable=False
 
 ## Integration health
 {
-  "generated_at": "2026-08-22T00:38:26+00:00",
+  "generated_at": "2026-08-23T13:16:43+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -109,7 +109,7 @@ Generated quality score: **0.325** / actionable=False
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-21T09:19:29.857324+00:00
+- Data retrieved (UTC): 2026-08-23T02:29:50.368137+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -122,8 +122,8 @@ Generated quality score: **0.325** / actionable=False
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 8 |
-| JP | Other | 12 |
+| JP | Financials | 9 |
+| JP | Other | 11 |
 | US | Financials | 7 |
 | US | Mortgage REIT | 4 |
 | US | Other | 4 |
@@ -133,26 +133,26 @@ Generated quality score: **0.325** / actionable=False
 
 | Market | Rank | Ticker | Name | Theme | Score | Daily change |
 |---|---:|---|---|---|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.6 | unchanged |
-| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.7 | unchanged |
-| JP | 3 | 3932.T | Akatsuki Inc. | Other | 76.2 | unchanged |
-| JP | 6 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.1 | unchanged |
-| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.9 | unchanged |
+| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 78.3 | unchanged |
+| JP | 2 | 3932.T | Akatsuki Inc. | Other | 76.9 | unchanged |
+| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.9 | unchanged |
+| JP | 5 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.3 | unchanged |
+| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.5 | unchanged |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.7 | unchanged |
 | JP | 11 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 71.8 | unchanged |
 | JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.5 | unchanged |
-| JP | 14 | 8789.T | FinTech Global Incorporated | Other | 70.3 | unchanged |
+| JP | 13 | 8789.T | FinTech Global Incorporated | Other | 71.1 | unchanged |
 | JP | 15 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.7 | unchanged |
-| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.6 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | unchanged |
+| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.4 | unchanged |
 | US | 3 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.3 | unchanged |
-| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 82.5 | unchanged |
+| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 82.2 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.8 | unchanged |
-| US | 8 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 81.3 | unchanged |
-| US | 9 | BUSE | First Busey Corporation - Common Stock | Other | 81.1 | unchanged |
-| US | 14 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.9 | unchanged |
-| US | 23 | ACNB | ACNB Corporation - Common Stock | Other | 78.5 | unchanged |
-| US | 26 | DBRG | DigitalBridge Group, Inc. | Other | 78.2 | unchanged |
+| US | 8 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 81.2 | unchanged |
+| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | unchanged |
+| US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.3 | unchanged |
+| US | 23 | ACNB | ACNB Corporation - Common Stock | Other | 78.2 | unchanged |
+| US | 24 | DBRG | DigitalBridge Group, Inc. | Other | 78.2 | unchanged |
 
 ## Required manual checks before an order
 

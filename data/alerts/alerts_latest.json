@@ -1,0 +1,106 @@
+{
+  "version": "1.9.0",
+  "generated_at": "2026-08-23T13:16:45+00:00",
+  "highest_severity": "WARNING",
+  "counts": {
+    "INFO": 0,
+    "WATCH": 7,
+    "WARNING": 1,
+    "CRITICAL": 0
+  },
+  "alerts": [
+    {
+      "severity": "WARNING",
+      "category": "DATA_QUALITY",
+      "code": "NOT_ACTIONABLE",
+      "title": "Data quality blocks investment conclusions",
+      "message": "Data quality is not actionable; missing data must not be converted into buy/sell conclusions.",
+      "value": 0.325,
+      "threshold": null,
+      "entity": null,
+      "source": "data_quality_latest.json"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "ＫＤＤＩ(株)【9433】：掲示板 - Yahoo!ファイナンス",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "ＮＥＣ【6701】：掲示板 - Yahoo!ファイナンス",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NEC、大学・学術機関や研究機関での次世代AI・HPC環境構築支援に向けCornelisと協業拡大 - EnterpriseZine",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECとNECソリューションイノベータの社員7名が2026 OCI Top Partner Engineersに認定 - PR TIMES",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "信越化学工業(株)【4063】：掲示板 - Yahoo!ファイナンス",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "SCREENING",
+      "code": "RANK_JUMP",
+      "title": "Screening rank jumped",
+      "message": "Arbutus Biopharma Corporation - Common Stock improved by at least 15 ranks.",
+      "value": 25.0,
+      "threshold": 15.0,
+      "entity": "Arbutus Biopharma Corporation - Common Stock",
+      "source": "company_snapshot_latest.csv"
+    }
+  ],
+  "rules": [
+    "Alerts are deterministic exception flags, not buy/sell signals.",
+    "Missing values are never inferred.",
+    "Only public-safe market/company data may be persisted by this module."
+  ]
+}
