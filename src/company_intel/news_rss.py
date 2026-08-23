@@ -2,7 +2,7 @@ from __future__ import annotations
 from urllib.parse import quote
 import feedparser
 from .common import Event, SourceHealth, now_iso, stable_hash
-from .classify import classify_event
+from .classify import classify_event, is_low_value_news
 
 BASE="https://news.google.com/rss/search?q={q}&hl=ja&gl=JP&ceid=JP:ja"
 
@@ -18,6 +18,9 @@ def fetch_news_rss(targets,max_items_per_company=5,priority_only=True):
             f=feedparser.parse(BASE.format(q=q))
             for e in f.entries[:max_items_per_company]:
                 title=str(e.get("title","")); link=str(e.get("link","")); date=str(e.get("published",fetched[:10]))
+                source=str(e.get("source",{}).get("title","") if isinstance(e.get("source",{}),dict) else e.get("source",""))
+                if is_low_value_news(title,source):
+                    continue
                 typ,sev=classify_event(title)
                 if typ=="disclosure": sev="normal"
                 eid=stable_hash(f"rss|{code}|{link}|{title}")[:24]
