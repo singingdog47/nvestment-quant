@@ -105,19 +105,19 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
         "",
         "## 6. データ品質 / 反証",
         f"- Quality score: {quality.get('quality_score', 'n/a')}",
-        f"- Primary source health: {quality.get('primary_source_health', 'n/a')}",
+        f"- Primary source health (configured feeds only): {quality.get('primary_source_health', 'n/a')}",
         f"- Primary fundamental coverage: {quality.get('primary_fundamental_coverage', quality.get('fundamental_coverage', 'n/a'))}",
         f"- Secondary fundamental coverage: {quality.get('secondary_fundamental_coverage', 'n/a')}",
         f"- Effective fundamental coverage (secondary haircut applied): {quality.get('effective_fundamental_coverage', 'n/a')}",
         f"- Fundamental evidence tier: {quality.get('fundamental_evidence_tier', 'n/a')}",
     ]
-    missing = quality.get("missing_primary_configuration") or []
-    if missing:
-        lines.append("- Primary-source configuration missing:")
-        for item in missing:
+    optional = quality.get("optional_primary_sources_unconfigured") or quality.get("missing_primary_configuration") or []
+    if optional:
+        lines.append("- Optional primary feeds not configured (confidence booster; not a hard decision blocker):")
+        for item in optional:
             lines.append(f"  - {item.get('source')}: {item.get('reason')}")
     lines += [
-        "- Missing data must not be converted into buy/sell conclusions.",
+        "- Missing data must not be converted into unsupported buy/sell conclusions.",
         "",
         "## 7. ポートフォリオ",
         "- 公開版には保有情報・私有リスク値を保存しません。",
