@@ -1,0 +1,68 @@
+name: Portfolio Risk Engine v1.8
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 17:05 JST weekdays, after post-close intelligence/decision refresh.
+    - cron: '5 8 * * 1-5'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: private-portfolio-risk
+  cancel-in-progress: true
+
+jobs:
+  portfolio-risk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+      GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+      PORTFOLIO_DRIVE_FILENAME: portfolio_latest.csv
+      PRIVATE_WORKDIR: .private
+      PRIVATE_OUTPUT_DIR: .private/portfolio_risk
+      RISK_LOOKBACK_DAYS: '400'
+      RISK_MIN_OBSERVATIONS: '120'
+      RISK_VAR_CONFIDENCE: '0.95'
+      RISK_CANDIDATE_WEIGHT: '0.02'
+      RISK_CANDIDATE_TOP_N: '10'
+      RISK_BENCHMARK: '1306.T'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt -r requirements-intelligence.txt
+
+      - name: Run tests
+        run: python -m pytest -q tests
+
+      - name: Check private Drive configuration
+        id: private_config
+        shell: bash
+        run: |
+          if [[ -n "$GDRIVE_SERVICE_ACCOUNT_JSON" && -n "$GDRIVE_FOLDER_ID" ]]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "Private Google Drive secrets are not configured; risk run skipped."
+          fi
+
+      - name: Run private portfolio risk analysis
+        if: steps.private_config.outputs.configured == 'true'
+        run: python src/run_portfolio_risk.py
+
+      # Privacy rule: never upload portfolio inputs/results as Actions artifacts
+      # and never commit them to this public repository. Results are written
+      # directly back to the configured private Google Drive folder.
