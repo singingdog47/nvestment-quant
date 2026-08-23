@@ -8,7 +8,7 @@ from pathlib import Path
 from statistics import mean, median
 from typing import Any
 
-VERSION = "2.0.0"
+VERSION = "2.1.0"
 MIN_SEGMENT_N = 20
 MIN_CHANGE_N = 60
 
@@ -25,16 +25,21 @@ def _f(v: Any) -> float | None:
 def _stats(rows: list[dict[str, Any]]) -> dict[str, Any]:
     vals = [_f(r.get("return")) for r in rows]
     vals = [v for v in vals if v is not None]
+    excess = [_f(r.get("excess_return")) for r in rows]
+    excess = [v for v in excess if v is not None]
     downs = [_f(r.get("max_down")) for r in rows]
     downs = [v for v in downs if v is not None]
-    if not vals:
-        return {"n": 0, "mean_return": None, "median_return": None, "win_rate": None, "mean_max_down": None}
     return {
         "n": len(vals),
-        "mean_return": mean(vals),
-        "median_return": median(vals),
-        "win_rate": sum(v > 0 for v in vals) / len(vals),
+        "mean_return": mean(vals) if vals else None,
+        "median_return": median(vals) if vals else None,
+        "win_rate": (sum(v > 0 for v in vals) / len(vals)) if vals else None,
         "mean_max_down": mean(downs) if downs else None,
+        "benchmark_n": len(excess),
+        "mean_excess_return": mean(excess) if excess else None,
+        "median_excess_return": median(excess) if excess else None,
+        "outperform_rate": (sum(v > 0 for v in excess) / len(excess)) if excess else None,
+        "benchmark_coverage": (len(excess) / len(vals)) if vals else 0.0,
     }
 
 
@@ -87,23 +92,38 @@ def build_learning_summary(root: str | Path = ".") -> dict[str, Any]:
     findings: list[dict[str, Any]] = []
     for dimension in ("action", "regime", "rank_bucket"):
         for key, s in segments[dimension].items():
-            n = int(s.get("n") or 0)
+            n = int(s.get("benchmark_n") or 0)
             if n < MIN_SEGMENT_N:
                 continue
-            avg = s.get("mean_return")
-            win = s.get("win_rate")
+            avg = s.get("mean_excess_return")
+            win = s.get("outperform_rate")
             if avg is not None and avg < 0 and win is not None and win < 0.45:
-                findings.append({"severity": "WATCH", "dimension": dimension, "segment": key,
-                                 "message": "Historically weak segment; review assumptions before increasing its influence.", "n": n})
+                findings.append({
+                    "severity": "WATCH",
+                    "dimension": dimension,
+                    "segment": key,
+                    "message": "Benchmark-relative performance is historically weak; review assumptions before increasing its influence.",
+                    "n": n,
+                    "metric": "excess_return",
+                })
             elif avg is not None and avg > 0 and win is not None and win > 0.55:
-                findings.append({"severity": "INFO", "dimension": dimension, "segment": key,
-                                 "message": "Historically positive segment; retain for monitoring, not automatic promotion.", "n": n})
+                findings.append({
+                    "severity": "INFO",
+                    "dimension": dimension,
+                    "segment": key,
+                    "message": "Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.",
+                    "n": n,
+                    "metric": "excess_return",
+                })
 
-    matured = sum(int(x.get("n") or 0) for x in segments["horizon"].values())
+    matured_absolute = sum(int(x.get("n") or 0) for x in segments["horizon"].values())
+    matured_relative = sum(int(x.get("benchmark_n") or 0) for x in segments["horizon"].values())
     change_gate = {
-        "eligible_for_model_change_review": matured >= MIN_CHANGE_N,
-        "matured_observations": matured,
+        "eligible_for_model_change_review": matured_relative >= MIN_CHANGE_N,
+        "matured_observations": matured_absolute,
+        "benchmark_relative_observations": matured_relative,
         "minimum_required": MIN_CHANGE_N,
+        "basis": "benchmark_relative_observations",
         "rule": "Even when eligible, factor weights must not change automatically; require explicit human review, robustness checks, and a version bump.",
     }
 
@@ -115,8 +135,9 @@ def build_learning_summary(root: str | Path = ".") -> dict[str, Any]:
         "findings": findings,
         "change_gate": change_gate,
         "known_limits": [
-            "Current outcome history evaluates absolute returns; benchmark-relative excess-return attribution is not yet stored in outcomes.csv.",
-            "Small samples can create false patterns; segment findings are suppressed below the minimum sample threshold.",
+            "Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.",
+            "Pre-v2.1 outcome rows may have blank benchmark fields and are excluded from benchmark-relative findings until new relative observations mature.",
+            "Small samples can create false patterns; segment findings are suppressed below the minimum benchmark-relative sample threshold.",
             "The engine proposes review targets only and never changes weights or places orders automatically.",
         ],
     }
@@ -131,15 +152,16 @@ def write_learning_outputs(root: str | Path = ".") -> tuple[Path, Path]:
     json_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     lines = [
-        "# Investment Quant Validation Learning v2.0",
+        "# Investment Quant Validation Learning v2.1",
         "",
         f"Generated: {summary['generated_at']}",
         "",
         "This is a diagnostic learning layer. It does not automatically change factor weights or issue orders.",
         "",
         "## Model-change gate",
-        f"- Matured observations: {summary['change_gate']['matured_observations']}",
-        f"- Minimum for review: {summary['change_gate']['minimum_required']}",
+        f"- Matured absolute-return observations: {summary['change_gate']['matured_observations']}",
+        f"- Benchmark-relative observations: {summary['change_gate']['benchmark_relative_observations']}",
+        f"- Minimum benchmark-relative observations for review: {summary['change_gate']['minimum_required']}",
         f"- Eligible for human model-change review: {summary['change_gate']['eligible_for_model_change_review']}",
         "",
         "## Findings",
@@ -148,7 +170,7 @@ def write_learning_outputs(root: str | Path = ".") -> tuple[Path, Path]:
         for x in summary["findings"]:
             lines.append(f"- [{x['severity']}] {x['dimension']} / {x['segment']} (n={x['n']}): {x['message']}")
     else:
-        lines.append("- No statistically gated review finding yet.")
+        lines.append("- No statistically gated benchmark-relative review finding yet.")
     lines += ["", "## Known limits"] + [f"- {x}" for x in summary["known_limits"]]
     md_path = out_dir / "learning_latest.md"
     md_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
