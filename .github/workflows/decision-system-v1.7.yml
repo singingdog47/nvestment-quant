@@ -11,6 +11,14 @@ on:
         description: "Optional note about the actual human decision"
         required: false
         default: ""
+  push:
+    branches: [main]
+    paths:
+      - 'src/decision_system.py'
+      - 'src/run_decision_system.py'
+      - 'tests/test_decision_system.py'
+      - '.github/workflows/decision-system-v1.7.yml'
+      - 'README_UPGRADE_v1.6_to_v1.7.md'
   schedule:
     # Run after the morning and post-close intelligence refreshes.
     # 07:45 JST weekdays (22:45 UTC previous day)
