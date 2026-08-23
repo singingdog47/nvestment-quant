@@ -12,11 +12,7 @@ CONCENTRATION_CAPPED_THEMES = {"Financials", "Shipping"}
 
 
 def add_concentration_labels(frame: pd.DataFrame) -> pd.DataFrame:
-    """Add conservative, explainable theme labels used only as a concentration guard.
-
-    These labels are intentionally not represented as official sector classifications.
-    Unknown companies remain ``Other`` rather than being guessed into a sector.
-    """
+    """Add conservative, explainable theme labels used only as a concentration guard."""
     result = frame.copy()
     searchable = (
         result.get("name", pd.Series("", index=result.index)).fillna("")
@@ -41,9 +37,7 @@ def _percentile(series: pd.Series, higher_is_better: bool = True) -> pd.Series:
 
 
 def _market_rank(frame: pd.DataFrame, column: str, higher_is_better: bool = True) -> pd.Series:
-    return frame.groupby("market", group_keys=False)[column].transform(
-        lambda s: _percentile(s, higher_is_better)
-    )
+    return frame.groupby("market", group_keys=False)[column].transform(lambda s: _percentile(s, higher_is_better))
 
 
 def _mean_available(frame: pd.DataFrame, columns: list[str]) -> pd.Series:
@@ -57,21 +51,14 @@ def add_technical_scores(prices: pd.DataFrame) -> pd.DataFrame:
     frame = prices.copy()
     min_price = np.where(frame["market"].eq("JP"), SETTINGS.min_price_jp, SETTINGS.min_price_us)
     min_turnover = np.where(frame["market"].eq("JP"), SETTINGS.min_turnover_jp, SETTINGS.min_turnover_us)
-    frame["eligible"] = (
-        frame["price_status"].eq("ok")
-        & frame["price"].ge(min_price)
-        & frame["avg_turnover_30d"].ge(min_turnover)
-    )
+    frame["eligible"] = frame["price_status"].eq("ok") & frame["price"].ge(min_price) & frame["avg_turnover_30d"].ge(min_turnover)
     for column in ("return_1m", "return_3m", "return_6m", "return_12m", "avg_turnover_30d"):
         frame[f"rank_{column}"] = _market_rank(frame, column, True)
     for column in ("volatility_1m", "beta_abs"):
         if column == "beta_abs":
             frame[column] = frame["beta_1y"].abs()
         frame[f"rank_{column}"] = _market_rank(frame, column, False)
-    frame["momentum_score"] = 100 * _mean_available(
-        frame,
-        ["rank_return_1m", "rank_return_3m", "rank_return_6m", "rank_return_12m"],
-    )
+    frame["momentum_score"] = 100 * _mean_available(frame, ["rank_return_1m", "rank_return_3m", "rank_return_6m", "rank_return_12m"])
     frame["risk_score"] = 100 * _mean_available(frame, ["rank_volatility_1m", "rank_beta_abs"])
     frame["liquidity_score"] = 100 * frame["rank_avg_turnover_30d"]
     frame["pre_score"] = 0.60 * frame["momentum_score"] + 0.25 * frame["risk_score"] + 0.15 * frame["liquidity_score"]
@@ -105,13 +92,21 @@ def add_final_scores(frame: pd.DataFrame) -> pd.DataFrame:
     result.loc[result["price_status"].ne("ok"), "flags"] = "price_missing"
     result.loc[result["fundamental_status"].isin(["missing", np.nan]), "flags"] = "fundamental_missing"
     result.loc[result["fundamental_status"].eq("partial"), "flags"] = "fundamental_partial"
-    result["market_rank"] = result.groupby("market")["total_score"].rank(
-        ascending=False, method="first", na_option="bottom"
-    )
+
+    # All component factors are already ranked within each market.  The raw
+    # composite can nevertheless have slightly different distributions across
+    # JP and US because of universe size and missing-factor mix.  Re-percentile
+    # the completed composite within market before producing a cross-market
+    # shortlist.  This makes 90 mean roughly "top decile of its home market"
+    # rather than pretending that raw JP/US composite points are absolute peers.
+    result["market_percentile"] = 100 * result.groupby("market", group_keys=False)["total_score"].transform(lambda s: _percentile(s, True))
+    result.loc[result["total_score"].isna(), "market_percentile"] = np.nan
+    result["cross_market_score"] = result["market_percentile"]
+    result["market_rank"] = result.groupby("market")["total_score"].rank(ascending=False, method="first", na_option="bottom")
+    result["cross_market_rank"] = result["cross_market_score"].rank(ascending=False, method="first", na_option="bottom")
+
     result = add_concentration_labels(result)
-    result["theme_rank"] = result.groupby(["market", "theme"])["total_score"].rank(
-        ascending=False, method="first", na_option="bottom"
-    )
+    result["theme_rank"] = result.groupby(["market", "theme"])["total_score"].rank(ascending=False, method="first", na_option="bottom")
     result["research_status"] = "research_candidate"
     result.loc[result["total_score"].isna(), "research_status"] = "unscored_insufficient_coverage"
     result.loc[result["is_mortgage_reit"], "research_status"] = "watch_only_mreit"
@@ -123,4 +118,4 @@ def add_final_scores(frame: pd.DataFrame) -> pd.DataFrame:
         "research_status",
     ] = "held_back_theme_cap"
     result["research_candidate"] = result["research_status"].eq("research_candidate")
-    return result.sort_values("total_score", ascending=False, na_position="last").reset_index(drop=True)
+    return result.sort_values(["cross_market_score", "total_score"], ascending=False, na_position="last").reset_index(drop=True)
