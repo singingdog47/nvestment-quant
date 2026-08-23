@@ -59,7 +59,7 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
         priority = "SELECTIVE REVIEW OF TOP CANDIDATES"
 
     lines = [
-        "# Investment Quant Daily Integrated Report v2.3",
+        "# Investment Quant Daily Integrated Report v2.4",
         "",
         f"Generated (UTC): {now}",
         "",
@@ -106,7 +106,17 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
         "## 6. データ品質 / 反証",
         f"- Quality score: {quality.get('quality_score', 'n/a')}",
         f"- Primary source health: {quality.get('primary_source_health', 'n/a')}",
-        f"- Fundamental coverage: {quality.get('fundamental_coverage', 'n/a')}",
+        f"- Primary fundamental coverage: {quality.get('primary_fundamental_coverage', quality.get('fundamental_coverage', 'n/a'))}",
+        f"- Secondary fundamental coverage: {quality.get('secondary_fundamental_coverage', 'n/a')}",
+        f"- Effective fundamental coverage (secondary haircut applied): {quality.get('effective_fundamental_coverage', 'n/a')}",
+        f"- Fundamental evidence tier: {quality.get('fundamental_evidence_tier', 'n/a')}",
+    ]
+    missing = quality.get("missing_primary_configuration") or []
+    if missing:
+        lines.append("- Primary-source configuration missing:")
+        for item in missing:
+            lines.append(f"  - {item.get('source')}: {item.get('reason')}")
+    lines += [
         "- Missing data must not be converted into buy/sell conclusions.",
         "",
         "## 7. ポートフォリオ",
