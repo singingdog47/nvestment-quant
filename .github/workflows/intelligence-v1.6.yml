@@ -14,8 +14,10 @@ permissions:
   contents: write
 
 concurrency:
-  group: investment-intelligence-v1-6
-  cancel-in-progress: true
+  # Daily Quant Screen also commits generated files. A shared, non-cancelling
+  # group prevents overlapping checkouts from racing at `git push`.
+  group: repository-output-writer
+  cancel-in-progress: false
 
 jobs:
   intelligence:
