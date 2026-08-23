@@ -84,23 +84,37 @@ jobs:
           python src/run_company_intel.py
 
       # ------------------------------------------------------------
-      # 7. Smoke tests
+      # 7. Exception detection v1.9
+      # Public-safe market/company exceptions only. Private portfolio
+      # alerts are generated separately inside the private risk workflow.
+      # ------------------------------------------------------------
+      - name: Update Exception Alerts v1.9
+        env:
+          RANK_ALERT_THRESHOLD: '15'
+          ALERT_VIX_WATCH: '20'
+          ALERT_VIX_WARNING: '30'
+          ALERT_VIX_CRITICAL: '35'
+        run: |
+          python src/run_alerts.py
+
+      # ------------------------------------------------------------
+      # 8. Smoke tests
       # Use python -m pytest so the test runner is resolved through
       # the active Python environment.
       # ------------------------------------------------------------
-      - name: Run v1.6 smoke tests
+      - name: Run v1.6-v1.9 smoke tests
         run: |
           python -m pytest -q tests
 
       # ------------------------------------------------------------
-      # 8. Verify required outputs
+      # 9. Verify required outputs
       # ------------------------------------------------------------
       - name: Verify v1.6 outputs
         run: |
           python tools/verify_outputs.py
 
       # ------------------------------------------------------------
-      # 9. Commit only public-safe generated outputs
+      # 10. Commit only public-safe generated outputs
       # ------------------------------------------------------------
       - name: Commit public-safe outputs
         run: |
@@ -110,6 +124,7 @@ jobs:
           git add -- \
             data/regime \
             data/intelligence \
+            data/alerts \
             data/state \
             data/ai_context_latest.md \
             data/decision_context_latest.json
@@ -119,5 +134,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "data: refresh v1.6 intelligence"
+          git commit -m "data: refresh intelligence and alerts"
           git push
