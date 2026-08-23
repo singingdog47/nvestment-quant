@@ -25,7 +25,10 @@ def test_low_factor_coverage_is_unscored():
     )
     scored = add_final_scores(frame)
     assert scored.loc[scored.ticker.eq("A"), "total_score"].notna().all()
-    assert scored.loc[scored.ticker.eq("B"), "total_score"].isna().all()
+    low_coverage = scored.loc[scored.ticker.eq("B")]
+    assert low_coverage["total_score"].isna().all()
+    assert not low_coverage["research_candidate"].any()
+    assert low_coverage["research_status"].eq("unscored_insufficient_coverage").all()
 
 
 def test_concentration_guard_and_mreit_watch_only():
