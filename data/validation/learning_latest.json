@@ -1,15 +1,18 @@
 {
   "change_gate": {
+    "basis": "benchmark_relative_observations",
+    "benchmark_relative_observations": 0,
     "eligible_for_model_change_review": false,
     "matured_observations": 0,
     "minimum_required": 60,
     "rule": "Even when eligible, factor weights must not change automatically; require explicit human review, robustness checks, and a version bump."
   },
   "findings": [],
-  "generated_at": "2026-08-23T14:13:27+00:00",
+  "generated_at": "2026-08-23T15:33:57+00:00",
   "known_limits": [
-    "Current outcome history evaluates absolute returns; benchmark-relative excess-return attribution is not yet stored in outcomes.csv.",
-    "Small samples can create false patterns; segment findings are suppressed below the minimum sample threshold.",
+    "Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.",
+    "Pre-v2.1 outcome rows may have blank benchmark fields and are excluded from benchmark-relative findings until new relative observations mature.",
+    "Small samples can create false patterns; segment findings are suppressed below the minimum benchmark-relative sample threshold.",
     "The engine proposes review targets only and never changes weights or places orders automatically."
   ],
   "rows": 0,
@@ -20,5 +23,5 @@
     "rank_bucket": {},
     "regime": {}
   },
-  "version": "2.0.0"
+  "version": "2.1.0"
 }
