@@ -122,7 +122,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase
           git add -- \
             data/screening_latest.csv \
             data/screening_full.csv.gz \
@@ -141,6 +140,9 @@ jobs:
             exit 0
           fi
           git commit -m "data: refresh integrated post-close pipeline v2.3"
+          # Rebase only after generated changes are committed. `git pull --rebase`
+          # refuses to run with unstaged/modified tracked files in the worktree.
+          git pull --rebase
           git push
 
       # Privacy rule: portfolio inputs and private risk outputs, including the
