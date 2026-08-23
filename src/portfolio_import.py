@@ -52,6 +52,13 @@ def _find_header(rows: list[list[str]]) -> tuple[int, list[str]]:
 
 def _idx(headers: list[str], *needles: str) -> int | None:
     nh = [_norm(x) for x in headers]
+    # Exact match first so "銘柄" does not accidentally resolve to
+    # "銘柄コード・ティッカー".
+    for needle in needles:
+        nn = _norm(needle)
+        for i, h in enumerate(nh):
+            if h == nn:
+                return i
     for needle in needles:
         nn = _norm(needle)
         for i, h in enumerate(nh):
