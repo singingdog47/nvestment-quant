@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 
+from alert_engine import detect_private_portfolio_alerts
 from portfolio_import import parse_rakuten_csv_bytes
 from private_drive import download_recent_csvs, upload_or_replace
 from portfolio_risk import main as run_risk
@@ -47,6 +48,35 @@ def _build_latest_portfolio(private_dir: Path) -> tuple[Path, dict]:
     )
 
 
+def _write_private_alerts(out_dir: Path) -> bool:
+    risk_path = out_dir / "portfolio_risk_latest.json"
+    if not risk_path.exists():
+        return False
+    report = json.loads(risk_path.read_text(encoding="utf-8"))
+    alerts = detect_private_portfolio_alerts(report)
+    alert_json = out_dir / "portfolio_alerts_latest.json"
+    alert_json.write_text(json.dumps(alerts, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    lines = [
+        "# Private Portfolio Alerts v1.9",
+        "",
+        f"Generated: {alerts.get('generated_at')}",
+        f"Highest severity: {alerts.get('highest_severity')}",
+        "",
+        "## Alerts",
+    ]
+    items = alerts.get("alerts") or []
+    if not items:
+        lines.append("- No portfolio-risk exceptions detected.")
+    else:
+        for a in items:
+            lines.append(f"- **{a.get('severity')}** {a.get('code')}: {a.get('title')}")
+            lines.append(f"  - {a.get('message')}")
+    lines += ["", "## Privacy", "- This file is private and ephemeral. It must never be committed or uploaded as a public Actions artifact."]
+    (out_dir / "portfolio_alerts_latest.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return True
+
+
 def _maybe_write_back_to_drive(private_dir: Path, out_dir: Path) -> bool:
     """Optionally write normalized/private outputs back to Drive.
 
@@ -79,6 +109,15 @@ def _maybe_write_back_to_drive(private_dir: Path, out_dir: Path) -> bool:
         "portfolio_risk_latest.md",
         "text/markdown",
     )
+    # Private alerts are written back only when the whole private writeback mode
+    # has explicitly been enabled for a backend with writable quota.
+    for name, mime in (
+        ("portfolio_alerts_latest.json", "application/json"),
+        ("portfolio_alerts_latest.md", "text/markdown"),
+    ):
+        p = out_dir / name
+        if p.exists():
+            upload_or_replace(p, name, mime)
     return True
 
 
@@ -93,10 +132,10 @@ def main() -> None:
     run_risk()
 
     out_dir = Path(os.environ["PRIVATE_OUTPUT_DIR"])
+    private_alerts_written = _write_private_alerts(out_dir)
     writeback = _maybe_write_back_to_drive(private_dir, out_dir)
 
-    # Do not print holdings or detailed risk output into Actions logs. Only emit
-    # a compact execution manifest; the runner workspace is ephemeral.
+    # Do not print holdings, risk values, or alert details into Actions logs.
     print(
         json.dumps(
             {
@@ -104,6 +143,7 @@ def main() -> None:
                 "source_file": manifest.get("source_file"),
                 "rows_kept": manifest.get("rows_kept"),
                 "weight_sum": manifest.get("weight_sum"),
+                "private_alerts_written": private_alerts_written,
                 "drive_writeback": writeback,
                 "privacy_mode": "ephemeral_runner_only" if not writeback else "private_drive_writeback",
             },
