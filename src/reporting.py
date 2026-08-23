@@ -5,6 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 from .config import SETTINGS
+from .release_status import DEVELOPMENT_STATUS, ROLLBACK_READY, STABLE_FALLBACK_BRANCH, SYSTEM_VERSION
 
 
 def add_daily_changes(current: pd.DataFrame, previous_path: Path) -> pd.DataFrame:
@@ -33,10 +34,10 @@ def select_diversified_candidates(final: pd.DataFrame) -> pd.DataFrame:
     market_count = max(1, selected["market"].nunique())
     per_market = max(1, SETTINGS.output_top_n // market_count)
     return (
-        selected.sort_values(["market", "total_score"], ascending=[True, False])
+        selected.sort_values(["market", "market_rank"], ascending=[True, True])
         .groupby("market", group_keys=False)
         .head(per_market)
-        .sort_values("total_score", ascending=False)
+        .sort_values(["cross_market_score", "total_score"], ascending=[False, False])
         .head(SETTINGS.output_top_n)
     )
 
@@ -48,6 +49,19 @@ def daily_report_markdown(final: pd.DataFrame, selected: pd.DataFrame, report: d
         f"- Data retrieved (UTC): {report.get('data_retrieved_at_utc') or 'unavailable'}",
         "- Price basis: TradingView scanner close; exact exchange timestamp unavailable.",
         "- This report is for research. A high score is not a buy signal.",
+        "",
+        "## Development status",
+        "",
+        f"- System version: {SYSTEM_VERSION}",
+        f"- Status: {DEVELOPMENT_STATUS}",
+        f"- Stable fallback: {STABLE_FALLBACK_BRANCH}",
+        f"- Rollback ready: {ROLLBACK_READY}",
+        "",
+        "## Cross-market score policy",
+        "",
+        "- JP/US factor inputs are percentile-ranked within their own market.",
+        "- Cross-market score is the percentile of the completed composite within each home market; it represents relative standing, not absolute valuation equivalence.",
+        "- Orders still require market-specific fundamentals, price verification, and portfolio-fit review.",
         "",
         "## Concentration guard",
         "",
@@ -63,11 +77,11 @@ def daily_report_markdown(final: pd.DataFrame, selected: pd.DataFrame, report: d
     distribution = leaders.groupby(["market", "theme"]).size().reset_index(name="count")
     for row in distribution.itertuples(index=False):
         lines.append(f"| {row.market} | {row.theme} | {row.count} |")
-    lines += ["", "## Research candidates", "", "| Market | Rank | Ticker | Name | Theme | Score | Daily change |", "|---|---:|---|---|---|---:|---|"]
+    lines += ["", "## Research candidates", "", "| Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |", "|---|---:|---|---|---|---:|---:|---|"]
     display = selected.sort_values(["market", "market_rank"]).groupby("market", group_keys=False).head(10)
     for row in display.itertuples(index=False):
         lines.append(
-            f"| {row.market} | {int(row.market_rank)} | {row.ticker} | {row.name} | {row.theme} | {row.total_score:.1f} | {row.daily_change} |"
+            f"| {row.market} | {int(row.market_rank)} | {row.ticker} | {row.name} | {row.theme} | {row.total_score:.1f} | {row.cross_market_score:.1f} | {row.daily_change} |"
         )
     lines += [
         "",
@@ -79,6 +93,6 @@ def daily_report_markdown(final: pd.DataFrame, selected: pd.DataFrame, report: d
         "",
         "## Earnings-calendar status",
         "",
-        "No official cross-market earnings-calendar source is connected in v1.3. Earnings-date alerts are intentionally marked unavailable rather than guessed.",
+        "No official cross-market earnings-calendar source is connected. Earnings-date alerts are intentionally marked unavailable rather than guessed.",
     ]
     return "\n".join(lines) + "\n"
