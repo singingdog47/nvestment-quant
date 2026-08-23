@@ -1,4 +1,4 @@
-name: Investment Quant Post-Close Pipeline v2.5
+name: Investment Quant Post-Close Pipeline v2.6
 
 on:
   workflow_dispatch:
@@ -8,8 +8,6 @@ on:
         required: false
         default: "0"
   schedule:
-    # 16:17 JST weekdays. One orchestrated run replaces the previous
-    # independently scheduled post-close component workflows.
     - cron: '17 7 * * 1-5'
 
 permissions:
@@ -50,13 +48,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: pip
-
       - name: Install all pipeline dependencies
         run: |
           python -m pip install --upgrade pip
@@ -64,31 +60,22 @@ jobs:
           python -m pip install -r requirements-regime.txt
           python -m pip install -r requirements-intelligence.txt
           python -m pip install pytest
-
       - name: Run full test suite once
         run: python -m pytest -q tests
-
       - name: 1. Daily Quant Screen
         run: python -m src.main
-
       - name: 2. Preflight screening compatibility
         run: python tools/preflight_v1_3.py --ci
-
       - name: 3. Market Regime Engine
         run: python src/run_market_regime.py
-
       - name: 4. Company Intelligence
         run: python src/run_company_intel.py
-
       - name: 5. Exception Alerts
         run: python src/run_alerts.py
-
       - name: 6. Verify public intelligence outputs
         run: python tools/verify_outputs.py
-
       - name: 7. Decision validation and benchmark-relative learning
         run: python src/run_validation.py
-
       - name: Check private Drive configuration
         id: private_config
         shell: bash
@@ -99,15 +86,12 @@ jobs:
             echo "configured=false" >> "$GITHUB_OUTPUT"
             echo "Private Google Drive secrets are not configured; private risk analysis skipped."
           fi
-
       - name: 8. Private Portfolio Risk Engine
         if: steps.private_config.outputs.configured == 'true'
         run: python src/run_portfolio_risk.py
-
       - name: 9. Final Integrated Daily Report
         if: always() && !cancelled()
         run: python src/run_final_report.py
-
       - name: Preserve public quality report in run logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -116,36 +100,19 @@ jobs:
           path: data/quality_report.json
           if-no-files-found: ignore
           retention-days: 14
-
       - name: Commit public-safe outputs once
         if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- \
-            data/screening_latest.csv \
-            data/screening_full.csv.gz \
-            data/quality_report.json \
-            data/daily_report.md \
-            data/integrated_report_latest.md \
-            data/regime \
-            data/intelligence \
-            data/alerts \
-            data/state \
-            data/ai_context_latest.md \
-            data/decision_context_latest.json \
-            data/validation
+          git add -- data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json data/daily_report.md data/integrated_report_latest.md data/regime data/intelligence data/alerts data/state data/ai_context_latest.md data/decision_context_latest.json data/validation
           if git diff --cached --quiet; then
             echo "No post-close output changes to commit."
             exit 0
           fi
-          git commit -m "data: refresh integrated post-close pipeline v2.5"
+          git commit -m "data: refresh integrated post-close pipeline v2.6"
           git pull --rebase
           git push
-
-      # Privacy rule: portfolio inputs and private risk outputs, including the
-      # private integrated appendix, remain only in the ephemeral runner workspace.
-      # They are never committed or uploaded as public Actions artifacts.
 
   fallback-public-report:
     needs: post-close
@@ -161,19 +128,16 @@ jobs:
       EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
       SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
       ALLOW_REPO_PORTFOLIO: '0'
-
     steps:
       - name: Checkout pinned known-good report version
         uses: actions/checkout@v4
         with:
-          ref: stable-report-v2.4
-
+          ref: stable-report-v2.5
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: pip
-
       - name: Install stable dependencies
         run: |
           python -m pip install --upgrade pip
@@ -181,10 +145,8 @@ jobs:
           python -m pip install -r requirements-regime.txt
           python -m pip install -r requirements-intelligence.txt
           python -m pip install pytest
-
       - name: Verify stable version before fallback report
         run: python -m pytest -q tests
-
       - name: Generate pinned stable public report
         run: |
           python -m src.main
@@ -195,17 +157,14 @@ jobs:
           python tools/verify_outputs.py
           python src/run_validation.py
           python src/run_final_report.py
-
       - name: Upload fallback public report
         uses: actions/upload-artifact@v4
         with:
-          name: automatic-stable-public-report-v2.4
+          name: automatic-stable-public-report-v2.5
           path: |
             data/integrated_report_latest.md
             data/daily_report.md
             data/quality_report.json
           if-no-files-found: error
           retention-days: 14
-
-      # Automatic fallback is intentionally public-report-only. It does not read
-      # Google Drive portfolio data and cannot expose private portfolio outputs.
+      # Fallback never reads Google Drive portfolio data and never uploads private outputs.
