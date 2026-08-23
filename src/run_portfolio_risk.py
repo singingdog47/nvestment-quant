@@ -9,6 +9,10 @@ from private_drive import download_recent_csvs, upload_or_replace
 from portfolio_risk import main as run_risk
 
 
+def _truthy_env(name: str, default: str = "false") -> bool:
+    return os.getenv(name, default).strip().lower() in {"1", "true", "yes", "on"}
+
+
 def _build_latest_portfolio(private_dir: Path) -> tuple[Path, dict]:
     inbox = private_dir / "drive_inbox"
     candidates = download_recent_csvs(inbox, limit=int(os.getenv("PORTFOLIO_SCAN_LIMIT", "25")))
@@ -43,24 +47,70 @@ def _build_latest_portfolio(private_dir: Path) -> tuple[Path, dict]:
     )
 
 
+def _maybe_write_back_to_drive(private_dir: Path, out_dir: Path) -> bool:
+    """Optionally write normalized/private outputs back to Drive.
+
+    Service accounts on regular My Drive do not have independent storage quota,
+    so creating new files can fail with storageQuotaExceeded. The safe default is
+    therefore read-only Drive access: inputs are downloaded, analysis runs in the
+    ephemeral GitHub Actions workspace, and no portfolio data is persisted to the
+    public repository or Actions artifacts.
+
+    Set PORTFOLIO_DRIVE_WRITEBACK=true only when the configured Drive backend can
+    accept service-account writes (for example, a Shared Drive or another setup
+    that provides writable quota).
+    """
+    if not _truthy_env("PORTFOLIO_DRIVE_WRITEBACK"):
+        return False
+
+    upload_or_replace(private_dir / "portfolio_latest.csv", "portfolio_latest.csv", "text/csv")
+    upload_or_replace(
+        private_dir / "portfolio_import_latest.json",
+        "portfolio_import_latest.json",
+        "application/json",
+    )
+    upload_or_replace(
+        out_dir / "portfolio_risk_latest.json",
+        "portfolio_risk_latest.json",
+        "application/json",
+    )
+    upload_or_replace(
+        out_dir / "portfolio_risk_latest.md",
+        "portfolio_risk_latest.md",
+        "text/markdown",
+    )
+    return True
+
+
 def main() -> None:
     private_dir = Path(os.getenv("PRIVATE_WORKDIR", ".private"))
     private_dir.mkdir(parents=True, exist_ok=True)
 
     local_portfolio, manifest = _build_latest_portfolio(private_dir)
-    # Save the normalized input back to Drive so the latest machine-readable
-    # portfolio is visible there, while never committing it to the public repo.
-    upload_or_replace(local_portfolio, "portfolio_latest.csv", "text/csv")
-    upload_or_replace(private_dir / "portfolio_import_latest.json", "portfolio_import_latest.json", "application/json")
 
     os.environ["PORTFOLIO_PATH"] = str(local_portfolio)
     os.environ.setdefault("PRIVATE_OUTPUT_DIR", str(private_dir / "portfolio_risk"))
     run_risk()
 
     out_dir = Path(os.environ["PRIVATE_OUTPUT_DIR"])
-    upload_or_replace(out_dir / "portfolio_risk_latest.json", "portfolio_risk_latest.json", "application/json")
-    upload_or_replace(out_dir / "portfolio_risk_latest.md", "portfolio_risk_latest.md", "text/markdown")
-    print(json.dumps({"status": "ok", "portfolio_import": manifest}, ensure_ascii=False, indent=2))
+    writeback = _maybe_write_back_to_drive(private_dir, out_dir)
+
+    # Do not print holdings or detailed risk output into Actions logs. Only emit
+    # a compact execution manifest; the runner workspace is ephemeral.
+    print(
+        json.dumps(
+            {
+                "status": "ok",
+                "source_file": manifest.get("source_file"),
+                "rows_kept": manifest.get("rows_kept"),
+                "weight_sum": manifest.get("weight_sum"),
+                "drive_writeback": writeback,
+                "privacy_mode": "ephemeral_runner_only" if not writeback else "private_drive_writeback",
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":
