@@ -1,0 +1,4 @@
+{
+  "status": "private_data_required",
+  "rule": "Set ALLOW_REPO_PORTFOLIO=1 only when a safe portfolio_latest.csv is supplied."
+}

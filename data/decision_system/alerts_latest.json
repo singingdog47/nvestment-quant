@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-08-23T02:44:50.888496+00:00",
+  "alerts": [
+    {
+      "severity": "WATCH",
+      "type": "rank_jump",
+      "ticker": "ABUS",
+      "message": "rank_change=25.0"
+    }
+  ]
+}
