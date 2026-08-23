@@ -1,0 +1,24 @@
+{
+  "change_gate": {
+    "eligible_for_model_change_review": false,
+    "matured_observations": 0,
+    "minimum_required": 60,
+    "rule": "Even when eligible, factor weights must not change automatically; require explicit human review, robustness checks, and a version bump."
+  },
+  "findings": [],
+  "generated_at": "2026-08-23T14:13:27+00:00",
+  "known_limits": [
+    "Current outcome history evaluates absolute returns; benchmark-relative excess-return attribution is not yet stored in outcomes.csv.",
+    "Small samples can create false patterns; segment findings are suppressed below the minimum sample threshold.",
+    "The engine proposes review targets only and never changes weights or places orders automatically."
+  ],
+  "rows": 0,
+  "segments": {
+    "action": {},
+    "horizon": {},
+    "model_version": {},
+    "rank_bucket": {},
+    "regime": {}
+  },
+  "version": "2.0.0"
+}
