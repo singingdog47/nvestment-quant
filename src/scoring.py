@@ -113,9 +113,11 @@ def add_final_scores(frame: pd.DataFrame) -> pd.DataFrame:
         ascending=False, method="first", na_option="bottom"
     )
     result["research_status"] = "research_candidate"
+    result.loc[result["total_score"].isna(), "research_status"] = "unscored_insufficient_coverage"
     result.loc[result["is_mortgage_reit"], "research_status"] = "watch_only_mreit"
     result.loc[
-        (~result["is_mortgage_reit"])
+        result["total_score"].notna()
+        & (~result["is_mortgage_reit"])
         & result["theme"].isin(CONCENTRATION_CAPPED_THEMES)
         & result["theme_rank"].gt(SETTINGS.max_per_theme),
         "research_status",
