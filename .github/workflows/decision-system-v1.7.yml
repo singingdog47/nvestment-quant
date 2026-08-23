@@ -2,6 +2,15 @@ name: Decision Validation System v1.7
 
 on:
   workflow_dispatch:
+    inputs:
+      human_action:
+        description: "Optional actual action: BUY / WAIT / REDUCE / TAKE_PROFIT / OTHER"
+        required: false
+        default: "NOT_RECORDED"
+      human_action_note:
+        description: "Optional note about the actual human decision"
+        required: false
+        default: ""
   schedule:
     # Run after the morning and post-close intelligence refreshes.
     # 07:45 JST weekdays (22:45 UTC previous day)
@@ -23,6 +32,8 @@ jobs:
     env:
       # Private portfolio information must not be inferred from the public repo.
       ALLOW_REPO_PORTFOLIO: '0'
+      HUMAN_ACTION: ${{ inputs.human_action || 'NOT_RECORDED' }}
+      HUMAN_ACTION_NOTE: ${{ inputs.human_action_note || '' }}
 
     steps:
       - name: Checkout repository
