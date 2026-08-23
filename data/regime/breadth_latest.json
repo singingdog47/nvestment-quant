@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "fetched_at": "2026-08-23T13:16:25+00:00",
+  "fetched_at": "2026-08-23T22:28:19+00:00",
   "source": "data/screening_full.csv.gz",
   "n": 9584,
   "pct_positive_return_1m": 0.5980188896567611,

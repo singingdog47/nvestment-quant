@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-23T02:29:50.368137+00:00
+- Data retrieved (UTC): 2026-08-23T22:23:51.893740+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 

@@ -5,7 +5,7 @@ Generated quality score: **0.325** / actionable=False
 ## Market Regime v1.5
 {
   "version": "1.5.0",
-  "generated_at": "2026-08-23T13:11:59+00:00",
+  "generated_at": "2026-08-23T22:23:53+00:00",
   "regime_label": "CONSTRUCTIVE",
   "regime_score": 67.84,
   "confidence": 1.0,
@@ -56,7 +56,7 @@ Generated quality score: **0.325** / actionable=False
 
 ## Integration health
 {
-  "generated_at": "2026-08-23T13:16:43+00:00",
+  "generated_at": "2026-08-23T22:28:36+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -109,7 +109,7 @@ Generated quality score: **0.325** / actionable=False
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-23T02:29:50.368137+00:00
+- Data retrieved (UTC): 2026-08-23T22:23:51.893740+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
