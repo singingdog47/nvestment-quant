@@ -2,9 +2,9 @@ name: Decision Validation v1.7
 
 on:
   workflow_dispatch:
-  schedule:
-    # 17:20 JST weekdays, after the 16:30 JST intelligence refresh.
-    - cron: '20 8 * * 1-5'
+
+# Superseded for scheduled production use by Validation Learning v2.1 inside
+# post-close-pipeline-v2.2.yml. Kept manual-only for diagnostics/backward checks.
 
 permissions:
   contents: write
@@ -34,27 +34,22 @@ jobs:
           python -m pip install -r requirements-intelligence.txt
           python -m pip install pytest
 
-      - name: Run decision validation v1.7
+      - name: Run decision validation v1.7 compatibility path
         env:
           PYTHONPATH: src
-        run: |
-          python src/run_validation.py
+        run: python src/run_validation.py
 
       - name: Run validation tests
-        run: |
-          python -m pytest -q tests/test_decision_log.py
+        run: python -m pytest -q tests/test_decision_log.py
 
       - name: Commit public-safe validation outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add -- data/validation
-
           if git diff --cached --quiet; then
             echo "No validation output changes to commit."
             exit 0
           fi
-
-          git commit -m "data: capture v1.7 decision validation"
+          git commit -m "data: capture manual decision validation"
           git push

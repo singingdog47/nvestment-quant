@@ -2,9 +2,10 @@ name: Validation Learning v2.1
 
 on:
   workflow_dispatch:
-  schedule:
-    # 17:35 JST weekdays, after decision validation.
-    - cron: '35 8 * * 1-5'
+
+# Scheduled production execution moved to post-close-pipeline-v2.2.yml so
+# decision capture, outcome evaluation, learning, and private risk analysis all
+# share one deterministic post-close sequence. This remains manual-only.
 
 permissions:
   contents: write

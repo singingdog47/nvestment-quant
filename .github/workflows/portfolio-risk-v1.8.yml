@@ -2,9 +2,10 @@ name: Portfolio Risk Engine v1.8
 
 on:
   workflow_dispatch:
-  schedule:
-    # 17:05 JST weekdays, after post-close intelligence/decision refresh.
-    - cron: '5 8 * * 1-5'
+
+# Scheduled private portfolio-risk execution moved to
+# post-close-pipeline-v2.2.yml so it uses the same-day screening/intelligence
+# snapshot in a deterministic sequence. This workflow remains manual-only.
 
 permissions:
   contents: read
@@ -24,6 +25,7 @@ jobs:
       PORTFOLIO_DRIVE_WRITEBACK: 'false'
       PRIVATE_WORKDIR: .private
       PRIVATE_OUTPUT_DIR: .private/portfolio_risk
+      SCREEN_PATH: data/screening_latest.csv
       RISK_LOOKBACK_DAYS: '400'
       RISK_MIN_OBSERVATIONS: '120'
       RISK_VAR_CONFIDENCE: '0.95'

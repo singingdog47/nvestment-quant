@@ -11,20 +11,10 @@ on:
         description: "Optional note about the actual human decision"
         required: false
         default: ""
-  push:
-    branches: [main]
-    paths:
-      - 'src/decision_system.py'
-      - 'src/run_decision_system.py'
-      - 'tests/test_decision_system.py'
-      - '.github/workflows/decision-system-v1.7.yml'
-      - 'README_UPGRADE_v1.6_to_v1.7.md'
-  schedule:
-    # Run after the morning and post-close intelligence refreshes.
-    # 07:45 JST weekdays (22:45 UTC previous day)
-    - cron: '45 22 * * 0-4'
-    # 16:45 JST weekdays
-    - cron: '45 7 * * 1-5'
+
+# Legacy/manual diagnostic workflow. Scheduled production decision capture and
+# outcome learning are now handled by post-close-pipeline-v2.2.yml via
+# src/run_validation.py. Keeping this workflow manual avoids duplicate logs.
 
 permissions:
   contents: write
@@ -38,7 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      # Private portfolio information must not be inferred from the public repo.
       ALLOW_REPO_PORTFOLIO: '0'
       HUMAN_ACTION: ${{ inputs.human_action || 'NOT_RECORDED' }}
       HUMAN_ACTION_NOTE: ${{ inputs.human_action_note || '' }}
@@ -61,7 +50,7 @@ jobs:
       - name: Run tests
         run: python -m pytest -q tests
 
-      - name: Run Decision Validation System v1.7
+      - name: Run legacy Decision Validation System v1.7
         run: python src/run_decision_system.py
 
       - name: Upload validation artifacts
@@ -86,5 +75,5 @@ jobs:
             echo "No v1.7 output changes to commit."
             exit 0
           fi
-          git commit -m "data: refresh v1.7 decision validation"
+          git commit -m "data: refresh legacy v1.7 decision validation"
           git push
