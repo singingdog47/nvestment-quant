@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .release_status import DEVELOPMENT_STATUS, ROLLBACK_READY, STABLE_FALLBACK_BRANCH, SYSTEM_VERSION
+from release_status import DEVELOPMENT_STATUS, ROLLBACK_READY, STABLE_FALLBACK_BRANCH, SYSTEM_VERSION
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -54,7 +54,6 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
     alerts = _load_json(root / "data/alerts/alerts_latest.json")
     learning = _load_json(root / "data/validation/learning_latest.json")
     rows = _screening_rows(root / "data/screening_latest.csv")
-
     quality = ctx.get("quality") or {}
     policy = ctx.get("policy_guardrails") or {}
     gate = str(policy.get("decision_gate") or "UNKNOWN")
@@ -67,15 +66,9 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
     else:
         priority = "SELECTIVE REVIEW OF TOP CANDIDATES"
 
-    lines = [
-        f"# Investment Quant Daily Integrated Report {SYSTEM_VERSION}", "", f"Generated (UTC): {now}", "",
-        "## 1. 結論 / 今日の優先アクション", f"- **{priority}**", f"- Decision gate: `{gate}`", f"- Data actionable: `{actionable}`", "",
-        "## 2. 市場レジーム", f"- Regime: **{regime.get('regime_label', 'unknown')}**", f"- Score: {regime.get('regime_score', 'n/a')}", f"- Confidence: {regime.get('confidence', 'n/a')}", f"- VIX: {(regime.get('evidence') or {}).get('vix', 'n/a')}", f"- Flags: {', '.join(regime.get('regime_flags') or []) or 'none'}", "",
-        "## 3. 例外検知 / アラート", f"- Highest severity: **{highest}**", f"- Counts: {alerts.get('counts', {})}",
-    ]
+    lines = [f"# Investment Quant Daily Integrated Report {SYSTEM_VERSION}", "", f"Generated (UTC): {now}", "", "## 1. 結論 / 今日の優先アクション", f"- **{priority}**", f"- Decision gate: `{gate}`", f"- Data actionable: `{actionable}`", "", "## 2. 市場レジーム", f"- Regime: **{regime.get('regime_label', 'unknown')}**", f"- Score: {regime.get('regime_score', 'n/a')}", f"- Confidence: {regime.get('confidence', 'n/a')}", f"- VIX: {(regime.get('evidence') or {}).get('vix', 'n/a')}", f"- Flags: {', '.join(regime.get('regime_flags') or []) or 'none'}", "", "## 3. 例外検知 / アラート", f"- Highest severity: **{highest}**", f"- Counts: {alerts.get('counts', {})}"]
     for a in (alerts.get("alerts") or [])[:8]:
         lines.append(f"- [{a.get('severity')}] {a.get('category')} / {a.get('title')}")
-
     lines += ["", "## 4. スクリーニング上位候補", "", "### 日本株（市場内順位）"]
     jp = _leaders(rows, "JP")
     lines += [f"- {i}. {_candidate_label(r)} {r.get('ticker') or r.get('code') or ''} | market_rank={r.get('market_rank','n/a')} | raw={r.get('total_score','n/a')} | cross_pct={r.get('cross_market_score','n/a')}" for i, r in enumerate(jp, 1)] or ["- データ未取得"]
@@ -85,25 +78,18 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
     lines += ["", "### 市場横断リサーチ候補（市場内パーセンタイル比較）"]
     cross = _cross_market(rows)
     lines += [f"- {i}. [{r.get('market','?')}] {_candidate_label(r)} | cross_pct={r.get('cross_market_score','n/a')} | raw={r.get('total_score','n/a')}" for i, r in enumerate(cross, 1)] or ["- データ未取得"]
-    lines += ["- 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。"]
-
+    lines.append("- 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。")
     change = learning.get("change_gate") or {}
     lines += ["", "## 5. 過去判断の検証 / 学習", f"- Matured observations: {change.get('matured_observations', 0)}", f"- Eligible for model-change review: {change.get('eligible_for_model_change_review', False)}"]
     for f in (learning.get("findings") or [])[:6]:
         lines.append(f"- [{f.get('severity')}] {f.get('dimension')} / {f.get('segment')}: {f.get('message')}")
-
     lines += ["", "## 6. データ品質 / 反証", f"- Quality score: {quality.get('quality_score', 'n/a')}", f"- Primary source health (configured feeds only): {quality.get('primary_source_health', 'n/a')}", f"- Primary fundamental coverage: {quality.get('primary_fundamental_coverage', quality.get('fundamental_coverage', 'n/a'))}", f"- Secondary fundamental coverage: {quality.get('secondary_fundamental_coverage', 'n/a')}", f"- Effective fundamental coverage: {quality.get('effective_fundamental_coverage', 'n/a')}", f"- Fundamental evidence tier: {quality.get('fundamental_evidence_tier', 'n/a')}"]
     optional = quality.get("optional_primary_sources_unconfigured") or quality.get("missing_primary_configuration") or []
     if optional:
         lines.append("- Optional primary feeds not configured (confidence booster; not a hard decision blocker):")
         for item in optional:
             lines.append(f"  - {item.get('source')}: {item.get('reason')}")
-    lines += ["- Missing data must not be converted into unsupported buy/sell conclusions.", "",
-        "## 7. ポートフォリオ", "- 公開版には保有情報・私有リスク値を保存しません。", "- 同一実行内で private portfolio risk engine が成功した場合、私有版レポートに統合します。", "",
-        "## 8. 開発状況 / 復旧準備", f"- System version: {SYSTEM_VERSION}", f"- Development: {DEVELOPMENT_STATUS}", f"- Stable fallback branch: `{STABLE_FALLBACK_BRANCH}`", f"- Rollback ready: `{ROLLBACK_READY}`", "- 新版で障害が起きても、固定安定版から公開レポートを生成できる経路を維持します。", "",
-        "## 9. ガードレール", "- このレポートは売買指示ではなく、意思決定支援です。", "- 自動発注・自動因子ウェイト変更は行いません。", "- 『何もしない / 待つ』を常に有効な選択肢として扱います。",
-    ]
-
+    lines += ["- Missing data must not be converted into unsupported buy/sell conclusions.", "", "## 7. ポートフォリオ", "- 公開版には保有情報・私有リスク値を保存しません。", "- 同一実行内で private portfolio risk engine が成功した場合、私有版レポートに統合します。", "", "## 8. 開発状況 / 復旧準備", f"- System version: {SYSTEM_VERSION}", f"- Development: {DEVELOPMENT_STATUS}", f"- Stable fallback branch: `{STABLE_FALLBACK_BRANCH}`", f"- Rollback ready: `{ROLLBACK_READY}`", "- 新版で障害が起きても、固定安定版から公開レポートを生成できる経路を維持します。", "", "## 9. ガードレール", "- このレポートは売買指示ではなく、意思決定支援です。", "- 自動発注・自動因子ウェイト変更は行いません。", "- 『何もしない / 待つ』を常に有効な選択肢として扱います。"]
     public_path = root / "data/integrated_report_latest.md"
     public_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     private_risk = root / ".private/portfolio_risk/portfolio_risk_latest.md"
@@ -113,8 +99,10 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
         private_path = root / ".private/integrated_report_private_latest.md"
         private_path.parent.mkdir(parents=True, exist_ok=True)
         private_lines = lines + ["", "# PRIVATE PORTFOLIO APPENDIX", ""]
-        if private_risk.exists(): private_lines += [private_risk.read_text(encoding="utf-8"), ""]
-        if private_alerts.exists(): private_lines += [private_alerts.read_text(encoding="utf-8"), ""]
+        if private_risk.exists():
+            private_lines += [private_risk.read_text(encoding="utf-8"), ""]
+        if private_alerts.exists():
+            private_lines += [private_alerts.read_text(encoding="utf-8"), ""]
         private_lines += ["PRIVATE: never commit or upload to public Actions artifacts."]
         private_path.write_text("\n".join(private_lines), encoding="utf-8")
     return public_path, private_path
