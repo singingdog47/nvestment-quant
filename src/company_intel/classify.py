@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 def classify_event(title: str) -> tuple[str,str]:
     t=(title or "").lower()
     rules=[
@@ -15,3 +16,24 @@ def classify_event(title: str) -> tuple[str,str]:
     for keys,typ,sev in rules:
         if any(k in t for k in keys): return typ,sev
     return "disclosure","normal"
+
+
+def is_low_value_news(title: str, source: str = "") -> bool:
+    """Return True for navigation/quote pages that are not investable events.
+
+    The filter is intentionally narrow: it targets page-title patterns that are
+    overwhelmingly static quote/navigation pages, while leaving ordinary news
+    containing words such as 株価 untouched.
+    """
+    t=(title or "").lower()
+    s=(source or "").lower()
+    yahoo=("yahoo!ファイナンス" in t or "yahoo finance" in t or "yahoo" in s)
+    if yahoo and any(k in t for k in (
+        "株価・株式情報", "夜間pts含む", "掲示板", "時系列", "チャート", "企業情報",
+    )):
+        return True
+    if any(k in t for k in (
+        "リアルタイム株価", "株価情報 - yahoo", "stock quote - yahoo",
+    )):
+        return True
+    return False
