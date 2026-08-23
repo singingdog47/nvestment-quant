@@ -21,6 +21,7 @@ jobs:
       GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
       GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
       PORTFOLIO_DRIVE_FILENAME: portfolio_latest.csv
+      PORTFOLIO_DRIVE_WRITEBACK: 'false'
       PRIVATE_WORKDIR: .private
       PRIVATE_OUTPUT_DIR: .private/portfolio_risk
       RISK_LOOKBACK_DAYS: '400'
@@ -63,6 +64,6 @@ jobs:
         if: steps.private_config.outputs.configured == 'true'
         run: python src/run_portfolio_risk.py
 
-      # Privacy rule: never upload portfolio inputs/results as Actions artifacts
-      # and never commit them to this public repository. Results are written
-      # directly back to the configured private Google Drive folder.
+      # Privacy rule: Drive is input-only by default. Portfolio inputs/results
+      # stay only in the ephemeral runner workspace. Never upload them as Actions
+      # artifacts and never commit them to this public repository.
