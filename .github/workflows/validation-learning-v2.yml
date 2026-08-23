@@ -1,4 +1,4 @@
-name: Validation Learning v2.0
+name: Validation Learning v2.1
 
 on:
   workflow_dispatch:
@@ -33,7 +33,7 @@ jobs:
           python -m pip install -r requirements-intelligence.txt
           python -m pip install pytest
 
-      - name: Run validation and learning
+      - name: Run validation and benchmark-relative learning
         env:
           PYTHONPATH: src
         run: python src/run_validation.py
@@ -41,7 +41,7 @@ jobs:
       - name: Run validation-learning tests
         env:
           PYTHONPATH: src
-        run: python -m pytest -q tests/test_decision_log.py tests/test_validation_learning.py
+        run: python -m pytest -q tests/test_decision_log.py tests/test_validation_learning.py tests/test_benchmark_validation.py
 
       - name: Commit public-safe validation outputs
         run: |
@@ -52,5 +52,5 @@ jobs:
             echo "No validation-learning output changes to commit."
             exit 0
           fi
-          git commit -m "data: refresh validation learning v2"
+          git commit -m "data: refresh benchmark-relative validation learning v2.1"
           git push
