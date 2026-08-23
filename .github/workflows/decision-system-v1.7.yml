@@ -1,0 +1,71 @@
+name: Decision Validation System v1.7
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run after the morning and post-close intelligence refreshes.
+    # 07:45 JST weekdays (22:45 UTC previous day)
+    - cron: '45 22 * * 0-4'
+    # 16:45 JST weekdays
+    - cron: '45 7 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-output-writer
+  cancel-in-progress: false
+
+jobs:
+  validate-decisions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # Private portfolio information must not be inferred from the public repo.
+      ALLOW_REPO_PORTFOLIO: '0'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Run tests
+        run: python -m pytest -q tests
+
+      - name: Run Decision Validation System v1.7
+        run: python src/run_decision_system.py
+
+      - name: Upload validation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: decision-validation-v1.7
+          path: |
+            data/decision_system
+            data/decision_log
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Commit public-safe validation outputs
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add -- data/decision_system data/decision_log
+          if git diff --cached --quiet; then
+            echo "No v1.7 output changes to commit."
+            exit 0
+          fi
+          git commit -m "data: refresh v1.7 decision validation"
+          git push
