@@ -1,0 +1,72 @@
+name: Stable Report Fallback v2.4
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_tickers:
+        description: "Fallback動作確認用。0=全銘柄"
+        required: false
+        default: "0"
+
+permissions:
+  contents: read
+
+jobs:
+  stable-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      MAX_TICKERS: ${{ inputs.max_tickers || '0' }}
+      OUTPUT_TOP_N: '100'
+      PYTHONPATH: src
+      EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      ALLOW_REPO_PORTFOLIO: '0'
+
+    steps:
+      - name: Checkout pinned stable report version
+        uses: actions/checkout@v4
+        with:
+          ref: stable-report-v2.4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install stable dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install -r requirements-regime.txt
+          python -m pip install -r requirements-intelligence.txt
+          python -m pip install pytest
+
+      - name: Verify pinned version
+        run: python -m pytest -q tests
+
+      - name: Generate stable public report
+        run: |
+          python -m src.main
+          python tools/preflight_v1_3.py --ci
+          python src/run_market_regime.py
+          python src/run_company_intel.py
+          python src/run_alerts.py
+          python tools/verify_outputs.py
+          python src/run_validation.py
+          python src/run_final_report.py
+
+      - name: Upload stable public report only
+        uses: actions/upload-artifact@v4
+        with:
+          name: stable-public-report-v2.4
+          path: |
+            data/integrated_report_latest.md
+            data/daily_report.md
+            data/quality_report.json
+          if-no-files-found: error
+          retention-days: 14
+
+      # This fallback never reads Google Drive portfolio data and never uploads
+      # private portfolio outputs. It is intentionally public-report-only.
