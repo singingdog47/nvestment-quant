@@ -13,6 +13,17 @@ HORIZONS = {
     "3m": 90,
 }
 
+BENCHMARKS = {
+    "JP": "1306.T",  # TOPIX-linked ETF proxy
+    "JAPAN": "1306.T",
+    "TSE": "1306.T",
+    "TOKYO": "1306.T",
+    "US": "SPY",     # S&P 500 ETF proxy
+    "NASDAQ": "SPY",
+    "NYSE": "SPY",
+    "AMEX": "SPY",
+}
+
 
 def _parse_dt(value: str) -> datetime:
     dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
@@ -32,13 +43,22 @@ def _safe_float(value: Any) -> float | None:
 
 def _market_symbol(item: dict[str, Any]) -> str | None:
     ticker = item.get("ticker")
-    if ticker:
-        return str(ticker)
     code = item.get("code")
     market = str(item.get("market") or "").upper()
-    if code and market == "JP":
+    if code and (market in {"JP", "JAPAN", "TSE", "TOKYO"} or (str(code).isdigit() and len(str(code)) == 4)):
         return f"{code}.T"
+    if ticker:
+        return str(ticker)
     return str(code) if code else None
+
+
+def _benchmark_symbol(item: dict[str, Any], symbol: str | None = None) -> str | None:
+    market = str(item.get("market") or "").upper()
+    if market in BENCHMARKS:
+        return BENCHMARKS[market]
+    if symbol and symbol.endswith(".T"):
+        return "1306.T"
+    return None
 
 
 def _download_prices(symbol: str, start: datetime, end: datetime):
@@ -69,7 +89,6 @@ def _close_series(df):
     if close is None:
         return None
     try:
-        # yfinance may return a one-column DataFrame for recent versions.
         if getattr(close, "ndim", 1) == 2:
             close = close.iloc[:, 0]
         return close.dropna()
@@ -79,7 +98,6 @@ def _close_series(df):
 
 def _outcome_for_symbol(symbol: str, captured_at: datetime, days: int) -> dict[str, Any] | None:
     target = captured_at + timedelta(days=days)
-    # Calendar horizons need a small trading-day buffer around the target.
     df = _download_prices(symbol, captured_at - timedelta(days=3), target + timedelta(days=8))
     close = _close_series(df)
     if close is None or len(close) < 2:
@@ -111,12 +129,18 @@ def _outcome_for_symbol(symbol: str, captured_at: datetime, days: int) -> dict[s
     }
 
 
-def _append_summary(root: Path, rows: list[dict[str, Any]]) -> None:
-    if not rows:
-        return
-    out = root / "data/validation/outcomes.csv"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    fields = [
+def _benchmark_result(item: dict[str, Any], symbol: str, captured_at: datetime, days: int) -> dict[str, Any]:
+    benchmark_symbol = _benchmark_symbol(item, symbol)
+    if not benchmark_symbol:
+        return {"benchmark_symbol": None, "benchmark_return": None, "excess_return": None}
+    result = _outcome_for_symbol(benchmark_symbol, captured_at, days)
+    if not result:
+        return {"benchmark_symbol": benchmark_symbol, "benchmark_return": None, "excess_return": None}
+    return {"benchmark_symbol": benchmark_symbol, "benchmark_return": result["return"]}
+
+
+def _summary_fields() -> list[str]:
+    return [
         "decision_id",
         "captured_at",
         "market_regime",
@@ -125,28 +149,42 @@ def _append_summary(root: Path, rows: list[dict[str, Any]]) -> None:
         "symbol",
         "rank",
         "return",
+        "benchmark_symbol",
+        "benchmark_return",
+        "excess_return",
         "max_up",
         "max_down",
         "evaluated_price_date",
         "model_version",
     ]
+
+
+def _append_summary(root: Path, rows: list[dict[str, Any]]) -> None:
+    if not rows:
+        return
+    out = root / "data/validation/outcomes.csv"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    fields = _summary_fields()
+    existing: list[dict[str, Any]] = []
     existing_keys: set[tuple[str, str, str]] = set()
     if out.exists():
         with out.open("r", encoding="utf-8-sig", newline="") as f:
-            for row in csv.DictReader(f):
-                existing_keys.add((row.get("decision_id", ""), row.get("horizon", ""), row.get("symbol", "")))
+            existing = list(csv.DictReader(f))
+        for row in existing:
+            existing_keys.add((row.get("decision_id", ""), row.get("horizon", ""), row.get("symbol", "")))
     new_rows = [
         r for r in rows
         if (str(r["decision_id"]), str(r["horizon"]), str(r["symbol"])) not in existing_keys
     ]
-    if not new_rows:
+    if not new_rows and out.exists() and all(x in (existing[0].keys() if existing else fields) for x in ("benchmark_symbol", "excess_return")):
         return
-    write_header = not out.exists()
-    with out.open("a", encoding="utf-8", newline="") as f:
+
+    # Rewrite the file using the new schema so pre-v2.1 rows remain readable with blank benchmark fields.
+    merged = existing + new_rows
+    with out.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
-        if write_header:
-            writer.writeheader()
-        writer.writerows(new_rows)
+        writer.writeheader()
+        writer.writerows(merged)
 
 
 def evaluate_due_outcomes(root: str | Path = ".", now: datetime | None = None) -> int:
@@ -176,6 +214,11 @@ def evaluate_due_outcomes(root: str | Path = ".", now: datetime | None = None) -
                 result = _outcome_for_symbol(symbol, captured, days)
                 if not result:
                     continue
+                bench = _benchmark_result(item, symbol, captured, days)
+                benchmark_return = _safe_float(bench.get("benchmark_return"))
+                excess_return = result["return"] - benchmark_return if benchmark_return is not None else None
+                result.update(bench)
+                result["excess_return"] = excess_return
                 result["rank"] = item.get("rank")
                 per_symbol.append(result)
                 summary_rows.append(
@@ -188,6 +231,9 @@ def evaluate_due_outcomes(root: str | Path = ".", now: datetime | None = None) -
                         "symbol": symbol,
                         "rank": item.get("rank"),
                         "return": result["return"],
+                        "benchmark_symbol": bench.get("benchmark_symbol"),
+                        "benchmark_return": benchmark_return,
+                        "excess_return": excess_return,
                         "max_up": result["max_up"],
                         "max_down": result["max_down"],
                         "evaluated_price_date": result["evaluated_price_date"],
@@ -196,10 +242,15 @@ def evaluate_due_outcomes(root: str | Path = ".", now: datetime | None = None) -
                 )
             if per_symbol:
                 avg_return = sum(r["return"] for r in per_symbol) / len(per_symbol)
+                benchmark_values = [r.get("benchmark_return") for r in per_symbol if r.get("benchmark_return") is not None]
+                excess_values = [r.get("excess_return") for r in per_symbol if r.get("excess_return") is not None]
                 outcomes[horizon] = {
                     "evaluated_at": now.isoformat(timespec="seconds"),
                     "n": len(per_symbol),
                     "average_return": avg_return,
+                    "benchmark_coverage_n": len(excess_values),
+                    "average_benchmark_return": (sum(benchmark_values) / len(benchmark_values)) if benchmark_values else None,
+                    "average_excess_return": (sum(excess_values) / len(excess_values)) if excess_values else None,
                     "symbols": per_symbol,
                 }
                 changed = True
