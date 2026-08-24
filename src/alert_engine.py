@@ -81,6 +81,7 @@ def detect_public_alerts(
 
     evidence = regime.get("evidence") or {}
     vix = _float(evidence.get("vix"))
+    treasury_vol_percentile = _float(evidence.get("treasury_volatility_percentile_rank"))
     previous_vix = _float(previous_state.get("vix"))
     if vix is not None:
         if vix >= vix_critical:
@@ -102,6 +103,12 @@ def detect_public_alerts(
                 _add(alerts, "WATCH", "VOLATILITY", "VIX_JUMP", "VIX rose quickly",
                      "VIX rose at least 25% from the previous stored observation.", jump, 0.25,
                      source="alert_state_latest.json")
+
+    if treasury_vol_percentile is not None and treasury_vol_percentile >= 0.90:
+        _add(alerts, "WARNING", "VOLATILITY", "TREASURY_VOLATILITY_SHOCK",
+             "Treasury yield volatility is unusually high",
+             "The official-Treasury realized-yield-volatility proxy is at or above its 90th percentile. It is not ICE MOVE.",
+             treasury_vol_percentile, 0.90, source="market_regime_latest.json")
 
     if bool(regime.get("stress_flag")):
         _add(alerts, "WARNING", "REGIME", "STRESS_FLAG", "Market stress flag active",

@@ -161,6 +161,8 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
 
     score = _number(regime.get("regime_score"))
     vix = _number(evidence.get("vix"))
+    treasury_vol = _number(evidence.get("treasury_volatility_proxy"))
+    treasury_vol_percentile = _number(evidence.get("treasury_volatility_percentile_rank"))
     liquidity = _number(components.get("liquidity"))
     gate = str(policy.get("decision_gate") or "UNKNOWN")
     actionable = bool(quality.get("actionable"))
@@ -186,6 +188,13 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
         interpretation = "市場の恐怖感が高く、通常より値動きが荒い状態です。"
     else:
         interpretation = "市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。"
+
+    if treasury_vol_percentile is not None and treasury_vol_percentile >= 0.90:
+        treasury_story = f"米国債金利の実現ボラは年率{treasury_vol:.1f}bp、過去観測の上位{(1-treasury_vol_percentile)*100:.0f}%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。" if treasury_vol is not None else "米国債金利の実現ボラが過去観測の90パーセンタイル以上です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。"
+    elif treasury_vol_percentile is not None:
+        treasury_story = f"米国債金利の実現ボラproxyは{treasury_vol_percentile*100:.0f}パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。"
+    else:
+        treasury_story = "米国債金利ボラproxyは未取得です。欠損を推定で補完しません。"
 
     alerts_lines: list[str] = []
     for alert in (alerts.get("alerts") or [])[:4]:
@@ -226,6 +235,7 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
         "## 今の相場を人間の言葉で",
         "",
         f"{theme_story}{interpretation}",
+        treasury_story,
         "同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。",
         "",
         "## 今日の注意点",

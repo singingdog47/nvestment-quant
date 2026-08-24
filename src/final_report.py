@@ -66,7 +66,8 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
     else:
         priority = "SELECTIVE REVIEW OF TOP CANDIDATES"
 
-    lines = [f"# Investment Quant Daily Integrated Report {SYSTEM_VERSION}", "", f"Generated (UTC): {now}", "", "## 1. 結論 / 今日の優先アクション", f"- **{priority}**", f"- Decision gate: `{gate}`", f"- Data actionable: `{actionable}`", "", "## 2. 市場レジーム", f"- Regime: **{regime.get('regime_label', 'unknown')}**", f"- Score: {regime.get('regime_score', 'n/a')}", f"- Confidence: {regime.get('confidence', 'n/a')}", f"- VIX: {(regime.get('evidence') or {}).get('vix', 'n/a')}", f"- Flags: {', '.join(regime.get('regime_flags') or []) or 'none'}", "", "## 3. 例外検知 / アラート", f"- Highest severity: **{highest}**", f"- Counts: {alerts.get('counts', {})}"]
+    evidence = regime.get("evidence") or {}
+    lines = [f"# Investment Quant Daily Integrated Report {SYSTEM_VERSION}", "", f"Generated (UTC): {now}", "", "## 1. 結論 / 今日の優先アクション", f"- **{priority}**", f"- Decision gate: `{gate}`", f"- Data actionable: `{actionable}`", "", "## 2. 市場レジーム", f"- Regime: **{regime.get('regime_label', 'unknown')}**", f"- Score: {regime.get('regime_score', 'n/a')}", f"- Confidence: {regime.get('confidence', 'n/a')}", f"- VIX: {evidence.get('vix', 'n/a')}", f"- Treasury realized-vol proxy (not ICE MOVE): {evidence.get('treasury_volatility_proxy', 'n/a')} bps annualized; percentile={evidence.get('treasury_volatility_percentile_rank', 'n/a')}", f"- Flags: {', '.join(regime.get('regime_flags') or []) or 'none'}", "", "## 3. 例外検知 / アラート", f"- Highest severity: **{highest}**", f"- Counts: {alerts.get('counts', {})}"]
     for a in (alerts.get("alerts") or [])[:8]:
         lines.append(f"- [{a.get('severity')}] {a.get('category')} / {a.get('title')}")
     lines += ["", "## 4. スクリーニング上位候補", "", "### 日本株（市場内順位）"]
