@@ -2,7 +2,18 @@ from __future__ import annotations
 import json, os
 from pathlib import Path
 
+
+def _writeback_enabled() -> bool:
+    return os.getenv("INTELLIGENCE_DRIVE_WRITEBACK", "false").strip().lower() in {"1", "true", "yes", "on"}
+
+
 def publish_directory(local_dir="data/intelligence"):
+    # Portfolio input uses Drive independently. Intelligence publication is a
+    # separate, optional write path and must be explicitly enabled so a normal
+    # read-only portfolio configuration never produces Service Account quota errors.
+    if not _writeback_enabled():
+        return {"status": "skipped", "reason": "INTELLIGENCE_DRIVE_WRITEBACK not enabled"}
+
     raw=os.getenv("GDRIVE_SERVICE_ACCOUNT_JSON","") or os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON","")
     folder=os.getenv("GDRIVE_FOLDER_ID","") or os.getenv("GOOGLE_DRIVE_FOLDER_ID","")
     if not raw or not folder: return {"status":"skipped","reason":"Drive secrets not set"}
