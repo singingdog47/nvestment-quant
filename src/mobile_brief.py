@@ -86,13 +86,41 @@ def _regime_delta(root: Path, current: dict[str, Any]) -> tuple[dict[str, float]
     return delta, summary
 
 
-def _theme_summary(rows: list[dict[str, str]]) -> tuple[dict[str, Counter[str]], str]:
+def _daily_theme_counts(root: Path) -> dict[str, Counter[str]]:
+    path = root / "data/daily_report.md"
+    if not path.exists():
+        return {}
+    counts: dict[str, Counter[str]] = {}
+    in_table = False
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        if line.strip() == "## Theme distribution in unfiltered score leaders":
+            in_table = True
+            continue
+        if in_table and line.startswith("## "):
+            break
+        if not in_table or not line.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) != 3 or cells[0] in {"Market", "---"}:
+            continue
+        try:
+            counts.setdefault(cells[0], Counter())[cells[1]] = int(cells[2])
+        except ValueError:
+            continue
+    return counts
+
+
+def _theme_summary(root: Path, rows: list[dict[str, str]]) -> tuple[dict[str, Counter[str]], str]:
+    daily_counts = _daily_theme_counts(root)
     counts: dict[str, Counter[str]] = {}
     fragments: list[str] = []
     for market, label in (("JP", "日本"), ("US", "米国")):
-        subset = [r for r in rows if str(r.get("market")) == market]
-        subset.sort(key=lambda r: _number(r.get("market_rank"), 1e9) or 1e9)
-        counter = Counter(str(r.get("theme") or "Other") for r in subset[:20])
+        if market in daily_counts:
+            counter = daily_counts[market]
+        else:
+            subset = [r for r in rows if str(r.get("market")) == market]
+            subset.sort(key=lambda r: _number(r.get("market_rank"), 1e9) or 1e9)
+            counter = Counter(str(r.get("theme") or "Other") for r in subset[:20])
         counts[market] = counter
         top = [(theme, n) for theme, n in counter.most_common(2) if theme != "Other"]
         if top:
@@ -128,7 +156,7 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
     components = regime.get("components") or {}
     evidence = regime.get("evidence") or {}
     delta, delta_story = _regime_delta(root, regime)
-    theme_counts, theme_story = _theme_summary(rows)
+    theme_counts, theme_story = _theme_summary(root, rows)
     rank_story = _rank_change_story(rows)
 
     score = _number(regime.get("regime_score"))
