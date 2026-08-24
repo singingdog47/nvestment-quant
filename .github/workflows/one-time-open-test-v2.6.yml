@@ -1,0 +1,165 @@
+name: One-Time Open Test v2.6
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/one-time-open-test-v2.6.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-output-writer
+  cancel-in-progress: false
+
+jobs:
+  open-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      MAX_TICKERS: '0'
+      OUTPUT_TOP_N: '100'
+      PYTHONPATH: src
+      EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+      GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+      ALLOW_REPO_PORTFOLIO: '0'
+      PORTFOLIO_DRIVE_WRITEBACK: 'false'
+      PRIVATE_WORKDIR: .private
+      PRIVATE_OUTPUT_DIR: .private/portfolio_risk
+      SCREEN_PATH: data/screening_latest.csv
+      RISK_LOOKBACK_DAYS: '400'
+      RISK_MIN_OBSERVATIONS: '120'
+      RISK_VAR_CONFIDENCE: '0.95'
+      RISK_CANDIDATE_WEIGHT: '0.02'
+      RISK_CANDIDATE_TOP_N: '10'
+      RISK_BENCHMARK: '1306.T'
+      RANK_ALERT_THRESHOLD: '15'
+      ALERT_VIX_WATCH: '20'
+      ALERT_VIX_WARNING: '30'
+      ALERT_VIX_CRITICAL: '35'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install all pipeline dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install -r requirements-regime.txt
+          python -m pip install -r requirements-intelligence.txt
+          python -m pip install pytest
+      - name: Run full test suite once
+        run: python -m pytest -q tests
+      - name: 1. Daily Quant Screen
+        run: python -m src.main
+      - name: 2. Preflight screening compatibility
+        run: python tools/preflight_v1_3.py --ci
+      - name: 3. Market Regime Engine
+        run: python src/run_market_regime.py
+      - name: 4. Company Intelligence
+        run: python src/run_company_intel.py
+      - name: 5. Exception Alerts
+        run: python src/run_alerts.py
+      - name: 6. Verify public intelligence outputs
+        run: python tools/verify_outputs.py
+      - name: 7. Decision validation and benchmark-relative learning
+        run: python src/run_validation.py
+      - name: Check private Drive configuration
+        id: private_config
+        shell: bash
+        run: |
+          if [[ -n "$GDRIVE_SERVICE_ACCOUNT_JSON" && -n "$GDRIVE_FOLDER_ID" ]]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "Private Google Drive secrets are not configured; private risk analysis skipped."
+          fi
+      - name: 8. Private Portfolio Risk Engine
+        if: steps.private_config.outputs.configured == 'true'
+        run: python src/run_portfolio_risk.py
+      - name: 9. Final Integrated Daily Report
+        if: always() && !cancelled()
+        run: python src/run_final_report.py
+      - name: Upload open-test public reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: one-time-open-test-v2.6-public-report
+          path: |
+            data/integrated_report_latest.md
+            data/daily_report.md
+            data/quality_report.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Commit public-safe outputs once
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json data/daily_report.md data/integrated_report_latest.md data/regime data/intelligence data/alerts data/state data/ai_context_latest.md data/decision_context_latest.json data/validation
+          if git diff --cached --quiet; then
+            echo "No open-test output changes to commit."
+            exit 0
+          fi
+          git commit -m "data: one-time open-session report v2.6"
+          git pull --rebase
+          git push
+
+  fallback-public-report:
+    needs: open-test
+    if: ${{ always() && needs.open-test.result == 'failure' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      MAX_TICKERS: '0'
+      OUTPUT_TOP_N: '100'
+      PYTHONPATH: src
+      EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      ALLOW_REPO_PORTFOLIO: '0'
+    steps:
+      - name: Checkout pinned known-good report version
+        uses: actions/checkout@v4
+        with:
+          ref: stable-report-v2.5
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install stable dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install -r requirements-regime.txt
+          python -m pip install -r requirements-intelligence.txt
+          python -m pip install pytest
+      - name: Verify stable version before fallback report
+        run: python -m pytest -q tests
+      - name: Generate pinned stable public report
+        run: |
+          python -m src.main
+          python tools/preflight_v1_3.py --ci
+          python src/run_market_regime.py
+          python src/run_company_intel.py
+          python src/run_alerts.py
+          python tools/verify_outputs.py
+          python src/run_validation.py
+          python src/run_final_report.py
+      - name: Upload fallback public report
+        uses: actions/upload-artifact@v4
+        with:
+          name: one-time-open-test-fallback-v2.5
+          path: |
+            data/integrated_report_latest.md
+            data/daily_report.md
+            data/quality_report.json
+          if-no-files-found: error
+          retention-days: 14
