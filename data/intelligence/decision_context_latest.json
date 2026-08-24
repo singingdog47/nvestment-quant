@@ -1,21 +1,46 @@
 {
   "quality": {
-    "generated_at": "2026-08-23T22:28:36+00:00",
-    "targets": 36,
+    "generated_at": "2026-08-24T00:37:29+00:00",
+    "targets": 35,
     "portfolio_targets": 0,
-    "events": 15,
-    "primary_source_health": 0.5,
+    "events": 12,
+    "primary_source_health": 1.0,
+    "configured_primary_sources": 2,
+    "optional_primary_sources_unconfigured": [
+      {
+        "source": "EDINET",
+        "reason": "EDINET_API_KEY not set"
+      },
+      {
+        "source": "SEC",
+        "reason": "SEC_USER_AGENT not set"
+      }
+    ],
     "fundamental_coverage": 0.0,
+    "primary_fundamental_coverage": 0.0,
+    "secondary_fundamental_coverage": 1.0,
+    "effective_fundamental_coverage": 0.65,
+    "fundamental_evidence_tier": "secondary_only",
+    "missing_primary_configuration": [
+      {
+        "source": "EDINET",
+        "reason": "EDINET_API_KEY not set"
+      },
+      {
+        "source": "SEC",
+        "reason": "SEC_USER_AGENT not set"
+      }
+    ],
     "portfolio_primary_event_presence": 1.0,
-    "quality_score": 0.325,
-    "actionable": false,
-    "rule": "If actionable=false, AI must not turn missing data into a buy/sell conclusion."
+    "quality_score": 0.745,
+    "actionable": true,
+    "rule": "Optional primary feeds improve confidence but their absence alone must not block conclusions. Missing data still must not be converted into unsupported buy/sell conclusions."
   },
   "market_regime": {
     "version": "1.5.0",
-    "generated_at": "2026-08-23T22:23:53+00:00",
+    "generated_at": "2026-08-24T00:32:47+00:00",
     "regime_label": "CONSTRUCTIVE",
-    "regime_score": 67.84,
+    "regime_score": 67.78,
     "confidence": 1.0,
     "actionable": true,
     "overheated_flag": false,
@@ -23,10 +48,10 @@
     "thin_liquidity_flag": false,
     "regime_flags": [],
     "components": {
-      "trend": 80.41362399703866,
+      "trend": 82.91236070234868,
       "stress": 84.60999965667725,
-      "participation": 56.23128311448975,
-      "liquidity": 43.02708929807408,
+      "participation": 56.58834369960839,
+      "liquidity": 37.19001073891275,
       "positioning": 48.60196300007342
     },
     "evidence": {
@@ -36,7 +61,7 @@
       "ig_oas": null,
       "breadth_n": 9584,
       "nfci": null,
-      "volume_ratio20_mean": 0.8605417859614816,
+      "volume_ratio20_mean": 0.7438002147782549,
       "positioning_sources": {
         "jpx_raw_healthy": 3,
         "cftc_normalized_values": 22
@@ -56,11 +81,11 @@
     "lifestyle_bucket_max_weight": 0.05,
     "exploration_bucket_max_weight": 0.1,
     "new_capital_top_rank_only": 5,
-    "decision_gate": "BLOCK_DATA_QUALITY",
+    "decision_gate": "OPEN_FOR_ANALYSIS",
     "note": "Guardrail only. This file never places orders."
   },
   "system_health": {
-    "generated_at": "2026-08-23T22:28:36+00:00",
+    "generated_at": "2026-08-24T00:37:29+00:00",
     "components": {
       "market_regime": {
         "status": "ok",
@@ -116,7 +141,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "66c1154c24d09e4c33518e8c",
       "raw_excerpt": ""
     },
@@ -134,26 +159,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "03781a61769b51a798bccbc8",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "4063",
-      "ticker": "4063.T",
-      "name": "信越化学工業",
-      "event_date": "Fri, 21 Aug 2026",
-      "event_type": "disclosure",
-      "title": "信越化学工業(株)【4063】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9oeVdad19TalZQMDljbHlyR0F6UmdCbDRlbnI3OVREMkhrS1BDamJJclYxbGxNSmw3bVA4M1FmNGtiSGVnbW0tWU5pZThldXh0TlE?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
-      "event_id": "81d6ae966dd15986b79bc8c4",
       "raw_excerpt": ""
     },
     {
@@ -170,7 +177,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "b431e3cc042c3a2e0242d04d",
       "raw_excerpt": ""
     },
@@ -188,26 +195,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "53e612afa5a9629afe0190f9",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "9433",
-      "ticker": "9433.T",
-      "name": "KDDI",
-      "event_date": "Fri, 21 Aug 2026",
-      "event_type": "disclosure",
-      "title": "ＫＤＤＩ(株)【9433】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5FM00yUTRUR2Qxb2QwLXJWVmsyNWJ1aldIdnNVRjV2Y0FtTVBKS2k0b21EYU43VV96WUVGVGROdl9HcG9hbFQyeHhUQ2lzeUxtYlE?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
-      "event_id": "0a710c3d281090af41d114fb",
       "raw_excerpt": ""
     },
     {
@@ -224,7 +213,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "c59a50ec6e5738f1bdd91745",
       "raw_excerpt": ""
     },
@@ -235,33 +224,15 @@
       "name": "KDDI",
       "event_date": "Fri, 21 Aug 2026",
       "event_type": "disclosure",
-      "title": "ＫＤＤＩ(株)【9433】：掲示板 - Yahoo!ファイナンス",
+      "title": "ＫＤＤＩ(株)【9433】：株主優待 - Yahoo!ファイナンス",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9Mb3g0MXpVMDJmaEN5OEo5akdOV1VjeUlHNDVJeTZrTUVfMElFSXNLVkpZTk83RGdmQTdGY19wOGljWkVfT0VkS19BVnVqczg2WWtoMWt1MG1ndw?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE83cGpBeGFqZHZUbEotdDYxOW85VFAwXzFTUFpQZzQ3c1ZRdDBrNlBDQy1fRWRqbUpsSndub3Fyc254ekZDYWg0cUI2cGJGdXl3SHpTN3cxLU9DalNQb3lv?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
-      "event_id": "b1e3d94ce76a867d042e47f5",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "6701",
-      "ticker": "6701.T",
-      "name": "NEC",
-      "event_date": "Fri, 21 Aug 2026",
-      "event_type": "disclosure",
-      "title": "ＮＥＣ【6701】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8yT3ExbkM2eHoxSXJTdUZVU0FLSXlHbzhkNmVGVy12b0duX3VmQVFUYVloWENpWTVnVV85ZW91QUlMWDlveklabW1BSFk0bW5KY0E?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
-      "event_id": "f89452152f030387bc464a84",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
+      "event_id": "81a7d6c6192abcf490409497",
       "raw_excerpt": ""
     },
     {
@@ -278,7 +249,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "e5e4847dd4591533051e5bdf",
       "raw_excerpt": ""
     },
@@ -296,7 +267,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "d90636d6993302fb0278fa85",
       "raw_excerpt": ""
     },
@@ -314,7 +285,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "71b6ee3c9c0f28da6c97ea30",
       "raw_excerpt": ""
     },
@@ -332,7 +303,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "eebf065f361dfaf565c85268",
       "raw_excerpt": ""
     },
@@ -350,7 +321,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "28c13e52f78360021695d51f",
       "raw_excerpt": ""
     },
@@ -368,7 +339,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "event_id": "6866f43ee5c3920777bb7bc5",
       "raw_excerpt": ""
     }
@@ -377,7 +348,7 @@
     {
       "source": "TDnet",
       "status": "ok",
-      "fetched_at": "2026-08-23T22:28:23+00:00",
+      "fetched_at": "2026-08-24T00:37:16+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -385,7 +356,7 @@
     {
       "source": "EDINET",
       "status": "missing",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "records": 0,
       "error": "EDINET_API_KEY not set",
       "source_tier": "primary"
@@ -393,7 +364,7 @@
     {
       "source": "SEC",
       "status": "missing",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "records": 0,
       "error": "SEC_USER_AGENT not set",
       "source_tier": "primary"
@@ -401,7 +372,7 @@
     {
       "source": "CompanyIR",
       "status": "ok",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
+      "fetched_at": "2026-08-24T00:37:19+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -409,16 +380,16 @@
     {
       "source": "NewsRSS",
       "status": "ok",
-      "fetched_at": "2026-08-23T22:28:26+00:00",
-      "records": 15,
+      "fetched_at": "2026-08-24T00:37:19+00:00",
+      "records": 12,
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance",
       "status": "ok",
-      "fetched_at": "2026-08-23T22:28:36+00:00",
-      "records": 36,
+      "fetched_at": "2026-08-24T00:37:29+00:00",
+      "records": 35,
       "error": "",
       "source_tier": "secondary"
     }

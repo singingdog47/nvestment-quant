@@ -9,6 +9,6 @@
   "lifestyle_bucket_max_weight": 0.05,
   "exploration_bucket_max_weight": 0.1,
   "new_capital_top_rank_only": 5,
-  "decision_gate": "BLOCK_DATA_QUALITY",
+  "decision_gate": "OPEN_FOR_ANALYSIS",
   "note": "Guardrail only. This file never places orders."
 }

@@ -1,79 +1,35 @@
 {
   "version": "1.9.0",
-  "generated_at": "2026-08-23T22:28:38+00:00",
-  "highest_severity": "WARNING",
+  "generated_at": "2026-08-24T00:37:31+00:00",
+  "highest_severity": "WATCH",
   "counts": {
     "INFO": 0,
-    "WATCH": 5,
-    "WARNING": 1,
+    "WATCH": 2,
+    "WARNING": 0,
     "CRITICAL": 0
   },
   "alerts": [
     {
-      "severity": "WARNING",
-      "category": "DATA_QUALITY",
-      "code": "NOT_ACTIONABLE",
-      "title": "Data quality blocks investment conclusions",
-      "message": "Data quality is not actionable; missing data must not be converted into buy/sell conclusions.",
-      "value": 0.325,
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "ＫＤＤＩ(株)【9433】：株主優待 - Yahoo!ファイナンス",
+      "message": "New company event detected for KDDI.",
+      "value": null,
       "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "LIQUIDITY",
+      "code": "LIQUIDITY_SOFT",
+      "title": "Market liquidity is soft",
+      "message": "Liquidity component fell below 40/100.",
+      "value": 37.19001073891275,
+      "threshold": 40,
       "entity": null,
-      "source": "data_quality_latest.json"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "ＫＤＤＩ(株)【9433】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "KDDIからの独り立ちを目指す楽天モバイル、ローミング交渉の現在地――両社の考えを整理 - ITmedia Mobile - ITmedia",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "ＮＥＣ【6701】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "【無料公開】《スクープ》三菱電機、日立、NEC、オムロンなどが主導したIoTプラットフォーム「エッジクロスコンソーシアム」が終了へ！ - ダイヤモンド・オンライン",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "信越化学工業(株)【4063】：株価・株式情報（夜間PTS含む） - Yahoo!ファイナンス",
-      "message": "New company event detected for 信越化学工業.",
-      "value": null,
-      "threshold": null,
-      "entity": "信越化学工業",
-      "source": "Google News RSS"
+      "source": "market_regime_latest.json"
     }
   ],
   "rules": [

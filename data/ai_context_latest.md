@@ -1,13 +1,13 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.325** / actionable=False
+Generated quality score: **0.745** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.0",
-  "generated_at": "2026-08-23T22:23:53+00:00",
+  "generated_at": "2026-08-24T00:32:47+00:00",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 67.84,
+  "regime_score": 67.78,
   "confidence": 1.0,
   "actionable": true,
   "overheated_flag": false,
@@ -15,10 +15,10 @@ Generated quality score: **0.325** / actionable=False
   "thin_liquidity_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 80.41362399703866,
+    "trend": 82.91236070234868,
     "stress": 84.60999965667725,
-    "participation": 56.23128311448975,
-    "liquidity": 43.02708929807408,
+    "participation": 56.58834369960839,
+    "liquidity": 37.19001073891275,
     "positioning": 48.60196300007342
   },
   "evidence": {
@@ -28,7 +28,7 @@ Generated quality score: **0.325** / actionable=False
     "ig_oas": null,
     "breadth_n": 9584,
     "nfci": null,
-    "volume_ratio20_mean": 0.8605417859614816,
+    "volume_ratio20_mean": 0.7438002147782549,
     "positioning_sources": {
       "jpx_raw_healthy": 3,
       "cftc_normalized_values": 22
@@ -50,13 +50,13 @@ Generated quality score: **0.325** / actionable=False
   "lifestyle_bucket_max_weight": 0.05,
   "exploration_bucket_max_weight": 0.1,
   "new_capital_top_rank_only": 5,
-  "decision_gate": "BLOCK_DATA_QUALITY",
+  "decision_gate": "OPEN_FOR_ANALYSIS",
   "note": "Guardrail only. This file never places orders."
 }
 
 ## Integration health
 {
-  "generated_at": "2026-08-23T22:28:36+00:00",
+  "generated_at": "2026-08-24T00:37:29+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -103,15 +103,28 @@ Generated quality score: **0.325** / actionable=False
 - EDINET: missing / records=0 / tier=primary / EDINET_API_KEY not set
 - SEC: missing / records=0 / tier=primary / SEC_USER_AGENT not set
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=15 / tier=secondary
-- yfinance: ok / records=36 / tier=secondary
+- NewsRSS: ok / records=12 / tier=secondary
+- yfinance: ok / records=35 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-23T22:23:51.893740+00:00
+- Data retrieved (UTC): 2026-08-24T00:32:44.753412+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
+
+## Development status
+
+- System version: v2.6
+- Status: operational; cross-market score calibration and report-status visibility added
+- Stable fallback: stable-report-v2.5
+- Rollback ready: True
+
+## Cross-market score policy
+
+- JP/US factor inputs are percentile-ranked within their own market.
+- Cross-market score is the percentile of the completed composite within each home market; it represents relative standing, not absolute valuation equivalence.
+- Orders still require market-specific fundamentals, price verification, and portfolio-fit review.
 
 ## Concentration guard
 
@@ -122,8 +135,8 @@ Generated quality score: **0.325** / actionable=False
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 9 |
-| JP | Other | 11 |
+| JP | Financials | 7 |
+| JP | Other | 13 |
 | US | Financials | 7 |
 | US | Mortgage REIT | 4 |
 | US | Other | 4 |
@@ -131,28 +144,28 @@ Generated quality score: **0.325** / actionable=False
 
 ## Research candidates
 
-| Market | Rank | Ticker | Name | Theme | Score | Daily change |
-|---|---:|---|---|---|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 78.3 | unchanged |
-| JP | 2 | 3932.T | Akatsuki Inc. | Other | 76.9 | unchanged |
-| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.9 | unchanged |
-| JP | 5 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.3 | unchanged |
-| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.5 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.7 | unchanged |
-| JP | 11 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 71.8 | unchanged |
-| JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.5 | unchanged |
-| JP | 13 | 8789.T | FinTech Global Incorporated | Other | 71.1 | unchanged |
-| JP | 15 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | unchanged |
-| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.4 | unchanged |
-| US | 3 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.3 | unchanged |
-| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 82.2 | unchanged |
-| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.8 | unchanged |
-| US | 8 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 81.2 | unchanged |
-| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | unchanged |
-| US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.3 | unchanged |
-| US | 23 | ACNB | ACNB Corporation - Common Stock | Other | 78.2 | unchanged |
-| US | 24 | DBRG | DigitalBridge Group, Inc. | Other | 78.2 | unchanged |
+| Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
+|---|---:|---|---|---|---:|---:|---|
+| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 78.3 | 100.0 | unchanged |
+| JP | 2 | 3932.T | Akatsuki Inc. | Other | 77.1 | 99.9 | unchanged |
+| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.7 | 99.9 | unchanged |
+| JP | 4 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.5 | 99.8 | unchanged |
+| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.6 | unchanged |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.4 | 99.5 | unchanged |
+| JP | 11 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 72.1 | 99.5 | unchanged |
+| JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.0 | 99.4 | unchanged |
+| JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.0 | 99.4 | unchanged |
+| JP | 15 | 8789.T | FinTech Global Incorporated | Other | 70.6 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | 100.0 | unchanged |
+| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.4 | 100.0 | unchanged |
+| US | 3 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.3 | 99.9 | unchanged |
+| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 82.2 | 99.9 | unchanged |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.8 | 99.9 | unchanged |
+| US | 8 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 81.2 | 99.8 | unchanged |
+| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | 99.7 | unchanged |
+| US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.3 | 99.6 | unchanged |
+| US | 23 | ACNB | ACNB Corporation - Common Stock | Other | 78.2 | 99.4 | unchanged |
+| US | 24 | DBRG | DigitalBridge Group, Inc. | Other | 78.2 | 99.3 | unchanged |
 
 ## Required manual checks before an order
 
@@ -162,7 +175,7 @@ Generated quality score: **0.325** / actionable=False
 
 ## Earnings-calendar status
 
-No official cross-market earnings-calendar source is connected in v1.3. Earnings-date alerts are intentionally marked unavailable rather than guessed.
+No official cross-market earnings-calendar source is connected. Earnings-date alerts are intentionally marked unavailable rather than guessed.
 
 
 ## Critical / high company events
