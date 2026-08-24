@@ -16,7 +16,26 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 330
+    env:
+      MAX_TICKERS: '0'
+      OUTPUT_TOP_N: '100'
+      PYTHONPATH: src
+      EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+      GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+      ALLOW_REPO_PORTFOLIO: '0'
+      PORTFOLIO_DRIVE_WRITEBACK: 'false'
+      PRIVATE_WORKDIR: .private
+      PRIVATE_OUTPUT_DIR: .private/portfolio_risk
+      SCREEN_PATH: data/screening_latest.csv
+      RISK_LOOKBACK_DAYS: '400'
+      RISK_MIN_OBSERVATIONS: '120'
+      RISK_VAR_CONFIDENCE: '0.95'
+      RISK_CANDIDATE_WEIGHT: '0.02'
+      RISK_CANDIDATE_TOP_N: '10'
+      RISK_BENCHMARK: '1306.T'
 
     steps:
       - name: Checkout repository
@@ -31,7 +50,38 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install             -r requirements.txt             -r requirements-regime.txt             -r requirements-intelligence.txt
+          python -m pip install -r requirements.txt -r requirements-regime.txt -r requirements-intelligence.txt
 
       - name: Run test suite
         run: python -m pytest -q tests
+
+      - name: Recovery post-close pipeline v2.7
+        run: |
+          python -m src.main
+          python tools/preflight_v1_3.py --ci
+          python src/run_market_regime.py
+          python src/run_company_intel.py
+          python src/run_alerts.py
+          python tools/verify_outputs.py
+          python src/run_validation.py
+          if [[ -n "$GDRIVE_SERVICE_ACCOUNT_JSON" && -n "$GDRIVE_FOLDER_ID" ]]; then
+            python src/run_portfolio_risk.py
+          fi
+          python src/run_final_report.py
+          python src/run_mobile_brief.py
+
+      - name: Upload recovery public reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovery-post-close-v2.7-20260824
+          path: |
+            data/mobile_brief_latest.md
+            data/integrated_report_latest.md
+            data/daily_report.md
+            data/quality_report.json
+            data/intelligence/source_health_latest.csv
+          if-no-files-found: error
+          retention-days: 14
+
+      # Temporary recovery PR only. No public data is committed from this CI job,
+      # and private portfolio outputs remain in the ephemeral runner workspace.
