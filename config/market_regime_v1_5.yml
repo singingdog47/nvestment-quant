@@ -1,4 +1,4 @@
-version: 1.5.0
+version: 1.5.1
 compatibility_base: 1.3
 market_symbols:
   JP_NIKKEI: "^N225"
@@ -26,14 +26,17 @@ jpx_sources:
     enabled: true
     pages: ["https://www.jpx.co.jp/english/markets/statistics-equities/investor-type/index.html", "https://www.jpx.co.jp/markets/statistics-equities/investor-type/index.html"]
     keywords: ["xls", "xlsx", "csv"]
+    validation: {min_rows: 2, min_columns: 2, min_numeric_values: 1}
   short_selling:
     enabled: true
     pages: ["https://www.jpx.co.jp/english/markets/statistics-equities/short-selling/index.html", "https://www.jpx.co.jp/markets/statistics-equities/short-selling/index.html"]
     keywords: ["xls", "xlsx", "csv"]
+    validation: {min_rows: 2, min_columns: 2, min_numeric_values: 1}
   margin:
     enabled: true
     pages: ["https://www.jpx.co.jp/english/markets/statistics-equities/margin/index.html", "https://www.jpx.co.jp/markets/statistics-equities/margin/index.html"]
     keywords: ["xls", "xlsx", "csv"]
+    validation: {min_rows: 2, min_columns: 2, min_numeric_values: 1}
 cftc:
   enabled: true
   contracts: ["S&P 500", "NASDAQ", "JAPANESE YEN", "U.S. DOLLAR INDEX", "10-YEAR U.S. TREASURY"]
@@ -47,6 +50,7 @@ scoring:
     participation: 0.20
     liquidity: 0.15
     positioning: 0.10
+  actionable_min_confidence: 0.60
   labels:
     risk_on: 70
     constructive: 58
@@ -55,8 +59,20 @@ scoring:
 freshness:
   market_hours: 36
   fred_hours: 96
+  fred_cache_max_age_days: 14
   jpx_hours: 240
   cftc_hours: 240
+coverage:
+  manifest_path: data/data_coverage_latest.json
+  not_implemented:
+    - source: MOVE
+      description: bond volatility index is not integrated
+    - source: EQUITY_PUT_CALL
+      description: official equity put/call series is not integrated
+    - source: MARKET_52W_HIGH_LOW
+      description: 52-week high/low breadth is unavailable when screening columns are absent
+    - source: JPX_OFFICIAL_TURNOVER
+      description: official TSE turnover is not integrated; ETF volume remains a proxy
 outputs:
   directory: data/regime
   state_directory: data/state
