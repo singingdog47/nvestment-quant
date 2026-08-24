@@ -5,6 +5,7 @@ from pathlib import Path
 REQUIRED=[
  "data/regime/market_regime_latest.json",
  "data/regime/market_source_health_latest.csv",
+ "data/data_coverage_latest.json",
  "data/intelligence/company_events_latest.csv",
  "data/intelligence/data_quality_latest.json",
  "data/intelligence/ai_context_latest.md",

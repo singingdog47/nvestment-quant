@@ -117,6 +117,67 @@ def _newest_link(links):
     return sorted(links, key=key, reverse=True)[0]
 
 
+def _flatten_columns(df):
+    out = df.copy()
+    if isinstance(out.columns, pd.MultiIndex):
+        out.columns = [
+            " ".join(str(x) for x in col if str(x) != "nan").strip()
+            for col in out.columns
+        ]
+    else:
+        out.columns = [str(c).strip() for c in out.columns]
+    return out
+
+
+def _validate_frame(name, df, rules=None):
+    """Validate payload structure separately from HTTP/download success."""
+    rules = rules or {}
+    min_rows = int(rules.get("min_rows", 2))
+    min_columns = int(rules.get("min_columns", 2))
+    min_numeric_values = int(rules.get("min_numeric_values", 1))
+    if not isinstance(df, pd.DataFrame):
+        return pd.DataFrame(), {
+            "valid": False,
+            "rows": 0,
+            "columns": 0,
+            "numeric_values": 0,
+            "issues": ["payload is not a DataFrame"],
+        }
+
+    clean = _flatten_columns(df).dropna(how="all").dropna(axis=1, how="all")
+    numeric_values = 0
+    for column in clean.columns:
+        norm = re.sub(r"[\s_\-]+", "", str(column).lower())
+        if any(token in norm for token in ("date", "日付", "年月", "期間")):
+            continue
+        values = (
+            clean[column]
+            .astype(str)
+            .str.replace(",", "", regex=False)
+            .str.replace("%", "", regex=False)
+            .str.replace("−", "-", regex=False)
+            .str.strip()
+            .replace({"": pd.NA, "-": pd.NA, "—": pd.NA, "nan": pd.NA})
+        )
+        numeric_values += int(pd.to_numeric(values, errors="coerce").notna().sum())
+
+    issues = []
+    if len(clean) < min_rows:
+        issues.append(f"rows<{min_rows}")
+    if len(clean.columns) < min_columns:
+        issues.append(f"columns<{min_columns}")
+    if numeric_values < min_numeric_values:
+        issues.append(f"numeric_values<{min_numeric_values}")
+    return clean, {
+        "dataset": name,
+        "valid": not issues,
+        "rows": len(clean),
+        "columns": len(clean.columns),
+        "numeric_values": numeric_values,
+        "issues": issues,
+    }
+
+
 def fetch_jpx_sources(cfg: dict):
     fetched = now_iso()
     frames = {}
@@ -125,6 +186,18 @@ def fetch_jpx_sources(cfg: dict):
 
     for name, s in cfg.items():
         if not s.get("enabled", True):
+            health.append(
+                {
+                    "source": f"JPX:{name}",
+                    "status": "not_implemented",
+                    "transport_status": "not_attempted",
+                    "content_status": "not_checked",
+                    "records": 0,
+                    "fetched_at": fetched,
+                    "error": "source disabled by configuration",
+                    "source_tier": "primary",
+                }
+            )
             continue
 
         pages = s.get("pages") or [s.get("page", "")]
@@ -186,24 +259,34 @@ def fetch_jpx_sources(cfg: dict):
                     + " | ".join(errors[-6:])
                 )
 
-            df = df.dropna(how="all")
+            df, validation = _validate_frame(name, df, s.get("validation"))
             frames[name] = df.tail(80).copy()
+            overall_status = "ok" if validation["valid"] else "partial"
+            validation_error = "; ".join(validation["issues"])
             index_rows.append(
                 {
                     "dataset": name,
                     "page_url": chosen_page,
                     "download_url": chosen_url,
                     "rows": len(df),
+                    "columns": validation["columns"],
+                    "numeric_values": validation["numeric_values"],
+                    "data_status": overall_status,
+                    "validation_error": validation_error,
                     "fetched_at": fetched,
                 }
             )
             health.append(
                 {
                     "source": f"JPX:{name}",
-                    "status": "ok",
+                    "status": overall_status,
+                    "transport_status": "ok",
+                    "content_status": "valid" if validation["valid"] else "invalid",
                     "records": len(df),
+                    "columns": validation["columns"],
+                    "numeric_values": validation["numeric_values"],
                     "fetched_at": fetched,
-                    "error": "",
+                    "error": validation_error,
                     "source_tier": "primary",
                 }
             )
@@ -211,7 +294,9 @@ def fetch_jpx_sources(cfg: dict):
             health.append(
                 {
                     "source": f"JPX:{name}",
-                    "status": "error",
+                    "status": "missing",
+                    "transport_status": "error",
+                    "content_status": "not_checked",
                     "records": 0,
                     "fetched_at": fetched,
                     "error": f"{type(e).__name__}: {e}",
