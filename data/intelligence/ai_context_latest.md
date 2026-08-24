@@ -4,35 +4,77 @@ Generated quality score: **0.745** / actionable=True
 
 ## Market Regime v1.5
 {
-  "version": "1.5.0",
-  "generated_at": "2026-08-24T09:32:28+00:00",
+  "version": "1.5.2",
+  "engine_version": "1.5.2",
+  "generated_at": "2026-08-24T23:03:18+00:00",
+  "generated_at_utc": "2026-08-24T23:03:18+00:00",
+  "date_jst": "2026-08-25",
+  "data_status": "partial",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 66.14,
-  "confidence": 1.0,
-  "actionable": true,
+  "regime_score": 58.17,
+  "confidence": 0.591,
+  "actionable": false,
+  "actionability": {
+    "minimum_confidence": 0.6,
+    "critical_market_series_available": 3,
+    "critical_market_series_expected": 3,
+    "missing_core_context": [
+      "HY_OAS",
+      "IG_OAS",
+      "NFCI"
+    ],
+    "reasons": [
+      "confidence_below_threshold",
+      "core_credit_or_financial_conditions_missing"
+    ]
+  },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": false,
-  "regime_flags": [],
+  "thin_liquidity_flag": true,
+  "treasury_volatility_shock_flag": false,
+  "regime_flags": [
+    "THIN_LIQUIDITY"
+  ],
   "components": {
-    "trend": 78.06555851331501,
-    "stress": 82.35999965667725,
+    "trend": 71.7343553842388,
+    "stress": 65.03499942779541,
     "participation": 56.58334293284184,
-    "liquidity": 39.704532863754245,
+    "liquidity": 28.113063059131136,
     "positioning": 48.60196300007342
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.880000114440918,
+    "vix": 15.850000381469727,
     "hy_oas": null,
     "ig_oas": null,
+    "treasury_volatility_proxy": 72.293,
+    "treasury_volatility_percentile_rank": 0.6984,
+    "treasury_volatility_stress_score": 47.62,
+    "treasury_volatility_as_of_date": "2026-08-24",
+    "treasury_volatility_status": "ok",
+    "treasury_volatility_is_ice_move": false,
     "breadth_n": 9583,
     "nfci": null,
-    "volume_ratio20_mean": 0.7940906572750849,
+    "volume_ratio20_mean": 0.5622612611826227,
     "positioning_sources": {
-      "jpx_raw_healthy": 3,
+      "jpx_raw_healthy": 2,
       "cftc_normalized_values": 22
-    }
+    },
+    "component_coverage": {
+      "trend": 1.0,
+      "stress": 0.5,
+      "participation": 1.0,
+      "liquidity": 0.8,
+      "positioning": 1.0
+    },
+    "critical_context_coverage": {
+      "fred_credit_financial_conditions": 0.0,
+      "available": 0,
+      "expected": 3,
+      "multiplier": 0.7
+    },
+    "base_weighted_coverage": 0.845,
+    "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier"
   },
   "rule": "Regime is context, not a trade signal. If actionable=false, do not infer missing market facts.",
   "source_priority": "official/public primary > internal v1.3 data > free secondary market feed > model inference"
@@ -43,8 +85,8 @@ Generated quality score: **0.745** / actionable=True
   "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
-    0.08,
-    0.12
+    0.15,
+    0.18
   ],
   "max_single_stock_weight": 0.05,
   "lifestyle_bucket_max_weight": 0.05,
@@ -56,7 +98,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-08-24T09:37:17+00:00",
+  "generated_at": "2026-08-24T23:08:10+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -67,25 +109,25 @@ Generated quality score: **0.745** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.08,
+      "age_hours": 0.09,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.08,
+      "age_hours": 0.09,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.08,
+      "age_hours": 0.09,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.08,
+      "age_hours": 0.09,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -226,7 +268,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] NKLR Terra Innovatum Global N.V. - Ordinary shares | 2026-08-14 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2067627/000121390026090062/ea0300681-10q_terra.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
 - [HIGH] 4063 信越化学工業 | Fri, 24 Jul 2026 | dividend | 信越化、非開示だった今期経常は9％増益、未定だった配当は10円増配 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE92Zk0xTEFjb1BRVW1zRUpOb21xRmRtZTB6MkhQZkNKUWxPRERJZ2JEUlVSYXprUk0tZjk3WGdoTGlhVEZmM3A4TXBtb29XNWd4b1E?oc=5
-- [HIGH] 9433 KDDI | Sun, 23 Aug 2026 | regulatory | KDDI の ISP 事業者向けメールシステムに不正アクセス、個人情報保護委員会が行政指導 - ScanNetSecurity | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTFBCdFRxR25LYlVpWGxuTW9nLVFFNG1aNlEtbEIzekd6NnpMcy1lX0hOd3NBQzJqc01kWGFrTDFEZDR4UE9seHdEVlZKcFNlc0cyTUFPbFlwZTRtN3RURlAwMUc0RlNDb0FWM0VKZg?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
