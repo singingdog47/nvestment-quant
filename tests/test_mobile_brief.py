@@ -45,6 +45,13 @@ def _public_fixture(root: Path) -> None:
         "US,2,DHT,DHT,Shipping,research_candidate,unchanged\n",
         encoding="utf-8",
     )
+    (root / "data/daily_report.md").write_text(
+        "## Theme distribution in unfiltered score leaders\n\n"
+        "| Market | Theme | Names in top 20 |\n|---|---|---:|\n"
+        "| JP | Financials | 7 |\n| JP | Other | 13 |\n"
+        "| US | Financials | 7 |\n| US | Shipping | 5 |\n| US | Other | 8 |\n",
+        encoding="utf-8",
+    )
 
 
 def test_mobile_brief_tells_a_market_story(tmp_path: Path) -> None:
@@ -54,6 +61,7 @@ def test_mobile_brief_tells_a_market_story(tmp_path: Path) -> None:
     assert "3分で読む結論" in text
     assert "流動性が前回より低下" in text
     assert "今日の戦略" in text
+    assert "Financialsが7銘柄" in text
     assert "Mito Securities" in text
     assert private_path is None
 
