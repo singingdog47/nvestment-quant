@@ -1,4 +1,4 @@
-version: 1.5.1
+version: 1.5.2
 compatibility_base: 1.3
 market_symbols:
   JP_NIKKEI: "^N225"
@@ -40,6 +40,13 @@ jpx_sources:
 cftc:
   enabled: true
   contracts: ["S&P 500", "NASDAQ", "JAPANESE YEN", "U.S. DOLLAR INDEX", "10-YEAR U.S. TREASURY"]
+treasury_volatility:
+  enabled: true
+  window_days: 20
+  percentile_lookback_days: 252
+  minimum_observations: 60
+  shock_percentile: 0.90
+  cache_max_age_days: 7
 breadth:
   source_candidates: ["data/screening_full.csv.gz", "data/screening_latest.csv"]
   min_universe: 100
@@ -66,7 +73,7 @@ coverage:
   manifest_path: data/data_coverage_latest.json
   not_implemented:
     - source: MOVE
-      description: bond volatility index is not integrated
+      description: licensed ICE BofA MOVE Index is not integrated; the engine uses a separately labelled official-Treasury realized-yield-volatility proxy
     - source: EQUITY_PUT_CALL
       description: official equity put/call series is not integrated
     - source: MARKET_52W_HIGH_LOW

@@ -25,7 +25,7 @@ def _fred(df,name):
         return None
 
 
-def score_regime(market_df, fred_df, breadth, jpx_health, cftc_df, weights):
+def score_regime(market_df, fred_df, breadth, jpx_health, cftc_df, weights, treasury_volatility=None):
     components={}; evidence={}; coverage={}
     trends=[]
     for n in ("JP_NIKKEI","JP_TOPIX_PROXY","US_SP500","US_NASDAQ"):
@@ -41,9 +41,28 @@ def score_regime(market_df, fred_df, breadth, jpx_health, cftc_df, weights):
     if vix is not None: stress.append(clamp(100-(float(vix)-10)*3.0))
     if hy is not None: stress.append(clamp(100-(float(hy)-2.5)*14.0))
     if ig is not None: stress.append(clamp(100-(float(ig)-0.8)*35.0))
+    treasury_expected=treasury_volatility is not None
+    treasury_status=treasury_volatility.get("data_status") if isinstance(treasury_volatility,dict) else None
+    treasury_score=treasury_volatility.get("stress_score") if isinstance(treasury_volatility,dict) else None
+    if treasury_status == "ok" and treasury_score is not None:
+        try:
+            treasury_score=float(treasury_score)
+            if math.isfinite(treasury_score): stress.append(clamp(treasury_score))
+            else: treasury_score=None
+        except (TypeError,ValueError): treasury_score=None
+    else:
+        treasury_score=None
     components["stress"]=sum(stress)/len(stress) if stress else None
-    coverage["stress"]=len(stress)/3
-    evidence.update({"vix":vix,"hy_oas":hy,"ig_oas":ig})
+    coverage["stress"]=len(stress)/(4 if treasury_expected else 3)
+    evidence.update({
+        "vix":vix,"hy_oas":hy,"ig_oas":ig,
+        "treasury_volatility_proxy": treasury_volatility.get("curve_realized_vol_20d_bps_ann") if isinstance(treasury_volatility,dict) else None,
+        "treasury_volatility_percentile_rank": treasury_volatility.get("percentile_rank") if isinstance(treasury_volatility,dict) else None,
+        "treasury_volatility_stress_score": treasury_score,
+        "treasury_volatility_as_of_date": treasury_volatility.get("as_of_date") if isinstance(treasury_volatility,dict) else None,
+        "treasury_volatility_status": treasury_status,
+        "treasury_volatility_is_ice_move": False,
+    })
 
     part=breadth.get("participation_proxy") if isinstance(breadth,dict) else None
     components["participation"]=clamp(float(part)*100) if part is not None else None

@@ -38,6 +38,16 @@ def test_public_alerts_no_missing_value_inference():
     assert report["highest_severity"] == "INFO"
 
 
+def test_public_alerts_detect_treasury_volatility_proxy_shock():
+    result = detect_public_alerts(
+        {"evidence": {"treasury_volatility_percentile_rank": 0.94}},
+        {}, pd.DataFrame(), pd.DataFrame(), {},
+    )
+    alert = next(a for a in result["alerts"] if a["code"] == "TREASURY_VOLATILITY_SHOCK")
+    assert alert["severity"] == "WARNING"
+    assert "not ICE MOVE" in alert["message"]
+
+
 def test_private_portfolio_alerts_are_private_and_deterministic():
     risk = {
         "portfolio": {
