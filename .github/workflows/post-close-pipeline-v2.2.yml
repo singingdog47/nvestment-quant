@@ -1,4 +1,4 @@
-name: Investment Quant Post-Close Pipeline v2.6
+name: Investment Quant Post-Close Pipeline v2.7
 
 on:
   workflow_dispatch:
@@ -125,7 +125,7 @@ jobs:
             echo "No post-close output changes to commit."
             exit 0
           fi
-          git commit -m "data: refresh integrated post-close pipeline v2.6"
+          git commit -m "data: refresh integrated post-close pipeline v2.7"
           git pull --rebase
           git push
 
