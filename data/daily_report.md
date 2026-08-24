@@ -1,14 +1,14 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-24T00:32:44.753412+00:00
+- Data retrieved (UTC): 2026-08-24T09:32:26.554755+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
 ## Development status
 
-- System version: v2.6
-- Status: operational; cross-market score calibration and report-status visibility added
-- Stable fallback: stable-report-v2.5
+- System version: v2.7
+- Status: operational; human-readable mobile brief and portfolio narrative added
+- Stable fallback: stable-report-v2.6
 - Rollback ready: True
 
 ## Cross-market score policy
@@ -38,14 +38,14 @@
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 78.3 | 100.0 | unchanged |
-| JP | 2 | 3932.T | Akatsuki Inc. | Other | 77.1 | 99.9 | unchanged |
-| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.7 | 99.9 | unchanged |
+| JP | 2 | 3932.T | Akatsuki Inc. | Other | 77.2 | 99.9 | unchanged |
+| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.9 | 99.9 | unchanged |
 | JP | 4 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.5 | 99.8 | unchanged |
-| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.6 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.4 | 99.5 | unchanged |
-| JP | 11 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 72.1 | 99.5 | unchanged |
-| JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.0 | 99.4 | unchanged |
-| JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.0 | 99.4 | unchanged |
+| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.8 | 99.6 | unchanged |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.5 | 99.5 | unchanged |
+| JP | 11 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.1 | 99.5 | unchanged |
+| JP | 12 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 72.1 | 99.4 | unchanged |
+| JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.1 | 99.4 | unchanged |
 | JP | 15 | 8789.T | FinTech Global Incorporated | Other | 70.6 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | 100.0 | unchanged |
 | US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.4 | 100.0 | unchanged |

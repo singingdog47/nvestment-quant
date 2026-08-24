@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-24T00:37:29+00:00",
+  "generated_at": "2026-08-24T09:37:17+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
       "path": "data/regime/market_regime_latest.json",
-      "age_hours": 0.0,
+      "age_hours": 0.01,
       "stale_limit_hours": 36
     },
     "v1_3_screening": {

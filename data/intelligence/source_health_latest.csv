@@ -1,7 +1,7 @@
 ﻿source,status,fetched_at,records,error,source_tier
-TDnet,ok,2026-08-24T00:37:16+00:00,0,,primary
-EDINET,missing,2026-08-24T00:37:19+00:00,0,EDINET_API_KEY not set,primary
-SEC,missing,2026-08-24T00:37:19+00:00,0,SEC_USER_AGENT not set,primary
-CompanyIR,ok,2026-08-24T00:37:19+00:00,0,,primary
-NewsRSS,ok,2026-08-24T00:37:19+00:00,12,,secondary
-yfinance,ok,2026-08-24T00:37:29+00:00,35,,secondary
+TDnet,ok,2026-08-24T09:36:57+00:00,0,,primary
+EDINET,ok,2026-08-24T09:37:01+00:00,0,,primary
+SEC,ok,2026-08-24T09:37:05+00:00,45,,primary
+CompanyIR,ok,2026-08-24T09:37:07+00:00,0,,primary
+NewsRSS,ok,2026-08-24T09:37:07+00:00,14,,secondary
+yfinance,ok,2026-08-24T09:37:17+00:00,35,,secondary

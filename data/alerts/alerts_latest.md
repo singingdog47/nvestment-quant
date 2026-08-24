@@ -1,17 +1,115 @@
 # Exception Alerts v1.9
 
-Generated: 2026-08-24T00:37:31+00:00
-Highest severity: **WATCH**
+Generated: 2026-08-24T09:37:18+00:00
+Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 0
-- WATCH: 2
+- WARNING: 46
+- WATCH: 5
 - INFO: 0
 
 ## Alerts
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ＫＤＤＩ(株)【9433】：株主優待 - Yahoo!ファイナンス
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [ACNB Corporation - Common Stock]: SEC 10-Q filing
+  - New company event detected for ACNB Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Adamas Trust, Inc. - Common Stock]: SEC 10-Q filing
+  - New company event detected for Adamas Trust, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Carter Bankshares, Inc. - Common Stock]: SEC 10-Q filing
+  - New company event detected for Carter Bankshares, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [DigitalBridge Group, Inc.]: SEC 10-Q filing
+  - New company event detected for DigitalBridge Group, Inc..
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Expand Energy Corporation - Common Stock]: SEC 10-Q filing
+  - New company event detected for Expand Energy Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [First Busey Corporation - Common Stock]: SEC 10-Q filing
+  - New company event detected for First Busey Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [HCI Group, Inc. Common Stock]: SEC 10-Q filing
+  - New company event detected for HCI Group, Inc. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Hercules Capital, Inc. Common Stock]: SEC 10-Q filing
+  - New company event detected for Hercules Capital, Inc. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [International Seaways, Inc. Common Stock ]: SEC 10-Q filing
+  - New company event detected for International Seaways, Inc. Common Stock .
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Millrose Properties, Inc. Class A Common Stock]: SEC 10-Q filing
+  - New company event detected for Millrose Properties, Inc. Class A Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Norwood Financial Corp. - Common Stock]: SEC 10-Q filing
+  - New company event detected for Norwood Financial Corp. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Terra Innovatum Global N.V. - Ordinary shares]: SEC 10-Q filing
+  - New company event detected for Terra Innovatum Global N.V. - Ordinary shares.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [WesBanco, Inc. - Common Stock]: SEC 10-Q filing
+  - New company event detected for WesBanco, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ACNB Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for ACNB Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ACNB Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for ACNB Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Adamas Trust, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Adamas Trust, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Adamas Trust, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Adamas Trust, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Adamas Trust, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Adamas Trust, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Adamas Trust, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Adamas Trust, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Carter Bankshares, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Carter Bankshares, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Carter Bankshares, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Carter Bankshares, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Carter Bankshares, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Carter Bankshares, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Carter Bankshares, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Carter Bankshares, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Carter Bankshares, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Carter Bankshares, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [DHT Holdings, Inc.]: SEC 6-K filing
+  - New company event detected for DHT Holdings, Inc..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [DHT Holdings, Inc.]: SEC 6-K filing
+  - New company event detected for DHT Holdings, Inc..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [DHT Holdings, Inc.]: SEC 6-K filing
+  - New company event detected for DHT Holdings, Inc..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [DigitalBridge Group, Inc.]: SEC 8-K filing
+  - New company event detected for DigitalBridge Group, Inc..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Expand Energy Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for Expand Energy Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Expand Energy Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for Expand Energy Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Expand Energy Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for Expand Energy Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [First Busey Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for First Busey Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [First Busey Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for First Busey Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [First Busey Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for First Busey Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [First Busey Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for First Busey Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [HCI Group, Inc. Common Stock]: SEC 8-K filing
+  - New company event detected for HCI Group, Inc. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Hercules Capital, Inc. Common Stock]: SEC 8-K filing
+  - New company event detected for Hercules Capital, Inc. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Hercules Capital, Inc. Common Stock]: SEC 8-K filing
+  - New company event detected for Hercules Capital, Inc. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Hercules Capital, Inc. Common Stock]: SEC 8-K filing
+  - New company event detected for Hercules Capital, Inc. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [International Seaways, Inc. Common Stock ]: SEC 8-K filing
+  - New company event detected for International Seaways, Inc. Common Stock .
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Millrose Properties, Inc. Class A Common Stock]: SEC 8-K filing
+  - New company event detected for Millrose Properties, Inc. Class A Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Millrose Properties, Inc. Class A Common Stock]: SEC 8-K filing
+  - New company event detected for Millrose Properties, Inc. Class A Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Norwood Financial Corp. - Common Stock]: SEC 8-K filing
+  - New company event detected for Norwood Financial Corp. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Norwood Financial Corp. - Common Stock]: SEC 8-K filing
+  - New company event detected for Norwood Financial Corp. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [WesBanco, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for WesBanco, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_REGULATORY [KDDI]: KDDI の ISP 事業者向けメールシステムに不正アクセス、個人情報保護委員会が行政指導 - ScanNetSecurity
   - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: NTT、KDDIなど国内7社、「オール光ネットワーク」の設計指針を国際標準化 - projectdesign.jp
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC 社員が国際チーム「Blue Water」に参画し、DEF CON 34 CTF Finals で世界1 位 - NEC
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+  - New company event detected for 信越化学工業.
 - **WATCH** LIQUIDITY/LIQUIDITY_SOFT: Market liquidity is soft
   - Liquidity component fell below 40/100.
 

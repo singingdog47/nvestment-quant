@@ -1,8 +1,8 @@
 {
   "version": "1.5.0",
-  "generated_at": "2026-08-24T00:32:47+00:00",
+  "generated_at": "2026-08-24T09:32:28+00:00",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 67.78,
+  "regime_score": 66.14,
   "confidence": 1.0,
   "actionable": true,
   "overheated_flag": false,
@@ -10,20 +10,20 @@
   "thin_liquidity_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 82.91236070234868,
-    "stress": 84.60999965667725,
-    "participation": 56.58834369960839,
-    "liquidity": 37.19001073891275,
+    "trend": 78.06555851331501,
+    "stress": 82.35999965667725,
+    "participation": 56.58334293284184,
+    "liquidity": 39.704532863754245,
     "positioning": 48.60196300007342
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.130000114440918,
+    "vix": 15.880000114440918,
     "hy_oas": null,
     "ig_oas": null,
-    "breadth_n": 9584,
+    "breadth_n": 9583,
     "nfci": null,
-    "volume_ratio20_mean": 0.7438002147782549,
+    "volume_ratio20_mean": 0.7940906572750849,
     "positioning_sources": {
       "jpx_raw_healthy": 3,
       "cftc_normalized_values": 22
