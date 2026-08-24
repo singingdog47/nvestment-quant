@@ -1,0 +1,66 @@
+name: Investment Quant Post-Close Watchdog
+
+on:
+  schedule:
+    # Backup check at 16:42 JST on weekdays, 25 minutes after the primary 16:17 schedule.
+    - cron: '42 7 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: post-close-watchdog
+  cancel-in-progress: false
+
+jobs:
+  ensure-post-close-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+
+      - name: Check whether today's post-close output already refreshed
+        id: freshness
+        shell: bash
+        run: |
+          python - <<'PY'
+          from datetime import datetime, timezone, timedelta
+          from pathlib import Path
+          import re
+
+          JST = timezone(timedelta(hours=9))
+          today = datetime.now(JST).date()
+          path = Path('data/integrated_report_latest.md')
+          fresh = False
+          generated = None
+          if path.exists():
+              text = path.read_text(encoding='utf-8', errors='ignore')
+              m = re.search(r'Generated \(UTC\):\s*([^\n]+)', text)
+              if m:
+                  try:
+                      generated = datetime.fromisoformat(m.group(1).strip()).astimezone(JST)
+                      fresh = generated.date() == today and generated.hour >= 15
+                  except Exception:
+                      pass
+          with open(Path(__import__('os').environ['GITHUB_OUTPUT']), 'a', encoding='utf-8') as f:
+              f.write(f'fresh={str(fresh).lower()}\n')
+              f.write(f'generated={generated.isoformat() if generated else "unknown"}\n')
+          print(f'latest_report_generated={generated} fresh_post_close={fresh}')
+          PY
+
+      - name: Dispatch primary post-close pipeline when stale or missing
+        if: steps.freshness.outputs.fresh != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Primary 16:17 report is stale/missing; dispatching recovery run."
+          gh workflow run post-close-pipeline-v2.2.yml --ref main -f max_tickers=0
+
+      - name: Confirm primary report already exists
+        if: steps.freshness.outputs.fresh == 'true'
+        run: echo "Today's post-close report is already fresh; no recovery dispatch needed."
