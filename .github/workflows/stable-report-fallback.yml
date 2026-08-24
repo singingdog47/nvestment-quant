@@ -1,4 +1,4 @@
-name: Stable Report Fallback v2.5
+name: Stable Report Fallback v2.6
 
 on:
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout pinned stable report version
         uses: actions/checkout@v4
         with:
-          ref: stable-report-v2.5
+          ref: stable-report-v2.6
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -60,7 +60,7 @@ jobs:
       - name: Upload stable public report only
         uses: actions/upload-artifact@v4
         with:
-          name: stable-public-report-v2.5
+          name: stable-public-report-v2.6
           path: |
             data/integrated_report_latest.md
             data/daily_report.md
