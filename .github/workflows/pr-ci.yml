@@ -58,8 +58,8 @@ jobs:
           _, edinet_health = fetch_edinet(jp, lookback_days=1)
           _, sec_health = fetch_sec(us, forms={"10-Q", "10-K", "8-K"}, lookback_days=45)
 
-          print(f"EDINET status={edinet_health.status} count={edinet_health.count} error={edinet_health.error}")
-          print(f"SEC status={sec_health.status} count={sec_health.count} error={sec_health.error}")
+          print(f"EDINET status={edinet_health.status} records={edinet_health.records} error={edinet_health.error}")
+          print(f"SEC status={sec_health.status} records={sec_health.records} error={sec_health.error}")
 
           bad = []
           if edinet_health.status not in {"ok", "partial"}:
