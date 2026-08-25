@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.7
 
-Generated (UTC): 2026-08-24T09:37:28+00:00
+Generated (UTC): 2026-08-25T09:24:51+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -9,50 +9,51 @@ Generated (UTC): 2026-08-24T09:37:28+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 66.14
-- Confidence: 1.0
-- VIX: 15.880000114440918
+- Score: 59.29
+- Confidence: 0.591
+- VIX: 15.789999961853027
+- Treasury realized-vol proxy (not ICE MOVE): 72.293 bps annualized; percentile=0.6984
 - Flags: none
 
 ## 3. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 5, 'WARNING': 46, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / SEC 10-Q filing
-- [WARNING] COMPANY_EVENT / SEC 10-Q filing
-- [WARNING] COMPANY_EVENT / SEC 10-Q filing
-- [WARNING] COMPANY_EVENT / SEC 10-Q filing
-- [WARNING] COMPANY_EVENT / SEC 10-Q filing
-- [WARNING] COMPANY_EVENT / SEC 10-Q filing
-- [WARNING] COMPANY_EVENT / SEC 10-Q filing
-- [WARNING] COMPANY_EVENT / SEC 10-Q filing
+- Counts: {'INFO': 0, 'WATCH': 12, 'WARNING': 7, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- [WATCH] COMPANY_EVENT / povo、「5G SA（スタンドアローン）」サービスを提供開始 - KDDI ニュースルーム
 
 ## 4. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=78.2615255078952 | cross_pct=100.0
-- 2. Akatsuki Inc. 3932.T | market_rank=2.0 | raw=77.16145496087536 | cross_pct=99.94858611825192
-- 3. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=3.0 | raw=76.87931932783377 | cross_pct=99.89717223650385
-- 4. IwaiCosmo Holdings,Inc. 8707.T | market_rank=4.0 | raw=75.53241297481537 | cross_pct=99.84575835475579
-- 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=73.75472140168148 | cross_pct=99.6401028277635
+- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=78.25171949217419 | cross_pct=100.0
+- 2. Akatsuki Inc. 3932.T | market_rank=2.0 | raw=77.00253256333092 | cross_pct=99.94850669412976
+- 3. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=3.0 | raw=76.6744030323236 | cross_pct=99.89701338825952
+- 4. IwaiCosmo Holdings,Inc. 8707.T | market_rank=5.0 | raw=75.538932687693 | cross_pct=99.79402677651905
+- 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=73.81741994457258 | cross_pct=99.63954685890835
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=83.95646270258446 | cross_pct=100.0
-- 2. International Seaways, Inc. Common Stock  INSW | market_rank=2.0 | raw=83.39904336876124 | cross_pct=99.97088791848617
-- 3. Millrose Properties, Inc. Class A Common Stock MRP | market_rank=3.0 | raw=83.27375232616615 | cross_pct=99.94177583697234
-- 4. DHT Holdings, Inc. DHT | market_rank=4.0 | raw=82.15424266835396 | cross_pct=99.91266375545852
-- 5. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=81.8325732262159 | cross_pct=99.88355167394468
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=83.970492494165 | cross_pct=100.0
+- 2. International Seaways, Inc. Common Stock  INSW | market_rank=2.0 | raw=83.2847501708291 | cross_pct=99.97083697871099
+- 3. Millrose Properties, Inc. Class A Common Stock MRP | market_rank=3.0 | raw=83.15332889864739 | cross_pct=99.94167395742198
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=81.93907464508197 | cross_pct=99.88334791484398
+- 5. Okeanis Eco Tankers Corp. Common Stock ECO | market_rank=6.0 | raw=81.51773332201557 | cross_pct=99.85418489355497
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=83.95646270258446
-- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=78.2615255078952
-- 3. [US] International Seaways, Inc. Common Stock  | cross_pct=99.97088791848617 | raw=83.39904336876124
-- 4. [JP] Akatsuki Inc. | cross_pct=99.94858611825192 | raw=77.16145496087536
-- 5. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.94177583697234 | raw=83.27375232616615
-- 6. [US] DHT Holdings, Inc. | cross_pct=99.91266375545852 | raw=82.15424266835396
-- 7. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.89717223650385 | raw=76.87931932783377
-- 8. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88355167394468 | raw=81.8325732262159
-- 9. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.84575835475579 | raw=75.53241297481537
-- 10. [US] Adamas Trust, Inc. - Common Stock | cross_pct=99.7962154294032 | raw=81.1780061563162
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=83.970492494165
+- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=78.25171949217419
+- 3. [US] International Seaways, Inc. Common Stock  | cross_pct=99.97083697871099 | raw=83.2847501708291
+- 4. [JP] Akatsuki Inc. | cross_pct=99.94850669412976 | raw=77.00253256333092
+- 5. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.94167395742198 | raw=83.15332889864739
+- 6. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.89701338825952 | raw=76.6744030323236
+- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88334791484398 | raw=81.93907464508197
+- 8. [US] Okeanis Eco Tankers Corp. Common Stock | cross_pct=99.85418489355497 | raw=81.51773332201557
+- 9. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.79402677651905 | raw=75.538932687693
+- 10. [US] Adamas Trust, Inc. - Common Stock | cross_pct=99.70836978710994 | raw=81.22053545677689
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 5. 過去判断の検証 / 学習

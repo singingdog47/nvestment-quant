@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-24T09:32:26.554755+00:00
+- Data retrieved (UTC): 2026-08-25T09:19:54.541039+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -26,8 +26,8 @@
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 7 |
-| JP | Other | 13 |
+| JP | Financials | 8 |
+| JP | Other | 12 |
 | US | Financials | 7 |
 | US | Mortgage REIT | 4 |
 | US | Other | 4 |
@@ -38,25 +38,25 @@
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 78.3 | 100.0 | unchanged |
-| JP | 2 | 3932.T | Akatsuki Inc. | Other | 77.2 | 99.9 | unchanged |
-| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.9 | 99.9 | unchanged |
-| JP | 4 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.5 | 99.8 | unchanged |
+| JP | 2 | 3932.T | Akatsuki Inc. | Other | 77.0 | 99.9 | unchanged |
+| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.7 | 99.9 | unchanged |
+| JP | 5 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.5 | 99.8 | unchanged |
 | JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.8 | 99.6 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.5 | 99.5 | unchanged |
-| JP | 11 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.1 | 99.5 | unchanged |
-| JP | 12 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 72.1 | 99.4 | unchanged |
-| JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.1 | 99.4 | unchanged |
-| JP | 15 | 8789.T | FinTech Global Incorporated | Other | 70.6 | 99.3 | unchanged |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 72.7 | 99.5 | unchanged |
+| JP | 11 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.4 | 99.5 | unchanged |
+| JP | 12 | 8927.T | MEIHO ENTERPRISE CO.,LTD. | Other | 71.6 | 99.4 | unchanged |
+| JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.0 | 99.4 | unchanged |
+| JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.8 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | 100.0 | unchanged |
-| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.4 | 100.0 | unchanged |
-| US | 3 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.3 | 99.9 | unchanged |
-| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 82.2 | 99.9 | unchanged |
-| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.8 | 99.9 | unchanged |
-| US | 8 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 81.2 | 99.8 | unchanged |
-| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | 99.7 | unchanged |
-| US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.3 | 99.6 | unchanged |
-| US | 23 | ACNB | ACNB Corporation - Common Stock | Other | 78.2 | 99.4 | unchanged |
-| US | 24 | DBRG | DigitalBridge Group, Inc. | Other | 78.2 | 99.3 | unchanged |
+| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.3 | 100.0 | unchanged |
+| US | 3 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.2 | 99.9 | unchanged |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.9 | 99.9 | unchanged |
+| US | 6 | ECO | Okeanis Eco Tankers Corp. Common Stock | Shipping | 81.5 | 99.9 | new_entry |
+| US | 11 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 81.2 | 99.7 | unchanged |
+| US | 13 | BUSE | First Busey Corporation - Common Stock | Other | 80.9 | 99.7 | unchanged |
+| US | 14 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.7 | 99.6 | unchanged |
+| US | 25 | DBRG | DigitalBridge Group, Inc. | Other | 78.3 | 99.3 | unchanged |
+| US | 28 | HTGC | Hercules Capital, Inc. Common Stock | Other | 78.0 | 99.2 | unchanged |
 
 ## Required manual checks before an order
 

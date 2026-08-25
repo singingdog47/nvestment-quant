@@ -1,16 +1,16 @@
 {
   "status": "ok",
-  "fetched_at": "2026-08-24T23:07:45+00:00",
+  "fetched_at": "2026-08-25T09:24:22+00:00",
   "source": "data/screening_full.csv.gz",
-  "n": 9583,
-  "pct_positive_return_1m": 0.6088008293975349,
-  "pct_positive_return_3m": 0.6010828245593826,
-  "pct_positive_return_6m": 0.4838152286602926,
-  "pct_positive_return_12m": 0.5696348346964636,
-  "participation_proxy": 0.5658334293284184,
+  "n": 9581,
+  "pct_positive_return_1m": 0.6165456849867497,
+  "pct_positive_return_3m": 0.5896992741099205,
+  "pct_positive_return_6m": 0.4830049544878442,
+  "pct_positive_return_12m": 0.5583592579790299,
+  "participation_proxy": 0.5619022928908861,
   "participation_columns": "return_1m,return_3m,return_6m,return_12m",
   "turnover_metric_column": "avg_turnover_30d",
-  "turnover_universe_sum": 10729167705656.736,
-  "turnover_universe_median": 22382213.584000003,
-  "turnover_coverage": 0.901074819993739
+  "turnover_universe_sum": 10758318113567.953,
+  "turnover_universe_median": 22231052.556166664,
+  "turnover_coverage": 0.9011585429495877
 }
