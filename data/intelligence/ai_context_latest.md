@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.2",
   "engine_version": "1.5.2",
-  "generated_at": "2026-08-25T09:19:56+00:00",
-  "generated_at_utc": "2026-08-25T09:19:56+00:00",
-  "date_jst": "2026-08-25",
+  "generated_at": "2026-08-25T23:13:59+00:00",
+  "generated_at_utc": "2026-08-25T23:13:59+00:00",
+  "date_jst": "2026-08-26",
   "data_status": "partial",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 59.29,
+  "regime_score": 59.78,
   "confidence": 0.591,
   "actionable": false,
   "actionability": {
@@ -34,26 +34,26 @@ Generated quality score: **0.745** / actionable=True
   "treasury_volatility_shock_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 70.83302690362194,
-    "stress": 65.12500005722046,
+    "trend": 72.43900466339,
+    "stress": 64.00000028610229,
     "participation": 56.19022928908861,
-    "liquidity": 37.76905981580562,
+    "liquidity": 39.66992982986599,
     "positioning": 48.60196300007342
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.789999961853027,
+    "vix": 15.449999809265137,
     "hy_oas": null,
     "ig_oas": null,
-    "treasury_volatility_proxy": 72.293,
-    "treasury_volatility_percentile_rank": 0.6984,
-    "treasury_volatility_stress_score": 47.62,
-    "treasury_volatility_as_of_date": "2026-08-24",
+    "treasury_volatility_proxy": 74.197,
+    "treasury_volatility_percentile_rank": 0.7421,
+    "treasury_volatility_stress_score": 44.35,
+    "treasury_volatility_as_of_date": "2026-08-25",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9581,
     "nfci": null,
-    "volume_ratio20_mean": 0.7553811963161123,
+    "volume_ratio20_mean": 0.7933985965973198,
     "positioning_sources": {
       "jpx_raw_healthy": 2,
       "cftc_normalized_values": 22
@@ -96,36 +96,36 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-08-25T09:24:39+00:00",
+  "generated_at": "2026-08-25T23:18:44+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
       "path": "data/regime/market_regime_latest.json",
-      "age_hours": 0.0,
+      "age_hours": 0.01,
       "stale_limit_hours": 36
     },
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.08,
+      "age_hours": 0.09,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.08,
+      "age_hours": 0.09,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.08,
+      "age_hours": 0.09,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.08,
+      "age_hours": 0.09,
       "stale_limit_hours": 36
     },
     "fundamentals": {
