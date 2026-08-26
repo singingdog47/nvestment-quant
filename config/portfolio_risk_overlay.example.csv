@@ -1,0 +1,2 @@
+holding_id,name,account,fx_beta_usdjpy,scenario_return_boj_hike,scenario_return_basis_boj_hike,scenario_return_us_recession,scenario_return_basis_us_recession,scenario_return_debasement,scenario_return_basis_debasement
+EXAMPLE_ID,EXAMPLE,EXAMPLE_ACCOUNT,1.0,0.00,local_currency,-0.10,local_currency,0.05,local_currency

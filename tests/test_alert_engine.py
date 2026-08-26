@@ -64,3 +64,14 @@ def test_private_portfolio_alerts_are_private_and_deterministic():
     assert "SINGLE_NAME_CONCENTRATION" in codes
     assert "TOP5_CONCENTRATION" in codes
     assert "BETA_EXTREME" in codes
+
+
+def test_private_alerts_surface_stale_inputs_and_partial_risk_coverage():
+    risk = {
+        "private_input_audit": {"status": "invalid_or_stale"},
+        "portfolio": {"metrics": {"portfolio_weight_coverage": 0.70}, "concentration": {}},
+    }
+    out = detect_private_portfolio_alerts(risk)
+    codes = {a["code"] for a in out["alerts"]}
+    assert "PRIVATE_INPUT_INVALID_OR_STALE" in codes
+    assert "PORTFOLIO_RISK_COVERAGE_LOW" in codes

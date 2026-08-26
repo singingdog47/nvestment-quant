@@ -1,4 +1,4 @@
-from src.portfolio_import import parse_rakuten_csv_bytes
+from src.portfolio_import import classify_fx_exposure, infer_portfolio_source_as_of, parse_rakuten_csv_bytes
 
 
 def _sample() -> bytes:
@@ -24,3 +24,41 @@ def test_values_and_accounts_preserved():
     assert row["current_price"] == 3954.0
     assert row["account"] == "NISA成長投資枠"
     assert row["currency"] == "JPY"
+
+
+def test_fx_classification_does_not_treat_em_fund_as_usd():
+    em = classify_fx_exposure("投資信託", "", "新興国株式インデックス")
+    assert em["currency"] == "EM_BASKET"
+    assert em["fx_beta_usdjpy"] is None
+    assert em["classification_status"] == "lookthrough_required"
+    vti = classify_fx_exposure("投資信託", "", "楽天・全米株式インデックス・ファンド（VTI）")
+    assert vti["currency"] == "USD"
+    assert vti["fx_beta_usdjpy"] == 1.0
+    assert vti["classification_status"] == "name_rule_inferred"
+    hedged = classify_fx_exposure("投資信託", "", "米国債券 為替ヘッジあり")
+    assert hedged["currency"] == "HEDGED"
+    assert hedged["fx_beta_usdjpy"] == 0.0
+    unknown = classify_fx_exposure("投資信託", "ABC", "判定不能ファンド")
+    assert unknown["currency"] == "UNKNOWN"
+    assert unknown["fx_beta_usdjpy"] is None
+
+
+def test_funds_without_security_codes_are_retained():
+    text = '''種別,銘柄コード・ティッカー,銘柄,口座,保有数量,平均取得価額,現在値,時価評価額[円]
+投資信託,,楽天・全米株式インデックス・ファンド（VTI）,NISA,100,10000,15000,"1,500,000"
+投資信託,,新興国株式インデックス,特定,100,10000,12000,"1,200,000"
+外貨預り金,,米ドル,特定,1000,150,159,"159,000"
+'''
+    r = parse_rakuten_csv_bytes(text.encode("utf-8"))
+    assert r.rows_kept == 3
+    assert r.portfolio["ticker"].tolist() == ["", "", ""]
+    assert r.portfolio["currency"].tolist() == ["USD", "EM_BASKET", "USD"]
+    assert r.portfolio["holding_id"].nunique() == 3
+
+
+def test_source_timestamp_prefers_export_filename_over_drive_reupload_time():
+    value, method = infer_portfolio_source_as_of(
+        "assetbalance(all)_20260819_093331.csv", "2026-08-26T09:00:00Z"
+    )
+    assert value == "2026-08-19T09:33:31+09:00"
+    assert method == "filename_embedded_export_time"
