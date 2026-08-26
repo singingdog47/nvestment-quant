@@ -209,6 +209,18 @@ def detect_private_portfolio_alerts(
     largest = _float(concentration.get("largest_weight"))
     top5 = _float(concentration.get("top5_weight"))
     hhi = _float(concentration.get("hhi"))
+    input_audit = report.get("private_input_audit") or {}
+    risk_coverage = _float(metrics.get("portfolio_weight_coverage"))
+
+    if input_audit.get("status") == "invalid_or_stale":
+        _add(alerts, "WARNING", "DATA_QUALITY", "PRIVATE_INPUT_INVALID_OR_STALE",
+             "Private portfolio inputs are invalid or stale",
+             "Optional FX, scenario, and investor-capacity outputs were withheld; refresh or reconcile private inputs.")
+    if risk_coverage is not None and risk_coverage < 0.90:
+        _add(alerts, "WARNING", "DATA_QUALITY", "PORTFOLIO_RISK_COVERAGE_LOW",
+             "Historical portfolio-risk coverage is incomplete",
+             "Price history covers less than 90% of portfolio weight; beta, VaR, and volatility are partial estimates.",
+             risk_coverage, 0.90)
 
     if var is not None and var >= 0.035:
         _add(alerts, "CRITICAL", "PORTFOLIO_RISK", "VAR_CRITICAL", "Portfolio VaR is high",

@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 from alert_engine import detect_private_portfolio_alerts
-from portfolio_import import parse_rakuten_csv_bytes
+from portfolio_import import infer_portfolio_source_as_of, parse_rakuten_csv_bytes
 from private_drive import download_recent_csvs, upload_or_replace
 from portfolio_risk import main as run_risk
 
@@ -28,10 +28,15 @@ def _build_latest_portfolio(private_dir: Path) -> tuple[Path, dict]:
             continue
         local = private_dir / "portfolio_latest.csv"
         parsed.portfolio.to_csv(local, index=False, encoding="utf-8")
+        source_as_of, source_as_of_method = infer_portfolio_source_as_of(
+            meta.get("name"), meta.get("modifiedTime")
+        )
         manifest = {
             "status": "ok",
             "source_file": meta.get("name"),
             "source_modified_time": meta.get("modifiedTime"),
+            "source_as_of": source_as_of,
+            "source_as_of_method": source_as_of_method,
             "source_encoding": parsed.source_encoding,
             "rows_seen": parsed.rows_seen,
             "rows_kept": parsed.rows_kept,
@@ -128,6 +133,8 @@ def main() -> None:
     local_portfolio, manifest = _build_latest_portfolio(private_dir)
 
     os.environ["PORTFOLIO_PATH"] = str(local_portfolio)
+    if manifest.get("source_as_of"):
+        os.environ["PORTFOLIO_SOURCE_AS_OF"] = str(manifest["source_as_of"])
     os.environ.setdefault("PRIVATE_OUTPUT_DIR", str(private_dir / "portfolio_risk"))
     run_risk()
 

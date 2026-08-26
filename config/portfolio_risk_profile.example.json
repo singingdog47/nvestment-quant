@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.1",
+  "enabled": false,
+  "as_of_jst": null,
+  "portfolio_source_as_of_jst": null,
+  "base_usdjpy": null,
+  "base_usdjpy_as_of_jst": null,
+  "target_usdjpy": [156, 155, 153, 150],
+  "total_assets_jpy": null,
+  "invested_assets_jpy": null,
+  "max_age_days": 7,
+  "fx_max_age_days": 2,
+  "minimum_scenario_coverage": 0.9,
+  "cause_scenarios": [
+    {"id": "boj_hike", "label": "BOJ hike / yen appreciation", "target_usdjpy": 155, "coefficient_status": "unvalidated"},
+    {"id": "us_recession", "label": "US recession / global equities down", "target_usdjpy": 150, "coefficient_status": "unvalidated"},
+    {"id": "debasement", "label": "Fiscal/debasement concern", "target_usdjpy": 153, "coefficient_status": "unvalidated"}
+  ],
+  "resilience": {
+    "enabled": false,
+    "unrealized_gain_jpy": null,
+    "free_cash_jpy": null,
+    "defensive_cash_jpy": null,
+    "shock_loss_jpy": null
+  }
+}

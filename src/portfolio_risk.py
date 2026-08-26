@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import io
 import math
 import os
 from dataclasses import dataclass
@@ -12,7 +13,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-VERSION = "1.8.0"
+VERSION = "1.9.0"
 DEFAULT_BENCHMARK = "1306.T"
 
 
@@ -39,8 +40,10 @@ def _json_default(v: Any) -> Any:
 
 
 def yahoo_symbol(row: pd.Series | dict[str, Any]) -> str | None:
-    ticker = str(row.get("ticker") or "").strip()
-    code = str(row.get("code") or "").strip()
+    def clean(value: Any) -> str:
+        return "" if value is None or pd.isna(value) else str(value).strip()
+    ticker = clean(row.get("ticker"))
+    code = clean(row.get("code"))
     market = str(row.get("market") or "").upper()
     if ticker:
         return ticker
@@ -53,8 +56,8 @@ def normalize_portfolio(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         raise ValueError("portfolio is empty")
     out = df.copy()
-    if "ticker" not in out.columns and "code" not in out.columns:
-        raise ValueError("portfolio requires ticker or code")
+    if not any(c in out.columns for c in ("ticker", "code", "holding_id", "name")):
+        raise ValueError("portfolio requires ticker, code, holding_id, or name")
     if "weight" not in out.columns:
         if "market_value" not in out.columns:
             raise ValueError("portfolio requires weight or market_value")
@@ -70,10 +73,280 @@ def normalize_portfolio(df: pd.DataFrame) -> pd.DataFrame:
         raise ValueError("weight sum must be positive")
     out["weight"] = out["weight"] / total
     out["symbol"] = out.apply(yahoo_symbol, axis=1)
-    out = out[out["symbol"].notna()].copy()
     if out.empty:
-        raise ValueError("no valid symbols")
+        raise ValueError("no positive-weight holdings")
     return out.reset_index(drop=True)
+
+
+def _parse_timestamp(value: Any) -> datetime | None:
+    if value is None or str(value).strip() == "":
+        return None
+    try:
+        dt = datetime.fromisoformat(str(value).strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt.astimezone(timezone.utc)
+
+
+def _finite_float(value: Any) -> float | None:
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return None
+    return number if math.isfinite(number) else None
+
+
+def validate_private_profile(
+    profile: dict[str, Any] | None,
+    portfolio_invested_jpy: float,
+    portfolio_source_as_of: str | None = None,
+    now: datetime | None = None,
+) -> dict[str, Any]:
+    """Validate freshness and reconciliation before optional private calculations."""
+    if profile is not None and not isinstance(profile, dict):
+        return {"status": "invalid_or_stale", "actionable": False,
+                "errors": ["profile_must_be_json_object"], "warnings": []}
+    if not profile or profile.get("enabled") is False:
+        return {"status": "disabled", "actionable": False, "errors": [], "warnings": []}
+    now_utc = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    errors: list[str] = []
+    warnings: list[str] = []
+    max_age_days = _finite_float(profile.get("max_age_days", 7))
+    fx_max_age_days = _finite_float(profile.get("fx_max_age_days", 2))
+    if max_age_days is None or max_age_days < 0:
+        errors.append("max_age_days_invalid")
+        max_age_days = 7.0
+    if fx_max_age_days is None or fx_max_age_days < 0:
+        errors.append("fx_max_age_days_invalid")
+        fx_max_age_days = 2.0
+    profile_as_of = _parse_timestamp(profile.get("as_of_jst"))
+    fx_as_of = _parse_timestamp(profile.get("base_usdjpy_as_of_jst"))
+    source_as_of = _parse_timestamp(portfolio_source_as_of or profile.get("portfolio_source_as_of_jst"))
+    for label, dt, limit in (("profile", profile_as_of, max_age_days),
+                             ("portfolio_source", source_as_of, max_age_days),
+                             ("base_usdjpy", fx_as_of, fx_max_age_days)):
+        if dt is None:
+            errors.append(f"{label}_as_of_missing_or_invalid")
+        elif (now_utc - dt).total_seconds() > limit * 86400:
+            errors.append(f"{label}_stale")
+        elif dt > now_utc + timedelta(hours=1):
+            errors.append(f"{label}_timestamp_in_future")
+    total_assets = _finite_float(profile.get("total_assets_jpy"))
+    invested = _finite_float(profile.get("invested_assets_jpy"))
+    if total_assets is None or total_assets <= 0:
+        errors.append("total_assets_missing_or_nonpositive")
+    if invested is None or invested <= 0:
+        errors.append("invested_assets_missing_or_nonpositive")
+    else:
+        tolerance_jpy = _finite_float(profile.get("reconciliation_tolerance_jpy", 1000))
+        tolerance_ratio = _finite_float(profile.get("reconciliation_tolerance_ratio", 0.005))
+        if tolerance_jpy is None or tolerance_jpy < 0 or tolerance_ratio is None or tolerance_ratio < 0:
+            errors.append("reconciliation_tolerance_invalid")
+            tolerance_jpy, tolerance_ratio = 1000.0, 0.005
+        tolerance = max(tolerance_jpy, abs(invested) * tolerance_ratio)
+        difference = portfolio_invested_jpy - invested
+        if abs(difference) > tolerance:
+            errors.append("portfolio_market_value_reconciliation_failed")
+    base_fx = _finite_float(profile.get("base_usdjpy"))
+    if base_fx is None or base_fx <= 0:
+        errors.append("base_usdjpy_missing_or_nonpositive")
+    if total_assets is not None and invested is not None and total_assets < invested:
+        errors.append("total_assets_below_invested_assets")
+    targets = profile.get("target_usdjpy", [])
+    if not isinstance(targets, list) or any(_finite_float(x) is None or float(x) <= 0 for x in targets):
+        errors.append("target_usdjpy_invalid")
+    scenarios = profile.get("cause_scenarios", [])
+    global_minimum = _finite_float(profile.get("minimum_scenario_coverage", .90))
+    if global_minimum is None or not 0 <= global_minimum <= 1:
+        errors.append("minimum_scenario_coverage_invalid")
+    if not isinstance(scenarios, list):
+        errors.append("cause_scenarios_invalid")
+    else:
+        for scenario in scenarios:
+            if not isinstance(scenario, dict) or not str(scenario.get("id", "")).strip():
+                errors.append("cause_scenario_id_missing")
+                continue
+            target = scenario.get("target_usdjpy")
+            if target is not None and (_finite_float(target) is None or float(target) <= 0):
+                errors.append(f"cause_scenario_{scenario.get('id')}_target_invalid")
+            minimum = _finite_float(scenario.get("min_coverage", global_minimum))
+            if minimum is None or not 0 <= minimum <= 1:
+                errors.append(f"cause_scenario_{scenario.get('id')}_coverage_invalid")
+    resilience = profile.get("resilience") or {}
+    if not isinstance(resilience, dict):
+        errors.append("resilience_must_be_object")
+        resilience = {}
+    if resilience.get("enabled"):
+        for key in ("unrealized_gain_jpy", "free_cash_jpy", "defensive_cash_jpy", "shock_loss_jpy"):
+            value = _finite_float(resilience.get(key))
+            if value is None or value < 0:
+                errors.append(f"resilience_{key}_missing_or_invalid")
+        if _finite_float(resilience.get("unrealized_gain_jpy")) == 0:
+            errors.append("resilience_unrealized_gain_nonpositive")
+    return {
+        "status": "ok" if not errors else "invalid_or_stale",
+        "actionable": not errors,
+        "errors": errors,
+        "warnings": warnings,
+        "profile_as_of": profile.get("as_of_jst"),
+        "portfolio_source_as_of": portfolio_source_as_of or profile.get("portfolio_source_as_of_jst"),
+        "base_usdjpy_as_of": profile.get("base_usdjpy_as_of_jst"),
+        "portfolio_invested_jpy": portfolio_invested_jpy,
+        "declared_invested_jpy": invested,
+        "reconciliation_difference_jpy": portfolio_invested_jpy - invested if invested else None,
+    }
+
+
+def fx_sensitivity_matrix(
+    portfolio: pd.DataFrame,
+    base_usdjpy: float,
+    target_rates: tuple[float, ...] = (156.0, 155.0, 153.0, 150.0),
+    total_assets: float | None = None,
+) -> dict[str, Any]:
+    """Direct USD/JPY translation sensitivity using only explicit numeric betas.
+
+    Currency baskets and unknown exposures are excluded rather than silently
+    receiving a beta of one. Values are static translation estimates, not P&L
+    forecasts and not estimates of underlying asset-price changes.
+    """
+    if base_usdjpy <= 0:
+        raise ValueError("base_usdjpy must be positive")
+    p = portfolio.copy()
+    if "market_value" not in p or "fx_beta_usdjpy" not in p:
+        return {"status": "missing", "reason": "market_value_or_fx_beta_missing", "scenarios": []}
+    mv = _num(p["market_value"])
+    beta = _num(p["fx_beta_usdjpy"])
+    eligible = mv.notna() & beta.notna() & (beta != 0)
+    exposure = float((mv[eligible] * beta[eligible]).sum())
+    gross = float(mv.fillna(0).sum())
+    assets = float(total_assets) if total_assets is not None else gross
+    if assets <= 0:
+        return {"status": "invalid", "reason": "total_assets_nonpositive", "scenarios": []}
+    currency = p.get("currency", pd.Series("UNKNOWN", index=p.index)).fillna("UNKNOWN").astype(str)
+    exposure_type = p.get("fx_exposure_type", pd.Series("unknown", index=p.index)).fillna("unknown").astype(str)
+    bucket_masks = {
+        "direct_usd": currency.eq("USD") & beta.notna() & beta.ne(0),
+        "jpy_or_domestic": currency.eq("JPY") | exposure_type.eq("domestic"),
+        "hedged": currency.eq("HEDGED") | exposure_type.eq("hedged"),
+        "currency_basket": currency.eq("EM_BASKET") | exposure_type.eq("currency_basket"),
+        "unknown": currency.eq("UNKNOWN") | exposure_type.eq("unknown"),
+    }
+    buckets = {k: float(mv[mask].fillna(0).sum()) for k, mask in bucket_masks.items()}
+    buckets["beta_missing"] = float(mv[beta.isna()].fillna(0).sum())
+    buckets["explicit_zero_beta"] = float(mv[beta.eq(0)].fillna(0).sum())
+    scenarios = []
+    for target in target_rates:
+        impact = exposure * (float(target) / base_usdjpy - 1.0)
+        scenarios.append({"target_usdjpy": float(target), "direct_fx_impact_jpy": impact,
+                          "impact_pct_total_assets": impact / assets if assets > 0 else None})
+    return {
+        "status": "ok", "method": "explicit_beta_static_translation", "base_usdjpy": base_usdjpy,
+        "usdjpy_beta_equivalent_jpy": exposure, "direct_usd_market_value_jpy": buckets["direct_usd"],
+        "direct_weight_total_assets": exposure / assets,
+        "impact_per_one_yen_down_jpy": -exposure / base_usdjpy,
+        "market_value_buckets_jpy": buckets,
+        "explicit_beta_coverage_ratio": float(mv[beta.notna()].fillna(0).sum()) / gross if gross > 0 else 0.0,
+        "scenarios": scenarios,
+        "limitations": ["Underlying security returns are excluded.", "Currency baskets require look-through or an OOS-estimated beta."],
+    }
+
+
+def position_weighted_shock(portfolio: pd.DataFrame, symbol: str, return_shock: float,
+                            total_assets: float | None = None) -> dict[str, Any]:
+    """Apply a return shock to the actual position value, never to portfolio notionals."""
+    p = portfolio.copy()
+    if "market_value" not in p:
+        return {"status": "missing", "reason": "market_value_missing"}
+    symbols = p.apply(yahoo_symbol, axis=1)
+    value = float(_num(p.loc[symbols == symbol, "market_value"]).fillna(0).sum())
+    invested_total = float(_num(p["market_value"]).fillna(0).sum())
+    denominator = float(total_assets) if total_assets is not None else invested_total
+    return {"status": "ok" if value > 0 else "not_held", "symbol": symbol, "position_value_jpy": value,
+            "portfolio_weight": value / denominator if denominator > 0 else None,
+            "weight_basis": "total_assets" if total_assets is not None else "invested_assets",
+            "return_shock": float(return_shock),
+            "impact_jpy": value * float(return_shock)}
+
+
+def investor_capacity_metrics(total_assets: float, unrealized_gain: float, free_cash: float,
+                              defensive_cash: float, shock_loss: float) -> dict[str, Any]:
+    """Report financial-capacity ratios without manufacturing a portfolio score."""
+    vals = (total_assets, unrealized_gain, free_cash, defensive_cash, shock_loss)
+    if any(v < 0 for v in vals) or total_assets <= 0 or unrealized_gain <= 0:
+        raise ValueError("resilience inputs must be non-negative and denominators positive")
+    loss_assets = shock_loss / total_assets
+    loss_gains = shock_loss / unrealized_gain
+    liquid = free_cash + defensive_cash
+    return {"status": "ok", "score": None, "score_status": "not_scored_without_validated_rubric",
+            "shock_loss_jpy": shock_loss,
+            "shock_loss_pct_assets": loss_assets, "shock_loss_pct_unrealized_gain": loss_gains,
+            "remaining_unrealized_gain_jpy": unrealized_gain - shock_loss,
+            "liquid_resources_jpy": liquid, "liquidity_coverage_ratio": liquid / shock_loss if shock_loss > 0 else None,
+            "free_cash_covers_shock": free_cash >= shock_loss,
+            "liquid_resources_cover_shock": liquid >= shock_loss,
+            "interpretation": "investor_financial_capacity_not_return_forecast"}
+
+
+def resilience_score(total_assets: float, unrealized_gain: float, free_cash: float,
+                     defensive_cash: float, shock_loss: float) -> dict[str, Any]:
+    """Backward-compatible alias; intentionally returns no numeric score."""
+    return investor_capacity_metrics(total_assets, unrealized_gain, free_cash, defensive_cash, shock_loss)
+
+
+def cause_scenarios(portfolio: pd.DataFrame, base_usdjpy: float,
+                    scenarios: list[dict[str, Any]], total_assets: float,
+                    default_min_coverage: float = 0.90) -> list[dict[str, Any]]:
+    """Cause-conditional stress tests with explicit, reviewable holding assumptions.
+
+    A scenario return is read from `scenario_return_<id>` per holding. Missing
+    assumptions stay missing; coverage is reported and no proxy is substituted.
+    """
+    p = portfolio.copy()
+    mv = _num(p.get("market_value", pd.Series(index=p.index, dtype=float)))
+    beta = _num(p.get("fx_beta_usdjpy", pd.Series(index=p.index, dtype=float)))
+    out: list[dict[str, Any]] = []
+    for scenario in scenarios:
+        sid = str(scenario["id"])
+        col = f"scenario_return_{sid}"
+        basis_col = f"scenario_return_basis_{sid}"
+        ret = _num(p[col]) if col in p else pd.Series(np.nan, index=p.index)
+        basis = p[basis_col].fillna("").astype(str) if basis_col in p else pd.Series("", index=p.index)
+        beta_nonzero = beta.notna() & beta.ne(0)
+        valid_basis = ~beta_nonzero | basis.isin({"local_currency", "jpy_nav"})
+        covered = mv.notna() & ret.notna() & valid_basis
+        asset_impact = float((mv[covered] * ret[covered]).sum())
+        target = scenario.get("target_usdjpy")
+        fx_impact = 0.0
+        if target is not None:
+            local_fx = covered & beta_nonzero & basis.eq("local_currency")
+            fx_impact = float((mv[local_fx] * beta[local_fx]).sum()) * (float(target) / base_usdjpy - 1.0)
+        partial_impact = asset_impact + fx_impact
+        coverage = float(mv[covered].sum()) / float(mv.fillna(0).sum()) if mv.fillna(0).sum() > 0 else 0.0
+        min_coverage = float(scenario.get("min_coverage", default_min_coverage))
+        coefficient_status = str(scenario.get("coefficient_status", "unvalidated"))
+        actionable = coverage >= min_coverage and coefficient_status == "validated_oos"
+        out.append({
+            "id": sid, "label": scenario.get("label", sid), "target_usdjpy": target,
+            "asset_return_impact_jpy": asset_impact, "direct_fx_impact_jpy": fx_impact,
+            "partial_covered_impact_jpy": partial_impact,
+            "estimated_total_impact_jpy": partial_impact if actionable else None,
+            "impact_pct_total_assets": partial_impact / total_assets if actionable and total_assets > 0 else None,
+            "assumption_coverage_market_value": float(mv[covered].sum()),
+            "assumption_coverage_ratio": coverage, "minimum_coverage_required": min_coverage,
+            "status": "actionable" if actionable else "non_actionable",
+            "actionable": actionable, "coefficient_status": coefficient_status,
+            "uncovered_market_value_jpy": float(mv[~covered].fillna(0).sum()),
+            "missing_return_basis_market_value_jpy": float(mv[ret.notna() & ~valid_basis].fillna(0).sum()),
+        })
+    return out
+
+
+def classify_treasury_operation(operation: str) -> dict[str, Any]:
+    """Prevent Treasury buybacks from being conflated with central-bank QE."""
+    if operation.strip().lower() in {"treasury_buyback", "us_treasury_buyback"}:
+        return {"classification": "debt_management_liquidity_operation", "is_qe": False,
+                "is_monetization": False, "notes": "Exchanges/cancels Treasury liabilities; does not itself create central-bank reserves."}
+    return {"classification": "unclassified", "is_qe": None, "is_monetization": None}
 
 
 def fetch_close(symbol: str, start: datetime, end: datetime) -> pd.Series:
@@ -234,7 +507,8 @@ def concentration_stats(weights: pd.Series) -> dict[str, float | None]:
 def portfolio_metrics(portfolio: pd.DataFrame, returns: pd.DataFrame, benchmark_symbol: str, confidence: float) -> dict[str, Any]:
     asset_cols = [c for c in portfolio["symbol"].unique() if c in returns.columns]
     if not asset_cols:
-        return {"status": "insufficient_market_data"}
+        return {"status": "insufficient_market_data", "portfolio_weight_coverage": 0.0}
+    coverage = float(portfolio.loc[portfolio["symbol"].isin(asset_cols), "weight"].sum())
     asset_ret = returns[asset_cols]
     weights = _aligned_weights(asset_ret.columns, portfolio)
     port = portfolio_return_series(asset_ret, weights)
@@ -247,7 +521,8 @@ def portfolio_metrics(portfolio: pd.DataFrame, returns: pd.DataFrame, benchmark_
     avg_corr = float(upper.mean()) if len(upper) else None
     risk_contrib = covariance_risk_contribution(asset_ret, weights)
     return {
-        "status": "ok" if len(port) >= 30 else "partial",
+        "status": "ok" if len(port) >= 30 and coverage >= 0.90 else "partial",
+        "portfolio_weight_coverage": coverage,
         "observations": int(len(port)),
         "annualized_return_estimate": ann_ret,
         "annualized_volatility": ann_vol,
@@ -312,7 +587,9 @@ def candidate_impact(base_portfolio: pd.DataFrame, returns: pd.DataFrame, candid
     }
 
 
-def analyze(portfolio: pd.DataFrame, screen: pd.DataFrame, config: RiskConfig = RiskConfig(), fetcher=fetch_close) -> dict[str, Any]:
+def analyze(portfolio: pd.DataFrame, screen: pd.DataFrame, config: RiskConfig = RiskConfig(), fetcher=fetch_close,
+            private_profile: dict[str, Any] | None = None, portfolio_source_as_of: str | None = None,
+            now: datetime | None = None) -> dict[str, Any]:
     pf = normalize_portfolio(portfolio)
     candidates = screen.copy() if not screen.empty else pd.DataFrame()
     if not candidates.empty:
@@ -321,11 +598,18 @@ def analyze(portfolio: pd.DataFrame, screen: pd.DataFrame, config: RiskConfig = 
         if sort_col:
             candidates[sort_col] = _num(candidates[sort_col])
             candidates = candidates.sort_values(sort_col, ascending=False, na_position="last")
-        candidates = candidates[~candidates["symbol"].isin(set(pf["symbol"])) & candidates["symbol"].notna()].head(config.candidate_top_n)
-    symbols = list(pf["symbol"].unique()) + ([config.benchmark] if config.benchmark else []) + list(candidates.get("symbol", []))
+        held_symbols = set(pf.loc[pf["symbol"].notna(), "symbol"])
+        candidates = candidates[~candidates["symbol"].isin(held_symbols) & candidates["symbol"].notna()].head(config.candidate_top_n)
+    else:
+        candidates = pd.DataFrame(columns=["symbol"])
+    symbols = list(pf.loc[pf["symbol"].notna(), "symbol"].unique()) + ([config.benchmark] if config.benchmark else []) + list(candidates.get("symbol", []))
     returns, fetch_errors = build_return_matrix(symbols, config, fetcher=fetcher)
     metrics = portfolio_metrics(pf, returns, config.benchmark, config.var_confidence)
-    weights = pf.groupby("symbol")["weight"].sum()
+    if "holding_id" in pf:
+        concentration_key = pf["holding_id"].fillna("").astype(str)
+    else:
+        concentration_key = pf.apply(lambda r: yahoo_symbol(r) or str(r.get("name") or r.name), axis=1)
+    weights = pf.assign(_concentration_key=concentration_key).groupby("_concentration_key")["weight"].sum()
     metadata = {
         "sector": weighted_group_exposure(pf, "sector"),
         "region": weighted_group_exposure(pf, "region"),
@@ -342,9 +626,11 @@ def analyze(portfolio: pd.DataFrame, screen: pd.DataFrame, config: RiskConfig = 
         impacts.append({"ticker": row.get("ticker"), "code": row.get("code"), "name": row.get("name"), "symbol": symbol,
                         "score": row.get("regime_adjusted_score", row.get("total_score")), **impact})
     impacts.sort(key=lambda x: ({"IMPROVES": 0, "NEUTRAL": 1, "WORSENS": 2}.get(x.get("verdict"), 3), x.get("delta_annualized_volatility") if x.get("delta_annualized_volatility") is not None else 999))
-    return {
+    invested_total = float(_num(pf["market_value"]).fillna(0).sum()) if "market_value" in pf else 0.0
+    profile_audit = validate_private_profile(private_profile, invested_total, portfolio_source_as_of, now=now)
+    report = {
         "version": VERSION,
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "generated_at": (now or datetime.now(timezone.utc)).astimezone(timezone.utc).isoformat(timespec="seconds"),
         "privacy": "PRIVATE_OUTPUT_ONLY",
         "portfolio": {
             "holdings": int(len(pf)),
@@ -352,6 +638,17 @@ def analyze(portfolio: pd.DataFrame, screen: pd.DataFrame, config: RiskConfig = 
             "metrics": metrics,
             "metadata_exposures": metadata,
             "factor_tilts": factor_tilts(pf, screen),
+            "market_resilience": {
+                "score": None,
+                "score_status": "not_scored_without_validated_rubric",
+                "historical_metrics_status": metrics.get("status"),
+                "note": "Market-price resilience is separate from investor financial capacity.",
+            },
+        },
+        "private_input_audit": profile_audit,
+        "macro_semantic_guardrails": {
+            "us_treasury_buyback": classify_treasury_operation("us_treasury_buyback"),
+            "generic_buyback": classify_treasury_operation("buyback"),
         },
         "candidate_impact": impacts,
         "data_quality": {
@@ -359,26 +656,90 @@ def analyze(portfolio: pd.DataFrame, screen: pd.DataFrame, config: RiskConfig = 
             "price_series_available": int(len(returns.columns)),
             "fetch_errors": fetch_errors,
             "minimum_observations": config.min_observations,
+            "portfolio_market_value_with_price_symbol_jpy": float(_num(pf.loc[pf["symbol"].notna(), "market_value"]).fillna(0).sum()) if "market_value" in pf else None,
+            "portfolio_market_value_without_price_symbol_jpy": float(_num(pf.loc[pf["symbol"].isna(), "market_value"]).fillna(0).sum()) if "market_value" in pf else None,
+            "portfolio_price_symbol_coverage_ratio": float(pf.loc[pf["symbol"].notna(), "weight"].sum()),
         },
         "rules": [
             "Risk estimates are historical estimates, not forecasts.",
             "Missing sector/currency/rate/FX metadata is reported as missing and never inferred.",
             "Candidate verdict describes portfolio-level risk diversification only; it is not a buy/sell signal.",
             "No order is ever placed by this module.",
+            "EM and other currency baskets are never assigned USD beta 1 without look-through or validated evidence.",
+            "Treasury buybacks are debt-management operations and are not classified as QE or monetization.",
         ],
     }
+    profile = private_profile if isinstance(private_profile, dict) else {}
+    base_fx = profile.get("base_usdjpy")
+    total_assets = profile.get("total_assets_jpy")
+    if profile_audit.get("actionable") and base_fx is not None:
+        report["portfolio"]["fx_sensitivity"] = fx_sensitivity_matrix(
+            pf, float(base_fx), tuple(profile.get("target_usdjpy", [156, 155, 153, 150])), total_assets
+        )
+        report["portfolio"]["cause_scenarios"] = cause_scenarios(
+            pf, float(base_fx), profile.get("cause_scenarios", []), float(total_assets),
+            float(profile.get("minimum_scenario_coverage", 0.90)),
+        )
+    resilience = profile.get("resilience")
+    if profile_audit.get("actionable") and resilience and resilience.get("enabled", True):
+        report["portfolio"]["investor_financial_capacity"] = investor_capacity_metrics(
+            float(total_assets), float(resilience["unrealized_gain_jpy"]),
+            float(resilience["free_cash_jpy"]), float(resilience["defensive_cash_jpy"]),
+            float(resilience["shock_loss_jpy"]),
+        )
+    elif profile and profile.get("enabled") is not False:
+        withheld = {"status": "withheld", "reason": "private_input_audit_failed",
+                    "audit_errors": profile_audit.get("errors", [])}
+        report["portfolio"]["fx_sensitivity"] = withheld
+        report["portfolio"]["cause_scenarios"] = []
+        report["portfolio"]["investor_financial_capacity"] = withheld
+    return report
 
 
 def write_private_report(report: dict[str, Any], out_dir: str | Path) -> tuple[Path, Path]:
     d = Path(out_dir); d.mkdir(parents=True, exist_ok=True)
     json_path = d / "portfolio_risk_latest.json"
     json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2, default=_json_default), encoding="utf-8")
-    lines = ["# Portfolio Risk Report v1.8", "", f"Generated: {report.get('generated_at')}", ""]
+    lines = ["# Portfolio Risk Report v1.9", "", f"Generated: {report.get('generated_at')}", ""]
     p = report.get("portfolio", {}); m = p.get("metrics", {}); c = p.get("concentration", {})
-    lines += ["## Core risk", f"- Holdings: {p.get('holdings')}", f"- Beta: {m.get('beta')}",
+    audit = report.get("private_input_audit", {})
+    lines += ["## Private input audit", f"- Status: {audit.get('status')}",
+              f"- Actionable: {audit.get('actionable')}",
+              f"- Profile as-of: {audit.get('profile_as_of')}",
+              f"- Portfolio source as-of: {audit.get('portfolio_source_as_of')}",
+              f"- FX as-of: {audit.get('base_usdjpy_as_of')}",
+              f"- Reconciliation difference: {audit.get('reconciliation_difference_jpy')}",
+              f"- Errors: {', '.join(audit.get('errors', [])) or 'none'}", "",
+              "## Core risk", f"- Holdings: {p.get('holdings')}", f"- Beta: {m.get('beta')}",
               f"- Annualized volatility: {m.get('annualized_volatility')}", f"- 1-day VaR: {m.get('var_1d')}",
               f"- 1-day CVaR: {m.get('cvar_1d')}", f"- Max drawdown: {m.get('max_drawdown')}",
-              f"- HHI: {c.get('hhi')}", f"- Effective holdings: {c.get('effective_holdings')}", "", "## Candidate impact"]
+              f"- HHI: {c.get('hhi')}", f"- Effective holdings: {c.get('effective_holdings')}",
+              "- Portfolio resilience score: not scored (no validated rubric)"]
+    fx = p.get("fx_sensitivity", {})
+    lines += ["", "## Direct FX sensitivity", f"- Status: {fx.get('status', 'not configured')}"]
+    if fx.get("status") == "ok":
+        lines += [f"- Base USD/JPY: {fx.get('base_usdjpy')}",
+                  f"- USDJPY beta-equivalent: {fx.get('usdjpy_beta_equivalent_jpy')}",
+                  f"- Direct USD market value: {fx.get('direct_usd_market_value_jpy')}",
+                  f"- One-yen-down impact: {fx.get('impact_per_one_yen_down_jpy')}",
+                  f"- Explicit-beta coverage: {fx.get('explicit_beta_coverage_ratio')}"]
+        lines += ["", "| Target USD/JPY | Direct FX impact | % total assets |", "|---:|---:|---:|"]
+        for x in fx.get("scenarios", []):
+            lines.append(f"| {x.get('target_usdjpy')} | {x.get('direct_fx_impact_jpy')} | {x.get('impact_pct_total_assets')} |")
+    lines += ["", "## Cause-conditional scenarios",
+              "Missing assumptions are not treated as zero; total impact is withheld below the coverage gate.",
+              "", "| Scenario | Status | Coverage | Covered impact | Total impact |", "|---|---|---:|---:|---:|"]
+    for x in p.get("cause_scenarios", []):
+        lines.append(f"| {x.get('label')} | {x.get('status')} | {x.get('assumption_coverage_ratio')} | {x.get('partial_covered_impact_jpy')} | {x.get('estimated_total_impact_jpy')} |")
+    cap = p.get("investor_financial_capacity", {})
+    lines += ["", "## Investor financial capacity", f"- Status: {cap.get('status', 'not configured')}",
+              "- Numeric score: not assigned; this is separate from portfolio market resilience."]
+    if cap.get("status") == "ok":
+        lines += [f"- Shock loss / total assets: {cap.get('shock_loss_pct_assets')}",
+                  f"- Shock loss / unrealized gain: {cap.get('shock_loss_pct_unrealized_gain')}",
+                  f"- Liquidity coverage: {cap.get('liquidity_coverage_ratio')}",
+                  f"- Remaining unrealized gain: {cap.get('remaining_unrealized_gain_jpy')}"]
+    lines += ["", "## Candidate impact"]
     for x in report.get("candidate_impact", []):
         lines.append(f"- {x.get('name') or x.get('ticker') or x.get('code')}: {x.get('verdict')} | corr={x.get('correlation_to_portfolio')} | Δvol={x.get('delta_annualized_volatility')} | ΔVaR={x.get('delta_var_1d')}")
     lines += ["", "## Governance"] + [f"- {r}" for r in report.get("rules", [])]
@@ -395,6 +756,36 @@ def main() -> None:
     if not portfolio_path.exists():
         raise FileNotFoundError(f"Private portfolio input not found: {portfolio_path}")
     portfolio = pd.read_csv(portfolio_path)
+    overlay_path = Path(os.getenv("PORTFOLIO_RISK_OVERLAY", ".private/portfolio_risk_overlay.csv"))
+    overlay_secret = os.getenv("PORTFOLIO_RISK_OVERLAY_CSV")
+    if overlay_secret or overlay_path.exists():
+        overlay = pd.read_csv(io.StringIO(overlay_secret)) if overlay_secret else pd.read_csv(overlay_path)
+        if "holding_id" in portfolio.columns and "holding_id" in overlay.columns:
+            keys = ["holding_id"]
+        elif all(k in portfolio.columns and k in overlay.columns for k in ("name", "account")):
+            keys = ["name", "account"]
+        elif "ticker" in portfolio.columns and "ticker" in overlay.columns:
+            keys = ["ticker"]
+        elif "code" in portfolio.columns and "code" in overlay.columns:
+            keys = ["code"]
+        else:
+            raise ValueError("private risk overlay requires holding_id, name+account, ticker, or code")
+        if overlay[keys].isna().any(axis=None) or overlay[keys].astype(str).apply(lambda s: s.str.strip().eq("")).any(axis=None):
+            raise ValueError("private risk overlay keys must be non-empty")
+        if overlay.duplicated(keys).any():
+            raise ValueError("private risk overlay keys must be unique")
+        # Private reviewed values override importer defaults without entering the public repository.
+        portfolio = portfolio.merge(overlay, on=keys, how="left", suffixes=("", "_override"))
+        for col in overlay.columns:
+            override = f"{col}_override"
+            if override in portfolio:
+                portfolio[col] = portfolio[override].combine_first(portfolio.get(col))
+                portfolio = portfolio.drop(columns=[override])
+    profile_path = Path(os.getenv("PORTFOLIO_RISK_PROFILE", ".private/portfolio_risk_profile.json"))
+    profile_secret = os.getenv("PORTFOLIO_RISK_PROFILE_JSON")
+    profile = json.loads(profile_secret) if profile_secret else (
+        json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.exists() else None
+    )
     screen = pd.read_csv(screen_path) if screen_path.exists() else pd.DataFrame()
     config = RiskConfig(
         lookback_days=int(os.getenv("RISK_LOOKBACK_DAYS", "400")),
@@ -404,7 +795,8 @@ def main() -> None:
         candidate_top_n=int(os.getenv("RISK_CANDIDATE_TOP_N", "10")),
         benchmark=os.getenv("RISK_BENCHMARK", DEFAULT_BENCHMARK),
     )
-    report = analyze(portfolio, screen, config=config)
+    report = analyze(portfolio, screen, config=config, private_profile=profile,
+                     portfolio_source_as_of=os.getenv("PORTFOLIO_SOURCE_AS_OF"))
     paths = write_private_report(report, out_dir)
     # Deliberately print only non-sensitive execution metadata.
     print(json.dumps({"version": VERSION, "status": "ok", "private_outputs_written": len(paths),
