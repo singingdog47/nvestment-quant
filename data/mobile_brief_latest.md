@@ -4,34 +4,34 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**CONSTRUCTIVE**、総合スコアは59.3です。
-市場レジームは前回からほぼ横ばいです。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
+市場レジームは**CONSTRUCTIVE**、総合スコアは62.8です。
+市場レジームは維持され、総合状態は前回より改善しています。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：+1.1ポイント
-- トレンド：-0.9ポイント
-- 市場参加の広がり：-0.4ポイント
-- 流動性：+9.7ポイント
-- Lincoln National Corporation Common Stockの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
+- 総合スコア：+3.0ポイント
+- トレンド：+6.8ポイント
+- 市場参加の広がり：+0.3ポイント
+- 流動性：+6.8ポイント
+- Terra Innovatum Global N.V. - Ordinary sharesの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
-日本はFinancialsが8銘柄。米国はFinancialsが7銘柄、Shippingが5銘柄で、上位銘柄に偏りがあります。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
-米国債金利の実現ボラproxyは70パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
+日本はFinancialsが8銘柄。米国はFinancialsが7銘柄、Shippingが5銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+米国債金利の実現ボラproxyは74パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## 今日の注意点
 
-- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
-- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
-- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
-- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
+- **WARNING** 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
 - 日本：Mito Securities Co.,Ltd.、Akatsuki Inc.、Ichiyoshi Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.
-- 米国：Carter Bankshares, Inc. - Common Stock、International Seaways, Inc. Common Stock 、Millrose Properties, Inc. Class A Common Stock、Norwood Financial Corp. - Common Stock
+- 米国：Carter Bankshares, Inc. - Common Stock、Millrose Properties, Inc. Class A Common Stock、International Seaways, Inc. Common Stock 、Okeanis Eco Tankers Corp. Common Stock
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
 
@@ -46,7 +46,7 @@
 
 ## 判断の確からしさ
 
-データ品質は74.5%。9581銘柄中5371銘柄を採点し、価格欠損率は9.4%です。
+データ品質は74.5%。9580銘柄中5375銘柄を採点し、価格欠損率は9.4%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-08-25T09:24:51+00:00
+生成時刻（UTC）：2026-08-26T09:31:12+00:00
