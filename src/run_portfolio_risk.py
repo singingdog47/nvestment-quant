@@ -2,11 +2,18 @@ from __future__ import annotations
 
 import json
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 
 from alert_engine import detect_private_portfolio_alerts
 from portfolio_import import infer_portfolio_source_as_of, parse_rakuten_csv_bytes
-from private_drive import download_recent_csvs, upload_or_replace
+from private_account_import import (
+    parse_account_summary_bytes,
+    parse_buying_power_pdf,
+    parse_orders_bytes,
+    source_as_of,
+)
+from private_drive import download_recent_files, upload_or_replace
 from portfolio_risk import main as run_risk
 
 
@@ -14,9 +21,7 @@ def _truthy_env(name: str, default: str = "false") -> bool:
     return os.getenv(name, default).strip().lower() in {"1", "true", "yes", "on"}
 
 
-def _build_latest_portfolio(private_dir: Path) -> tuple[Path, dict]:
-    inbox = private_dir / "drive_inbox"
-    candidates = download_recent_csvs(inbox, limit=int(os.getenv("PORTFOLIO_SCAN_LIMIT", "25")))
+def _build_latest_portfolio(private_dir: Path, candidates: list[tuple[Path, dict]]) -> tuple[Path, dict]:
     errors: list[dict] = []
     for path, meta in candidates:
         # Generated normalized/output CSV files are harmless: the Rakuten parser
@@ -51,6 +56,60 @@ def _build_latest_portfolio(private_dir: Path) -> tuple[Path, dict]:
         "No valid Rakuten Securities holdings CSV found in private Drive folder. "
         f"Checked {len(candidates)} CSV/text files; sample errors={errors[:5]}"
     )
+
+
+def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path, dict]]) -> dict:
+    """Classify the newest usable holdings, orders, and buying-power inputs."""
+    selected: dict[str, dict] = {}
+    errors: list[dict] = []
+    parsers = (
+        ("account_summary", lambda p: parse_account_summary_bytes(p.read_bytes())),
+        ("orders", lambda p: parse_orders_bytes(p.read_bytes())),
+        ("buying_power", parse_buying_power_pdf),
+    )
+    for path, meta in candidates:
+        for kind, parser in parsers:
+            if kind in selected:
+                continue
+            try:
+                parsed = parser(path)
+            except Exception as exc:
+                errors.append({"name": meta.get("name"), "kind": kind, "error": f"{type(exc).__name__}:{exc}"})
+                continue
+            as_of, method = source_as_of(meta.get("name"), meta.get("modifiedTime"))
+            if kind == "buying_power" and parsed.get("source_as_of"):
+                as_of, method = parsed["source_as_of"], "pdf_embedded_timestamp"
+            age_days = None
+            if as_of and len(str(as_of)) > 10:
+                try:
+                    observed = datetime.fromisoformat(str(as_of).replace("Z", "+00:00"))
+                    age_days = max(0.0, (datetime.now(timezone.utc) - observed.astimezone(timezone.utc)).total_seconds() / 86400)
+                except ValueError:
+                    age_days = None
+            max_age_days = float(os.getenv("PRIVATE_INPUT_MAX_AGE_DAYS", "7"))
+            selected[kind] = {
+                "source_file": meta.get("name"),
+                "source_modified_time": meta.get("modifiedTime"),
+                "source_as_of": as_of,
+                "source_as_of_method": method,
+                "age_days": age_days,
+                "data_status": "stale" if age_days is not None and age_days > max_age_days else "ok",
+                **parsed,
+            }
+    missing = [x for x in ("account_summary", "orders", "buying_power") if x not in selected]
+    stale = [kind for kind, item in selected.items() if item.get("data_status") == "stale"]
+    snapshot = {
+        "status": "ok" if not missing and not stale else "partial",
+        "selection_policy": "newest_parseable_file_by_drive_modified_time",
+        "inputs": selected,
+        "missing_input_types": missing,
+        "stale_input_types": stale,
+        "parse_errors_count": len(errors),
+    }
+    (private_dir / "account_inputs_latest.json").write_text(
+        json.dumps(snapshot, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return snapshot
 
 
 def _write_private_alerts(out_dir: Path) -> bool:
@@ -129,8 +188,11 @@ def _maybe_write_back_to_drive(private_dir: Path, out_dir: Path) -> bool:
 def main() -> None:
     private_dir = Path(os.getenv("PRIVATE_WORKDIR", ".private"))
     private_dir.mkdir(parents=True, exist_ok=True)
+    inbox = private_dir / "drive_inbox"
+    candidates = download_recent_files(inbox, limit=int(os.getenv("PORTFOLIO_SCAN_LIMIT", "50")))
 
-    local_portfolio, manifest = _build_latest_portfolio(private_dir)
+    local_portfolio, manifest = _build_latest_portfolio(private_dir, candidates)
+    account_inputs = _build_latest_account_inputs(private_dir, candidates)
 
     os.environ["PORTFOLIO_PATH"] = str(local_portfolio)
     if manifest.get("source_as_of"):
@@ -150,6 +212,9 @@ def main() -> None:
                 "source_file": manifest.get("source_file"),
                 "rows_kept": manifest.get("rows_kept"),
                 "weight_sum": manifest.get("weight_sum"),
+                "account_input_status": account_inputs.get("status"),
+                "account_input_types": sorted((account_inputs.get("inputs") or {}).keys()),
+                "account_selection_policy": account_inputs.get("selection_policy"),
                 "private_alerts_written": private_alerts_written,
                 "drive_writeback": writeback,
                 "privacy_mode": "ephemeral_runner_only" if not writeback else "private_drive_writeback",

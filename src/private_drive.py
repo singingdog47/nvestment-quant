@@ -79,6 +79,38 @@ def download_recent_csvs(destination_dir: str | Path, limit: int = 20) -> list[t
     return out
 
 
+def download_recent_files(destination_dir: str | Path, limit: int = 50) -> list[tuple[Path, dict]]:
+    """Download recent non-native files for private input classification.
+
+    Selection is based on Drive ``modifiedTime`` and content parsers, not a
+    fixed file ID.  This lets the user retain Rakuten's original export names
+    and upload newer holdings, order, and buying-power files to one folder.
+    """
+    service = _service(); folder = _folder_id()
+    q = f"'{folder}' in parents and trashed=false and mimeType!='application/vnd.google-apps.folder'"
+    fields = "files(id,name,mimeType,modifiedTime,createdTime,size,md5Checksum)"
+    files = service.files().list(
+        q=q,
+        spaces="drive",
+        fields=fields,
+        orderBy="modifiedTime desc",
+        pageSize=max(1, min(limit, 100)),
+    ).execute().get("files", [])
+    out: list[tuple[Path, dict]] = []
+    dest = Path(destination_dir); dest.mkdir(parents=True, exist_ok=True)
+    for i, meta in enumerate(files):
+        mime = str(meta.get("mimeType") or "")
+        if mime.startswith("application/vnd.google-apps"):
+            continue
+        name = Path(str(meta.get("name") or f"drive_file_{i}")).name
+        try:
+            p = _download_id(str(meta["id"]), dest / f"{i:02d}_{name}")
+            out.append((p, meta))
+        except Exception:
+            continue
+    return out
+
+
 def upload_or_replace(local_path: str | Path, name: str | None = None, mime_type: str | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     service = _service(); folder = _folder_id(); p = Path(local_path)
