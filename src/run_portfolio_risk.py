@@ -63,7 +63,7 @@ def _write_private_alerts(out_dir: Path) -> bool:
     alert_json.write_text(json.dumps(alerts, ensure_ascii=False, indent=2), encoding="utf-8")
 
     lines = [
-        "# Private Portfolio Alerts v1.9",
+        "# Private Portfolio Alerts v1.9.1",
         "",
         f"Generated: {alerts.get('generated_at')}",
         f"Highest severity: {alerts.get('highest_severity')}",

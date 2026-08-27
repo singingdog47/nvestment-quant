@@ -61,11 +61,27 @@ of sample; never replace missing with 1.
    rubric.
 5. Treat US Treasury buybacks as debt-management/liquidity operations, not QE or
    monetization.
-6. Require profile, portfolio-source, and FX timestamps. Optional private
-   calculations are withheld when stale, unreconciled, or incomplete.
+6. Require profile, portfolio-source, and FX timestamps for trade-actionable
+   output. Stale, undated, proxied, or unreconciled-but-numeric inputs continue
+   as explicitly labelled reference calculations; only the affected component
+   is withheld when its required numeric inputs are unusable.
    For Rakuten exports, the timestamp embedded in the filename takes precedence
    over Drive's modification time so re-uploading an old CSV cannot make it
    appear fresh.
+
+## Degraded-data operating modes
+
+- `current`: inputs are fresh, reconciled, and eligible for decision support.
+- `reference_only`: calculations continue from the last usable snapshot, but
+  trade actionability is blocked and scenario totals are withheld.
+- `withheld`: only the component missing essential numeric inputs is omitted;
+  historical portfolio metrics and all unaffected sections continue.
+
+When no private profile Secret is configured, the engine builds a conservative
+reference profile from the imported portfolio market value and the latest
+public USD/JPY observation in `market_dashboard_latest.csv`. The invested value
+is clearly labelled as a total-assets proxy, so it can never masquerade as a
+fully reconciled current balance sheet.
 
 ## Alternative validation method
 

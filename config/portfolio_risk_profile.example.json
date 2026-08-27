@@ -1,6 +1,7 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "enabled": false,
+  "auto_refresh_base_usdjpy": true,
   "as_of_jst": null,
   "portfolio_source_as_of_jst": null,
   "base_usdjpy": null,

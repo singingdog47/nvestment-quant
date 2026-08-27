@@ -14,6 +14,7 @@ from src.portfolio_risk import (
     fx_sensitivity_matrix,
     position_weighted_shock,
     resilience_score,
+    enrich_private_profile,
     validate_private_profile,
     write_private_report,
     classify_treasury_operation,
@@ -79,7 +80,7 @@ def test_analyze_reports_missing_metadata_without_inference():
         "total_score": [80], "quality_score": [75], "momentum_score": [82],
     })
     report = analyze(portfolio, screen, RiskConfig(candidate_top_n=1), fetcher=fake_fetch)
-    assert report["version"] == "1.9.0"
+    assert report["version"] == "1.9.1"
     assert report["privacy"] == "PRIVATE_OUTPUT_ONLY"
     assert report["portfolio"]["metrics"]["status"] in {"ok", "partial"}
     assert report["portfolio"]["metadata_exposures"]["currency"] == {}
@@ -170,16 +171,45 @@ def test_private_profile_freshness_and_reconciliation_gate():
         "total_assets_jpy": 1_100_000, "invested_assets_jpy": 1_000_000,
     }
     ok = validate_private_profile(good, 1_000_000, "2026-08-26T09:00:00Z", now=now)
-    assert ok["status"] == "ok"
+    assert ok["status"] == "current"
+    assert ok["calculation_allowed"] is True
     stale = validate_private_profile(good, 1_000_000, "2026-08-18T09:00:00Z", now=now)
     assert stale["actionable"] is False
-    assert "portfolio_source_stale" in stale["errors"]
+    assert stale["status"] == "reference_only"
+    assert stale["fx_calculation_allowed"] is True
+    assert "portfolio_source_stale" in stale["warnings"]
     mismatch = validate_private_profile(good, 900_000, "2026-08-26T09:00:00Z", now=now)
-    assert "portfolio_market_value_reconciliation_failed" in mismatch["errors"]
+    assert mismatch["status"] == "reference_only"
+    assert "portfolio_market_value_reconciliation_failed" in mismatch["warnings"]
     malformed = {**good, "total_assets_jpy": "not-a-number"}
     bad = validate_private_profile(malformed, 1_000_000, "2026-08-26T09:00:00Z", now=now)
     assert bad["actionable"] is False
+    assert bad["status"] == "reference_only"
+    assert bad["fx_calculation_allowed"] is True
     assert "total_assets_missing_or_nonpositive" in bad["errors"]
+
+
+def test_auto_reference_profile_uses_portfolio_proxy_and_market_fx(tmp_path):
+    dashboard = tmp_path / "market.csv"
+    pd.DataFrame({
+        "series": ["USDJPY"], "ticker": ["JPY=X"], "close": [160.25],
+        "fetched_at": ["2026-08-27T00:00:00+00:00"], "data_status": ["ok"],
+        "source": ["test"],
+    }).to_csv(dashboard, index=False)
+    portfolio = pd.DataFrame({"market_value": [600_000, 400_000]})
+    profile = enrich_private_profile(None, portfolio, "2026-08-27T08:45:38+09:00", dashboard)
+    assert profile["input_mode"] == "auto_reference"
+    assert profile["invested_assets_jpy"] == 1_000_000
+    assert profile["total_assets_jpy"] == 1_000_000
+    assert profile["total_assets_basis"] == "invested_assets_proxy"
+    assert profile["base_usdjpy"] == 160.25
+    audit = validate_private_profile(
+        profile, 1_000_000, "2026-08-27T08:45:38+09:00",
+        now=datetime(2026, 8, 27, 1, tzinfo=timezone.utc),
+    )
+    assert audit["status"] == "reference_only"
+    assert audit["fx_calculation_allowed"] is True
+    assert "total_assets_uses_invested_assets_proxy" in audit["warnings"]
 
 
 def test_private_markdown_surfaces_fx_scenarios_and_no_score(tmp_path):
@@ -233,3 +263,55 @@ def test_analyze_integrates_fresh_private_profile_without_dropping_fund():
     assert report["portfolio"]["fx_sensitivity"]["status"] == "ok"
     assert report["portfolio"]["cause_scenarios"][0]["actionable"] is True
     assert report["portfolio"]["investor_financial_capacity"]["score"] is None
+
+
+def test_analyze_stale_profile_keeps_reference_calculations():
+    idx = pd.date_range("2025-01-01", periods=260, freq="B", tz="UTC")
+    curves = {"VTI": np.linspace(100, 120, len(idx)), "1306.T": np.linspace(100, 110, len(idx))}
+    def fake_fetch(symbol, start, end):
+        return pd.Series(curves[symbol], index=idx, name=symbol)
+    portfolio = pd.DataFrame({
+        "holding_id": ["usd"], "ticker": ["VTI"], "name": ["US"],
+        "market_value": [1_000_000], "currency": ["USD"],
+        "fx_exposure_type": ["direct"], "fx_beta_usdjpy": [1.0],
+        "scenario_return_us_recession": [-.10],
+        "scenario_return_basis_us_recession": ["local_currency"],
+    })
+    profile = {
+        "enabled": True, "as_of_jst": "2026-08-18T18:00:00+09:00",
+        "base_usdjpy": 159, "base_usdjpy_as_of_jst": "2026-08-18T18:00:00+09:00",
+        "target_usdjpy": [150], "total_assets_jpy": 1_100_000, "invested_assets_jpy": 1_000_000,
+        "cause_scenarios": [{"id": "us_recession", "target_usdjpy": 150,
+                              "coefficient_status": "validated_oos"}],
+        "resilience": {"enabled": True, "unrealized_gain_jpy": 300_000,
+                       "free_cash_jpy": 100_000, "defensive_cash_jpy": 50_000,
+                       "shock_loss_jpy": 100_000},
+    }
+    report = analyze(
+        portfolio, pd.DataFrame(), fetcher=fake_fetch, private_profile=profile,
+        portfolio_source_as_of="2026-08-18T09:00:00Z",
+        now=datetime(2026, 8, 27, 1, tzinfo=timezone.utc),
+    )
+    assert report["private_input_audit"]["status"] == "reference_only"
+    assert report["portfolio"]["fx_sensitivity"]["status"] == "ok"
+    assert report["portfolio"]["fx_sensitivity"]["analysis_mode"] == "reference_only"
+    assert report["portfolio"]["cause_scenarios"][0]["status"] == "reference_only"
+    assert report["portfolio"]["cause_scenarios"][0]["estimated_total_impact_jpy"] is None
+    assert report["portfolio"]["investor_financial_capacity"]["status"] == "ok"
+    assert report["portfolio"]["investor_financial_capacity"]["analysis_mode"] == "reference_only"
+
+
+def test_invalid_capacity_does_not_downgrade_fresh_fx_component():
+    now = datetime(2026, 8, 27, 1, tzinfo=timezone.utc)
+    profile = {
+        "enabled": True, "as_of_jst": "2026-08-27T09:00:00+09:00",
+        "base_usdjpy": 160, "base_usdjpy_as_of_jst": "2026-08-27T09:00:00+09:00",
+        "total_assets_jpy": 1_100_000, "invested_assets_jpy": 1_000_000,
+        "resilience": {"enabled": True, "unrealized_gain_jpy": None,
+                       "free_cash_jpy": 100_000, "defensive_cash_jpy": 50_000,
+                       "shock_loss_jpy": 100_000},
+    }
+    audit = validate_private_profile(profile, 1_000_000, "2026-08-27T00:00:00Z", now=now)
+    assert audit["status"] == "reference_only"
+    assert audit["fx_actionable"] is True
+    assert audit["capacity_actionable"] is False

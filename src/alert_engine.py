@@ -6,7 +6,7 @@ from typing import Any
 
 import pandas as pd
 
-VERSION = "1.9.0"
+VERSION = "1.9.1"
 SEVERITY_ORDER = {"INFO": 0, "WATCH": 1, "WARNING": 2, "CRITICAL": 3}
 
 
@@ -212,10 +212,14 @@ def detect_private_portfolio_alerts(
     input_audit = report.get("private_input_audit") or {}
     risk_coverage = _float(metrics.get("portfolio_weight_coverage"))
 
-    if input_audit.get("status") == "invalid_or_stale":
+    if input_audit.get("status") == "reference_only":
+        _add(alerts, "WATCH", "DATA_QUALITY", "PRIVATE_INPUT_REFERENCE_ONLY",
+             "Private portfolio analysis is reference-only",
+             "Stale, undated, proxied, or unreconciled inputs were used for labelled reference calculations; trade actionability remains blocked.")
+    elif input_audit.get("status") in {"withheld", "invalid_or_stale"}:
         _add(alerts, "WARNING", "DATA_QUALITY", "PRIVATE_INPUT_INVALID_OR_STALE",
-             "Private portfolio inputs are invalid or stale",
-             "Optional FX, scenario, and investor-capacity outputs were withheld; refresh or reconcile private inputs.")
+             "Some private portfolio calculations are unavailable",
+             "Required numeric inputs are invalid or unavailable; unaffected historical analysis continues.")
     if risk_coverage is not None and risk_coverage < 0.90:
         _add(alerts, "WARNING", "DATA_QUALITY", "PORTFOLIO_RISK_COVERAGE_LOW",
              "Historical portfolio-risk coverage is incomplete",
