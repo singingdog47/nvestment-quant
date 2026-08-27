@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "effective_date": "2026-08-27",
+  "objective": {
+    "primary": "continuously improve expected return per unit of risk while preserving household utility and long-term compounding",
+    "wealth_target_jpy": 100000000,
+    "wealth_target_horizon_years": 10,
+    "wealth_target_is_required_return_constraint": false,
+    "base_monthly_contribution_jpy": 150000,
+    "additional_monthly_contribution_jpy": null,
+    "additional_contribution_treatment": "upside_only_not_assumed"
+  },
+  "capital_buckets": {
+    "core": {"description": "long-term index and diversified core assets"},
+    "satellite_core": {"target_min": 0.70, "target_max": 0.75},
+    "lifestyle_benefit": {"target_min": 0.15, "target_max": 0.20, "benefit_value_method": "face_value_times_actual_utilization_rate"},
+    "exploration": {"target_min": 0.0, "target_max": 0.05, "new_capital_cost_cap_jpy": 500000, "one_in_one_out": true, "purpose": "real-money research option; not assumed to have superior expected return", "existing_overweight_treatment": "freeze_new_buys_do_not_force_sell_only_for_cap"},
+    "tactical_cash": {"target_min": 0.05, "target_max": 0.10},
+    "household_defensive_cash": {"minimum_jpy": 500000, "investable": false, "excluded_from_tactical_cash": true}
+  },
+  "portfolio_rules": {
+    "holding_count_target_is_hard_constraint": false,
+    "reference_holding_count_min": 16,
+    "reference_holding_count_max": 20,
+    "forced_reduction_to_count_target": false,
+    "satellite_core_one_in_one_out": false,
+    "sell_rule": "sell or switch only when tax-adjusted expected benefit of replacement exceeds expected benefit of holding plus transaction friction",
+    "sector_specific_scoring_required": true,
+    "risk_contribution_required": true,
+    "factor_concentration_required": true,
+    "tail_correlation_stress_required": true
+  },
+  "tax_adjusted_filter": {
+    "enabled": true,
+    "taxable_account_capital_gains_rate_reference": 0.20315,
+    "require_account_type": true,
+    "unknown_account_type_action": "withhold_tax_adjusted_sell_conclusion",
+    "nisa_rules_must_be_current": true
+  },
+  "return_model": {
+    "expected_return_definition_required": true,
+    "allowed_definitions": ["arithmetic_expected_return", "geometric_cagr"],
+    "volatility_drag_adjustment": "apply_only_when_definition_and_return_process_make_it_valid; never double-adjust CAGR",
+    "exploration_expected_return_premium_assumed": false
+  },
+  "liquidity": {
+    "salary_account_is_investable_cash": false,
+    "large_expenses_may_require_liquidity": true,
+    "vehicle_purchase_financing_is_scenario_dependent": true
+  },
+  "decision_log_fields": [
+    "sleeve", "account_type", "tax_adjusted_switch_benefit", "expected_return_definition",
+    "risk_contribution", "factor_exposures", "sector_model", "investment_thesis_status",
+    "exploration_cost_basis", "exploration_cap_status", "benefit_utilization_rate"
+  ]
+}
