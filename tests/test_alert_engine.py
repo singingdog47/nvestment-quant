@@ -68,10 +68,19 @@ def test_private_portfolio_alerts_are_private_and_deterministic():
 
 def test_private_alerts_surface_stale_inputs_and_partial_risk_coverage():
     risk = {
-        "private_input_audit": {"status": "invalid_or_stale"},
+        "private_input_audit": {"status": "reference_only"},
         "portfolio": {"metrics": {"portfolio_weight_coverage": 0.70}, "concentration": {}},
     }
     out = detect_private_portfolio_alerts(risk)
     codes = {a["code"] for a in out["alerts"]}
-    assert "PRIVATE_INPUT_INVALID_OR_STALE" in codes
+    assert "PRIVATE_INPUT_REFERENCE_ONLY" in codes
     assert "PORTFOLIO_RISK_COVERAGE_LOW" in codes
+
+
+def test_private_alerts_withhold_only_unavailable_components():
+    risk = {
+        "private_input_audit": {"status": "withheld"},
+        "portfolio": {"metrics": {}, "concentration": {}},
+    }
+    out = detect_private_portfolio_alerts(risk)
+    assert "PRIVATE_INPUT_INVALID_OR_STALE" in {a["code"] for a in out["alerts"]}

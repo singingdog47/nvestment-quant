@@ -29,7 +29,7 @@ def _read_csv(path: Path) -> pd.DataFrame:
 
 def _write_markdown(report: dict, path: Path) -> None:
     lines = [
-        "# Exception Alerts v1.9",
+        "# Exception Alerts v1.9.1",
         "",
         f"Generated: {report.get('generated_at')}",
         f"Highest severity: **{report.get('highest_severity')}**",

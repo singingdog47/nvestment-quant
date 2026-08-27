@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 import requests
 
-VERSION = "1.9.0"
+VERSION = "1.9.1"
 DEFAULT_BENCHMARK = "1306.T"
 
 
@@ -102,22 +102,39 @@ def validate_private_profile(
     portfolio_source_as_of: str | None = None,
     now: datetime | None = None,
 ) -> dict[str, Any]:
-    """Validate freshness and reconciliation before optional private calculations."""
+    """Classify private inputs without treating staleness as a total stop.
+
+    Structural/numeric failures may withhold only the affected component.  Old,
+    undated, or unreconciled-but-usable inputs remain available for explicitly
+    labelled reference calculations and are never promoted to trade-actionable
+    output.
+    """
     if profile is not None and not isinstance(profile, dict):
-        return {"status": "invalid_or_stale", "actionable": False,
-                "errors": ["profile_must_be_json_object"], "warnings": []}
+        return {
+            "status": "withheld", "analysis_mode": "withheld",
+            "actionable": False, "calculation_allowed": False,
+            "fx_calculation_allowed": False, "scenario_calculation_allowed": False,
+            "capacity_calculation_allowed": False,
+            "errors": ["profile_must_be_json_object"], "warnings": [],
+        }
     if not profile or profile.get("enabled") is False:
-        return {"status": "disabled", "actionable": False, "errors": [], "warnings": []}
+        return {
+            "status": "disabled", "analysis_mode": "withheld",
+            "actionable": False, "calculation_allowed": False,
+            "fx_calculation_allowed": False, "scenario_calculation_allowed": False,
+            "capacity_calculation_allowed": False, "errors": [], "warnings": [],
+        }
     now_utc = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
     errors: list[str] = []
     warnings: list[str] = []
+    age_days: dict[str, float | None] = {}
     max_age_days = _finite_float(profile.get("max_age_days", 7))
     fx_max_age_days = _finite_float(profile.get("fx_max_age_days", 2))
     if max_age_days is None or max_age_days < 0:
-        errors.append("max_age_days_invalid")
+        warnings.append("max_age_days_invalid_using_default")
         max_age_days = 7.0
     if fx_max_age_days is None or fx_max_age_days < 0:
-        errors.append("fx_max_age_days_invalid")
+        warnings.append("fx_max_age_days_invalid_using_default")
         fx_max_age_days = 2.0
     profile_as_of = _parse_timestamp(profile.get("as_of_jst"))
     fx_as_of = _parse_timestamp(profile.get("base_usdjpy_as_of_jst"))
@@ -126,75 +143,217 @@ def validate_private_profile(
                              ("portfolio_source", source_as_of, max_age_days),
                              ("base_usdjpy", fx_as_of, fx_max_age_days)):
         if dt is None:
-            errors.append(f"{label}_as_of_missing_or_invalid")
-        elif (now_utc - dt).total_seconds() > limit * 86400:
-            errors.append(f"{label}_stale")
+            age_days[label] = None
+            warnings.append(f"{label}_as_of_missing_or_invalid")
+            continue
+        age = (now_utc - dt).total_seconds() / 86400
+        age_days[label] = age
+        if age > limit:
+            warnings.append(f"{label}_stale")
         elif dt > now_utc + timedelta(hours=1):
-            errors.append(f"{label}_timestamp_in_future")
+            warnings.append(f"{label}_timestamp_in_future")
     total_assets = _finite_float(profile.get("total_assets_jpy"))
     invested = _finite_float(profile.get("invested_assets_jpy"))
     if total_assets is None or total_assets <= 0:
         errors.append("total_assets_missing_or_nonpositive")
     if invested is None or invested <= 0:
-        errors.append("invested_assets_missing_or_nonpositive")
+        warnings.append("invested_assets_missing_or_nonpositive")
     else:
         tolerance_jpy = _finite_float(profile.get("reconciliation_tolerance_jpy", 1000))
         tolerance_ratio = _finite_float(profile.get("reconciliation_tolerance_ratio", 0.005))
         if tolerance_jpy is None or tolerance_jpy < 0 or tolerance_ratio is None or tolerance_ratio < 0:
-            errors.append("reconciliation_tolerance_invalid")
+            warnings.append("reconciliation_tolerance_invalid_using_default")
             tolerance_jpy, tolerance_ratio = 1000.0, 0.005
         tolerance = max(tolerance_jpy, abs(invested) * tolerance_ratio)
         difference = portfolio_invested_jpy - invested
         if abs(difference) > tolerance:
-            errors.append("portfolio_market_value_reconciliation_failed")
+            warnings.append("portfolio_market_value_reconciliation_failed")
     base_fx = _finite_float(profile.get("base_usdjpy"))
     if base_fx is None or base_fx <= 0:
         errors.append("base_usdjpy_missing_or_nonpositive")
+    effective_total_assets = total_assets if total_assets is not None and total_assets > 0 else portfolio_invested_jpy
     if total_assets is not None and invested is not None and total_assets < invested:
-        errors.append("total_assets_below_invested_assets")
-    targets = profile.get("target_usdjpy", [])
-    if not isinstance(targets, list) or any(_finite_float(x) is None or float(x) <= 0 for x in targets):
+        warnings.append("total_assets_below_invested_assets")
+    if effective_total_assets < portfolio_invested_jpy:
+        effective_total_assets = portfolio_invested_jpy
+        warnings.append("total_assets_adjusted_to_portfolio_market_value")
+    total_assets_basis = str(profile.get("total_assets_basis") or "declared_total_assets")
+    if total_assets_basis == "invested_assets_proxy":
+        warnings.append("total_assets_uses_invested_assets_proxy")
+    targets = profile.get("target_usdjpy", [156, 155, 153, 150])
+    targets_valid = isinstance(targets, list) and bool(targets) and not any(
+        _finite_float(x) is None or float(x) <= 0 for x in targets
+    )
+    if not targets_valid:
         errors.append("target_usdjpy_invalid")
     scenarios = profile.get("cause_scenarios", [])
     global_minimum = _finite_float(profile.get("minimum_scenario_coverage", .90))
     if global_minimum is None or not 0 <= global_minimum <= 1:
         errors.append("minimum_scenario_coverage_invalid")
-    if not isinstance(scenarios, list):
+    scenarios_valid = isinstance(scenarios, list)
+    if not scenarios_valid:
         errors.append("cause_scenarios_invalid")
     else:
         for scenario in scenarios:
             if not isinstance(scenario, dict) or not str(scenario.get("id", "")).strip():
                 errors.append("cause_scenario_id_missing")
+                scenarios_valid = False
                 continue
             target = scenario.get("target_usdjpy")
             if target is not None and (_finite_float(target) is None or float(target) <= 0):
                 errors.append(f"cause_scenario_{scenario.get('id')}_target_invalid")
+                scenarios_valid = False
             minimum = _finite_float(scenario.get("min_coverage", global_minimum))
             if minimum is None or not 0 <= minimum <= 1:
                 errors.append(f"cause_scenario_{scenario.get('id')}_coverage_invalid")
+                scenarios_valid = False
     resilience = profile.get("resilience") or {}
     if not isinstance(resilience, dict):
         errors.append("resilience_must_be_object")
         resilience = {}
-    if resilience.get("enabled"):
+    capacity_valid = bool(resilience.get("enabled"))
+    if capacity_valid:
         for key in ("unrealized_gain_jpy", "free_cash_jpy", "defensive_cash_jpy", "shock_loss_jpy"):
             value = _finite_float(resilience.get(key))
             if value is None or value < 0:
                 errors.append(f"resilience_{key}_missing_or_invalid")
-        if _finite_float(resilience.get("unrealized_gain_jpy")) == 0:
+                capacity_valid = False
+        if (_finite_float(resilience.get("unrealized_gain_jpy")) or 0) <= 0:
             errors.append("resilience_unrealized_gain_nonpositive")
+            capacity_valid = False
+    fx_allowed = base_fx is not None and base_fx > 0 and effective_total_assets > 0 and targets_valid
+    scenario_allowed = fx_allowed and scenarios_valid
+    capacity_allowed = capacity_valid and effective_total_assets > 0
+    calculation_allowed = fx_allowed or scenario_allowed or capacity_allowed
+    def relevant(items: list[str], prefixes: tuple[str, ...]) -> list[str]:
+        return [item for item in items if item.startswith(prefixes)]
+    fx_prefixes = (
+        "profile_", "portfolio_source_", "base_usdjpy_", "total_assets_",
+        "invested_assets_", "portfolio_market_value_", "reconciliation_",
+        "target_usdjpy_", "max_age_days_", "fx_max_age_days_",
+    )
+    scenario_prefixes = fx_prefixes + ("cause_", "minimum_scenario_",)
+    capacity_prefixes = (
+        "profile_", "total_assets_", "invested_assets_", "portfolio_market_value_",
+        "reconciliation_", "resilience_", "max_age_days_",
+    )
+    component_errors = {
+        "fx": relevant(errors, fx_prefixes),
+        "scenario": relevant(errors, scenario_prefixes),
+        "capacity": relevant(errors, capacity_prefixes),
+    }
+    component_warnings = {
+        "fx": relevant(warnings, fx_prefixes),
+        "scenario": relevant(warnings, scenario_prefixes),
+        "capacity": relevant(warnings, capacity_prefixes),
+    }
+    fx_actionable = fx_allowed and not component_errors["fx"] and not component_warnings["fx"]
+    scenario_actionable = scenario_allowed and not component_errors["scenario"] and not component_warnings["scenario"]
+    capacity_actionable = capacity_allowed and not component_errors["capacity"] and not component_warnings["capacity"]
+    requested_states = [fx_actionable]
+    if isinstance(scenarios, list) and scenarios:
+        requested_states.append(scenario_actionable)
+    if resilience.get("enabled"):
+        requested_states.append(capacity_actionable)
+    actionable = calculation_allowed and all(requested_states)
+    analysis_mode = "current" if actionable else "reference_only" if calculation_allowed else "withheld"
     return {
-        "status": "ok" if not errors else "invalid_or_stale",
-        "actionable": not errors,
+        "status": analysis_mode, "analysis_mode": analysis_mode,
+        "actionable": actionable, "calculation_allowed": calculation_allowed,
+        "fx_calculation_allowed": fx_allowed,
+        "scenario_calculation_allowed": scenario_allowed,
+        "capacity_calculation_allowed": capacity_allowed,
+        "fx_actionable": fx_actionable,
+        "scenario_actionable": scenario_actionable,
+        "capacity_actionable": capacity_actionable,
+        "component_errors": component_errors,
+        "component_warnings": component_warnings,
         "errors": errors,
-        "warnings": warnings,
+        "warnings": list(dict.fromkeys(warnings)),
+        "age_days": age_days,
         "profile_as_of": profile.get("as_of_jst"),
         "portfolio_source_as_of": portfolio_source_as_of or profile.get("portfolio_source_as_of_jst"),
         "base_usdjpy_as_of": profile.get("base_usdjpy_as_of_jst"),
         "portfolio_invested_jpy": portfolio_invested_jpy,
         "declared_invested_jpy": invested,
         "reconciliation_difference_jpy": portfolio_invested_jpy - invested if invested else None,
+        "declared_total_assets_jpy": total_assets,
+        "effective_total_assets_jpy": effective_total_assets,
+        "total_assets_basis": total_assets_basis,
     }
+
+
+def enrich_private_profile(
+    profile: dict[str, Any] | None,
+    portfolio: pd.DataFrame,
+    portfolio_source_as_of: str | None,
+    market_dashboard_path: str | Path = "data/regime/market_dashboard_latest.csv",
+) -> dict[str, Any] | None:
+    """Fill safe reference inputs from the imported portfolio and public market data.
+
+    An explicitly disabled profile stays disabled.  When no private profile is
+    configured, the invested market value is a conservative denominator proxy
+    and the latest public USD/JPY dashboard observation supplies the FX base.
+    These derived inputs are labelled reference-only by validation.
+    """
+    if isinstance(profile, dict) and profile.get("enabled") is False:
+        return profile
+    p = dict(profile or {})
+    derived: list[str] = list(p.get("derived_fields") or [])
+    auto_profile = not bool(profile)
+    p["schema_version"] = str(p.get("schema_version") or "1.2")
+    p["enabled"] = True
+    p["input_mode"] = str(p.get("input_mode") or ("auto_reference" if auto_profile else "private_profile"))
+
+    invested = float(_num(portfolio.get("market_value", pd.Series(dtype=float))).fillna(0).sum())
+    if (_finite_float(p.get("invested_assets_jpy")) or 0) <= 0 and invested > 0:
+        p["invested_assets_jpy"] = invested
+        derived.append("invested_assets_jpy")
+    if (_finite_float(p.get("total_assets_jpy")) or 0) <= 0 and invested > 0:
+        p["total_assets_jpy"] = invested
+        p["total_assets_basis"] = "invested_assets_proxy"
+        derived.append("total_assets_jpy")
+    if portfolio_source_as_of:
+        p["portfolio_source_as_of_jst"] = portfolio_source_as_of
+        if not p.get("as_of_jst"):
+            p["as_of_jst"] = portfolio_source_as_of
+            derived.append("as_of_jst")
+    p.setdefault("target_usdjpy", [156, 155, 153, 150])
+    p.setdefault("cause_scenarios", [])
+    p.setdefault("minimum_scenario_coverage", 0.90)
+    p.setdefault("max_age_days", 7)
+    p.setdefault("fx_max_age_days", 2)
+    p.setdefault("resilience", {"enabled": False})
+
+    dashboard = Path(market_dashboard_path)
+    if dashboard.exists() and p.get("auto_refresh_base_usdjpy", True):
+        try:
+            market = pd.read_csv(dashboard)
+            mask = pd.Series(False, index=market.index)
+            if "ticker" in market:
+                mask |= market["ticker"].astype(str).eq("JPY=X")
+            if "series" in market:
+                mask |= market["series"].astype(str).str.upper().eq("USDJPY")
+            rows = market.loc[mask].copy()
+            if "data_status" in rows:
+                rows = rows[rows["data_status"].astype(str).str.lower().eq("ok")]
+            if not rows.empty:
+                sort_col = "fetched_at" if "fetched_at" in rows else "date" if "date" in rows else None
+                if sort_col:
+                    rows = rows.sort_values(sort_col)
+                row = rows.iloc[-1]
+                close = _finite_float(row.get("close"))
+                if close is not None and close > 0:
+                    p["base_usdjpy"] = close
+                    p["base_usdjpy_as_of_jst"] = row.get("fetched_at") or row.get("date")
+                    p["base_usdjpy_source"] = str(row.get("source") or "market_dashboard")
+                    derived.extend(["base_usdjpy", "base_usdjpy_as_of_jst"])
+        except Exception:
+            # Validation will label FX analysis unavailable; core portfolio
+            # analysis must continue even when this optional fallback fails.
+            pass
+    p["derived_fields"] = list(dict.fromkeys(derived))
+    return p
 
 
 def fx_sensitivity_matrix(
@@ -644,6 +803,7 @@ def analyze(portfolio: pd.DataFrame, screen: pd.DataFrame, config: RiskConfig = 
                 "historical_metrics_status": metrics.get("status"),
                 "note": "Market-price resilience is separate from investor financial capacity.",
             },
+            "analysis_mode": profile_audit.get("analysis_mode"),
         },
         "private_input_audit": profile_audit,
         "macro_semantic_guardrails": {
@@ -667,32 +827,68 @@ def analyze(portfolio: pd.DataFrame, screen: pd.DataFrame, config: RiskConfig = 
             "No order is ever placed by this module.",
             "EM and other currency baskets are never assigned USD beta 1 without look-through or validated evidence.",
             "Treasury buybacks are debt-management operations and are not classified as QE or monetization.",
+            "Stale inputs reduce decision actionability but do not suppress usable reference calculations.",
         ],
     }
     profile = private_profile if isinstance(private_profile, dict) else {}
     base_fx = profile.get("base_usdjpy")
-    total_assets = profile.get("total_assets_jpy")
-    if profile_audit.get("actionable") and base_fx is not None:
-        report["portfolio"]["fx_sensitivity"] = fx_sensitivity_matrix(
+    total_assets = profile_audit.get("effective_total_assets_jpy")
+    analysis_mode = str(profile_audit.get("analysis_mode") or "withheld")
+    if profile_audit.get("fx_calculation_allowed") and base_fx is not None:
+        fx_mode = "current" if profile_audit.get("fx_actionable") else "reference_only"
+        fx = fx_sensitivity_matrix(
             pf, float(base_fx), tuple(profile.get("target_usdjpy", [156, 155, 153, 150])), total_assets
         )
-        report["portfolio"]["cause_scenarios"] = cause_scenarios(
+        fx.update({
+            "analysis_mode": fx_mode,
+            "decision_actionable": bool(profile_audit.get("fx_actionable")),
+            "input_warnings": (profile_audit.get("component_warnings") or {}).get("fx", []),
+            "total_assets_basis": profile_audit.get("total_assets_basis"),
+        })
+        report["portfolio"]["fx_sensitivity"] = fx
+    elif profile and profile.get("enabled") is not False:
+        report["portfolio"]["fx_sensitivity"] = {
+            "status": "withheld", "analysis_mode": "withheld",
+            "reason": "required_numeric_fx_inputs_unavailable",
+            "audit_errors": profile_audit.get("errors", []),
+        }
+    if profile_audit.get("scenario_calculation_allowed") and base_fx is not None:
+        scenarios = cause_scenarios(
             pf, float(base_fx), profile.get("cause_scenarios", []), float(total_assets),
             float(profile.get("minimum_scenario_coverage", 0.90)),
         )
+        if not profile_audit.get("scenario_actionable"):
+            for scenario in scenarios:
+                scenario["model_status"] = scenario.get("status")
+                scenario["status"] = "reference_only"
+                scenario["actionable"] = False
+                scenario["estimated_total_impact_jpy"] = None
+                scenario["impact_pct_total_assets"] = None
+                scenario["input_warnings"] = (profile_audit.get("component_warnings") or {}).get("scenario", [])
+        report["portfolio"]["cause_scenarios"] = scenarios
+    else:
+        report["portfolio"]["cause_scenarios"] = []
     resilience = profile.get("resilience")
-    if profile_audit.get("actionable") and resilience and resilience.get("enabled", True):
-        report["portfolio"]["investor_financial_capacity"] = investor_capacity_metrics(
+    if profile_audit.get("capacity_calculation_allowed") and resilience and resilience.get("enabled", True):
+        capacity_mode = "current" if profile_audit.get("capacity_actionable") else "reference_only"
+        capacity = investor_capacity_metrics(
             float(total_assets), float(resilience["unrealized_gain_jpy"]),
             float(resilience["free_cash_jpy"]), float(resilience["defensive_cash_jpy"]),
             float(resilience["shock_loss_jpy"]),
         )
-    elif profile and profile.get("enabled") is not False:
-        withheld = {"status": "withheld", "reason": "private_input_audit_failed",
-                    "audit_errors": profile_audit.get("errors", [])}
-        report["portfolio"]["fx_sensitivity"] = withheld
-        report["portfolio"]["cause_scenarios"] = []
-        report["portfolio"]["investor_financial_capacity"] = withheld
+        capacity.update({
+            "analysis_mode": capacity_mode,
+            "decision_actionable": bool(profile_audit.get("capacity_actionable")),
+            "input_warnings": (profile_audit.get("component_warnings") or {}).get("capacity", []),
+            "total_assets_basis": profile_audit.get("total_assets_basis"),
+        })
+        report["portfolio"]["investor_financial_capacity"] = capacity
+    elif resilience and resilience.get("enabled"):
+        report["portfolio"]["investor_financial_capacity"] = {
+            "status": "withheld", "analysis_mode": "withheld",
+            "reason": "capacity_inputs_unavailable",
+            "audit_errors": profile_audit.get("errors", []),
+        }
     return report
 
 
@@ -700,15 +896,20 @@ def write_private_report(report: dict[str, Any], out_dir: str | Path) -> tuple[P
     d = Path(out_dir); d.mkdir(parents=True, exist_ok=True)
     json_path = d / "portfolio_risk_latest.json"
     json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2, default=_json_default), encoding="utf-8")
-    lines = ["# Portfolio Risk Report v1.9", "", f"Generated: {report.get('generated_at')}", ""]
+    lines = ["# Portfolio Risk Report v1.9.1", "", f"Generated: {report.get('generated_at')}", ""]
     p = report.get("portfolio", {}); m = p.get("metrics", {}); c = p.get("concentration", {})
     audit = report.get("private_input_audit", {})
     lines += ["## Private input audit", f"- Status: {audit.get('status')}",
-              f"- Actionable: {audit.get('actionable')}",
+              f"- Analysis mode: {audit.get('analysis_mode')}",
+              f"- Reference calculations allowed: {audit.get('calculation_allowed')}",
+              f"- Trade-decision actionable: {audit.get('actionable')}",
               f"- Profile as-of: {audit.get('profile_as_of')}",
               f"- Portfolio source as-of: {audit.get('portfolio_source_as_of')}",
               f"- FX as-of: {audit.get('base_usdjpy_as_of')}",
+              f"- Input age (days): {audit.get('age_days')}",
+              f"- Total-assets basis: {audit.get('total_assets_basis')}",
               f"- Reconciliation difference: {audit.get('reconciliation_difference_jpy')}",
+              f"- Warnings: {', '.join(audit.get('warnings', [])) or 'none'}",
               f"- Errors: {', '.join(audit.get('errors', [])) or 'none'}", "",
               "## Core risk", f"- Holdings: {p.get('holdings')}", f"- Beta: {m.get('beta')}",
               f"- Annualized volatility: {m.get('annualized_volatility')}", f"- 1-day VaR: {m.get('var_1d')}",
@@ -718,7 +919,9 @@ def write_private_report(report: dict[str, Any], out_dir: str | Path) -> tuple[P
     fx = p.get("fx_sensitivity", {})
     lines += ["", "## Direct FX sensitivity", f"- Status: {fx.get('status', 'not configured')}"]
     if fx.get("status") == "ok":
-        lines += [f"- Base USD/JPY: {fx.get('base_usdjpy')}",
+        lines += [f"- Analysis mode: {fx.get('analysis_mode')}",
+                  f"- Trade-decision actionable: {fx.get('decision_actionable')}",
+                  f"- Base USD/JPY: {fx.get('base_usdjpy')}",
                   f"- USDJPY beta-equivalent: {fx.get('usdjpy_beta_equivalent_jpy')}",
                   f"- Direct USD market value: {fx.get('direct_usd_market_value_jpy')}",
                   f"- One-yen-down impact: {fx.get('impact_per_one_yen_down_jpy')}",
@@ -727,7 +930,7 @@ def write_private_report(report: dict[str, Any], out_dir: str | Path) -> tuple[P
         for x in fx.get("scenarios", []):
             lines.append(f"| {x.get('target_usdjpy')} | {x.get('direct_fx_impact_jpy')} | {x.get('impact_pct_total_assets')} |")
     lines += ["", "## Cause-conditional scenarios",
-              "Missing assumptions are not treated as zero; total impact is withheld below the coverage gate.",
+              "Missing assumptions are not treated as zero. Reference-only or low-coverage inputs retain covered impacts but withhold trade-actionable totals.",
               "", "| Scenario | Status | Coverage | Covered impact | Total impact |", "|---|---|---:|---:|---:|"]
     for x in p.get("cause_scenarios", []):
         lines.append(f"| {x.get('label')} | {x.get('status')} | {x.get('assumption_coverage_ratio')} | {x.get('partial_covered_impact_jpy')} | {x.get('estimated_total_impact_jpy')} |")
@@ -735,7 +938,9 @@ def write_private_report(report: dict[str, Any], out_dir: str | Path) -> tuple[P
     lines += ["", "## Investor financial capacity", f"- Status: {cap.get('status', 'not configured')}",
               "- Numeric score: not assigned; this is separate from portfolio market resilience."]
     if cap.get("status") == "ok":
-        lines += [f"- Shock loss / total assets: {cap.get('shock_loss_pct_assets')}",
+        lines += [f"- Analysis mode: {cap.get('analysis_mode')}",
+                  f"- Trade-decision actionable: {cap.get('decision_actionable')}",
+                  f"- Shock loss / total assets: {cap.get('shock_loss_pct_assets')}",
                   f"- Shock loss / unrealized gain: {cap.get('shock_loss_pct_unrealized_gain')}",
                   f"- Liquidity coverage: {cap.get('liquidity_coverage_ratio')}",
                   f"- Remaining unrealized gain: {cap.get('remaining_unrealized_gain_jpy')}"]
@@ -786,6 +991,13 @@ def main() -> None:
     profile = json.loads(profile_secret) if profile_secret else (
         json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.exists() else None
     )
+    portfolio_source_as_of = os.getenv("PORTFOLIO_SOURCE_AS_OF")
+    profile = enrich_private_profile(
+        profile,
+        portfolio,
+        portfolio_source_as_of,
+        os.getenv("MARKET_DASHBOARD_PATH", "data/regime/market_dashboard_latest.csv"),
+    )
     screen = pd.read_csv(screen_path) if screen_path.exists() else pd.DataFrame()
     config = RiskConfig(
         lookback_days=int(os.getenv("RISK_LOOKBACK_DAYS", "400")),
@@ -796,7 +1008,7 @@ def main() -> None:
         benchmark=os.getenv("RISK_BENCHMARK", DEFAULT_BENCHMARK),
     )
     report = analyze(portfolio, screen, config=config, private_profile=profile,
-                     portfolio_source_as_of=os.getenv("PORTFOLIO_SOURCE_AS_OF"))
+                     portfolio_source_as_of=portfolio_source_as_of)
     paths = write_private_report(report, out_dir)
     # Deliberately print only non-sensitive execution metadata.
     print(json.dumps({"version": VERSION, "status": "ok", "private_outputs_written": len(paths),
