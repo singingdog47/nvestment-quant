@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import re
+from datetime import date
 from urllib.parse import urljoin, urlparse
 
 import pandas as pd
@@ -36,7 +37,12 @@ def _candidate_links(page, keywords):
     for a in soup.find_all("a", href=True):
         href = urljoin(page, a["href"])
         text = (a.get_text(" ", strip=True) + " " + href).lower()
-        is_table_file = bool(re.search(r"\.(xlsx?|csv)(?:\?|#|$)", href, re.I))
+        extensions = ["xlsx?", "csv"]
+        if any(str(k).lower() == "pdf" for k in keywords):
+            extensions.append("pdf")
+        is_table_file = bool(
+            re.search(rf"\.({'|'.join(extensions)})(?:\?|#|$)", href, re.I)
+        )
         keyword_hit = any(k.lower() in text for k in keywords)
 
         # Prefer actual downloadable spreadsheet/csv links.  Do not require
@@ -81,6 +87,12 @@ def _related_pages(page, limit=12):
 def _read_url(url):
     r = _get(url, timeout=30)
 
+    if ".pdf" in url.lower():
+        from pypdf import PdfReader
+
+        text = "\n".join(page.extract_text() or "" for page in PdfReader(io.BytesIO(r.content)).pages)
+        return _parse_short_selling_pdf_text(text)
+
     if ".csv" in url.lower():
         for enc in ("utf-8-sig", "cp932", "utf-8"):
             try:
@@ -90,6 +102,49 @@ def _read_url(url):
         raise ValueError("csv decode failed")
 
     return pd.read_excel(io.BytesIO(r.content))
+
+
+def _parse_short_selling_pdf_text(text):
+    """Parse JPX's official daily short-selling summary PDF.
+
+    The same table also contains the official approximate TSE turnover total,
+    allowing the engine to expose it without substituting an ETF proxy.
+    """
+    normalized = " ".join(str(text).replace("▲", "-").split())
+    pattern = re.compile(
+        r"(?P<year>20\d{2})年\s*(?P<month>\d{1,2})月\s*(?P<day>\d{1,2})日\s*"
+        r"(?P<actual>[\d,]+)\s*(?P<actual_pct>[\d.]+)%\s*"
+        r"(?P<regulated>[\d,]+)\s*(?P<regulated_pct>[\d.]+)%\s*"
+        r"(?P<unregulated>[\d,]+)\s*(?P<unregulated_pct>[\d.]+)%\s*"
+        r"(?P<total>[\d,]+)"
+    )
+    match = pattern.search(normalized)
+    if not match:
+        raise ValueError("JPX short-selling summary row not found in PDF")
+
+    values = match.groupdict()
+    as_of = date(int(values["year"]), int(values["month"]), int(values["day"]))
+    actual = int(values["actual"].replace(",", ""))
+    regulated = int(values["regulated"].replace(",", ""))
+    unregulated = int(values["unregulated"].replace(",", ""))
+    total = int(values["total"].replace(",", ""))
+    short_total = regulated + unregulated
+    return pd.DataFrame(
+        [
+            {
+                "date": as_of.isoformat(),
+                "actual_order_turnover_million_jpy": actual,
+                "actual_order_ratio_pct": float(values["actual_pct"]),
+                "short_regulated_turnover_million_jpy": regulated,
+                "short_regulated_ratio_pct": float(values["regulated_pct"]),
+                "short_unregulated_turnover_million_jpy": unregulated,
+                "short_unregulated_ratio_pct": float(values["unregulated_pct"]),
+                "short_turnover_million_jpy": short_total,
+                "short_ratio_pct": round(100 * short_total / total, 3) if total else None,
+                "total_turnover_million_jpy": total,
+            }
+        ]
+    )
 
 
 def _read_html_table(page):
@@ -303,5 +358,21 @@ def fetch_jpx_sources(cfg: dict):
                     "source_tier": "primary",
                 }
             )
+
+    short_frame = frames.get("short_selling")
+    if short_frame is not None and not short_frame.empty and "total_turnover_million_jpy" in short_frame.columns:
+        frames["official_turnover"] = short_frame[["date", "total_turnover_million_jpy"]].copy()
+        health.append(
+            {
+                "source": "JPX:official_turnover",
+                "status": "ok",
+                "transport_status": "ok",
+                "content_status": "valid",
+                "records": len(frames["official_turnover"]),
+                "fetched_at": fetched,
+                "error": "",
+                "source_tier": "primary",
+            }
+        )
 
     return frames, pd.DataFrame(index_rows), health

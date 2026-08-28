@@ -64,10 +64,17 @@ def score_regime(market_df, fred_df, breadth, jpx_health, cftc_df, weights, trea
         "treasury_volatility_is_ice_move": False,
     })
 
-    part=breadth.get("participation_proxy") if isinstance(breadth,dict) else None
+    breadth_status = breadth.get("status") if isinstance(breadth,dict) else None
+    part=(
+        breadth.get("participation_proxy")
+        if isinstance(breadth,dict) and breadth_status not in ("stale", "missing")
+        else None
+    )
     components["participation"]=clamp(float(part)*100) if part is not None else None
     coverage["participation"]=1.0 if part is not None else 0.0
     evidence["breadth_n"]=breadth.get("n") if isinstance(breadth,dict) else None
+    evidence["breadth_status"]=breadth_status
+    evidence["breadth_source_as_of_utc"]=breadth.get("source_as_of_utc") if isinstance(breadth,dict) else None
 
     nfci=_fred(fred_df,"NFCI")
     # NFCI > 0 means tighter-than-average conditions. Market-volume proxies supplement it.

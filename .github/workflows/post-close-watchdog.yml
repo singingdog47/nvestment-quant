@@ -2,8 +2,12 @@ name: Investment Quant Post-Close Watchdog
 
 on:
   schedule:
-    # Backup check at 16:42 JST on weekdays, 25 minutes after the primary 16:17 schedule.
+    # Redundant checks: GitHub scheduled jobs can be delayed or occasionally dropped.
+    # Each run is idempotent and dispatches only if no fresh output or active recovery exists.
     - cron: '42 7 * * 1-5'
+    - cron: '12 8 * * 1-5'
+    - cron: '42 8 * * 1-5'
+    - cron: '12 9 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -58,7 +62,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "Primary 16:17 report is stale/missing; dispatching recovery run."
+          active_count="$({ gh run list --workflow post-close-pipeline-v2.2.yml --status in_progress --json databaseId --jq 'length'; gh run list --workflow post-close-pipeline-v2.2.yml --status queued --json databaseId --jq 'length'; } | awk '{s+=$1} END {print s+0}')"
+          if [[ "$active_count" -gt 0 ]]; then
+            echo "Primary report is stale, but a post-close run is already active; no duplicate dispatch."
+            exit 0
+          fi
+          echo "Primary report is stale/missing and no run is active; dispatching recovery run."
           gh workflow run post-close-pipeline-v2.2.yml --ref main -f max_tickers=0
 
       - name: Confirm primary report already exists

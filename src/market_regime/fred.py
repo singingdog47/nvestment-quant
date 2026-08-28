@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import time
+import zipfile
 from pathlib import Path
 
 import pandas as pd
@@ -100,18 +101,58 @@ def _cached_observation(cache, name, sid, max_cache_age_days):
 
 def _parse_response(text):
     df = pd.read_csv(io.StringIO(text))
-    if "DATE" not in df.columns:
+    date_col = next(
+        (c for c in ("DATE", "observation_date", "date") if c in df.columns),
+        None,
+    )
+    if date_col is None:
         raise ValueError("DATE column missing")
-    value_cols = [c for c in df.columns if c != "DATE"]
+    value_cols = [c for c in df.columns if c != date_col]
     if not value_cols:
         raise ValueError("no value column")
     valcol = value_cols[0]
-    df["DATE"] = pd.to_datetime(df["DATE"], errors="coerce")
+    df["DATE"] = pd.to_datetime(df[date_col], errors="coerce")
     df[valcol] = pd.to_numeric(df[valcol], errors="coerce")
     x = df.dropna(subset=["DATE", valcol])
     if x.empty:
         raise ValueError("no valid observations")
     return x, valcol
+
+
+def _parse_batch_response(content, requested_ids):
+    """Parse FRED's multi-series CSV/ZIP response into one frame per series.
+
+    FRED returns a ZIP archive when requested series have different frequencies.
+    One batched request is both faster and materially less prone to the repeated
+    timeouts seen when every series is fetched serially.
+    """
+    payloads = []
+    if content[:2] == b"PK":
+        with zipfile.ZipFile(io.BytesIO(content)) as archive:
+            for member in archive.namelist():
+                if member.lower().endswith(".csv"):
+                    payloads.append(archive.read(member).decode("utf-8-sig"))
+    else:
+        payloads.append(content.decode("utf-8-sig"))
+
+    parsed = {}
+    for text in payloads:
+        frame = pd.read_csv(io.StringIO(text))
+        date_col = next(
+            (c for c in ("observation_date", "DATE", "date") if c in frame.columns),
+            None,
+        )
+        if date_col is None:
+            continue
+        frame[date_col] = pd.to_datetime(frame[date_col], errors="coerce")
+        for sid in requested_ids:
+            if sid not in frame.columns:
+                continue
+            values = pd.to_numeric(frame[sid], errors="coerce")
+            valid = pd.DataFrame({"DATE": frame[date_col], sid: values}).dropna()
+            if not valid.empty:
+                parsed[sid] = valid
+    return parsed
 
 
 def fetch_fred(series: dict, cache_path=None, max_cache_age_days=14):
@@ -126,15 +167,31 @@ def fetch_fred(series: dict, cache_path=None, max_cache_age_days=14):
     fetched = now_iso()
     cache = _load_cache(cache_path)
 
+    batch = {}
+    batch_error = None
+    if series:
+        try:
+            response = _get_with_retry(
+                BASE, params={"id": ",".join(dict.fromkeys(series.values()))}, attempts=3
+            )
+            batch = _parse_batch_response(response.content, set(series.values()))
+        except Exception as exc:
+            batch_error = exc
+
     for name, sid in series.items():
         transport_status = "error"
         content_status = "not_checked"
         source_url = f"{BASE}?id={sid}"
         try:
-            r = _get_with_retry(BASE, params={"id": sid}, attempts=3)
-            transport_status = "ok"
-            source_url = r.url
-            x, valcol = _parse_response(r.text)
+            if sid in batch:
+                x, valcol = batch[sid], sid
+                transport_status = "ok"
+                source_url = f"{BASE}?id={','.join(dict.fromkeys(series.values()))}"
+            else:
+                r = _get_with_retry(BASE, params={"id": sid}, attempts=3)
+                transport_status = "ok"
+                source_url = r.url
+                x, valcol = _parse_response(r.text)
             content_status = "valid"
             latest = x.iloc[-1]
             prev = x.iloc[-2] if len(x) > 1 else latest
@@ -171,7 +228,11 @@ def fetch_fred(series: dict, cache_path=None, max_cache_age_days=14):
             cached, cache_age_days = _cached_observation(
                 cache, name, sid, max_cache_age_days
             )
-            error = f"{type(exc).__name__}: {exc}"
+            errors = []
+            if batch_error is not None:
+                errors.append(f"batch={type(batch_error).__name__}: {batch_error}")
+            errors.append(f"series={type(exc).__name__}: {exc}")
+            error = " | ".join(errors)
             if cached is not None:
                 cached_row = {c: cached.get(c, "") for c in FRED_COLUMNS}
                 cached_row.update(

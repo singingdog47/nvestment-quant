@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
+import numpy as np
 import pandas as pd
 
 from .common import now_iso
@@ -48,7 +51,7 @@ def _read(p):
     return pd.read_csv(p, compression="infer", low_memory=False)
 
 
-def compute_breadth(candidates, min_universe=100):
+def compute_breadth(candidates, min_universe=100, max_business_age_days=1):
     fetched = now_iso()
     source = ""
 
@@ -87,6 +90,26 @@ def compute_breadth(candidates, min_universe=100):
         "source": source,
         "n": n,
     }
+
+    # Screening timestamps travel inside the file, so freshness remains valid
+    # after Git checkout (filesystem mtimes do not). Weekend gaps count as one
+    # business day rather than three calendar days.
+    if "data_retrieved_at_utc" in df.columns:
+        timestamps = pd.to_datetime(df["data_retrieved_at_utc"], errors="coerce", utc=True).dropna()
+        if not timestamps.empty:
+            source_as_of = timestamps.max()
+            today_jst = datetime.now(ZoneInfo("Asia/Tokyo")).date()
+            source_date_jst = source_as_of.tz_convert("Asia/Tokyo").date()
+            business_age = int(np.busday_count(source_date_jst, today_jst))
+            out["source_as_of_utc"] = source_as_of.isoformat()
+            out["source_date_jst"] = source_date_jst.isoformat()
+            out["business_age_days"] = business_age
+            if business_age > int(max_business_age_days):
+                out["status"] = "stale"
+                out["stale_reason"] = (
+                    f"screening source is {business_age} business days old; "
+                    f"maximum is {max_business_age_days}"
+                )
 
     # Medium-term participation proxy from the exact v1.3 return columns.
     # This is not mislabeled as 1-day advance/decline breadth.
@@ -150,7 +173,7 @@ def compute_breadth(candidates, min_universe=100):
             out["turnover_universe_median"] = float(tv.median())
             out["turnover_coverage"] = float(len(tv) / max(len(df), 1))
 
-    error = ""
+    error = out.get("stale_reason", "")
     if not pos_metrics:
         error = "no compatible return/momentum column; participation missing"
 

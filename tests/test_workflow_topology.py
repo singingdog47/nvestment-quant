@@ -24,6 +24,19 @@ def test_single_scheduled_post_close_orchestrator():
         assert 'schedule:' not in text, f'{name} must stay manual-only'
 
 
+def test_post_close_watchdog_has_staggered_idempotent_recovery_checks():
+    text = _text('post-close-watchdog.yml')
+    for cron in (
+        "cron: '42 7 * * 1-5'",
+        "cron: '12 8 * * 1-5'",
+        "cron: '42 8 * * 1-5'",
+        "cron: '12 9 * * 1-5'",
+    ):
+        assert cron in text
+    assert 'active_count=' in text
+    assert 'no duplicate dispatch' in text
+
+
 def test_morning_intelligence_has_no_post_close_schedule():
     text = _text('intelligence-v1.6.yml')
     assert "cron: '15 22 * * 0-4'" in text

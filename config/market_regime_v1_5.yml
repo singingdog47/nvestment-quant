@@ -29,9 +29,9 @@ jpx_sources:
     validation: {min_rows: 2, min_columns: 2, min_numeric_values: 1}
   short_selling:
     enabled: true
-    pages: ["https://www.jpx.co.jp/english/markets/statistics-equities/short-selling/index.html", "https://www.jpx.co.jp/markets/statistics-equities/short-selling/index.html"]
-    keywords: ["xls", "xlsx", "csv"]
-    validation: {min_rows: 2, min_columns: 2, min_numeric_values: 1}
+    pages: ["https://www.jpx.co.jp/markets/statistics-equities/short-selling/index.html", "https://www.jpx.co.jp/english/markets/statistics-equities/short-selling/index.html"]
+    keywords: ["pdf"]
+    validation: {min_rows: 1, min_columns: 2, min_numeric_values: 1}
   margin:
     enabled: true
     pages: ["https://www.jpx.co.jp/english/markets/statistics-equities/margin/index.html", "https://www.jpx.co.jp/markets/statistics-equities/margin/index.html"]
@@ -50,6 +50,7 @@ treasury_volatility:
 breadth:
   source_candidates: ["data/screening_full.csv.gz", "data/screening_latest.csv"]
   min_universe: 100
+  max_business_age_days: 1
 scoring:
   weights:
     trend: 0.30
@@ -78,8 +79,6 @@ coverage:
       description: official equity put/call series is not integrated
     - source: MARKET_52W_HIGH_LOW
       description: 52-week high/low breadth is unavailable when screening columns are absent
-    - source: JPX_OFFICIAL_TURNOVER
-      description: official TSE turnover is not integrated; ETF volume remains a proxy
 outputs:
   directory: data/regime
   state_directory: data/state

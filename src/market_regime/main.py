@@ -67,7 +67,10 @@ def main():
         CFG.get("fred_series",{}),
         cache_path=OUT/"fred_latest.csv",
         max_cache_age_days=CFG.get("freshness",{}).get("fred_cache_max_age_days",14),
-    ); health+=h; _write_frame(fred,OUT/"fred_latest.csv")
+    ); health+=h
+    # Never destroy the last usable FRED cache with an empty failed attempt.
+    if fred is not None and not fred.empty:
+        _write_frame(fred,OUT/"fred_latest.csv")
     treasury_cfg=CFG.get("treasury_volatility",{})
     if treasury_cfg.get("enabled",True):
         treasury_vol,treasury_history,treasury_h=fetch_treasury_volatility(
@@ -91,7 +94,12 @@ def main():
         health+=treasury_h
         save_json(OUT/"treasury_volatility_latest.json",treasury_vol)
         _write_frame(treasury_history,OUT/"treasury_volatility_history.csv")
-    breadth,h=compute_breadth(CFG.get("breadth",{}).get("source_candidates",[]),CFG.get("breadth",{}).get("min_universe",100)); health+=h; save_json(OUT/"breadth_latest.json",breadth)
+    breadth_cfg=CFG.get("breadth",{})
+    breadth,h=compute_breadth(
+        breadth_cfg.get("source_candidates",[]),
+        breadth_cfg.get("min_universe",100),
+        breadth_cfg.get("max_business_age_days",1),
+    ); health+=h; save_json(OUT/"breadth_latest.json",breadth)
     jpx_frames,jpx_index,jpx_h=fetch_jpx_sources(CFG.get("jpx_sources",{})); health+=jpx_h; _write_frame(jpx_index,OUT/"jpx_source_index_latest.csv")
     for name,df in jpx_frames.items(): _write_frame(df,OUT/f"jpx_{name}_latest.csv")
     if CFG.get("cftc",{}).get("enabled",True):
@@ -99,6 +107,12 @@ def main():
     else:
         cftc=pd.DataFrame(); cftc_url=""; cftc_health=[{"source":"CFTC:COT","status":"not_implemented","records":0,"fetched_at":fetched,"error":"source disabled by configuration","source_tier":"primary"}]; health+=cftc_health
     sc=CFG["scoring"]; components,evidence,score,confidence=score_regime(market,fred,breadth,jpx_h,cftc,sc["weights"],treasury_volatility=treasury_vol)
+    official_turnover=jpx_frames.get("official_turnover",pd.DataFrame())
+    if official_turnover is not None and not official_turnover.empty:
+        latest_turnover=official_turnover.iloc[-1]
+        evidence["jpx_official_turnover_date"]=str(latest_turnover.get("date",""))
+        evidence["jpx_official_turnover_million_jpy"]=float(latest_turnover.get("total_turnover_million_jpy"))
+        evidence["jpx_official_turnover_status"]="ok"
     label=regime_label(score,sc["labels"])
     vix=evidence.get("vix"); trend=components.get("trend"); part=components.get("participation"); liq=components.get("liquidity")
     overheated=bool(trend is not None and trend>=75 and part is not None and part>=65 and vix is not None and float(vix)<18)
@@ -154,6 +168,7 @@ def main():
     expected_sources.append({"source":"v1.3 breadth adapter","logical_name":"BREADTH","required":True})
     for name in CFG.get("jpx_sources",{}):
         expected_sources.append({"source":f"JPX:{name}","logical_name":name,"required":False})
+    expected_sources.append({"source":"JPX:official_turnover","logical_name":"official_turnover","required":False})
     expected_sources.append({"source":"CFTC:COT","logical_name":"CFTC_POSITIONING","required":False})
     file_rows=[
         {"path":str(OUT/"market_dashboard_latest.csv"),"status":_frame_status(market),"records":len(market)},

@@ -3,7 +3,7 @@ import requests
 
 from market_regime.common import now_iso
 from market_regime.coverage import build_data_coverage
-from market_regime.fred import fetch_fred
+from market_regime.fred import fetch_fred, _parse_batch_response
 from market_regime.jpx import _validate_frame
 
 
@@ -53,6 +53,25 @@ def test_fred_http_success_with_invalid_payload_is_partial(monkeypatch):
     assert health[0]["content_status"] == "invalid"
 
 
+def test_fred_batch_zip_parses_series_with_different_frequencies():
+    import io
+    import zipfile
+
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, "w") as archive:
+        archive.writestr(
+            "daily.csv",
+            "observation_date,HY,IG\n2026-08-26,2.67,0.80\n",
+        )
+        archive.writestr(
+            "weekly.csv",
+            "observation_date,NFCI\n2026-08-21,-0.566\n",
+        )
+    parsed = _parse_batch_response(buffer.getvalue(), {"HY", "IG", "NFCI"})
+    assert set(parsed) == {"HY", "IG", "NFCI"}
+    assert float(parsed["NFCI"].iloc[-1]["NFCI"]) == -0.566
+
+
 def test_jpx_date_only_payload_fails_content_validation():
     frame,report=_validate_frame(
         "short_selling",
@@ -98,4 +117,3 @@ def test_coverage_manifest_preserves_missing_partial_stale_and_planned_sources()
         "MOVE":"not_implemented",
     }
     assert set(manifest["summary"]["critical_missing"]) == {"FRED:HY","FRED:IG"}
-
