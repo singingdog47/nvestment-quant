@@ -1,34 +1,34 @@
 # Market Regime v1.5
 
 - Label: **CONSTRUCTIVE**
-- Score: **62.8**
+- Score: **64.86**
 - Confidence: **0.591**
 - Actionable: **False**
 - Data status: **partial**
 - Flags: none
 
 ## Components
-- trend: 79.19840687080571
-- stress: 63.62500028610229
+- trend: 84.45047036553524
+- stress: 68.97999965667725
 - participation: 56.468249394952174
-- liquidity: 46.51684990477033
+- liquidity: 40.85447508162278
 - positioning: 48.60196300007342
 
 ## Evidence
 {
   "trend_series": 4,
-  "vix": 15.699999809265137,
+  "vix": 14.510000228881836,
   "hy_oas": null,
   "ig_oas": null,
-  "treasury_volatility_proxy": 74.197,
-  "treasury_volatility_percentile_rank": 0.7421,
-  "treasury_volatility_stress_score": 44.35,
-  "treasury_volatility_as_of_date": "2026-08-25",
+  "treasury_volatility_proxy": 70.602,
+  "treasury_volatility_percentile_rank": 0.6468,
+  "treasury_volatility_stress_score": 51.49,
+  "treasury_volatility_as_of_date": "2026-08-27",
   "treasury_volatility_status": "ok",
   "treasury_volatility_is_ice_move": false,
   "breadth_n": 9580,
   "nfci": null,
-  "volume_ratio20_mean": 0.9303369980954067,
+  "volume_ratio20_mean": 0.8170895016324555,
   "positioning_sources": {
     "jpx_raw_healthy": 2,
     "cftc_normalized_values": 22
