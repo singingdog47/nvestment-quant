@@ -1,6 +1,6 @@
 {
   "quality": {
-    "generated_at": "2026-08-28T21:38:44+00:00",
+    "generated_at": "2026-08-28T21:54:36+00:00",
     "targets": 35,
     "portfolio_targets": 0,
     "events": 74,
@@ -21,8 +21,8 @@
   "market_regime": {
     "version": "1.5.2",
     "engine_version": "1.5.2",
-    "generated_at": "2026-08-28T21:32:53+00:00",
-    "generated_at_utc": "2026-08-28T21:32:53+00:00",
+    "generated_at": "2026-08-28T21:48:35+00:00",
+    "generated_at_utc": "2026-08-28T21:48:35+00:00",
     "date_jst": "2026-08-29",
     "data_status": "partial",
     "regime_label": "CONSTRUCTIVE",
@@ -68,7 +68,7 @@
       "treasury_volatility_is_ice_move": false,
       "breadth_n": 9575,
       "breadth_status": "ok",
-      "breadth_source_as_of_utc": "2026-08-28T21:32:50.891133+00:00",
+      "breadth_source_as_of_utc": "2026-08-28T21:48:33.185318+00:00",
       "nfci": null,
       "volume_ratio20_mean": 0.8568287504472278,
       "positioning_sources": {
@@ -112,12 +112,12 @@
     "note": "Guardrail only. This file never places orders."
   },
   "system_health": {
-    "generated_at": "2026-08-28T21:38:44+00:00",
+    "generated_at": "2026-08-28T21:54:36+00:00",
     "components": {
       "market_regime": {
         "status": "ok",
         "path": "data/regime/market_regime_latest.json",
-        "age_hours": 0.0,
+        "age_hours": 0.01,
         "stale_limit_hours": 36
       },
       "v1_3_screening": {
@@ -168,7 +168,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "20483edaf4fdebeb56ec8bff",
       "raw_excerpt": ""
     },
@@ -186,7 +186,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "83bb51e490aa41fbb73a94b8",
       "raw_excerpt": ""
     },
@@ -204,7 +204,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "8a63e9f750bad0ba1fbee990",
       "raw_excerpt": ""
     },
@@ -222,7 +222,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "ea9f0d89b4ce8009b6fe8a06",
       "raw_excerpt": ""
     },
@@ -240,7 +240,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "b47ab2c3293793bdc1509fe4",
       "raw_excerpt": ""
     },
@@ -258,7 +258,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "ad2e6800d6aab82510ea07c9",
       "raw_excerpt": ""
     },
@@ -276,7 +276,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "475e83288b9454dc2a7d8cb6",
       "raw_excerpt": ""
     },
@@ -294,7 +294,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "16259da7285aa48f4505901f",
       "raw_excerpt": ""
     },
@@ -312,7 +312,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "aa959d9634df2eff69504452",
       "raw_excerpt": ""
     },
@@ -330,7 +330,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "5ac2cd3efc782b8a0f2b65d6",
       "raw_excerpt": ""
     },
@@ -348,7 +348,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "96ef445c1bc2b7882fb935cc",
       "raw_excerpt": ""
     },
@@ -366,7 +366,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "fbb4ec714b6894fae212e2cc",
       "raw_excerpt": ""
     },
@@ -384,7 +384,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "dfedaed641a40286143120ff",
       "raw_excerpt": ""
     },
@@ -402,7 +402,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "3e4d21b1ba6c8de86d89f918",
       "raw_excerpt": ""
     },
@@ -420,7 +420,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "70a81322851254fdbdcb20c0",
       "raw_excerpt": ""
     },
@@ -438,7 +438,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "565f2fb28a6cad577391b0e9",
       "raw_excerpt": ""
     },
@@ -456,7 +456,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "71b038eb90a03ca731308fc3",
       "raw_excerpt": ""
     },
@@ -474,7 +474,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "5425b5bf1d9056e145efd56a",
       "raw_excerpt": ""
     },
@@ -492,7 +492,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "ca2925c7d7c26707134f3964",
       "raw_excerpt": ""
     },
@@ -510,7 +510,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "896a7dfc4f43babba32309bc",
       "raw_excerpt": ""
     },
@@ -528,7 +528,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "760d55d4603dc1308bc977d4",
       "raw_excerpt": ""
     },
@@ -546,7 +546,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "b437861a0bd77ac4be5b8028",
       "raw_excerpt": ""
     },
@@ -564,7 +564,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "f035276b0364ec60c1026dc0",
       "raw_excerpt": ""
     },
@@ -582,7 +582,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "7cdf45a01116e5741592f039",
       "raw_excerpt": ""
     },
@@ -600,7 +600,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "b2a79514fcf74dbe1e4c2287",
       "raw_excerpt": ""
     },
@@ -618,7 +618,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "1100cc90f3331f57e97c9e82",
       "raw_excerpt": ""
     },
@@ -636,7 +636,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "9d1b5f0abdd8cdd45efb9295",
       "raw_excerpt": ""
     },
@@ -654,7 +654,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "6a53b2da8fa09bfcd09a3aa4",
       "raw_excerpt": ""
     },
@@ -672,7 +672,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "c51e23b83f0bbc1c1cd62053",
       "raw_excerpt": ""
     },
@@ -690,7 +690,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "ad1f8dae58af8515e035b9a0",
       "raw_excerpt": ""
     },
@@ -708,7 +708,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "d23957ed8c8d9f5e62b65f95",
       "raw_excerpt": ""
     },
@@ -726,7 +726,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "c50aef75d97bf3ae1c76dc05",
       "raw_excerpt": ""
     },
@@ -744,7 +744,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "ab610e061cef22a35925e013",
       "raw_excerpt": ""
     },
@@ -762,7 +762,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "0880e5920b48c44b380113fa",
       "raw_excerpt": ""
     },
@@ -780,7 +780,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "0482bcd56f612d914a236e93",
       "raw_excerpt": ""
     },
@@ -798,7 +798,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "5c77b58159688151c833d5d1",
       "raw_excerpt": ""
     },
@@ -816,7 +816,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "6ee444685ccb41d3912839bb",
       "raw_excerpt": ""
     },
@@ -834,7 +834,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "ad0e981d4e0e0f015d789855",
       "raw_excerpt": ""
     },
@@ -852,7 +852,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "e28ca87498f494a879d26e3b",
       "raw_excerpt": ""
     },
@@ -870,7 +870,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "ce0b6d4f9fdce47affcb859c",
       "raw_excerpt": ""
     },
@@ -888,7 +888,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "0566abcb26cac224b7be9c72",
       "raw_excerpt": ""
     },
@@ -906,7 +906,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "2df8e3a3d954103575ac10cd",
       "raw_excerpt": ""
     },
@@ -924,7 +924,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "0a6c46ee7bfb61972d2a5085",
       "raw_excerpt": ""
     },
@@ -942,7 +942,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "f85873c62a45cf990359e253",
       "raw_excerpt": ""
     },
@@ -960,7 +960,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "3c974baf308a343f32ad9b85",
       "raw_excerpt": ""
     },
@@ -978,7 +978,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "ae4c40c347c678e0b951c141",
       "raw_excerpt": ""
     },
@@ -996,7 +996,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "9cf5baaffe5dad7262bc0fe3",
       "raw_excerpt": ""
     },
@@ -1014,7 +1014,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "88934167cb0cad0fc631277d",
       "raw_excerpt": ""
     },
@@ -1032,7 +1032,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "f14be72112f393512074134b",
       "raw_excerpt": ""
     },
@@ -1050,7 +1050,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "7a7c892464d9573c4e144022",
       "raw_excerpt": ""
     },
@@ -1068,7 +1068,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "42b11ef21422035924d2f48a",
       "raw_excerpt": ""
     },
@@ -1086,7 +1086,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "75af47296c5c0b8403705a98",
       "raw_excerpt": ""
     },
@@ -1104,7 +1104,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "8fa43f3254c366a7f75bc11d",
       "raw_excerpt": ""
     },
@@ -1122,7 +1122,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "e1b30c0ca118c2f263bbeba1",
       "raw_excerpt": ""
     },
@@ -1140,7 +1140,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "9057ca905e210933ecd6937f",
       "raw_excerpt": ""
     },
@@ -1158,7 +1158,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "40cc0c79b09dbdc0279a751d",
       "raw_excerpt": ""
     },
@@ -1176,7 +1176,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "1646199e13fb3fa238295d5f",
       "raw_excerpt": ""
     },
@@ -1194,7 +1194,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "88a3917cd58d8540e8876479",
       "raw_excerpt": ""
     },
@@ -1212,7 +1212,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "event_id": "d02bdc3baa4c8953f7d469e4",
       "raw_excerpt": ""
     },
@@ -1230,7 +1230,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "c2fbd8d6039c37a651639097",
       "raw_excerpt": ""
     },
@@ -1248,7 +1248,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "70ae55b47919127684ee3f24",
       "raw_excerpt": ""
     },
@@ -1266,7 +1266,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "2c0739875dc78cd697e7998a",
       "raw_excerpt": ""
     },
@@ -1284,7 +1284,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "159ce21d3dc275635300e32a",
       "raw_excerpt": ""
     },
@@ -1302,7 +1302,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "b991e4a8a0c8962e56e1fae8",
       "raw_excerpt": ""
     },
@@ -1320,7 +1320,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "663adff8a91fdf71d56afb46",
       "raw_excerpt": ""
     },
@@ -1338,7 +1338,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "1a1c4f6b56839d7b46e2e7af",
       "raw_excerpt": ""
     },
@@ -1356,7 +1356,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "a59778d5ddfe03d0bc55567c",
       "raw_excerpt": ""
     },
@@ -1374,7 +1374,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "b7b605e66573afb607eafe9d",
       "raw_excerpt": ""
     },
@@ -1392,7 +1392,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "029c2a188e4dc82fe70eebe9",
       "raw_excerpt": ""
     },
@@ -1410,7 +1410,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "30d5d31623c74044d1f1af29",
       "raw_excerpt": ""
     },
@@ -1428,7 +1428,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "e0bae95c8a6d9f254b4c09c0",
       "raw_excerpt": ""
     },
@@ -1446,7 +1446,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "a487cbddbbe467e000f3242f",
       "raw_excerpt": ""
     },
@@ -1464,7 +1464,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "73e8e9cd359d6466a92402ab",
       "raw_excerpt": ""
     },
@@ -1482,7 +1482,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "event_id": "3c57edd1395ec0bba1ff77d7",
       "raw_excerpt": ""
     }
@@ -1491,7 +1491,7 @@
     {
       "source": "TDnet",
       "status": "ok",
-      "fetched_at": "2026-08-28T21:38:27+00:00",
+      "fetched_at": "2026-08-28T21:54:12+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1499,7 +1499,7 @@
     {
       "source": "EDINET",
       "status": "ok",
-      "fetched_at": "2026-08-28T21:38:29+00:00",
+      "fetched_at": "2026-08-28T21:54:15+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1507,7 +1507,7 @@
     {
       "source": "SEC",
       "status": "ok",
-      "fetched_at": "2026-08-28T21:38:34+00:00",
+      "fetched_at": "2026-08-28T21:54:21+00:00",
       "records": 59,
       "error": "",
       "source_tier": "primary"
@@ -1515,7 +1515,7 @@
     {
       "source": "CompanyIR",
       "status": "ok",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1523,7 +1523,7 @@
     {
       "source": "NewsRSS",
       "status": "ok",
-      "fetched_at": "2026-08-28T21:38:36+00:00",
+      "fetched_at": "2026-08-28T21:54:25+00:00",
       "records": 15,
       "error": "",
       "source_tier": "secondary"
@@ -1531,7 +1531,7 @@
     {
       "source": "yfinance",
       "status": "ok",
-      "fetched_at": "2026-08-28T21:38:44+00:00",
+      "fetched_at": "2026-08-28T21:54:36+00:00",
       "records": 35,
       "error": "",
       "source_tier": "secondary"

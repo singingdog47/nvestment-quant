@@ -1,9 +1,9 @@
 # Investment Quant Daily Integrated Report v2.7
 
-Generated (UTC): 2026-08-28T21:38:59+00:00
+Generated (UTC): 2026-08-28T21:54:55+00:00
 
 ## 1. 結論 / 今日の優先アクション
-- **RISK REVIEW BEFORE NEW ACTION**
+- **SELECTIVE REVIEW OF TOP CANDIDATES**
 - Decision gate: `OPEN_FOR_ANALYSIS`
 - Data actionable: `True`
 
@@ -16,16 +16,8 @@ Generated (UTC): 2026-08-28T21:38:59+00:00
 - Flags: none
 
 ## 3. 例外検知 / アラート
-- Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 7, 'WARNING': 10, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / SEC 6-K filing
-- [WARNING] COMPANY_EVENT / SEC 6-K filing
-- [WARNING] COMPANY_EVENT / SEC 6-K filing
-- [WARNING] COMPANY_EVENT / SEC 6-K filing
-- [WARNING] COMPANY_EVENT / SEC 6-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 6-K filing
-- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- Highest severity: **INFO**
+- Counts: {'INFO': 0, 'WATCH': 0, 'WARNING': 0, 'CRITICAL': 0}
 
 ## 4. スクリーニング上位候補
 

@@ -6,8 +6,8 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.2",
   "engine_version": "1.5.2",
-  "generated_at": "2026-08-28T21:32:53+00:00",
-  "generated_at_utc": "2026-08-28T21:32:53+00:00",
+  "generated_at": "2026-08-28T21:48:35+00:00",
+  "generated_at_utc": "2026-08-28T21:48:35+00:00",
   "date_jst": "2026-08-29",
   "data_status": "partial",
   "regime_label": "CONSTRUCTIVE",
@@ -53,7 +53,7 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9575,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-08-28T21:32:50.891133+00:00",
+    "breadth_source_as_of_utc": "2026-08-28T21:48:33.185318+00:00",
     "nfci": null,
     "volume_ratio20_mean": 0.8568287504472278,
     "positioning_sources": {
@@ -101,12 +101,12 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-08-28T21:38:44+00:00",
+  "generated_at": "2026-08-28T21:54:36+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
       "path": "data/regime/market_regime_latest.json",
-      "age_hours": 0.0,
+      "age_hours": 0.01,
       "stale_limit_hours": 36
     },
     "v1_3_screening": {
@@ -154,7 +154,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-28T21:32:50.891133+00:00
+- Data retrieved (UTC): 2026-08-28T21:48:33.185318+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -209,8 +209,8 @@ Generated quality score: **0.745** / actionable=True
 | US | 8 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.0 | 99.8 | unchanged |
 | US | 10 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 80.9 | 99.7 | unchanged |
 | US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.1 | 99.6 | unchanged |
-| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.9 | 99.6 | new_entry |
-| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | rank_up |
+| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.9 | 99.6 | unchanged |
+| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 

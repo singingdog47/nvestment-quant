@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-28T21:32:50.891133+00:00
+- Data retrieved (UTC): 2026-08-28T21:48:33.185318+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -55,8 +55,8 @@
 | US | 8 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.0 | 99.8 | unchanged |
 | US | 10 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 80.9 | 99.7 | unchanged |
 | US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.1 | 99.6 | unchanged |
-| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.9 | 99.6 | new_entry |
-| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | rank_up |
+| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.9 | 99.6 | unchanged |
+| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 
