@@ -1,0 +1,43 @@
+name: Portfolio Policy Test v2.0
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/portfolio_policy.py'
+      - 'config/portfolio_policy_v2_0.json'
+      - 'tests/test_portfolio_policy.py'
+      - '.github/workflows/portfolio-policy-test.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  policy-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
+
+      - name: Validate policy JSON
+        run: python -m json.tool config/portfolio_policy_v2_0.json > /dev/null
+
+      - name: Run portfolio policy tests
+        run: python -m pytest tests/test_portfolio_policy.py -q
+
+      - name: Import smoke test
+        run: python -c "from src.portfolio_policy import load_policy, evaluate_policy; p=load_policy(); assert p['version']=='2.0.0'; print(evaluate_policy({'household_defensive_cash_jpy':600000,'exploration_new_capital_cost_jpy':100000,'expected_return_definition':'geometric_cagr'}))"
