@@ -5,32 +5,32 @@ JP,6701,6701.T,NEC,high,watchlist
 US,CARE,CARE,"Carter Bankshares, Inc. - Common Stock",normal,screening
 JP,8622,8622.T,"Mito Securities Co.,Ltd.",normal,screening
 US,MRP,MRP,"Millrose Properties, Inc. Class A Common Stock",normal,screening
-JP,3932,3932.T,Akatsuki Inc.,normal,screening
-US,INSW,INSW,"International Seaways, Inc. Common Stock ",normal,screening
 JP,8624,8624.T,"Ichiyoshi Securities Co.,Ltd.",normal,screening
+US,INSW,INSW,"International Seaways, Inc. Common Stock ",normal,screening
+JP,3932,3932.T,Akatsuki Inc.,normal,screening
 US,ECO,ECO,Okeanis Eco Tankers Corp. Common Stock,normal,screening
-US,NWFL,NWFL,Norwood Financial Corp. - Common Stock,normal,screening
 JP,8707,8707.T,"IwaiCosmo Holdings,Inc.",normal,screening
-US,ADAM,ADAM,"Adamas Trust, Inc. - Common Stock",normal,screening
 US,BUSE,BUSE,First Busey Corporation - Common Stock,normal,screening
-US,WSBC,WSBC,"WesBanco, Inc. - Common Stock",normal,screening
+US,NWFL,NWFL,Norwood Financial Corp. - Common Stock,normal,screening
+US,ADAM,ADAM,"Adamas Trust, Inc. - Common Stock",normal,screening
 JP,6750,6750.T,"ELECOM CO.,LTD.",normal,screening
-JP,2121,2121.T,"MIXI,Inc.",normal,screening
+US,WSBC,WSBC,"WesBanco, Inc. - Common Stock",normal,screening
+US,TRMD,TRMD,TORM plc - Class A Common Stock,normal,screening
 JP,3635,3635.T,"KOEI TECMO HOLDINGS CO.,LTD.",normal,screening
-JP,8927,8927.T,"MEIHO ENTERPRISE CO.,LTD.",normal,screening
+US,FRO,FRO,Frontline Plc Ordinary Shares,normal,screening
+JP,2121,2121.T,"MIXI,Inc.",normal,screening
 JP,4763,4763.T,"CREEK & RIVER Co.,Ltd.",normal,screening
-US,DBRG,DBRG,"DigitalBridge Group, Inc.",normal,screening
 JP,8789,8789.T,FinTech Global Incorporated,normal,screening
-US,ACNB,ACNB,ACNB Corporation - Common Stock,normal,screening
 JP,5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",normal,screening
-US,HTGC,HTGC,"Hercules Capital, Inc. Common Stock",normal,screening
+US,DBRG,DBRG,"DigitalBridge Group, Inc.",normal,screening
 JP,8473,8473.T,"SBI Holdings,Inc.",normal,screening
+US,CMBT,CMBT,CMB.TECH NV Ordinary Shares,normal,screening
 JP,6927,6927.T,"Helios Techno Holding Co.,Ltd.",normal,screening
-JP,6045,6045.T,"Rentracks CO.,LTD.",normal,screening
+US,ACNB,ACNB,ACNB Corporation - Common Stock,normal,screening
+US,HTGC,HTGC,"Hercules Capital, Inc. Common Stock",normal,screening
 JP,3989,3989.T,SHARINGTECHNOLOGY.INC,normal,screening
 US,EXE,EXE,Expand Energy Corporation - Common Stock,normal,screening
 US,HCI,HCI,"HCI Group, Inc. Common Stock",normal,screening
-JP,6083,6083.T,"ERI HOLDINGS CO.,LTD.",normal,screening
-US,LPG,LPG,Dorian LPG Ltd. Common Stock,normal,screening
+JP,6045,6045.T,"Rentracks CO.,LTD.",normal,screening
 JP,2726,2726.T,パルグループホールディングス,normal,watchlist
 JP,215A,215A.T,タイミー,normal,watchlist
