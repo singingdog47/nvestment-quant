@@ -7,7 +7,10 @@ from typing import Any
 
 import pandas as pd
 
-from portfolio_policy import evaluate_policy, load_policy
+try:
+    from .portfolio_policy import evaluate_policy, load_policy
+except ImportError:  # supports PYTHONPATH=src / direct script execution
+    from portfolio_policy import evaluate_policy, load_policy
 
 
 def _num(v: Any) -> float | None:
