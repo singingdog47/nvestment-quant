@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.2",
   "engine_version": "1.5.2",
-  "generated_at": "2026-08-28T21:48:35+00:00",
-  "generated_at_utc": "2026-08-28T21:48:35+00:00",
-  "date_jst": "2026-08-29",
+  "generated_at": "2026-08-30T22:22:52+00:00",
+  "generated_at_utc": "2026-08-30T22:22:52+00:00",
+  "date_jst": "2026-08-31",
   "data_status": "partial",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 62.71,
+  "regime_score": 62.99,
   "confidence": 0.591,
   "actionable": false,
   "actionability": {
@@ -34,10 +34,10 @@ Generated quality score: **0.745** / actionable=True
   "treasury_volatility_shock_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 80.42277016463046,
+    "trend": 79.30575789082798,
     "stress": 64.63499954223633,
     "participation": 55.11173827900012,
-    "liquidity": 42.84143752236139,
+    "liquidity": 46.93314348929091,
     "positioning": 49.80831960274451
   },
   "evidence": {
@@ -55,7 +55,7 @@ Generated quality score: **0.745** / actionable=True
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-08-28T21:48:33.185318+00:00",
     "nfci": null,
-    "volume_ratio20_mean": 0.8568287504472278,
+    "volume_ratio20_mean": 0.9386628697858183,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -101,7 +101,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-08-28T21:54:36+00:00",
+  "generated_at": "2026-08-30T22:28:45+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -146,9 +146,9 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=0 / tier=primary
-- SEC: ok / records=59 / tier=primary
+- SEC: ok / records=58 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=15 / tier=secondary
+- NewsRSS: ok / records=11 / tier=secondary
 - yfinance: ok / records=35 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -224,7 +224,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [HIGH] BUSE First Busey Corporation - Common Stock | 2026-07-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/314489/000031448926000046/buse-20260713.htm
 - [HIGH] WSBC WesBanco, Inc. - Common Stock | 2026-07-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/203596/000119312526310361/wsbc-20260721.htm
 - [HIGH] HTGC Hercules Capital, Inc. Common Stock | 2026-07-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1280784/000128078426000032/htgc-20260721.htm
 - [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-07-22 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000012/nwfl-20260722x8k.htm
@@ -274,6 +273,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] ECO Okeanis Eco Tankers Corp. Common Stock | 2026-08-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1964954/000110465926095242/tm2623040d1_6k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426005129/p15049955_6k.htm
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000110465926097101/tm2623199d2_8k.htm
+- [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
