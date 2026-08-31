@@ -90,20 +90,22 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
         lines.append("- Optional primary feeds not configured (confidence booster; not a hard decision blocker):")
         for item in optional:
             lines.append(f"  - {item.get('source')}: {item.get('reason')}")
-    lines += ["- Missing data must not be converted into unsupported buy/sell conclusions.", "", "## 7. ポートフォリオ", "- 公開版には保有情報・私有リスク値を保存しません。", "- 同一実行内で private portfolio risk engine が成功した場合、私有版レポートに統合します。", "", "## 8. 開発状況 / 復旧準備", f"- System version: {SYSTEM_VERSION}", f"- Development: {DEVELOPMENT_STATUS}", f"- Stable fallback branch: `{STABLE_FALLBACK_BRANCH}`", f"- Rollback ready: `{ROLLBACK_READY}`", "- 新版で障害が起きても、固定安定版から公開レポートを生成できる経路を維持します。", "", "## 9. ガードレール", "- このレポートは売買指示ではなく、意思決定支援です。", "- 自動発注・自動因子ウェイト変更は行いません。", "- 『何もしない / 待つ』を常に有効な選択肢として扱います。"]
+    lines += ["- Missing data must not be converted into unsupported buy/sell conclusions.", "", "## 7. ポートフォリオ", "- 公開版には保有情報・私有リスク値を保存しません。", "- 同一実行内で private engine が成功した場合、リスク・バリュエーション・月次寄与度を私有版に統合します。", "- 残高増減はTWRとして扱わず、入出金境界データが不足する場合は運用成績を withheld にします。", "", "## 8. 開発状況 / 復旧準備", f"- System version: {SYSTEM_VERSION}", f"- Development: {DEVELOPMENT_STATUS}", f"- Stable fallback branch: `{STABLE_FALLBACK_BRANCH}`", f"- Rollback ready: `{ROLLBACK_READY}`", "- 新版で障害が起きても、固定安定版から公開レポートを生成できる経路を維持します。", "", "## 9. ガードレール", "- このレポートは売買指示ではなく、意思決定支援です。", "- 自動発注・自動因子ウェイト変更は行いません。", "- 『何もしない / 待つ』を常に有効な選択肢として扱います。"]
     public_path = root / "data/integrated_report_latest.md"
     public_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     private_risk = root / ".private/portfolio_risk/portfolio_risk_latest.md"
     private_alerts = root / ".private/portfolio_risk/portfolio_alerts_latest.md"
+    private_valuation = root / ".private/portfolio_risk/portfolio_valuation_latest.md"
+    private_monthly = root / ".private/portfolio_risk/portfolio_monthly_latest.md"
     private_path: Path | None = None
-    if private_risk.exists() or private_alerts.exists():
+    private_sections = [private_risk, private_valuation, private_monthly, private_alerts]
+    if any(path.exists() for path in private_sections):
         private_path = root / ".private/integrated_report_private_latest.md"
         private_path.parent.mkdir(parents=True, exist_ok=True)
         private_lines = lines + ["", "# PRIVATE PORTFOLIO APPENDIX", ""]
-        if private_risk.exists():
-            private_lines += [private_risk.read_text(encoding="utf-8"), ""]
-        if private_alerts.exists():
-            private_lines += [private_alerts.read_text(encoding="utf-8"), ""]
+        for path in private_sections:
+            if path.exists():
+                private_lines += [path.read_text(encoding="utf-8"), ""]
         private_lines += ["PRIVATE: never commit or upload to public Actions artifacts."]
         private_path.write_text("\n".join(private_lines), encoding="utf-8")
     return public_path, private_path
