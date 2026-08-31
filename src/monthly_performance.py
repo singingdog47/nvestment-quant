@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import calendar
 import json
 import math
 from dataclasses import dataclass
@@ -53,11 +54,24 @@ def _snapshot_frame(snapshot: PortfolioSnapshot) -> pd.DataFrame:
     return df[df["market_value"].fillna(0).gt(0)].copy()
 
 
+def _is_previous_month(a: datetime, b: datetime) -> bool:
+    ay, am = a.year, a.month
+    by, bm = b.year, b.month
+    return (ay == by and am + 1 == bm) or (ay + 1 == by and am == 12 and bm == 1)
+
+
 def _month_boundary_quality(start: datetime, end: datetime) -> dict[str, Any]:
     same_month = start.year == end.year and start.month == end.month
-    month_complete = same_month and start.day <= 3 and end.day >= 27
+    start_month_last_day = calendar.monthrange(start.year, start.month)[1]
+    previous_month_end_start = _is_previous_month(start, end) and start.day >= start_month_last_day - 3
+    same_month_early_start = same_month and start.day <= 3
+    end_month_last_day = calendar.monthrange(end.year, end.month)[1]
+    end_near_month_end = end.day >= end_month_last_day - 3
+    month_complete = end_near_month_end and (previous_month_end_start or same_month_early_start)
     return {
         "same_calendar_month": same_month,
+        "start_is_previous_month_end": previous_month_end_start,
+        "end_is_month_end": end_near_month_end,
         "month_complete": month_complete,
         "window_days": max(0.0, (end - start).total_seconds() / 86400),
     }
