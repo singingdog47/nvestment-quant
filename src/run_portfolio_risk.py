@@ -5,9 +5,13 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 
+import pandas as pd
+
 from alert_engine import detect_private_portfolio_alerts
+from monthly_performance import PortfolioSnapshot, build_monthly_diagnostics, write_monthly_report
 from portfolio_import import infer_portfolio_source_as_of, parse_rakuten_csv_bytes
 from portfolio_policy_report import write_policy_report
+from portfolio_valuation import build_portfolio_valuation, write_valuation_report
 from private_account_import import (
     parse_account_summary_bytes,
     parse_buying_power_pdf,
@@ -20,6 +24,16 @@ from portfolio_risk import main as run_risk
 
 def _truthy_env(name: str, default: str = "false") -> bool:
     return os.getenv(name, default).strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _parse_dt(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt.astimezone(timezone.utc)
 
 
 def _build_latest_portfolio(private_dir: Path, candidates: list[tuple[Path, dict]]) -> tuple[Path, dict]:
@@ -42,6 +56,44 @@ def _build_latest_portfolio(private_dir: Path, candidates: list[tuple[Path, dict
         (private_dir / "portfolio_import_latest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
         return local, manifest
     raise FileNotFoundError(f"No valid Rakuten Securities holdings CSV found in private Drive folder. Checked {len(candidates)} files; sample errors={errors[:5]}")
+
+
+def _collect_monthly_snapshots(candidates: list[tuple[Path, dict]]) -> list[PortfolioSnapshot]:
+    """Select a month-start proxy and latest holdings snapshot without guessing returns.
+
+    Preference is the most recent snapshot before the latest calendar month plus
+    the latest snapshot. If no prior-month snapshot exists, use the earliest and
+    latest parseable snapshots in the latest month and let the monthly engine mark
+    the window reference_only when boundaries are incomplete.
+    """
+    found: list[PortfolioSnapshot] = []
+    seen_times: set[str] = set()
+    for path, meta in candidates:
+        try:
+            parsed = parse_rakuten_csv_bytes(path.read_bytes())
+        except Exception:
+            continue
+        as_of, _method = infer_portfolio_source_as_of(meta.get("name"), meta.get("modifiedTime"))
+        dt = _parse_dt(as_of)
+        if dt is None:
+            continue
+        key = dt.isoformat()
+        if key in seen_times:
+            continue
+        seen_times.add(key)
+        found.append(PortfolioSnapshot(dt, parsed.portfolio, meta.get("name")))
+    found.sort(key=lambda x: x.as_of)
+    if len(found) < 2:
+        return found
+    latest = found[-1]
+    month_start = datetime(latest.as_of.year, latest.as_of.month, 1, tzinfo=timezone.utc)
+    previous = [x for x in found[:-1] if x.as_of < month_start]
+    if previous:
+        start = previous[-1]
+    else:
+        in_month = [x for x in found if x.as_of.year == latest.as_of.year and x.as_of.month == latest.as_of.month]
+        start = in_month[0] if in_month else found[0]
+    return [start, latest] if start.as_of != latest.as_of else [latest]
 
 
 def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path, dict]]) -> dict:
@@ -85,9 +137,34 @@ def _write_private_alerts(out_dir: Path) -> bool:
     (out_dir / "portfolio_alerts_latest.md").write_text("\n".join(lines) + "\n", encoding="utf-8"); return True
 
 
+def _write_valuation_and_monthly(local_portfolio: Path, candidates: list[tuple[Path, dict]], out_dir: Path) -> tuple[dict, dict]:
+    portfolio = pd.read_csv(local_portfolio)
+    screen_path = Path(os.getenv("SCREEN_PATH", "data/screening_latest.csv"))
+    screening = pd.read_csv(screen_path) if screen_path.exists() else pd.DataFrame()
+    valuation = build_portfolio_valuation(portfolio, screening)
+    write_valuation_report(valuation, out_dir)
+    snapshots = _collect_monthly_snapshots(candidates)
+    monthly = build_monthly_diagnostics(snapshots)
+    write_monthly_report(monthly, out_dir)
+    return valuation, monthly
+
+
 def _maybe_write_back_to_drive(private_dir: Path, out_dir: Path) -> bool:
     if not _truthy_env("PORTFOLIO_DRIVE_WRITEBACK"): return False
-    for path, name, mime in ((private_dir / "portfolio_latest.csv", "portfolio_latest.csv", "text/csv"), (private_dir / "portfolio_import_latest.json", "portfolio_import_latest.json", "application/json"), (out_dir / "portfolio_risk_latest.json", "portfolio_risk_latest.json", "application/json"), (out_dir / "portfolio_risk_latest.md", "portfolio_risk_latest.md", "text/markdown"), (out_dir / "portfolio_alerts_latest.json", "portfolio_alerts_latest.json", "application/json"), (out_dir / "portfolio_alerts_latest.md", "portfolio_alerts_latest.md", "text/markdown"), (out_dir / "portfolio_policy_latest.json", "portfolio_policy_latest.json", "application/json"), (out_dir / "portfolio_policy_latest.md", "portfolio_policy_latest.md", "text/markdown")):
+    for path, name, mime in (
+        (private_dir / "portfolio_latest.csv", "portfolio_latest.csv", "text/csv"),
+        (private_dir / "portfolio_import_latest.json", "portfolio_import_latest.json", "application/json"),
+        (out_dir / "portfolio_risk_latest.json", "portfolio_risk_latest.json", "application/json"),
+        (out_dir / "portfolio_risk_latest.md", "portfolio_risk_latest.md", "text/markdown"),
+        (out_dir / "portfolio_alerts_latest.json", "portfolio_alerts_latest.json", "application/json"),
+        (out_dir / "portfolio_alerts_latest.md", "portfolio_alerts_latest.md", "text/markdown"),
+        (out_dir / "portfolio_policy_latest.json", "portfolio_policy_latest.json", "application/json"),
+        (out_dir / "portfolio_policy_latest.md", "portfolio_policy_latest.md", "text/markdown"),
+        (out_dir / "portfolio_valuation_latest.json", "portfolio_valuation_latest.json", "application/json"),
+        (out_dir / "portfolio_valuation_latest.md", "portfolio_valuation_latest.md", "text/markdown"),
+        (out_dir / "portfolio_monthly_latest.json", "portfolio_monthly_latest.json", "application/json"),
+        (out_dir / "portfolio_monthly_latest.md", "portfolio_monthly_latest.md", "text/markdown"),
+    ):
         if path.exists(): upload_or_replace(path, name, mime)
     return True
 
@@ -102,9 +179,26 @@ def main() -> None:
     os.environ.setdefault("PRIVATE_OUTPUT_DIR", str(private_dir / "portfolio_risk")); run_risk()
     out_dir = Path(os.environ["PRIVATE_OUTPUT_DIR"])
     policy_payload = write_policy_report(local_portfolio, account_inputs, out_dir)
+    valuation_payload, monthly_payload = _write_valuation_and_monthly(local_portfolio, candidates, out_dir)
     private_alerts_written = _write_private_alerts(out_dir)
     writeback = _maybe_write_back_to_drive(private_dir, out_dir)
-    print(json.dumps({"status": "ok", "source_file": manifest.get("source_file"), "rows_kept": manifest.get("rows_kept"), "weight_sum": manifest.get("weight_sum"), "account_input_status": account_inputs.get("status"), "account_input_types": sorted((account_inputs.get("inputs") or {}).keys()), "account_selection_policy": account_inputs.get("selection_policy"), "portfolio_policy_status": policy_payload.get("status"), "private_alerts_written": private_alerts_written, "drive_writeback": writeback, "privacy_mode": "ephemeral_runner_only" if not writeback else "private_drive_writeback"}, ensure_ascii=False, indent=2))
+    print(json.dumps({
+        "status": "ok",
+        "source_file": manifest.get("source_file"),
+        "rows_kept": manifest.get("rows_kept"),
+        "weight_sum": manifest.get("weight_sum"),
+        "account_input_status": account_inputs.get("status"),
+        "account_input_types": sorted((account_inputs.get("inputs") or {}).keys()),
+        "account_selection_policy": account_inputs.get("selection_policy"),
+        "portfolio_policy_status": policy_payload.get("status"),
+        "portfolio_valuation_status": valuation_payload.get("status"),
+        "portfolio_valuation_mode": valuation_payload.get("analysis_mode"),
+        "monthly_performance_status": monthly_payload.get("status"),
+        "monthly_twr_status": (monthly_payload.get("performance") or {}).get("twr_status"),
+        "private_alerts_written": private_alerts_written,
+        "drive_writeback": writeback,
+        "privacy_mode": "ephemeral_runner_only" if not writeback else "private_drive_writeback",
+    }, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__": main()
