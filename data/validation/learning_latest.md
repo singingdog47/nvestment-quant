@@ -1,12 +1,12 @@
 # Investment Quant Validation Learning v2.1
 
-Generated: 2026-08-28T21:54:36+00:00
+Generated: 2026-08-31T07:29:12+00:00
 
 This is a diagnostic learning layer. It does not automatically change factor weights or issue orders.
 
 ## Model-change gate
-- Matured absolute-return observations: 0
-- Benchmark-relative observations: 0
+- Matured absolute-return observations: 12
+- Benchmark-relative observations: 12
 - Minimum benchmark-relative observations for review: 60
 - Eligible for human model-change review: False
 

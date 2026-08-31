@@ -1,6 +1,6 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-08-30T22:28:45+00:00
+Generated: 2026-08-31T07:29:06+00:00
 Highest severity: **WATCH**
 
 ## Counts
@@ -10,18 +10,18 @@ Highest severity: **WATCH**
 - INFO: 0
 
 ## Alerts
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: Osaka Metroの接客案内サービスにKDDI×AVITAのヒューマノイドを活用する実証実験を実施 - KDDI ニュースルーム
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ＫＤＤＩ(株)【9433】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 「KDDI」の株主優待は、最大3000円相当のPontaポイントがもらえてお得！ 受け取った「Pontaポイント」は、ローソンなどで現金同様に使えるのも魅力！ - ダイヤモンド・オンライン
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI の ISP 事業者向けメールシステムへの不正アクセス、レンタルサーバCPIへの影響が明らかに - ScanNetSecurity
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 富士通抜いたNEC、二兎を追う「森田改革」 AI時代の価値示せるか - 日経クロステック
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 【日本】KDDI等6社、バッテリーリサイクルで新規資源同等の性能実現。サーキュラー | Sustainable Japan | 世界のサステナビリティ・ESG投資・SDGs - Sustainable Japan
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 国産技術で、サプライチェーン全体を守る。 : サイバーセキュリティ - NEC
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECグループ、「国際物流総合展2026」に出展 - PR TIMES
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業－ＳＭＢＣ日興が目標株価引き下げ 押し目買いの好機 - TradingView
-  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、SCM業務を自律実行する「NEC SCM AIエージェント」を9月より販売開始 需要予測や生産計画の最適化などを自動化 - クラウド Watch
+  - New company event detected for NEC.
 
 ## Governance
 - Alerts are deterministic exception flags, not buy/sell signals.

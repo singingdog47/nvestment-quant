@@ -4,16 +4,16 @@
 
 **相場は落ち着いていますが、今日は買い急がず候補を絞る日です。**
 
-市場レジームは**CONSTRUCTIVE**、総合スコアは62.7です。
+市場レジームは**CONSTRUCTIVE**、総合スコアは62.9です。
 市場レジームは前回からほぼ横ばいです。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：+0.0ポイント
-- トレンド：+0.0ポイント
-- 市場参加の広がり：+0.0ポイント
-- 流動性：+0.0ポイント
-- 上位候補に大きな順位上昇はなく、新しい強いトレンドが出たというより、既存の選好が続いています。
+- 総合スコア：-0.1ポイント
+- トレンド：-5.0ポイント
+- 市場参加の広がり：+2.0ポイント
+- 流動性：+6.6ポイント
+- Shionogi & Co.,Ltd.、Noritsu Koki Co.,Ltd.の順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
@@ -23,11 +23,14 @@
 
 ## 今日の注意点
 
-- 売買判断を変える例外は検出されていません。
+- **WATCH** ＫＤＤＩ(株)【9433】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス — 売買指示ではなく確認対象です。
+- **WATCH** KDDI の ISP 事業者向けメールシステムへの不正アクセス、レンタルサーバCPIへの影響が明らかに - ScanNetSecurity — 売買指示ではなく確認対象です。
+- **WATCH** 【日本】KDDI等6社、バッテリーリサイクルで新規資源同等の性能実現。サーキュラー | Sustainable Japan | 世界のサステナビリティ・ESG投資・SDGs - Sustainable Japan — 売買指示ではなく確認対象です。
+- **WATCH** ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Mito Securities Co.,Ltd.、Ichiyoshi Securities Co.,Ltd.、Akatsuki Inc.、IwaiCosmo Holdings,Inc.
+- 日本：Mito Securities Co.,Ltd.、Ichiyoshi Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.、Akatsuki Inc.
 - 米国：Carter Bankshares, Inc. - Common Stock、Millrose Properties, Inc. Class A Common Stock、International Seaways, Inc. Common Stock 、Okeanis Eco Tankers Corp. Common Stock
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
@@ -43,7 +46,7 @@
 
 ## 判断の確からしさ
 
-データ品質は74.5%。9575銘柄中5374銘柄を採点し、価格欠損率は9.3%です。
+データ品質は74.5%。9575銘柄中5385銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-08-28T21:54:55+00:00
+生成時刻（UTC）：2026-08-31T07:29:31+00:00

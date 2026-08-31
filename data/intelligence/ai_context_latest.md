@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.2",
   "engine_version": "1.5.2",
-  "generated_at": "2026-08-30T22:22:52+00:00",
-  "generated_at_utc": "2026-08-30T22:22:52+00:00",
+  "generated_at": "2026-08-31T07:23:19+00:00",
+  "generated_at_utc": "2026-08-31T07:23:19+00:00",
   "date_jst": "2026-08-31",
   "data_status": "partial",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 62.99,
+  "regime_score": 62.88,
   "confidence": 0.591,
   "actionable": false,
   "actionability": {
@@ -34,10 +34,10 @@ Generated quality score: **0.745** / actionable=True
   "treasury_volatility_shock_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 79.30575789082798,
+    "trend": 74.29365147324822,
     "stress": 64.63499954223633,
-    "participation": 55.11173827900012,
-    "liquidity": 46.93314348929091,
+    "participation": 57.123114131060696,
+    "liquidity": 53.50144848641823,
     "positioning": 49.80831960274451
   },
   "evidence": {
@@ -53,9 +53,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9575,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-08-28T21:48:33.185318+00:00",
+    "breadth_source_as_of_utc": "2026-08-31T07:23:16.701787+00:00",
     "nfci": null,
-    "volume_ratio20_mean": 0.9386628697858183,
+    "volume_ratio20_mean": 1.0700289697283645,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -101,12 +101,12 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-08-30T22:28:45+00:00",
+  "generated_at": "2026-08-31T07:29:06+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
       "path": "data/regime/market_regime_latest.json",
-      "age_hours": 0.01,
+      "age_hours": 0.0,
       "stale_limit_hours": 36
     },
     "v1_3_screening": {
@@ -148,13 +148,13 @@ Generated quality score: **0.745** / actionable=True
 - EDINET: ok / records=0 / tier=primary
 - SEC: ok / records=58 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=11 / tier=secondary
+- NewsRSS: ok / records=14 / tier=secondary
 - yfinance: ok / records=35 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-08-28T21:48:33.185318+00:00
+- Data retrieved (UTC): 2026-08-31T07:23:16.701787+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -191,16 +191,16 @@ Generated quality score: **0.745** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.4 | 100.0 | unchanged |
-| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 77.0 | 99.9 | unchanged |
-| JP | 3 | 3932.T | Akatsuki Inc. | Other | 76.6 | 99.9 | unchanged |
-| JP | 4 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 76.1 | 99.8 | unchanged |
-| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 72.7 | 99.6 | unchanged |
-| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.3 | 99.5 | unchanged |
-| JP | 11 | 2121.T | MIXI,Inc. | Other | 72.2 | 99.5 | unchanged |
-| JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.4 | 99.4 | unchanged |
-| JP | 14 | 8789.T | FinTech Global Incorporated | Other | 70.2 | 99.3 | unchanged |
-| JP | 15 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.2 | 99.3 | unchanged |
+| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.5 | 100.0 | unchanged |
+| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 77.2 | 99.9 | unchanged |
+| JP | 3 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 76.5 | 99.9 | unchanged |
+| JP | 5 | 3932.T | Akatsuki Inc. | Other | 76.2 | 99.8 | unchanged |
+| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 72.8 | 99.6 | unchanged |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.8 | 99.5 | unchanged |
+| JP | 11 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.5 | 99.5 | unchanged |
+| JP | 12 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.4 | 99.4 | unchanged |
+| JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.2 | 99.3 | unchanged |
+| JP | 16 | 6927.T | Helios Techno Holding Co.,Ltd. | Other | 69.9 | 99.2 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.9 | 100.0 | unchanged |
 | US | 2 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.1 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.0 | 99.9 | unchanged |
