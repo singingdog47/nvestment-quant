@@ -1,10 +1,14 @@
 from __future__ import annotations
 
+import base64
+import gzip
 import hashlib
 import io
 import json
+import math
 import os
 from pathlib import Path
+from typing import Any
 
 GENERATED_PRIVATE_OUTPUT_NAMES = {
     "portfolio_latest.csv",
@@ -22,18 +26,41 @@ GENERATED_PRIVATE_OUTPUT_NAMES = {
     "snapshot_manifest_latest.json",
 }
 
+HISTORY_LEDGER_NAME = "investment_quant_private_history_ledger"
+HISTORY_SHEET_NAME = "History"
+VOLATILE_JSON_KEYS = {
+    "generated_at",
+    "generated_at_utc",
+    "created_at",
+    "created_at_utc",
+    "run_at",
+    "run_at_utc",
+}
 
-def _service():
+
+def _credentials():
     from google.oauth2 import service_account
-    from googleapiclient.discovery import build
     raw = os.getenv("GDRIVE_SERVICE_ACCOUNT_JSON", "").strip()
     if not raw:
         raise RuntimeError("GDRIVE_SERVICE_ACCOUNT_JSON is not set")
     info = json.loads(raw)
-    creds = service_account.Credentials.from_service_account_info(
-        info, scopes=["https://www.googleapis.com/auth/drive"]
+    return service_account.Credentials.from_service_account_info(
+        info,
+        scopes=[
+            "https://www.googleapis.com/auth/drive",
+            "https://www.googleapis.com/auth/spreadsheets",
+        ],
     )
-    return build("drive", "v3", credentials=creds, cache_discovery=False)
+
+
+def _service():
+    from googleapiclient.discovery import build
+    return build("drive", "v3", credentials=_credentials(), cache_discovery=False)
+
+
+def _sheets_service():
+    from googleapiclient.discovery import build
+    return build("sheets", "v4", credentials=_credentials(), cache_discovery=False)
 
 
 def _folder_id() -> str:
@@ -59,11 +86,69 @@ def file_sha256(local_path: str | Path) -> str:
     return h.hexdigest()
 
 
+def _canonicalize_json(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {
+            str(k): _canonicalize_json(v)
+            for k, v in sorted(value.items(), key=lambda item: str(item[0]))
+            if str(k) not in VOLATILE_JSON_KEYS
+        }
+    if isinstance(value, list):
+        return [_canonicalize_json(v) for v in value]
+    if isinstance(value, tuple):
+        return [_canonicalize_json(v) for v in value]
+    if isinstance(value, float):
+        return value if math.isfinite(value) else None
+    return value
+
+
+def canonical_json_sha256(value: Any) -> str:
+    canonical = _canonicalize_json(value)
+    raw = json.dumps(canonical, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+def encode_json_cell(value: Any, max_chars: int = 48000) -> str:
+    """Encode JSON for a single Sheets cell without silently truncating history."""
+    clean = _canonicalize_json(value)
+    raw = json.dumps(clean, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    if len(raw) <= max_chars:
+        return raw
+    packed = base64.b64encode(gzip.compress(raw.encode("utf-8"), compresslevel=9)).decode("ascii")
+    wrapper = json.dumps(
+        {"encoding": "gzip+base64", "original_chars": len(raw), "data": packed},
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+    if len(wrapper) > max_chars:
+        raise ValueError(f"history payload exceeds Sheets cell limit after compression: {len(wrapper)} chars")
+    return wrapper
+
+
 def corrected_snapshot_name(name: str, revision: int) -> str:
     p = Path(name)
     suffix = "".join(p.suffixes)
     base = p.name[:-len(suffix)] if suffix else p.name
     return f"{base}_v{revision}_corrected{suffix}"
+
+
+def history_revision(existing_rows: list[list[Any]], snapshot_date: str, snapshot_kind: str, digest: str) -> dict[str, Any]:
+    """Return append-only revision state for one logical snapshot."""
+    revisions: list[int] = []
+    for row in existing_rows:
+        if len(row) < 5:
+            continue
+        if str(row[0]) != snapshot_date or str(row[1]) != snapshot_kind:
+            continue
+        try:
+            revision = int(float(row[2]))
+        except (TypeError, ValueError):
+            revision = 1
+        revisions.append(max(1, revision))
+        if str(row[4]) == digest:
+            return {"skip": True, "revision": revision, "is_corrected": revision > 1}
+    revision = max(revisions, default=0) + 1
+    return {"skip": False, "revision": revision, "is_corrected": revision > 1}
 
 
 def _download_id(file_id: str, destination: str | Path) -> Path:
@@ -165,6 +250,96 @@ def ensure_folder_path(parts: list[str], parent_id: str | None = None) -> str:
     return folder
 
 
+def find_history_ledger(name: str = HISTORY_LEDGER_NAME) -> str:
+    """Find the user-owned ledger under history/portfolio; never create it as a service account."""
+    service = _service()
+    folder = ensure_folder_path(["history", "portfolio"])
+    safe = _escape_drive_query(name)
+    q = (
+        f"'{folder}' in parents and name='{safe}' and trashed=false and "
+        "mimeType='application/vnd.google-apps.spreadsheet'"
+    )
+    files = service.files().list(q=q, spaces="drive", fields="files(id,name,modifiedTime)",
+                                 orderBy="modifiedTime desc", pageSize=10).execute().get("files", [])
+    if not files:
+        raise FileNotFoundError(
+            f"Private history ledger not found: {name}. It must be created by a quota-owning Google user and shared through the configured folder."
+        )
+    return str(files[0]["id"])
+
+
+def append_history_ledger(entries: list[dict[str, Any]], ledger_name: str = HISTORY_LEDGER_NAME) -> dict[str, Any]:
+    """Append immutable logical snapshots to a user-owned Google Sheet.
+
+    The service account edits an existing user-owned Sheet instead of creating
+    stored files, avoiding the service-account My Drive storage-quota limit.
+    """
+    if not entries:
+        return {"status": "ok", "appended": 0, "idempotent": 0, "ledger_id": None, "rows": []}
+    ledger_id = find_history_ledger(ledger_name)
+    sheets = _sheets_service()
+    existing = sheets.spreadsheets().values().get(
+        spreadsheetId=ledger_id,
+        range=f"{HISTORY_SHEET_NAME}!A2:E",
+        majorDimension="ROWS",
+    ).execute().get("values", [])
+
+    append_rows: list[list[Any]] = []
+    result_rows: list[dict[str, Any]] = []
+    virtual_existing = [list(r) for r in existing]
+    for entry in entries:
+        snapshot_date = str(entry.get("snapshot_date") or "").strip()
+        snapshot_kind = str(entry.get("snapshot_kind") or "").strip()
+        digest = str(entry.get("sha256") or "").strip()
+        if not snapshot_date or not snapshot_kind or len(digest) != 64:
+            raise ValueError("history entry requires snapshot_date, snapshot_kind, and SHA-256")
+        state = history_revision(virtual_existing, snapshot_date, snapshot_kind, digest)
+        if state["skip"]:
+            result_rows.append({"snapshot_date": snapshot_date, "snapshot_kind": snapshot_kind,
+                                "revision": state["revision"], "created": False})
+            continue
+        revision = int(state["revision"])
+        corrected = bool(state["is_corrected"])
+        row = [
+            snapshot_date,
+            snapshot_kind,
+            revision,
+            corrected,
+            digest,
+            str(entry.get("system_version") or ""),
+            str(entry.get("source_file") or ""),
+            str(entry.get("source_as_of") or ""),
+            str(entry.get("status") or ""),
+            str(entry.get("analysis_mode") or ""),
+            str(entry.get("evidence_tier") or ""),
+            str(entry.get("coverage_json") or ""),
+            str(entry.get("payload_json") or ""),
+            str(entry.get("created_at_utc") or ""),
+        ]
+        if any(len(str(value)) > 49000 for value in row):
+            raise ValueError(f"history row contains a cell above safe Sheets size: {snapshot_date}/{snapshot_kind}")
+        append_rows.append(row)
+        virtual_existing.append([snapshot_date, snapshot_kind, revision, corrected, digest])
+        result_rows.append({"snapshot_date": snapshot_date, "snapshot_kind": snapshot_kind,
+                            "revision": revision, "created": True})
+
+    if append_rows:
+        sheets.spreadsheets().values().append(
+            spreadsheetId=ledger_id,
+            range=f"{HISTORY_SHEET_NAME}!A:N",
+            valueInputOption="RAW",
+            insertDataOption="INSERT_ROWS",
+            body={"majorDimension": "ROWS", "values": append_rows},
+        ).execute()
+    return {
+        "status": "ok",
+        "ledger_id": ledger_id,
+        "appended": len(append_rows),
+        "idempotent": len(entries) - len(append_rows),
+        "rows": result_rows,
+    }
+
+
 def upload_or_replace(
     local_path: str | Path,
     name: str | None = None,
@@ -193,11 +368,10 @@ def upload_immutable_snapshot(
     parent_id: str | None = None,
     app_properties: dict[str, str] | None = None,
 ) -> dict[str, str | int | bool]:
-    """Persist a private historical snapshot without overwriting prior content.
+    """Legacy raw-file history helper.
 
-    Re-running the same snapshot is idempotent when the SHA-256 is unchanged.
-    If the same logical filename already exists with different content, a
-    `_vN_corrected` file is created instead of mutating history.
+    Kept for compatibility, but My Drive service accounts generally have no
+    storage quota. v2.9 production history uses append_history_ledger instead.
     """
     from googleapiclient.http import MediaFileUpload
     service = _service(); folder = parent_id or _folder_id(); p = Path(local_path)
