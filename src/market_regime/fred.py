@@ -40,6 +40,15 @@ class FredOfficialFetchError(RuntimeError):
         self.transport_ok = transport_ok
 
 
+def _safe_error(exc, api_key=""):
+    """Prevent credentials embedded in request URLs from entering artifacts/logs."""
+    message = str(exc)
+    if api_key:
+        message = message.replace(api_key, "[REDACTED]")
+    message = re.sub(r"([?&]api_key=)[^&\s'\"]+", r"\1[REDACTED]", message)
+    return f"{type(exc).__name__}: {message}"
+
+
 def _get_with_retry(url, *, params=None, attempts=3, accept="text/csv,*/*;q=0.8"):
     """Retry transient FRED/network failures without fabricating data."""
     last_error = None
@@ -198,9 +207,10 @@ def _fetch_official_series(sid):
             )
             transport_ok = True
             x, valcol = _parse_api_response(response.json(), sid)
-            return x, valcol, response.url, "fred_api"
+            # Never persist response.url: requests expands it with the secret key.
+            return x, valcol, f"{API_BASE}?series_id={sid}", "fred_api"
         except Exception as exc:
-            errors.append(f"api={type(exc).__name__}: {exc}")
+            errors.append(f"api={_safe_error(exc, api_key)}")
     try:
         url = DATA_PAGE.format(sid=sid)
         response = _get_with_retry(url, attempts=2, accept="text/html,text/plain")

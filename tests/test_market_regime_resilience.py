@@ -9,6 +9,7 @@ from market_regime.fred import (
     _parse_batch_response,
     _parse_series_page,
     _parse_data_page,
+    _safe_error,
 )
 from market_regime.jpx import _validate_frame
 
@@ -110,6 +111,14 @@ def test_fred_official_data_page_parses_date_value_table():
     assert value_col == "BAMLH0A0HYM2"
     assert frame.iloc[-1]["DATE"].strftime("%Y-%m-%d") == "2026-08-21"
     assert float(frame.iloc[-1][value_col]) == 2.60
+
+
+def test_fred_api_key_is_redacted_from_errors():
+    key = "a" * 32
+    error = RuntimeError(f"failed https://api.example/x?series_id=NFCI&api_key={key}&x=1")
+    message = _safe_error(error, key)
+    assert key not in message
+    assert "api_key=[REDACTED]" in message
 
 
 def test_jpx_date_only_payload_fails_content_validation():
