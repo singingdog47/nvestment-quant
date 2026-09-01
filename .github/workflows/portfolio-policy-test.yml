@@ -1,4 +1,4 @@
-name: Private Portfolio Engine Tests v2.8
+name: Private Portfolio Engine Tests v2.9
 
 on:
   workflow_dispatch:
@@ -9,13 +9,16 @@ on:
       - 'src/portfolio_policy_report.py'
       - 'src/portfolio_valuation.py'
       - 'src/monthly_performance.py'
+      - 'src/private_drive.py'
       - 'src/run_portfolio_risk.py'
       - 'src/final_report.py'
+      - 'src/release_status.py'
       - 'config/portfolio_policy_v2_0.json'
       - 'tests/test_portfolio_policy.py'
       - 'tests/test_portfolio_policy_report.py'
       - 'tests/test_portfolio_valuation.py'
       - 'tests/test_monthly_performance.py'
+      - 'tests/test_private_drive_history.py'
       - '.github/workflows/portfolio-policy-test.yml'
 
 permissions:
@@ -41,7 +44,7 @@ jobs:
       - name: Validate policy JSON
         run: python -m json.tool config/portfolio_policy_v2_0.json > /dev/null
       - name: Run private portfolio engine tests
-        run: python -m pytest tests/test_portfolio_policy.py tests/test_portfolio_policy_report.py tests/test_portfolio_valuation.py tests/test_monthly_performance.py -q
+        run: python -m pytest tests/test_portfolio_policy.py tests/test_portfolio_policy_report.py tests/test_portfolio_valuation.py tests/test_monthly_performance.py tests/test_private_drive_history.py -q
       - name: Import smoke test
         env:
           PYTHONPATH: src
@@ -51,6 +54,7 @@ jobs:
           from portfolio_policy_report import build_policy_state
           from portfolio_valuation import build_portfolio_valuation
           from monthly_performance import build_monthly_diagnostics
+          from private_drive import corrected_snapshot_name, file_sha256
           p = load_policy()
           assert p['version'] == '2.0.0'
           print(evaluate_policy({'household_defensive_cash_jpy':600000,'exploration_new_capital_cost_jpy':100000,'expected_return_definition':'geometric_cagr'}))
