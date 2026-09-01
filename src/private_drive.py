@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import os
@@ -26,6 +27,25 @@ def _folder_id() -> str:
     return folder
 
 
+def _escape_drive_query(value: str) -> str:
+    return str(value).replace("'", "\\'")
+
+
+def file_sha256(local_path: str | Path) -> str:
+    h = hashlib.sha256()
+    with Path(local_path).open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def corrected_snapshot_name(name: str, revision: int) -> str:
+    p = Path(name)
+    suffix = "".join(p.suffixes)
+    base = p.name[:-len(suffix)] if suffix else p.name
+    return f"{base}_v{revision}_corrected{suffix}"
+
+
 def _download_id(file_id: str, destination: str | Path) -> Path:
     from googleapiclient.http import MediaIoBaseDownload
     service = _service()
@@ -40,7 +60,7 @@ def _download_id(file_id: str, destination: str | Path) -> Path:
 
 def download_named(name: str, destination: str | Path) -> Path:
     service = _service(); folder = _folder_id()
-    safe = name.replace("'", "\\'")
+    safe = _escape_drive_query(name)
     q = f"'{folder}' in parents and name='{safe}' and trashed=false"
     files = service.files().list(q=q, spaces="drive", fields="files(id,name,modifiedTime)",
                                  orderBy="modifiedTime desc", pageSize=10).execute().get("files", [])
@@ -50,12 +70,6 @@ def download_named(name: str, destination: str | Path) -> Path:
 
 
 def download_recent_csvs(destination_dir: str | Path, limit: int = 20) -> list[tuple[Path, dict]]:
-    """Download recent CSV-like files from the configured private Drive folder.
-
-    This deliberately does not depend on a filename: users may keep the original
-    Rakuten Securities export name. The parser decides whether each file is a
-    valid Rakuten holdings export. Native Google Sheets are not considered.
-    """
     service = _service(); folder = _folder_id()
     q = f"'{folder}' in parents and trashed=false and mimeType!='application/vnd.google-apps.folder'"
     fields = "files(id,name,mimeType,modifiedTime,size)"
@@ -80,12 +94,6 @@ def download_recent_csvs(destination_dir: str | Path, limit: int = 20) -> list[t
 
 
 def download_recent_files(destination_dir: str | Path, limit: int = 50) -> list[tuple[Path, dict]]:
-    """Download recent non-native files for private input classification.
-
-    Selection is based on Drive ``modifiedTime`` and content parsers, not a
-    fixed file ID.  This lets the user retain Rakuten's original export names
-    and upload newer holdings, order, and buying-power files to one folder.
-    """
     service = _service(); folder = _folder_id()
     q = f"'{folder}' in parents and trashed=false and mimeType!='application/vnd.google-apps.folder'"
     fields = "files(id,name,mimeType,modifiedTime,createdTime,size,md5Checksum)"
@@ -111,11 +119,42 @@ def download_recent_files(destination_dir: str | Path, limit: int = 50) -> list[
     return out
 
 
-def upload_or_replace(local_path: str | Path, name: str | None = None, mime_type: str | None = None) -> str:
+def ensure_subfolder(name: str, parent_id: str | None = None) -> str:
+    service = _service(); parent = parent_id or _folder_id(); safe = _escape_drive_query(name)
+    q = (
+        f"'{parent}' in parents and name='{safe}' and trashed=false and "
+        "mimeType='application/vnd.google-apps.folder'"
+    )
+    files = service.files().list(q=q, spaces="drive", fields="files(id,name)", pageSize=10).execute().get("files", [])
+    if files:
+        return str(files[0]["id"])
+    result = service.files().create(
+        body={"name": name, "mimeType": "application/vnd.google-apps.folder", "parents": [parent]},
+        fields="id",
+    ).execute()
+    return str(result["id"])
+
+
+def ensure_folder_path(parts: list[str], parent_id: str | None = None) -> str:
+    folder = parent_id or _folder_id()
+    for part in parts:
+        clean = str(part).strip()
+        if not clean or clean in {".", ".."} or "/" in clean:
+            raise ValueError(f"invalid Drive folder path component: {part!r}")
+        folder = ensure_subfolder(clean, folder)
+    return folder
+
+
+def upload_or_replace(
+    local_path: str | Path,
+    name: str | None = None,
+    mime_type: str | None = None,
+    parent_id: str | None = None,
+) -> str:
     from googleapiclient.http import MediaFileUpload
-    service = _service(); folder = _folder_id(); p = Path(local_path)
+    service = _service(); folder = parent_id or _folder_id(); p = Path(local_path)
     target = name or p.name
-    safe = target.replace("'", "\\'")
+    safe = _escape_drive_query(target)
     q = f"'{folder}' in parents and name='{safe}' and trashed=false"
     files = service.files().list(q=q, spaces="drive", fields="files(id,name)", pageSize=10).execute().get("files", [])
     media = MediaFileUpload(str(p), mimetype=mime_type, resumable=False)
@@ -125,3 +164,63 @@ def upload_or_replace(local_path: str | Path, name: str | None = None, mime_type
         metadata = {"name": target, "parents": [folder]}
         result = service.files().create(body=metadata, media_body=media, fields="id").execute()
     return str(result["id"])
+
+
+def upload_immutable_snapshot(
+    local_path: str | Path,
+    name: str | None = None,
+    mime_type: str | None = None,
+    parent_id: str | None = None,
+    app_properties: dict[str, str] | None = None,
+) -> dict[str, str | int | bool]:
+    """Persist a private historical snapshot without overwriting prior content.
+
+    Re-running the same snapshot is idempotent when the SHA-256 is unchanged.
+    If the same logical filename already exists with different content, a
+    `_vN_corrected` file is created instead of mutating history.
+    """
+    from googleapiclient.http import MediaFileUpload
+    service = _service(); folder = parent_id or _folder_id(); p = Path(local_path)
+    target = name or p.name; digest = file_sha256(p)
+    safe = _escape_drive_query(target)
+    q = f"'{folder}' in parents and name='{safe}' and trashed=false"
+    fields = "files(id,name,appProperties,createdTime)"
+    existing = service.files().list(q=q, spaces="drive", fields=fields, pageSize=10).execute().get("files", [])
+    for item in existing:
+        props = item.get("appProperties") or {}
+        if props.get("sha256") == digest:
+            return {"id": str(item["id"]), "name": str(item.get("name") or target), "created": False,
+                    "corrected_revision": 1, "sha256": digest}
+
+    revision = 1
+    final_name = target
+    if existing:
+        revision = 2
+        while True:
+            candidate = corrected_snapshot_name(target, revision)
+            safe_candidate = _escape_drive_query(candidate)
+            cq = f"'{folder}' in parents and name='{safe_candidate}' and trashed=false"
+            matches = service.files().list(q=cq, spaces="drive", fields=fields, pageSize=10).execute().get("files", [])
+            same = next((x for x in matches if (x.get("appProperties") or {}).get("sha256") == digest), None)
+            if same:
+                return {"id": str(same["id"]), "name": str(same.get("name") or candidate), "created": False,
+                        "corrected_revision": revision, "sha256": digest}
+            if not matches:
+                final_name = candidate
+                break
+            revision += 1
+            if revision > 99:
+                raise RuntimeError("too many corrected snapshot revisions")
+
+    props = {"sha256": digest, "immutable": "true"}
+    for k, v in (app_properties or {}).items():
+        if v is not None:
+            props[str(k)[:124]] = str(v)[:124]
+    media = MediaFileUpload(str(p), mimetype=mime_type, resumable=False)
+    result = service.files().create(
+        body={"name": final_name, "parents": [folder], "appProperties": props},
+        media_body=media,
+        fields="id,name",
+    ).execute()
+    return {"id": str(result["id"]), "name": str(result.get("name") or final_name), "created": True,
+            "corrected_revision": revision, "sha256": digest}
