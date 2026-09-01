@@ -12,7 +12,7 @@ permissions:
 jobs:
   bootstrap-private-history:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     env:
       PYTHONPATH: src
       GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
@@ -21,6 +21,7 @@ jobs:
       PORTFOLIO_RISK_OVERLAY_CSV: ${{ secrets.PORTFOLIO_RISK_OVERLAY_CSV }}
       PORTFOLIO_DRIVE_WRITEBACK: 'false'
       PORTFOLIO_HISTORY_WRITEBACK: 'true'
+      PORTFOLIO_SCAN_LIMIT: '100'
       PRIVATE_WORKDIR: .private
       PRIVATE_OUTPUT_DIR: .private/portfolio_risk
       SCREEN_PATH: data/screening_latest.csv
@@ -52,5 +53,11 @@ jobs:
         run: |
           test -n "$GDRIVE_SERVICE_ACCOUNT_JSON"
           test -n "$GDRIVE_FOLDER_ID"
-      - name: Persist current private history snapshot
+      - name: Backfill 2026-08-31 snapshot
+        env:
+          PORTFOLIO_TARGET_DATE: '2026-08-31'
+        run: python src/run_portfolio_risk.py
+      - name: Seed 2026-09-01 snapshot
+        env:
+          PORTFOLIO_TARGET_DATE: '2026-09-01'
         run: python src/run_portfolio_risk.py
