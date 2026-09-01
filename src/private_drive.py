@@ -6,6 +6,22 @@ import json
 import os
 from pathlib import Path
 
+GENERATED_PRIVATE_OUTPUT_NAMES = {
+    "portfolio_latest.csv",
+    "portfolio_import_latest.json",
+    "portfolio_risk_latest.json",
+    "portfolio_risk_latest.md",
+    "portfolio_alerts_latest.json",
+    "portfolio_alerts_latest.md",
+    "portfolio_policy_latest.json",
+    "portfolio_policy_latest.md",
+    "portfolio_valuation_latest.json",
+    "portfolio_valuation_latest.md",
+    "portfolio_monthly_latest.json",
+    "portfolio_monthly_latest.md",
+    "snapshot_manifest_latest.json",
+}
+
 
 def _service():
     from google.oauth2 import service_account
@@ -29,6 +45,10 @@ def _folder_id() -> str:
 
 def _escape_drive_query(value: str) -> str:
     return str(value).replace("'", "\\'")
+
+
+def _is_generated_private_output(name: str) -> bool:
+    return Path(str(name)).name in GENERATED_PRIVATE_OUTPUT_NAMES
 
 
 def file_sha256(local_path: str | Path) -> str:
@@ -80,7 +100,7 @@ def download_recent_csvs(destination_dir: str | Path, limit: int = 20) -> list[t
     for i, meta in enumerate(files):
         name = str(meta.get("name") or "")
         mime = str(meta.get("mimeType") or "")
-        if mime.startswith("application/vnd.google-apps"):
+        if mime.startswith("application/vnd.google-apps") or _is_generated_private_output(name):
             continue
         if not (name.lower().endswith((".csv", ".txt")) or "csv" in mime or mime.startswith("text/")):
             continue
@@ -108,9 +128,9 @@ def download_recent_files(destination_dir: str | Path, limit: int = 50) -> list[
     dest = Path(destination_dir); dest.mkdir(parents=True, exist_ok=True)
     for i, meta in enumerate(files):
         mime = str(meta.get("mimeType") or "")
-        if mime.startswith("application/vnd.google-apps"):
-            continue
         name = Path(str(meta.get("name") or f"drive_file_{i}")).name
+        if mime.startswith("application/vnd.google-apps") or _is_generated_private_output(name):
+            continue
         try:
             p = _download_id(str(meta["id"]), dest / f"{i:02d}_{name}")
             out.append((p, meta))
