@@ -1,6 +1,13 @@
 from pathlib import Path
 
-from private_drive import _is_generated_private_output, corrected_snapshot_name, file_sha256
+from private_drive import (
+    _is_generated_private_output,
+    canonical_json_sha256,
+    corrected_snapshot_name,
+    encode_json_cell,
+    file_sha256,
+    history_revision,
+)
 
 
 def test_corrected_snapshot_name_preserves_suffix():
@@ -33,3 +40,34 @@ def test_generated_private_outputs_are_excluded_from_input_scan():
     assert _is_generated_private_output("portfolio_latest.csv")
     assert _is_generated_private_output("portfolio_valuation_latest.json")
     assert not _is_generated_private_output("保有商品一覧_20260831_160400.csv")
+
+
+def test_canonical_hash_ignores_run_timestamp_but_not_metrics():
+    a = {"generated_at": "2026-09-01T01:00:00Z", "metrics": {"pe": 15.0}}
+    b = {"generated_at": "2026-09-01T02:00:00Z", "metrics": {"pe": 15.0}}
+    c = {"generated_at": "2026-09-01T02:00:00Z", "metrics": {"pe": 16.0}}
+    assert canonical_json_sha256(a) == canonical_json_sha256(b)
+    assert canonical_json_sha256(a) != canonical_json_sha256(c)
+
+
+def test_history_revision_is_idempotent_for_same_hash():
+    digest = "a" * 64
+    rows = [["2026-08-31", "valuation", 1, False, digest]]
+    assert history_revision(rows, "2026-08-31", "valuation", digest) == {
+        "skip": True, "revision": 1, "is_corrected": False
+    }
+
+
+def test_history_revision_appends_correction_for_changed_hash():
+    rows = [
+        ["2026-08-31", "valuation", 1, False, "a" * 64],
+        ["2026-08-31", "valuation", 2, True, "b" * 64],
+    ]
+    state = history_revision(rows, "2026-08-31", "valuation", "c" * 64)
+    assert state == {"skip": False, "revision": 3, "is_corrected": True}
+
+
+def test_encode_json_cell_compresses_large_payload_without_truncation():
+    text = encode_json_cell({"payload": "x" * 60000})
+    assert "gzip+base64" in text
+    assert len(text) < 48000
