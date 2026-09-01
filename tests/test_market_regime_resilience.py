@@ -8,6 +8,7 @@ from market_regime.fred import (
     _parse_api_response,
     _parse_batch_response,
     _parse_series_page,
+    _parse_data_page,
 )
 from market_regime.jpx import _validate_frame
 
@@ -98,6 +99,16 @@ def test_fred_official_series_page_parses_explicit_observations():
     frame, value_col = _parse_series_page(html, "BAMLH0A0HYM2")
     assert len(frame) == 2
     assert str(frame.iloc[-1]["DATE"].date()) == "2026-08-28"
+    assert float(frame.iloc[-1][value_col]) == 2.60
+
+
+def test_fred_official_data_page_parses_date_value_table():
+    text = """<table><tr><th>DATE</th><th>VALUE</th></tr>
+    <tr><td>2026-08-20</td><td>2.63</td></tr>
+    <tr><td>2026-08-21</td><td>2.60</td></tr></table>"""
+    frame, value_col = _parse_data_page(text, "BAMLH0A0HYM2")
+    assert value_col == "BAMLH0A0HYM2"
+    assert frame.iloc[-1]["DATE"].strftime("%Y-%m-%d") == "2026-08-21"
     assert float(frame.iloc[-1][value_col]) == 2.60
 
 

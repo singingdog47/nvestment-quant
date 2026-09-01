@@ -16,6 +16,7 @@ from .common import now_iso
 BASE = "https://fred.stlouisfed.org/graph/fredgraph.csv"
 API_BASE = "https://api.stlouisfed.org/fred/series/observations"
 SERIES_PAGE = "https://fred.stlouisfed.org/series/{sid}"
+DATA_PAGE = "https://fred.stlouisfed.org/data/{sid}"
 UA = "investment-quant/1.6.1 (+research)"
 FRED_COLUMNS = [
     "series",
@@ -164,6 +165,24 @@ def _parse_series_page(text, sid):
     return frame, sid
 
 
+def _parse_data_page(text, sid):
+    """Parse the official FRED DATE/VALUE table (independent of fredgraph)."""
+    plain = html.unescape(re.sub(r"<[^>]+>", " ", text))
+    matches = re.findall(
+        r"\b(\d{4}-\d{2}-\d{2})\b\s+([+-]?(?:\d+(?:\.\d*)?|\.\d+)|\.)\b",
+        plain,
+    )
+    frame = pd.DataFrame(matches, columns=["DATE", sid])
+    if frame.empty:
+        raise ValueError("official FRED data page has no DATE/VALUE observations")
+    frame["DATE"] = pd.to_datetime(frame["DATE"], errors="coerce")
+    frame[sid] = pd.to_numeric(frame[sid].replace(".", pd.NA), errors="coerce")
+    frame = frame.dropna().drop_duplicates("DATE").sort_values("DATE")
+    if frame.empty:
+        raise ValueError("official FRED data page observations invalid")
+    return frame, sid
+
+
 def _fetch_official_series(sid):
     """Try independent official FRED transports and record the winning route."""
     errors = []
@@ -182,6 +201,14 @@ def _fetch_official_series(sid):
             return x, valcol, response.url, "fred_api"
         except Exception as exc:
             errors.append(f"api={type(exc).__name__}: {exc}")
+    try:
+        url = DATA_PAGE.format(sid=sid)
+        response = _get_with_retry(url, attempts=2, accept="text/html,text/plain")
+        transport_ok = True
+        x, valcol = _parse_data_page(response.text, sid)
+        return x, valcol, response.url, "official_data_page"
+    except Exception as exc:
+        errors.append(f"data={type(exc).__name__}: {exc}")
     try:
         url = SERIES_PAGE.format(sid=sid)
         response = _get_with_retry(url, attempts=2, accept="text/html")
