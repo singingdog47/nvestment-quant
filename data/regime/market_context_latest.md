@@ -1,54 +1,54 @@
 # Market Regime v1.5
 
 - Label: **CONSTRUCTIVE**
-- Score: **61.54**
-- Confidence: **0.591**
-- Actionable: **False**
-- Data status: **partial**
+- Score: **66.48**
+- Confidence: **1.0**
+- Actionable: **True**
+- Data status: **ok**
 - Flags: none
 
 ## Components
-- trend: 70.06790394530778
-- stress: 63.51999931335449
+- trend: 68.80112232167059
+- stress: 82.80999988555908
 - participation: 56.858509044820835
-- liquidity: 55.277971195949945
+- liquidity: 58.53453583916087
 - positioning: 49.80831960274451
 
 ## Evidence
 {
   "trend_series": 4,
-  "vix": 15.770000457763672,
-  "hy_oas": null,
-  "ig_oas": null,
-  "treasury_volatility_proxy": 73.188,
-  "treasury_volatility_percentile_rank": 0.7421,
-  "treasury_volatility_stress_score": 44.35,
-  "treasury_volatility_as_of_date": "2026-08-31",
+  "vix": 16.34000015258789,
+  "hy_oas": 2.63,
+  "ig_oas": 0.8,
+  "treasury_volatility_proxy": 70.498,
+  "treasury_volatility_percentile_rank": 0.6389,
+  "treasury_volatility_stress_score": 52.08,
+  "treasury_volatility_as_of_date": "2026-09-01",
   "treasury_volatility_status": "ok",
   "treasury_volatility_is_ice_move": false,
   "breadth_n": 9575,
   "breadth_status": "ok",
   "breadth_source_as_of_utc": "2026-09-01T10:37:46.226421+00:00",
-  "nfci": null,
-  "volume_ratio20_mean": 1.105559423918999,
+  "nfci": -0.566,
+  "volume_ratio20_mean": 1.1143133959790217,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22
   },
   "component_coverage": {
     "trend": 1.0,
-    "stress": 0.5,
+    "stress": 1.0,
     "participation": 1.0,
-    "liquidity": 0.8,
+    "liquidity": 1.0,
     "positioning": 1.0
   },
   "critical_context_coverage": {
-    "fred_credit_financial_conditions": 0.0,
-    "available": 0,
+    "fred_credit_financial_conditions": 1.0,
+    "available": 3,
     "expected": 3,
-    "multiplier": 0.7
+    "multiplier": 1.0
   },
-  "base_weighted_coverage": 0.845,
+  "base_weighted_coverage": 1.0,
   "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
   "jpx_official_turnover_date": "2026-09-01",
   "jpx_official_turnover_million_jpy": 8436078.0,

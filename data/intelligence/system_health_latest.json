@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T10:43:41+00:00",
+  "generated_at": "2026-09-01T22:27:08+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -10,25 +10,25 @@
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.1,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.1,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.1,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.1,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "fundamentals": {
