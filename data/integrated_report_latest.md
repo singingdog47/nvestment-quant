@@ -1,16 +1,20 @@
 # Investment Quant Daily Integrated Report v2.10
 
-Generated (UTC): 2026-09-01T10:44:12+00:00
+Generated (UTC): 2026-09-01T12:18:47+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
 - Decision gate: `OPEN_FOR_ANALYSIS`
-- Data actionable: `True`
+- Screening / intelligence data actionable: `True`
+- Regime context actionable: `False`
+- Overall analysis mode: `REVIEW_ONLY_PARTIAL_REGIME`
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
 - Score: 61.54
 - Confidence: 0.591
+- Data status: partial
+- Actionability reasons: confidence_below_threshold, core_credit_or_financial_conditions_missing
 - VIX: 15.770000457763672
 - Treasury realized-vol proxy (not ICE MOVE): 73.188 bps annualized; percentile=0.7421
 - Flags: none
