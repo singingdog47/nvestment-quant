@@ -1,0 +1,56 @@
+name: Private History Bootstrap v2.9
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/private-history-bootstrap-v2.9.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  bootstrap-private-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PYTHONPATH: src
+      GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+      GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+      PORTFOLIO_RISK_PROFILE_JSON: ${{ secrets.PORTFOLIO_RISK_PROFILE_JSON }}
+      PORTFOLIO_RISK_OVERLAY_CSV: ${{ secrets.PORTFOLIO_RISK_OVERLAY_CSV }}
+      PORTFOLIO_DRIVE_WRITEBACK: 'false'
+      PORTFOLIO_HISTORY_WRITEBACK: 'true'
+      PRIVATE_WORKDIR: .private
+      PRIVATE_OUTPUT_DIR: .private/portfolio_risk
+      SCREEN_PATH: data/screening_latest.csv
+      ALLOW_REPO_PORTFOLIO: '0'
+      RISK_LOOKBACK_DAYS: '400'
+      RISK_MIN_OBSERVATIONS: '120'
+      RISK_VAR_CONFIDENCE: '0.95'
+      RISK_CANDIDATE_WEIGHT: '0.02'
+      RISK_CANDIDATE_TOP_N: '10'
+      RISK_BENCHMARK: '1306.T'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install -r requirements-regime.txt
+          python -m pip install -r requirements-intelligence.txt
+          python -m pip install pytest
+      - name: Verify v2.9 private history tests
+        run: python -m pytest tests/test_portfolio_valuation.py tests/test_monthly_performance.py tests/test_private_drive_history.py -q
+      - name: Check private Drive secrets
+        run: |
+          test -n "$GDRIVE_SERVICE_ACCOUNT_JSON"
+          test -n "$GDRIVE_FOLDER_ID"
+      - name: Persist current private history snapshot
+        run: python src/run_portfolio_risk.py
