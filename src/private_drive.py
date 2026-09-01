@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import base64
+import csv
 import gzip
 import hashlib
 import io
@@ -26,15 +27,14 @@ GENERATED_PRIVATE_OUTPUT_NAMES = {
     "snapshot_manifest_latest.json",
 }
 
-HISTORY_LEDGER_NAME = "investment_quant_private_history_ledger"
-HISTORY_SHEET_NAME = "History"
+HISTORY_LEDGER_NAME = "investment_quant_private_history_ledger.csv"
+HISTORY_HEADER = [
+    "snapshot_date", "snapshot_kind", "revision", "is_corrected", "sha256",
+    "system_version", "source_file", "source_as_of", "status", "analysis_mode",
+    "evidence_tier", "coverage_json", "payload_json", "created_at_utc",
+]
 VOLATILE_JSON_KEYS = {
-    "generated_at",
-    "generated_at_utc",
-    "created_at",
-    "created_at_utc",
-    "run_at",
-    "run_at_utc",
+    "generated_at", "generated_at_utc", "created_at", "created_at_utc", "run_at", "run_at_utc",
 }
 
 
@@ -45,22 +45,13 @@ def _credentials():
         raise RuntimeError("GDRIVE_SERVICE_ACCOUNT_JSON is not set")
     info = json.loads(raw)
     return service_account.Credentials.from_service_account_info(
-        info,
-        scopes=[
-            "https://www.googleapis.com/auth/drive",
-            "https://www.googleapis.com/auth/spreadsheets",
-        ],
+        info, scopes=["https://www.googleapis.com/auth/drive"]
     )
 
 
 def _service():
     from googleapiclient.discovery import build
     return build("drive", "v3", credentials=_credentials(), cache_discovery=False)
-
-
-def _sheets_service():
-    from googleapiclient.discovery import build
-    return build("sheets", "v4", credentials=_credentials(), cache_discovery=False)
 
 
 def _folder_id() -> str:
@@ -109,7 +100,7 @@ def canonical_json_sha256(value: Any) -> str:
 
 
 def encode_json_cell(value: Any, max_chars: int = 48000) -> str:
-    """Encode JSON for a single Sheets cell without silently truncating history."""
+    """Encode JSON losslessly; large payloads use gzip+base64 instead of truncation."""
     clean = _canonicalize_json(value)
     raw = json.dumps(clean, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
     if len(raw) <= max_chars:
@@ -117,11 +108,10 @@ def encode_json_cell(value: Any, max_chars: int = 48000) -> str:
     packed = base64.b64encode(gzip.compress(raw.encode("utf-8"), compresslevel=9)).decode("ascii")
     wrapper = json.dumps(
         {"encoding": "gzip+base64", "original_chars": len(raw), "data": packed},
-        ensure_ascii=False,
-        separators=(",", ":"),
+        ensure_ascii=False, separators=(",", ":"),
     )
     if len(wrapper) > max_chars:
-        raise ValueError(f"history payload exceeds Sheets cell limit after compression: {len(wrapper)} chars")
+        raise ValueError(f"history payload remains too large after compression: {len(wrapper)} chars")
     return wrapper
 
 
@@ -133,12 +123,9 @@ def corrected_snapshot_name(name: str, revision: int) -> str:
 
 
 def history_revision(existing_rows: list[list[Any]], snapshot_date: str, snapshot_kind: str, digest: str) -> dict[str, Any]:
-    """Return append-only revision state for one logical snapshot."""
     revisions: list[int] = []
     for row in existing_rows:
-        if len(row) < 5:
-            continue
-        if str(row[0]) != snapshot_date or str(row[1]) != snapshot_kind:
+        if len(row) < 5 or str(row[0]) != snapshot_date or str(row[1]) != snapshot_kind:
             continue
         try:
             revision = int(float(row[2]))
@@ -151,21 +138,24 @@ def history_revision(existing_rows: list[list[Any]], snapshot_date: str, snapsho
     return {"skip": False, "revision": revision, "is_corrected": revision > 1}
 
 
-def _download_id(file_id: str, destination: str | Path) -> Path:
+def _download_bytes(file_id: str) -> bytes:
     from googleapiclient.http import MediaIoBaseDownload
-    service = _service()
-    request = service.files().get_media(fileId=file_id)
+    request = _service().files().get_media(fileId=file_id)
     buf = io.BytesIO(); downloader = MediaIoBaseDownload(buf, request)
     done = False
     while not done:
         _, done = downloader.next_chunk()
-    p = Path(destination); p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(buf.getvalue())
+    return buf.getvalue()
+
+
+def _download_id(file_id: str, destination: str | Path) -> Path:
+    p = Path(destination); p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_bytes(_download_bytes(file_id))
     return p
 
 
 def download_named(name: str, destination: str | Path) -> Path:
-    service = _service(); folder = _folder_id()
-    safe = _escape_drive_query(name)
+    service = _service(); folder = _folder_id(); safe = _escape_drive_query(name)
     q = f"'{folder}' in parents and name='{safe}' and trashed=false"
     files = service.files().list(q=q, spaces="drive", fields="files(id,name,modifiedTime)",
                                  orderBy="modifiedTime desc", pageSize=10).execute().get("files", [])
@@ -183,16 +173,13 @@ def download_recent_csvs(destination_dir: str | Path, limit: int = 20) -> list[t
     out: list[tuple[Path, dict]] = []
     dest = Path(destination_dir); dest.mkdir(parents=True, exist_ok=True)
     for i, meta in enumerate(files):
-        name = str(meta.get("name") or "")
-        mime = str(meta.get("mimeType") or "")
+        name = str(meta.get("name") or ""); mime = str(meta.get("mimeType") or "")
         if mime.startswith("application/vnd.google-apps") or _is_generated_private_output(name):
             continue
         if not (name.lower().endswith((".csv", ".txt")) or "csv" in mime or mime.startswith("text/")):
             continue
-        safe_name = f"{i:02d}_{Path(name).name}"
         try:
-            p = _download_id(str(meta["id"]), dest / safe_name)
-            out.append((p, meta))
+            out.append((_download_id(str(meta["id"]), dest / f"{i:02d}_{Path(name).name}"), meta))
         except Exception:
             continue
     return out
@@ -202,13 +189,8 @@ def download_recent_files(destination_dir: str | Path, limit: int = 50) -> list[
     service = _service(); folder = _folder_id()
     q = f"'{folder}' in parents and trashed=false and mimeType!='application/vnd.google-apps.folder'"
     fields = "files(id,name,mimeType,modifiedTime,createdTime,size,md5Checksum)"
-    files = service.files().list(
-        q=q,
-        spaces="drive",
-        fields=fields,
-        orderBy="modifiedTime desc",
-        pageSize=max(1, min(limit, 100)),
-    ).execute().get("files", [])
+    files = service.files().list(q=q, spaces="drive", fields=fields, orderBy="modifiedTime desc",
+                                 pageSize=max(1, min(limit, 100))).execute().get("files", [])
     out: list[tuple[Path, dict]] = []
     dest = Path(destination_dir); dest.mkdir(parents=True, exist_ok=True)
     for i, meta in enumerate(files):
@@ -217,8 +199,7 @@ def download_recent_files(destination_dir: str | Path, limit: int = 50) -> list[
         if mime.startswith("application/vnd.google-apps") or _is_generated_private_output(name):
             continue
         try:
-            p = _download_id(str(meta["id"]), dest / f"{i:02d}_{name}")
-            out.append((p, meta))
+            out.append((_download_id(str(meta["id"]), dest / f"{i:02d}_{name}"), meta))
         except Exception:
             continue
     return out
@@ -226,16 +207,12 @@ def download_recent_files(destination_dir: str | Path, limit: int = 50) -> list[
 
 def ensure_subfolder(name: str, parent_id: str | None = None) -> str:
     service = _service(); parent = parent_id or _folder_id(); safe = _escape_drive_query(name)
-    q = (
-        f"'{parent}' in parents and name='{safe}' and trashed=false and "
-        "mimeType='application/vnd.google-apps.folder'"
-    )
+    q = f"'{parent}' in parents and name='{safe}' and trashed=false and mimeType='application/vnd.google-apps.folder'"
     files = service.files().list(q=q, spaces="drive", fields="files(id,name)", pageSize=10).execute().get("files", [])
     if files:
         return str(files[0]["id"])
     result = service.files().create(
-        body={"name": name, "mimeType": "application/vnd.google-apps.folder", "parents": [parent]},
-        fields="id",
+        body={"name": name, "mimeType": "application/vnd.google-apps.folder", "parents": [parent]}, fields="id"
     ).execute()
     return str(result["id"])
 
@@ -251,42 +228,42 @@ def ensure_folder_path(parts: list[str], parent_id: str | None = None) -> str:
 
 
 def find_history_ledger(name: str = HISTORY_LEDGER_NAME) -> str:
-    """Find the user-owned ledger under history/portfolio; never create it as a service account."""
-    service = _service()
-    folder = ensure_folder_path(["history", "portfolio"])
-    safe = _escape_drive_query(name)
-    q = (
-        f"'{folder}' in parents and name='{safe}' and trashed=false and "
-        "mimeType='application/vnd.google-apps.spreadsheet'"
-    )
-    files = service.files().list(q=q, spaces="drive", fields="files(id,name,modifiedTime)",
+    service = _service(); folder = ensure_folder_path(["history", "portfolio"]); safe = _escape_drive_query(name)
+    q = f"'{folder}' in parents and name='{safe}' and trashed=false"
+    files = service.files().list(q=q, spaces="drive", fields="files(id,name,mimeType,modifiedTime)",
                                  orderBy="modifiedTime desc", pageSize=10).execute().get("files", [])
     if not files:
         raise FileNotFoundError(
-            f"Private history ledger not found: {name}. It must be created by a quota-owning Google user and shared through the configured folder."
+            f"Private history ledger not found: {name}. Create it with a quota-owning Google user in history/portfolio."
         )
     return str(files[0]["id"])
 
 
-def append_history_ledger(entries: list[dict[str, Any]], ledger_name: str = HISTORY_LEDGER_NAME) -> dict[str, Any]:
-    """Append immutable logical snapshots to a user-owned Google Sheet.
+def _parse_history_csv(raw: bytes) -> tuple[list[str], list[list[str]]]:
+    text = raw.decode("utf-8-sig")
+    rows = list(csv.reader(io.StringIO(text)))
+    if not rows:
+        return HISTORY_HEADER.copy(), []
+    header = [str(x).strip() for x in rows[0]]
+    if header != HISTORY_HEADER:
+        raise ValueError(f"private history ledger header mismatch: {header}")
+    return header, rows[1:]
 
-    The service account edits an existing user-owned Sheet instead of creating
-    stored files, avoiding the service-account My Drive storage-quota limit.
+
+def append_history_ledger(entries: list[dict[str, Any]], ledger_name: str = HISTORY_LEDGER_NAME) -> dict[str, Any]:
+    """Append logical snapshots to one user-owned CSV file using Drive API only.
+
+    Old logical rows are never removed or edited. Rewriting the same Drive file
+    creates a provider revision while avoiding service-account file-creation quota.
     """
     if not entries:
         return {"status": "ok", "appended": 0, "idempotent": 0, "ledger_id": None, "rows": []}
     ledger_id = find_history_ledger(ledger_name)
-    sheets = _sheets_service()
-    existing = sheets.spreadsheets().values().get(
-        spreadsheetId=ledger_id,
-        range=f"{HISTORY_SHEET_NAME}!A2:E",
-        majorDimension="ROWS",
-    ).execute().get("values", [])
-
+    header, existing = _parse_history_csv(_download_bytes(ledger_id))
     append_rows: list[list[Any]] = []
     result_rows: list[dict[str, Any]] = []
     virtual_existing = [list(r) for r in existing]
+
     for entry in entries:
         snapshot_date = str(entry.get("snapshot_date") or "").strip()
         snapshot_kind = str(entry.get("snapshot_kind") or "").strip()
@@ -298,123 +275,47 @@ def append_history_ledger(entries: list[dict[str, Any]], ledger_name: str = HIST
             result_rows.append({"snapshot_date": snapshot_date, "snapshot_kind": snapshot_kind,
                                 "revision": state["revision"], "created": False})
             continue
-        revision = int(state["revision"])
-        corrected = bool(state["is_corrected"])
+        revision = int(state["revision"]); corrected = bool(state["is_corrected"])
         row = [
-            snapshot_date,
-            snapshot_kind,
-            revision,
-            corrected,
-            digest,
-            str(entry.get("system_version") or ""),
-            str(entry.get("source_file") or ""),
-            str(entry.get("source_as_of") or ""),
-            str(entry.get("status") or ""),
-            str(entry.get("analysis_mode") or ""),
-            str(entry.get("evidence_tier") or ""),
-            str(entry.get("coverage_json") or ""),
-            str(entry.get("payload_json") or ""),
+            snapshot_date, snapshot_kind, revision, corrected, digest,
+            str(entry.get("system_version") or ""), str(entry.get("source_file") or ""),
+            str(entry.get("source_as_of") or ""), str(entry.get("status") or ""),
+            str(entry.get("analysis_mode") or ""), str(entry.get("evidence_tier") or ""),
+            str(entry.get("coverage_json") or ""), str(entry.get("payload_json") or ""),
             str(entry.get("created_at_utc") or ""),
         ]
-        if any(len(str(value)) > 49000 for value in row):
-            raise ValueError(f"history row contains a cell above safe Sheets size: {snapshot_date}/{snapshot_kind}")
         append_rows.append(row)
         virtual_existing.append([snapshot_date, snapshot_kind, revision, corrected, digest])
         result_rows.append({"snapshot_date": snapshot_date, "snapshot_kind": snapshot_kind,
                             "revision": revision, "created": True})
 
     if append_rows:
-        sheets.spreadsheets().values().append(
-            spreadsheetId=ledger_id,
-            range=f"{HISTORY_SHEET_NAME}!A:N",
-            valueInputOption="RAW",
-            insertDataOption="INSERT_ROWS",
-            body={"majorDimension": "ROWS", "values": append_rows},
-        ).execute()
+        output = io.StringIO(newline="")
+        writer = csv.writer(output, lineterminator="\n")
+        writer.writerow(header)
+        writer.writerows(existing)
+        writer.writerows(append_rows)
+        data = output.getvalue().encode("utf-8")
+        from googleapiclient.http import MediaIoBaseUpload
+        media = MediaIoBaseUpload(io.BytesIO(data), mimetype="text/csv", resumable=False)
+        _service().files().update(fileId=ledger_id, media_body=media, fields="id,modifiedTime").execute()
+
     return {
-        "status": "ok",
-        "ledger_id": ledger_id,
-        "appended": len(append_rows),
-        "idempotent": len(entries) - len(append_rows),
-        "rows": result_rows,
+        "status": "ok", "ledger_id": ledger_id, "appended": len(append_rows),
+        "idempotent": len(entries) - len(append_rows), "rows": result_rows,
     }
 
 
 def upload_or_replace(
-    local_path: str | Path,
-    name: str | None = None,
-    mime_type: str | None = None,
-    parent_id: str | None = None,
+    local_path: str | Path, name: str | None = None, mime_type: str | None = None, parent_id: str | None = None
 ) -> str:
     from googleapiclient.http import MediaFileUpload
-    service = _service(); folder = parent_id or _folder_id(); p = Path(local_path)
-    target = name or p.name
-    safe = _escape_drive_query(target)
-    q = f"'{folder}' in parents and name='{safe}' and trashed=false"
+    service = _service(); folder = parent_id or _folder_id(); p = Path(local_path); target = name or p.name
+    safe = _escape_drive_query(target); q = f"'{folder}' in parents and name='{safe}' and trashed=false"
     files = service.files().list(q=q, spaces="drive", fields="files(id,name)", pageSize=10).execute().get("files", [])
     media = MediaFileUpload(str(p), mimetype=mime_type, resumable=False)
     if files:
         result = service.files().update(fileId=files[0]["id"], media_body=media, fields="id").execute()
     else:
-        metadata = {"name": target, "parents": [folder]}
-        result = service.files().create(body=metadata, media_body=media, fields="id").execute()
+        result = service.files().create(body={"name": target, "parents": [folder]}, media_body=media, fields="id").execute()
     return str(result["id"])
-
-
-def upload_immutable_snapshot(
-    local_path: str | Path,
-    name: str | None = None,
-    mime_type: str | None = None,
-    parent_id: str | None = None,
-    app_properties: dict[str, str] | None = None,
-) -> dict[str, str | int | bool]:
-    """Legacy raw-file history helper.
-
-    Kept for compatibility, but My Drive service accounts generally have no
-    storage quota. v2.9 production history uses append_history_ledger instead.
-    """
-    from googleapiclient.http import MediaFileUpload
-    service = _service(); folder = parent_id or _folder_id(); p = Path(local_path)
-    target = name or p.name; digest = file_sha256(p)
-    safe = _escape_drive_query(target)
-    q = f"'{folder}' in parents and name='{safe}' and trashed=false"
-    fields = "files(id,name,appProperties,createdTime)"
-    existing = service.files().list(q=q, spaces="drive", fields=fields, pageSize=10).execute().get("files", [])
-    for item in existing:
-        props = item.get("appProperties") or {}
-        if props.get("sha256") == digest:
-            return {"id": str(item["id"]), "name": str(item.get("name") or target), "created": False,
-                    "corrected_revision": 1, "sha256": digest}
-
-    revision = 1
-    final_name = target
-    if existing:
-        revision = 2
-        while True:
-            candidate = corrected_snapshot_name(target, revision)
-            safe_candidate = _escape_drive_query(candidate)
-            cq = f"'{folder}' in parents and name='{safe_candidate}' and trashed=false"
-            matches = service.files().list(q=cq, spaces="drive", fields=fields, pageSize=10).execute().get("files", [])
-            same = next((x for x in matches if (x.get("appProperties") or {}).get("sha256") == digest), None)
-            if same:
-                return {"id": str(same["id"]), "name": str(same.get("name") or candidate), "created": False,
-                        "corrected_revision": revision, "sha256": digest}
-            if not matches:
-                final_name = candidate
-                break
-            revision += 1
-            if revision > 99:
-                raise RuntimeError("too many corrected snapshot revisions")
-
-    props = {"sha256": digest, "immutable": "true"}
-    for k, v in (app_properties or {}).items():
-        if v is not None:
-            props[str(k)[:124]] = str(v)[:124]
-    media = MediaFileUpload(str(p), mimetype=mime_type, resumable=False)
-    result = service.files().create(
-        body={"name": final_name, "parents": [folder], "appProperties": props},
-        media_body=media,
-        fields="id,name",
-    ).execute()
-    return {"id": str(result["id"]), "name": str(result.get("name") or final_name), "created": True,
-            "corrected_revision": revision, "sha256": digest}
