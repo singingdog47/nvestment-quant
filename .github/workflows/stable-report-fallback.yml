@@ -21,6 +21,7 @@ jobs:
       PYTHONPATH: src
       EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
       SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       ALLOW_REPO_PORTFOLIO: '0'
 
     steps:

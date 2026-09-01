@@ -3,7 +3,12 @@ import requests
 
 from market_regime.common import now_iso
 from market_regime.coverage import build_data_coverage
-from market_regime.fred import fetch_fred, _parse_batch_response
+from market_regime.fred import (
+    fetch_fred,
+    _parse_api_response,
+    _parse_batch_response,
+    _parse_series_page,
+)
 from market_regime.jpx import _validate_frame
 
 
@@ -70,6 +75,30 @@ def test_fred_batch_zip_parses_series_with_different_frequencies():
     parsed = _parse_batch_response(buffer.getvalue(), {"HY", "IG", "NFCI"})
     assert set(parsed) == {"HY", "IG", "NFCI"}
     assert float(parsed["NFCI"].iloc[-1]["NFCI"]) == -0.566
+
+
+def test_fred_official_api_payload_parses_without_fredgraph():
+    frame, value_col = _parse_api_response(
+        {"observations": [
+            {"date": "2026-08-27", "value": "2.63"},
+            {"date": "2026-08-28", "value": "2.60"},
+        ]},
+        "BAMLH0A0HYM2",
+    )
+    assert value_col == "BAMLH0A0HYM2"
+    assert float(frame.iloc[-1][value_col]) == 2.60
+
+
+def test_fred_official_series_page_parses_explicit_observations():
+    html = """
+    <html><body><section>Observations
+      <div>2026-08-28: 2.60</div><div>2026-08-27: 2.63</div>
+    </section></body></html>
+    """
+    frame, value_col = _parse_series_page(html, "BAMLH0A0HYM2")
+    assert len(frame) == 2
+    assert str(frame.iloc[-1]["DATE"].date()) == "2026-08-28"
+    assert float(frame.iloc[-1][value_col]) == 2.60
 
 
 def test_jpx_date_only_payload_fails_content_validation():

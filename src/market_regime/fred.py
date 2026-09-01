@@ -1,16 +1,21 @@
 from __future__ import annotations
 
 import io
+import os
+import re
 import time
 import zipfile
 from pathlib import Path
 
 import pandas as pd
 import requests
+from bs4 import BeautifulSoup
 
 from .common import now_iso
 
 BASE = "https://fred.stlouisfed.org/graph/fredgraph.csv"
+API_BASE = "https://api.stlouisfed.org/fred/series/observations"
+SERIES_PAGE = "https://fred.stlouisfed.org/series/{sid}"
 UA = "investment-quant/1.6.1 (+research)"
 FRED_COLUMNS = [
     "series",
@@ -28,7 +33,13 @@ FRED_COLUMNS = [
 ]
 
 
-def _get_with_retry(url, *, params=None, attempts=3):
+class FredOfficialFetchError(RuntimeError):
+    def __init__(self, message, *, transport_ok=False):
+        super().__init__(message)
+        self.transport_ok = transport_ok
+
+
+def _get_with_retry(url, *, params=None, attempts=3, accept="text/csv,*/*;q=0.8"):
     """Retry transient FRED/network failures without fabricating data."""
     last_error = None
     timeouts = (12, 20, 30)
@@ -38,7 +49,7 @@ def _get_with_retry(url, *, params=None, attempts=3):
                 url,
                 params=params,
                 timeout=timeouts[min(i, len(timeouts) - 1)],
-                headers={"User-Agent": UA, "Accept": "text/csv,*/*;q=0.8"},
+                headers={"User-Agent": UA, "Accept": accept},
             )
             r.raise_for_status()
             return r
@@ -119,6 +130,75 @@ def _parse_response(text):
     return x, valcol
 
 
+def _parse_api_response(payload, sid):
+    observations = payload.get("observations") if isinstance(payload, dict) else None
+    if not isinstance(observations, list):
+        raise ValueError("FRED API observations missing")
+    frame = pd.DataFrame(observations)
+    if frame.empty or "date" not in frame or "value" not in frame:
+        raise ValueError("FRED API observation columns missing")
+    frame["DATE"] = pd.to_datetime(frame["date"], errors="coerce")
+    frame[sid] = pd.to_numeric(frame["value"], errors="coerce")
+    valid = frame[["DATE", sid]].dropna().sort_values("DATE")
+    if valid.empty:
+        raise ValueError("FRED API has no valid observations")
+    return valid, sid
+
+
+def _parse_series_page(text, sid):
+    """Parse explicit recent observations from an official FRED series page."""
+    plain = BeautifulSoup(text, "html.parser").get_text(" ", strip=True)
+    matches = re.findall(
+        r"\b(\d{4}-\d{2}-\d{2})\s*:\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))\b",
+        plain,
+    )
+    if not matches:
+        raise ValueError("official FRED series page has no date/value observations")
+    frame = pd.DataFrame(matches, columns=["DATE", sid])
+    frame["DATE"] = pd.to_datetime(frame["DATE"], errors="coerce")
+    frame[sid] = pd.to_numeric(frame[sid], errors="coerce")
+    frame = frame.dropna().drop_duplicates("DATE").sort_values("DATE")
+    if frame.empty:
+        raise ValueError("official FRED series page observations invalid")
+    return frame, sid
+
+
+def _fetch_official_series(sid):
+    """Try independent official FRED transports and record the winning route."""
+    errors = []
+    transport_ok = False
+    api_key = os.getenv("FRED_API_KEY", "").strip()
+    if api_key:
+        try:
+            response = _get_with_retry(
+                API_BASE,
+                params={"series_id": sid, "api_key": api_key, "file_type": "json"},
+                attempts=2,
+                accept="application/json",
+            )
+            transport_ok = True
+            x, valcol = _parse_api_response(response.json(), sid)
+            return x, valcol, response.url, "fred_api"
+        except Exception as exc:
+            errors.append(f"api={type(exc).__name__}: {exc}")
+    try:
+        url = SERIES_PAGE.format(sid=sid)
+        response = _get_with_retry(url, attempts=2, accept="text/html")
+        transport_ok = True
+        x, valcol = _parse_series_page(response.text, sid)
+        return x, valcol, response.url, "official_series_page"
+    except Exception as exc:
+        errors.append(f"page={type(exc).__name__}: {exc}")
+    try:
+        response = _get_with_retry(BASE, params={"id": sid}, attempts=1)
+        transport_ok = True
+        x, valcol = _parse_response(response.text)
+        return x, valcol, response.url, "fredgraph_single"
+    except Exception as exc:
+        errors.append(f"graph={type(exc).__name__}: {exc}")
+    raise FredOfficialFetchError(" | ".join(errors), transport_ok=transport_ok)
+
+
 def _parse_batch_response(content, requested_ids):
     """Parse FRED's multi-series CSV/ZIP response into one frame per series.
 
@@ -172,7 +252,7 @@ def fetch_fred(series: dict, cache_path=None, max_cache_age_days=14):
     if series:
         try:
             response = _get_with_retry(
-                BASE, params={"id": ",".join(dict.fromkeys(series.values()))}, attempts=3
+                BASE, params={"id": ",".join(dict.fromkeys(series.values()))}, attempts=2
             )
             batch = _parse_batch_response(response.content, set(series.values()))
         except Exception as exc:
@@ -181,17 +261,17 @@ def fetch_fred(series: dict, cache_path=None, max_cache_age_days=14):
     for name, sid in series.items():
         transport_status = "error"
         content_status = "not_checked"
+        retrieval_route = "none"
         source_url = f"{BASE}?id={sid}"
         try:
             if sid in batch:
                 x, valcol = batch[sid], sid
                 transport_status = "ok"
                 source_url = f"{BASE}?id={','.join(dict.fromkeys(series.values()))}"
+                retrieval_route = "fredgraph_batch"
             else:
-                r = _get_with_retry(BASE, params={"id": sid}, attempts=3)
+                x, valcol, source_url, retrieval_route = _fetch_official_series(sid)
                 transport_status = "ok"
-                source_url = r.url
-                x, valcol = _parse_response(r.text)
             content_status = "valid"
             latest = x.iloc[-1]
             prev = x.iloc[-2] if len(x) > 1 else latest
@@ -222,9 +302,12 @@ def fetch_fred(series: dict, cache_path=None, max_cache_age_days=14):
                     "fetched_at": fetched,
                     "error": "",
                     "source_tier": "primary",
+                    "retrieval_route": retrieval_route,
                 }
             )
         except Exception as exc:
+            if getattr(exc, "transport_ok", False):
+                transport_status = "ok"
             cached, cache_age_days = _cached_observation(
                 cache, name, sid, max_cache_age_days
             )
@@ -263,6 +346,7 @@ def fetch_fred(series: dict, cache_path=None, max_cache_age_days=14):
                         else None,
                         "error": error,
                         "source_tier": "primary",
+                        "retrieval_route": retrieval_route,
                     }
                 )
             else:
@@ -283,6 +367,7 @@ def fetch_fred(series: dict, cache_path=None, max_cache_age_days=14):
                         else None,
                         "error": error,
                         "source_tier": "primary",
+                        "retrieval_route": retrieval_route,
                     }
                 )
 

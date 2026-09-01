@@ -18,6 +18,8 @@ jobs:
   intelligence:
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    env:
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
 
     steps:
       - name: Checkout repository
