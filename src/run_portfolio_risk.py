@@ -18,8 +18,15 @@ from private_account_import import (
     parse_orders_bytes,
     source_as_of,
 )
-from private_drive import download_recent_files, upload_or_replace
+from private_drive import (
+    download_recent_files,
+    ensure_folder_path,
+    file_sha256,
+    upload_immutable_snapshot,
+    upload_or_replace,
+)
 from portfolio_risk import main as run_risk
+from release_status import SYSTEM_VERSION
 
 
 def _truthy_env(name: str, default: str = "false") -> bool:
@@ -59,13 +66,6 @@ def _build_latest_portfolio(private_dir: Path, candidates: list[tuple[Path, dict
 
 
 def _collect_monthly_snapshots(candidates: list[tuple[Path, dict]]) -> list[PortfolioSnapshot]:
-    """Select a month-start proxy and latest holdings snapshot without guessing returns.
-
-    Preference is the most recent snapshot before the latest calendar month plus
-    the latest snapshot. If no prior-month snapshot exists, use the earliest and
-    latest parseable snapshots in the latest month and let the monthly engine mark
-    the window reference_only when boundaries are incomplete.
-    """
     found: list[PortfolioSnapshot] = []
     seen_times: set[str] = set()
     for path, meta in candidates:
@@ -133,7 +133,7 @@ def _write_private_alerts(out_dir: Path) -> bool:
     else:
         for a in items:
             lines += [f"- **{a.get('severity')}** {a.get('code')}: {a.get('title')}", f"  - {a.get('message')}"]
-    lines += ["", "## Privacy", "- This file is private and ephemeral. It must never be committed or uploaded as a public Actions artifact."]
+    lines += ["", "## Privacy", "- This file is private and must never be committed or uploaded as a public Actions artifact."]
     (out_dir / "portfolio_alerts_latest.md").write_text("\n".join(lines) + "\n", encoding="utf-8"); return True
 
 
@@ -169,6 +169,100 @@ def _maybe_write_back_to_drive(private_dir: Path, out_dir: Path) -> bool:
     return True
 
 
+def _persist_private_history(
+    private_dir: Path,
+    out_dir: Path,
+    import_manifest: dict,
+    valuation: dict,
+    monthly: dict,
+) -> dict:
+    if not _truthy_env("PORTFOLIO_HISTORY_WRITEBACK"):
+        return {"status": "disabled", "written": False}
+
+    source_dt = _parse_dt(import_manifest.get("source_as_of"))
+    if source_dt is None:
+        source_dt = datetime.now(timezone.utc)
+        date_basis = "write_time_fallback"
+    else:
+        date_basis = str(import_manifest.get("source_as_of_method") or "source_as_of")
+    date_key = source_dt.strftime("%Y%m%d")
+    folder = ensure_folder_path(["history", "portfolio", source_dt.strftime("%Y"), source_dt.strftime("%m")])
+
+    portfolio_path = private_dir / "portfolio_latest.csv"
+    valuation_path = out_dir / "portfolio_valuation_latest.json"
+    monthly_path = out_dir / "portfolio_monthly_latest.json"
+    if not all(p.exists() for p in (portfolio_path, valuation_path, monthly_path)):
+        return {"status": "withheld", "written": False, "reason": "history_source_artifact_missing"}
+
+    import_mv = float(import_manifest.get("market_value_total") or 0.0)
+    valuation_mv = float(valuation.get("portfolio_market_value_jpy") or 0.0)
+    reconciliation_difference = valuation_mv - import_mv
+    manifest_path = out_dir / "snapshot_manifest_latest.json"
+    snapshot_manifest = {
+        "snapshot_schema_version": "1.0",
+        "system_version": SYSTEM_VERSION,
+        "created_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "snapshot_date": source_dt.date().isoformat(),
+        "snapshot_date_basis": date_basis,
+        "source": {
+            "file": import_manifest.get("source_file"),
+            "modified_time": import_manifest.get("source_modified_time"),
+            "as_of": import_manifest.get("source_as_of"),
+            "as_of_method": import_manifest.get("source_as_of_method"),
+            "rows_kept": import_manifest.get("rows_kept"),
+        },
+        "quality": {
+            "import_status": import_manifest.get("status"),
+            "valuation_status": valuation.get("status"),
+            "valuation_analysis_mode": valuation.get("analysis_mode"),
+            "valuation_decision_actionable": valuation.get("decision_actionable"),
+            "valuation_evidence_tier": valuation.get("evidence_tier"),
+            "valuation_coverage": valuation.get("coverage"),
+            "monthly_status": monthly.get("status"),
+            "monthly_twr_status": (monthly.get("performance") or {}).get("twr_status"),
+            "market_value_reconciliation_difference_jpy": reconciliation_difference,
+        },
+        "engines": {
+            "portfolio_valuation": valuation.get("version"),
+            "monthly_performance": monthly.get("version"),
+        },
+        "artifacts": {
+            "portfolio_snapshot": {"filename": f"portfolio_snapshot_{date_key}.csv", "sha256": file_sha256(portfolio_path)},
+            "valuation_snapshot": {"filename": f"valuation_snapshot_{date_key}.json", "sha256": file_sha256(valuation_path)},
+            "monthly_performance": {"filename": f"monthly_performance_{date_key}.json", "sha256": file_sha256(monthly_path)},
+        },
+        "governance": {
+            "immutable_history": True,
+            "same_hash_rerun_is_idempotent": True,
+            "changed_same_date_creates_corrected_revision": True,
+            "public_github_write_prohibited": True,
+        },
+    }
+    manifest_path.write_text(json.dumps(snapshot_manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    common_props = {"snapshot_date": source_dt.date().isoformat(), "system_version": SYSTEM_VERSION}
+    uploads = [
+        upload_immutable_snapshot(portfolio_path, f"portfolio_snapshot_{date_key}.csv", "text/csv", folder,
+                                  {**common_props, "snapshot_kind": "portfolio"}),
+        upload_immutable_snapshot(valuation_path, f"valuation_snapshot_{date_key}.json", "application/json", folder,
+                                  {**common_props, "snapshot_kind": "valuation", "analysis_mode": str(valuation.get("analysis_mode"))}),
+        upload_immutable_snapshot(monthly_path, f"monthly_performance_{date_key}.json", "application/json", folder,
+                                  {**common_props, "snapshot_kind": "monthly", "twr_status": str((monthly.get("performance") or {}).get("twr_status"))}),
+        upload_immutable_snapshot(manifest_path, f"snapshot_manifest_{date_key}.json", "application/json", folder,
+                                  {**common_props, "snapshot_kind": "manifest"}),
+    ]
+    return {
+        "status": "ok",
+        "written": True,
+        "snapshot_date": source_dt.date().isoformat(),
+        "snapshot_date_basis": date_basis,
+        "folder_path": f"history/portfolio/{source_dt:%Y/%m}",
+        "created_files": sum(bool(x.get("created")) for x in uploads),
+        "idempotent_files": sum(not bool(x.get("created")) for x in uploads),
+        "files": [{"name": x.get("name"), "created": x.get("created"), "revision": x.get("corrected_revision")} for x in uploads],
+    }
+
+
 def main() -> None:
     private_dir = Path(os.getenv("PRIVATE_WORKDIR", ".private")); private_dir.mkdir(parents=True, exist_ok=True)
     candidates = download_recent_files(private_dir / "drive_inbox", limit=int(os.getenv("PORTFOLIO_SCAN_LIMIT", "50")))
@@ -182,6 +276,7 @@ def main() -> None:
     valuation_payload, monthly_payload = _write_valuation_and_monthly(local_portfolio, candidates, out_dir)
     private_alerts_written = _write_private_alerts(out_dir)
     writeback = _maybe_write_back_to_drive(private_dir, out_dir)
+    history = _persist_private_history(private_dir, out_dir, manifest, valuation_payload, monthly_payload)
     print(json.dumps({
         "status": "ok",
         "source_file": manifest.get("source_file"),
@@ -197,7 +292,10 @@ def main() -> None:
         "monthly_twr_status": (monthly_payload.get("performance") or {}).get("twr_status"),
         "private_alerts_written": private_alerts_written,
         "drive_writeback": writeback,
-        "privacy_mode": "ephemeral_runner_only" if not writeback else "private_drive_writeback",
+        "history_writeback": history,
+        "privacy_mode": "private_drive_versioned_history" if history.get("written") else (
+            "private_drive_writeback" if writeback else "ephemeral_runner_only"
+        ),
     }, ensure_ascii=False, indent=2))
 
 
