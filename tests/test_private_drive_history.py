@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from private_drive import corrected_snapshot_name, file_sha256
+from private_drive import _is_generated_private_output, corrected_snapshot_name, file_sha256
 
 
 def test_corrected_snapshot_name_preserves_suffix():
@@ -27,3 +27,9 @@ def test_file_sha256_changes_when_content_changes(tmp_path: Path):
     first = file_sha256(p)
     p.write_text("two", encoding="utf-8")
     assert file_sha256(p) != first
+
+
+def test_generated_private_outputs_are_excluded_from_input_scan():
+    assert _is_generated_private_output("portfolio_latest.csv")
+    assert _is_generated_private_output("portfolio_valuation_latest.json")
+    assert not _is_generated_private_output("保有商品一覧_20260831_160400.csv")
