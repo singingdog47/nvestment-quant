@@ -2,6 +2,12 @@ name: Market Regime v1.5 Diagnostic
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/market_regime/**'
+      - 'requirements-regime.txt'
+      - '.github/workflows/market-regime-v1.5-manual.yml'
 
 permissions:
   contents: read

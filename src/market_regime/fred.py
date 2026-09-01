@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import io
+import html
 import os
 import re
 import time
@@ -9,7 +10,6 @@ from pathlib import Path
 
 import pandas as pd
 import requests
-from bs4 import BeautifulSoup
 
 from .common import now_iso
 
@@ -147,7 +147,8 @@ def _parse_api_response(payload, sid):
 
 def _parse_series_page(text, sid):
     """Parse explicit recent observations from an official FRED series page."""
-    plain = BeautifulSoup(text, "html.parser").get_text(" ", strip=True)
+    plain = html.unescape(re.sub(r"<[^>]+>", " ", text))
+    plain = re.sub(r"\s+", " ", plain)
     matches = re.findall(
         r"\b(\d{4}-\d{2}-\d{2})\s*:\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+))\b",
         plain,
