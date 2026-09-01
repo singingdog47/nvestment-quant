@@ -22,6 +22,7 @@ def _public_fixture(root: Path) -> None:
         json.dumps({
             "regime_label": "CONSTRUCTIVE",
             "regime_score": 67.8,
+            "actionable": True,
             "components": {"liquidity": 37.2},
             "evidence": {"vix": 15.1},
         }),
@@ -64,6 +65,18 @@ def test_mobile_brief_tells_a_market_story(tmp_path: Path) -> None:
     assert "Financialsが7銘柄" in text
     assert "Mito Securities" in text
     assert private_path is None
+
+
+def test_mobile_brief_holds_orders_when_regime_is_not_actionable(tmp_path: Path) -> None:
+    _public_fixture(tmp_path)
+    regime_path = tmp_path / "data/regime/market_regime_latest.json"
+    regime = json.loads(regime_path.read_text(encoding="utf-8"))
+    regime["actionable"] = False
+    regime_path.write_text(json.dumps(regime), encoding="utf-8")
+    public_path, _ = build_mobile_brief(tmp_path)
+    text = public_path.read_text(encoding="utf-8")
+    assert "市場レジームの重要データが不足" in text
+    assert "新規注文は信用・金融環境を確認できるまで保留" in text
 
 
 def test_private_portfolio_story_never_leaks_to_public(tmp_path: Path) -> None:

@@ -165,16 +165,20 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
     treasury_vol_percentile = _number(evidence.get("treasury_volatility_percentile_rank"))
     liquidity = _number(components.get("liquidity"))
     gate = str(policy.get("decision_gate") or "UNKNOWN")
-    actionable = bool(quality.get("actionable"))
+    quality_actionable = bool(quality.get("actionable"))
+    regime_actionable = bool(regime.get("actionable"))
     highest = str(alerts.get("highest_severity") or "INFO")
     concentrated = any(sum(n for theme, n in counter.items() if theme != "Other") >= 7 for counter in theme_counts.values())
 
-    if not actionable or gate.startswith("BLOCK"):
+    if not quality_actionable or gate.startswith("BLOCK"):
         headline = "今日は売買判断を止め、データ品質の確認を優先します。"
         action = "新規注文は保留です。欠損や時刻を確認し、正常なデータで再実行してください。"
     elif highest in {"CRITICAL", "WARNING"}:
         headline = "新規購入より、既存ポジションのリスク確認を優先する日です。"
         action = "警告対象と保有銘柄の重なりを確認し、解消するまで新規資金は入れません。"
+    elif not regime_actionable:
+        headline = "分析は継続できますが、市場レジームの重要データが不足しています。"
+        action = "候補の調査は継続し、新規注文は信用・金融環境を確認できるまで保留します。"
     elif (liquidity is not None and liquidity < 40) or concentrated:
         headline = "相場は落ち着いていますが、今日は買い急がず候補を絞る日です。"
         action = "現状維持を基本に、保有テーマと重ならない候補だけを1銘柄ずつ調べます。"
@@ -268,7 +272,8 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
         "headline": headline,
         "action": action,
         "gate": gate,
-        "actionable": actionable,
+        "quality_actionable": quality_actionable,
+        "regime_actionable": regime_actionable,
         "highest": highest,
     }
     return lines, context
