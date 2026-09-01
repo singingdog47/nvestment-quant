@@ -51,7 +51,9 @@ def test_master_pipeline_order_and_privacy_guards():
         '4. Company Intelligence',
         '5. Exception Alerts',
         '7. Decision validation and benchmark-relative learning',
-        '8. Private Portfolio Risk Engine',
+        # Match the stable stage prefix; the descriptive suffix may expand as
+        # private diagnostics are added to the same ordered pipeline stage.
+        '8. Private Portfolio Risk',
         'Commit public-safe outputs once',
     ]
     positions = [text.index(x) for x in expected]
