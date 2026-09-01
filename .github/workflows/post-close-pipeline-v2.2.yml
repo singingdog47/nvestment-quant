@@ -1,4 +1,4 @@
-name: Investment Quant Post-Close Pipeline v2.8
+name: Investment Quant Post-Close Pipeline v2.9
 
 on:
   workflow_dispatch:
@@ -32,7 +32,8 @@ jobs:
       PORTFOLIO_RISK_PROFILE_JSON: ${{ secrets.PORTFOLIO_RISK_PROFILE_JSON }}
       PORTFOLIO_RISK_OVERLAY_CSV: ${{ secrets.PORTFOLIO_RISK_OVERLAY_CSV }}
       ALLOW_REPO_PORTFOLIO: '0'
-      PORTFOLIO_DRIVE_WRITEBACK: 'false'
+      PORTFOLIO_DRIVE_WRITEBACK: 'true'
+      PORTFOLIO_HISTORY_WRITEBACK: 'true'
       PRIVATE_WORKDIR: .private
       PRIVATE_OUTPUT_DIR: .private/portfolio_risk
       SCREEN_PATH: data/screening_latest.csv
@@ -88,7 +89,7 @@ jobs:
             echo "configured=false" >> "$GITHUB_OUTPUT"
             echo "Private Google Drive secrets are not configured; private risk analysis skipped."
           fi
-      - name: 8. Private Portfolio Risk + Valuation + Monthly Diagnostics
+      - name: 8. Private Portfolio Risk + Valuation + Monthly Diagnostics + History
         if: steps.private_config.outputs.configured == 'true'
         run: python src/run_portfolio_risk.py
       - name: 9. Final Integrated Daily Report
@@ -101,7 +102,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: human-readable-daily-report-v2.8
+          name: human-readable-daily-report-v2.9
           path: |
             data/mobile_brief_latest.md
             data/integrated_report_latest.md
@@ -128,7 +129,7 @@ jobs:
             echo "No post-close output changes to commit."
             exit 0
           fi
-          git commit -m "data: refresh integrated post-close pipeline v2.8"
+          git commit -m "data: refresh integrated post-close pipeline v2.9"
           git pull --rebase
           git push
 
