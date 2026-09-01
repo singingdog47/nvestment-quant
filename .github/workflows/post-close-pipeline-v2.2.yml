@@ -32,7 +32,8 @@ jobs:
       PORTFOLIO_RISK_PROFILE_JSON: ${{ secrets.PORTFOLIO_RISK_PROFILE_JSON }}
       PORTFOLIO_RISK_OVERLAY_CSV: ${{ secrets.PORTFOLIO_RISK_OVERLAY_CSV }}
       ALLOW_REPO_PORTFOLIO: '0'
-      PORTFOLIO_DRIVE_WRITEBACK: 'true'
+      # Keep generated latest files out of the input root. Historical persistence is separate.
+      PORTFOLIO_DRIVE_WRITEBACK: 'false'
       PORTFOLIO_HISTORY_WRITEBACK: 'true'
       PRIVATE_WORKDIR: .private
       PRIVATE_OUTPUT_DIR: .private/portfolio_risk
