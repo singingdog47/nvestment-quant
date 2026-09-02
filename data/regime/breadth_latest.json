@@ -1,11 +1,11 @@
 {
   "status": "ok",
-  "fetched_at": "2026-09-02T07:28:37+00:00",
+  "fetched_at": "2026-09-02T22:28:52+00:00",
   "source": "data/screening_full.csv.gz",
   "n": 9577,
   "source_as_of_utc": "2026-09-02T07:27:57.054761+00:00",
   "source_date_jst": "2026-09-02",
-  "business_age_days": 0,
+  "business_age_days": 1,
   "pct_positive_return_1m": 0.5671005644511001,
   "pct_positive_return_3m": 0.5920976845985485,
   "pct_positive_return_6m": 0.49798410321391545,

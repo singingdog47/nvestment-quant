@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.2",
   "engine_version": "1.5.2",
-  "generated_at": "2026-09-02T07:27:59+00:00",
-  "generated_at_utc": "2026-09-02T07:27:59+00:00",
-  "date_jst": "2026-09-02",
+  "generated_at": "2026-09-02T22:28:12+00:00",
+  "generated_at_utc": "2026-09-02T22:28:12+00:00",
+  "date_jst": "2026-09-03",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 65.71,
+  "regime_score": 65.59,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -27,28 +27,28 @@ Generated quality score: **0.745** / actionable=True
   "treasury_volatility_shock_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 60.4820388698096,
-    "stress": 82.80999988555908,
+    "trend": 70.43960776809757,
+    "stress": 83.65750014305115,
     "participation": 54.82663287639673,
-    "liquidity": 72.77366106729926,
+    "liquidity": 50.65190137611478,
     "positioning": 49.80831960274451
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 16.34000015258789,
-    "hy_oas": 2.63,
-    "ig_oas": 0.8,
-    "treasury_volatility_proxy": 70.498,
-    "treasury_volatility_percentile_rank": 0.6389,
-    "treasury_volatility_stress_score": 52.08,
-    "treasury_volatility_as_of_date": "2026-09-01",
+    "vix": 15.199999809265137,
+    "hy_oas": 2.65,
+    "ig_oas": 0.81,
+    "treasury_volatility_proxy": 70.338,
+    "treasury_volatility_percentile_rank": 0.631,
+    "treasury_volatility_stress_score": 52.68,
+    "treasury_volatility_as_of_date": "2026-09-02",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9577,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-02T07:27:57.054761+00:00",
-    "nfci": -0.566,
-    "volume_ratio20_mean": 1.5610903427275749,
+    "nfci": -0.558,
+    "volume_ratio20_mean": 0.9186475344028695,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -68,8 +68,8 @@ Generated quality score: **0.745** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-09-01",
-    "jpx_official_turnover_million_jpy": 8436078.0,
+    "jpx_official_turnover_date": "2026-09-02",
+    "jpx_official_turnover_million_jpy": 9151252.0,
     "jpx_official_turnover_status": "ok"
   },
   "rule": "Regime is context, not a trade signal. If actionable=false, do not infer missing market facts.",
@@ -94,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-02T07:28:57+00:00",
+  "generated_at": "2026-09-02T22:29:18+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -139,9 +139,9 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=1 / tier=primary
-- SEC: ok / records=62 / tier=primary
+- SEC: ok / records=63 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=14 / tier=secondary
+- NewsRSS: ok / records=15 / tier=secondary
 - yfinance: ok / records=35 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -217,6 +217,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
+- [CRITICAL] 4063 信越化学工業 | Fri, 24 Jul 2026 | earnings | 信越化学工業[4063]：2027年３月期 第１四半期決算短信〔日本基準〕（連結） 2026年7月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE04eUN0Wk9UOTF4cmQ3Q3NfbXZGZ1pKN1pqQVhEdUVHNld1ZFJTUlk0Rm51UjVMUTlzdHFrYVJGakJiY2Z1WXgyTXJGankxVm1PV01UejJqN2s1dlNBVU03aTF5aVNMOEw0d2c?oc=5
+- [CRITICAL] 4063 信越化学工業 | Tue, 28 Apr 2026 | earnings | 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9YU0drSkNQX0wta25uTlZNY08xZ0FXWk9pbFJoVFhMeVhocTZuNkpEZ3dMX0xMUDkzYTNUWVNYOTdlMlhLSnRIbGNIQTFfcXJRdW5FSWFFcWN1Y2pfN2JaVTBad3hDdk1neGc?oc=5
 - [HIGH] WSBC WesBanco, Inc. - Common Stock | 2026-07-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/203596/000119312526310361/wsbc-20260721.htm
 - [HIGH] HTGC Hercules Capital, Inc. Common Stock | 2026-07-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1280784/000128078426000032/htgc-20260721.htm
 - [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-07-22 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000012/nwfl-20260722x8k.htm
@@ -265,8 +267,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-11 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000080/care-20260811.htm
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-11 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000127368526000071/nymt-20260811.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426004935/p15047752_6k.htm
-- [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-12 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000110465926094556/tm2622924d1_8k.htm
-- [HIGH] ECO Okeanis Eco Tankers Corp. Common Stock | 2026-08-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1964954/000110465926095242/tm2623040d1_6k.htm
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
