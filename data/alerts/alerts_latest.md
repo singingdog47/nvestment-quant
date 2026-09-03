@@ -1,37 +1,41 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-02T22:29:19+00:00
+Generated: 2026-09-03T07:29:49+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 3
-- WATCH: 9
+- WARNING: 2
+- WATCH: 12
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [信越化学工業]: 信越化学工業[4063]：2027年３月期 第１四半期決算短信〔日本基準〕（連結） 2026年7月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_FILING [FinTech Global Incorporated]: 臨時報告書
+  - New company event detected for FinTech Global Incorporated.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Sompo Holdings,Inc.]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
+  - New company event detected for Sompo Holdings,Inc..
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 「KDDI」の株主優待は、最大3000円相当のPontaポイントがもらえてお得！ 受け取った「Pontaポイント」は、ローソンなどで現金同様に使えるのも魅力！ - diamond.jp
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIとローソン、コンビニ横でリチウムイオン電池を回収 - Impress Watch
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 「オフィスローソン」を京セラ本社の食堂2フロアに導入（KDDI/ローソン） - ペイメントナビ
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 山口県とKDDI、地域課題の解決に向けた包括連携協定を締結 - KDDI ニュースルーム
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 日本企業の生存戦略：KDDI髙橋氏、オリックス宮内氏、平井卓也氏が語るスタートアップ共創とAI実装 - Biz/Zine
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 三菱重工業、株価反発 NECと防衛ドローンで連携 - 日本経済新聞
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 三菱重工が大幅反発､NECと防衛分野の戦略的提携で覚書締結 - 四季報オンライン
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: フロンティアAIを活用し、脆弱性の検出から対処までをワンストップで支援する自律型マネージドサービスを提供開始 - NEC
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 三菱重とＮＥＣ、防衛分野で提携 指揮統制や無人装備などで協力 - ロイター
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業－ＳＭＢＣ日興が目標株価引き下げ 押し目買いの好機 - tradingview.com
   - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [信越化学工業]: 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業 化学品銘柄からAI銘柄へ 斉藤社長に聞く【大浜見聞録】 - テレ東BIZ
   - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [TORM plc - Class A Common Stock]: SEC 6-K filing
-  - New company event detected for TORM plc - Class A Common Stock.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIが取り組む地域の魅力化 ～山口県～ | 地域共創（Te to Te） | KDDI株式会社 - KDDI
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI、6Gに向けた屋外実証実験。7GHz帯で世界最高水準となる下り3.6Gbps達成 - INTERNET Watch
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 6Gに向けた7GHz帯で世界最高水準のダウンリンク3.6Gbpsを達成 - kddi-research.jp
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 2 週間で 12 万人規模へ – NEC が Claude Desktop on Amazon Bedrock で実現したセキュアな全社 AI 環境 - Amazon Web Services
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECと三菱重工、防衛力の一層の強化と変革に向けた戦略的提携へ (2026年9月2日): プレスリリース - NEC
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECよどこへ行く 森田改革の成否 - 日経クロステック
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ、企業のネットワーク脆弱性対処で新サービス 先端ＡＩ活用 - ロイター
-  - New company event detected for NEC.
 - **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for 信越化学工業.
 
