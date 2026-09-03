@@ -1,5 +1,5 @@
 ﻿series,fred_id,date,value,previous,change,source,source_url,fetched_at,data_status,stale_reason,cache_reused_at
-HY_OAS,BAMLH0A0HYM2,2026-09-01,2.65,2.63,0.020000000000000018,FRED,https://api.stlouisfed.org/fred/series/observations?series_id=BAMLH0A0HYM2,2026-09-03T07:28:52+00:00,ok,,
-IG_OAS,BAMLC0A0CM,2026-09-01,0.81,0.8,0.010000000000000009,FRED,https://api.stlouisfed.org/fred/series/observations?series_id=BAMLC0A0CM,2026-09-03T07:28:52+00:00,ok,,
-NFCI,NFCI,2026-08-28,-0.558,-0.556,-0.0020000000000000018,FRED,https://api.stlouisfed.org/fred/series/observations?series_id=NFCI,2026-09-03T07:28:52+00:00,ok,,
-FED_FUNDS,DFF,2026-09-01,3.63,3.63,0.0,FRED,https://api.stlouisfed.org/fred/series/observations?series_id=DFF,2026-09-03T07:28:52+00:00,ok,,
+HY_OAS,BAMLH0A0HYM2,2026-09-02,2.66,2.65,0.010000000000000231,FRED,https://api.stlouisfed.org/fred/series/observations?series_id=BAMLH0A0HYM2,2026-09-03T22:26:38+00:00,ok,,
+IG_OAS,BAMLC0A0CM,2026-09-02,0.81,0.81,0.0,FRED,https://api.stlouisfed.org/fred/series/observations?series_id=BAMLC0A0CM,2026-09-03T22:26:38+00:00,ok,,
+NFCI,NFCI,2026-08-28,-0.558,-0.556,-0.0020000000000000018,FRED,https://api.stlouisfed.org/fred/series/observations?series_id=NFCI,2026-09-03T22:26:38+00:00,ok,,
+FED_FUNDS,DFF,2026-09-02,3.63,3.63,0.0,FRED,https://api.stlouisfed.org/fred/series/observations?series_id=DFF,2026-09-03T22:26:38+00:00,ok,,
