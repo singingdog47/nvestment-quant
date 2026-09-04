@@ -1,4 +1,4 @@
-name: Investment Quant Post-Close Pipeline v2.9
+name: Investment Quant Post-Close Pipeline v2.11
 
 on:
   workflow_dispatch:
@@ -100,17 +100,23 @@ jobs:
       - name: 10. Human-readable mobile brief
         if: always() && !cancelled()
         run: python src/run_mobile_brief.py
+      - name: 11. PayPay swing research monitor + report integration
+        if: always() && !cancelled()
+        run: python src/run_paypay_swing.py
       - name: Upload human-readable public reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: human-readable-daily-report-v2.9
+          name: human-readable-daily-report-v2.11
           path: |
             data/mobile_brief_latest.md
             data/integrated_report_latest.md
             data/daily_report.md
             data/quality_report.json
             data/data_coverage_latest.json
+            data/paypay_swing/paypay_swing_daily_latest.md
+            data/paypay_swing/paypay_swing_weekly_latest.md
+            data/paypay_swing/paypay_swing_latest.json
           if-no-files-found: error
           retention-days: 14
       - name: Preserve public quality report in run logs
@@ -126,12 +132,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json data/data_coverage_latest.json data/daily_report.md data/integrated_report_latest.md data/mobile_brief_latest.md data/regime data/intelligence data/alerts data/state data/ai_context_latest.md data/decision_context_latest.json data/validation
+          git add -- data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json data/data_coverage_latest.json data/daily_report.md data/integrated_report_latest.md data/mobile_brief_latest.md data/regime data/intelligence data/alerts data/state data/ai_context_latest.md data/decision_context_latest.json data/validation data/paypay_swing
           if git diff --cached --quiet; then
             echo "No post-close output changes to commit."
             exit 0
           fi
-          git commit -m "data: refresh integrated post-close pipeline v2.9"
+          git commit -m "data: refresh integrated post-close pipeline v2.11"
           git pull --rebase
           git push
 
