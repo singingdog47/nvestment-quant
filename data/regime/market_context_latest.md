@@ -1,17 +1,17 @@
 # Market Regime v1.5
 
 - Label: **CONSTRUCTIVE**
-- Score: **67.24**
+- Score: **66.73**
 - Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
 - Flags: none
 
 ## Components
-- trend: 74.03432730330265
+- trend: 74.12269931379977
 - stress: 85.17500022888183
-- participation: 56.50708606982371
-- liquidity: 49.71230023319895
+- participation: 56.26296979478902
+- liquidity: 46.45705985205344
 - positioning: 49.80831960274451
 
 ## Evidence
@@ -28,9 +28,9 @@
   "treasury_volatility_is_ice_move": false,
   "breadth_n": 9568,
   "breadth_status": "ok",
-  "breadth_source_as_of_utc": "2026-09-03T07:28:46.343848+00:00",
+  "breadth_source_as_of_utc": "2026-09-04T07:28:22.637684+00:00",
   "nfci": -0.558,
-  "volume_ratio20_mean": 0.8951575058299739,
+  "volume_ratio20_mean": 0.813776496301336,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22
