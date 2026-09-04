@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "review_timezone": "Asia/Tokyo",
+  "weekly_review_weekday": 4,
+  "weights": {
+    "momentum": 0.35,
+    "macro": 0.25,
+    "trend": 0.20,
+    "risk": 0.10,
+    "cost": 0.10
+  },
+  "entry_gate": {
+    "minimum_score": 68.0,
+    "minimum_margin": 4.0,
+    "minimum_momentum": 55.0,
+    "minimum_trend": 55.0
+  },
+  "courses": {
+    "GOLD": {
+      "label": "金（ゴールド）",
+      "ticker": "GLD",
+      "entry_cost_pct": 1.0,
+      "exit_cost_pct": 0.0,
+      "minimum_score": 68.0
+    },
+    "TECH": {
+      "label": "テクノロジー",
+      "ticker": "QQQ",
+      "entry_cost_pct": 1.0,
+      "exit_cost_pct": 0.0,
+      "minimum_score": 68.0
+    },
+    "STANDARD": {
+      "label": "スタンダード",
+      "ticker": "SPY",
+      "entry_cost_pct": 1.0,
+      "exit_cost_pct": 0.0,
+      "minimum_score": 68.0
+    },
+    "BTC": {
+      "label": "ビットコイン",
+      "ticker": "BTC-USD",
+      "entry_cost_pct": 4.5,
+      "exit_cost_pct": 4.5,
+      "minimum_score": 80.0
+    }
+  },
+  "macro_symbols": {
+    "US10Y": "^TNX",
+    "DXY": "DX-Y.NYB",
+    "VIX": "^VIX"
+  },
+  "notes": [
+    "通常コースは100pt以上の追加時に参照資産価格の1.0%相当のスプレッド負担を前提とする。",
+    "暗号資産コースは追加・引き出し時にそれぞれ通常4.5%程度。市況で変動するため固定手数料ではない。",
+    "PayPayポイント運用のコース価格は参照ETF・暗号資産そのものと完全一致しない。",
+    "このモデルは自動発注を行わず、数か月スイングの候補選定とWAIT判断のみを行う。"
+  ]
+}
