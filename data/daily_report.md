@@ -1,13 +1,13 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-04T07:28:22.637684+00:00
+- Data retrieved (UTC): 2026-09-04T23:16:26.613933+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
 ## Development status
 
-- System version: v2.10
-- Status: operational; private Drive history, valuation, monthly attribution v1.1, dynamic cash/tax friction and anti-FOMO execution controls active
+- System version: v2.11
+- Status: operational; private Drive history, valuation, monthly attribution v1.1, dynamic cash/tax friction, anti-FOMO execution controls, and PayPay swing research monitor active
 - Stable fallback: stable-report-v2.6
 - Rollback ready: True
 
@@ -39,24 +39,24 @@
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.7 | 100.0 | unchanged |
 | JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 77.0 | 99.9 | unchanged |
-| JP | 3 | 3932.T | Akatsuki Inc. | Other | 76.6 | 99.9 | unchanged |
-| JP | 5 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 76.2 | 99.8 | unchanged |
-| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 73.1 | 99.6 | unchanged |
-| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.8 | 99.5 | unchanged |
+| JP | 3 | 3932.T | Akatsuki Inc. | Other | 76.9 | 99.9 | unchanged |
+| JP | 5 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 76.1 | 99.8 | unchanged |
+| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 73.2 | 99.6 | unchanged |
+| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.9 | 99.5 | unchanged |
 | JP | 11 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.8 | 99.5 | unchanged |
-| JP | 12 | 2121.T | MIXI,Inc. | Other | 71.6 | 99.4 | unchanged |
+| JP | 12 | 2121.T | MIXI,Inc. | Other | 71.7 | 99.4 | unchanged |
 | JP | 13 | 6927.T | Helios Techno Holding Co.,Ltd. | Other | 71.3 | 99.4 | unchanged |
 | JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 70.6 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | 100.0 | unchanged |
-| US | 2 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.8 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.2 | 99.9 | unchanged |
+| US | 2 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.9 | 100.0 | unchanged |
+| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.6 | 99.9 | unchanged |
 | US | 4 | ECO | Okeanis Eco Tankers Corp. Common Stock | Shipping | 82.6 | 99.9 | unchanged |
-| US | 7 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.9 | 99.8 | unchanged |
-| US | 12 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.9 | 99.7 | unchanged |
-| US | 13 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 80.7 | 99.6 | unchanged |
-| US | 14 | BUSE | First Busey Corporation - Common Stock | Other | 80.6 | 99.6 | unchanged |
-| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 80.4 | 99.6 | unchanged |
-| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.8 | 99.5 | unchanged |
+| US | 8 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.9 | 99.8 | unchanged |
+| US | 13 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 80.7 | 99.7 | unchanged |
+| US | 14 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.6 | unchanged |
+| US | 16 | BUSE | First Busey Corporation - Common Stock | Other | 80.6 | 99.6 | unchanged |
+| US | 17 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.6 | 99.5 | unchanged |
+| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 

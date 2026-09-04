@@ -1,0 +1,134 @@
+{
+  "generated_at_jst": "2026-09-05T08:18:38+09:00",
+  "data_status": "ok",
+  "review_day": false,
+  "research_status": {
+    "status": "WAIT_RESEARCH",
+    "leader": null,
+    "reason": "首位と2位の差が1.7点で優位性が弱い",
+    "margin": 1.74
+  },
+  "ranking": [
+    {
+      "key": "STANDARD",
+      "label": "スタンダード",
+      "ticker": "SPY",
+      "close": 770.1900024414062,
+      "data_date": "2026-09-04",
+      "momentum": 68.23,
+      "macro": 51.61,
+      "trend": 99.41,
+      "risk": 93.23,
+      "cost": 91.0,
+      "round_trip_cost_pct": 1.0,
+      "total": 75.08
+    },
+    {
+      "key": "TECH",
+      "label": "テクノロジー",
+      "ticker": "QQQ",
+      "close": 718.9600219726562,
+      "data_date": "2026-09-04",
+      "momentum": 66.51,
+      "macro": 50.45,
+      "trend": 97.81,
+      "risk": 87.81,
+      "cost": 91.0,
+      "round_trip_cost_pct": 1.0,
+      "total": 73.34
+    },
+    {
+      "key": "BTC",
+      "label": "ビットコイン",
+      "ticker": "BTC-USD",
+      "close": 79628.046875,
+      "data_date": "2026-09-04",
+      "momentum": 99.66,
+      "macro": 50.8,
+      "trend": 77.29,
+      "risk": 52.63,
+      "cost": 20.82,
+      "round_trip_cost_pct": 8.8,
+      "total": 70.38
+    },
+    {
+      "key": "GOLD",
+      "label": "金（ゴールド）",
+      "ticker": "GLD",
+      "close": 406.7699890136719,
+      "data_date": "2026-09-04",
+      "momentum": 52.66,
+      "macro": 46.19,
+      "trend": 25.22,
+      "risk": 67.08,
+      "cost": 91.0,
+      "round_trip_cost_pct": 1.0,
+      "total": 50.83
+    }
+  ],
+  "source_health": [
+    {
+      "source": "yfinance:GLD",
+      "status": "ok",
+      "records": 252,
+      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "error": "",
+      "source_tier": "secondary"
+    },
+    {
+      "source": "yfinance:QQQ",
+      "status": "ok",
+      "records": 252,
+      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "error": "",
+      "source_tier": "secondary"
+    },
+    {
+      "source": "yfinance:SPY",
+      "status": "ok",
+      "records": 252,
+      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "error": "",
+      "source_tier": "secondary"
+    },
+    {
+      "source": "yfinance:BTC-USD",
+      "status": "ok",
+      "records": 366,
+      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "error": "",
+      "source_tier": "secondary"
+    },
+    {
+      "source": "yfinance:^TNX",
+      "status": "ok",
+      "records": 253,
+      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "error": "",
+      "source_tier": "secondary"
+    },
+    {
+      "source": "yfinance:DX-Y.NYB",
+      "status": "ok",
+      "records": 253,
+      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "error": "",
+      "source_tier": "secondary"
+    },
+    {
+      "source": "yfinance:^VIX",
+      "status": "ok",
+      "records": 254,
+      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "error": "",
+      "source_tier": "secondary"
+    }
+  ],
+  "guardrails": {
+    "automatic_ordering": false,
+    "daily_role": "monitoring",
+    "weekly_role": "human_review_support",
+    "wait_is_valid": true,
+    "crypto_spread_is_variable": true
+  }
+}

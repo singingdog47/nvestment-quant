@@ -17,7 +17,7 @@
       "severity": "INFO"
     }
   ],
-  "generated_at": "2026-09-04T07:29:27+00:00",
+  "generated_at": "2026-09-04T23:17:40+00:00",
   "known_limits": [
     "Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.",
     "Pre-v2.1 outcome rows may have blank benchmark fields and are excluded from benchmark-relative findings until new relative observations mature.",
