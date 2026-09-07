@@ -1,12 +1,12 @@
 {
   "version": "1.5.2",
   "engine_version": "1.5.2",
-  "generated_at": "2026-09-06T22:26:44+00:00",
-  "generated_at_utc": "2026-09-06T22:26:44+00:00",
+  "generated_at": "2026-09-07T07:30:46+00:00",
+  "generated_at_utc": "2026-09-07T07:30:46+00:00",
   "date_jst": "2026-09-07",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 67.3,
+  "regime_score": 68.85,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -22,15 +22,15 @@
   "treasury_volatility_shock_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 74.36559289483652,
-    "stress": 86.4650002002716,
-    "participation": 55.67749740753543,
-    "liquidity": 47.55521012513963,
+    "trend": 80.89047216581234,
+    "stress": 86.09749965667724,
+    "participation": 54.79893997004264,
+    "liquidity": 46.68102999943368,
     "positioning": 51.00577429462018
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 14.529999732971191,
+    "vix": 15.020000457763672,
     "hy_oas": 2.65,
     "ig_oas": 0.81,
     "treasury_volatility_proxy": 66.084,
@@ -41,9 +41,9 @@
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-04T23:16:26.613933+00:00",
+    "breadth_source_as_of_utc": "2026-09-07T07:30:42.599887+00:00",
     "nfci": -0.558,
-    "volume_ratio20_mean": 0.8412302531284908,
+    "volume_ratio20_mean": 0.8193757499858421,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -63,8 +63,8 @@
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-09-04",
-    "jpx_official_turnover_million_jpy": 9332575.0,
+    "jpx_official_turnover_date": "2026-09-07",
+    "jpx_official_turnover_million_jpy": 9113519.0,
     "jpx_official_turnover_status": "ok"
   },
   "rule": "Regime is context, not a trade signal. If actionable=false, do not infer missing market facts.",

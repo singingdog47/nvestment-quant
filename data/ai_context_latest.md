@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.2",
   "engine_version": "1.5.2",
-  "generated_at": "2026-09-06T22:26:44+00:00",
-  "generated_at_utc": "2026-09-06T22:26:44+00:00",
+  "generated_at": "2026-09-07T07:30:46+00:00",
+  "generated_at_utc": "2026-09-07T07:30:46+00:00",
   "date_jst": "2026-09-07",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 67.3,
+  "regime_score": 68.85,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -27,15 +27,15 @@ Generated quality score: **0.745** / actionable=True
   "treasury_volatility_shock_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 74.36559289483652,
-    "stress": 86.4650002002716,
-    "participation": 55.67749740753543,
-    "liquidity": 47.55521012513963,
+    "trend": 80.89047216581234,
+    "stress": 86.09749965667724,
+    "participation": 54.79893997004264,
+    "liquidity": 46.68102999943368,
     "positioning": 51.00577429462018
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 14.529999732971191,
+    "vix": 15.020000457763672,
     "hy_oas": 2.65,
     "ig_oas": 0.81,
     "treasury_volatility_proxy": 66.084,
@@ -46,9 +46,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-04T23:16:26.613933+00:00",
+    "breadth_source_as_of_utc": "2026-09-07T07:30:42.599887+00:00",
     "nfci": -0.558,
-    "volume_ratio20_mean": 0.8412302531284908,
+    "volume_ratio20_mean": 0.8193757499858421,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -68,8 +68,8 @@ Generated quality score: **0.745** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-09-04",
-    "jpx_official_turnover_million_jpy": 9332575.0,
+    "jpx_official_turnover_date": "2026-09-07",
+    "jpx_official_turnover_million_jpy": 9113519.0,
     "jpx_official_turnover_status": "ok"
   },
   "rule": "Regime is context, not a trade signal. If actionable=false, do not infer missing market facts.",
@@ -94,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-06T22:27:51+00:00",
+  "generated_at": "2026-09-07T07:31:53+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -139,15 +139,15 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=4 / tier=primary
-- SEC: ok / records=63 / tier=primary
+- SEC: ok / records=60 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=10 / tier=secondary
+- NewsRSS: ok / records=15 / tier=secondary
 - yfinance: ok / records=35 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-04T23:16:26.613933+00:00
+- Data retrieved (UTC): 2026-09-07T07:30:42.599887+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -184,25 +184,25 @@ Generated quality score: **0.745** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.7 | 100.0 | unchanged |
+| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.1 | 100.0 | unchanged |
 | JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 77.0 | 99.9 | unchanged |
-| JP | 3 | 3932.T | Akatsuki Inc. | Other | 76.9 | 99.9 | unchanged |
-| JP | 5 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 76.1 | 99.8 | unchanged |
-| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 73.2 | 99.6 | unchanged |
-| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.9 | 99.5 | unchanged |
-| JP | 11 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.8 | 99.5 | unchanged |
-| JP | 12 | 2121.T | MIXI,Inc. | Other | 71.7 | 99.4 | unchanged |
-| JP | 13 | 6927.T | Helios Techno Holding Co.,Ltd. | Other | 71.3 | 99.4 | unchanged |
-| JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 70.6 | 99.3 | unchanged |
+| JP | 3 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.9 | 99.9 | unchanged |
+| JP | 5 | 3932.T | Akatsuki Inc. | Other | 75.7 | 99.8 | unchanged |
+| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 72.5 | 99.6 | unchanged |
+| JP | 10 | 6927.T | Helios Techno Holding Co.,Ltd. | Other | 71.8 | 99.5 | unchanged |
+| JP | 11 | 2121.T | MIXI,Inc. | Other | 71.6 | 99.5 | unchanged |
+| JP | 12 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.0 | 99.4 | unchanged |
+| JP | 14 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.3 | 99.3 | unchanged |
+| JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 70.1 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | 100.0 | unchanged |
-| US | 2 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 83.9 | 100.0 | unchanged |
+| US | 2 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 84.0 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.6 | 99.9 | unchanged |
-| US | 4 | ECO | Okeanis Eco Tankers Corp. Common Stock | Shipping | 82.6 | 99.9 | unchanged |
+| US | 4 | ECO | Okeanis Eco Tankers Corp. Common Stock | Shipping | 82.7 | 99.9 | unchanged |
 | US | 8 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.9 | 99.8 | unchanged |
-| US | 13 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 80.7 | 99.7 | unchanged |
-| US | 14 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.6 | unchanged |
+| US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.7 | unchanged |
+| US | 14 | ADAM | Adamas Trust, Inc. - Common Stock | Other | 80.7 | 99.6 | unchanged |
+| US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.6 | 99.6 | unchanged |
 | US | 16 | BUSE | First Busey Corporation - Common Stock | Other | 80.6 | 99.6 | unchanged |
-| US | 17 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.6 | 99.5 | unchanged |
 | US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.5 | unchanged |
 
 ## Required manual checks before an order
@@ -217,9 +217,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-07-23 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000071/care-20260722.htm
-- [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-07-23 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000070/care-20260723.htm
-- [HIGH] ACNB ACNB Corporation - Common Stock | 2026-07-23 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/715579/000162828026049299/acnb-20260723.htm
+- [CRITICAL] 4063 信越化学工業 | Tue, 28 Apr 2026 | earnings | 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9YU0drSkNQX0wta25uTlZNY08xZ0FXWk9pbFJoVFhMeVhocTZuNkpEZ3dMX0xMUDkzYTNUWVNYOTdlMlhLSnRIbGNIQTFfcXJRdW5FSWFFcWN1Y2pfN2JaVTBad3hDdk1neGc?oc=5
 - [HIGH] HTGC Hercules Capital, Inc. Common Stock | 2026-07-24 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1280784/000128078426000035/htgc-20260721.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-07-27 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000073/care-20260727.htm
 - [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-07-27 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000014/nwfl-20260727x8k.htm
@@ -267,6 +265,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] ECO Okeanis Eco Tankers Corp. Common Stock | 2026-08-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1964954/000110465926095242/tm2623040d1_6k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426005129/p15049955_6k.htm
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000110465926097101/tm2623199d2_8k.htm
+- [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
+- [HIGH] ECO Okeanis Eco Tankers Corp. Common Stock | 2026-08-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1964954/000110465926097930/tm2623429d1_6k.htm
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.

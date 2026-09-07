@@ -1,12 +1,12 @@
 {
-  "generated_at_jst": "2026-09-05T08:18:38+09:00",
+  "generated_at_jst": "2026-09-07T16:32:59+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
     "reason": "首位と2位の差が1.7点で優位性が弱い",
-    "margin": 1.74
+    "margin": 1.68
   },
   "ranking": [
     {
@@ -30,26 +30,26 @@
       "close": 718.9600219726562,
       "data_date": "2026-09-04",
       "momentum": 66.51,
-      "macro": 50.45,
+      "macro": 50.7,
       "trend": 97.81,
       "risk": 87.81,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 73.34
+      "total": 73.4
     },
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 79628.046875,
-      "data_date": "2026-09-04",
-      "momentum": 99.66,
-      "macro": 50.8,
-      "trend": 77.29,
-      "risk": 52.63,
+      "close": 79467.1328125,
+      "data_date": "2026-09-07",
+      "momentum": 100.0,
+      "macro": 51.24,
+      "trend": 77.19,
+      "risk": 52.46,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 70.38
+      "total": 70.58
     },
     {
       "key": "GOLD",
@@ -58,12 +58,12 @@
       "close": 406.7699890136719,
       "data_date": "2026-09-04",
       "momentum": 52.66,
-      "macro": 46.19,
+      "macro": 46.73,
       "trend": 25.22,
       "risk": 67.08,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 50.83
+      "total": 50.96
     }
   ],
   "source_health": [
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "fetched_at": "2026-09-07T07:32:59+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "fetched_at": "2026-09-07T07:32:59+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "fetched_at": "2026-09-07T07:32:59+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,7 +95,7 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "fetched_at": "2026-09-07T07:32:59+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -103,7 +103,7 @@
       "source": "yfinance:^TNX",
       "status": "ok",
       "records": 253,
-      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "fetched_at": "2026-09-07T07:32:59+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -111,15 +111,15 @@
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
       "records": 253,
-      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "fetched_at": "2026-09-07T07:32:59+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^VIX",
       "status": "ok",
-      "records": 254,
-      "fetched_at": "2026-09-04T23:18:38+00:00",
+      "records": 253,
+      "fetched_at": "2026-09-07T07:32:59+00:00",
       "error": "",
       "source_tier": "secondary"
     }

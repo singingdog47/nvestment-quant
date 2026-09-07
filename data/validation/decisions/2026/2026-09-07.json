@@ -1,0 +1,303 @@
+{
+  "actual_human_action": null,
+  "actual_human_action_note": "Private join field; do not commit brokerage activity to a public repository.",
+  "captured_at": "2026-09-07T07:31:53+00:00",
+  "data_actionable": true,
+  "decision_gate": "OPEN_FOR_ANALYSIS",
+  "decision_id": "0be518e6a2ea99718ad0",
+  "input_manifest": [
+    {
+      "mtime_utc": "2026-09-07T07:31:53+00:00",
+      "path": "data/decision_context_latest.json",
+      "sha256": "889d82370ac7581d9b4dbbf89070f949f3f40b75c35ba54a21ed1f989e63a414",
+      "size": 57568
+    },
+    {
+      "mtime_utc": "2026-09-07T07:31:29+00:00",
+      "path": "data/regime/market_regime_latest.json",
+      "sha256": "d5d319b945c30f33d481a0f2164029476de37b1160ab963f4a521b2a34caf5be",
+      "size": 2325
+    },
+    {
+      "mtime_utc": "2026-09-07T07:31:53+00:00",
+      "path": "data/intelligence/data_quality_latest.json",
+      "sha256": "0c0d34e437afbe19e85024c512373057112376529674a68d50b7d608811f623a",
+      "size": 741
+    },
+    {
+      "mtime_utc": "2026-09-07T07:30:44+00:00",
+      "path": "data/screening_latest.csv",
+      "sha256": "fb1cf440d8086281efc967f79549cb7188dc15ca0f0d5ab2cf9bf5413d60601f",
+      "size": 131245
+    },
+    {
+      "mtime_utc": "2026-09-07T07:30:44+00:00",
+      "path": "data/quality_report.json",
+      "sha256": "f36511fc722db632757fd58c177d02865da0674437932f257d1ae15b597aa9dd",
+      "size": 1656
+    }
+  ],
+  "market_evidence": {
+    "base_weighted_coverage": 1.0,
+    "breadth_n": 9568,
+    "breadth_source_as_of_utc": "2026-09-07T07:30:42.599887+00:00",
+    "breadth_status": "ok",
+    "component_coverage": {
+      "liquidity": 1.0,
+      "participation": 1.0,
+      "positioning": 1.0,
+      "stress": 1.0,
+      "trend": 1.0
+    },
+    "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
+    "critical_context_coverage": {
+      "available": 3,
+      "expected": 3,
+      "fred_credit_financial_conditions": 1.0,
+      "multiplier": 1.0
+    },
+    "hy_oas": 2.65,
+    "ig_oas": 0.81,
+    "jpx_official_turnover_date": "2026-09-07",
+    "jpx_official_turnover_million_jpy": 9113519.0,
+    "jpx_official_turnover_status": "ok",
+    "nfci": -0.558,
+    "positioning_sources": {
+      "cftc_normalized_values": 22,
+      "jpx_raw_healthy": 4
+    },
+    "treasury_volatility_as_of_date": "2026-09-04",
+    "treasury_volatility_is_ice_move": false,
+    "treasury_volatility_percentile_rank": 0.5079,
+    "treasury_volatility_proxy": 66.084,
+    "treasury_volatility_status": "ok",
+    "treasury_volatility_stress_score": 61.9,
+    "trend_series": 4,
+    "vix": 15.020000457763672,
+    "volume_ratio20_mean": 0.8193757499858421
+  },
+  "market_regime": "CONSTRUCTIVE",
+  "model_version": "1.7.0",
+  "outcomes": {},
+  "policy_guardrails": {
+    "absolute_defense_cash_jpy": 500000,
+    "cash_target_range": [
+      0.08,
+      0.12
+    ],
+    "max_single_stock_weight": 0.05
+  },
+  "quality": {
+    "actionable": true,
+    "configured_primary_sources": 4,
+    "effective_fundamental_coverage": 0.65,
+    "events": 79,
+    "fundamental_coverage": 0.0,
+    "fundamental_evidence_tier": "secondary_only",
+    "generated_at": "2026-09-07T07:31:53+00:00",
+    "missing_primary_configuration": [],
+    "optional_primary_sources_unconfigured": [],
+    "portfolio_primary_event_presence": 1.0,
+    "portfolio_targets": 0,
+    "primary_fundamental_coverage": 0.0,
+    "primary_source_health": 1.0,
+    "quality_score": 0.745,
+    "rule": "Optional primary feeds improve confidence but their absence alone must not block conclusions. Missing data still must not be converted into unsupported buy/sell conclusions.",
+    "secondary_fundamental_coverage": 1.0,
+    "targets": 35
+  },
+  "quality_score": 0.745,
+  "recommended_action": "REVIEW",
+  "regime_components": {
+    "liquidity": 46.68102999943368,
+    "participation": 54.79893997004264,
+    "positioning": 51.00577429462018,
+    "stress": 86.09749965667724,
+    "trend": 80.89047216581234
+  },
+  "regime_score": 68.85,
+  "risk_flags": [],
+  "schema_version": "1.0",
+  "top_screening": [
+    {
+      "code": "CARE",
+      "factors": {
+        "growth_score": 92.61685635408777,
+        "liquidity_score": 52.94594047378012,
+        "momentum_score": 68.1475903614458,
+        "pre_score": 68.75541658445955,
+        "quality_score": 95.050546802822,
+        "risk_score": 79.69988518610025,
+        "total_score": 84.03470382204122,
+        "value_score": 78.28629807354507
+      },
+      "market": "US",
+      "name": "Carter Bankshares, Inc. - Common Stock",
+      "price": 31.98,
+      "rank": 1.0,
+      "ticker": "CARE"
+    },
+    {
+      "code": "8622",
+      "factors": {
+        "growth_score": 91.99003530172429,
+        "liquidity_score": 72.97077922077922,
+        "momentum_score": 93.02514193025142,
+        "pre_score": 79.1390475400512,
+        "quality_score": 81.68325277649696,
+        "risk_score": 49.51338199513382,
+        "total_score": 77.10834889203177,
+        "value_score": 67.63500019501959
+      },
+      "market": "JP",
+      "name": "Mito Securities Co.,Ltd.",
+      "price": 980.0,
+      "rank": 1.0,
+      "ticker": "8622.T"
+    },
+    {
+      "code": "MRP",
+      "factors": {
+        "growth_score": 98.02189415609635,
+        "liquidity_score": 66.6734156711885,
+        "momentum_score": 61.83232931726907,
+        "pre_score": 69.49562106297014,
+        "quality_score": 75.70884282289866,
+        "risk_score": 89.5808444877217,
+        "total_score": 83.97952438297848,
+        "value_score": 90.94383510114366
+      },
+      "market": "US",
+      "name": "Millrose Properties, Inc. Class A Common Stock",
+      "price": 32.02,
+      "rank": 2.0,
+      "ticker": "MRP"
+    },
+    {
+      "code": "8624",
+      "factors": {
+        "growth_score": 97.05842014699255,
+        "liquidity_score": 66.53138528138528,
+        "momentum_score": 92.35604217356041,
+        "pre_score": 71.04688811121292,
+        "quality_score": 88.32646969084061,
+        "risk_score": 22.61422005947553,
+        "total_score": 77.03766350307212,
+        "value_score": 73.19529086403227
+      },
+      "market": "JP",
+      "name": "Ichiyoshi Securities Co.,Ltd.",
+      "price": 1753.0,
+      "rank": 2.0,
+      "ticker": "8624.T"
+    },
+    {
+      "code": "INSW",
+      "factors": {
+        "growth_score": 93.51339338130462,
+        "liquidity_score": 73.53715326989268,
+        "momentum_score": 89.46285140562249,
+        "pre_score": 81.04653188032553,
+        "quality_score": 85.09154563043,
+        "risk_score": 65.35299218587257,
+        "total_score": 83.64769348229139,
+        "value_score": 81.79900743879477
+      },
+      "market": "US",
+      "name": "International Seaways, Inc. Common Stock ",
+      "price": 104.5,
+      "rank": 3.0,
+      "ticker": "INSW"
+    },
+    {
+      "code": "8707",
+      "factors": {
+        "growth_score": 86.90794986071782,
+        "liquidity_score": 77.245670995671,
+        "momentum_score": 87.05055420383887,
+        "pre_score": 73.34678576694999,
+        "quality_score": 82.90828801013109,
+        "risk_score": 38.118410381184106,
+        "total_score": 75.91068320757694,
+        "value_score": 76.10670618058865
+      },
+      "market": "JP",
+      "name": "IwaiCosmo Holdings,Inc.",
+      "price": 4720.0,
+      "rank": 3.0,
+      "ticker": "8707.T"
+    },
+    {
+      "code": "ECO",
+      "factors": {
+        "growth_score": 96.47010654407626,
+        "liquidity_score": 68.31342376999393,
+        "momentum_score": 91.76706827309236,
+        "pre_score": 81.44591956343534,
+        "quality_score": 81.70027531096352,
+        "risk_score": 64.55466013632333,
+        "total_score": 82.65977192838541,
+        "value_score": 77.9696901216677
+      },
+      "market": "US",
+      "name": "Okeanis Eco Tankers Corp. Common Stock",
+      "price": 71.43,
+      "rank": 4.0,
+      "ticker": "ECO"
+    },
+    {
+      "code": "3932",
+      "factors": {
+        "growth_score": 95.913793719451,
+        "liquidity_score": 70.995670995671,
+        "momentum_score": 79.60259529602595,
+        "pre_score": 68.60623088725279,
+        "quality_score": 76.05031750620451,
+        "risk_score": 40.78129224114626,
+        "total_score": 75.68127833748596,
+        "value_score": 77.71342834587519
+      },
+      "market": "JP",
+      "name": "Akatsuki Inc.",
+      "price": 3550.0,
+      "rank": 5.0,
+      "ticker": "3932.T"
+    },
+    {
+      "code": "NWFL",
+      "factors": {
+        "growth_score": 93.95611922029674,
+        "liquidity_score": 27.51569143551326,
+        "momentum_score": 70.9136546184739,
+        "pre_score": 68.09461540381798,
+        "quality_score": 75.94956283216379,
+        "risk_score": 85.67627566962663,
+        "total_score": 81.94699672620952,
+        "value_score": 82.71957052357658
+      },
+      "market": "US",
+      "name": "Norwood Financial Corp. - Common Stock",
+      "price": 34.71,
+      "rank": 8.0,
+      "ticker": "NWFL"
+    },
+    {
+      "code": "6750",
+      "factors": {
+        "growth_score": 82.29073384482224,
+        "liquidity_score": 73.13311688311688,
+        "momentum_score": 71.09353879426872,
+        "pre_score": 67.77518515885303,
+        "quality_score": 79.23446579645083,
+        "risk_score": 56.596377399297104,
+        "total_score": 72.53633802393016,
+        "value_score": 68.46434950727249
+      },
+      "market": "JP",
+      "name": "ELECOM CO.,LTD.",
+      "price": 2009.0,
+      "rank": 9.0,
+      "ticker": "6750.T"
+    }
+  ]
+}

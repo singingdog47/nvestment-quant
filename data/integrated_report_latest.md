@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.11
 
-Generated (UTC): 2026-09-04T23:18:38+00:00
+Generated (UTC): 2026-09-07T07:32:59+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,57 +11,57 @@ Generated (UTC): 2026-09-04T23:18:38+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 66.07
+- Score: 68.85
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 14.529999732971191
+- VIX: 15.020000457763672
 - Treasury realized-vol proxy (not ICE MOVE): 66.084 bps annualized; percentile=0.5079
 - Flags: none
 
 ## 3. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 7, 'WARNING': 3, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / SEC 6-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / 決算:NEC、製造業系の買収検討 フィジカルAI・宇宙防衛が軸 - 日本経済新聞
-- [WATCH] COMPANY_EVENT / ＫＤＤＩ(株)【9433】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-- [WATCH] COMPANY_EVENT / KDDI、開通まで待たせない光回線の新サービス「auひかりプラス」。5Gと光のルーターを一体化 - INTERNET Watch
-- [WATCH] COMPANY_EVENT / KDDI、石川県でドローンを活用した大雨被害状況の緊急調査を実施 - ビジネスネットワーク
-- [WATCH] COMPANY_EVENT / 値上げで好調のKDDIとソフトバンク、ドコモも踏み切るか - 日本経済新聞
-- [WATCH] COMPANY_EVENT / 【スクープ】NECが量子コンピューター開発から撤退！研究者はライバル富士通へ大量流出、「量子の名門」で何が起きたのか？ - ダイヤモンド・オンライン
+- Counts: {'INFO': 0, 'WATCH': 9, 'WARNING': 1, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- [WATCH] COMPANY_EVENT / KDDI株式会社とのブロンズパートナー 契約締結のお知らせ - 東京サンロッカーズ
+- [WATCH] COMPANY_EVENT / 楽天モバイル、KDDIのローミングは「10月以降も継続」と改めて告知 現在は「詰めの協議中」（ITmedia Mobile） - Yahoo!ニュース
+- [WATCH] COMPANY_EVENT / 楽天モバイル、一部エリアで10月以降もKDDIローミングを継続する方針を改めてお知らせ - ケータイ Watch
+- [WATCH] COMPANY_EVENT / 大失敗しても、なぜか「逆に信頼される人」は何が違うのか？KDDI元社長が見せた危機対応 - ダイヤモンド・オンライン
+- [WATCH] COMPANY_EVENT / ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- [WATCH] COMPANY_EVENT / NECがファミリーマートに次期決済システムを提供というニュースが先週の1位 - クラウド Watch
+- [WATCH] COMPANY_EVENT / 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
 
 ## 4. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=77.66075337012971 | cross_pct=100.0
-- 2. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=2.0 | raw=76.98299558864854 | cross_pct=99.9490575649516
-- 3. Akatsuki Inc. 3932.T | market_rank=3.0 | raw=76.87103797486968 | cross_pct=99.8981151299032
-- 4. IwaiCosmo Holdings,Inc. 8707.T | market_rank=5.0 | raw=76.13344888451165 | cross_pct=99.79623025980642
-- 5. ELECOM CO.,LTD. 6750.T | market_rank=9.0 | raw=73.15790748979187 | cross_pct=99.59246051961284
+- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=77.10834889203177 | cross_pct=100.0
+- 2. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=2.0 | raw=77.03766350307212 | cross_pct=99.94892747701736
+- 3. IwaiCosmo Holdings,Inc. 8707.T | market_rank=3.0 | raw=75.91068320757694 | cross_pct=99.89785495403473
+- 4. Akatsuki Inc. 3932.T | market_rank=5.0 | raw=75.68127833748596 | cross_pct=99.79570990806947
+- 5. ELECOM CO.,LTD. 6750.T | market_rank=9.0 | raw=72.53633802393016 | cross_pct=99.59141981613891
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.03409665960385 | cross_pct=100.0
-- 2. Millrose Properties, Inc. Class A Common Stock MRP | market_rank=2.0 | raw=83.94518079737611 | cross_pct=99.97086247086247
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.60189877112444 | cross_pct=99.94172494172494
-- 4. Okeanis Eco Tankers Corp. Common Stock ECO | market_rank=4.0 | raw=82.63117206753031 | cross_pct=99.91258741258741
-- 5. Norwood Financial Corp. - Common Stock NWFL | market_rank=8.0 | raw=81.94380241604858 | cross_pct=99.7960372960373
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.03470382204122 | cross_pct=100.0
+- 2. Millrose Properties, Inc. Class A Common Stock MRP | market_rank=2.0 | raw=83.97952438297848 | cross_pct=99.97086247086247
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.64769348229139 | cross_pct=99.94172494172494
+- 4. Okeanis Eco Tankers Corp. Common Stock ECO | market_rank=4.0 | raw=82.65977192838541 | cross_pct=99.91258741258741
+- 5. Norwood Financial Corp. - Common Stock NWFL | market_rank=8.0 | raw=81.94699672620952 | cross_pct=99.7960372960373
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.03409665960385
-- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=77.66075337012971
-- 3. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.97086247086247 | raw=83.94518079737611
-- 4. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.9490575649516 | raw=76.98299558864854
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94172494172494 | raw=83.60189877112444
-- 6. [US] Okeanis Eco Tankers Corp. Common Stock | cross_pct=99.91258741258741 | raw=82.63117206753031
-- 7. [JP] Akatsuki Inc. | cross_pct=99.8981151299032 | raw=76.87103797486968
-- 8. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.79623025980642 | raw=76.13344888451165
-- 9. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.7960372960373 | raw=81.94380241604858
-- 10. [US] Adamas Trust, Inc. - Common Stock | cross_pct=99.65034965034964 | raw=80.6672739970755
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.03470382204122
+- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=77.10834889203177
+- 3. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.97086247086247 | raw=83.97952438297848
+- 4. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.94892747701736 | raw=77.03766350307212
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94172494172494 | raw=83.64769348229139
+- 6. [US] Okeanis Eco Tankers Corp. Common Stock | cross_pct=99.91258741258741 | raw=82.65977192838541
+- 7. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89785495403473 | raw=75.91068320757694
+- 8. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.7960372960373 | raw=81.94699672620952
+- 9. [JP] Akatsuki Inc. | cross_pct=99.79570990806947 | raw=75.68127833748596
+- 10. [US] TORM plc - Class A Common Stock | cross_pct=99.65034965034964 | raw=80.69114890520824
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 5. 過去判断の検証 / 学習
-- Matured observations: 29
+- Matured observations: 37
 - Eligible for model-change review: False
 - [INFO] regime / CONSTRUCTIVE|1w: Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
@@ -83,7 +83,7 @@ Generated (UTC): 2026-09-04T23:18:38+00:00
 ## PayPay Swing
 
 - 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.7点で優位性が弱い
-- 上位: スタンダード 75.1 / テクノロジー 73.3 / ビットコイン 70.4
+- 上位: スタンダード 75.1 / テクノロジー 73.4 / ビットコイン 70.6
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
