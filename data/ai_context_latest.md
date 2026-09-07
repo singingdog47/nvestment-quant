@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.2",
   "engine_version": "1.5.2",
-  "generated_at": "2026-09-07T07:30:46+00:00",
-  "generated_at_utc": "2026-09-07T07:30:46+00:00",
-  "date_jst": "2026-09-07",
+  "generated_at": "2026-09-07T22:27:15+00:00",
+  "generated_at_utc": "2026-09-07T22:27:15+00:00",
+  "date_jst": "2026-09-08",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 68.85,
+  "regime_score": 68.22,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -27,15 +27,15 @@ Generated quality score: **0.745** / actionable=True
   "treasury_volatility_shock_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 80.89047216581234,
-    "stress": 86.09749965667724,
+    "trend": 78.9534182014583,
+    "stress": 85.88749985694885,
     "participation": 54.79893997004264,
     "liquidity": 46.68102999943368,
     "positioning": 51.00577429462018
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.020000457763672,
+    "vix": 15.300000190734863,
     "hy_oas": 2.65,
     "ig_oas": 0.81,
     "treasury_volatility_proxy": 66.084,
@@ -94,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-07T07:31:53+00:00",
+  "generated_at": "2026-09-07T22:28:17+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -217,7 +217,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 4063 信越化学工業 | Tue, 28 Apr 2026 | earnings | 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9YU0drSkNQX0wta25uTlZNY08xZ0FXWk9pbFJoVFhMeVhocTZuNkpEZ3dMX0xMUDkzYTNUWVNYOTdlMlhLSnRIbGNIQTFfcXJRdW5FSWFFcWN1Y2pfN2JaVTBad3hDdk1neGc?oc=5
 - [HIGH] HTGC Hercules Capital, Inc. Common Stock | 2026-07-24 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1280784/000128078426000035/htgc-20260721.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-07-27 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000073/care-20260727.htm
 - [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-07-27 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000014/nwfl-20260727x8k.htm
@@ -267,6 +266,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000110465926097101/tm2623199d2_8k.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
 - [HIGH] ECO Okeanis Eco Tankers Corp. Common Stock | 2026-08-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1964954/000110465926097930/tm2623429d1_6k.htm
+- [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426005684/p15057626_6-k.htm
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.

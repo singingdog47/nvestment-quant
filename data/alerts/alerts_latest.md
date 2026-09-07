@@ -1,34 +1,30 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-07T07:31:53+00:00
-Highest severity: **WARNING**
+Generated: 2026-09-07T22:28:18+00:00
+Highest severity: **WATCH**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 1
-- WATCH: 9
+- WARNING: 0
+- WATCH: 8
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [信越化学工業]: 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIテクノロジー、3D再現で工場改善を支援 - LOGISTICS TODAY
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIが対話型AI「Buffmee」 情報の信頼性と幅広さの両立が課題 - 日経ビジネス電子版
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 1枚でドコモ/KDDIの両キャリアが使える「IIJマルチプロファイルSIM 2.0」 - IT Leaders
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ、量子コンピューター開発中止 実用化に課題多く：時事ドットコム - 時事ドットコム
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、SBOM自動生成機能を追加した軽量プログラム改ざん検知ソフトをリリース ～製品セキュリティ強化とEU Cyber Resilience Act対応を支援～ - prtimes.jp
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 野村證券株式会社が信越化学工業株式会社＜4063＞株式の変更報告書を提出（保有減少） - ｄメニューニュース
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI株式会社とのブロンズパートナー 契約締結のお知らせ - 東京サンロッカーズ
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 楽天モバイル、KDDIのローミングは「10月以降も継続」と改めて告知 現在は「詰めの協議中」（ITmedia Mobile） - Yahoo!ニュース
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 楽天モバイル、一部エリアで10月以降もKDDIローミングを継続する方針を改めてお知らせ - ケータイ Watch
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 大失敗しても、なぜか「逆に信頼される人」は何が違うのか？KDDI元社長が見せた危機対応 - ダイヤモンド・オンライン
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECがファミリーマートに次期決済システムを提供というニュースが先週の1位 - クラウド Watch
-  - New company event detected for NEC.
 - **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 野村證券株式会社が信越化学工業株式会社＜4063＞株式の変更報告書を提出（保有減少） - topics.smt.docomo.ne.jp
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業 化学品銘柄からAI銘柄へ 斉藤社長に聞く【大浜見聞録】 - テレ東BIZ
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 中国、日本産ジクロロシランに最大99.2％の保証金 8日から - BigGo ファイナンス
   - New company event detected for 信越化学工業.
 
 ## Governance

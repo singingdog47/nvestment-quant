@@ -1,15 +1,15 @@
 # Market Regime v1.5
 
 - Label: **CONSTRUCTIVE**
-- Score: **68.85**
+- Score: **68.22**
 - Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
 - Flags: none
 
 ## Components
-- trend: 80.89047216581234
-- stress: 86.09749965667724
+- trend: 78.9534182014583
+- stress: 85.88749985694885
 - participation: 54.79893997004264
 - liquidity: 46.68102999943368
 - positioning: 51.00577429462018
@@ -17,7 +17,7 @@
 ## Evidence
 {
   "trend_series": 4,
-  "vix": 15.020000457763672,
+  "vix": 15.300000190734863,
   "hy_oas": 2.65,
   "ig_oas": 0.81,
   "treasury_volatility_proxy": 66.084,
