@@ -1,0 +1,71 @@
+{
+  "version": "1.0.0",
+  "effective_date": "2026-09-07",
+  "objective": {
+    "primary": "keep monthly contributions continuous while correcting portfolio risk drift with annual cash-flow rebalancing",
+    "wealth_target_jpy": 100000000,
+    "wealth_target_horizon_years": 10,
+    "wealth_target_is_required_return_constraint": false,
+    "base_monthly_contribution_jpy": 150000
+  },
+  "baseline_contribution": {
+    "diversified_core_jpy": 100000,
+    "growth_tilt_jpy": 50000,
+    "growth_tilt_allowed_steps_jpy": [0, 25000, 50000],
+    "diversified_core_label": "eMAXIS Slim 全世界株式（オール・カントリー）",
+    "growth_tilt_label": "eMAXIS NASDAQ100インデックス"
+  },
+  "review": {
+    "review_month": 12,
+    "review_day_start": 1,
+    "review_day_end": 10,
+    "market_forecast_changes_prohibited": true,
+    "change_only_when_threshold_breached": true,
+    "outside_review_window_action": "keep_current_baseline_or_last_approved_plan"
+  },
+  "risk_model": {
+    "lookback_days": 400,
+    "min_observations": 120,
+    "benchmark": "1306.T",
+    "minimum_market_data_weight_coverage": 0.80,
+    "growth_tilt_definition": "explicit strategic growth-index sleeve only; domestic stock growth-factor risk is diagnostic until separately calibrated",
+    "threshold_status": "calibration_required",
+    "mild_upper_growth_risk_contribution": null,
+    "severe_upper_growth_risk_contribution": null,
+    "mild_upper_growth_market_value_weight": null,
+    "severe_upper_growth_market_value_weight": null,
+    "notes": [
+      "Do not activate thresholds from intuition alone. Calibrate from a live private portfolio run and validation history.",
+      "Risk contribution is historical and is not a return forecast.",
+      "No lower trigger increases growth_tilt above 50000 JPY per month."
+    ]
+  },
+  "risk_proxy_rules": [
+    {"contains": ["NASDAQ100", "NASDAQ-100"], "proxy_symbol": "QQQ", "rebalance_bucket": "growth_tilt", "basis": "listed ETF proxy for index-risk estimation"},
+    {"contains": ["FANG+"], "proxy_symbol": "FNGS", "rebalance_bucket": "growth_tilt", "basis": "listed FANG+ linked proxy for index-risk estimation"},
+    {"contains": ["全米株式", "VTI"], "proxy_symbol": "VTI", "rebalance_bucket": "broad_core", "basis": "listed ETF proxy for total-US-market risk estimation"},
+    {"contains": ["全世界株式", "オール・カントリー", "オールカントリー"], "proxy_symbol": "ACWI", "rebalance_bucket": "broad_core", "basis": "listed global-equity ETF proxy for risk estimation"},
+    {"contains": ["TOPIX"], "proxy_symbol": "1306.T", "rebalance_bucket": "broad_core", "basis": "listed TOPIX ETF proxy for risk estimation"},
+    {"contains": ["新興国株式"], "proxy_symbol": "VWO", "rebalance_bucket": "broad_core", "basis": "listed emerging-market ETF proxy for risk estimation"}
+  ],
+  "nisa_routing": {
+    "tsumitate_monthly_cap_jpy": 100000,
+    "growth_annual_cap_jpy": 2400000,
+    "planned_growth_nisa_for_automatic_contributions_jpy": 600000,
+    "growth_nisa_reserved_for_satellite_jpy": 1800000,
+    "current_year_remaining_capacity_must_be_checked_before_applying": true
+  },
+  "rebalance_priority": [
+    "change_new_monthly_contribution_destination",
+    "redirect_dividends_and_additional_cash",
+    "adjust_new_satellite_purchase_destination",
+    "sell_existing_assets_only_if_drift_cannot_be_corrected_and_tax_adjusted_benefit_is_positive"
+  ],
+  "governance": {
+    "automatic_broker_setting_changes": false,
+    "automatic_trade_orders": false,
+    "automatic_sales": false,
+    "private_output_only": true,
+    "annual_review_is_a_diagnostic_not_a_market_timing_signal": true
+  }
+}
