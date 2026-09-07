@@ -1,0 +1,86 @@
+name: Annual Contribution Rebalance v1.0
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_review:
+        description: "Run annual review logic outside the December review window"
+        required: false
+        default: "true"
+  schedule:
+    # 09:17 JST on December 1. GitHub schedules may start a little late.
+    - cron: '17 0 1 12 *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: private-annual-contribution-rebalance
+  cancel-in-progress: false
+
+jobs:
+  annual-rebalance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: src
+      GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+      GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+      PORTFOLIO_RISK_PROFILE_JSON: ${{ secrets.PORTFOLIO_RISK_PROFILE_JSON }}
+      PORTFOLIO_RISK_OVERLAY_CSV: ${{ secrets.PORTFOLIO_RISK_OVERLAY_CSV }}
+      PORTFOLIO_DRIVE_WRITEBACK: 'false'
+      PORTFOLIO_HISTORY_WRITEBACK: 'false'
+      PRIVATE_WORKDIR: .private
+      PRIVATE_OUTPUT_DIR: .private/portfolio_risk
+      SCREEN_PATH: data/screening_latest.csv
+      RISK_LOOKBACK_DAYS: '400'
+      RISK_MIN_OBSERVATIONS: '120'
+      RISK_VAR_CONFIDENCE: '0.95'
+      RISK_CANDIDATE_WEIGHT: '0.02'
+      RISK_CANDIDATE_TOP_N: '10'
+      RISK_BENCHMARK: '1306.T'
+      CONTRIBUTION_REBALANCE_POLICY: config/contribution_rebalance_v1.json
+      REBALANCE_FORCE_REVIEW: ${{ inputs.force_review || 'false' }}
+      REBALANCE_DRIVE_WRITEBACK: 'true'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt -r requirements-intelligence.txt
+          python -m pip install pytest
+
+      - name: Run full test suite
+        run: python -m pytest -q tests
+
+      - name: Check private Drive configuration
+        id: private_config
+        shell: bash
+        run: |
+          if [[ -n "$GDRIVE_SERVICE_ACCOUNT_JSON" && -n "$GDRIVE_FOLDER_ID" ]]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "Private Google Drive secrets are not configured; annual review skipped."
+          fi
+
+      - name: Build current private portfolio snapshot and risk inputs
+        if: steps.private_config.outputs.configured == 'true'
+        run: python src/run_portfolio_risk.py
+
+      - name: Run annual cash-flow rebalance review
+        if: steps.private_config.outputs.configured == 'true'
+        run: python src/run_contribution_rebalance.py
+
+      # Privacy rule: only the two aggregate rebalance reports are written to the
+      # user's private Google Drive. No private portfolio/risk output is uploaded
+      # as a GitHub Actions artifact or committed to this public repository.
