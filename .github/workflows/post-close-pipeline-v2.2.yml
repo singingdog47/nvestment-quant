@@ -1,4 +1,4 @@
-name: Investment Quant Post-Close Pipeline v2.11
+name: Investment Quant Post-Close Pipeline v2.12
 
 on:
   workflow_dispatch:
@@ -107,13 +107,15 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: human-readable-daily-report-v2.11
+          name: human-readable-daily-report-v2.12
           path: |
             data/mobile_brief_latest.md
             data/integrated_report_latest.md
             data/daily_report.md
             data/quality_report.json
             data/data_coverage_latest.json
+            data/regime/market_context_latest.md
+            data/regime/sq_execution_overlay_latest.json
             data/paypay_swing/paypay_swing_daily_latest.md
             data/paypay_swing/paypay_swing_weekly_latest.md
             data/paypay_swing/paypay_swing_latest.json
@@ -137,7 +139,7 @@ jobs:
             echo "No post-close output changes to commit."
             exit 0
           fi
-          git commit -m "data: refresh integrated post-close pipeline v2.11"
+          git commit -m "data: refresh integrated post-close pipeline v2.12"
           git pull --rebase
           git push
 
