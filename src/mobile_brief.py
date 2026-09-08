@@ -155,6 +155,8 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
     policy = ctx.get("policy_guardrails") or {}
     components = regime.get("components") or {}
     evidence = regime.get("evidence") or {}
+    execution_overlay = regime.get("execution_overlay") or {}
+    sq = execution_overlay.get("sq") or _load_json(root / "data/regime/sq_execution_overlay_latest.json")
     delta, delta_story = _regime_delta(root, regime)
     theme_counts, theme_story = _theme_summary(root, rows)
     rank_story = _rank_change_story(rows)
@@ -169,6 +171,14 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
     regime_actionable = bool(regime.get("actionable"))
     highest = str(alerts.get("highest_severity") or "INFO")
     concentrated = any(sum(n for theme, n in counter.items() if theme != "Other") >= 7 for counter in theme_counts.values())
+
+    sq_active = bool(sq.get("active"))
+    sq_days = _number(sq.get("days_to_sq"))
+    sq_caution = _number(sq.get("execution_caution_points"), 0.0) or 0.0
+    sq_cap = _number(sq.get("caution_cap_points"), 15.0) or 15.0
+    sq_confidence = _number(sq.get("confidence"))
+    sq_status = str(sq.get("data_status") or "missing")
+    sq_date = str(sq.get("next_major_sq_date") or "不明")
 
     if not quality_actionable or gate.startswith("BLOCK"):
         headline = "今日は売買判断を止め、データ品質の確認を優先します。"
@@ -186,6 +196,11 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
         headline = "地合いは前向きです。分散を改善する候補だけを選別します。"
         action = "一度に複数を買わず、最新決算と現在価格を確認した候補だけを小さく検討します。"
 
+    if sq_active and sq_caution >= 6 and quality_actionable and regime_actionable and highest not in {"CRITICAL", "WARNING"}:
+        action += " メジャーSQの短期需給は銘柄評価ではなく執行だけに反映し、成行を避け、分割・深めの指値を優先します。"
+    elif sq_active and sq_caution >= 3 and quality_actionable and regime_actionable and highest not in {"CRITICAL", "WARNING"}:
+        action += " SQ週のため、買う場合は成行で追わず指値を優先します。"
+
     if vix is not None and vix < 20 and liquidity is not None and liquidity < 40:
         interpretation = "VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。"
     elif vix is not None and vix >= 30:
@@ -199,6 +214,24 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
         treasury_story = f"米国債金利の実現ボラproxyは{treasury_vol_percentile*100:.0f}パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。"
     else:
         treasury_story = "米国債金利ボラproxyは未取得です。欠損を推定で補完しません。"
+
+    if sq_active:
+        days_text = f"{int(sq_days)}日" if sq_days is not None else "数日"
+        confidence_text = f"確信度{sq_confidence:.0%}" if sq_confidence is not None else "確信度不明"
+        if sq_caution >= 10:
+            sq_story = f"メジャーSQ（{sq_date}）まで{days_text}。執行警戒度は{sq_caution:.1f}/{sq_cap:.0f}で高めです。銘柄評価は変えず、注文だけを分割し、成行で追わない運用を優先します。"
+        elif sq_caution >= 6:
+            sq_story = f"メジャーSQ（{sq_date}）まで{days_text}。執行警戒度は{sq_caution:.1f}/{sq_cap:.0f}で中程度です。買い候補があっても、SQ通過前後の価格形成を意識して分割・指値を優先します。"
+        elif sq_caution >= 3:
+            sq_story = f"メジャーSQ（{sq_date}）まで{days_text}。執行警戒度は{sq_caution:.1f}/{sq_cap:.0f}で軽度です。戦略を変えるほどではありませんが、成行で価格を追う必要はありません。"
+        else:
+            sq_story = f"メジャーSQ（{sq_date}）まで{days_text}ですが、現時点の執行警戒度は{sq_caution:.1f}/{sq_cap:.0f}です。SQだけを理由に売買方針を変える水準ではありません。"
+        if sq_status != "ok":
+            sq_story += f" 建玉・ロール等の詳細データは{sq_status}（{confidence_text}）なので、上か下かの方向は推定しません。"
+        else:
+            sq_story += f" 詳細データは取得済み（{confidence_text}）ですが、建玉だけから上か下かを決め打ちしません。"
+    else:
+        sq_story = "現在はメジャーSQの執行警戒期間外です。SQ要因による注文条件の変更はありません。"
 
     alerts_lines: list[str] = []
     for alert in (alerts.get("alerts") or [])[:4]:
@@ -241,6 +274,11 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
         f"{theme_story}{interpretation}",
         treasury_story,
         "同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。",
+        "",
+        "## SQ・短期需給",
+        "",
+        sq_story,
+        "SQは短期需給の補助レイヤーです。銘柄ランキング、ファンダメンタルズ評価、投資仮説は変更しません。",
         "",
         "## 今日の注意点",
         "",
