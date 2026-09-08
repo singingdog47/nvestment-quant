@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at_utc": "2026-09-08T07:29:57+00:00",
+  "generated_at_utc": "2026-09-08T22:27:47+00:00",
   "data_status": "ok",
   "status_definitions": {
     "ok": "retrieval and content validation succeeded",
@@ -11,11 +11,12 @@
   },
   "summary": {
     "sources": {
-      "not_implemented": 3,
+      "not_implemented": 4,
       "ok": 24
     },
     "files": {
-      "ok": 10
+      "ok": 10,
+      "partial": 1
     },
     "critical_missing": []
   },
@@ -24,7 +25,7 @@
       "source": "yfinance:^N225",
       "status": "ok",
       "records": 244,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -35,7 +36,7 @@
       "source": "yfinance:1306.T",
       "status": "ok",
       "records": 244,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -45,8 +46,8 @@
     {
       "source": "yfinance:^GSPC",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -56,8 +57,8 @@
     {
       "source": "yfinance:^IXIC",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -67,8 +68,8 @@
     {
       "source": "yfinance:^VIX",
       "status": "ok",
-      "records": 253,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "records": 254,
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -79,7 +80,7 @@
       "source": "yfinance:JPY=X",
       "status": "ok",
       "records": 260,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -89,8 +90,8 @@
     {
       "source": "yfinance:^TNX",
       "status": "ok",
-      "records": 253,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "records": 252,
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -101,7 +102,7 @@
       "source": "yfinance:GC=F",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -112,7 +113,7 @@
       "source": "yfinance:CL=F",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -123,7 +124,7 @@
       "source": "yfinance:HG=F",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -133,8 +134,8 @@
     {
       "source": "yfinance:TLT",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -144,8 +145,8 @@
     {
       "source": "yfinance:HYG",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -155,8 +156,8 @@
     {
       "source": "yfinance:LQD",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-08T07:29:57+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-08T22:27:47+00:00",
       "error": "",
       "source_tier": "secondary",
       "raw_status": "ok",
@@ -168,9 +169,9 @@
       "status": "ok",
       "transport_status": "ok",
       "content_status": "valid",
-      "records": 787,
-      "as_of_date": "2026-09-03",
-      "fetched_at": "2026-09-08T07:29:59+00:00",
+      "records": 785,
+      "as_of_date": "2026-09-07",
+      "fetched_at": "2026-09-08T22:27:49+00:00",
       "error": "",
       "source_tier": "primary",
       "retrieval_route": "fred_api",
@@ -183,9 +184,9 @@
       "status": "ok",
       "transport_status": "ok",
       "content_status": "valid",
-      "records": 786,
-      "as_of_date": "2026-09-03",
-      "fetched_at": "2026-09-08T07:29:59+00:00",
+      "records": 784,
+      "as_of_date": "2026-09-07",
+      "fetched_at": "2026-09-08T22:27:49+00:00",
       "error": "",
       "source_tier": "primary",
       "retrieval_route": "fred_api",
@@ -200,7 +201,7 @@
       "content_status": "valid",
       "records": 2904,
       "as_of_date": "2026-08-28",
-      "fetched_at": "2026-09-08T07:29:59+00:00",
+      "fetched_at": "2026-09-08T22:27:49+00:00",
       "error": "",
       "source_tier": "primary",
       "retrieval_route": "fred_api",
@@ -213,9 +214,9 @@
       "status": "ok",
       "transport_status": "ok",
       "content_status": "valid",
-      "records": 26363,
-      "as_of_date": "2026-09-03",
-      "fetched_at": "2026-09-08T07:29:59+00:00",
+      "records": 26367,
+      "as_of_date": "2026-09-07",
+      "fetched_at": "2026-09-08T22:27:49+00:00",
       "error": "",
       "source_tier": "primary",
       "retrieval_route": "fred_api",
@@ -228,9 +229,9 @@
       "status": "ok",
       "transport_status": "ok",
       "content_status": "valid",
-      "records": 420,
-      "as_of_date": "2026-09-04",
-      "fetched_at": "2026-09-08T07:30:33+00:00",
+      "records": 421,
+      "as_of_date": "2026-09-08",
+      "fetched_at": "2026-09-08T22:28:24+00:00",
       "source_url": "https://home.treasury.gov/treasury-daily-interest-rate-xml-feed",
       "request_urls": [
         "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2025",
@@ -246,7 +247,7 @@
       "source": "v1.3 breadth adapter",
       "status": "ok",
       "records": 9567,
-      "fetched_at": "2026-09-08T07:30:34+00:00",
+      "fetched_at": "2026-09-08T22:28:25+00:00",
       "error": "",
       "source_tier": "internal",
       "raw_status": "ok",
@@ -261,7 +262,7 @@
       "records": 69,
       "columns": 11,
       "numeric_values": 230,
-      "fetched_at": "2026-09-08T07:30:34+00:00",
+      "fetched_at": "2026-09-08T22:28:25+00:00",
       "error": "",
       "source_tier": "primary",
       "raw_status": "ok",
@@ -276,7 +277,7 @@
       "records": 1,
       "columns": 10,
       "numeric_values": 9,
-      "fetched_at": "2026-09-08T07:30:34+00:00",
+      "fetched_at": "2026-09-08T22:28:25+00:00",
       "error": "",
       "source_tier": "primary",
       "raw_status": "ok",
@@ -291,7 +292,7 @@
       "records": 284,
       "columns": 23,
       "numeric_values": 3961,
-      "fetched_at": "2026-09-08T07:30:34+00:00",
+      "fetched_at": "2026-09-08T22:28:25+00:00",
       "error": "",
       "source_tier": "primary",
       "raw_status": "ok",
@@ -304,7 +305,7 @@
       "transport_status": "ok",
       "content_status": "valid",
       "records": 1,
-      "fetched_at": "2026-09-08T07:30:34+00:00",
+      "fetched_at": "2026-09-08T22:28:25+00:00",
       "error": "",
       "source_tier": "primary",
       "raw_status": "ok",
@@ -315,7 +316,7 @@
       "source": "CFTC:COT",
       "status": "ok",
       "records": 11,
-      "fetched_at": "2026-09-08T07:30:36+00:00",
+      "fetched_at": "2026-09-08T22:28:27+00:00",
       "error": "",
       "source_tier": "primary",
       "raw_status": "ok",
@@ -332,7 +333,15 @@
     },
     {
       "source": "EQUITY_PUT_CALL",
-      "description": "official equity put/call series is not integrated",
+      "description": "official broad equity put/call series is not integrated; SQ overlay can consume explicitly sourced Nikkei 225 option OI when available",
+      "status": "not_implemented",
+      "raw_status": "not_implemented",
+      "records": 0,
+      "required": false
+    },
+    {
+      "source": "SQ_AUTOMATIC_STRIKE_OI",
+      "description": "automatic strike-level Nikkei 225 option/futures open-interest extraction is not yet production-integrated; calendar-only SQ mode remains active and never invents missing OI or gamma direction",
       "status": "not_implemented",
       "raw_status": "not_implemented",
       "records": 0,
@@ -366,7 +375,7 @@
     {
       "path": "data/regime/treasury_volatility_history.csv",
       "status": "ok",
-      "records": 400
+      "records": 401
     },
     {
       "path": "data/regime/breadth_latest.json",
@@ -384,6 +393,11 @@
       "records": 11
     },
     {
+      "path": "data/regime/sq_execution_overlay_latest.json",
+      "status": "partial",
+      "records": 1
+    },
+    {
       "path": "data/regime/market_regime_latest.json",
       "status": "ok",
       "records": 1
@@ -391,7 +405,7 @@
     {
       "path": "data/regime/market_regime_history.csv",
       "status": "ok",
-      "records": 28
+      "records": 29
     },
     {
       "path": "data/regime/market_context_latest.md",

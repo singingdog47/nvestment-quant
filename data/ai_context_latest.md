@@ -4,14 +4,14 @@ Generated quality score: **0.745** / actionable=True
 
 ## Market Regime v1.5
 {
-  "version": "1.5.2",
-  "engine_version": "1.5.2",
-  "generated_at": "2026-09-08T07:29:57+00:00",
-  "generated_at_utc": "2026-09-08T07:29:57+00:00",
-  "date_jst": "2026-09-08",
+  "version": "1.5.3",
+  "engine_version": "1.5.3",
+  "generated_at": "2026-09-08T22:27:47+00:00",
+  "generated_at_utc": "2026-09-08T22:27:47+00:00",
+  "date_jst": "2026-09-09",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 63.76,
+  "regime_score": 62.97,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -25,30 +25,31 @@ Generated quality score: **0.745** / actionable=True
   "stress_flag": false,
   "thin_liquidity_flag": false,
   "treasury_volatility_shock_flag": false,
+  "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 65.52058044346722,
-    "stress": 85.88749985694885,
+    "trend": 62.589664055301625,
+    "stress": 87.40249979972839,
     "participation": 53.69900898824614,
-    "liquidity": 45.29763175180905,
+    "liquidity": 43.3201935467707,
     "positioning": 51.00577429462018
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.300000190734863,
-    "hy_oas": 2.65,
+    "vix": 15.720000267028809,
+    "hy_oas": 2.68,
     "ig_oas": 0.81,
-    "treasury_volatility_proxy": 66.084,
-    "treasury_volatility_percentile_rank": 0.5079,
-    "treasury_volatility_stress_score": 61.9,
-    "treasury_volatility_as_of_date": "2026-09-04",
+    "treasury_volatility_proxy": 62.979,
+    "treasury_volatility_percentile_rank": 0.4048,
+    "treasury_volatility_stress_score": 69.64,
+    "treasury_volatility_as_of_date": "2026-09-08",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9567,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-08T07:29:54.486711+00:00",
     "nfci": -0.558,
-    "volume_ratio20_mean": 0.7847907937952262,
+    "volume_ratio20_mean": 0.7353548386692674,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -68,11 +69,64 @@ Generated quality score: **0.745** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-09-07",
-    "jpx_official_turnover_million_jpy": 9113519.0,
+    "jpx_official_turnover_date": "2026-09-08",
+    "jpx_official_turnover_million_jpy": 9495876.0,
     "jpx_official_turnover_status": "ok"
   },
+  "execution_overlay": {
+    "sq": {
+      "version": "1.0",
+      "enabled": true,
+      "active": true,
+      "as_of_date": "2026-09-09",
+      "next_major_sq_date": "2026-09-11",
+      "days_to_sq": 2,
+      "event_proximity_score": 71.43,
+      "pressure_intensity_score": 71.43,
+      "confidence": 0.25,
+      "data_status": "partial",
+      "manual_input_freshness": "missing",
+      "manual_input_age_days": null,
+      "execution_caution_points": 2.68,
+      "caution_cap_points": 15.0,
+      "execution_stance": "NORMAL",
+      "directional_bias": "UNDETERMINED",
+      "price_structure": {
+        "spot": 66399.84375,
+        "put_wall": null,
+        "call_wall": null,
+        "magnet_strike": null,
+        "nearest_reference_distance_pct": null
+      },
+      "evidence": {
+        "put_call_oi_ratio": null,
+        "front_futures_share": null,
+        "arbitrage_balance_zscore": null,
+        "nikkei_vi_percentile": null,
+        "component_scores": {
+          "event_proximity": 71.43,
+          "option_oi_imbalance": null,
+          "front_futures_concentration": null,
+          "strike_pin_proximity": null,
+          "arbitrage_balance_extreme": null,
+          "nikkei_vi_percentile": null
+        },
+        "source_notes": null
+      },
+      "policy_effects": {
+        "alter_security_ranking": false,
+        "alter_fundamental_score": false,
+        "alter_investment_thesis": false,
+        "use_for_execution_timing_only": true
+      },
+      "tactics": [
+        "no_sq_specific_change"
+      ],
+      "rule": "SQ is a short-lived market-structure overlay. Use it for staging and limit-order timing only; do not infer direction from open interest alone."
+    }
+  },
   "rule": "Regime is context, not a trade signal. If actionable=false, do not infer missing market facts.",
+  "execution_rule": "SQ may alter staging, patience, and limit-order execution only. It must not alter security ranking, fundamental score, or investment thesis.",
   "source_priority": "official/public primary > internal v1.3 data > free secondary market feed > model inference"
 }
 
@@ -94,7 +148,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-08T07:30:55+00:00",
+  "generated_at": "2026-09-08T22:28:50+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -139,7 +193,7 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=4 / tier=primary
-- SEC: ok / records=55 / tier=primary
+- SEC: ok / records=56 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
 - NewsRSS: ok / records=15 / tier=secondary
 - yfinance: ok / records=35 / tier=secondary
