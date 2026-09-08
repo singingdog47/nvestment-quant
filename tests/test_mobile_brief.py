@@ -79,6 +79,32 @@ def test_mobile_brief_holds_orders_when_regime_is_not_actionable(tmp_path: Path)
     assert "新規注文は信用・金融環境を確認できるまで保留" in text
 
 
+def test_mobile_brief_surfaces_sq_as_execution_only(tmp_path: Path) -> None:
+    _public_fixture(tmp_path)
+    regime_path = tmp_path / "data/regime/market_regime_latest.json"
+    regime = json.loads(regime_path.read_text(encoding="utf-8"))
+    regime["execution_overlay"] = {
+        "sq": {
+            "active": True,
+            "next_major_sq_date": "2026-09-11",
+            "days_to_sq": 3,
+            "execution_caution_points": 7.2,
+            "caution_cap_points": 15,
+            "confidence": 0.85,
+            "data_status": "ok",
+            "directional_bias": "UNDETERMINED",
+        }
+    }
+    regime_path.write_text(json.dumps(regime), encoding="utf-8")
+    public_path, _ = build_mobile_brief(tmp_path)
+    text = public_path.read_text(encoding="utf-8")
+    assert "SQ・短期需給" in text
+    assert "メジャーSQ（2026-09-11）まで3日" in text
+    assert "執行警戒度は7.2/15" in text
+    assert "銘柄ランキング、ファンダメンタルズ評価、投資仮説は変更しません" in text
+    assert "成行を避け" in text
+
+
 def test_private_portfolio_story_never_leaks_to_public(tmp_path: Path) -> None:
     _public_fixture(tmp_path)
     risk_dir = tmp_path / ".private/portfolio_risk"
