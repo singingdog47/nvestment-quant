@@ -14,6 +14,7 @@ from .jpx import fetch_jpx_sources
 from .cftc import fetch_cftc
 from .coverage import build_data_coverage, normalize_status
 from .scoring import score_regime, regime_label
+from .sq_pressure import build_sq_execution_overlay, load_sq_manual_input
 from .treasury_volatility import fetch_treasury_volatility
 
 CFG=yaml.safe_load(Path("config/market_regime_v1_5.yml").read_text(encoding="utf-8"))
@@ -57,6 +58,16 @@ def _health_status(rows):
 
 def _date_jst(timestamp):
     return datetime.fromisoformat(timestamp).astimezone(ZoneInfo("Asia/Tokyo")).date().isoformat()
+
+
+def _market_close(market,series):
+    if market is None or market.empty or "series" not in market.columns or "close" not in market.columns:
+        return None
+    rows=market.loc[market["series"]==series]
+    if rows.empty:
+        return None
+    value=pd.to_numeric(pd.Series([rows.iloc[-1].get("close")]),errors="coerce").iloc[0]
+    return None if pd.isna(value) else float(value)
 
 
 def main():
@@ -106,6 +117,20 @@ def main():
         cftc,h,cftc_url=fetch_cftc(CFG.get("cftc",{}).get("contracts",[])); cftc_health=h; health+=h; _write_frame(cftc,OUT/"cftc_latest.csv")
     else:
         cftc=pd.DataFrame(); cftc_url=""; cftc_health=[{"source":"CFTC:COT","status":"not_implemented","records":0,"fetched_at":fetched,"error":"source disabled by configuration","source_tier":"primary"}]; health+=cftc_health
+
+    # SQ is deliberately separated from the market-regime score.  It is an
+    # execution-timing overlay only, so a quarterly expiry cannot mutate the
+    # fundamental ranking or the investment thesis.
+    sq_cfg=CFG.get("sq_execution_overlay",{})
+    sq_manual=load_sq_manual_input(sq_cfg.get("manual_input_path"))
+    sq_overlay=build_sq_execution_overlay(
+        as_of=datetime.now(ZoneInfo("Asia/Tokyo")).date(),
+        spot=_market_close(market,"JP_NIKKEI"),
+        cfg=sq_cfg,
+        manual_input=sq_manual,
+    )
+    save_json(OUT/"sq_execution_overlay_latest.json",sq_overlay)
+
     sc=CFG["scoring"]; components,evidence,score,confidence=score_regime(market,fred,breadth,jpx_h,cftc,sc["weights"],treasury_volatility=treasury_vol)
     official_turnover=jpx_frames.get("official_turnover",pd.DataFrame())
     if official_turnover is not None and not official_turnover.empty:
@@ -124,7 +149,12 @@ def main():
         and treasury_percentile is not None
         and float(treasury_percentile)>=float(treasury_cfg.get("shock_percentile",0.90))
     )
-    flags=[x for x,b in (("OVERHEATED",overheated),("STRESS",stress_flag),("THIN_LIQUIDITY",thin_liquidity),("TREASURY_VOLATILITY_SHOCK",treasury_shock)) if b]
+    sq_flag_threshold=float(sq_cfg.get("flag_threshold_points",6))
+    sq_execution_caution=bool(
+        sq_overlay.get("active")
+        and float(sq_overlay.get("execution_caution_points") or 0)>=sq_flag_threshold
+    )
+    flags=[x for x,b in (("OVERHEATED",overheated),("STRESS",stress_flag),("THIN_LIQUIDITY",thin_liquidity),("TREASURY_VOLATILITY_SHOCK",treasury_shock),("SQ_EXECUTION_CAUTION",sq_execution_caution)) if b]
     critical_names=("JP_NIKKEI","US_SP500","VIX")
     critical_ok=sum(1 for name in critical_names if not market.empty and (market["series"]==name).any())
     min_confidence=float(sc.get("actionable_min_confidence",0.60))
@@ -136,27 +166,46 @@ def main():
     if missing_core_context: actionability_reasons.append("core_credit_or_financial_conditions_missing")
     actionable=bool(score is not None and confidence>=min_confidence and critical_ok>=2)
     data_status="ok" if actionable else ("partial" if score is not None else "missing")
-    engine_version=str(CFG.get("version","1.5.2"))
+    engine_version=str(CFG.get("version","1.5.3"))
     regime={
       "version":engine_version,"engine_version":engine_version,"generated_at":fetched,"generated_at_utc":fetched,"date_jst":_date_jst(fetched),"data_status":data_status,
       "regime_label":label,"regime_score":score,"confidence":confidence,
       "actionable":actionable,"actionability":{"minimum_confidence":min_confidence,"critical_market_series_available":critical_ok,"critical_market_series_expected":len(critical_names),"missing_core_context":missing_core_context,"reasons":actionability_reasons},
-      "overheated_flag":overheated,"stress_flag":stress_flag,"thin_liquidity_flag":thin_liquidity,"treasury_volatility_shock_flag":treasury_shock,"regime_flags":flags,
+      "overheated_flag":overheated,"stress_flag":stress_flag,"thin_liquidity_flag":thin_liquidity,"treasury_volatility_shock_flag":treasury_shock,"sq_execution_caution_flag":sq_execution_caution,"regime_flags":flags,
       "components":components,"evidence":evidence,
+      "execution_overlay":{"sq":sq_overlay},
       "rule":"Regime is context, not a trade signal. If actionable=false, do not infer missing market facts.",
+      "execution_rule":"SQ may alter staging, patience, and limit-order execution only. It must not alter security ranking, fundamental score, or investment thesis.",
       "source_priority":"official/public primary > internal v1.3 data > free secondary market feed > model inference"
     }
     save_json(OUT/"market_regime_latest.json",regime)
     _write_frame(pd.DataFrame(health),OUT/"market_source_health_latest.csv")
     hist_path=OUT/"market_regime_history.csv"
-    row=pd.DataFrame([{ "generated_at":fetched,"score":score,"label":label,"confidence":confidence,"actionable":actionable,"data_status":data_status,**{f"component_{k}":v for k,v in components.items()} }])
+    row=pd.DataFrame([{ "generated_at":fetched,"score":score,"label":label,"confidence":confidence,"actionable":actionable,"data_status":data_status,"sq_active":sq_overlay.get("active"),"sq_days_to":sq_overlay.get("days_to_sq"),"sq_execution_caution":sq_overlay.get("execution_caution_points"),**{f"component_{k}":v for k,v in components.items()} }])
     if hist_path.exists():
         try: old=pd.read_csv(hist_path); row=pd.concat([old,row],ignore_index=True).tail(750)
         except Exception: pass
     _write_frame(row,hist_path)
     md=["# Market Regime v1.5","",f"- Label: **{label}**",f"- Score: **{score}**",f"- Confidence: **{confidence}**",f"- Actionable: **{actionable}**",f"- Data status: **{data_status}**",f"- Flags: {', '.join(flags) if flags else 'none'}","","## Components"]
     for k,v in components.items(): md.append(f"- {k}: {v}")
-    md += ["","## Evidence",json.dumps(evidence,ensure_ascii=False,indent=2),"","Regime is context, not an automatic trade signal."]
+    md += [
+        "",
+        "## SQ execution overlay",
+        f"- Active: **{sq_overlay.get('active')}**",
+        f"- Next major SQ: **{sq_overlay.get('next_major_sq_date','n/a')}**",
+        f"- Days to SQ: **{sq_overlay.get('days_to_sq','n/a')}**",
+        f"- Execution caution: **{sq_overlay.get('execution_caution_points',0)}/{sq_overlay.get('caution_cap_points',15)}**",
+        f"- Confidence: **{sq_overlay.get('confidence','n/a')}**",
+        f"- Data status: **{sq_overlay.get('data_status','missing')}**",
+        f"- Directional bias: **{sq_overlay.get('directional_bias','UNDETERMINED')}**",
+        f"- Execution stance: **{sq_overlay.get('execution_stance','NORMAL')}**",
+        "- Rule: SQ changes execution timing only; it does not change the security ranking or investment thesis.",
+        "",
+        "## Evidence",
+        json.dumps(evidence,ensure_ascii=False,indent=2),
+        "",
+        "Regime is context, not an automatic trade signal.",
+    ]
     (OUT/"market_context_latest.md").write_text("\n".join(md),encoding="utf-8")
 
     expected_sources=[]
@@ -178,6 +227,7 @@ def main():
         {"path":str(OUT/"breadth_latest.json"),"status":normalize_status(breadth.get("status")),"records":breadth.get("n",0)},
         {"path":str(OUT/"jpx_source_index_latest.csv"),"status":_health_status(jpx_h),"records":len(jpx_index)},
         {"path":str(OUT/"cftc_latest.csv"),"status":_health_status(cftc_health),"records":len(cftc)},
+        {"path":str(OUT/"sq_execution_overlay_latest.json"),"status":normalize_status(sq_overlay.get("data_status")),"records":1},
         {"path":str(OUT/"market_regime_latest.json"),"status":data_status,"records":1},
         {"path":str(OUT/"market_regime_history.csv"),"status":"ok","records":len(row)},
         {"path":str(OUT/"market_context_latest.md"),"status":data_status,"records":1},
