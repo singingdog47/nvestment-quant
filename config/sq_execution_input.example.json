@@ -1,0 +1,13 @@
+{
+  "as_of_date": "2026-09-08",
+  "option_put_oi": 140000,
+  "option_call_oi": 100000,
+  "front_futures_oi": 80000,
+  "next_futures_oi": 20000,
+  "put_wall": 65000,
+  "call_wall": 67000,
+  "magnet_strike": 66000,
+  "arbitrage_balance_zscore": 1.5,
+  "nikkei_vi_percentile": 0.8,
+  "source_notes": "Example only. Populate only from explicitly sourced, date-stamped data. Do not infer dealer gamma sign from OI alone."
+}
