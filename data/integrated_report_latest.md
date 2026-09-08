@@ -1,9 +1,9 @@
 # Investment Quant Daily Integrated Report v2.11
 
-Generated (UTC): 2026-09-07T07:32:59+00:00
+Generated (UTC): 2026-09-08T07:31:57+00:00
 
 ## 1. 結論 / 今日の優先アクション
-- **RISK REVIEW BEFORE NEW ACTION**
+- **SELECTIVE REVIEW OF TOP CANDIDATES**
 - Decision gate: `OPEN_FOR_ANALYSIS`
 - Screening / intelligence data actionable: `True`
 - Regime context actionable: `True`
@@ -11,57 +11,57 @@ Generated (UTC): 2026-09-07T07:32:59+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 68.85
+- Score: 63.76
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 15.020000457763672
+- VIX: 15.300000190734863
 - Treasury realized-vol proxy (not ICE MOVE): 66.084 bps annualized; percentile=0.5079
 - Flags: none
 
 ## 3. 例外検知 / アラート
-- Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 9, 'WARNING': 1, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WATCH] COMPANY_EVENT / KDDI株式会社とのブロンズパートナー 契約締結のお知らせ - 東京サンロッカーズ
-- [WATCH] COMPANY_EVENT / 楽天モバイル、KDDIのローミングは「10月以降も継続」と改めて告知 現在は「詰めの協議中」（ITmedia Mobile） - Yahoo!ニュース
-- [WATCH] COMPANY_EVENT / 楽天モバイル、一部エリアで10月以降もKDDIローミングを継続する方針を改めてお知らせ - ケータイ Watch
-- [WATCH] COMPANY_EVENT / 大失敗しても、なぜか「逆に信頼される人」は何が違うのか？KDDI元社長が見せた危機対応 - ダイヤモンド・オンライン
-- [WATCH] COMPANY_EVENT / ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-- [WATCH] COMPANY_EVENT / NECがファミリーマートに次期決済システムを提供というニュースが先週の1位 - クラウド Watch
-- [WATCH] COMPANY_EVENT / 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- Highest severity: **WATCH**
+- Counts: {'INFO': 0, 'WATCH': 10, 'WARNING': 0, 'CRITICAL': 0}
+- [WATCH] COMPANY_EVENT / ニデック悪材出尽くしはまだ遠く KDDIなど「改善銘柄」の回復は長期戦 - 日経CNBC online
+- [WATCH] COMPANY_EVENT / 山口県とKDDI、地域課題の解決に向けた包括連携協定を締結 - KDDI ニュースルーム
+- [WATCH] COMPANY_EVENT / 値上げで好調のKDDIとソフトバンク、ドコモも踏み切るか - 日本経済新聞
+- [WATCH] COMPANY_EVENT / ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp
+- [WATCH] COMPANY_EVENT / ｢パソコンで大敗したNEC｣が再び世界トップへ…営業赤字72億円のどん底から復活させた"世界最高峰の技術"【NEC3選】 - PRESIDENT Online（プレジデントオンライン）
+- [WATCH] COMPANY_EVENT / NEC、「DCエクセレントカンパニー2026」優秀賞および奨励賞をダブル受賞 - prtimes.jp
+- [WATCH] COMPANY_EVENT / 信越化学工業 化学品銘柄からAI銘柄へ 斉藤社長に聞く【大浜見聞録】 - txbiz.tv-tokyo.co.jp
+- [WATCH] COMPANY_EVENT / 信越化学工業－ＳＭＢＣ日興が目標株価引き下げ 押し目買いの好機 - TradingView
 
 ## 4. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=77.10834889203177 | cross_pct=100.0
-- 2. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=2.0 | raw=77.03766350307212 | cross_pct=99.94892747701736
-- 3. IwaiCosmo Holdings,Inc. 8707.T | market_rank=3.0 | raw=75.91068320757694 | cross_pct=99.89785495403473
-- 4. Akatsuki Inc. 3932.T | market_rank=5.0 | raw=75.68127833748596 | cross_pct=99.79570990806947
-- 5. ELECOM CO.,LTD. 6750.T | market_rank=9.0 | raw=72.53633802393016 | cross_pct=99.59141981613891
+- 1. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=1.0 | raw=76.97946520355674 | cross_pct=100.0
+- 2. Mito Securities Co.,Ltd. 8622.T | market_rank=2.0 | raw=76.8924725773499 | cross_pct=99.94877049180327
+- 3. IwaiCosmo Holdings,Inc. 8707.T | market_rank=3.0 | raw=75.70348029313493 | cross_pct=99.89754098360656
+- 4. Akatsuki Inc. 3932.T | market_rank=4.0 | raw=75.63691078412351 | cross_pct=99.84631147540983
+- 5. ELECOM CO.,LTD. 6750.T | market_rank=9.0 | raw=72.08168872055806 | cross_pct=99.59016393442623
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.03470382204122 | cross_pct=100.0
-- 2. Millrose Properties, Inc. Class A Common Stock MRP | market_rank=2.0 | raw=83.97952438297848 | cross_pct=99.97086247086247
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.64769348229139 | cross_pct=99.94172494172494
-- 4. Okeanis Eco Tankers Corp. Common Stock ECO | market_rank=4.0 | raw=82.65977192838541 | cross_pct=99.91258741258741
-- 5. Norwood Financial Corp. - Common Stock NWFL | market_rank=8.0 | raw=81.94699672620952 | cross_pct=99.7960372960373
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.02973758470665 | cross_pct=100.0
+- 2. Millrose Properties, Inc. Class A Common Stock MRP | market_rank=2.0 | raw=83.97649530324148 | cross_pct=99.97087944088527
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.64203773693816 | cross_pct=99.94175888177053
+- 4. Okeanis Eco Tankers Corp. Common Stock ECO | market_rank=4.0 | raw=82.65492177588118 | cross_pct=99.9126383226558
+- 5. Norwood Financial Corp. - Common Stock NWFL | market_rank=8.0 | raw=81.94118320546984 | cross_pct=99.79615608619685
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.03470382204122
-- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=77.10834889203177
-- 3. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.97086247086247 | raw=83.97952438297848
-- 4. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.94892747701736 | raw=77.03766350307212
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94172494172494 | raw=83.64769348229139
-- 6. [US] Okeanis Eco Tankers Corp. Common Stock | cross_pct=99.91258741258741 | raw=82.65977192838541
-- 7. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89785495403473 | raw=75.91068320757694
-- 8. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.7960372960373 | raw=81.94699672620952
-- 9. [JP] Akatsuki Inc. | cross_pct=99.79570990806947 | raw=75.68127833748596
-- 10. [US] TORM plc - Class A Common Stock | cross_pct=99.65034965034964 | raw=80.69114890520824
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.02973758470665
+- 2. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=100.0 | raw=76.97946520355674
+- 3. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.97087944088527 | raw=83.97649530324148
+- 4. [JP] Mito Securities Co.,Ltd. | cross_pct=99.94877049180327 | raw=76.8924725773499
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94175888177053 | raw=83.64203773693816
+- 6. [US] Okeanis Eco Tankers Corp. Common Stock | cross_pct=99.9126383226558 | raw=82.65492177588118
+- 7. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89754098360656 | raw=75.70348029313493
+- 8. [JP] Akatsuki Inc. | cross_pct=99.84631147540983 | raw=75.63691078412351
+- 9. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.79615608619685 | raw=81.94118320546984
+- 10. [US] TORM plc - Class A Common Stock | cross_pct=99.65055329062318 | raw=80.68557869803995
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 5. 過去判断の検証 / 学習
-- Matured observations: 37
+- Matured observations: 41
 - Eligible for model-change review: False
 - [INFO] regime / CONSTRUCTIVE|1w: Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
@@ -82,8 +82,8 @@ Generated (UTC): 2026-09-07T07:32:59+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.7点で優位性が弱い
-- 上位: スタンダード 75.1 / テクノロジー 73.4 / ビットコイン 70.6
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.6点で優位性が弱い
+- 上位: スタンダード 75.1 / テクノロジー 73.5 / ビットコイン 71.2
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

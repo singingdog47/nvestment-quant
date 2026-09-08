@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-07T07:30:42.599887+00:00
+- Data retrieved (UTC): 2026-09-08T07:29:54.486711+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -26,8 +26,8 @@
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 10 |
-| JP | Other | 10 |
+| JP | Financials | 9 |
+| JP | Other | 11 |
 | US | Financials | 5 |
 | US | Mortgage REIT | 4 |
 | US | Other | 6 |
@@ -37,16 +37,16 @@
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.1 | 100.0 | unchanged |
-| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 77.0 | 99.9 | unchanged |
-| JP | 3 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.9 | 99.9 | unchanged |
-| JP | 5 | 3932.T | Akatsuki Inc. | Other | 75.7 | 99.8 | unchanged |
-| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 72.5 | 99.6 | unchanged |
-| JP | 10 | 6927.T | Helios Techno Holding Co.,Ltd. | Other | 71.8 | 99.5 | unchanged |
-| JP | 11 | 2121.T | MIXI,Inc. | Other | 71.6 | 99.5 | unchanged |
-| JP | 12 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.0 | 99.4 | unchanged |
-| JP | 14 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.3 | 99.3 | unchanged |
-| JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 70.1 | 99.3 | unchanged |
+| JP | 1 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 77.0 | 100.0 | unchanged |
+| JP | 2 | 8622.T | Mito Securities Co.,Ltd. | Financials | 76.9 | 99.9 | unchanged |
+| JP | 3 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.7 | 99.9 | unchanged |
+| JP | 4 | 3932.T | Akatsuki Inc. | Other | 75.6 | 99.8 | unchanged |
+| JP | 9 | 6750.T | ELECOM CO.,LTD. | Other | 72.1 | 99.6 | unchanged |
+| JP | 10 | 6927.T | Helios Techno Holding Co.,Ltd. | Other | 72.0 | 99.5 | unchanged |
+| JP | 11 | 2121.T | MIXI,Inc. | Other | 71.7 | 99.5 | unchanged |
+| JP | 12 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.1 | 99.4 | unchanged |
+| JP | 13 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.0 | 99.4 | unchanged |
+| JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 70.2 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | 100.0 | unchanged |
 | US | 2 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 84.0 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.6 | 99.9 | unchanged |

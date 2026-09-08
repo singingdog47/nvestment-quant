@@ -3,14 +3,14 @@ JP,4063,4063.T,信越化学工業,high,watchlist
 JP,9433,9433.T,KDDI,high,watchlist
 JP,6701,6701.T,NEC,high,watchlist
 US,CARE,CARE,"Carter Bankshares, Inc. - Common Stock",normal,screening
-JP,8622,8622.T,"Mito Securities Co.,Ltd.",normal,screening
-US,MRP,MRP,"Millrose Properties, Inc. Class A Common Stock",normal,screening
 JP,8624,8624.T,"Ichiyoshi Securities Co.,Ltd.",normal,screening
+US,MRP,MRP,"Millrose Properties, Inc. Class A Common Stock",normal,screening
+JP,8622,8622.T,"Mito Securities Co.,Ltd.",normal,screening
 US,INSW,INSW,"International Seaways, Inc. Common Stock ",normal,screening
 US,ECO,ECO,Okeanis Eco Tankers Corp. Common Stock,normal,screening
 JP,8707,8707.T,"IwaiCosmo Holdings,Inc.",normal,screening
-US,NWFL,NWFL,Norwood Financial Corp. - Common Stock,normal,screening
 JP,3932,3932.T,Akatsuki Inc.,normal,screening
+US,NWFL,NWFL,Norwood Financial Corp. - Common Stock,normal,screening
 US,TRMD,TRMD,TORM plc - Class A Common Stock,normal,screening
 US,ADAM,ADAM,"Adamas Trust, Inc. - Common Stock",normal,screening
 US,WSBC,WSBC,"WesBanco, Inc. - Common Stock",normal,screening
@@ -28,9 +28,9 @@ US,CMBT,CMBT,CMB.TECH NV Ordinary Shares,normal,screening
 JP,8789,8789.T,FinTech Global Incorporated,normal,screening
 US,LPG,LPG,Dorian LPG Ltd. Common Stock,normal,screening
 US,ACNB,ACNB,ACNB Corporation - Common Stock,normal,screening
+JP,9757,9757.T,Funai Soken Holdings Incorporated,normal,screening
 US,LTC,LTC,"LTC Properties, Inc. Common Stock",normal,screening
 JP,3989,3989.T,SHARINGTECHNOLOGY.INC,normal,screening
 US,HTGC,HTGC,"Hercules Capital, Inc. Common Stock",normal,screening
-US,EXE,EXE,Expand Energy Corporation - Common Stock,normal,screening
 JP,2726,2726.T,パルグループホールディングス,normal,watchlist
 JP,215A,215A.T,タイミー,normal,watchlist
