@@ -288,7 +288,7 @@ def inject_into_reports(root: str | Path = ".") -> None:
     wrapped = f"{start}\n{block}\n{end}\n"
     for path, marker in [
         (root / "data/mobile_brief_latest.md", "## 判断の確からしさ"),
-        (root / "data/integrated_report_latest.md", "## 8. 開発状況 / 復旧準備")
+        (root / "data/integrated_report_latest.md", "## 9. 開発状況 / 復旧準備")
     ]:
         if not path.exists():
             continue

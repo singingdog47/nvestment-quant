@@ -49,11 +49,12 @@ def test_master_pipeline_order_and_privacy_guards():
         '1. Daily Quant Screen',
         '3. Market Regime Engine',
         '4. Company Intelligence',
-        '5. Exception Alerts',
-        '7. Decision validation and benchmark-relative learning',
+        '5. Supply / Demand Context',
+        '6. Exception Alerts',
+        '8. Decision validation and benchmark-relative learning',
         # Match the stable stage prefix; the descriptive suffix may expand as
         # private diagnostics are added to the same ordered pipeline stage.
-        '8. Private Portfolio Risk',
+        '9. Private Portfolio Risk',
         'Commit public-safe outputs once',
     ]
     positions = [text.index(x) for x in expected]

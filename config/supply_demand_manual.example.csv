@@ -1,0 +1,2 @@
+market,code,ticker,as_of_date,source_name,source_tier,source_url,shares_outstanding,free_float_shares,free_float_ratio,shares_short,shares_short_prior_month,short_percent_float,days_to_cover,short_interest_date,avg_volume_30d,current_volume,current_price,daily_change_pct,held_percent_insiders,held_percent_institutions
+JP,6965,6965.T,2026-09-08,company_or_exchange_primary_source,primary,https://example.com/source,,,,,,,,,,,,,,

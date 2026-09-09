@@ -1,4 +1,4 @@
-name: Investment Quant Post-Close Pipeline v2.12
+name: Investment Quant Post-Close Pipeline v2.13
 
 on:
   workflow_dispatch:
@@ -75,11 +75,13 @@ jobs:
         run: python src/run_market_regime.py
       - name: 4. Company Intelligence
         run: python src/run_company_intel.py
-      - name: 5. Exception Alerts
+      - name: 5. Supply / Demand Context
+        run: python src/run_supply_demand.py
+      - name: 6. Exception Alerts
         run: python src/run_alerts.py
-      - name: 6. Verify public intelligence outputs
+      - name: 7. Verify public intelligence outputs
         run: python tools/verify_outputs.py
-      - name: 7. Decision validation and benchmark-relative learning
+      - name: 8. Decision validation and benchmark-relative learning
         run: python src/run_validation.py
       - name: Check private Drive configuration
         id: private_config
@@ -91,23 +93,23 @@ jobs:
             echo "configured=false" >> "$GITHUB_OUTPUT"
             echo "Private Google Drive secrets are not configured; private risk analysis skipped."
           fi
-      - name: 8. Private Portfolio Risk + Valuation + Monthly Diagnostics + History
+      - name: 9. Private Portfolio Risk + Valuation + Monthly Diagnostics + History
         if: steps.private_config.outputs.configured == 'true'
         run: python src/run_portfolio_risk.py
-      - name: 9. Final Integrated Daily Report
+      - name: 10. Final Integrated Daily Report
         if: always() && !cancelled()
         run: python src/run_final_report.py
-      - name: 10. Human-readable mobile brief
+      - name: 11. Human-readable mobile brief
         if: always() && !cancelled()
         run: python src/run_mobile_brief.py
-      - name: 11. PayPay swing research monitor + report integration
+      - name: 12. PayPay swing research monitor + report integration
         if: always() && !cancelled()
         run: python src/run_paypay_swing.py
       - name: Upload human-readable public reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: human-readable-daily-report-v2.12
+          name: human-readable-daily-report-v2.13
           path: |
             data/mobile_brief_latest.md
             data/integrated_report_latest.md
@@ -116,6 +118,10 @@ jobs:
             data/data_coverage_latest.json
             data/regime/market_context_latest.md
             data/regime/sq_execution_overlay_latest.json
+            data/supply_demand/supply_demand_latest.csv
+            data/supply_demand/supply_demand_summary_latest.json
+            data/supply_demand/supply_demand_summary_latest.md
+            data/supply_demand/supply_demand_history.csv
             data/paypay_swing/paypay_swing_daily_latest.md
             data/paypay_swing/paypay_swing_weekly_latest.md
             data/paypay_swing/paypay_swing_latest.json
@@ -134,12 +140,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json data/data_coverage_latest.json data/daily_report.md data/integrated_report_latest.md data/mobile_brief_latest.md data/regime data/intelligence data/alerts data/state data/ai_context_latest.md data/decision_context_latest.json data/validation data/paypay_swing
+          git add -- data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json data/data_coverage_latest.json data/daily_report.md data/integrated_report_latest.md data/mobile_brief_latest.md data/regime data/intelligence data/supply_demand/supply_demand_latest.csv data/supply_demand/supply_demand_summary_latest.json data/supply_demand/supply_demand_summary_latest.md data/supply_demand/supply_demand_history.csv data/alerts data/state data/ai_context_latest.md data/decision_context_latest.json data/validation data/paypay_swing
           if git diff --cached --quiet; then
             echo "No post-close output changes to commit."
             exit 0
           fi
-          git commit -m "data: refresh integrated post-close pipeline v2.12"
+          git commit -m "data: refresh integrated post-close pipeline v2.13"
           git pull --rebase
           git push
 

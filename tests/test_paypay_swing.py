@@ -1,4 +1,6 @@
-from paypay_swing import _cost, _research_status, score_rows
+import json
+
+from paypay_swing import _cost, _research_status, inject_into_reports, score_rows
 
 
 def _base_config():
@@ -71,3 +73,28 @@ def test_research_status_waits_when_leader_margin_is_too_small():
     result = _research_status(ranking, cfg)
     assert result["status"] == "WAIT_RESEARCH"
     assert result["leader"] is None
+
+
+def test_report_injection_uses_v2_13_final_report_marker(tmp_path):
+    output = tmp_path / "data/paypay_swing"
+    output.mkdir(parents=True)
+    (output / "paypay_swing_latest.json").write_text(
+        json.dumps({
+            "research_status": {"status": "WAIT_RESEARCH", "reason": "test"},
+            "ranking": [],
+        }),
+        encoding="utf-8",
+    )
+    (tmp_path / "data/mobile_brief_latest.md").write_text(
+        "# Brief\n\n## 判断の確からしさ\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "data/integrated_report_latest.md").write_text(
+        "# Report\n\n## 9. 開発状況 / 復旧準備\n",
+        encoding="utf-8",
+    )
+
+    inject_into_reports(tmp_path)
+
+    final_text = (tmp_path / "data/integrated_report_latest.md").read_text(encoding="utf-8")
+    assert final_text.index("## PayPay Swing") < final_text.index("## 9. 開発状況 / 復旧準備")

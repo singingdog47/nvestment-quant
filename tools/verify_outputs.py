@@ -10,6 +10,8 @@ REQUIRED=[
  "data/intelligence/data_quality_latest.json",
  "data/intelligence/ai_context_latest.md",
  "data/intelligence/system_health_latest.json",
+ "data/supply_demand/supply_demand_latest.csv",
+ "data/supply_demand/supply_demand_summary_latest.json",
 ]
 
 def main():

@@ -119,7 +119,11 @@ def _yf_fallback(df, max_targets=40):
 
     rows = 0
     errors = []
-    wanted = df[df["fundamental_status"] != "ok"].head(max_targets)
+    # Supply/demand context is required even when a primary fundamentals feed
+    # is available, so inspect every monitored target (within the configured
+    # cap).  Keep the supply fields separate from the fundamental status gate:
+    # a float-share observation must never inflate fundamental coverage.
+    wanted = df.head(max_targets)
 
     for idx, r in wanted.iterrows():
         ticker = str(r.get("ticker", "")).strip()
@@ -127,7 +131,7 @@ def _yf_fallback(df, max_targets=40):
             continue
         try:
             info = yf.Ticker(ticker).info or {}
-            fields = {
+            fundamental_fields = {
                 "yf_price": info.get("currentPrice")
                 or info.get("regularMarketPrice"),
                 "yf_market_cap": info.get("marketCap"),
@@ -141,12 +145,33 @@ def _yf_fallback(df, max_targets=40):
                 "yf_dividend_yield": info.get("dividendYield"),
                 "yf_beta": info.get("beta"),
             }
+            supply_fields = {
+                "yf_shares_outstanding": info.get("sharesOutstanding"),
+                "yf_float_shares": info.get("floatShares"),
+                "yf_held_percent_insiders": info.get("heldPercentInsiders"),
+                "yf_held_percent_institutions": info.get("heldPercentInstitutions"),
+                "yf_shares_short": info.get("sharesShort"),
+                "yf_shares_short_prior_month": info.get("sharesShortPriorMonth"),
+                "yf_short_percent_float": info.get("shortPercentOfFloat"),
+                "yf_short_ratio_days": info.get("shortRatio"),
+                "yf_short_interest_date": info.get("dateShortInterest"),
+                "yf_average_volume": info.get("averageVolume"),
+                "yf_regular_market_volume": info.get("regularMarketVolume"),
+                "yf_regular_market_change_pct": info.get("regularMarketChangePercent"),
+                "yf_regular_market_time": info.get("regularMarketTime"),
+            }
+            fields = {**fundamental_fields, **supply_fields}
             for k, v in fields.items():
                 df.loc[idx, k] = v
 
-            if any(v is not None for v in fields.values()):
+            if any(v is not None for v in fundamental_fields.values()):
                 df.loc[idx, "secondary_snapshot_status"] = "ok"
                 df.loc[idx, "secondary_snapshot_source"] = "yfinance"
+            if any(v is not None for v in supply_fields.values()):
+                df.loc[idx, "supply_demand_source_status"] = "ok"
+                df.loc[idx, "supply_demand_source"] = "yfinance"
+
+            if any(v is not None for v in fields.values()):
                 rows += 1
         except Exception as e:
             errors.append(f"{ticker}:{type(e).__name__}")
@@ -168,6 +193,8 @@ def build_snapshot(targets, yfinance_enabled=True, yfinance_max_targets=40):
     base["fundamental_status"] = "missing"
     base["secondary_snapshot_status"] = "missing"
     base["secondary_snapshot_source"] = ""
+    base["supply_demand_source_status"] = "missing"
+    base["supply_demand_source"] = ""
     base["secondary_fundamental_status"] = "missing"
     base["secondary_fundamental_source_file"] = ""
 

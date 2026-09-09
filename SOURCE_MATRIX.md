@@ -1,4 +1,4 @@
-# Source Matrix v1.6
+# Source Matrix v1.7
 
 | Layer | Data | Primary/Secondary | Used for trade facts? | Failure behavior |
 |---|---|---|---|---|
@@ -13,3 +13,6 @@
 | Company v1.6 | Company IR | primary | yes when configured | best effort |
 | Company v1.6 | Google News RSS | secondary | detection only | never sufficient for buy/sell |
 | Company v1.6 | yfinance snapshot | secondary | fallback reference only | never overrides primary |
+| Supply/Demand v1.0 | Company/exchange dated manual input | primary when explicitly sourced | monitoring/execution context only | stale or missing stays missing |
+| Supply/Demand v1.0 | yfinance float shares / short interest / volume | secondary | monitoring/execution context only; never changes ranking | missing + lower coverage/confidence |
+| Supply/Demand v1.0 | Screening volume/turnover | internal secondary fallback | liquidity context only | no free-float inference |

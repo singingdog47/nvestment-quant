@@ -149,6 +149,7 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
     ctx = _load_json(root / "data/decision_context_latest.json")
     quality_file = _load_json(root / "data/quality_report.json")
     regime = _load_json(root / "data/regime/market_regime_latest.json")
+    supply = _load_json(root / "data/supply_demand/supply_demand_summary_latest.json")
     alerts = _load_json(root / "data/alerts/alerts_latest.json")
     rows = _load_csv(root / "data/screening_latest.csv")
     quality = ctx.get("quality") or {}
@@ -233,6 +234,25 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
     else:
         sq_story = "現在はメジャーSQの執行警戒期間外です。SQ要因による注文条件の変更はありません。"
 
+    supply_status = str(supply.get("data_status") or "missing")
+    supply_coverage = supply.get("coverage") or {}
+    supply_notable = supply.get("notable_contexts") or []
+    if supply_status == "missing":
+        supply_story = "監視銘柄の浮動株・空売り需給は未取得です。欠損を前回値や推定値で補いません。"
+    else:
+        supply_story = (
+            f"監視対象の浮動株比率カバレッジは{_percent(supply_coverage.get('free_float_ratio'))}、"
+            f"空売り需給は{_percent(supply_coverage.get('short_interest'))}、"
+            f"当日出来高比較は{_percent(supply_coverage.get('current_vs_average_volume'))}です。"
+        )
+    if supply_notable:
+        labels = "、".join(
+            f"{item.get('name') or item.get('ticker') or item.get('code')}（{item.get('context_flags')}）"
+            for item in supply_notable[:4]
+        )
+        supply_story += f" 例外観測は{labels}です。"
+    supply_story += " これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。"
+
     alerts_lines: list[str] = []
     for alert in (alerts.get("alerts") or [])[:4]:
         alerts_lines.append(f"- **{alert.get('severity', 'INFO')}** {alert.get('title', '詳細不明')} — 売買指示ではなく確認対象です。")
@@ -279,6 +299,11 @@ def _public_story(root: Path) -> tuple[list[str], dict[str, Any]]:
         "",
         sq_story,
         "SQは短期需給の補助レイヤーです。銘柄ランキング、ファンダメンタルズ評価、投資仮説は変更しません。",
+        "",
+        "## 個別銘柄の需給",
+        "",
+        supply_story,
+        "浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。",
         "",
         "## 今日の注意点",
         "",
