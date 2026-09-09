@@ -56,3 +56,27 @@ def test_private_appendix_is_not_public(tmp_path: Path):
     assert 'SECRET_RISK_VALUE' not in public_path.read_text(encoding='utf-8')
     assert private_path is not None
     assert 'SECRET_RISK_VALUE' in private_path.read_text(encoding='utf-8')
+
+
+def test_final_report_surfaces_supply_context_without_changing_ranking(tmp_path: Path):
+    (tmp_path / 'data/regime').mkdir(parents=True)
+    (tmp_path / 'data/alerts').mkdir(parents=True)
+    (tmp_path / 'data/validation').mkdir(parents=True)
+    (tmp_path / 'data/supply_demand').mkdir(parents=True)
+    (tmp_path / 'data/supply_demand/supply_demand_summary_latest.json').write_text(json.dumps({
+        'data_status': 'partial',
+        'target_scope': 'public watchlist plus screening leaders; private portfolio excluded',
+        'coverage': {'free_float_ratio': 0.5},
+        'notable_contexts': [{
+            'market': 'JP', 'ticker': '6965.T', 'name': 'Hamamatsu Photonics',
+            'context_flags': 'TIGHT_FLOAT',
+        }],
+        'governance': {'alters_security_ranking': False},
+    }), encoding='utf-8')
+
+    public_path, _ = build_final_report(tmp_path)
+    text = public_path.read_text(encoding='utf-8')
+
+    assert '個別銘柄の需給コンテキスト' in text
+    assert 'Hamamatsu Photonics: TIGHT_FLOAT' in text
+    assert '銘柄順位・ファンダメンタルズ評価・投資仮説は変更しません' in text

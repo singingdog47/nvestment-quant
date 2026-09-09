@@ -32,6 +32,13 @@ def _numeric(row: dict[str, str], key: str, default: float = -1e9) -> float:
         return default
 
 
+def _percent(value: Any) -> str:
+    try:
+        return f"{float(value) * 100:.1f}%"
+    except (TypeError, ValueError):
+        return "missing"
+
+
 def _candidate_label(r: dict[str, str]) -> str:
     return str(r.get("name") or r.get("ticker") or r.get("code") or "unknown")
 
@@ -51,6 +58,7 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     ctx = _load_json(root / "data/decision_context_latest.json")
     regime = _load_json(root / "data/regime/market_regime_latest.json")
+    supply = _load_json(root / "data/supply_demand/supply_demand_summary_latest.json")
     alerts = _load_json(root / "data/alerts/alerts_latest.json")
     learning = _load_json(root / "data/validation/learning_latest.json")
     rows = _screening_rows(root / "data/screening_latest.csv")
@@ -76,10 +84,54 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
         priority = "SELECTIVE REVIEW OF TOP CANDIDATES"
 
     evidence = regime.get("evidence") or {}
-    lines = [f"# Investment Quant Daily Integrated Report {SYSTEM_VERSION}", "", f"Generated (UTC): {now}", "", "## 1. 結論 / 今日の優先アクション", f"- **{priority}**", f"- Decision gate: `{gate}`", f"- Screening / intelligence data actionable: `{quality_actionable}`", f"- Regime context actionable: `{regime_actionable}`", f"- Overall analysis mode: `{analysis_mode}`", "", "## 2. 市場レジーム", f"- Regime: **{regime.get('regime_label', 'unknown')}**", f"- Score: {regime.get('regime_score', 'n/a')}", f"- Confidence: {regime.get('confidence', 'n/a')}", f"- Data status: {regime.get('data_status', 'unknown')}", f"- Actionability reasons: {', '.join((regime.get('actionability') or {}).get('reasons') or []) or 'none'}", f"- VIX: {evidence.get('vix', 'n/a')}", f"- Treasury realized-vol proxy (not ICE MOVE): {evidence.get('treasury_volatility_proxy', 'n/a')} bps annualized; percentile={evidence.get('treasury_volatility_percentile_rank', 'n/a')}", f"- Flags: {', '.join(regime.get('regime_flags') or []) or 'none'}", "", "## 3. 例外検知 / アラート", f"- Highest severity: **{highest}**", f"- Counts: {alerts.get('counts', {})}"]
+    supply_coverage = supply.get("coverage") or {}
+    lines = [
+        f"# Investment Quant Daily Integrated Report {SYSTEM_VERSION}",
+        "",
+        f"Generated (UTC): {now}",
+        "",
+        "## 1. 結論 / 今日の優先アクション",
+        f"- **{priority}**",
+        f"- Decision gate: `{gate}`",
+        f"- Screening / intelligence data actionable: `{quality_actionable}`",
+        f"- Regime context actionable: `{regime_actionable}`",
+        f"- Overall analysis mode: `{analysis_mode}`",
+        "",
+        "## 2. 市場レジーム",
+        f"- Regime: **{regime.get('regime_label', 'unknown')}**",
+        f"- Score: {regime.get('regime_score', 'n/a')}",
+        f"- Confidence: {regime.get('confidence', 'n/a')}",
+        f"- Data status: {regime.get('data_status', 'unknown')}",
+        f"- Actionability reasons: {', '.join((regime.get('actionability') or {}).get('reasons') or []) or 'none'}",
+        f"- VIX: {evidence.get('vix', 'n/a')}",
+        f"- Treasury realized-vol proxy (not ICE MOVE): {evidence.get('treasury_volatility_proxy', 'n/a')} bps annualized; percentile={evidence.get('treasury_volatility_percentile_rank', 'n/a')}",
+        f"- Flags: {', '.join(regime.get('regime_flags') or []) or 'none'}",
+        "",
+        "## 3. 個別銘柄の需給コンテキスト",
+        f"- Data status: {supply.get('data_status', 'missing')}",
+        f"- Scope: {supply.get('target_scope', 'not generated')}",
+        "- Coverage: "
+        f"free-float={_percent(supply_coverage.get('free_float_ratio'))}, "
+        f"short-interest={_percent(supply_coverage.get('short_interest'))}, "
+        f"current/average volume={_percent(supply_coverage.get('current_vs_average_volume'))}",
+        "- 用途は監視・執行注意・退出流動性の確認に限定し、銘柄順位・ファンダメンタルズ評価・投資仮説は変更しません。",
+    ]
+    notable_supply = supply.get("notable_contexts") or []
+    if notable_supply:
+        for item in notable_supply[:8]:
+            label = item.get("name") or item.get("ticker") or item.get("code") or "unknown"
+            lines.append(f"- [{item.get('market', '?')}] {label}: {item.get('context_flags', 'NO_EXCEPTION')}")
+    else:
+        lines.append("- 例外なし、または必要データ未取得。欠損を前回値で補完しません。")
+    lines += [
+        "",
+        "## 4. 例外検知 / アラート",
+        f"- Highest severity: **{highest}**",
+        f"- Counts: {alerts.get('counts', {})}",
+    ]
     for a in (alerts.get("alerts") or [])[:8]:
         lines.append(f"- [{a.get('severity')}] {a.get('category')} / {a.get('title')}")
-    lines += ["", "## 4. スクリーニング上位候補", "", "### 日本株（市場内順位）"]
+    lines += ["", "## 5. スクリーニング上位候補", "", "### 日本株（市場内順位）"]
     jp = _leaders(rows, "JP")
     lines += [f"- {i}. {_candidate_label(r)} {r.get('ticker') or r.get('code') or ''} | market_rank={r.get('market_rank','n/a')} | raw={r.get('total_score','n/a')} | cross_pct={r.get('cross_market_score','n/a')}" for i, r in enumerate(jp, 1)] or ["- データ未取得"]
     lines += ["", "### 米国株（市場内順位）"]
@@ -90,16 +142,16 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
     lines += [f"- {i}. [{r.get('market','?')}] {_candidate_label(r)} | cross_pct={r.get('cross_market_score','n/a')} | raw={r.get('total_score','n/a')}" for i, r in enumerate(cross, 1)] or ["- データ未取得"]
     lines.append("- 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。")
     change = learning.get("change_gate") or {}
-    lines += ["", "## 5. 過去判断の検証 / 学習", f"- Matured observations: {change.get('matured_observations', 0)}", f"- Eligible for model-change review: {change.get('eligible_for_model_change_review', False)}"]
+    lines += ["", "## 6. 過去判断の検証 / 学習", f"- Matured observations: {change.get('matured_observations', 0)}", f"- Eligible for model-change review: {change.get('eligible_for_model_change_review', False)}"]
     for f in (learning.get("findings") or [])[:6]:
         lines.append(f"- [{f.get('severity')}] {f.get('dimension')} / {f.get('segment')}: {f.get('message')}")
-    lines += ["", "## 6. データ品質 / 反証", f"- Quality score: {quality.get('quality_score', 'n/a')}", f"- Primary source health (configured feeds only): {quality.get('primary_source_health', 'n/a')}", f"- Primary fundamental coverage: {quality.get('primary_fundamental_coverage', quality.get('fundamental_coverage', 'n/a'))}", f"- Secondary fundamental coverage: {quality.get('secondary_fundamental_coverage', 'n/a')}", f"- Effective fundamental coverage: {quality.get('effective_fundamental_coverage', 'n/a')}", f"- Fundamental evidence tier: {quality.get('fundamental_evidence_tier', 'n/a')}"]
+    lines += ["", "## 7. データ品質 / 反証", f"- Quality score: {quality.get('quality_score', 'n/a')}", f"- Primary source health (configured feeds only): {quality.get('primary_source_health', 'n/a')}", f"- Primary fundamental coverage: {quality.get('primary_fundamental_coverage', quality.get('fundamental_coverage', 'n/a'))}", f"- Secondary fundamental coverage: {quality.get('secondary_fundamental_coverage', 'n/a')}", f"- Effective fundamental coverage: {quality.get('effective_fundamental_coverage', 'n/a')}", f"- Fundamental evidence tier: {quality.get('fundamental_evidence_tier', 'n/a')}"]
     optional = quality.get("optional_primary_sources_unconfigured") or quality.get("missing_primary_configuration") or []
     if optional:
         lines.append("- Optional primary feeds not configured (confidence booster; not a hard decision blocker):")
         for item in optional:
             lines.append(f"  - {item.get('source')}: {item.get('reason')}")
-    lines += ["- Missing data must not be converted into unsupported buy/sell conclusions.", "", "## 7. ポートフォリオ", "- 公開版には保有情報・私有リスク値を保存しません。", "- 同一実行内で private engine が成功した場合、リスク・バリュエーション・月次寄与度を私有版に統合します。", "- 残高増減はTWRとして扱わず、入出金境界データが不足する場合は運用成績を withheld にします。", "", "## 8. 開発状況 / 復旧準備", f"- System version: {SYSTEM_VERSION}", f"- Development: {DEVELOPMENT_STATUS}", f"- Stable fallback branch: `{STABLE_FALLBACK_BRANCH}`", f"- Rollback ready: `{ROLLBACK_READY}`", "- 新版で障害が起きても、固定安定版から公開レポートを生成できる経路を維持します。", "", "## 9. ガードレール", "- このレポートは売買指示ではなく、意思決定支援です。", "- 自動発注・自動因子ウェイト変更は行いません。", "- 『何もしない / 待つ』を常に有効な選択肢として扱います。"]
+    lines += ["- Missing data must not be converted into unsupported buy/sell conclusions.", "", "## 8. ポートフォリオ", "- 公開版には保有情報・私有リスク値を保存しません。", "- 同一実行内で private engine が成功した場合、リスク・バリュエーション・月次寄与度を私有版に統合します。", "- 残高増減はTWRとして扱わず、入出金境界データが不足する場合は運用成績を withheld にします。", "", "## 9. 開発状況 / 復旧準備", f"- System version: {SYSTEM_VERSION}", f"- Development: {DEVELOPMENT_STATUS}", f"- Stable fallback branch: `{STABLE_FALLBACK_BRANCH}`", f"- Rollback ready: `{ROLLBACK_READY}`", "- 新版で障害が起きても、固定安定版から公開レポートを生成できる経路を維持します。", "", "## 10. ガードレール", "- このレポートは売買指示ではなく、意思決定支援です。", "- 自動発注・自動因子ウェイト変更は行いません。", "- 『何もしない / 待つ』を常に有効な選択肢として扱います。"]
     public_path = root / "data/integrated_report_latest.md"
     public_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     private_risk = root / ".private/portfolio_risk/portfolio_risk_latest.md"

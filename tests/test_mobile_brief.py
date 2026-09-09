@@ -7,6 +7,7 @@ from mobile_brief import build_mobile_brief
 def _public_fixture(root: Path) -> None:
     (root / "data/regime").mkdir(parents=True)
     (root / "data/alerts").mkdir(parents=True)
+    (root / "data/supply_demand").mkdir(parents=True)
     (root / "data/decision_context_latest.json").write_text(
         json.dumps({
             "quality": {"actionable": True, "quality_score": 0.745},
@@ -38,6 +39,23 @@ def _public_fixture(root: Path) -> None:
         json.dumps({"highest_severity": "WATCH", "alerts": [{"severity": "WATCH", "title": "Market liquidity is soft"}]}),
         encoding="utf-8",
     )
+    (root / "data/supply_demand/supply_demand_summary_latest.json").write_text(
+        json.dumps({
+            "data_status": "partial",
+            "coverage": {
+                "free_float_ratio": 0.75,
+                "short_interest": 0.25,
+                "current_vs_average_volume": 1.0,
+            },
+            "notable_contexts": [{
+                "market": "JP",
+                "ticker": "6965.T",
+                "name": "Hamamatsu Photonics",
+                "context_flags": "TIGHT_FLOAT|VOLUME_EXPANSION",
+            }],
+        }),
+        encoding="utf-8",
+    )
     (root / "data/screening_latest.csv").write_text(
         "market,market_rank,name,ticker,theme,research_status,daily_change\n"
         "JP,1,Mito Securities,8622.T,Financials,research_candidate,unchanged\n"
@@ -64,6 +82,9 @@ def test_mobile_brief_tells_a_market_story(tmp_path: Path) -> None:
     assert "今日の戦略" in text
     assert "Financialsが7銘柄" in text
     assert "Mito Securities" in text
+    assert "個別銘柄の需給" in text
+    assert "浮動株比率カバレッジは75.0%" in text
+    assert "Hamamatsu Photonics（TIGHT_FLOAT|VOLUME_EXPANSION）" in text
     assert private_path is None
 
 

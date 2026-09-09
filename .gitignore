@@ -3,6 +3,7 @@ __pycache__/
 .venv/
 *.pyc
 data/yf_cache/
+data/supply_demand/supply_demand_manual_latest.csv
 
 # Private portfolio inputs / outputs
 .private/

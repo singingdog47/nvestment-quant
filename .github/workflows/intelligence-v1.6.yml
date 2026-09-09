@@ -53,6 +53,9 @@ jobs:
           ALLOW_REPO_PORTFOLIO: '0'
         run: python src/run_company_intel.py
 
+      - name: Update Supply / Demand Context v1.0
+        run: python src/run_supply_demand.py
+
       - name: Update Exception Alerts v1.9
         env:
           RANK_ALERT_THRESHOLD: '15'
@@ -75,6 +78,10 @@ jobs:
             data/regime \
             data/data_coverage_latest.json \
             data/intelligence \
+            data/supply_demand/supply_demand_latest.csv \
+            data/supply_demand/supply_demand_summary_latest.json \
+            data/supply_demand/supply_demand_summary_latest.md \
+            data/supply_demand/supply_demand_history.csv \
             data/alerts \
             data/state \
             data/ai_context_latest.md \

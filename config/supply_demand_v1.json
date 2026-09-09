@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "inputs": {
+    "company_snapshot": "data/intelligence/company_snapshot_latest.csv",
+    "manual_override": "config/supply_demand_manual.csv"
+  },
+  "outputs": {
+    "directory": "data/supply_demand",
+    "latest_csv": "supply_demand_latest.csv",
+    "summary_json": "supply_demand_summary_latest.json",
+    "summary_markdown": "supply_demand_summary_latest.md",
+    "history_csv": "supply_demand_history.csv",
+    "history_retention_days": 400
+  },
+  "thresholds": {
+    "tight_free_float_ratio": 0.30,
+    "high_average_float_turnover_ratio": 0.02,
+    "crowded_short_percent_float": 0.10,
+    "high_days_to_cover": 5.0,
+    "material_short_interest_change_ratio": 0.20,
+    "volume_expansion_ratio": 1.50,
+    "material_daily_move": 0.02,
+    "execution_participation_rate": 0.10
+  },
+  "freshness": {
+    "manual_float_max_age_days": 400,
+    "manual_short_max_age_days": 45,
+    "manual_market_max_age_days": 7
+  },
+  "governance": {
+    "alters_security_ranking": false,
+    "alters_fundamental_score": false,
+    "alters_investment_thesis": false,
+    "permitted_uses": [
+      "monitoring_context",
+      "execution_caution",
+      "liquidity_due_diligence"
+    ],
+    "missing_value_policy": "preserve_missing_no_imputation"
+  }
+}
