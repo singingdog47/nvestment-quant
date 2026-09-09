@@ -6,9 +6,9 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-09T07:30:26+00:00",
-  "generated_at_utc": "2026-09-09T07:30:26+00:00",
-  "date_jst": "2026-09-09",
+  "generated_at": "2026-09-09T22:27:31+00:00",
+  "generated_at_utc": "2026-09-09T22:27:31+00:00",
+  "date_jst": "2026-09-10",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
   "regime_score": 60.99,
@@ -28,28 +28,28 @@ Generated quality score: **0.745** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 54.2730444783914,
-    "stress": 87.44750011444091,
+    "trend": 53.88147050636896,
+    "stress": 86.81000068664551,
     "participation": 53.00829875518672,
-    "liquidity": 47.59822820011253,
+    "liquidity": 49.49762356106936,
     "positioning": 51.00577429462018
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.65999984741211,
-    "hy_oas": 2.68,
+    "vix": 16.459999084472656,
+    "hy_oas": 2.67,
     "ig_oas": 0.81,
-    "treasury_volatility_proxy": 62.979,
-    "treasury_volatility_percentile_rank": 0.4048,
-    "treasury_volatility_stress_score": 69.64,
-    "treasury_volatility_as_of_date": "2026-09-08",
+    "treasury_volatility_proxy": 63.039,
+    "treasury_volatility_percentile_rank": 0.4087,
+    "treasury_volatility_stress_score": 69.35,
+    "treasury_volatility_as_of_date": "2026-09-09",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9566,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-09T07:30:23.995238+00:00",
     "nfci": -0.558,
-    "volume_ratio20_mean": 0.8423057050028132,
+    "volume_ratio20_mean": 0.8897905890267339,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -78,21 +78,21 @@ Generated quality score: **0.745** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": true,
-      "as_of_date": "2026-09-09",
+      "as_of_date": "2026-09-10",
       "next_major_sq_date": "2026-09-11",
-      "days_to_sq": 2,
-      "event_proximity_score": 71.43,
-      "pressure_intensity_score": 71.43,
+      "days_to_sq": 1,
+      "event_proximity_score": 85.71,
+      "pressure_intensity_score": 85.71,
       "confidence": 0.25,
       "data_status": "partial",
       "manual_input_freshness": "missing",
       "manual_input_age_days": null,
-      "execution_caution_points": 2.68,
+      "execution_caution_points": 3.21,
       "caution_cap_points": 15.0,
-      "execution_stance": "NORMAL",
+      "execution_stance": "MILD_CAUTION",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 65142.78125,
+        "spot": 65269.328125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -104,7 +104,7 @@ Generated quality score: **0.745** / actionable=True
         "arbitrage_balance_zscore": null,
         "nikkei_vi_percentile": null,
         "component_scores": {
-          "event_proximity": 71.43,
+          "event_proximity": 85.71,
           "option_oi_imbalance": null,
           "front_futures_concentration": null,
           "strike_pin_proximity": null,
@@ -120,7 +120,8 @@ Generated quality score: **0.745** / actionable=True
         "use_for_execution_timing_only": true
       },
       "tactics": [
-        "no_sq_specific_change"
+        "prefer_limit_orders",
+        "avoid_unnecessary_market_orders"
       ],
       "rule": "SQ is a short-lived market-structure overlay. Use it for staging and limit-order timing only; do not infer direction from open interest alone."
     }
@@ -148,12 +149,12 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-09T07:31:22+00:00",
+  "generated_at": "2026-09-09T22:28:31+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
       "path": "data/regime/market_regime_latest.json",
-      "age_hours": 0.0,
+      "age_hours": 0.01,
       "stale_limit_hours": 36
     },
     "v1_3_screening": {
@@ -195,7 +196,7 @@ Generated quality score: **0.745** / actionable=True
 - EDINET: ok / records=3 / tier=primary
 - SEC: ok / records=56 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=20 / tier=secondary
+- NewsRSS: ok / records=15 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
