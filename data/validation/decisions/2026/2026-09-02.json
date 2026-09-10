@@ -78,7 +78,83 @@
   },
   "market_regime": "CONSTRUCTIVE",
   "model_version": "1.7.0",
-  "outcomes": {},
+  "outcomes": {
+    "1w": {
+      "average_benchmark_return": -0.010533707564173045,
+      "average_excess_return": -0.008142660432604098,
+      "average_return": -0.018676367996777143,
+      "benchmark_coverage_n": 5,
+      "evaluated_at": "2026-09-10T07:31:28+00:00",
+      "n": 5,
+      "symbols": [
+        {
+          "benchmark_return": -0.010533707564173045,
+          "benchmark_symbol": "1306.T",
+          "end_price": 949.0,
+          "evaluated_price_date": "2026-09-10",
+          "excess_return": 0.01583031773366461,
+          "max_down": -0.006355932203389814,
+          "max_up": 0.03919491525423724,
+          "rank": 1.0,
+          "return": 0.005296610169491567,
+          "start_price": 944.0,
+          "symbol": "8622.T"
+        },
+        {
+          "benchmark_return": -0.010533707564173045,
+          "benchmark_symbol": "1306.T",
+          "end_price": 1709.0,
+          "evaluated_price_date": "2026-09-10",
+          "excess_return": 0.018198801903795636,
+          "max_down": -0.00176886792452835,
+          "max_up": 0.03360849056603765,
+          "rank": 2.0,
+          "return": 0.007665094339622591,
+          "start_price": 1696.0,
+          "symbol": "8624.T"
+        },
+        {
+          "benchmark_return": -0.010533707564173045,
+          "benchmark_symbol": "1306.T",
+          "end_price": 3380.0,
+          "evaluated_price_date": "2026-09-10",
+          "excess_return": -0.07098803156626177,
+          "max_down": -0.08152173913043481,
+          "max_up": 0.0013586956521738358,
+          "rank": 3.0,
+          "return": -0.08152173913043481,
+          "start_price": 3680.0,
+          "symbol": "3932.T"
+        },
+        {
+          "benchmark_return": -0.010533707564173045,
+          "benchmark_symbol": "1306.T",
+          "end_price": 4650.0,
+          "evaluated_price_date": "2026-09-10",
+          "excess_return": 0.0236056029890096,
+          "max_down": 0.0,
+          "max_up": 0.028322440087146017,
+          "rank": 5.0,
+          "return": 0.013071895424836555,
+          "start_price": 4590.0,
+          "symbol": "8707.T"
+        },
+        {
+          "benchmark_return": -0.010533707564173045,
+          "benchmark_symbol": "1306.T",
+          "end_price": 1955.0,
+          "evaluated_price_date": "2026-09-10",
+          "excess_return": -0.027359993223228574,
+          "max_down": -0.03789370078740162,
+          "max_up": 0.00442913385826782,
+          "rank": 9.0,
+          "return": -0.03789370078740162,
+          "start_price": 2032.0,
+          "symbol": "6750.T"
+        }
+      ]
+    }
+  },
   "policy_guardrails": {
     "absolute_defense_cash_jpy": 500000,
     "cash_target_range": [

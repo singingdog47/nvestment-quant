@@ -1,27 +1,41 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-09T22:28:32+00:00
-Highest severity: **WATCH**
+Generated: 2026-09-10T07:31:27+00:00
+Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 0
-- WATCH: 6
+- WARNING: 2
+- WATCH: 11
 - INFO: 0
 
 ## Alerts
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、約40の決済サービスに対応した次期決済システムを、ファミリーマート全国約16,500店舗に導入 - jpn.nec.com
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [KDDI]: ＫＤＤＩ[9433]：自己株式の取得状況に関するお知らせ 2026年9月9日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for KDDI.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [SHARINGTECHNOLOGY.INC]: 意見表明報告書
+  - New company event detected for SHARINGTECHNOLOGY.INC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 光回線とau 5G回線を融合したインターネットサービス「auひかりプラス」を提供開始 - KDDI ニュースルーム
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI株式会社とのブロンズパートナー 契約締結のお知らせ - 東京サンロッカーズ
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 楽天モバイル、KDDIのローミングは「10月以降も継続」と改めて告知 現在は「詰めの協議中」（ITmedia Mobile） - Yahoo!ニュース
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ＫＤＤＩ、小売物流業等の現場業務を代替するロボット基盤モデルの研究開発がＧＥＮＩＡＣに採択 速報 - kabushiki.jp
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 全員AIの「無人部署」 NECの狙い - Yahoo!ニュース
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECよどこへ行く 森田改革の成否 - xtech.nikkei.com
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: はやぶさ2「世界最接近」の舞台裏 JAXAとNECが小惑星トリフネにフライバイ: NEC Stories - jpn.nec.com
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 世界クラブ選手権日程・対戦カード確定 | ニュース - NECレッドロケッツ川崎公式サイト
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECと三菱重工が防衛分野で戦略的提携 作戦計画や指揮統制、無人アセットで連携 - ドローンジャーナル
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、ファミマに新決済端末 キャッシュレス拡充 - 日刊工業新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ---75日線を支持線にリバウンド - 株探
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業－ＳＭＢＣ日興が目標株価引き下げ 押し目買いの好機 - TradingView
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECよどこへ行く 森田改革の成否 - 日経クロステック
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業－反落 東芝と寿命1.5倍のペロブスカイト太陽電池 世界最高水準＝日経 - moomoo.com
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス(株)【6965】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+  - New company event detected for 浜松ホトニクス.
 
 ## Governance
 - Alerts are deterministic exception flags, not buy/sell signals.

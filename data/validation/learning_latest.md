@@ -1,17 +1,17 @@
 # Investment Quant Validation Learning v2.1
 
-Generated: 2026-09-09T07:31:26+00:00
+Generated: 2026-09-10T07:31:31+00:00
 
 This is a diagnostic learning layer. It does not automatically change factor weights or issue orders.
 
 ## Model-change gate
-- Matured absolute-return observations: 46
-- Benchmark-relative observations: 46
+- Matured absolute-return observations: 51
+- Benchmark-relative observations: 51
 - Minimum benchmark-relative observations for review: 60
 - Eligible for human model-change review: False
 
 ## Findings
-- [INFO] regime / CONSTRUCTIVE|1w (n=46): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
+- [INFO] regime / CONSTRUCTIVE|1w (n=51): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## Known limits
 - Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.
