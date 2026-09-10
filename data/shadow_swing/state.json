@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "mode": "SHADOW_ONLY",
+  "start_date": "2026-09-10",
+  "end_date": "2026-12-10",
+  "cash_jpy": 1000000.0,
+  "positions": {},
+  "pending_orders": [],
+  "processed_gpt_decision_ids": [
+    "gpt-shadow-20260910-initial-hold"
+  ],
+  "realized_pnl_jpy": 0.0,
+  "nav_jpy": 1000000.0,
+  "peak_nav_jpy": 1000000.0,
+  "max_drawdown_pct": 0.0,
+  "benchmark_start_price": 422.70001220703125,
+  "last_run_date": "2026-09-10",
+  "status": "ACTIVE"
+}
