@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "enabled": true,
+  "mode": "SHADOW_ONLY",
+  "decision_source": "CHATGPT_AUTOMATION",
+  "market": "JP",
+  "start_date": "2026-09-10",
+  "end_date": "2026-12-10",
+  "initial_cash_jpy": 1000000,
+  "benchmark_symbol": "1306.T",
+  "execution": {
+    "signal_time": "post_close",
+    "fill_timing": "next_session",
+    "round_lot_shares": 100,
+    "slippage_bps": 10,
+    "limit_expiry_sessions": 2,
+    "sq_limit_discount_bps": 50
+  },
+  "risk": {
+    "max_positions": 4,
+    "max_position_pct": 0.25,
+    "max_invested_pct": 0.75,
+    "min_cash_pct": 0.25,
+    "hard_stop_pct": -0.06,
+    "take_profit_pct": 0.12,
+    "trailing_activation_pct": 0.08,
+    "trailing_stop_pct": 0.05,
+    "max_holding_sessions": 20,
+    "new_entry_pause_drawdown_pct": -0.08,
+    "portfolio_kill_switch_drawdown_pct": -0.12
+  },
+  "selection": {
+    "research_candidate_required": true,
+    "candidate_pool_top_n": 30,
+    "min_total_score": 65,
+    "min_liquidity_score": 40,
+    "min_avg_turnover_jpy": 50000000,
+    "max_abs_beta": 2.0
+  },
+  "governance": {
+    "real_orders_forbidden": true,
+    "leverage_forbidden": true,
+    "short_selling_forbidden": true,
+    "human_override_not_required_for_shadow": true,
+    "no_lookahead": true,
+    "benchmark_relative_evaluation": true
+  }
+}
