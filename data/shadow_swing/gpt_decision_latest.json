@@ -1,14 +1,22 @@
 {
-  "decision_id": "gpt-shadow-20260910-initial-hold",
+  "decision_id": "gpt-shadow-20260910-postclose-1734-8622-limit",
   "decision_date": "2026-09-10",
   "mode": "SHADOW_ONLY",
-  "portfolio_instruction": "HOLD",
+  "portfolio_instruction": "BUY",
   "actions": [
     {
-      "action": "HOLD",
-      "reason": "Experiment initialization. The market regime is constructive, but the next major SQ is 2026-09-11 and the existing execution overlay calls for mild caution; begin with cash and reassess after the close.",
-      "confidence": 0.78
+      "action": "BUY",
+      "symbol": "8622.T",
+      "code": "8622",
+      "name": "Mito Securities Co.,Ltd.",
+      "theme": "Financials",
+      "signal_price": 949.0,
+      "target_weight_pct": 0.20,
+      "order_type": "LIMIT",
+      "limit_price": 944.0,
+      "reason": "Fresh 2026-09-10 screening ranks 8622.T as the top JP research candidate with total_score 77.16, momentum_score 92.92, quality_score 81.66, liquidity_score 73.42, beta 0.27 and average turnover about JPY 421m. Market regime is CONSTRUCTIVE and actionable, but the 2026-09-11 major SQ overlay is active with MILD_CAUTION and undetermined directional bias. Initiate only on a roughly 0.5% pullback using a limit order rather than chasing the close.",
+      "confidence": 0.68
     }
   ],
-  "notes": "This file is an AI decision input for the virtual portfolio only. It must never be routed to a broker or real-money execution layer."
+  "notes": "SHADOW ONLY. No broker connection and no real-money order. Fundamental evidence is secondary-only (effective coverage 0.65), so confidence is capped. The SQ overlay has partial data and is used only for execution timing, not security ranking. If the limit does not trade within the configured expiry window, allow it to expire rather than chase."
 }
