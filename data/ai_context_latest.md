@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-10T07:30:28+00:00",
-  "generated_at_utc": "2026-09-10T07:30:28+00:00",
-  "date_jst": "2026-09-10",
+  "generated_at": "2026-09-10T22:26:05+00:00",
+  "generated_at_utc": "2026-09-10T22:26:05+00:00",
+  "date_jst": "2026-09-11",
   "data_status": "ok",
-  "regime_label": "CONSTRUCTIVE",
-  "regime_score": 60.05,
+  "regime_label": "NEUTRAL",
+  "regime_score": 55.98,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -28,28 +28,28 @@ Generated quality score: **0.745** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 48.97631141843026,
-    "stress": 86.91500022888184,
+    "trend": 40.78670617797336,
+    "stress": 79.23499988555909,
     "participation": 51.457541191381495,
-    "liquidity": 54.899800506342174,
+    "liquidity": 56.96857751310173,
     "positioning": 51.00577429462018
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 16.31999969482422,
-    "hy_oas": 2.67,
+    "vix": 17.84000015258789,
+    "hy_oas": 2.71,
     "ig_oas": 0.81,
-    "treasury_volatility_proxy": 63.039,
-    "treasury_volatility_percentile_rank": 0.4087,
-    "treasury_volatility_stress_score": 69.35,
-    "treasury_volatility_as_of_date": "2026-09-09",
+    "treasury_volatility_proxy": 74.12,
+    "treasury_volatility_percentile_rank": 0.75,
+    "treasury_volatility_stress_score": 43.75,
+    "treasury_volatility_as_of_date": "2026-09-10",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9567,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-10T07:30:25.998439+00:00",
-    "nfci": -0.558,
-    "volume_ratio20_mean": 1.0248450126585542,
+    "nfci": -0.564,
+    "volume_ratio20_mean": 1.0755144378275432,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -78,21 +78,21 @@ Generated quality score: **0.745** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": true,
-      "as_of_date": "2026-09-10",
+      "as_of_date": "2026-09-11",
       "next_major_sq_date": "2026-09-11",
-      "days_to_sq": 1,
-      "event_proximity_score": 85.71,
-      "pressure_intensity_score": 85.71,
+      "days_to_sq": 0,
+      "event_proximity_score": 100.0,
+      "pressure_intensity_score": 100.0,
       "confidence": 0.25,
       "data_status": "partial",
       "manual_input_freshness": "missing",
       "manual_input_age_days": null,
-      "execution_caution_points": 3.21,
+      "execution_caution_points": 3.75,
       "caution_cap_points": 15.0,
       "execution_stance": "MILD_CAUTION",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 65270.94921875,
+        "spot": 65142.78125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -104,7 +104,7 @@ Generated quality score: **0.745** / actionable=True
         "arbitrage_balance_zscore": null,
         "nikkei_vi_percentile": null,
         "component_scores": {
-          "event_proximity": 85.71,
+          "event_proximity": 100.0,
           "option_oi_imbalance": null,
           "front_futures_concentration": null,
           "strike_pin_proximity": null,
@@ -133,7 +133,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Policy guardrails
 {
-  "regime_label": "constructive",
+  "regime_label": "neutral",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
     0.08,
@@ -149,12 +149,12 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-10T07:31:27+00:00",
+  "generated_at": "2026-09-10T22:27:06+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
       "path": "data/regime/market_regime_latest.json",
-      "age_hours": 0.01,
+      "age_hours": 0.0,
       "stale_limit_hours": 36
     },
     "v1_3_screening": {
@@ -194,7 +194,7 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=3 / tier=primary
-- SEC: ok / records=56 / tier=primary
+- SEC: ok / records=57 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
 - NewsRSS: ok / records=20 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary

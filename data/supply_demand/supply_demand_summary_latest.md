@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-09-10T07:31:27+00:00
+Generated (UTC): 2026-09-10T22:27:06+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=83.8%, float turnover=1.4%, volume ratio=1.1282866446316313)
-- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING (float=99.3%, float turnover=0.9%, volume ratio=0.7921664279472902)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.4%, volume ratio=0.6819641815026185)
-- [US] Frontline Plc Ordinary Shares: SHORT_CROWDING|SHORT_INTEREST_RISING (float=99.7%, float turnover=1.2%, volume ratio=0.7793217618915466)
-- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING (float=91.6%, float turnover=0.9%, volume ratio=1.0245419816038432)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.0%, float turnover=2.1%, volume ratio=0.815588559559601)
-- [US] TORM plc - Class A Common Stock: SHORT_INTEREST_RISING|VOLUME_EXPANSION (float=66.3%, float turnover=1.1%, volume ratio=2.0736894243641233)
-- [US] DigitalBridge Group, Inc.: SHORT_INTEREST_FALLING (float=90.8%, float turnover=2.0%, volume ratio=0.5858171032095332)
-- [US] CMB.TECH NV Ordinary Shares: SHORT_INTEREST_FALLING (float=38.3%, float turnover=0.9%, volume ratio=0.9643697311909671)
-- [JP] SHARINGTECHNOLOGY.INC: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=37.5%, float turnover=2.5%, volume ratio=16.754483123545423)
+- [US] Frontline Plc Ordinary Shares: SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION|POTENTIAL_SHORT_SQUEEZE_CONTEXT (float=99.7%, float turnover=1.2%, volume ratio=1.5739923174861838)
+- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=83.8%, float turnover=1.4%, volume ratio=0.9506856609372072)
+- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING (float=99.3%, float turnover=0.9%, volume ratio=0.9778376801326932)
+- [US] Adamas Trust, Inc. - Common Stock: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=93.8%, float turnover=1.0%, volume ratio=1.7408422595417081)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.4%, volume ratio=0.7660118384453893)
+- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING (float=91.6%, float turnover=0.9%, volume ratio=0.7936449640110836)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.0%, float turnover=2.1%, volume ratio=1.4445406050845566)
+- [US] TORM plc - Class A Common Stock: SHORT_INTEREST_RISING|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=66.3%, float turnover=1.1%, volume ratio=2.2804444444444445)
+- [US] DigitalBridge Group, Inc.: SHORT_INTEREST_FALLING (float=90.8%, float turnover=2.0%, volume ratio=0.4934707192046808)
+- [US] CMB.TECH NV Ordinary Shares: SHORT_INTEREST_FALLING (float=38.3%, float turnover=0.9%, volume ratio=0.6622781233361341)
 
 ## Governance
 

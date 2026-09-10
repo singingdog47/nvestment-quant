@@ -1,41 +1,35 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-10T07:31:27+00:00
+Generated: 2026-09-10T22:27:07+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 2
-- WATCH: 11
+- WARNING: 1
+- WATCH: 9
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [KDDI]: ＫＤＤＩ[9433]：自己株式の取得状況に関するお知らせ 2026年9月9日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Adamas Trust, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Adamas Trust, Inc. - Common Stock.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 「ギガ」の次はAI？ KDDI新アプリ「Buffmee」が示すスマホとAIの新しい関係 - ケータイ Watch
   - New company event detected for KDDI.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [SHARINGTECHNOLOGY.INC]: 意見表明報告書
-  - New company event detected for SHARINGTECHNOLOGY.INC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 光回線とau 5G回線を融合したインターネットサービス「auひかりプラス」を提供開始 - KDDI ニュースルーム
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI株式会社とのブロンズパートナー 契約締結のお知らせ - 東京サンロッカーズ
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 楽天モバイル、KDDIのローミングは「10月以降も継続」と改めて告知 現在は「詰めの協議中」（ITmedia Mobile） - Yahoo!ニュース
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ＫＤＤＩ、小売物流業等の現場業務を代替するロボット基盤モデルの研究開発がＧＥＮＩＡＣに採択 速報 - kabushiki.jp
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 全員AIの「無人部署」 NECの狙い - Yahoo!ニュース
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: はやぶさ2「世界最接近」の舞台裏 JAXAとNECが小惑星トリフネにフライバイ: NEC Stories - NEC
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: はやぶさ2「世界最接近」の舞台裏 JAXAとNECが小惑星トリフネにフライバイ: NEC Stories - jpn.nec.com
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 【IT業界の5年後大予測】富士通・NEC・野村総研…生成AIで始まった選別のカウントダウン、生き残りのための「4つの条件」と本命銘柄を大解剖《再配信》 - ダイヤモンド・オンライン
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECと三菱重工が防衛分野で戦略的提携 作戦計画や指揮統制、無人アセットで連携 - ドローンジャーナル
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 株主・投資家（IR）情報 - NEC
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ---75日線を支持線にリバウンド - 株探
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECよどこへ行く 森田改革の成否 - 日経クロステック
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業－反落 東芝と寿命1.5倍のペロブスカイト太陽電池 世界最高水準＝日経 - moomoo.com
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業－反落 東芝と寿命1.5倍のペロブスカイト太陽電池 世界最高水準＝日経 | 個別記事 | ニュース - traders.co.jp
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス(株)【6965】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp
+  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 【半導体人材の未来】〈42〉「浜松ホトニクスが目標」 台湾の大学連合ブースから世界市場へ - dempa-digital.com
   - New company event detected for 浜松ホトニクス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 世界最高クラスとなる2.0 kWを出力するLDバーの開発に成功 | 浜松ホトニクス株式会社のプレスリリース - PR TIMES
+  - New company event detected for 浜松ホトニクス.
+- **WATCH** REGIME/REGIME_CHANGE: Market regime changed
+  - Market regime changed from CONSTRUCTIVE to NEUTRAL.
 
 ## Governance
 - Alerts are deterministic exception flags, not buy/sell signals.
