@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "purpose": "Prevent local optimization and implementation novelty from outranking the user's actual objective: improve long-run risk-adjusted wealth after costs, complexity, and attention.",
+  "primary_objective": {
+    "name": "incremental_expected_utility_vs_current_baseline",
+    "description": "Evaluate every new trade, strategy, automation, data source, or system change against the best current baseline before discussing implementation.",
+    "baseline_required": true,
+    "include_do_nothing_alternative": true
+  },
+  "mandatory_preflight": [
+    "State the user's actual objective for this decision.",
+    "Define the current baseline and what happens if nothing changes.",
+    "Identify the incremental edge source: information, forecasting, execution, cost, risk control, or attention/time saved.",
+    "Estimate whether the incremental benefit is material after fees, taxes, slippage, complexity, failure risk, maintenance, and user attention.",
+    "State the strongest reason the proposal may NOT improve expected value.",
+    "Compare against a simpler alternative before proposing implementation.",
+    "Only then discuss HOW to implement it."
+  ],
+  "default_fail_safe": {
+    "rule": "If no credible incremental edge over the baseline can be identified, do not recommend implementation merely because it is technically feasible or interesting.",
+    "allowed_outputs": ["HOLD", "MONITOR", "DO_NOT_BUILD", "KEEP_CURRENT_PROCESS", "RUN_LOW_COST_TEST"]
+  },
+  "anti_bias_rules": [
+    "Technical feasibility is not evidence of investment edge.",
+    "Automation is not alpha by itself; it can only preserve or improve an existing edge through execution, consistency, cost, risk control, or saved attention.",
+    "A high score or rank is not a mispricing thesis.",
+    "Do not create an action merely because the system can produce one.",
+    "Prefer detection and monitoring automation over execution automation unless speed or consistency is demonstrably part of the edge.",
+    "Treat novelty, elegance, and engineering interest as zero financial benefit unless they create measurable utility.",
+    "Explicitly consider that the existing Human + Quant + AI process may already be the stronger baseline."
+  ],
+  "investment_action_gate": {
+    "required_for_buy_or_add": [
+      "market_implied_view",
+      "our_differing_view",
+      "why_market_may_be_wrong",
+      "catalyst_or_repricing_path",
+      "disconfirming_condition",
+      "expected_horizon",
+      "confidence",
+      "data_quality"
+    ],
+    "rule": "If the system cannot articulate a falsifiable mispricing thesis, score/rank alone cannot authorize BUY or ADD."
+  },
+  "system_change_gate": {
+    "required_fields": [
+      "baseline",
+      "proposed_change",
+      "incremental_edge_source",
+      "expected_benefit",
+      "implementation_and_maintenance_cost",
+      "failure_modes",
+      "simpler_alternative",
+      "reversibility",
+      "success_metric",
+      "stop_condition"
+    ],
+    "rule": "Prefer the smallest reversible test that can distinguish incremental value from novelty."
+  },
+  "learning_log": {
+    "enabled": true,
+    "record_when": ["material recommendation", "system architecture change", "new automation", "new strategy"],
+    "fields": [
+      "initial_hypothesis",
+      "baseline",
+      "expected_incremental_value",
+      "key_assumptions",
+      "counterargument",
+      "decision",
+      "later_outcome",
+      "what_was_wrong_or_right",
+      "rule_update_if_needed"
+    ]
+  },
+  "origin_note": "Added after reviewing the autonomous trading proposal: implementation planning advanced before validating whether full automation added expected return over the existing Human + Quant + AI process."
+}
