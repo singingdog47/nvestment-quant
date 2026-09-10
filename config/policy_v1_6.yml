@@ -8,3 +8,14 @@ exploration_bucket_max_weight: 0.10
 new_capital_top_rank_only: 5
 allow_do_nothing: true
 block_action_if_data_quality_below: 0.72
+
+# Objective-first meta decision gate.
+# Before proposing a trade, automation, new data source, or system change,
+# compare it with the current baseline and the do-nothing alternative.
+meta_decision_gate_enabled: true
+meta_decision_gate_file: config/decision_meta_gate_v1.json
+require_incremental_edge_vs_baseline: true
+technical_feasibility_is_not_edge: true
+automation_is_not_alpha_by_itself: true
+score_or_rank_is_not_mispricing_thesis: true
+prefer_monitoring_over_execution_unless_speed_is_edge: true
