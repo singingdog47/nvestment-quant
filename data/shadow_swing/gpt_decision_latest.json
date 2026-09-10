@@ -1,0 +1,14 @@
+{
+  "decision_id": "gpt-shadow-20260910-initial-hold",
+  "decision_date": "2026-09-10",
+  "mode": "SHADOW_ONLY",
+  "portfolio_instruction": "HOLD",
+  "actions": [
+    {
+      "action": "HOLD",
+      "reason": "Experiment initialization. The market regime is constructive, but the next major SQ is 2026-09-11 and the existing execution overlay calls for mild caution; begin with cash and reassess after the close.",
+      "confidence": 0.78
+    }
+  ],
+  "notes": "This file is an AI decision input for the virtual portfolio only. It must never be routed to a broker or real-money execution layer."
+}
