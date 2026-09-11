@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-09-10T07:32:48+00:00
+Generated (UTC): 2026-09-11T07:31:53+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -10,13 +10,13 @@ Generated (UTC): 2026-09-10T07:32:48+00:00
 - Overall analysis mode: `OPEN_FOR_ANALYSIS`
 
 ## 2. 市場レジーム
-- Regime: **CONSTRUCTIVE**
-- Score: 60.05
+- Regime: **NEUTRAL**
+- Score: 55.72
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 16.31999969482422
-- Treasury realized-vol proxy (not ICE MOVE): 63.039 bps annualized; percentile=0.4087
+- VIX: 17.84000015258789
+- Treasury realized-vol proxy (not ICE MOVE): 74.12 bps annualized; percentile=0.75
 - Flags: none
 
 ## 3. 個別銘柄の需給コンテキスト
@@ -24,60 +24,59 @@ Generated (UTC): 2026-09-10T07:32:48+00:00
 - Scope: public watchlist plus screening leaders; private portfolio excluded
 - Coverage: free-float=97.2%, short-interest=47.2%, current/average volume=100.0%
 - 用途は監視・執行注意・退出流動性の確認に限定し、銘柄順位・ファンダメンタルズ評価・投資仮説は変更しません。
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING
 - [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
 - [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING
 - [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING
-- [US] Frontline Plc Ordinary Shares: SHORT_CROWDING|SHORT_INTEREST_RISING
-- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER
-- [US] TORM plc - Class A Common Stock: SHORT_INTEREST_RISING|VOLUME_EXPANSION
-- [US] DigitalBridge Group, Inc.: SHORT_INTEREST_FALLING
+- [US] Adamas Trust, Inc. - Common Stock: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION
+- [US] ACNB Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
+- [JP] タイミー: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
 - Counts: {'INFO': 0, 'WATCH': 11, 'WARNING': 2, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / ＫＤＤＩ[9433]：自己株式の取得状況に関するお知らせ 2026年9月9日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WARNING] COMPANY_EVENT / 意見表明報告書
-- [WATCH] COMPANY_EVENT / 光回線とau 5G回線を融合したインターネットサービス「auひかりプラス」を提供開始 - KDDI ニュースルーム
-- [WATCH] COMPANY_EVENT / KDDI株式会社とのブロンズパートナー 契約締結のお知らせ - 東京サンロッカーズ
-- [WATCH] COMPANY_EVENT / 楽天モバイル、KDDIのローミングは「10月以降も継続」と改めて告知 現在は「詰めの協議中」（ITmedia Mobile） - Yahoo!ニュース
-- [WATCH] COMPANY_EVENT / ＫＤＤＩ、小売物流業等の現場業務を代替するロボット基盤モデルの研究開発がＧＥＮＩＡＣに採択 速報 - kabushiki.jp
-- [WATCH] COMPANY_EVENT / 全員AIの「無人部署」 NECの狙い - Yahoo!ニュース
-- [WATCH] COMPANY_EVENT / はやぶさ2「世界最接近」の舞台裏 JAXAとNECが小惑星トリフネにフライバイ: NEC Stories - jpn.nec.com
+- [WARNING] COMPANY_EVENT / 臨時報告書
+- [WARNING] COMPANY_EVENT / 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
+- [WATCH] COMPANY_EVENT / Apple Watch Series 12、Apple Watch Ultra 4を含むApple Watch 5機種がau Starlink Directの海外ローミングに対応 - KDDI ニュースルーム
+- [WATCH] COMPANY_EVENT / KDDI、ミリ波を活用したフリーWi-Fiを「ROCK IN JAPAN FESTIVAL 2026」へ商用導入 - ビジネスネットワーク
+- [WATCH] COMPANY_EVENT / 5Gミリ波をバックホールとしたキャリアフリーWi-Fiを「ROCK IN JAPAN FESTIVAL 2026」へ商用導入 - KDDI ニュースルーム
+- [WATCH] COMPANY_EVENT / KDDIとWi2、「ROCK IN JAPAN FESTIVAL 2026」でキャリアフリーWi-Fi提供へ 車載型基地局も増強 - EnterpriseZine
+- [WATCH] COMPANY_EVENT / KDDI、ロッキンで5Gミリ波バックホールのフリーWi-Fiを提供 - ケータイ Watch
+- [WATCH] COMPANY_EVENT / NECスペーステクノロジーと日本旅行、宇宙産業の最前線を学ぶSTEAM教育プログラムを提供 - PR TIMES
 
 ## 5. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=77.1570255912321 | cross_pct=100.0
-- 2. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=2.0 | raw=76.90650511258377 | cross_pct=99.94884910485933
-- 3. IwaiCosmo Holdings,Inc. 8707.T | market_rank=3.0 | raw=75.89160543071577 | cross_pct=99.89769820971867
-- 4. Akatsuki Inc. 3932.T | market_rank=5.0 | raw=75.19674873689935 | cross_pct=99.79539641943734
-- 5. ELECOM CO.,LTD. 6750.T | market_rank=9.0 | raw=72.29842309118885 | cross_pct=99.59079283887468
+- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=77.1430672050941 | cross_pct=100.0
+- 2. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=2.0 | raw=76.8303878497337 | cross_pct=99.94892747701736
+- 3. IwaiCosmo Holdings,Inc. 8707.T | market_rank=3.0 | raw=75.85856835300879 | cross_pct=99.89785495403473
+- 4. Akatsuki Inc. 3932.T | market_rank=5.0 | raw=75.48653308679287 | cross_pct=99.79570990806947
+- 5. ELECOM CO.,LTD. 6750.T | market_rank=9.0 | raw=72.27672460943988 | cross_pct=99.59141981613891
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.91232366436654 | cross_pct=100.0
-- 2. International Seaways, Inc. Common Stock  INSW | market_rank=2.0 | raw=83.7587692095199 | cross_pct=99.97070026369764
-- 3. Millrose Properties, Inc. Class A Common Stock MRP | market_rank=3.0 | raw=83.62038066860924 | cross_pct=99.94140052739525
-- 4. Scorpio Tankers Inc. Common Shares STNG | market_rank=4.0 | raw=83.23597372328521 | cross_pct=99.91210079109288
-- 5. Norwood Financial Corp. - Common Stock NWFL | market_rank=8.0 | raw=81.97993183217538 | cross_pct=99.79490184588339
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.61958446483229 | cross_pct=100.0
+- 2. International Seaways, Inc. Common Stock  INSW | market_rank=2.0 | raw=84.28410664014828 | cross_pct=99.9706572769953
+- 3. Scorpio Tankers Inc. Common Shares STNG | market_rank=3.0 | raw=83.91660134217344 | cross_pct=99.94131455399061
+- 4. Millrose Properties, Inc. Class A Common Stock MRP | market_rank=5.0 | raw=83.1588745013101 | cross_pct=99.88262910798123
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=7.0 | raw=82.6061831356088 | cross_pct=99.82394366197182
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.91232366436654
-- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=77.1570255912321
-- 3. [US] International Seaways, Inc. Common Stock  | cross_pct=99.97070026369764 | raw=83.7587692095199
-- 4. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.94884910485933 | raw=76.90650511258377
-- 5. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.94140052739525 | raw=83.62038066860924
-- 6. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.91210079109288 | raw=83.23597372328521
-- 7. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89769820971867 | raw=75.89160543071577
-- 8. [JP] Akatsuki Inc. | cross_pct=99.79539641943734 | raw=75.19674873689935
-- 9. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.79490184588339 | raw=81.97993183217538
-- 10. [US] TORM plc - Class A Common Stock | cross_pct=99.64840316437153 | raw=80.92817887911696
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.61958446483229
+- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=77.1430672050941
+- 3. [US] International Seaways, Inc. Common Stock  | cross_pct=99.9706572769953 | raw=84.28410664014828
+- 4. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.94892747701736 | raw=76.8303878497337
+- 5. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.94131455399061 | raw=83.91660134217344
+- 6. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89785495403473 | raw=75.85856835300879
+- 7. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.88262910798123 | raw=83.1588745013101
+- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.82394366197182 | raw=82.6061831356088
+- 9. [JP] Akatsuki Inc. | cross_pct=99.79570990806947 | raw=75.48653308679287
+- 10. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.79460093896714 | raw=82.35721472496586
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
-- Matured observations: 51
+- Matured observations: 56
 - Eligible for model-change review: False
-- [INFO] regime / CONSTRUCTIVE|1w: Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## 7. データ品質 / 反証
 - Quality score: 0.745
@@ -96,8 +95,8 @@ Generated (UTC): 2026-09-10T07:32:48+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは67.0点だが確認閾値未達
-- 上位: スタンダード 67.0 / テクノロジー 65.7 / ビットコイン 62.1
+- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは58.9点だが確認閾値未達
+- 上位: ビットコイン 58.9 / スタンダード 57.1 / テクノロジー 54.6
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
