@@ -1,10 +1,10 @@
 # AI Shadow Swing — Daily Status
 
-- As of: 2026-09-10 JST
+- As of: 2026-09-11 JST
 - Experiment: ¥1,000,000 / 2026-09-10 → 2026-12-10
 - Mode: SHADOW ONLY — no broker connection and no real orders
 - NAV: ¥1,000,000 | Cash: ¥1,000,000
-- Return: +0.00% | Benchmark: +0.00% | Alpha: +0.00%
+- Return: +0.00% | Benchmark: -0.71% | Alpha: +0.71%
 - Max DD: 0.00% | Status: ACTIVE
 
 ## Positions
