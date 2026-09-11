@@ -1,22 +1,51 @@
 {
-  "decision_id": "gpt-shadow-20260910-postclose-1734-8622-limit",
-  "decision_date": "2026-09-10",
+  "decision_id": "gpt-shadow-20260911-postclose-1732-meta-hold",
+  "decision_date": "2026-09-11",
   "mode": "SHADOW_ONLY",
-  "portfolio_instruction": "BUY",
-  "actions": [
-    {
-      "action": "BUY",
-      "symbol": "8622.T",
-      "code": "8622",
-      "name": "Mito Securities Co.,Ltd.",
-      "theme": "Financials",
-      "signal_price": 949.0,
-      "target_weight_pct": 0.20,
-      "order_type": "LIMIT",
-      "limit_price": 944.0,
-      "reason": "Fresh 2026-09-10 screening ranks 8622.T as the top JP research candidate with total_score 77.16, momentum_score 92.92, quality_score 81.66, liquidity_score 73.42, beta 0.27 and average turnover about JPY 421m. Market regime is CONSTRUCTIVE and actionable, but the 2026-09-11 major SQ overlay is active with MILD_CAUTION and undetermined directional bias. Initiate only on a roughly 0.5% pullback using a limit order rather than chasing the close.",
-      "confidence": 0.68
-    }
+  "portfolio_instruction": "HOLD",
+  "actions": [],
+  "meta_gate": {
+    "passed": false,
+    "baseline": "Do nothing: retain JPY 1,000,000 cash with no positions or pending orders until a candidate has a falsifiable mispricing thesis with positive expected value over cash after risk and execution costs.",
+    "incremental_edge_source": null,
+    "assessment": "Fresh screening identifies high-ranked JP candidates, led by 8622.T at JPY 951, but rank, momentum, growth and quality scores do not establish that market expectations are wrong. Available fundamental evidence is secondary-only and does not support a sufficiently specific market-implied-view versus our-view gap. Therefore no credible incremental edge over the cash baseline is established today.",
+    "strongest_counterargument": "A constructive-to-neutral but non-stressed regime and strong momentum could allow continued upside, so waiting can incur opportunity cost. However that is exposure/momentum evidence, not a falsifiable mispricing thesis, and is insufficient under the meta gate.",
+    "simpler_alternative": "Keep cash and continue monitoring the ranked candidates until primary/company evidence supports a specific expectation gap or a new catalyst creates one."
+  },
+  "candidate_review": {
+    "symbol": "8622.T",
+    "code": "8622",
+    "name": "Mito Securities Co.,Ltd.",
+    "signal_price": 951.0,
+    "screening_total_score": 77.1430672050941,
+    "market_rank": 1,
+    "market_implied_view": "NOT_ESTABLISHED_FROM_AVAILABLE_EVIDENCE",
+    "our_differing_view": "NOT_ESTABLISHED",
+    "why_market_may_be_wrong": "NOT_SUPPORTED_WITH_SUFFICIENT_PRIMARY_OR_COMPANY_SPECIFIC_EVIDENCE",
+    "catalyst_or_repricing_path": "NOT_ESTABLISHED",
+    "disconfirming_condition": "Not applicable because no investment thesis is authorized.",
+    "expected_horizon": "Not established",
+    "confidence": 0.35,
+    "data_quality": "Market/screening data are fresh and actionable for 2026-09-11, but fundamental evidence in decision context is secondary-only with effective coverage 0.65; no primary fundamental coverage is present."
+  },
+  "market_context": {
+    "regime_label": "NEUTRAL",
+    "regime_score": 55.72,
+    "regime_confidence": 1.0,
+    "stress_flag": false,
+    "thin_liquidity_flag": false,
+    "sq_overlay": "MILD_CAUTION",
+    "sq_directional_bias": "UNDETERMINED",
+    "sq_data_status": "partial",
+    "note": "SQ context is execution-only and is not used to create or reject an investment thesis."
+  },
+  "data_quality_caveats": [
+    "Fundamental evidence is secondary-only; primary fundamental coverage is 0.0 and effective fundamental coverage is 0.65.",
+    "Screening prices/fundamentals use an unofficial/undocumented TradingView scanner feed; they are suitable for candidate detection but insufficient alone for a BUY thesis.",
+    "SQ overlay is partial with missing manual inputs and confidence 0.25; directional bias is undetermined.",
+    "The legacy decision_system/decision_latest.json is stale (2026-08-23) and was not used as current evidence."
   ],
-  "notes": "SHADOW ONLY. No broker connection and no real-money order. Fundamental evidence is secondary-only (effective coverage 0.65), so confidence is capped. The SQ overlay has partial data and is used only for execution timing, not security ranking. If the limit does not trade within the configured expiry window, allow it to expire rather than chase."
+  "reason": "HOLD. The portfolio is entirely cash and there are no pending orders. Although 8622.T remains the top JP screening candidate at JPY 951 and the market regime is actionable NEUTRAL, the newly required meta gate fails: available evidence cannot state a falsifiable market-implied expectation, a differentiated view, why the market is wrong, and a catalyst/repricing path. The prior 2026-09-10 BUY thesis relied mainly on score/rank and therefore does not meet the current governance standard. No trade is forced.",
+  "confidence": 0.84,
+  "notes": "SHADOW ONLY. No broker connection and no real-money order. HOLD is an intentional decision, not a data-processing failure."
 }
