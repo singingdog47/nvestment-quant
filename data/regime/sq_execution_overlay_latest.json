@@ -1,19 +1,19 @@
 {
   "version": "1.0",
   "enabled": true,
-  "active": true,
-  "as_of_date": "2026-09-11",
-  "next_major_sq_date": "2026-09-11",
-  "days_to_sq": 0,
-  "event_proximity_score": 100.0,
-  "pressure_intensity_score": 100.0,
-  "confidence": 0.25,
+  "active": false,
+  "as_of_date": "2026-09-14",
+  "next_major_sq_date": "2026-12-11",
+  "days_to_sq": 88,
+  "event_proximity_score": 0.0,
+  "pressure_intensity_score": 0.0,
+  "confidence": 0.4,
   "data_status": "partial",
   "manual_input_freshness": "missing",
   "manual_input_age_days": null,
-  "execution_caution_points": 3.75,
+  "execution_caution_points": 0.0,
   "caution_cap_points": 15.0,
-  "execution_stance": "MILD_CAUTION",
+  "execution_stance": "NORMAL",
   "directional_bias": "UNDETERMINED",
   "price_structure": {
     "spot": 64011.33984375,
@@ -28,7 +28,7 @@
     "arbitrage_balance_zscore": null,
     "nikkei_vi_percentile": null,
     "component_scores": {
-      "event_proximity": 100.0,
+      "event_proximity": 0.0,
       "option_oi_imbalance": null,
       "front_futures_concentration": null,
       "strike_pin_proximity": null,
@@ -44,8 +44,7 @@
     "use_for_execution_timing_only": true
   },
   "tactics": [
-    "prefer_limit_orders",
-    "avoid_unnecessary_market_orders"
+    "no_sq_specific_change"
   ],
   "rule": "SQ is a short-lived market-structure overlay. Use it for staging and limit-order timing only; do not infer direction from open interest alone."
 }

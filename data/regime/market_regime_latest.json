@@ -1,12 +1,12 @@
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-11T07:29:20+00:00",
-  "generated_at_utc": "2026-09-11T07:29:20+00:00",
-  "date_jst": "2026-09-11",
+  "generated_at": "2026-09-13T22:27:50+00:00",
+  "generated_at_utc": "2026-09-13T22:27:50+00:00",
+  "date_jst": "2026-09-14",
   "data_status": "ok",
-  "regime_label": "NEUTRAL",
-  "regime_score": 55.72,
+  "regime_label": "CONSTRUCTIVE",
+  "regime_score": 58.55,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,28 +23,28 @@
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 37.09321304013397,
-    "stress": 79.23499988555909,
+    "trend": 47.84438135404155,
+    "stress": 82.26999988555909,
     "participation": 49.276990436686255,
-    "liquidity": 65.52227012778194,
-    "positioning": 51.00577429462018
+    "liquidity": 57.57468794957002,
+    "positioning": 51.361148997264756
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.84000015258789,
-    "hy_oas": 2.71,
-    "ig_oas": 0.81,
-    "treasury_volatility_proxy": 74.12,
-    "treasury_volatility_percentile_rank": 0.75,
-    "treasury_volatility_stress_score": 43.75,
-    "treasury_volatility_as_of_date": "2026-09-10",
+    "vix": 15.84000015258789,
+    "hy_oas": 2.7,
+    "ig_oas": 0.8,
+    "treasury_volatility_proxy": 70.94,
+    "treasury_volatility_percentile_rank": 0.6746,
+    "treasury_volatility_stress_score": 49.4,
+    "treasury_volatility_as_of_date": "2026-09-11",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-11T07:29:18.209236+00:00",
     "nfci": -0.564,
-    "volume_ratio20_mean": 1.2893567531945487,
+    "volume_ratio20_mean": 1.0906671987392507,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -64,27 +64,27 @@
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-09-10",
-    "jpx_official_turnover_million_jpy": 9103130.0,
+    "jpx_official_turnover_date": "2026-09-11",
+    "jpx_official_turnover_million_jpy": 9671930.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
     "sq": {
       "version": "1.0",
       "enabled": true,
-      "active": true,
-      "as_of_date": "2026-09-11",
-      "next_major_sq_date": "2026-09-11",
-      "days_to_sq": 0,
-      "event_proximity_score": 100.0,
-      "pressure_intensity_score": 100.0,
-      "confidence": 0.25,
+      "active": false,
+      "as_of_date": "2026-09-14",
+      "next_major_sq_date": "2026-12-11",
+      "days_to_sq": 88,
+      "event_proximity_score": 0.0,
+      "pressure_intensity_score": 0.0,
+      "confidence": 0.4,
       "data_status": "partial",
       "manual_input_freshness": "missing",
       "manual_input_age_days": null,
-      "execution_caution_points": 3.75,
+      "execution_caution_points": 0.0,
       "caution_cap_points": 15.0,
-      "execution_stance": "MILD_CAUTION",
+      "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
         "spot": 64011.33984375,
@@ -99,7 +99,7 @@
         "arbitrage_balance_zscore": null,
         "nikkei_vi_percentile": null,
         "component_scores": {
-          "event_proximity": 100.0,
+          "event_proximity": 0.0,
           "option_oi_imbalance": null,
           "front_futures_concentration": null,
           "strike_pin_proximity": null,
@@ -115,8 +115,7 @@
         "use_for_execution_timing_only": true
       },
       "tactics": [
-        "prefer_limit_orders",
-        "avoid_unnecessary_market_orders"
+        "no_sq_specific_change"
       ],
       "rule": "SQ is a short-lived market-structure overlay. Use it for staging and limit-order timing only; do not infer direction from open interest alone."
     }

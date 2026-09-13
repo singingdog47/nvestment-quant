@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-11T07:29:20+00:00",
-  "generated_at_utc": "2026-09-11T07:29:20+00:00",
-  "date_jst": "2026-09-11",
+  "generated_at": "2026-09-13T22:27:50+00:00",
+  "generated_at_utc": "2026-09-13T22:27:50+00:00",
+  "date_jst": "2026-09-14",
   "data_status": "ok",
-  "regime_label": "NEUTRAL",
-  "regime_score": 55.72,
+  "regime_label": "CONSTRUCTIVE",
+  "regime_score": 58.55,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -28,28 +28,28 @@ Generated quality score: **0.745** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 37.09321304013397,
-    "stress": 79.23499988555909,
+    "trend": 47.84438135404155,
+    "stress": 82.26999988555909,
     "participation": 49.276990436686255,
-    "liquidity": 65.52227012778194,
-    "positioning": 51.00577429462018
+    "liquidity": 57.57468794957002,
+    "positioning": 51.361148997264756
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.84000015258789,
-    "hy_oas": 2.71,
-    "ig_oas": 0.81,
-    "treasury_volatility_proxy": 74.12,
-    "treasury_volatility_percentile_rank": 0.75,
-    "treasury_volatility_stress_score": 43.75,
-    "treasury_volatility_as_of_date": "2026-09-10",
+    "vix": 15.84000015258789,
+    "hy_oas": 2.7,
+    "ig_oas": 0.8,
+    "treasury_volatility_proxy": 70.94,
+    "treasury_volatility_percentile_rank": 0.6746,
+    "treasury_volatility_stress_score": 49.4,
+    "treasury_volatility_as_of_date": "2026-09-11",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-11T07:29:18.209236+00:00",
     "nfci": -0.564,
-    "volume_ratio20_mean": 1.2893567531945487,
+    "volume_ratio20_mean": 1.0906671987392507,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -69,27 +69,27 @@ Generated quality score: **0.745** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-09-10",
-    "jpx_official_turnover_million_jpy": 9103130.0,
+    "jpx_official_turnover_date": "2026-09-11",
+    "jpx_official_turnover_million_jpy": 9671930.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
     "sq": {
       "version": "1.0",
       "enabled": true,
-      "active": true,
-      "as_of_date": "2026-09-11",
-      "next_major_sq_date": "2026-09-11",
-      "days_to_sq": 0,
-      "event_proximity_score": 100.0,
-      "pressure_intensity_score": 100.0,
-      "confidence": 0.25,
+      "active": false,
+      "as_of_date": "2026-09-14",
+      "next_major_sq_date": "2026-12-11",
+      "days_to_sq": 88,
+      "event_proximity_score": 0.0,
+      "pressure_intensity_score": 0.0,
+      "confidence": 0.4,
       "data_status": "partial",
       "manual_input_freshness": "missing",
       "manual_input_age_days": null,
-      "execution_caution_points": 3.75,
+      "execution_caution_points": 0.0,
       "caution_cap_points": 15.0,
-      "execution_stance": "MILD_CAUTION",
+      "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
         "spot": 64011.33984375,
@@ -104,7 +104,7 @@ Generated quality score: **0.745** / actionable=True
         "arbitrage_balance_zscore": null,
         "nikkei_vi_percentile": null,
         "component_scores": {
-          "event_proximity": 100.0,
+          "event_proximity": 0.0,
           "option_oi_imbalance": null,
           "front_futures_concentration": null,
           "strike_pin_proximity": null,
@@ -120,8 +120,7 @@ Generated quality score: **0.745** / actionable=True
         "use_for_execution_timing_only": true
       },
       "tactics": [
-        "prefer_limit_orders",
-        "avoid_unnecessary_market_orders"
+        "no_sq_specific_change"
       ],
       "rule": "SQ is a short-lived market-structure overlay. Use it for staging and limit-order timing only; do not infer direction from open interest alone."
     }
@@ -133,7 +132,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Policy guardrails
 {
-  "regime_label": "neutral",
+  "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
     0.08,
@@ -149,7 +148,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-11T07:30:20+00:00",
+  "generated_at": "2026-09-13T22:28:59+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -194,9 +193,9 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=3 / tier=primary
-- SEC: ok / records=51 / tier=primary
+- SEC: ok / records=47 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=20 / tier=secondary
+- NewsRSS: ok / records=19 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -273,11 +272,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 ## Critical / high company events
 - [CRITICAL] 6965 浜松ホトニクス | Thu, 06 Aug 2026 | guidance | 決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTFBmVEVJUmoxbkY1S2IwUEVSY1BFMVVLa1pDalQ1NXNZTHhPSnN0UlZ6dHlfSzNFOEZpWjkxVW0xRUNDSTBSS1FMQllsdnAtR0pkOW84T3VxbmR2ZlRmVWFERm5fVTlZeFktSi10NA?oc=5
-- [HIGH] BUSE First Busey Corporation - Common Stock | 2026-07-28 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/314489/000031448926000049/buse-20260728.htm
-- [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-07-28 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000089512626000047/exe-20260630.htm
-- [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-07-28 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000089512626000046/exe-20260728.htm
-- [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-07-29 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000127368526000067/nymt-20260729.htm
-- [HIGH] ACNB ACNB Corporation - Common Stock | 2026-07-29 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/715579/000162828026050410/acnb-20260728.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-07-30 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026051064/stng6k-q22026epr.htm
 - [HIGH] WSBC WesBanco, Inc. - Common Stock | 2026-07-30 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/203596/000119312526326145/wsbc-20260630.htm
 - [HIGH] HTGC Hercules Capital, Inc. Common Stock | 2026-07-30 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1280784/000128078426000043/htgc-20260728.htm
@@ -322,6 +316,11 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-09-03 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026060459/stng6k-09032026.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-09-04 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426006193/p15074444_6-k.htm
 - [HIGH] LPG Dorian LPG Ltd. Common Stock | 2026-09-04 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1596993/000159699326000041/lpg-20260902x8k.htm
+- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-09-08 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426006196/p15076578_6-k.htm
+- [HIGH] 3989 SHARINGTECHNOLOGY.INC | 2026-09-10 | filing | 意見表明報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z1I9
+- [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-09-10 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000127368526000073/adam-20260910.htm
+- [HIGH] 6965 浜松ホトニクス | 2026-09-11 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z1MC
+- [HIGH] 3932 Akatsuki Inc. | 2026-09-11 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z1V9
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
