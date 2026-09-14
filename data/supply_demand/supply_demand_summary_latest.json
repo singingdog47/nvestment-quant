@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at_utc": "2026-09-13T22:28:59+00:00",
+  "generated_at_utc": "2026-09-14T07:31:59+00:00",
   "observed_date_jst": "2026-09-14",
   "data_status": "partial",
   "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
@@ -16,6 +16,21 @@
     "current_vs_average_volume": 1.0
   },
   "notable_contexts": [
+    {
+      "market": "US",
+      "code": "IMPP",
+      "ticker": "IMPP",
+      "name": "Imperial Petroleum Inc. - Common Shares",
+      "data_status": "ok",
+      "confidence": 0.7,
+      "free_float_ratio": 0.46181111496772737,
+      "avg_daily_float_turnover_ratio": 0.015996871157621842,
+      "current_volume_ratio_30d": 3.198009079310447,
+      "short_percent_float": 0.1097,
+      "short_interest_change_ratio": 0.027674580155279793,
+      "days_to_cover": 9.67,
+      "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION|POTENTIAL_SHORT_SQUEEZE_CONTEXT"
+    },
     {
       "market": "US",
       "code": "CARE",
@@ -93,36 +108,6 @@
     },
     {
       "market": "US",
-      "code": "ACNB",
-      "ticker": "ACNB",
-      "name": "ACNB Corporation - Common Stock",
-      "data_status": "ok",
-      "confidence": 0.7,
-      "free_float_ratio": 0.9597700279156297,
-      "avg_daily_float_turnover_ratio": 0.007840448225830809,
-      "current_volume_ratio_30d": 0.8286270564099883,
-      "short_percent_float": 0.0419,
-      "short_interest_change_ratio": 0.37188629383137006,
-      "days_to_cover": 5.99,
-      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
-    },
-    {
-      "market": "JP",
-      "code": "215A",
-      "ticker": "215A.T",
-      "name": "タイミー",
-      "data_status": "ok",
-      "confidence": 0.7,
-      "free_float_ratio": 0.6426599969918524,
-      "avg_daily_float_turnover_ratio": 0.0299408044535303,
-      "current_volume_ratio_30d": 5.907481246339414,
-      "short_percent_float": null,
-      "short_interest_change_ratio": null,
-      "days_to_cover": null,
-      "context_flags": "HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
-    },
-    {
-      "market": "US",
       "code": "STNG",
       "ticker": "STNG",
       "name": "Scorpio Tankers Inc. Common Shares",
@@ -165,6 +150,21 @@
       "short_interest_change_ratio": 0.21870633811761708,
       "days_to_cover": 4.45,
       "context_flags": "SHORT_INTEREST_RISING"
+    },
+    {
+      "market": "US",
+      "code": "TRMD",
+      "ticker": "TRMD",
+      "name": "TORM plc - Class A Common Stock",
+      "data_status": "ok",
+      "confidence": 0.7,
+      "free_float_ratio": 0.6626223829080341,
+      "avg_daily_float_turnover_ratio": 0.011416510124328566,
+      "current_volume_ratio_30d": 1.7547973670624677,
+      "short_percent_float": 0.024600001,
+      "short_interest_change_ratio": 0.5310197101384324,
+      "days_to_cover": 2.48,
+      "context_flags": "SHORT_INTEREST_RISING|VOLUME_EXPANSION"
     }
   ],
   "thresholds": {
