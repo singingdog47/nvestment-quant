@@ -5,16 +5,36 @@
   "end_date": "2026-12-10",
   "cash_jpy": 1000000.0,
   "positions": {},
-  "pending_orders": [],
+  "pending_orders": [
+    {
+      "created_at_utc": "2026-09-14T08:58:19.441977+00:00",
+      "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito",
+      "signal_date": "2026-09-14",
+      "side": "BUY",
+      "symbol": "8622.T",
+      "code": "8622",
+      "name": "Mito Securities Co.,Ltd.",
+      "theme": "Financials",
+      "qty": 100,
+      "signal_price": 939.0,
+      "order_type": "LIMIT",
+      "reason": "Meta gate passes at moderate confidence. Mito Securities remains the top JP screening candidate, while primary company disclosure shows 2027/3 Q1 operating revenue +71.3% YoY, operating profit +730.1%, ordinary profit +398.7%, and net profit +347.5%. Importantly, the improvement is not only trading-sensitive revenue: stock revenue (investment-trust agency fees plus fund-wrap fees) rose 46.0% YoY, stock assets rose 34.1% to JPY765.7bn, and the SG&A coverage ratio from stock revenue improved to 49.3%. At JPY939 the secondary screening snapshot still shows a roughly 4.5% trailing dividend yield, PBR around 1.30x and strong momentum. The working mispricing thesis is that the market continues to discount most of the earnings surge as cyclical broker-market beta and does not fully price the higher recurring-revenue base. Because the stock has already risen strongly and primary fundamentals in the repository are missing, size is deliberately exploratory at 10% target weight and entry is staged with a limit below the close rather than chased.",
+      "confidence": 0.66,
+      "status": "PENDING",
+      "attempts": 0,
+      "limit_price": 935.0
+    }
+  ],
   "processed_gpt_decision_ids": [
     "gpt-shadow-20260910-initial-hold",
-    "gpt-shadow-20260911-postclose-1732-meta-hold"
+    "gpt-shadow-20260911-postclose-1732-meta-hold",
+    "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
   ],
   "realized_pnl_jpy": 0.0,
   "nav_jpy": 1000000.0,
   "peak_nav_jpy": 1000000.0,
   "max_drawdown_pct": 0.0,
   "benchmark_start_price": 422.70001220703125,
-  "last_run_date": "2026-09-11",
+  "last_run_date": "2026-09-14",
   "status": "ACTIVE"
 }
