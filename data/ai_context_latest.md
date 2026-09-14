@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-14T07:31:03+00:00",
-  "generated_at_utc": "2026-09-14T07:31:03+00:00",
-  "date_jst": "2026-09-14",
+  "generated_at": "2026-09-14T22:29:10+00:00",
+  "generated_at_utc": "2026-09-14T22:29:10+00:00",
+  "date_jst": "2026-09-15",
   "data_status": "ok",
-  "regime_label": "CONSTRUCTIVE",
-  "regime_score": 58.46,
+  "regime_label": "NEUTRAL",
+  "regime_score": 57.31,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -28,28 +28,28 @@ Generated quality score: **0.745** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 46.729222099543634,
-    "stress": 81.025,
+    "trend": 44.27945926476227,
+    "stress": 82.16999971389771,
     "participation": 49.83869109344394,
-    "liquidity": 60.53506469725522,
+    "liquidity": 55.889235310073616,
     "positioning": 51.361148997264756
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.5,
-    "hy_oas": 2.7,
+    "vix": 17.100000381469727,
+    "hy_oas": 2.65,
     "ig_oas": 0.8,
-    "treasury_volatility_proxy": 70.94,
-    "treasury_volatility_percentile_rank": 0.6746,
-    "treasury_volatility_stress_score": 49.4,
-    "treasury_volatility_as_of_date": "2026-09-11",
+    "treasury_volatility_proxy": 70.381,
+    "treasury_volatility_percentile_rank": 0.6389,
+    "treasury_volatility_stress_score": 52.08,
+    "treasury_volatility_as_of_date": "2026-09-14",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-14T07:31:00.856523+00:00",
     "nfci": -0.564,
-    "volume_ratio20_mean": 1.1646766174313805,
+    "volume_ratio20_mean": 1.0485308827518405,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -78,9 +78,9 @@ Generated quality score: **0.745** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-09-14",
+      "as_of_date": "2026-09-15",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 88,
+      "days_to_sq": 87,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -92,7 +92,7 @@ Generated quality score: **0.745** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 63492.98828125,
+        "spot": 64011.33984375,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -132,7 +132,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Policy guardrails
 {
-  "regime_label": "constructive",
+  "regime_label": "neutral",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
     0.08,
@@ -148,7 +148,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-14T07:31:58+00:00",
+  "generated_at": "2026-09-14T22:30:06+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -193,9 +193,9 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=4 / tier=primary
-- SEC: ok / records=45 / tier=primary
+- SEC: ok / records=46 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=18 / tier=secondary
+- NewsRSS: ok / records=20 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -271,7 +271,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 6965 浜松ホトニクス | Thu, 06 Aug 2026 | guidance | 決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTFBmVEVJUmoxbkY1S2IwUEVSY1BFMVVLa1pDalQ1NXNZTHhPSnN0UlZ6dHlfSzNFOEZpWjkxVW0xRUNDSTBSS1FMQllsdnAtR0pkOW84T3VxbmR2ZlRmVWFERm5fVTlZeFktSi10NA?oc=5
+- [CRITICAL] 6965 浜松ホトニクス | Thu, 06 Aug 2026 | guidance | 決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - nikkei.com | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTFBmVEVJUmoxbkY1S2IwUEVSY1BFMVVLa1pDalQ1NXNZTHhPSnN0UlZ6dHlfSzNFOEZpWjkxVW0xRUNDSTBSS1FMQllsdnAtR0pkOW84T3VxbmR2ZlRmVWFERm5fVTlZeFktSi10NA?oc=5
 - [HIGH] BUSE First Busey Corporation - Common Stock | 2026-07-31 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/314489/000031448926000052/buse-20260729.htm
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-07-31 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000127368526000069/adam-20260630.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-03 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426004739/p15041800_6k.htm

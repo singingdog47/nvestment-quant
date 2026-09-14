@@ -1,23 +1,23 @@
 # Market Regime v1.5
 
-- Label: **CONSTRUCTIVE**
-- Score: **58.46**
+- Label: **NEUTRAL**
+- Score: **57.31**
 - Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
 - Flags: none
 
 ## Components
-- trend: 46.729222099543634
-- stress: 81.025
+- trend: 44.27945926476227
+- stress: 82.16999971389771
 - participation: 49.83869109344394
-- liquidity: 60.53506469725522
+- liquidity: 55.889235310073616
 - positioning: 51.361148997264756
 
 ## SQ execution overlay
 - Active: **False**
 - Next major SQ: **2026-12-11**
-- Days to SQ: **88**
+- Days to SQ: **87**
 - Execution caution: **0.0/15.0**
 - Confidence: **0.4**
 - Data status: **partial**
@@ -28,20 +28,20 @@
 ## Evidence
 {
   "trend_series": 4,
-  "vix": 17.5,
-  "hy_oas": 2.7,
+  "vix": 17.100000381469727,
+  "hy_oas": 2.65,
   "ig_oas": 0.8,
-  "treasury_volatility_proxy": 70.94,
-  "treasury_volatility_percentile_rank": 0.6746,
-  "treasury_volatility_stress_score": 49.4,
-  "treasury_volatility_as_of_date": "2026-09-11",
+  "treasury_volatility_proxy": 70.381,
+  "treasury_volatility_percentile_rank": 0.6389,
+  "treasury_volatility_stress_score": 52.08,
+  "treasury_volatility_as_of_date": "2026-09-14",
   "treasury_volatility_status": "ok",
   "treasury_volatility_is_ice_move": false,
   "breadth_n": 9569,
   "breadth_status": "ok",
   "breadth_source_as_of_utc": "2026-09-14T07:31:00.856523+00:00",
   "nfci": -0.564,
-  "volume_ratio20_mean": 1.1646766174313805,
+  "volume_ratio20_mean": 1.0485308827518405,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22

@@ -1,45 +1,41 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-14T07:31:59+00:00
+Generated: 2026-09-14T22:30:07+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 6
-- WATCH: 10
+- WARNING: 2
+- WATCH: 12
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [LTC Properties, Inc. Common Stock]: SEC 10-Q filing
-  - New company event detected for LTC Properties, Inc. Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [FinTech Global Incorporated]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
-  - New company event detected for FinTech Global Incorporated.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Imperial Petroleum Inc. - Common Shares]: SEC 6-K filing
-  - New company event detected for Imperial Petroleum Inc. - Common Shares.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Imperial Petroleum Inc. - Common Shares]: SEC 6-K filing
-  - New company event detected for Imperial Petroleum Inc. - Common Shares.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [LTC Properties, Inc. Common Stock]: SEC 8-K filing
-  - New company event detected for LTC Properties, Inc. Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [LTC Properties, Inc. Common Stock]: SEC 8-K filing
-  - New company event detected for LTC Properties, Inc. Common Stock.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 日産自動車、Moplus、KDDI、自動運転車両10台による通信技術実証を実施 - KDDI ニュースルーム
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Dorian LPG Ltd. Common Stock]: SEC 8-K filing
+  - New company event detected for Dorian LPG Ltd. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [浜松ホトニクス]: 決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - nikkei.com
+  - New company event detected for 浜松ホトニクス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 楽天の携帯投資、ドコモの4割どまり KDDI頼み響き5G通信網見劣り - nikkei.com
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 攻撃者より先に動くサイバーセキュリティへ - kddi-research.jp
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 「東京ゲームショウ2026」にKDDIと共同出展、次世代3Dコンテンツ生成体験を展示 - PR TIMES
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI・日産ら、自動運転車両10台を運用・制御する通信技術の実証をみなとみらいで実施 - ビジネスネットワーク
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 日通NECロジスティクス／「NX ELESOL」へ商号変更、2027年1月から - 物流ニュースのLNEWS
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECスペーステクノロジーと日本旅行、STEAM教育・探究学習の推進で業務委託契約を締結 - spacemedia.jp
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC「革新と安心を語る -Empower Humanity-」ティザー動画: NEC Online TV - NEC
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 株主・投資家（IR）情報 : 株主・投資家情報 - NEC
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC雨宮CFOと語る人的資本とAI資本の最適配分。全員AIの新組織で描く次世代コーポレート組織とは - Biz/Zine
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業－ＳＭＢＣ日興が目標株価引き下げ 押し目買いの好機 - TradingView
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業はなぜ儲かる？元機関投資家が明かす「シリコンウエハー」だけではない強さの秘密（LIMO） - Yahoo!ニュース
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 9月26日(土)八戸戦～浜松ホトニクスマッチ～カーボンニュートラルデー～ ウンパルンパ さん来場決定！ - jubilo-iwata.co.jp
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業、株価反落 「東芝と次世代太陽電池開発」報道に反応薄 - nikkei.com
+  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス－ＳＭＢＣ日興が投資評価引き下げ 業績回復により期待は織り込まれた - TradingView
   - New company event detected for 浜松ホトニクス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 世界最高クラスとなる2.0 kWを出力するLDバーの開発に成功 | 浜松ホトニクス株式会社のプレスリリース - PR TIMES
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス(株)【6965】：決算情報 - Yahoo!ファイナンス
   - New company event detected for 浜松ホトニクス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 9月26日(土)八戸戦～浜松ホトニクスマッチ～カーボンニュートラルデー～ ウンパルンパ さん来場決定！ - ジュビロ磐田公式サイト | JUBILO IWATA OFFICIAL WEBSITE
+  - New company event detected for 浜松ホトニクス.
+- **WATCH** REGIME/REGIME_CHANGE: Market regime changed
+  - Market regime changed from CONSTRUCTIVE to NEUTRAL.
 - **WATCH** SCREENING/RANK_JUMP [Imperial Petroleum Inc. - Common Shares]: Screening rank jumped
   - Imperial Petroleum Inc. - Common Shares improved by at least 15 ranks.
 
