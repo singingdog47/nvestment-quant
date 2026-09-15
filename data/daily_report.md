@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-14T07:31:00.856523+00:00
+- Data retrieved (UTC): 2026-09-15T07:31:27.224063+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -28,35 +28,35 @@
 |---|---|---:|
 | JP | Financials | 9 |
 | JP | Other | 11 |
-| US | Financials | 5 |
+| US | Financials | 6 |
 | US | Mortgage REIT | 3 |
 | US | Other | 6 |
-| US | Shipping | 6 |
+| US | Shipping | 5 |
 
 ## Research candidates
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.0 | 100.0 | unchanged |
-| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.6 | 99.9 | unchanged |
-| JP | 3 | 3932.T | Akatsuki Inc. | Other | 75.8 | 99.9 | unchanged |
-| JP | 4 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.5 | 99.8 | unchanged |
-| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 72.9 | 99.6 | unchanged |
-| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.8 | 99.5 | unchanged |
-| JP | 11 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.5 | 99.5 | unchanged |
-| JP | 12 | 2121.T | MIXI,Inc. | Other | 71.3 | 99.4 | unchanged |
-| JP | 13 | 6927.T | Helios Techno Holding Co.,Ltd. | Other | 71.3 | 99.4 | unchanged |
-| JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.9 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.5 | 100.0 | unchanged |
-| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 84.5 | 100.0 | unchanged |
-| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 84.1 | 99.9 | unchanged |
-| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 83.0 | 99.9 | unchanged |
-| US | 7 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 82.7 | 99.8 | unchanged |
-| US | 8 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.0 | 99.8 | unchanged |
-| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 81.1 | 99.7 | unchanged |
-| US | 13 | BUSE | First Busey Corporation - Common Stock | Other | 80.8 | 99.6 | unchanged |
-| US | 16 | FRO | Frontline Plc Ordinary Shares | Other | 80.6 | 99.6 | unchanged |
-| US | 17 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.1 | 99.5 | unchanged |
+| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.5 | 99.9 | unchanged |
+| JP | 3 | 3932.T | Akatsuki Inc. | Other | 76.1 | 99.9 | unchanged |
+| JP | 4 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.4 | 99.8 | unchanged |
+| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.0 | 99.6 | unchanged |
+| JP | 10 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.8 | 99.5 | unchanged |
+| JP | 11 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.7 | 99.5 | unchanged |
+| JP | 12 | 2121.T | MIXI,Inc. | Other | 71.4 | 99.4 | unchanged |
+| JP | 13 | 6927.T | Helios Techno Holding Co.,Ltd. | Other | 71.4 | 99.4 | unchanged |
+| JP | 15 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.4 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.2 | 100.0 | unchanged |
+| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 84.1 | 100.0 | unchanged |
+| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 99.9 | unchanged |
+| US | 4 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 83.1 | 99.9 | unchanged |
+| US | 6 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.8 | 99.9 | unchanged |
+| US | 8 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 82.3 | 99.8 | unchanged |
+| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 81.2 | 99.7 | unchanged |
+| US | 14 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.6 | unchanged |
+| US | 16 | FRO | Frontline Plc Ordinary Shares | Other | 80.3 | 99.6 | unchanged |
+| US | 17 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.2 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 
