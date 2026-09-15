@@ -1,38 +1,42 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-15T07:32:41+00:00
+Generated: 2026-09-15T22:28:30+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 3
+- WARNING: 5
 - WATCH: 9
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_FILING [信越化学工業]: 臨時報告書
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [信越化学工業]: 信越化学工業[4063]：コミットメント型自己株式取得（FCSR）における事後調整のお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
   - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_FINANCING [信越化学工業]: 信越化学工業[4063]：ストックオプション（新株予約権）の割当てに関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
   - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [浜松ホトニクス]: 決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - 日本経済新聞
-  - New company event detected for 浜松ホトニクス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 楽天の携帯投資、ドコモの4割どまり KDDI頼み響き5G通信網見劣り - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化、今期配当を20円増額修正 - 株探
+  - New company event detected for 信越化学工業.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [TORM plc - Class A Common Stock]: SEC 6-K filing
+  - New company event detected for TORM plc - Class A Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [信越化学工業]: 有価証券届出書（参照方式）
+  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 攻撃者より先に動くサイバーセキュリティへ - kddi-research.jp
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ＫＤＤＩ(株)【9433】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI系新電力社長「蓄電池を無料配布、顧客獲得に手応え」 - 日本経済新聞
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: アジア初、次世代衛星「Starlink Mobile V2」契約を締結 - KDDI ニュースルーム
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: au×モナキが新感覚コラボMV2本同時公開 - 共同通信PRワイヤー
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI、米SpaceXと次世代衛星「Starlink Mobile V2」のサービス提供契約を締結 - ビジネスネットワーク
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIとSpaceX、次世代衛星「Starlink Mobile V2」契約 27年に音声通話も - ケータイ Watch
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI、次世代スターリンクで高速通信・音声通話へ アジア初 - Impress Watch
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: AI の利用率は 7 割超、幸福感が「向上した」のは 18.2%/幸福感に影響を与えるのは自律性と主体性 ――― NECが「AIとウェルビーイングに関する生活者調査」を発表 - PR TIMES
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC「革新と安心を語る -Empower Humanity-」 15分版: NEC Online TV - NEC
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 三井不動産やNECらが登壇──インディージャパン、9月18日に「産業イノベーションサミット」開催 - Biz/Zine
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: サプライチェーンマネジメント・通関業務をAIで効率化 NECが国際物流総合展2026に出展 - 電波新聞デジタル
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業はなぜ儲かる？元機関投資家が明かす「シリコンウエハー」だけではない強さの秘密（LIMO） - news.yahoo.co.jp
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 株主・投資家（IR）情報 : 株主・投資家情報 - NEC
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業はなぜ儲かる？元機関投資家が明かす「シリコンウエハー」だけではない強さの秘密（LIMO） - Yahoo!ニュース
   - New company event detected for 信越化学工業.
 
 ## Governance

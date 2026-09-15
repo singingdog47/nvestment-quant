@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-15T07:31:29+00:00",
-  "generated_at_utc": "2026-09-15T07:31:29+00:00",
-  "date_jst": "2026-09-15",
+  "generated_at": "2026-09-15T22:27:31+00:00",
+  "generated_at_utc": "2026-09-15T22:27:31+00:00",
+  "date_jst": "2026-09-16",
   "data_status": "ok",
   "regime_label": "NEUTRAL",
-  "regime_score": 57.52,
+  "regime_score": 53.01,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -28,28 +28,28 @@ Generated quality score: **0.745** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 43.82028768049861,
-    "stress": 81.8399993133545,
+    "trend": 31.438910142672835,
+    "stress": 82.10999942779542,
     "participation": 49.619771863117876,
-    "liquidity": 59.042261140385314,
+    "liquidity": 53.2400602631413,
     "positioning": 51.361148997264756
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.540000915527344,
-    "hy_oas": 2.65,
+    "vix": 17.200000762939453,
+    "hy_oas": 2.71,
     "ig_oas": 0.8,
-    "treasury_volatility_proxy": 70.381,
-    "treasury_volatility_percentile_rank": 0.6389,
-    "treasury_volatility_stress_score": 52.08,
-    "treasury_volatility_as_of_date": "2026-09-14",
+    "treasury_volatility_proxy": 69.604,
+    "treasury_volatility_percentile_rank": 0.627,
+    "treasury_volatility_stress_score": 52.98,
+    "treasury_volatility_as_of_date": "2026-09-15",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-15T07:31:27.224063+00:00",
     "nfci": -0.564,
-    "volume_ratio20_mean": 1.127356528509633,
+    "volume_ratio20_mean": 0.9823015065785325,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -78,9 +78,9 @@ Generated quality score: **0.745** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-09-15",
+      "as_of_date": "2026-09-16",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 87,
+      "days_to_sq": 86,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -92,7 +92,7 @@ Generated quality score: **0.745** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 63484.1015625,
+        "spot": 63492.98828125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -148,7 +148,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-15T07:32:40+00:00",
+  "generated_at": "2026-09-15T22:28:30+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -192,8 +192,8 @@ Generated quality score: **0.745** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=5 / tier=primary
-- SEC: ok / records=41 / tier=primary
+- EDINET: ok / records=6 / tier=primary
+- SEC: ok / records=42 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
 - NewsRSS: ok / records=19 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
@@ -319,6 +319,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 8789 FinTech Global Incorporated | 2026-09-14 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z23Y
 - [HIGH] LPG Dorian LPG Ltd. Common Stock | 2026-09-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1596993/000159699326000046/lpg-20260910x8k.htm
 - [HIGH] 4063 信越化学工業 | 2026-09-15 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2DU
+- [HIGH] 4063 信越化学工業 | 2026-09-15 | filing | 有価証券届出書（参照方式） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2EE
+- [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-15 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006318/p15075054_6-k.htm
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
