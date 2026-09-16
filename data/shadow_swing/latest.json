@@ -1,39 +1,26 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-09-15",
+  "as_of_date": "2026-09-16",
   "status": "ACTIVE",
   "data_fresh": true,
   "metrics": {
     "initial_capital_jpy": 1000000.0,
-    "nav_jpy": 1000200.0,
+    "nav_jpy": 999600.0,
     "cash_jpy": 906700.0,
-    "total_return_pct": 0.02,
-    "benchmark_return_pct": -0.331,
-    "alpha_pct": 0.351,
+    "total_return_pct": -0.04,
+    "benchmark_return_pct": 0.284,
+    "alpha_pct": -0.324,
     "realized_pnl_jpy": 0.0,
-    "max_drawdown_pct": 0.0,
+    "max_drawdown_pct": -0.06,
     "positions": 1,
     "pending_orders": 0
   },
   "regime": {
     "label": "NEUTRAL",
-    "score": 57.52,
+    "score": 56.21,
     "confidence": 1.0
   },
-  "fills_today": [
-    {
-      "date": "2026-09-15",
-      "symbol": "8622.T",
-      "side": "BUY",
-      "qty": 100,
-      "fill_price": 933.0,
-      "value_jpy": 93300.0,
-      "realized_pnl_jpy": 0.0,
-      "reason": "Meta gate passes at moderate confidence. Mito Securities remains the top JP screening candidate, while primary company disclosure shows 2027/3 Q1 operating revenue +71.3% YoY, operating profit +730.1%, ordinary profit +398.7%, and net profit +347.5%. Importantly, the improvement is not only trading-sensitive revenue: stock revenue (investment-trust agency fees plus fund-wrap fees) rose 46.0% YoY, stock assets rose 34.1% to JPY765.7bn, and the SG&A coverage ratio from stock revenue improved to 49.3%. At JPY939 the secondary screening snapshot still shows a roughly 4.5% trailing dividend yield, PBR around 1.30x and strong momentum. The working mispricing thesis is that the market continues to discount most of the earnings surge as cyclical broker-market beta and does not fully price the higher recurring-revenue base. Because the stock has already risen strongly and primary fundamentals in the repository are missing, size is deliberately exploratory at 10% target weight and entry is staged with a limit below the close rather than chased.",
-      "signal_date": "2026-09-14",
-      "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
-    }
-  ],
+  "fills_today": [],
   "pending_orders": [],
   "positions": [
     {
@@ -44,9 +31,9 @@
       "qty": 100,
       "entry_price": 933.0,
       "entry_date": "2026-09-15",
-      "last_price": 935.0,
+      "last_price": 929.0,
       "peak_price": 935.0,
-      "holding_sessions": 1,
+      "holding_sessions": 2,
       "confidence": 0.66,
       "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
     }

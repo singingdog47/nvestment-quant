@@ -1,20 +1,20 @@
 # AI Shadow Swing — Daily Status
 
-- As of: 2026-09-15 JST
+- As of: 2026-09-16 JST
 - Experiment: ¥1,000,000 / 2026-09-10 → 2026-12-10
 - Mode: SHADOW ONLY — no broker connection and no real orders
-- NAV: ¥1,000,200 | Cash: ¥906,700
-- Return: +0.02% | Benchmark: -0.33% | Alpha: +0.35%
-- Max DD: 0.00% | Status: ACTIVE
+- NAV: ¥999,600 | Cash: ¥906,700
+- Return: -0.04% | Benchmark: +0.28% | Alpha: -0.32%
+- Max DD: -0.06% | Status: ACTIVE
 
 ## Positions
-- 8622.T Mito Securities Co.,Ltd.: 100 shares / entry ¥933.00 / last ¥935.00 / +0.21%
+- 8622.T Mito Securities Co.,Ltd.: 100 shares / entry ¥933.00 / last ¥929.00 / -0.43%
 
 ## Pending orders
 - None
 
 ## Fills today
-- BUY 8622.T 100 @ ¥933.00 / Meta gate passes at moderate confidence. Mito Securities remains the top JP screening candidate, while primary company disclosure shows 2027/3 Q1 operating revenue +71.3% YoY, operating profit +730.1%, ordinary profit +398.7%, and net profit +347.5%. Importantly, the improvement is not only trading-sensitive revenue: stock revenue (investment-trust agency fees plus fund-wrap fees) rose 46.0% YoY, stock assets rose 34.1% to JPY765.7bn, and the SG&A coverage ratio from stock revenue improved to 49.3%. At JPY939 the secondary screening snapshot still shows a roughly 4.5% trailing dividend yield, PBR around 1.30x and strong momentum. The working mispricing thesis is that the market continues to discount most of the earnings surge as cyclical broker-market beta and does not fully price the higher recurring-revenue base. Because the stock has already risen strongly and primary fundamentals in the repository are missing, size is deliberately exploratory at 10% target weight and entry is staged with a limit below the close rather than chased.
+- None
 
 ## Rules
 - ChatGPT supplies discretionary BUY/SELL/HOLD decisions; code enforces sizing and loss limits.
