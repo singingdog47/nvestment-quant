@@ -1,47 +1,45 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-16T07:30:58+00:00
+Generated: 2026-09-16T22:28:38+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 5
-- WATCH: 11
+- WARNING: 7
+- WATCH: 8
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学工業、創立１００周年記念配当２０円を実施へ、年間配当予想１３６円に増額 - kabu-ir.com
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [信越化学工業]: 信越化、自社株買いの実施を発表 - 株探
   - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学が堅調､第2四半期末に記念配当20円実施へ - shikiho.toyokeizai.net
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - nikkei.com
   - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [LTC Properties, Inc. Common Stock]: SEC 10-Q filing
-  - New company event detected for LTC Properties, Inc. Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [LTC Properties, Inc. Common Stock]: SEC 8-K filing
-  - New company event detected for LTC Properties, Inc. Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [LTC Properties, Inc. Common Stock]: SEC 8-K filing
-  - New company event detected for LTC Properties, Inc. Common Stock.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: つくば市で自動運転バスの本格運行を10月2日から開始 - KDDI ニュースルーム
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI株価が反発 事業説明会にアナリストから評価の声 - 日本経済新聞
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIスマートドローン／国内初、国土交通省航空局の「UTMサービスプロバイダID」を取得 - lnews.jp
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI・つくば市らが自動運転バスの本格運行へ、関東鉄道で10月2日から - businessnetwork.jp
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECよどこへ行く 森田改革の成否 - xtech.nikkei.com
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECレッドロケッツ川崎 vs. ＫＵＲＯＢＥアクアフェアリーズ富山(10/30) 女子 東地区 第3節【大同生命SVリーグ 202 - ABEMA
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 日本旅行、宇宙産業を題材に探究学習プログラム、人工衛星の開発など学ぶ、NECスペーステクノロジーと連携 - トラベルボイス
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学が堅調､第2四半期末に記念配当20円実施へ - 四季報オンライン
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化が反発、創立１００周年記念配を好感 速報 - kabushiki.jp
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: ＜注目銘柄＞＝ホトニクス、ＡＩ関連の特需期待で逆張り好機 - 株探
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Frontline Plc Ordinary Shares]: SEC 6-K filing
+  - New company event detected for Frontline Plc Ordinary Shares.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Norwood Financial Corp. - Common Stock]: SEC 8-K filing
+  - New company event detected for Norwood Financial Corp. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [TORM plc - Class A Common Stock]: SEC 6-K filing
+  - New company event detected for TORM plc - Class A Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [浜松ホトニクス]: 決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - nikkei.com
   - New company event detected for 浜松ホトニクス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 日産自動車、Moplus、KDDI、自動運転車両10台による通信技術実証を実施 - KDDI ニュースルーム
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIが光回線＋5Gの「auひかりプラス」を提供する狙い　光コラボを生かして全国展開も視野に：石野純也のMobile Eye（2/3 ページ） - ITmedia Mobile - ITmedia
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI系新電力社長「蓄電池を無料配布、顧客獲得に手応え」 - nikkei.com
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIスマートドローン／国内初、国土交通省航空局の「UTMサービスプロバイダID」取得 - 物流ニュースのLNEWS
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECよどこへ行く 森田改革の成否 - 日経クロステック
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 株主・投資家（IR）情報 - NEC
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: サプライチェーンセキュリティの新常識「SCS評価制度」とは？ - NEC
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: Astemoリヴァーレ茨城 vs. NECレッドロケッツ川崎(10/25) 女子 東地区 第2節【大同生命SVリーグ 2026-27 - ABEMA
+  - New company event detected for NEC.
 
 ## Governance
 - Alerts are deterministic exception flags, not buy/sell signals.
