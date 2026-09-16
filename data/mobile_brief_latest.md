@@ -4,21 +4,21 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**NEUTRAL**、総合スコアは57.5です。
-市場レジームは前回からほぼ横ばいです。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+市場レジームは**NEUTRAL**、総合スコアは56.2です。
+市場レジームは維持され、総合状態は前回より改善しています。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：+0.2ポイント
-- トレンド：-0.5ポイント
-- 市場参加の広がり：-0.2ポイント
-- 流動性：+3.2ポイント
-- 上位候補に大きな順位上昇はなく、新しい強いトレンドが出たというより、既存の選好が続いています。
+- 総合スコア：+3.2ポイント
+- トレンド：+9.3ポイント
+- 市場参加の広がり：-0.8ポイント
+- 流動性：+4.0ポイント
+- Sompo Holdings,Inc.の順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
-日本はFinancialsが9銘柄。米国はFinancialsが6銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
-米国債金利の実現ボラproxyは64パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
+日本はFinancialsが9銘柄。米国はFinancialsが7銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+米国債金利の実現ボラproxyは63パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## SQ・短期需給
@@ -28,19 +28,19 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 個別銘柄の需給
 
-監視対象の浮動株比率カバレッジは97.2%、空売り需給は44.4%、当日出来高比較は100.0%です。 例外観測はInternational Seaways, Inc. Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION|POTENTIAL_SHORT_SQUEEZE_CONTEXT）、Imperial Petroleum Inc. - Common Shares（SHORT_CROWDING|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION|POTENTIAL_SHORT_SQUEEZE_CONTEXT）、Carter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、Millrose Properties, Inc. Class A Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
+監視対象の浮動株比率カバレッジは97.2%、空売り需給は44.4%、当日出来高比較は100.0%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、International Seaways, Inc. Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION）、Ichiyoshi Securities Co.,Ltd.（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、Millrose Properties, Inc. Class A Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
 浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。
 
 ## 今日の注意点
 
-- **WARNING** 臨時報告書 — 売買指示ではなく確認対象です。
-- **WARNING** 信越化学工業[4063]：ストックオプション（新株予約権）の割当てに関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
-- **WARNING** 決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - 日本経済新聞 — 売買指示ではなく確認対象です。
-- **WATCH** 楽天の携帯投資、ドコモの4割どまり KDDI頼み響き5G通信網見劣り - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** 信越化学工業、創立１００周年記念配当２０円を実施へ、年間配当予想１３６円に増額 - kabu-ir.com — 売買指示ではなく確認対象です。
+- **WARNING** 信越化学が堅調､第2四半期末に記念配当20円実施へ - shikiho.toyokeizai.net — 売買指示ではなく確認対象です。
+- **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Mito Securities Co.,Ltd.、Ichiyoshi Securities Co.,Ltd.、Akatsuki Inc.、IwaiCosmo Holdings,Inc.
+- 日本：Mito Securities Co.,Ltd.、Akatsuki Inc.、Ichiyoshi Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.
 - 米国：Carter Bankshares, Inc. - Common Stock、International Seaways, Inc. Common Stock 、Scorpio Tankers Inc. Common Shares、Tsakos Energy Navigation Ltd Common Shares
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
@@ -57,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは65.9点だが確認閾値未達
-- 上位: スタンダード 65.9 / ビットコイン 57.9 / テクノロジー 54.6
+- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは57.3点だが確認閾値未達
+- 上位: スタンダード 57.3 / ビットコイン 55.4 / テクノロジー 53.6
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は74.5%。9569銘柄中5371銘柄を採点し、価格欠損率は9.3%です。
+データ品質は74.5%。9568銘柄中5363銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-09-15T07:34:19+00:00
+生成時刻（UTC）：2026-09-16T07:32:25+00:00

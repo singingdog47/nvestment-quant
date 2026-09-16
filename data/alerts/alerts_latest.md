@@ -1,43 +1,47 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-15T22:28:30+00:00
+Generated: 2026-09-16T07:30:58+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
 - WARNING: 5
-- WATCH: 9
+- WATCH: 11
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [信越化学工業]: 信越化学工業[4063]：コミットメント型自己株式取得（FCSR）における事後調整のお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学工業、創立１００周年記念配当２０円を実施へ、年間配当予想１３６円に増額 - kabu-ir.com
   - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学が堅調､第2四半期末に記念配当20円実施へ - shikiho.toyokeizai.net
   - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化、今期配当を20円増額修正 - 株探
-  - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [TORM plc - Class A Common Stock]: SEC 6-K filing
-  - New company event detected for TORM plc - Class A Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [信越化学工業]: 有価証券届出書（参照方式）
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 攻撃者より先に動くサイバーセキュリティへ - kddi-research.jp
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [LTC Properties, Inc. Common Stock]: SEC 10-Q filing
+  - New company event detected for LTC Properties, Inc. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [LTC Properties, Inc. Common Stock]: SEC 8-K filing
+  - New company event detected for LTC Properties, Inc. Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [LTC Properties, Inc. Common Stock]: SEC 8-K filing
+  - New company event detected for LTC Properties, Inc. Common Stock.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: つくば市で自動運転バスの本格運行を10月2日から開始 - KDDI ニュースルーム
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI系新電力社長「蓄電池を無料配布、顧客獲得に手応え」 - 日本経済新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI株価が反発 事業説明会にアナリストから評価の声 - 日本経済新聞
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: au×モナキが新感覚コラボMV2本同時公開 - 共同通信PRワイヤー
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIスマートドローン／国内初、国土交通省航空局の「UTMサービスプロバイダID」を取得 - lnews.jp
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIとSpaceX、次世代衛星「Starlink Mobile V2」契約 27年に音声通話も - ケータイ Watch
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI・つくば市らが自動運転バスの本格運行へ、関東鉄道で10月2日から - businessnetwork.jp
   - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECよどこへ行く 森田改革の成否 - xtech.nikkei.com
+  - New company event detected for NEC.
 - **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC「革新と安心を語る -Empower Humanity-」 15分版: NEC Online TV - NEC
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECレッドロケッツ川崎 vs. ＫＵＲＯＢＥアクアフェアリーズ富山(10/30) 女子 東地区 第3節【大同生命SVリーグ 202 - ABEMA
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: サプライチェーンマネジメント・通関業務をAIで効率化 NECが国際物流総合展2026に出展 - 電波新聞デジタル
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 日本旅行、宇宙産業を題材に探究学習プログラム、人工衛星の開発など学ぶ、NECスペーステクノロジーと連携 - トラベルボイス
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 株主・投資家（IR）情報 : 株主・投資家情報 - NEC
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業はなぜ儲かる？元機関投資家が明かす「シリコンウエハー」だけではない強さの秘密（LIMO） - Yahoo!ニュース
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化が反発、創立１００周年記念配を好感 速報 - kabushiki.jp
+  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: ＜注目銘柄＞＝ホトニクス、ＡＩ関連の特需期待で逆張り好機 - 株探
+  - New company event detected for 浜松ホトニクス.
 
 ## Governance
 - Alerts are deterministic exception flags, not buy/sell signals.
