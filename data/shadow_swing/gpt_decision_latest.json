@@ -1,47 +1,47 @@
 {
-  "decision_id": "gpt-shadow-20260915-postclose-1733-meta-hold-pending-mito",
-  "decision_date": "2026-09-15",
+  "decision_id": "gpt-shadow-20260916-postclose-1737-meta-hold-mito",
+  "decision_date": "2026-09-16",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
   "meta_gate": {
     "passed": true,
-    "baseline": "Keep the existing 8622.T exploratory LIMIT order at JPY935 pending and otherwise retain JPY1,000,000 cash. Do not duplicate or chase the same thesis.",
-    "incremental_edge_source": "No new incremental edge justifies another order today. The existing Mito mispricing thesis remains intact, while today's close at JPY935 is exactly the outstanding limit level and the simulator state has not yet processed a fill.",
-    "assessment": "HOLD is superior to issuing a duplicate BUY. Mito remains JP screening rank 1 with total score 76.96, momentum 91.48, liquidity 73.09 and sufficient turnover, but those data are continuation evidence rather than a new independent mispricing thesis. The existing small exploratory order already expresses the thesis at the intended risk size.",
-    "strongest_counterargument": "If the next simulator cycle fills the JPY935 order from today's market data, waiting now could appear mechanically late. However, issuing another BUY before state reconciliation risks double-counting exposure and violates the instruction to respect pending orders.",
-    "simpler_alternative": "Allow the existing pending order to be processed on the next shadow execution cycle, then reassess the resulting position rather than creating a second instruction."
+    "baseline": "Hold the existing exploratory 100-share 8622.T position entered at JPY933 and retain the remaining cash. Do not add merely because the stock remains screening rank 1.",
+    "incremental_edge_source": "No new independent information or execution edge justifies increasing exposure today. The existing position already expresses the moderate-confidence recurring-revenue mispricing thesis.",
+    "assessment": "HOLD dominates both ADD and SELL. Mito remains JP screening rank 1 at JPY929 with total score 77.05, momentum 90.09, liquidity 72.87 and adequate turnover. The price is only about 0.43% below the JPY933 entry, far from the -6% hard stop, while no fresh evidence disconfirms the thesis. Conversely, the lack of new primary company evidence means there is no basis to increase the exploratory size.",
+    "strongest_counterargument": "The decline from JPY935 to JPY929 while the broad regime remains neutral could be an early sign that momentum is weakening. However, one session of modest weakness is insufficient to override the intact thesis or trigger the configured stop discipline.",
+    "simpler_alternative": "Keep the existing 100-share position unchanged and wait for either material price/thesis deterioration or new company evidence before changing exposure."
   },
   "existing_thesis_review": {
     "symbol": "8622.T",
     "name": "Mito Securities Co.,Ltd.",
-    "market_implied_view": "The prior working inference remains that the market discounts a meaningful part of Q1 earnings strength as cyclical broker-market beta rather than fully capitalizing the higher recurring stock-revenue base.",
-    "our_differing_view": "The prior primary-source thesis remains plausible: recurring stock revenue/assets may support a higher normalized earnings floor than a simple cyclical mean-reversion view implies.",
-    "why_market_may_be_wrong": "Broker earnings cyclicality can obscure improvement in recurring asset-linked revenue, but no new company-specific primary evidence today materially increases this edge.",
-    "catalyst_or_repricing_path": "Next half-year/Q2 disclosure and dividend/capital-return updates remain the principal falsification and repricing checkpoints.",
-    "disconfirming_condition": "Material deterioration in stock assets or recurring stock revenue, operating profit reverting toward pre-Q1 levels without a temporary explanation, weaker capital returns, or valuation expansion without corresponding fundamental improvement.",
-    "expected_horizon": "2-12 weeks, with the next half-year/Q2 disclosure as the primary checkpoint.",
+    "market_implied_view": "The working inference remains that the market treats a meaningful portion of the recent earnings surge as cyclical broker-market beta and therefore does not fully capitalize the improved recurring stock-revenue base.",
+    "our_differing_view": "Recurring stock revenue and stock assets may support a higher normalized earnings floor than a simple cyclical mean-reversion interpretation implies.",
+    "why_market_may_be_wrong": "Broker earnings cyclicality can obscure changes in recurring asset-linked revenue; the stock remains quantitatively strong despite the modest post-entry pullback.",
+    "catalyst_or_repricing_path": "Next half-year/Q2 disclosure, continued growth in stock assets/recurring revenue, and dividend or capital-return updates remain the principal repricing checkpoints.",
+    "disconfirming_condition": "Material deterioration in stock assets or recurring stock revenue, operating profit reverting toward pre-Q1 levels without a temporary explanation, weaker capital returns, or a price decline reaching the configured risk exit without offsetting new evidence.",
+    "expected_horizon": "2-12 weeks, with the next half-year/Q2 disclosure as the primary fundamental checkpoint.",
     "confidence": 0.65,
-    "data_quality": "2026-09-15 screening and regime data are fresh and actionable, but repository primary fundamental coverage remains 0.0 and effective fundamental coverage 0.65. No new primary company disclosure was needed to justify HOLD."
+    "data_quality": "2026-09-16 screening and regime data are fresh and actionable. Repository primary fundamental coverage remains 0.0 and effective fundamental coverage 0.65, so no confidence increase or ADD is justified from company fundamentals today."
+  },
+  "position_context": {
+    "symbol": "8622.T",
+    "qty": 100,
+    "entry_price": 933.0,
+    "entry_date": "2026-09-15",
+    "latest_screening_price": 929.0,
+    "unrealized_return_pct_approx": -0.43,
+    "hard_stop_price_approx": 877.02,
+    "pending_orders": 0
   },
   "market_context": {
     "regime_label": "NEUTRAL",
-    "regime_score": 57.52,
+    "regime_score": 56.21,
     "regime_confidence": 1.0,
     "stress_flag": false,
     "thin_liquidity_flag": false,
     "sq_active": false,
     "sq_execution_stance": "NORMAL"
-  },
-  "pending_order_context": {
-    "symbol": "8622.T",
-    "side": "BUY",
-    "qty": 100,
-    "limit_price": 935.0,
-    "signal_date": "2026-09-14",
-    "status": "PENDING",
-    "latest_screening_price": 935.0,
-    "instruction": "Do not duplicate. Let the simulator reconcile/fill the existing order on its next execution cycle."
   },
   "data_quality_caveats": [
     "Repository primary fundamental coverage is 0.0 and effective fundamental coverage is 0.65 (secondary_only).",
@@ -49,7 +49,7 @@
     "Supply-demand coverage is partial and is used only as monitoring/execution context.",
     "data/decision_system/decision_latest.json is stale at 2026-08-23 and was not treated as current evidence."
   ],
-  "reason": "HOLD. The existing 100-share Mito Securities LIMIT at JPY935 remains pending, and today's fresh screening price is JPY935. The original moderate-confidence mispricing thesis is not disconfirmed, but there is no new incremental edge that warrants duplicating or enlarging the order before the simulator reconciles the pending order. Market regime is NEUTRAL and actionable with no stress or thin-liquidity flag.",
-  "confidence": 0.76,
+  "reason": "HOLD the existing 100-share Mito Securities position. The JPY929 screening price is only modestly below the JPY933 entry; the stock remains JP rank 1 and the recurring-revenue mispricing thesis has not been disconfirmed. There is also no new primary company evidence that would justify ADD. The market regime is NEUTRAL and actionable with no stress, thin-liquidity, or SQ caution flag.",
+  "confidence": 0.78,
   "notes": "SHADOW ONLY. No broker connection and no real-money order."
 }
