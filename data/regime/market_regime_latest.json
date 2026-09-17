@@ -1,12 +1,12 @@
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-16T22:27:19+00:00",
-  "generated_at_utc": "2026-09-16T22:27:19+00:00",
+  "generated_at": "2026-09-17T07:30:13+00:00",
+  "generated_at_utc": "2026-09-17T07:30:13+00:00",
   "date_jst": "2026-09-17",
   "data_status": "ok",
-  "regime_label": "NEUTRAL",
-  "regime_score": 55.95,
+  "regime_label": "CONSTRUCTIVE",
+  "regime_score": 59.36,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,15 +23,15 @@
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 40.25096390854291,
-    "stress": 81.77500068664551,
-    "participation": 48.78716294076976,
-    "liquidity": 56.885004588198925,
+    "trend": 47.72140910086321,
+    "stress": 83.03499948501587,
+    "participation": 49.08079760258184,
+    "liquidity": 62.21004408622563,
     "positioning": 51.361148997264756
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.709999084472656,
+    "vix": 16.030000686645508,
     "hy_oas": 2.76,
     "ig_oas": 0.8,
     "treasury_volatility_proxy": 69.297,
@@ -42,9 +42,9 @@
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-16T07:29:53.930268+00:00",
+    "breadth_source_as_of_utc": "2026-09-17T07:30:10.504454+00:00",
     "nfci": -0.56,
-    "volume_ratio20_mean": 1.074125114704973,
+    "volume_ratio20_mean": 1.207251102155641,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -87,7 +87,7 @@
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 63484.1015625,
+        "spot": 64136.25,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
