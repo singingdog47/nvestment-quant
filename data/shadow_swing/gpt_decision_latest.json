@@ -1,42 +1,42 @@
 {
-  "decision_id": "gpt-shadow-20260916-postclose-1737-meta-hold-mito",
-  "decision_date": "2026-09-16",
+  "decision_id": "gpt-shadow-20260917-postclose-1735-meta-hold-mito",
+  "decision_date": "2026-09-17",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
   "meta_gate": {
     "passed": true,
-    "baseline": "Hold the existing exploratory 100-share 8622.T position entered at JPY933 and retain the remaining cash. Do not add merely because the stock remains screening rank 1.",
-    "incremental_edge_source": "No new independent information or execution edge justifies increasing exposure today. The existing position already expresses the moderate-confidence recurring-revenue mispricing thesis.",
-    "assessment": "HOLD dominates both ADD and SELL. Mito remains JP screening rank 1 at JPY929 with total score 77.05, momentum 90.09, liquidity 72.87 and adequate turnover. The price is only about 0.43% below the JPY933 entry, far from the -6% hard stop, while no fresh evidence disconfirms the thesis. Conversely, the lack of new primary company evidence means there is no basis to increase the exploratory size.",
-    "strongest_counterargument": "The decline from JPY935 to JPY929 while the broad regime remains neutral could be an early sign that momentum is weakening. However, one session of modest weakness is insufficient to override the intact thesis or trigger the configured stop discipline.",
-    "simpler_alternative": "Keep the existing 100-share position unchanged and wait for either material price/thesis deterioration or new company evidence before changing exposure."
+    "baseline": "Hold the existing exploratory 100-share 8622.T position entered at JPY933 and retain the remaining cash. Do not add solely because the stock remains screening rank 1.",
+    "incremental_edge_source": "No new independent company evidence or execution edge justifies increasing exposure today. The existing 100-share position already expresses the moderate-confidence recurring-revenue mispricing thesis.",
+    "assessment": "HOLD dominates ADD and SELL. Mito remains JP screening rank 1 at JPY922 with total score 76.92, momentum 89.15, liquidity 72.19 and 30-day average turnover about JPY377m. The price is about 1.18% below the JPY933 entry, still far from the configured -6% hard stop. The market regime improved to CONSTRUCTIVE 59.36 with no stress or thin-liquidity flag. There is no fresh primary company evidence to increase thesis confidence, and no fresh evidence that falsifies it.",
+    "strongest_counterargument": "Mito has declined from the JPY935 post-entry peak to JPY922 while momentum has eased, so continued weakness could indicate the earlier rerating is tiring. At only about -1.18% from entry, however, this is not yet sufficient evidence to override the fundamental thesis or configured risk discipline.",
+    "simpler_alternative": "Keep the existing 100-share position unchanged and wait for material thesis evidence, a meaningful technical deterioration, or the configured exit conditions before changing exposure."
   },
   "existing_thesis_review": {
     "symbol": "8622.T",
     "name": "Mito Securities Co.,Ltd.",
-    "market_implied_view": "The working inference remains that the market treats a meaningful portion of the recent earnings surge as cyclical broker-market beta and therefore does not fully capitalize the improved recurring stock-revenue base.",
+    "market_implied_view": "The working inference remains that the market treats a meaningful portion of recent earnings strength as cyclical securities-market beta and does not fully capitalize the improved recurring stock-revenue base.",
     "our_differing_view": "Recurring stock revenue and stock assets may support a higher normalized earnings floor than a simple cyclical mean-reversion interpretation implies.",
-    "why_market_may_be_wrong": "Broker earnings cyclicality can obscure changes in recurring asset-linked revenue; the stock remains quantitatively strong despite the modest post-entry pullback.",
-    "catalyst_or_repricing_path": "Next half-year/Q2 disclosure, continued growth in stock assets/recurring revenue, and dividend or capital-return updates remain the principal repricing checkpoints.",
+    "why_market_may_be_wrong": "Broker earnings cyclicality can obscure structural changes in recurring asset-linked revenue; despite the pullback, Mito remains the top-ranked JP screening candidate with strong medium-term momentum and adequate liquidity.",
+    "catalyst_or_repricing_path": "Next half-year/Q2 disclosure, continued growth in stock assets and recurring revenue, and dividend or capital-return updates remain the principal repricing checkpoints.",
     "disconfirming_condition": "Material deterioration in stock assets or recurring stock revenue, operating profit reverting toward pre-Q1 levels without a temporary explanation, weaker capital returns, or a price decline reaching the configured risk exit without offsetting new evidence.",
     "expected_horizon": "2-12 weeks, with the next half-year/Q2 disclosure as the primary fundamental checkpoint.",
-    "confidence": 0.65,
-    "data_quality": "2026-09-16 screening and regime data are fresh and actionable. Repository primary fundamental coverage remains 0.0 and effective fundamental coverage 0.65, so no confidence increase or ADD is justified from company fundamentals today."
+    "confidence": 0.64,
+    "data_quality": "2026-09-17 screening and regime data are fresh and actionable. Repository primary fundamental coverage remains 0.0 and effective fundamental coverage 0.65 (secondary_only), so no confidence increase or ADD is justified from company fundamentals today."
   },
   "position_context": {
     "symbol": "8622.T",
     "qty": 100,
     "entry_price": 933.0,
     "entry_date": "2026-09-15",
-    "latest_screening_price": 929.0,
-    "unrealized_return_pct_approx": -0.43,
+    "latest_screening_price": 922.0,
+    "unrealized_return_pct_approx": -1.18,
     "hard_stop_price_approx": 877.02,
     "pending_orders": 0
   },
   "market_context": {
-    "regime_label": "NEUTRAL",
-    "regime_score": 56.21,
+    "regime_label": "CONSTRUCTIVE",
+    "regime_score": 59.36,
     "regime_confidence": 1.0,
     "stress_flag": false,
     "thin_liquidity_flag": false,
@@ -46,10 +46,9 @@
   "data_quality_caveats": [
     "Repository primary fundamental coverage is 0.0 and effective fundamental coverage is 0.65 (secondary_only).",
     "Screening price/factor fields use an unofficial TradingView scanner feed with exact exchange timestamp unavailable.",
-    "Supply-demand coverage is partial and is used only as monitoring/execution context.",
-    "data/decision_system/decision_latest.json is stale at 2026-08-23 and was not treated as current evidence."
+    "Supply-demand coverage is partial and is used only as monitoring/execution context."
   ],
-  "reason": "HOLD the existing 100-share Mito Securities position. The JPY929 screening price is only modestly below the JPY933 entry; the stock remains JP rank 1 and the recurring-revenue mispricing thesis has not been disconfirmed. There is also no new primary company evidence that would justify ADD. The market regime is NEUTRAL and actionable with no stress, thin-liquidity, or SQ caution flag.",
+  "reason": "HOLD the existing 100-share Mito Securities position. At JPY922 it is about 1.18% below the JPY933 entry, but remains JP screening rank 1 with total score 76.92 and momentum 89.15. The market regime improved to CONSTRUCTIVE with no stress, thin-liquidity, or SQ caution. No fresh primary company evidence either strengthens the thesis enough to justify ADD or disconfirms it enough to SELL.",
   "confidence": 0.78,
   "notes": "SHADOW ONLY. No broker connection and no real-money order."
 }
