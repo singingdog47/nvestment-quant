@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-09-17",
+  "as_of_date": "2026-09-18",
   "status": "ACTIVE",
   "data_fresh": true,
   "metrics": {
     "initial_capital_jpy": 1000000.0,
-    "nav_jpy": 998900.0,
+    "nav_jpy": 1000400.0,
     "cash_jpy": 906700.0,
-    "total_return_pct": -0.11,
-    "benchmark_return_pct": 1.112,
-    "alpha_pct": -1.222,
+    "total_return_pct": 0.04,
+    "benchmark_return_pct": 0.852,
+    "alpha_pct": -0.812,
     "realized_pnl_jpy": 0.0,
     "max_drawdown_pct": -0.13,
     "positions": 1,
@@ -17,7 +17,7 @@
   },
   "regime": {
     "label": "CONSTRUCTIVE",
-    "score": 59.36,
+    "score": 63.48,
     "confidence": 1.0
   },
   "fills_today": [],
@@ -31,9 +31,9 @@
       "qty": 100,
       "entry_price": 933.0,
       "entry_date": "2026-09-15",
-      "last_price": 922.0,
-      "peak_price": 935.0,
-      "holding_sessions": 3,
+      "last_price": 937.0,
+      "peak_price": 937.0,
+      "holding_sessions": 4,
       "confidence": 0.66,
       "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
     }

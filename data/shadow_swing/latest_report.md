@@ -1,14 +1,14 @@
 # AI Shadow Swing — Daily Status
 
-- As of: 2026-09-17 JST
+- As of: 2026-09-18 JST
 - Experiment: ¥1,000,000 / 2026-09-10 → 2026-12-10
 - Mode: SHADOW ONLY — no broker connection and no real orders
-- NAV: ¥998,900 | Cash: ¥906,700
-- Return: -0.11% | Benchmark: +1.11% | Alpha: -1.22%
+- NAV: ¥1,000,400 | Cash: ¥906,700
+- Return: +0.04% | Benchmark: +0.85% | Alpha: -0.81%
 - Max DD: -0.13% | Status: ACTIVE
 
 ## Positions
-- 8622.T Mito Securities Co.,Ltd.: 100 shares / entry ¥933.00 / last ¥922.00 / -1.18%
+- 8622.T Mito Securities Co.,Ltd.: 100 shares / entry ¥933.00 / last ¥937.00 / +0.43%
 
 ## Pending orders
 - None
