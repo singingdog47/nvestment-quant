@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-17T07:30:10.504454+00:00
+- Data retrieved (UTC): 2026-09-18T12:14:50.749326+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -28,35 +28,35 @@
 |---|---|---:|
 | JP | Financials | 9 |
 | JP | Other | 11 |
-| US | Financials | 6 |
+| US | Financials | 7 |
 | US | Mortgage REIT | 2 |
 | US | Other | 6 |
-| US | Shipping | 6 |
+| US | Shipping | 5 |
 
 ## Research candidates
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 76.9 | 100.0 | unchanged |
-| JP | 2 | 3932.T | Akatsuki Inc. | Other | 75.9 | 99.9 | unchanged |
-| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 75.8 | 99.9 | unchanged |
-| JP | 4 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.7 | 99.8 | unchanged |
+| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 77.0 | 100.0 | unchanged |
+| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 76.0 | 99.9 | unchanged |
+| JP | 3 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.9 | 99.9 | unchanged |
+| JP | 4 | 3932.T | Akatsuki Inc. | Other | 75.6 | 99.8 | unchanged |
 | JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.6 | unchanged |
-| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.9 | 99.5 | unchanged |
-| JP | 11 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.8 | 99.5 | unchanged |
-| JP | 12 | 2121.T | MIXI,Inc. | Other | 71.2 | 99.4 | unchanged |
-| JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.0 | 99.4 | unchanged |
-| JP | 15 | 8630.T | Sompo Holdings,Inc. | Other | 69.5 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.5 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 84.1 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.8 | 99.9 | unchanged |
-| US | 5 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.8 | 99.9 | unchanged |
-| US | 6 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.8 | 99.9 | unchanged |
-| US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 82.1 | 99.8 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.1 | 99.7 | unchanged |
-| US | 15 | TRMD | TORM plc - Class A Common Stock | Other | 80.2 | 99.6 | unchanged |
-| US | 17 | FRO | Frontline Plc Ordinary Shares | Other | 80.1 | 99.5 | unchanged |
-| US | 18 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.0 | 99.5 | unchanged |
+| JP | 10 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.4 | 99.5 | unchanged |
+| JP | 11 | 2121.T | MIXI,Inc. | Other | 71.1 | 99.5 | unchanged |
+| JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.9 | 99.4 | unchanged |
+| JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.8 | 99.4 | unchanged |
+| JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 69.6 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.6 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 84.0 | 100.0 | unchanged |
+| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.6 | 99.9 | unchanged |
+| US | 4 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.8 | 99.9 | unchanged |
+| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.5 | 99.9 | unchanged |
+| US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.7 | 99.8 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.8 | 99.7 | unchanged |
+| US | 15 | FRO | Frontline Plc Ordinary Shares | Other | 80.1 | 99.6 | unchanged |
+| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.6 | unchanged |
+| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.5 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 

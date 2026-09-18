@@ -1,12 +1,12 @@
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-17T22:25:52+00:00",
-  "generated_at_utc": "2026-09-17T22:25:52+00:00",
+  "generated_at": "2026-09-18T12:14:53+00:00",
+  "generated_at_utc": "2026-09-18T12:14:53+00:00",
   "date_jst": "2026-09-18",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 62.8,
+  "regime_score": 63.48,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,15 +23,15 @@
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 65.37711183521995,
-    "stress": 81.45500031471252,
-    "participation": 49.08079760258184,
-    "liquidity": 52.460402245365536,
+    "trend": 63.400510635703895,
+    "stress": 81.48500028610229,
+    "participation": 50.250691562932225,
+    "liquidity": 59.322470013060126,
     "positioning": 51.361148997264756
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.4399995803833,
+    "vix": 15.399999618530273,
     "hy_oas": 2.7,
     "ig_oas": 0.78,
     "treasury_volatility_proxy": 72.593,
@@ -40,11 +40,11 @@
     "treasury_volatility_as_of_date": "2026-09-17",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
-    "breadth_n": 9568,
+    "breadth_n": 9566,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-17T07:30:10.504454+00:00",
+    "breadth_source_as_of_utc": "2026-09-18T12:14:50.749326+00:00",
     "nfci": -0.56,
-    "volume_ratio20_mean": 0.9635100561341385,
+    "volume_ratio20_mean": 1.135061750326503,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -64,8 +64,8 @@
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-09-17",
-    "jpx_official_turnover_million_jpy": 7834874.0,
+    "jpx_official_turnover_date": "2026-09-18",
+    "jpx_official_turnover_million_jpy": 11269638.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
@@ -87,7 +87,7 @@
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 63923.0,
+        "spot": 65018.94921875,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,

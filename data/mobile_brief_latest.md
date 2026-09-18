@@ -4,21 +4,21 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**CONSTRUCTIVE**、総合スコアは59.4です。
-市場レジームは前回のNEUTRALからCONSTRUCTIVEへ変わりました。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+市場レジームは**CONSTRUCTIVE**、総合スコアは63.5です。
+市場レジームは前回からほぼ横ばいです。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：+3.4ポイント
-- トレンド：+7.5ポイント
-- 市場参加の広がり：+0.3ポイント
-- 流動性：+5.3ポイント
-- 上位候補に大きな順位上昇はなく、新しい強いトレンドが出たというより、既存の選好が続いています。
+- 総合スコア：+0.7ポイント
+- トレンド：-2.0ポイント
+- 市場参加の広がり：+1.2ポイント
+- 流動性：+6.9ポイント
+- INFRONEER Holdings Inc.、ERI HOLDINGS CO.,LTD.の順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
-日本はFinancialsが9銘柄。米国はFinancialsが6銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
-米国債金利の実現ボラproxyは62パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
+日本はFinancialsが9銘柄。米国はFinancialsが7銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+米国債金利の実現ボラproxyは73パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## SQ・短期需給
@@ -33,15 +33,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 今日の注意点
 
-- **WARNING** 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
-- **WARNING** 信越化、今期配当を20円増額修正 - 株探 — 売買指示ではなく確認対象です。
 - **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 - **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Mito Securities Co.,Ltd.、Akatsuki Inc.、Ichiyoshi Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.
-- 米国：Carter Bankshares, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares、International Seaways, Inc. Common Stock 、Tsakos Energy Navigation Ltd Common Shares
+- 日本：Mito Securities Co.,Ltd.、Ichiyoshi Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.、Akatsuki Inc.
+- 米国：Carter Bankshares, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares、International Seaways, Inc. Common Stock 、Norwood Financial Corp. - Common Stock
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
 
@@ -57,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは57.1点だが確認閾値未達
-- 上位: スタンダード 57.1 / ビットコイン 55.5 / テクノロジー 53.9
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.2点で優位性が弱い
+- 上位: テクノロジー 71.0 / ビットコイン 69.7 / スタンダード 66.5
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は74.5%。9568銘柄中5359銘柄を採点し、価格欠損率は9.3%です。
+データ品質は74.5%。9566銘柄中5374銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-09-17T07:32:56+00:00
+生成時刻（UTC）：2026-09-18T12:17:25+00:00
