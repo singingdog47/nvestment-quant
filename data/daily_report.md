@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-21T14:12:49.675803+00:00
+- Data retrieved (UTC): 2026-09-21T15:04:44.013462+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -39,7 +39,7 @@
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 76.3 | 100.0 | unchanged |
 | JP | 2 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.3 | 99.9 | unchanged |
-| JP | 3 | 8616.T | Tokai Tokyo Financial Holdings,Inc. | Financials | 75.0 | 99.9 | new_entry |
+| JP | 3 | 8616.T | Tokai Tokyo Financial Holdings,Inc. | Financials | 75.0 | 99.9 | unchanged |
 | JP | 4 | 3932.T | Akatsuki Inc. | Other | 75.0 | 99.8 | unchanged |
 | JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.1 | 99.6 | unchanged |
 | JP | 9 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.6 | 99.6 | unchanged |
@@ -48,15 +48,15 @@
 | JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.2 | 99.4 | unchanged |
 | JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 69.7 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.0 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.5 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.1 | 99.9 | unchanged |
-| US | 5 | MCHB | Mechanics Bancorp - Class A Common Stock | Financials | 82.1 | 99.9 | new_entry |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.4 | 100.0 | unchanged |
+| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.2 | 99.9 | unchanged |
+| US | 4 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.6 | 99.9 | new_entry |
 | US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.8 | unchanged |
-| US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.6 | 99.8 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.1 | 99.7 | unchanged |
-| US | 16 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.8 | 99.6 | unchanged |
-| US | 17 | TRMD | TORM plc - Class A Common Stock | Other | 79.8 | 99.5 | unchanged |
-| US | 19 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | unchanged |
+| US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.5 | 99.8 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.0 | 99.7 | unchanged |
+| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.7 | 99.6 | unchanged |
+| US | 17 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.7 | 99.5 | unchanged |
+| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 
