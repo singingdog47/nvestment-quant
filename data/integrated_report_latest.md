@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-09-21T15:08:01+00:00
+Generated (UTC): 2026-09-21T15:23:14+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,7 +11,7 @@ Generated (UTC): 2026-09-21T15:08:01+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 62.34
+- Score: 62.49
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
@@ -29,21 +29,19 @@ Generated (UTC): 2026-09-21T15:08:01+00:00
 - [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING
 - [US] First Busey Corporation - Common Stock: SHORT_CROWDING
 - [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING
-- [US] Imperial Petroleum Inc. - Common Shares: SHORT_CROWDING
 - [JP] KDDI: VOLUME_EXPANSION
 - [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER
+- [US] Norwood Financial Corp. - Common Stock: SHORT_INTEREST_RISING
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 5, 'WARNING': 4, 'CRITICAL': 0}
+- Counts: {'INFO': 0, 'WATCH': 4, 'WARNING': 2, 'CRITICAL': 0}
 - [WARNING] COMPANY_EVENT / SEC 10-Q filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
 - [WARNING] LIQUIDITY / Thin liquidity flag active
-- [WATCH] COMPANY_EVENT / つくば市で自動運転バスの本格運行を10月2日から開始 - newsroom.kddi.com
-- [WATCH] COMPANY_EVENT / NECグループの英国現代奴隷法への対応 : 企業情報 - NEC
-- [WATCH] COMPANY_EVENT / 昨季発生、NECグリーンロケッツ東葛の不祥事2件に懲罰。複数選手・スタッフも関与。チームの責任、過失も明らかに - rugby-rp.com
-- [WATCH] COMPANY_EVENT / 手元資金1.6兆円超なのに「借入金」が急増…それでも信越化学工業の財務は盤石といえるワケ - ダイヤモンド・オンライン
+- [WATCH] COMPANY_EVENT / つくば市で自動運転バスの本格運行を10月2日から開始 - KDDI ニュースルーム
+- [WATCH] COMPANY_EVENT / 昨季発生、NECグリーンロケッツ東葛の不祥事2件に懲罰。複数選手・スタッフも関与。チームの責任、過失も明らかに - ラグビーリパブリック
+- [WATCH] COMPANY_EVENT / 浜松ホトニクス－ＳＭＢＣ日興が投資評価引き下げ 業績回復により期待は織り込まれた - TradingView
+- [WATCH] LIQUIDITY / Market liquidity is soft
 
 ## 5. スクリーニング上位候補
 
@@ -55,23 +53,23 @@ Generated (UTC): 2026-09-21T15:08:01+00:00
 - 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=73.12291366010886 | cross_pct=99.64194373401534
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.95433888602389 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.42926955831683 | cross_pct=99.97080291970802
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.15560395818368 | cross_pct=99.94160583941606
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=4.0 | raw=82.58990836946684 | cross_pct=99.91240875912408
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=7.0 | raw=81.93777833290513 | cross_pct=99.82481751824818
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.95740422270775 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.19732733801983 | cross_pct=99.97077732320281
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.12026831857807 | cross_pct=99.9415546464056
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=4.0 | raw=82.60202316095649 | cross_pct=99.91233196960842
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=8.0 | raw=81.88280920470362 | cross_pct=99.79544126241964
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.95433888602389
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.95740422270775
 - 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=76.31712249308279
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97080291970802 | raw=83.42926955831683
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97077732320281 | raw=83.19732733801983
 - 4. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.94884910485933 | raw=75.32052070536537
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94160583941606 | raw=83.15560395818368
-- 6. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.91240875912408 | raw=82.58990836946684
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.9415546464056 | raw=83.12026831857807
+- 6. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.91233196960842 | raw=82.60202316095649
 - 7. [JP] Tokai Tokyo Financial Holdings,Inc. | cross_pct=99.89769820971867 | raw=75.0312079410746
 - 8. [JP] Akatsuki Inc. | cross_pct=99.846547314578 | raw=74.99470947362886
-- 9. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.82481751824818 | raw=81.93777833290513
-- 10. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.76642335766424 | raw=81.50474133214871
+- 9. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.79544126241964 | raw=81.88280920470362
+- 10. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.76621858562244 | raw=81.4142725707544
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -98,8 +96,8 @@ Generated (UTC): 2026-09-21T15:08:01+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が0.5点で優位性が弱い
-- 上位: スタンダード 78.6 / ビットコイン 78.1 / テクノロジー 76.7
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が0.7点で優位性が弱い
+- 上位: スタンダード 78.6 / ビットコイン 77.9 / テクノロジー 76.7
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

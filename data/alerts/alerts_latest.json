@@ -1,11 +1,11 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-21T15:06:31+00:00",
+  "generated_at": "2026-09-21T15:21:55+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 5,
-    "WARNING": 4,
+    "WATCH": 4,
+    "WARNING": 2,
     "CRITICAL": 0
   },
   "alerts": [
@@ -14,32 +14,10 @@
       "category": "COMPANY_EVENT",
       "code": "EVENT_EARNINGS",
       "title": "SEC 10-Q filing",
-      "message": "New company event detected for Norwood Financial Corp. - Common Stock.",
+      "message": "New company event detected for HCI Group, Inc. Common Stock.",
       "value": null,
       "threshold": null,
-      "entity": "Norwood Financial Corp. - Common Stock",
-      "source": "SEC EDGAR"
-    },
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_FILING",
-      "title": "SEC 8-K filing",
-      "message": "New company event detected for Norwood Financial Corp. - Common Stock.",
-      "value": null,
-      "threshold": null,
-      "entity": "Norwood Financial Corp. - Common Stock",
-      "source": "SEC EDGAR"
-    },
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_FILING",
-      "title": "SEC 8-K filing",
-      "message": "New company event detected for Norwood Financial Corp. - Common Stock.",
-      "value": null,
-      "threshold": null,
-      "entity": "Norwood Financial Corp. - Common Stock",
+      "entity": "HCI Group, Inc. Common Stock",
       "source": "SEC EDGAR"
     },
     {
@@ -57,7 +35,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "つくば市で自動運転バスの本格運行を10月2日から開始 - newsroom.kddi.com",
+      "title": "つくば市で自動運転バスの本格運行を10月2日から開始 - KDDI ニュースルーム",
       "message": "New company event detected for KDDI.",
       "value": null,
       "threshold": null,
@@ -68,7 +46,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - NEC",
+      "title": "昨季発生、NECグリーンロケッツ東葛の不祥事2件に懲罰。複数選手・スタッフも関与。チームの責任、過失も明らかに - ラグビーリパブリック",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
@@ -79,22 +57,11 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "昨季発生、NECグリーンロケッツ東葛の不祥事2件に懲罰。複数選手・スタッフも関与。チームの責任、過失も明らかに - rugby-rp.com",
-      "message": "New company event detected for NEC.",
+      "title": "浜松ホトニクス－ＳＭＢＣ日興が投資評価引き下げ 業績回復により期待は織り込まれた - TradingView",
+      "message": "New company event detected for 浜松ホトニクス.",
       "value": null,
       "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "手元資金1.6兆円超なのに「借入金」が急増…それでも信越化学工業の財務は盤石といえるワケ - ダイヤモンド・オンライン",
-      "message": "New company event detected for 信越化学工業.",
-      "value": null,
-      "threshold": null,
-      "entity": "信越化学工業",
+      "entity": "浜松ホトニクス",
       "source": "Google News RSS"
     },
     {
@@ -103,7 +70,7 @@
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 32.65403725516236,
+      "value": 33.46190184524554,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"

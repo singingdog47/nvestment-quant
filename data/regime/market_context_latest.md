@@ -1,17 +1,17 @@
 # Market Regime v1.5
 
 - Label: **CONSTRUCTIVE**
-- Score: **62.34**
+- Score: **62.49**
 - Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
 - Flags: THIN_LIQUIDITY
 
 ## Components
-- trend: 71.18074117952563
+- trend: 71.30589977042037
 - stress: 81.2250002861023
-- participation: 50.04320774282751
-- liquidity: 32.65403725516236
+- participation: 49.988477935245996
+- liquidity: 33.46190184524554
 - positioning: 57.726288981550105
 
 ## SQ execution overlay
@@ -39,9 +39,9 @@
   "treasury_volatility_is_ice_move": false,
   "breadth_n": 9568,
   "breadth_status": "ok",
-  "breadth_source_as_of_utc": "2026-09-21T15:04:44.013462+00:00",
+  "breadth_source_as_of_utc": "2026-09-21T15:20:47.799925+00:00",
   "nfci": -0.56,
-  "volume_ratio20_mean": 0.4683509313790589,
+  "volume_ratio20_mean": 0.4885475461311385,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22
