@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-09-18T12:17:25+00:00
+Generated (UTC): 2026-09-21T14:15:18+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,13 +11,13 @@ Generated (UTC): 2026-09-18T12:17:25+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 63.48
+- Score: 61.6
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 15.399999618530273
-- Treasury realized-vol proxy (not ICE MOVE): 72.593 bps annualized; percentile=0.7341
-- Flags: none
+- VIX: 14.869999885559082
+- Treasury realized-vol proxy (not ICE MOVE): 74.744 bps annualized; percentile=0.7817
+- Flags: THIN_LIQUIDITY
 
 ## 3. 個別銘柄の需給コンテキスト
 - Data status: partial
@@ -26,56 +26,56 @@ Generated (UTC): 2026-09-18T12:17:25+00:00
 - 用途は監視・執行注意・退出流動性の確認に限定し、銘柄順位・ファンダメンタルズ評価・投資仮説は変更しません。
 - [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING
 - [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
+- [US] Mechanics Bancorp - Class A Common Stock: TIGHT_FLOAT|SHORT_CROWDING
 - [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING
 - [US] First Busey Corporation - Common Stock: SHORT_CROWDING
 - [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING
 - [US] Imperial Petroleum Inc. - Common Shares: SHORT_CROWDING
 - [JP] KDDI: VOLUME_EXPANSION
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 10, 'WARNING': 5, 'CRITICAL': 0}
+- Counts: {'INFO': 0, 'WATCH': 4, 'WARNING': 8, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / 信越化、今期配当を20円増額修正 - 株探
 - [WARNING] COMPANY_EVENT / SEC 10-Q filing
 - [WARNING] COMPANY_EVENT / SEC 8-K filing
 - [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / 変更報告書
-- [WATCH] COMPANY_EVENT / リテールロボットを活用した分散型データセンター実証を開始 - KDDI ニュースルーム
-- [WATCH] COMPANY_EVENT / KDDIら、APNとリテールロボットを活用した分散型データセンター実証を開始 - ビジネスネットワーク
-- [WATCH] COMPANY_EVENT / KDDIら3社、リテールロボットで分散型データセンターを実証--遠隔地の計算資源を活用 - japan.zdnet.com
+- [WARNING] COMPANY_EVENT / 訂正臨時報告書
+- [WARNING] COMPANY_EVENT / 訂正発行登録書
+- [WARNING] COMPANY_EVENT / 浜松ホトニクス---ストップ高、1-3月期増益転換で通期予想を上方修正 - 株探
+- [WARNING] LIQUIDITY / Thin liquidity flag active
 
 ## 5. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=77.02790060414863 | cross_pct=100.0
-- 2. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=2.0 | raw=76.04655448107212 | cross_pct=99.94884910485933
-- 3. IwaiCosmo Holdings,Inc. 8707.T | market_rank=3.0 | raw=75.94796230884097 | cross_pct=99.89769820971867
-- 4. Akatsuki Inc. 3932.T | market_rank=4.0 | raw=75.63876530541806 | cross_pct=99.846547314578
-- 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=73.36607481775481 | cross_pct=99.64194373401534
+- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=76.31712249308279 | cross_pct=100.0
+- 2. IwaiCosmo Holdings,Inc. 8707.T | market_rank=2.0 | raw=75.32052070536537 | cross_pct=99.94884910485933
+- 3. Tokai Tokyo Financial Holdings,Inc. 8616.T | market_rank=3.0 | raw=75.0312079410746 | cross_pct=99.89769820971867
+- 4. Akatsuki Inc. 3932.T | market_rank=4.0 | raw=74.99470947362886 | cross_pct=99.846547314578
+- 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=73.12291366010886 | cross_pct=99.64194373401534
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.55811256654056 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.98699458638227 | cross_pct=99.9707516817783
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.58716056054183 | cross_pct=99.94150336355659
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=4.0 | raw=82.82026358188101 | cross_pct=99.9122550453349
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=82.49127162170564 | cross_pct=99.8537584088915
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.04951618841356 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.46655864213562 | cross_pct=99.97080291970802
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.12396133542535 | cross_pct=99.94160583941606
+- 4. Mechanics Bancorp - Class A Common Stock MCHB | market_rank=5.0 | raw=82.08782313706782 | cross_pct=99.88321167883211
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=7.0 | raw=81.94052840841167 | cross_pct=99.82481751824818
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.55811256654056
-- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=77.02790060414863
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.9707516817783 | raw=83.98699458638227
-- 4. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.94884910485933 | raw=76.04655448107212
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94150336355659 | raw=83.58716056054183
-- 6. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.9122550453349 | raw=82.82026358188101
-- 7. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89769820971867 | raw=75.94796230884097
-- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.8537584088915 | raw=82.49127162170564
-- 9. [JP] Akatsuki Inc. | cross_pct=99.846547314578 | raw=75.63876530541806
-- 10. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.76601345422638 | raw=81.67032633086936
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.04951618841356
+- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=76.31712249308279
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97080291970802 | raw=83.46655864213562
+- 4. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.94884910485933 | raw=75.32052070536537
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94160583941606 | raw=83.12396133542535
+- 6. [JP] Tokai Tokyo Financial Holdings,Inc. | cross_pct=99.89769820971867 | raw=75.0312079410746
+- 7. [US] Mechanics Bancorp - Class A Common Stock | cross_pct=99.88321167883211 | raw=82.08782313706782
+- 8. [JP] Akatsuki Inc. | cross_pct=99.846547314578 | raw=74.99470947362886
+- 9. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.82481751824818 | raw=81.94052840841167
+- 10. [US] Millrose Properties, Inc. Class A Common Stock | cross_pct=99.76642335766424 | raw=81.59502382835363
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
-- Matured observations: 86
+- Matured observations: 92
 - Eligible for model-change review: True
 - [INFO] action / REVIEW|1w: Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 - [INFO] regime / CONSTRUCTIVE|1w: Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
@@ -98,8 +98,8 @@ Generated (UTC): 2026-09-18T12:17:25+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.2点で優位性が弱い
-- 上位: テクノロジー 71.0 / ビットコイン 69.7 / スタンダード 66.5
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.1点で優位性が弱い
+- 上位: スタンダード 78.4 / ビットコイン 77.2 / テクノロジー 76.3
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

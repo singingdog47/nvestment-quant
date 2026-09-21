@@ -1,69 +1,69 @@
 {
-  "generated_at_jst": "2026-09-18T21:17:25+09:00",
+  "generated_at_jst": "2026-09-21T23:15:18+09:00",
   "data_status": "ok",
-  "review_day": true,
+  "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
-    "reason": "首位と2位の差が1.2点で優位性が弱い",
-    "margin": 1.23
+    "reason": "首位と2位の差が1.1点で優位性が弱い",
+    "margin": 1.12
   },
   "ranking": [
     {
-      "key": "TECH",
-      "label": "テクノロジー",
-      "ticker": "QQQ",
-      "close": 716.9199829101562,
-      "data_date": "2026-09-17",
-      "momentum": 65.42,
-      "macro": 42.89,
-      "trend": 97.65,
-      "risk": 87.22,
+      "key": "STANDARD",
+      "label": "スタンダード",
+      "ticker": "SPY",
+      "close": 767.8599853515625,
+      "data_date": "2026-09-21",
+      "momentum": 68.08,
+      "macro": 65.57,
+      "trend": 99.23,
+      "risk": 91.96,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 70.97
+      "total": 78.36
     },
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 78023.7578125,
-      "data_date": "2026-09-18",
-      "momentum": 76.43,
-      "macro": 67.06,
-      "trend": 88.3,
-      "risk": 64.8,
+      "close": 85244.359375,
+      "data_date": "2026-09-21",
+      "momentum": 95.79,
+      "macro": 67.08,
+      "trend": 92.77,
+      "risk": 63.05,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 69.74
+      "total": 77.24
     },
     {
-      "key": "STANDARD",
-      "label": "スタンダード",
-      "ticker": "SPY",
-      "close": 762.5999755859375,
-      "data_date": "2026-09-17",
-      "momentum": 58.37,
-      "macro": 48.31,
-      "trend": 78.82,
-      "risk": 91.4,
+      "key": "TECH",
+      "label": "テクノロジー",
+      "ticker": "QQQ",
+      "close": 733.1199951171875,
+      "data_date": "2026-09-21",
+      "momentum": 69.71,
+      "macro": 57.0,
+      "trend": 98.95,
+      "risk": 88.03,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 66.51
+      "total": 76.34
     },
     {
       "key": "GOLD",
       "label": "金（ゴールド）",
       "ticker": "GLD",
-      "close": 398.3599853515625,
-      "data_date": "2026-09-17",
-      "momentum": 43.86,
-      "macro": 35.03,
-      "trend": 24.2,
-      "risk": 68.02,
+      "close": 397.7799987792969,
+      "data_date": "2026-09-21",
+      "momentum": 42.35,
+      "macro": 37.57,
+      "trend": 24.13,
+      "risk": 68.75,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 44.85
+      "total": 45.02
     }
   ],
   "source_health": [
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-18T12:17:25+00:00",
+      "fetched_at": "2026-09-21T14:15:18+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-18T12:17:25+00:00",
+      "fetched_at": "2026-09-21T14:15:18+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-18T12:17:25+00:00",
+      "fetched_at": "2026-09-21T14:15:18+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,31 +95,31 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-09-18T12:17:25+00:00",
+      "fetched_at": "2026-09-21T14:15:18+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^TNX",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-18T12:17:25+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-21T14:15:18+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-18T12:17:25+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-21T14:15:18+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^VIX",
       "status": "ok",
-      "records": 254,
-      "fetched_at": "2026-09-18T12:17:25+00:00",
+      "records": 253,
+      "fetched_at": "2026-09-21T14:15:18+00:00",
       "error": "",
       "source_tier": "secondary"
     }

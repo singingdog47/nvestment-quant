@@ -4,21 +4,21 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**CONSTRUCTIVE**、総合スコアは63.5です。
-市場レジームは前回からほぼ横ばいです。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+市場レジームは**CONSTRUCTIVE**、総合スコアは61.6です。
+地合いの分類は変わっていませんが、流動性が前回より低下しています。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：+0.7ポイント
-- トレンド：-2.0ポイント
-- 市場参加の広がり：+1.2ポイント
-- 流動性：+6.9ポイント
-- INFRONEER Holdings Inc.、ERI HOLDINGS CO.,LTD.の順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
+- 総合スコア：-3.5ポイント
+- トレンド：+5.7ポイント
+- 市場参加の広がり：-0.2ポイント
+- 流動性：-34.5ポイント
+- Ironwood Pharmaceuticals, Inc. - Class A Common Stockの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
-日本はFinancialsが9銘柄。米国はFinancialsが7銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
-米国債金利の実現ボラproxyは73パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
+日本はFinancialsが10銘柄。米国はFinancialsが6銘柄で、上位銘柄に偏りがあります。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
+米国債金利の実現ボラproxyは78パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## SQ・短期需給
@@ -28,20 +28,20 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 個別銘柄の需給
 
-監視対象の浮動株比率カバレッジは97.2%、空売り需給は47.2%、当日出来高比較は100.0%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、International Seaways, Inc. Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）、Millrose Properties, Inc. Class A Common Stock（SHORT_CROWDING）、First Busey Corporation - Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
+監視対象の浮動株比率カバレッジは97.2%、空売り需給は47.2%、当日出来高比較は100.0%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、International Seaways, Inc. Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）、Mechanics Bancorp - Class A Common Stock（TIGHT_FLOAT|SHORT_CROWDING）、Millrose Properties, Inc. Class A Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
 浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。
 
 ## 今日の注意点
 
+- **WARNING** 信越化、今期配当を20円増額修正 - 株探 — 売買指示ではなく確認対象です。
 - **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
-- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 - **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 - **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Mito Securities Co.,Ltd.、Ichiyoshi Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.、Akatsuki Inc.
-- 米国：Carter Bankshares, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares、International Seaways, Inc. Common Stock 、Norwood Financial Corp. - Common Stock
+- 日本：Mito Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.、Tokai Tokyo Financial Holdings,Inc.、Akatsuki Inc.
+- 米国：Carter Bankshares, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares、International Seaways, Inc. Common Stock 、Mechanics Bancorp - Class A Common Stock
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
 
@@ -57,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.2点で優位性が弱い
-- 上位: テクノロジー 71.0 / ビットコイン 69.7 / スタンダード 66.5
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.1点で優位性が弱い
+- 上位: スタンダード 78.4 / ビットコイン 77.2 / テクノロジー 76.3
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は74.5%。9566銘柄中5374銘柄を採点し、価格欠損率は9.3%です。
+データ品質は74.5%。9568銘柄中5380銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-09-18T12:17:25+00:00
+生成時刻（UTC）：2026-09-21T14:15:18+00:00

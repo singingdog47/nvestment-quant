@@ -1,6 +1,6 @@
 # Investment Quant Validation Report v2.1
 
-Generated: 2026-09-18T12:16:04+00:00
+Generated: 2026-09-21T14:14:00+00:00
 
 This report evaluates recorded decisions ex post. It is diagnostic evidence, not a trading instruction.
 Benchmark-relative metrics are preferred for judging signal quality; missing benchmark data is not imputed.
@@ -9,7 +9,7 @@ Benchmark-relative metrics are preferred for judging signal quality; missing ben
 
 | Horizon | N | Avg return | Win rate | Benchmark N | Avg excess return | Outperform rate |
 |---|---:|---:|---:|---:|---:|---:|
-| 1w | 86 | 0.40% | 53.49% | 86 | 0.42% | 63.95% |
+| 1w | 92 | 0.53% | 53.26% | 92 | 0.47% | 63.04% |
 | 1m | 0 | n/a | n/a | 0 | n/a | n/a |
 | 3m | 0 | n/a | n/a | 0 | n/a | n/a |
 
@@ -18,12 +18,13 @@ Benchmark-relative metrics are preferred for judging signal quality; missing ben
 | Regime | Horizon | N | Avg return | Benchmark N | Avg excess | Outperform |
 |---|---|---:|---:|---:|---:|---:|
 | CONSTRUCTIVE | 1w | 86 | 0.40% | 86 | 0.42% | 63.95% |
+| NEUTRAL | 1w | 6 | 2.30% | 6 | 1.13% | 50.00% |
 
 ## Outcome by recommended action
 
 | Action | Horizon | N | Avg return | Benchmark N | Avg excess | Outperform |
 |---|---|---:|---:|---:|---:|---:|
-| REVIEW | 1w | 74 | -0.19% | 74 | 0.17% | 58.11% |
+| REVIEW | 1w | 80 | -0.00% | 80 | 0.24% | 57.50% |
 | WAIT_DATA_QUALITY | 1w | 12 | 4.05% | 12 | 1.98% | 100.00% |
 
 ## Interpretation guardrails

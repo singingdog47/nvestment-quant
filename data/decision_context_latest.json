@@ -1,9 +1,9 @@
 {
   "quality": {
-    "generated_at": "2026-09-21T00:18:58+00:00",
+    "generated_at": "2026-09-21T14:13:54+00:00",
     "targets": 36,
     "portfolio_targets": 0,
-    "events": 54,
+    "events": 56,
     "primary_source_health": 1.0,
     "configured_primary_sources": 4,
     "optional_primary_sources_unconfigured": [],
@@ -21,12 +21,12 @@
   "market_regime": {
     "version": "1.5.3",
     "engine_version": "1.5.3",
-    "generated_at": "2026-09-21T00:17:52+00:00",
-    "generated_at_utc": "2026-09-21T00:17:52+00:00",
+    "generated_at": "2026-09-21T14:12:52+00:00",
+    "generated_at_utc": "2026-09-21T14:12:52+00:00",
     "date_jst": "2026-09-21",
     "data_status": "ok",
     "regime_label": "CONSTRUCTIVE",
-    "regime_score": 65.12,
+    "regime_score": 61.6,
     "confidence": 1.0,
     "actionable": true,
     "actionability": {
@@ -38,20 +38,22 @@
     },
     "overheated_flag": false,
     "stress_flag": false,
-    "thin_liquidity_flag": false,
+    "thin_liquidity_flag": true,
     "treasury_volatility_shock_flag": false,
     "sq_execution_caution_flag": false,
-    "regime_flags": [],
+    "regime_flags": [
+      "THIN_LIQUIDITY"
+    ],
     "components": {
-      "trend": 65.01181109202275,
-      "stress": 81.03499968528747,
-      "participation": 50.250691562932225,
-      "liquidity": 63.57235465064868,
+      "trend": 70.71559944800754,
+      "stress": 80.99000008583069,
+      "participation": 50.02304412950801,
+      "liquidity": 29.047369861698616,
       "positioning": 57.726288981550105
     },
     "evidence": {
       "trend_series": 4,
-      "vix": 14.8100004196167,
+      "vix": 14.869999885559082,
       "hy_oas": 2.7,
       "ig_oas": 0.78,
       "treasury_volatility_proxy": 74.744,
@@ -60,11 +62,11 @@
       "treasury_volatility_as_of_date": "2026-09-18",
       "treasury_volatility_status": "ok",
       "treasury_volatility_is_ice_move": false,
-      "breadth_n": 9566,
+      "breadth_n": 9568,
       "breadth_status": "ok",
-      "breadth_source_as_of_utc": "2026-09-18T12:14:50.749326+00:00",
+      "breadth_source_as_of_utc": "2026-09-21T14:12:49.675803+00:00",
       "nfci": -0.56,
-      "volume_ratio20_mean": 1.2413088662662168,
+      "volume_ratio20_mean": 0.37818424654246535,
       "positioning_sources": {
         "jpx_raw_healthy": 4,
         "cftc_normalized_values": 22
@@ -148,8 +150,8 @@
     "regime_label": "constructive",
     "absolute_defense_cash_jpy": 500000,
     "cash_target_range": [
-      0.08,
-      0.12
+      0.15,
+      0.18
     ],
     "max_single_stock_weight": 0.05,
     "lifestyle_bucket_max_weight": 0.05,
@@ -159,7 +161,7 @@
     "note": "Guardrail only. This file never places orders."
   },
   "system_health": {
-    "generated_at": "2026-09-21T00:18:58+00:00",
+    "generated_at": "2026-09-21T14:13:54+00:00",
     "components": {
       "market_regime": {
         "status": "ok",
@@ -206,6 +208,24 @@
       "code": "6965",
       "ticker": "6965.T",
       "name": "浜松ホトニクス",
+      "event_date": "Fri, 15 May 2026",
+      "event_type": "guidance",
+      "title": "浜松ホトニクス---ストップ高、1-3月期増益転換で通期予想を上方修正 - 株探",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9XTHM1aVlfSFZ6NzBMUFN1ZEZCZWNpd3lYRUFDdkdrU3M4d1gxRGN4aFk5eml1dTAwMnpxOFhsVzNsN2wzOTN1QlQ5dURqNHZEZDJxSkhlQ0UwcTZ0M2tIaw?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "critical",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
+      "event_id": "5a4e6256a070195a6c249cf3",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "6965",
+      "ticker": "6965.T",
+      "name": "浜松ホトニクス",
       "event_date": "Thu, 06 Aug 2026",
       "event_type": "guidance",
       "title": "決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - 日本経済新聞",
@@ -215,26 +235,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "event_id": "34cd8d9735033e01a3f279c6",
       "raw_excerpt": ""
     },
     {
       "market": "US",
-      "code": "NWFL",
-      "ticker": "NWFL",
-      "name": "Norwood Financial Corp. - Common Stock",
+      "code": "MCHB",
+      "ticker": "MCHB",
+      "name": "Mechanics Bancorp - Class A Common Stock",
       "event_date": "2026-08-07",
       "event_type": "earnings",
       "title": "SEC 10-Q filing",
       "summary": "",
       "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1013272/000101327226000016/nwfl-20260630x10q.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1518715/000151871526000060/mchb-20260630.htm",
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
-      "event_id": "e28ca87498f494a879d26e3b",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
+      "event_id": "a91c5481cc1a967a46e4be36",
       "raw_excerpt": ""
     },
     {
@@ -251,7 +271,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "ad0e981d4e0e0f015d789855",
       "raw_excerpt": ""
     },
@@ -269,7 +289,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "ce0b6d4f9fdce47affcb859c",
       "raw_excerpt": ""
     },
@@ -287,7 +307,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "2df8e3a3d954103575ac10cd",
       "raw_excerpt": ""
     },
@@ -305,7 +325,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "0a6c46ee7bfb61972d2a5085",
       "raw_excerpt": ""
     },
@@ -323,26 +343,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "f85873c62a45cf990359e253",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "CMBT",
-      "ticker": "CMBT",
-      "name": "CMB.TECH NV Ordinary Shares",
-      "event_date": "2026-08-11",
-      "event_type": "filing",
-      "title": "SEC 6-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1604481/000091957426004935/p15047752_6k.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
-      "event_id": "ae4c40c347c678e0b951c141",
       "raw_excerpt": ""
     },
     {
@@ -359,8 +361,26 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "3c974baf308a343f32ad9b85",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "CMBT",
+      "ticker": "CMBT",
+      "name": "CMB.TECH NV Ordinary Shares",
+      "event_date": "2026-08-11",
+      "event_type": "filing",
+      "title": "SEC 6-K filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1604481/000091957426004935/p15047752_6k.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
+      "event_id": "ae4c40c347c678e0b951c141",
       "raw_excerpt": ""
     },
     {
@@ -377,7 +397,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "9cf5baaffe5dad7262bc0fe3",
       "raw_excerpt": ""
     },
@@ -395,7 +415,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "f14be72112f393512074134b",
       "raw_excerpt": ""
     },
@@ -413,7 +433,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "7a7c892464d9573c4e144022",
       "raw_excerpt": ""
     },
@@ -431,7 +451,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "42b11ef21422035924d2f48a",
       "raw_excerpt": ""
     },
@@ -449,8 +469,26 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "f0d57d6055bc0f604c63073f",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "MCHB",
+      "ticker": "MCHB",
+      "name": "Mechanics Bancorp - Class A Common Stock",
+      "event_date": "2026-08-20",
+      "event_type": "filing",
+      "title": "SEC 8-K filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1518715/000151871526000064/hmst-20260819.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
+      "event_id": "3c4b7c7860dc0f1b920e4dcc",
       "raw_excerpt": ""
     },
     {
@@ -467,7 +505,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "8fa43f3254c366a7f75bc11d",
       "raw_excerpt": ""
     },
@@ -485,7 +523,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "e1b30c0ca118c2f263bbeba1",
       "raw_excerpt": ""
     },
@@ -503,7 +541,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "9057ca905e210933ecd6937f",
       "raw_excerpt": ""
     },
@@ -521,26 +559,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "40cc0c79b09dbdc0279a751d",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "NWFL",
-      "ticker": "NWFL",
-      "name": "Norwood Financial Corp. - Common Stock",
-      "event_date": "2026-08-28",
-      "event_type": "filing",
-      "title": "SEC 8-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1013272/000101327226000018/nwfl-20260828x8k.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
-      "event_id": "1646199e13fb3fa238295d5f",
       "raw_excerpt": ""
     },
     {
@@ -557,7 +577,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "88a3917cd58d8540e8876479",
       "raw_excerpt": ""
     },
@@ -575,7 +595,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "d02bdc3baa4c8953f7d469e4",
       "raw_excerpt": ""
     },
@@ -593,7 +613,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "cb772ced88f591c8a21d9d5f",
       "raw_excerpt": ""
     },
@@ -611,7 +631,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "d153ac2c15d7f78722a5d6e0",
       "raw_excerpt": ""
     },
@@ -629,7 +649,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "0fee6ff3ba4dccf6db0c9214",
       "raw_excerpt": ""
     },
@@ -647,7 +667,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "e69dcfc48b67c26958c4c4c1",
       "raw_excerpt": ""
     },
@@ -665,7 +685,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "506caa2d2e0eab624d93b6b1",
       "raw_excerpt": ""
     },
@@ -683,7 +703,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "c431645ddbeb1f06e99c7cde",
       "raw_excerpt": ""
     },
@@ -701,7 +721,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "2db1c28276f03940684922fe",
       "raw_excerpt": ""
     },
@@ -719,7 +739,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "079711454c48eac35135920c",
       "raw_excerpt": ""
     },
@@ -737,7 +757,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "e71d123796ba4807789d0850",
       "raw_excerpt": ""
     },
@@ -755,7 +775,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "6b495db54eca0f9bad49a8d4",
       "raw_excerpt": ""
     },
@@ -773,7 +793,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "9cff4f5854f8f1b97b3a0dab",
       "raw_excerpt": ""
     },
@@ -791,7 +811,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:39+00:00",
+      "fetched_at": "2026-09-21T14:13:37+00:00",
       "event_id": "b54d9eaf53e8815f42e7ed9d",
       "raw_excerpt": ""
     },
@@ -809,8 +829,44 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:39+00:00",
+      "fetched_at": "2026-09-21T14:13:37+00:00",
       "event_id": "8aa99f732abfa40b561a0de4",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "8616",
+      "ticker": "8616.T",
+      "name": "Tokai Tokyo Financial Holdings,Inc.",
+      "event_date": "2026-09-15",
+      "event_type": "filing",
+      "title": "訂正臨時報告書",
+      "summary": "",
+      "source": "EDINET",
+      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2CA",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-09-21T14:13:37+00:00",
+      "event_id": "98540db32c4bfc04028df116",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "8616",
+      "ticker": "8616.T",
+      "name": "Tokai Tokyo Financial Holdings,Inc.",
+      "event_date": "2026-09-15",
+      "event_type": "filing",
+      "title": "訂正発行登録書",
+      "summary": "",
+      "source": "EDINET",
+      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z24X",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-09-21T14:13:37+00:00",
+      "event_id": "bc810ab20be3c6bea0ace40e",
       "raw_excerpt": ""
     },
     {
@@ -827,44 +883,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "4f2de058b3c176f4ac99ce83",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "NWFL",
-      "ticker": "NWFL",
-      "name": "Norwood Financial Corp. - Common Stock",
-      "event_date": "2026-09-16",
-      "event_type": "filing",
-      "title": "SEC 8-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1013272/000101327226000020/nwfl-20260916x8k.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
-      "event_id": "f5c67fe94ddb7e08ae6a2fe9",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "FRO",
-      "ticker": "FRO",
-      "name": "Frontline Plc Ordinary Shares",
-      "event_date": "2026-09-16",
-      "event_type": "filing",
-      "title": "SEC 6-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/913290/000162828026062234/fro-20260630.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
-      "event_id": "2477a7f913e68a998b852023",
       "raw_excerpt": ""
     },
     {
@@ -881,8 +901,44 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "1f21ce51a019dc8235b2112f",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "FRO",
+      "ticker": "FRO",
+      "name": "Frontline Plc Ordinary Shares",
+      "event_date": "2026-09-16",
+      "event_type": "filing",
+      "title": "SEC 6-K filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/913290/000162828026062234/fro-20260630.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
+      "event_id": "2477a7f913e68a998b852023",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "MCHB",
+      "ticker": "MCHB",
+      "name": "Mechanics Bancorp - Class A Common Stock",
+      "event_date": "2026-09-17",
+      "event_type": "filing",
+      "title": "SEC 8-K filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1518715/000151871526000068/hmst-20260916.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
+      "event_id": "6e13a9c7f3c3143cc1d551dc",
       "raw_excerpt": ""
     },
     {
@@ -899,7 +955,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "1357d9806c5004e769a0d23f",
       "raw_excerpt": ""
     },
@@ -917,7 +973,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "295e1cdb5f42fbd25840a09e",
       "raw_excerpt": ""
     },
@@ -935,7 +991,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:39+00:00",
+      "fetched_at": "2026-09-21T14:13:37+00:00",
       "event_id": "56b3b5c31178336b223bec72",
       "raw_excerpt": ""
     },
@@ -953,7 +1009,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "event_id": "10c4cfbbf3462b0654fa29ec",
       "raw_excerpt": ""
     },
@@ -971,8 +1027,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "event_id": "44ec5a2f5cc9172c246209e8",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "4063",
+      "ticker": "4063.T",
+      "name": "信越化学工業",
+      "event_date": "Tue, 15 Sep 2026",
+      "event_type": "dividend",
+      "title": "信越化、今期配当を20円増額修正 - 株探",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE14VEdPRDlYZE1odUpxZzR6TFpHaHl5MW8zQVhPVkkxRWVYbHNXVV9JUlZZV1pZRmlGOWNSZ250aFVycHNWRkx3YnFzN040dUd5c0E?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "high",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
+      "event_id": "744b4f0db9f5bbb9e7d99255",
       "raw_excerpt": ""
     },
     {
@@ -989,7 +1063,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "event_id": "399c1885c8c3ea7e1d1e0534",
       "raw_excerpt": ""
     },
@@ -1000,15 +1074,15 @@
       "name": "NEC",
       "event_date": "Fri, 18 Sep 2026",
       "event_type": "disclosure",
-      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - NEC",
+      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - group.nec",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9iU1Y3NDZWX2FtNjNVLVFUVU5SRHJYdkFSZ3hyZGlPZnY0Tk9OX3FKZUx3VG5sRGw4X3NYeHc1MGotWWowbHRhcGVGN1JpQlNuNnViMEJ6NHlCOGEyLW5xbG5HVG5LTGMzZ25TX2hwbFQ?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
-      "event_id": "288e211cd12ea79205dad9f0",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
+      "event_id": "808724792d92cd5f64dfd84d",
       "raw_excerpt": ""
     },
     {
@@ -1025,7 +1099,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "event_id": "b7b605e66573afb607eafe9d",
       "raw_excerpt": ""
     },
@@ -1043,7 +1117,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "event_id": "01e735509ba8c2a7e7f7cd9b",
       "raw_excerpt": ""
     },
@@ -1061,7 +1135,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "event_id": "db9fa4eea668eb56159b247c",
       "raw_excerpt": ""
     },
@@ -1072,51 +1146,33 @@
       "name": "信越化学工業",
       "event_date": "Thu, 17 Sep 2026",
       "event_type": "disclosure",
-      "title": "手元資金1.6兆円超なのに「借入金」が急増…それでも信越化学工業の財務は盤石といえるワケ - ダイヤモンド・オンライン",
+      "title": "手元資金1.6兆円超なのに「借入金」が急増…それでも信越化学工業の財務は盤石といえるワケ - diamond.jp",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA1WVNyWGFzRTVLZXAxWkFoeV9YblpnQVYydjJHTGdZNm5BV3BULXdiOTJhMUtYT1NWWDYwUldLeWc5RmRScjRZVnMwUWzSAU9BVV95cUxNaHM1bDUxaVBSbFNNeDlWMmJWLXljWlFnYkFWdi04YnZoUzBpd2RIUHRVbktfUVFfcklzUmZ2OGtSTXlhcldmdkxwejVuWUtj?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
-      "event_id": "918c90b17d2c225386b75861",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
+      "event_id": "556435bfdb1c45ef5dd75305",
       "raw_excerpt": ""
     },
     {
       "market": "JP",
-      "code": "4063",
-      "ticker": "4063.T",
-      "name": "信越化学工業",
+      "code": "9433",
+      "ticker": "9433.T",
+      "name": "KDDI",
       "event_date": "Thu, 17 Sep 2026",
       "event_type": "disclosure",
-      "title": "信越化学工業の株価は割安か｜記念増配と半導体・塩ビから考える今後 - jioinc.jp",
+      "title": "KDDIローミング終了に揺れる楽天モバイルと銀行業に期待がかかるドコモ - ケータイ Watch",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1yT0pLdXEzLUJDcDgwU05LeXRlSldNM2hlckRoZVpzV01sdHQtemFLOUVyb2xkaXB0X0d3QklpRHF0Q2RiMXliSVpfWmo5azlsQ0dTd25tNnBOZw?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0wR1FlRE8xTGZ1dkc2S1FiLVJybG52cUhwSFhNclNKUThYLWFTM20wZWtSTlNVb1R3RENHeGJidkdBb2U1d1BnS3FuREg1R0NlOTNIUl9yYUxXcnpJbzl1U0doYUEwM2dHcjRMcEN0djVEd21iUFE?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
-      "event_id": "7e34ab8af16e198d5fd9e997",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "6701",
-      "ticker": "6701.T",
-      "name": "NEC",
-      "event_date": "Thu, 17 Sep 2026",
-      "event_type": "disclosure",
-      "title": "インクルージョン＆ダイバーシティ : 企業情報 - NEC",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9zWVkzT3Ewc3lDNG5ZelZvUmFDbzdkUWVhWWh4b3p5SnhYdzF6RVNEc043eE5UZ2F2dXlBaWljeXpMeGlqZGpIOGtxbWswTHk2Z09FOUlhV1dIT00zd1JJYkk5UjFEU19KTkZvVXR6bVVESnM?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
-      "event_id": "8aca2a8cfbd3d6d40fc657e4",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
+      "event_id": "34bc065e5092bbe7d8b27c49",
       "raw_excerpt": ""
     },
     {
@@ -1133,26 +1189,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "event_id": "e8b70bb63ffeb012c1f1d09c",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "9433",
-      "ticker": "9433.T",
-      "name": "KDDI",
-      "event_date": "Tue, 15 Sep 2026",
-      "event_type": "disclosure",
-      "title": "「東京ゲームショウ2026」で自分を3D化、KDDIが出展 - ケータイ Watch",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8xZ0VsYTBCRmo1MTdjekdLTEJEaHBTb2prWVZjQW5FanlGd2FYaUpaal9LQVpoQXJObEtuQ3N6NzY3OGl4bkhVbmFCMlNRZ0hCLVV0Skg1MWVOeG92MDYzQ1lCX1ZpeDQ?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
-      "event_id": "13941efd3833c05b27e370bc",
       "raw_excerpt": ""
     },
     {
@@ -1169,7 +1207,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "event_id": "a4203e03c398dc6b22908708",
       "raw_excerpt": ""
     }
@@ -1178,7 +1216,7 @@
     {
       "source": "TDnet",
       "status": "ok",
-      "fetched_at": "2026-09-21T00:18:36+00:00",
+      "fetched_at": "2026-09-21T14:13:34+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1186,15 +1224,15 @@
     {
       "source": "EDINET",
       "status": "ok",
-      "fetched_at": "2026-09-21T00:18:39+00:00",
-      "records": 3,
+      "fetched_at": "2026-09-21T14:13:37+00:00",
+      "records": 5,
       "error": "",
       "source_tier": "primary"
     },
     {
       "source": "SEC",
       "status": "ok",
-      "fetched_at": "2026-09-21T00:18:43+00:00",
+      "fetched_at": "2026-09-21T14:13:43+00:00",
       "records": 38,
       "error": "",
       "source_tier": "primary"
@@ -1202,7 +1240,7 @@
     {
       "source": "CompanyIR",
       "status": "ok",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1210,7 +1248,7 @@
     {
       "source": "NewsRSS",
       "status": "ok",
-      "fetched_at": "2026-09-21T00:18:46+00:00",
+      "fetched_at": "2026-09-21T14:13:45+00:00",
       "records": 13,
       "error": "",
       "source_tier": "secondary"
@@ -1218,7 +1256,7 @@
     {
       "source": "yfinance",
       "status": "ok",
-      "fetched_at": "2026-09-21T00:18:58+00:00",
+      "fetched_at": "2026-09-21T14:13:54+00:00",
       "records": 36,
       "error": "",
       "source_tier": "secondary"
@@ -1226,7 +1264,7 @@
   ],
   "supply_demand_context": {
     "version": "1.0.0",
-    "generated_at_utc": "2026-09-21T00:18:59+00:00",
+    "generated_at_utc": "2026-09-21T14:13:55+00:00",
     "observed_date_jst": "2026-09-21",
     "data_status": "partial",
     "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
@@ -1251,11 +1289,11 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9167669770731056,
         "avg_daily_float_turnover_ratio": 0.017684794263984803,
-        "current_volume_ratio_30d": 2.3314605395243815,
+        "current_volume_ratio_30d": 0.021975593325043338,
         "short_percent_float": 0.0929,
         "short_interest_change_ratio": 0.06573218684798787,
         "days_to_cover": 5.62,
-        "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
+        "context_flags": "SHORT_CROWDING"
       },
       {
         "market": "US",
@@ -1266,11 +1304,26 @@
         "confidence": 0.7,
         "free_float_ratio": 0.8375399956605227,
         "avg_daily_float_turnover_ratio": 0.01493060508883641,
-        "current_volume_ratio_30d": 2.8932397786201864,
+        "current_volume_ratio_30d": 0.3077311798097477,
         "short_percent_float": 0.0859,
         "short_interest_change_ratio": 0.3949616870121093,
         "days_to_cover": 5.75,
-        "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION"
+        "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
+      },
+      {
+        "market": "US",
+        "code": "MCHB",
+        "ticker": "MCHB",
+        "name": "Mechanics Bancorp - Class A Common Stock",
+        "data_status": "ok",
+        "confidence": 0.7,
+        "free_float_ratio": 0.22335436733080175,
+        "avg_daily_float_turnover_ratio": 0.011702913495522577,
+        "current_volume_ratio_30d": 0.07735386100754854,
+        "short_percent_float": 0.096999995,
+        "short_interest_change_ratio": 0.10756363067886676,
+        "days_to_cover": 8.48,
+        "context_flags": "TIGHT_FLOAT|SHORT_CROWDING"
       },
       {
         "market": "US",
@@ -1281,11 +1334,11 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9927145255408554,
         "avg_daily_float_turnover_ratio": 0.00840433217599084,
-        "current_volume_ratio_30d": 4.366206563714065,
+        "current_volume_ratio_30d": 0.0767675857068361,
         "short_percent_float": 0.0545,
         "short_interest_change_ratio": 0.030067581273688138,
         "days_to_cover": 7.3,
-        "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
+        "context_flags": "SHORT_CROWDING"
       },
       {
         "market": "US",
@@ -1296,11 +1349,11 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9634700024544378,
         "avg_daily_float_turnover_ratio": 0.010202585657541778,
-        "current_volume_ratio_30d": 3.636779587100017,
+        "current_volume_ratio_30d": 0.060130192356496436,
         "short_percent_float": 0.048,
         "short_interest_change_ratio": 0.11061654873912175,
         "days_to_cover": 5.94,
-        "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
+        "context_flags": "SHORT_CROWDING"
       },
       {
         "market": "US",
@@ -1311,26 +1364,11 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9637600043517661,
         "avg_daily_float_turnover_ratio": 0.011380807540733954,
-        "current_volume_ratio_30d": 2.660055650037883,
+        "current_volume_ratio_30d": 0.04947948106862522,
         "short_percent_float": 0.0738,
         "short_interest_change_ratio": 0.06580190795887964,
         "days_to_cover": 9.89,
-        "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
-      },
-      {
-        "market": "US",
-        "code": "LTC",
-        "ticker": "LTC",
-        "name": "LTC Properties, Inc. Common Stock",
-        "data_status": "ok",
-        "confidence": 0.7,
-        "free_float_ratio": 0.9787300060292479,
-        "avg_daily_float_turnover_ratio": 0.010936524336931987,
-        "current_volume_ratio_30d": 2.3292322357019066,
-        "short_percent_float": 0.056199998,
-        "short_interest_change_ratio": 0.10576603998623657,
-        "days_to_cover": 4.91,
-        "context_flags": "VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
+        "context_flags": "SHORT_CROWDING"
       },
       {
         "market": "US",
@@ -1341,7 +1379,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.46624022325289405,
         "avg_daily_float_turnover_ratio": 0.016648145535578834,
-        "current_volume_ratio_30d": 0.7889357458327397,
+        "current_volume_ratio_30d": 0.31750961675452344,
         "short_percent_float": 0.1097,
         "short_interest_change_ratio": 0.027674580155279793,
         "days_to_cover": 9.67,
@@ -1369,28 +1407,28 @@
         "name": "Scorpio Tankers Inc. Common Shares",
         "data_status": "ok",
         "confidence": 0.7,
-        "free_float_ratio": 0.7741163816823475,
-        "avg_daily_float_turnover_ratio": 0.021992636087863962,
-        "current_volume_ratio_30d": 1.6855686184361762,
+        "free_float_ratio": 0.7792476728663396,
+        "avg_daily_float_turnover_ratio": 0.021847816124199143,
+        "current_volume_ratio_30d": 0.21310935132320308,
         "short_percent_float": 0.044699997,
         "short_interest_change_ratio": 0.02931510779110602,
         "days_to_cover": 2.79,
-        "context_flags": "HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION"
+        "context_flags": "HIGH_FLOAT_TURNOVER"
       },
       {
         "market": "US",
-        "code": "NWFL",
-        "ticker": "NWFL",
-        "name": "Norwood Financial Corp. - Common Stock",
+        "code": "TEN",
+        "ticker": "TEN",
+        "name": "Tsakos Energy Navigation Ltd Common Shares",
         "data_status": "ok",
         "confidence": 0.7,
-        "free_float_ratio": 0.9029617667243865,
-        "avg_daily_float_turnover_ratio": 0.004322564575368371,
-        "current_volume_ratio_30d": 2.097927241962775,
-        "short_percent_float": 0.0153,
-        "short_interest_change_ratio": 0.21870633811761708,
-        "days_to_cover": 4.45,
-        "context_flags": "SHORT_INTEREST_RISING|VOLUME_EXPANSION"
+        "free_float_ratio": 0.7147716663685458,
+        "avg_daily_float_turnover_ratio": 0.01385948045720613,
+        "current_volume_ratio_30d": 0.3635858002043859,
+        "short_percent_float": 0.0084,
+        "short_interest_change_ratio": -0.31805537359044744,
+        "days_to_cover": 1.04,
+        "context_flags": "SHORT_INTEREST_FALLING"
       }
     ],
     "thresholds": {

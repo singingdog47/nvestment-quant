@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at_utc": "2026-09-21T00:18:59+00:00",
+  "generated_at_utc": "2026-09-21T14:13:55+00:00",
   "observed_date_jst": "2026-09-21",
   "data_status": "partial",
   "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
@@ -25,11 +25,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9167669770731056,
       "avg_daily_float_turnover_ratio": 0.017684794263984803,
-      "current_volume_ratio_30d": 2.3314605395243815,
+      "current_volume_ratio_30d": 0.021975593325043338,
       "short_percent_float": 0.0929,
       "short_interest_change_ratio": 0.06573218684798787,
       "days_to_cover": 5.62,
-      "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
+      "context_flags": "SHORT_CROWDING"
     },
     {
       "market": "US",
@@ -40,11 +40,26 @@
       "confidence": 0.7,
       "free_float_ratio": 0.8375399956605227,
       "avg_daily_float_turnover_ratio": 0.01493060508883641,
-      "current_volume_ratio_30d": 2.8932397786201864,
+      "current_volume_ratio_30d": 0.3077311798097477,
       "short_percent_float": 0.0859,
       "short_interest_change_ratio": 0.3949616870121093,
       "days_to_cover": 5.75,
-      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION"
+      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
+    },
+    {
+      "market": "US",
+      "code": "MCHB",
+      "ticker": "MCHB",
+      "name": "Mechanics Bancorp - Class A Common Stock",
+      "data_status": "ok",
+      "confidence": 0.7,
+      "free_float_ratio": 0.22335436733080175,
+      "avg_daily_float_turnover_ratio": 0.011702913495522577,
+      "current_volume_ratio_30d": 0.07735386100754854,
+      "short_percent_float": 0.096999995,
+      "short_interest_change_ratio": 0.10756363067886676,
+      "days_to_cover": 8.48,
+      "context_flags": "TIGHT_FLOAT|SHORT_CROWDING"
     },
     {
       "market": "US",
@@ -55,11 +70,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9927145255408554,
       "avg_daily_float_turnover_ratio": 0.00840433217599084,
-      "current_volume_ratio_30d": 4.366206563714065,
+      "current_volume_ratio_30d": 0.0767675857068361,
       "short_percent_float": 0.0545,
       "short_interest_change_ratio": 0.030067581273688138,
       "days_to_cover": 7.3,
-      "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
+      "context_flags": "SHORT_CROWDING"
     },
     {
       "market": "US",
@@ -70,11 +85,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9634700024544378,
       "avg_daily_float_turnover_ratio": 0.010202585657541778,
-      "current_volume_ratio_30d": 3.636779587100017,
+      "current_volume_ratio_30d": 0.060130192356496436,
       "short_percent_float": 0.048,
       "short_interest_change_ratio": 0.11061654873912175,
       "days_to_cover": 5.94,
-      "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
+      "context_flags": "SHORT_CROWDING"
     },
     {
       "market": "US",
@@ -85,26 +100,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9637600043517661,
       "avg_daily_float_turnover_ratio": 0.011380807540733954,
-      "current_volume_ratio_30d": 2.660055650037883,
+      "current_volume_ratio_30d": 0.04947948106862522,
       "short_percent_float": 0.0738,
       "short_interest_change_ratio": 0.06580190795887964,
       "days_to_cover": 9.89,
-      "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
-    },
-    {
-      "market": "US",
-      "code": "LTC",
-      "ticker": "LTC",
-      "name": "LTC Properties, Inc. Common Stock",
-      "data_status": "ok",
-      "confidence": 0.7,
-      "free_float_ratio": 0.9787300060292479,
-      "avg_daily_float_turnover_ratio": 0.010936524336931987,
-      "current_volume_ratio_30d": 2.3292322357019066,
-      "short_percent_float": 0.056199998,
-      "short_interest_change_ratio": 0.10576603998623657,
-      "days_to_cover": 4.91,
-      "context_flags": "VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
+      "context_flags": "SHORT_CROWDING"
     },
     {
       "market": "US",
@@ -115,7 +115,7 @@
       "confidence": 0.7,
       "free_float_ratio": 0.46624022325289405,
       "avg_daily_float_turnover_ratio": 0.016648145535578834,
-      "current_volume_ratio_30d": 0.7889357458327397,
+      "current_volume_ratio_30d": 0.31750961675452344,
       "short_percent_float": 0.1097,
       "short_interest_change_ratio": 0.027674580155279793,
       "days_to_cover": 9.67,
@@ -143,28 +143,28 @@
       "name": "Scorpio Tankers Inc. Common Shares",
       "data_status": "ok",
       "confidence": 0.7,
-      "free_float_ratio": 0.7741163816823475,
-      "avg_daily_float_turnover_ratio": 0.021992636087863962,
-      "current_volume_ratio_30d": 1.6855686184361762,
+      "free_float_ratio": 0.7792476728663396,
+      "avg_daily_float_turnover_ratio": 0.021847816124199143,
+      "current_volume_ratio_30d": 0.21310935132320308,
       "short_percent_float": 0.044699997,
       "short_interest_change_ratio": 0.02931510779110602,
       "days_to_cover": 2.79,
-      "context_flags": "HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION"
+      "context_flags": "HIGH_FLOAT_TURNOVER"
     },
     {
       "market": "US",
-      "code": "NWFL",
-      "ticker": "NWFL",
-      "name": "Norwood Financial Corp. - Common Stock",
+      "code": "TEN",
+      "ticker": "TEN",
+      "name": "Tsakos Energy Navigation Ltd Common Shares",
       "data_status": "ok",
       "confidence": 0.7,
-      "free_float_ratio": 0.9029617667243865,
-      "avg_daily_float_turnover_ratio": 0.004322564575368371,
-      "current_volume_ratio_30d": 2.097927241962775,
-      "short_percent_float": 0.0153,
-      "short_interest_change_ratio": 0.21870633811761708,
-      "days_to_cover": 4.45,
-      "context_flags": "SHORT_INTEREST_RISING|VOLUME_EXPANSION"
+      "free_float_ratio": 0.7147716663685458,
+      "avg_daily_float_turnover_ratio": 0.01385948045720613,
+      "current_volume_ratio_30d": 0.3635858002043859,
+      "short_percent_float": 0.0084,
+      "short_interest_change_ratio": -0.31805537359044744,
+      "days_to_cover": 1.04,
+      "context_flags": "SHORT_INTEREST_FALLING"
     }
   ],
   "thresholds": {
