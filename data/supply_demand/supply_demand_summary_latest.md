@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-09-18T12:16:01+00:00
+Generated (UTC): 2026-09-21T00:18:59+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.7%, volume ratio=0.6281783350748869)
-- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=83.8%, float turnover=1.4%, volume ratio=1.0979872546112923)
-- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING (float=99.3%, float turnover=0.8%, volume ratio=0.9685999488855488)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING (float=96.3%, float turnover=1.0%, volume ratio=0.6488355635615028)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.1%, volume ratio=1.153531178023103)
-- [US] Imperial Petroleum Inc. - Common Shares: SHORT_CROWDING (float=46.6%, float turnover=1.7%, volume ratio=0.7757685044512914)
-- [JP] KDDI: VOLUME_EXPANSION (float=80.9%, float turnover=0.3%, volume ratio=1.7705170481134438)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=77.0%, float turnover=2.2%, volume ratio=1.6386507240304022)
-- [US] Norwood Financial Corp. - Common Stock: SHORT_INTEREST_RISING (float=90.3%, float turnover=0.4%, volume ratio=0.4411694339442079)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_FALLING|VOLUME_EXPANSION (float=71.5%, float turnover=1.4%, volume ratio=1.7359128861103112)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|VOLUME_EXPANSION (float=91.7%, float turnover=1.8%, volume ratio=2.3314605395243815)
+- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION (float=83.8%, float turnover=1.5%, volume ratio=2.8932397786201864)
+- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING|VOLUME_EXPANSION (float=99.3%, float turnover=0.8%, volume ratio=4.366206563714065)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|VOLUME_EXPANSION (float=96.3%, float turnover=1.0%, volume ratio=3.636779587100017)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING|VOLUME_EXPANSION (float=96.4%, float turnover=1.1%, volume ratio=2.660055650037883)
+- [US] LTC Properties, Inc. Common Stock: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=97.9%, float turnover=1.1%, volume ratio=2.3292322357019066)
+- [US] Imperial Petroleum Inc. - Common Shares: SHORT_CROWDING (float=46.6%, float turnover=1.7%, volume ratio=0.7889357458327397)
+- [JP] KDDI: VOLUME_EXPANSION (float=80.9%, float turnover=0.3%, volume ratio=1.7682777226331057)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION (float=77.4%, float turnover=2.2%, volume ratio=1.6855686184361762)
+- [US] Norwood Financial Corp. - Common Stock: SHORT_INTEREST_RISING|VOLUME_EXPANSION (float=90.3%, float turnover=0.4%, volume ratio=2.097927241962775)
 
 ## Governance
 
