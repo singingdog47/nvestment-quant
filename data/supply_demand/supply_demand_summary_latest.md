@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-09-21T15:21:54+00:00
+Generated (UTC): 2026-09-21T15:53:13+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,15 +16,15 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.8%, volume ratio=0.057041216552657016)
-- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=83.8%, float turnover=1.5%, volume ratio=0.5501850213436489)
-- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING (float=99.3%, float turnover=0.8%, volume ratio=0.15683886656289028)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING (float=96.3%, float turnover=1.0%, volume ratio=0.1308797839654463)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.1%, volume ratio=0.09216288901078112)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.8%, volume ratio=0.07069308459791294)
+- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=83.8%, float turnover=1.5%, volume ratio=0.6091060853616795)
+- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING (float=99.3%, float turnover=0.8%, volume ratio=0.18956650949958073)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING (float=96.3%, float turnover=1.0%, volume ratio=0.15387657350669318)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.1%, volume ratio=0.11985481937503506)
 - [JP] KDDI: VOLUME_EXPANSION (float=80.9%, float turnover=0.3%, volume ratio=1.7682777226331057)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.9%, float turnover=2.2%, volume ratio=0.4004759402693789)
-- [US] Norwood Financial Corp. - Common Stock: SHORT_INTEREST_RISING (float=90.3%, float turnover=0.4%, volume ratio=0.026790750141003947)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_FALLING (float=71.5%, float turnover=1.4%, volume ratio=0.7514131108542327)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.9%, float turnover=2.2%, volume ratio=0.4918686695721933)
+- [US] Norwood Financial Corp. - Common Stock: SHORT_INTEREST_RISING (float=90.3%, float turnover=0.4%, volume ratio=0.02820078962210942)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_FALLING (float=71.5%, float turnover=1.4%, volume ratio=0.8805180010386825)
 - [JP] ELECOM CO.,LTD.: VOLUME_EXPANSION (float=57.8%, float turnover=0.4%, volume ratio=1.5356185808354004)
 
 ## Governance

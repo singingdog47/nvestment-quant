@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-21T15:20:50+00:00",
-  "generated_at_utc": "2026-09-21T15:20:50+00:00",
+  "generated_at": "2026-09-21T15:52:09+00:00",
+  "generated_at_utc": "2026-09-21T15:52:09+00:00",
   "date_jst": "2026-09-22",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 62.49,
+  "regime_score": 62.8,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,22 +23,20 @@ Generated quality score: **0.745** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": true,
+  "thin_liquidity_flag": false,
   "treasury_volatility_shock_flag": false,
   "sq_execution_caution_flag": false,
-  "regime_flags": [
-    "THIN_LIQUIDITY"
-  ],
+  "regime_flags": [],
   "components": {
-    "trend": 71.30589977042037,
-    "stress": 81.2250002861023,
-    "participation": 49.988477935245996,
-    "liquidity": 33.46190184524554,
+    "trend": 71.54365119336485,
+    "stress": 81.12750020027161,
+    "participation": 50.05761032377002,
+    "liquidity": 35.15662159391475,
     "positioning": 57.726288981550105
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 14.649999618530273,
+    "vix": 14.779999732971191,
     "hy_oas": 2.68,
     "ig_oas": 0.77,
     "treasury_volatility_proxy": 74.744,
@@ -49,9 +47,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-21T15:20:47.799925+00:00",
+    "breadth_source_as_of_utc": "2026-09-21T15:52:07.714498+00:00",
     "nfci": -0.56,
-    "volume_ratio20_mean": 0.4885475461311385,
+    "volume_ratio20_mean": 0.5309155398478687,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -137,8 +135,8 @@ Generated quality score: **0.745** / actionable=True
   "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
-    0.15,
-    0.18
+    0.08,
+    0.12
   ],
   "max_single_stock_weight": 0.05,
   "lifestyle_bucket_max_weight": 0.05,
@@ -150,7 +148,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-21T15:21:54+00:00",
+  "generated_at": "2026-09-21T15:53:13+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -203,7 +201,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-21T15:20:47.799925+00:00
+- Data retrieved (UTC): 2026-09-21T15:52:07.714498+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -254,12 +252,12 @@ Generated quality score: **0.745** / actionable=True
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.2 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.1 | 99.9 | unchanged |
 | US | 4 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.6 | 99.9 | unchanged |
-| US | 8 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.8 | unchanged |
+| US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.8 | unchanged |
 | US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.4 | 99.8 | unchanged |
 | US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.0 | 99.7 | unchanged |
 | US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.7 | 99.6 | unchanged |
 | US | 17 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.7 | 99.5 | unchanged |
-| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | unchanged |
+| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.5 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 

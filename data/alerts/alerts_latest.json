@@ -1,76 +1,21 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-21T15:21:55+00:00",
-  "highest_severity": "WARNING",
+  "generated_at": "2026-09-21T15:53:14+00:00",
+  "highest_severity": "WATCH",
   "counts": {
     "INFO": 0,
-    "WATCH": 4,
-    "WARNING": 2,
+    "WATCH": 1,
+    "WARNING": 0,
     "CRITICAL": 0
   },
   "alerts": [
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_EARNINGS",
-      "title": "SEC 10-Q filing",
-      "message": "New company event detected for HCI Group, Inc. Common Stock.",
-      "value": null,
-      "threshold": null,
-      "entity": "HCI Group, Inc. Common Stock",
-      "source": "SEC EDGAR"
-    },
-    {
-      "severity": "WARNING",
-      "category": "LIQUIDITY",
-      "code": "THIN_LIQUIDITY",
-      "title": "Thin liquidity flag active",
-      "message": "Market Regime Engine reports thin_liquidity_flag=true.",
-      "value": true,
-      "threshold": true,
-      "entity": null,
-      "source": "market_regime_latest.json"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "つくば市で自動運転バスの本格運行を10月2日から開始 - KDDI ニュースルーム",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "昨季発生、NECグリーンロケッツ東葛の不祥事2件に懲罰。複数選手・スタッフも関与。チームの責任、過失も明らかに - ラグビーリパブリック",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "浜松ホトニクス－ＳＭＢＣ日興が投資評価引き下げ 業績回復により期待は織り込まれた - TradingView",
-      "message": "New company event detected for 浜松ホトニクス.",
-      "value": null,
-      "threshold": null,
-      "entity": "浜松ホトニクス",
-      "source": "Google News RSS"
-    },
     {
       "severity": "WATCH",
       "category": "LIQUIDITY",
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 33.46190184524554,
+      "value": 35.15662159391475,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"
