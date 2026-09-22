@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-22T00:52:15+00:00",
-  "generated_at_utc": "2026-09-22T00:52:15+00:00",
+  "generated_at": "2026-09-22T12:38:09+00:00",
+  "generated_at_utc": "2026-09-22T12:38:09+00:00",
   "date_jst": "2026-09-22",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 65.46,
+  "regime_score": 66.0,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -28,15 +28,15 @@ Generated quality score: **0.745** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 72.30400169570952,
-    "stress": 80.54000008583068,
-    "participation": 50.05761032377002,
-    "liquidity": 52.33147959502352,
+    "trend": 72.3039880496742,
+    "stress": 80.69750011444091,
+    "participation": 50.01728907330567,
+    "liquidity": 55.707308988006346,
     "positioning": 57.726288981550105
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 14.869999885559082,
+    "vix": 14.65999984741211,
     "hy_oas": 2.68,
     "ig_oas": 0.77,
     "treasury_volatility_proxy": 76.227,
@@ -47,9 +47,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-21T15:52:07.714498+00:00",
+    "breadth_source_as_of_utc": "2026-09-22T12:38:06.847655+00:00",
     "nfci": -0.56,
-    "volume_ratio20_mean": 0.960286989875588,
+    "volume_ratio20_mean": 1.0446827247001587,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -148,7 +148,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-22T00:53:16+00:00",
+  "generated_at": "2026-09-22T12:39:09+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -193,15 +193,15 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=1 / tier=primary
-- SEC: ok / records=34 / tier=primary
+- SEC: ok / records=37 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=13 / tier=secondary
+- NewsRSS: ok / records=14 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-21T15:52:07.714498+00:00
+- Data retrieved (UTC): 2026-09-22T12:38:06.847655+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -248,16 +248,16 @@ Generated quality score: **0.745** / actionable=True
 | JP | 12 | 2121.T | MIXI,Inc. | Other | 70.9 | 99.4 | unchanged |
 | JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.2 | 99.4 | unchanged |
 | JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 69.7 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.0 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.2 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.1 | 99.9 | unchanged |
-| US | 4 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.6 | 99.9 | unchanged |
-| US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.8 | unchanged |
-| US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.4 | 99.8 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.0 | 99.7 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.9 | 100.0 | unchanged |
+| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.1 | 100.0 | unchanged |
+| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.1 | 99.9 | unchanged |
+| US | 4 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.5 | 99.9 | unchanged |
+| US | 8 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.8 | unchanged |
+| US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.3 | 99.8 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.9 | 99.7 | unchanged |
 | US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.7 | 99.6 | unchanged |
-| US | 17 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.7 | 99.5 | unchanged |
-| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.5 | 99.5 | unchanged |
+| US | 17 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | unchanged |
+| US | 18 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.5 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 
@@ -275,8 +275,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] INSW International Seaways, Inc. Common Stock  | 2026-08-10 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1679049/000110465926093061/insw-20260630x10q.htm
 - [HIGH] INSW International Seaways, Inc. Common Stock  | 2026-08-10 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1679049/000110465926093033/tm2622617d1_8k.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-11 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000080/care-20260811.htm
-- [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-11 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000127368526000071/nymt-20260811.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426004935/p15047752_6k.htm
+- [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-11 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000127368526000071/nymt-20260811.htm
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-12 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000110465926094556/tm2622924d1_8k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426005129/p15049955_6k.htm
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-08-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000110465926097101/tm2623199d2_8k.htm
@@ -289,6 +289,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-08-28 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000018/nwfl-20260828x8k.htm
 - [HIGH] FRO Frontline Plc Ordinary Shares | 2026-08-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000091957426005942/p15060813_6k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426005821/p15059931_6-k.htm
+- [HIGH] IMPP Imperial Petroleum Inc. - Common Shares | 2026-08-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1876581/000119312526372414/d324626d6k.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-01 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526378466/d83131d8k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-02 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006143/p15072501_6k.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-09-03 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026060459/stng6k-09032026.htm
@@ -297,6 +298,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-09-08 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426006196/p15076578_6-k.htm
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-09-10 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000127368526000073/adam-20260910.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006252/p15079219_6-k.htm
+- [HIGH] IMPP Imperial Petroleum Inc. - Common Shares | 2026-09-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1876581/000119312526389346/d181516d6k.htm
 - [HIGH] LPG Dorian LPG Ltd. Common Stock | 2026-09-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1596993/000159699326000046/lpg-20260910x8k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-15 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006318/p15075054_6-k.htm
 - [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-09-16 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000020/nwfl-20260916x8k.htm
@@ -307,6 +309,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 6701 NEC | 2026-09-18 | filing | 変更報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2Q2
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-18 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006391/p15095918_6-k.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526396754/d73132d8k.htm
+- [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-22 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526397284/d244618d8k.htm
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1UaXotSERuMUFFNlctcE9TT0NPRVhhVVNDbHRCTWFJb0VVVFFxNzd4WUY5cjZ1RWtHemd0WnFraXgySFNUZm14bzhUWm9BV0J2ZVpNSzFrMEt5UldCLVZWeFM0YVNMcmNvdHc?oc=5
 
 ## Mandatory AI rules

@@ -1,7 +1,7 @@
 {
   "run_status": "ok",
   "failure_reason": null,
-  "generated_at_utc": "2026-09-21T15:52:09.365947+00:00",
+  "generated_at_utc": "2026-09-22T12:38:08.651769+00:00",
   "mode": "v1.3: official universe cross-check + full-universe TradingView snapshot + concentration guard",
   "universe_count": 9568,
   "universe_by_market": {
@@ -9,18 +9,18 @@
     "US": 5868
   },
   "universe_errors": [],
-  "price_ok_count": 8680,
-  "price_missing_count": 888,
-  "price_missing_rate": 0.09280936454849498,
-  "eligible_count": 5386,
-  "data_retrieved_at_utc": "2026-09-21T15:52:07.714498+00:00",
+  "price_ok_count": 8677,
+  "price_missing_count": 891,
+  "price_missing_rate": 0.09312290969899666,
+  "eligible_count": 5394,
+  "data_retrieved_at_utc": "2026-09-22T12:38:06.847655+00:00",
   "price_timestamp_status": "unverified_exact_exchange_timestamp",
   "fundamental_status": {
-    "ok": 4944,
-    "partial": 416,
-    "missing": 26
+    "ok": 4954,
+    "partial": 413,
+    "missing": 27
   },
-  "scored_count": 5378,
+  "scored_count": 5386,
   "settings": {
     "output_top_n": 100,
     "max_tickers": 0,

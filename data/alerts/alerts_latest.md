@@ -1,24 +1,28 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-22T00:53:16+00:00
+Generated: 2026-09-22T12:39:10+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 1
+- WARNING: 3
 - WATCH: 4
 - INFO: 0
 
 ## Alerts
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Imperial Petroleum Inc. - Common Shares]: SEC 6-K filing
+  - New company event detected for Imperial Petroleum Inc. - Common Shares.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Imperial Petroleum Inc. - Common Shares]: SEC 6-K filing
+  - New company event detected for Imperial Petroleum Inc. - Common Shares.
 - **WARNING** COMPANY_EVENT/EVENT_FILING [Millrose Properties, Inc. Class A Common Stock]: SEC 8-K filing
   - New company event detected for Millrose Properties, Inc. Class A Common Stock.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: つくば市で自動運転バスの本格運行を10月2日から開始 - newsroom.kddi.com
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: リテールロボットを活用した分散型データセンター実証を開始 - KDDI ニュースルーム
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 昨季発生、NECグリーンロケッツ東葛の不祥事2件に懲罰。複数選手・スタッフも関与。チームの責任、過失も明らかに - rugby-rp.com
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECと住友電工、ペタビット級海底ケーブルでメタと協業（時事通信） - Yahoo!ニュース
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業 化学品銘柄からAI銘柄へ 斉藤社長に聞く【大浜見聞録】 - テレ東BIZ
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: マーケット速報 - 北國新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC川崎が好きな選手のサイン入りグッズが当たるキャンペーンを開始！ - バレーボールキング
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス(株)【6965】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp
   - New company event detected for 浜松ホトニクス.
 
 ## Governance

@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-21T15:52:07.714498+00:00
+- Data retrieved (UTC): 2026-09-22T12:38:06.847655+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -47,16 +47,16 @@
 | JP | 12 | 2121.T | MIXI,Inc. | Other | 70.9 | 99.4 | unchanged |
 | JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.2 | 99.4 | unchanged |
 | JP | 15 | 8473.T | SBI Holdings,Inc. | Other | 69.7 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.0 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.2 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.1 | 99.9 | unchanged |
-| US | 4 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.6 | 99.9 | unchanged |
-| US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.8 | unchanged |
-| US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.4 | 99.8 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.0 | 99.7 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.9 | 100.0 | unchanged |
+| US | 2 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.1 | 100.0 | unchanged |
+| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.1 | 99.9 | unchanged |
+| US | 4 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.5 | 99.9 | unchanged |
+| US | 8 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.8 | unchanged |
+| US | 9 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.3 | 99.8 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.9 | 99.7 | unchanged |
 | US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.7 | 99.6 | unchanged |
-| US | 17 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.7 | 99.5 | unchanged |
-| US | 18 | FRO | Frontline Plc Ordinary Shares | Other | 79.5 | 99.5 | unchanged |
+| US | 17 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.5 | unchanged |
+| US | 18 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.5 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 
