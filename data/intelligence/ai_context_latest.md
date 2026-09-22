@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-21T15:52:09+00:00",
-  "generated_at_utc": "2026-09-21T15:52:09+00:00",
+  "generated_at": "2026-09-22T00:52:15+00:00",
+  "generated_at_utc": "2026-09-22T00:52:15+00:00",
   "date_jst": "2026-09-22",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 62.8,
+  "regime_score": 65.46,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -28,28 +28,28 @@ Generated quality score: **0.745** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 71.54365119336485,
-    "stress": 81.12750020027161,
+    "trend": 72.30400169570952,
+    "stress": 80.54000008583068,
     "participation": 50.05761032377002,
-    "liquidity": 35.15662159391475,
+    "liquidity": 52.33147959502352,
     "positioning": 57.726288981550105
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 14.779999732971191,
+    "vix": 14.869999885559082,
     "hy_oas": 2.68,
     "ig_oas": 0.77,
-    "treasury_volatility_proxy": 74.744,
-    "treasury_volatility_percentile_rank": 0.7817,
-    "treasury_volatility_stress_score": 41.37,
-    "treasury_volatility_as_of_date": "2026-09-18",
+    "treasury_volatility_proxy": 76.227,
+    "treasury_volatility_percentile_rank": 0.8095,
+    "treasury_volatility_stress_score": 39.29,
+    "treasury_volatility_as_of_date": "2026-09-21",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-21T15:52:07.714498+00:00",
     "nfci": -0.56,
-    "volume_ratio20_mean": 0.5309155398478687,
+    "volume_ratio20_mean": 0.960286989875588,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -148,7 +148,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-21T15:53:13+00:00",
+  "generated_at": "2026-09-22T00:53:16+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -192,8 +192,8 @@ Generated quality score: **0.745** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=5 / tier=primary
-- SEC: ok / records=37 / tier=primary
+- EDINET: ok / records=1 / tier=primary
+- SEC: ok / records=34 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
 - NewsRSS: ok / records=13 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
@@ -272,10 +272,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 ## Critical / high company events
 - [CRITICAL] 6965 浜松ホトニクス | Thu, 06 Aug 2026 | guidance | 決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTFBmVEVJUmoxbkY1S2IwUEVSY1BFMVVLa1pDalQ1NXNZTHhPSnN0UlZ6dHlfSzNFOEZpWjkxVW0xRUNDSTBSS1FMQllsdnAtR0pkOW84T3VxbmR2ZlRmVWFERm5fVTlZeFktSi10NA?oc=5
-- [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-08-07 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000016/nwfl-20260630x10q.htm
-- [HIGH] BUSE First Busey Corporation - Common Stock | 2026-08-07 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/314489/000031448926000057/buse-20260807.htm
-- [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-07 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426004877/p15046186_6k.htm
-- [HIGH] HCI HCI Group, Inc. Common Stock | 2026-08-07 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1400810/000119312526340280/hci-20260630.htm
 - [HIGH] INSW International Seaways, Inc. Common Stock  | 2026-08-10 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1679049/000110465926093061/insw-20260630x10q.htm
 - [HIGH] INSW International Seaways, Inc. Common Stock  | 2026-08-10 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1679049/000110465926093033/tm2622617d1_8k.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-11 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000080/care-20260811.htm
@@ -302,10 +298,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] ADAM Adamas Trust, Inc. - Common Stock | 2026-09-10 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1273685/000127368526000073/adam-20260910.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006252/p15079219_6-k.htm
 - [HIGH] LPG Dorian LPG Ltd. Common Stock | 2026-09-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1596993/000159699326000046/lpg-20260910x8k.htm
-- [HIGH] 4063 信越化学工業 | 2026-09-15 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2DU
-- [HIGH] 4063 信越化学工業 | 2026-09-15 | filing | 有価証券届出書（参照方式） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2EE
-- [HIGH] 8616 Tokai Tokyo Financial Holdings,Inc. | 2026-09-15 | filing | 訂正臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2CA
-- [HIGH] 8616 Tokai Tokyo Financial Holdings,Inc. | 2026-09-15 | filing | 訂正発行登録書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z24X
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-15 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006318/p15075054_6-k.htm
 - [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-09-16 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000020/nwfl-20260916x8k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-16 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006339/p15081246_6-k.htm
@@ -314,8 +306,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] HTGC Hercules Capital, Inc. Common Stock | 2026-09-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1280784/000128078426000046/htgc-20260917.htm
 - [HIGH] 6701 NEC | 2026-09-18 | filing | 変更報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2Q2
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-18 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006391/p15095918_6-k.htm
+- [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526396754/d73132d8k.htm
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1UaXotSERuMUFFNlctcE9TT0NPRVhhVVNDbHRCTWFJb0VVVFFxNzd4WUY5cjZ1RWtHemd0WnFraXgySFNUZm14bzhUWm9BV0J2ZVpNSzFrMEt5UldCLVZWeFM0YVNMcmNvdHc?oc=5
-- [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化、今期配当を20円増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE14VEdPRDlYZE1odUpxZzR6TFpHaHl5MW8zQVhPVkkxRWVYbHNXVV9JUlZZV1pZRmlGOWNSZ250aFVycHNWRkx3YnFzN040dUd5c0E?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.

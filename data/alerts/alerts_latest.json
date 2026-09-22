@@ -1,24 +1,68 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-21T15:53:14+00:00",
-  "highest_severity": "WATCH",
+  "generated_at": "2026-09-22T00:53:16+00:00",
+  "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 1,
-    "WARNING": 0,
+    "WATCH": 4,
+    "WARNING": 1,
     "CRITICAL": 0
   },
   "alerts": [
     {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_FILING",
+      "title": "SEC 8-K filing",
+      "message": "New company event detected for Millrose Properties, Inc. Class A Common Stock.",
+      "value": null,
+      "threshold": null,
+      "entity": "Millrose Properties, Inc. Class A Common Stock",
+      "source": "SEC EDGAR"
+    },
+    {
       "severity": "WATCH",
-      "category": "LIQUIDITY",
-      "code": "LIQUIDITY_SOFT",
-      "title": "Market liquidity is soft",
-      "message": "Liquidity component fell below 40/100.",
-      "value": 35.15662159391475,
-      "threshold": 40,
-      "entity": null,
-      "source": "market_regime_latest.json"
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "つくば市で自動運転バスの本格運行を10月2日から開始 - newsroom.kddi.com",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "昨季発生、NECグリーンロケッツ東葛の不祥事2件に懲罰。複数選手・スタッフも関与。チームの責任、過失も明らかに - rugby-rp.com",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "信越化学工業 化学品銘柄からAI銘柄へ 斉藤社長に聞く【大浜見聞録】 - テレ東BIZ",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "マーケット速報 - 北國新聞",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
     }
   ],
   "rules": [
