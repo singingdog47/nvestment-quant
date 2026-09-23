@@ -1,15 +1,15 @@
 {
-  "decision_id": "gpt-shadow-20260922-postclose-1734-market-closed-hold-mito",
-  "decision_date": "2026-09-22",
+  "decision_id": "gpt-shadow-20260923-postclose-1735-market-closed-hold-mito",
+  "decision_date": "2026-09-23",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
   "meta_gate": {
     "passed": false,
     "baseline": "Hold the existing exploratory 100-share 8622.T position entered at JPY933 and retain JPY906,700 cash.",
-    "incremental_edge_source": "None today. September 22, 2026 is a Japanese national holiday and the Tokyo cash equity market has no new session; fresh macro/regime calculations do not create security-level alpha by themselves.",
-    "assessment": "HOLD is required by the market-closed/data-freshness fail-safe. The repository refreshed on 2026-09-22, but 8622.T remains at the last confirmed cash-session price of JPY937. There is no new company-specific evidence supporting ADD and no disconfirming evidence or risk trigger supporting SELL.",
-    "strongest_counterargument": "The constructive macro backdrop could support taking more risk ahead of reopening, but doing so would convert market context into a security-level trade signal without fresh cash-market or company evidence.",
+    "incremental_edge_source": "None today. September 23, 2026 is a Japanese market holiday, so there is no fresh Tokyo cash-equity session for 8622.T. A stronger macro regime alone is not security-level alpha.",
+    "assessment": "HOLD under the market-closed/data-freshness fail-safe. The repository refreshed on 2026-09-23, but the 8622.T screen remains JPY937 from the prior available cash session. No new company-specific evidence supports ADD and no disconfirming evidence or configured risk trigger supports SELL.",
+    "strongest_counterargument": "The CONSTRUCTIVE regime has strengthened to 65.77 and could justify greater aggregate risk, but converting that context into an ADD for one security without a new cash session or company evidence would violate the meta gate.",
     "simpler_alternative": "Keep the existing 100 shares unchanged and reassess after the next Tokyo cash-market session produces fresh post-close price/factor evidence."
   },
   "existing_thesis_review": {
@@ -22,7 +22,7 @@
     "disconfirming_condition": "Material deterioration in stock assets or recurring stock revenue, operating profit reverting toward pre-Q1 levels without a temporary explanation, weaker capital returns, or a price decline reaching the configured risk exit without offsetting new evidence.",
     "expected_horizon": "2-12 weeks, with the next half-year/Q2 disclosure as the primary fundamental checkpoint.",
     "confidence": 0.60,
-    "data_quality": "Adequate for holding context, insufficient for a new trade: repository quality_score 0.745 and actionable=true, but primary fundamental coverage is 0.0, effective coverage 0.65 secondary_only, and there is no 2026-09-22 Tokyo cash-equity session."
+    "data_quality": "Adequate for holding context, insufficient for a new trade: quality_score 0.745 and actionable=true, but primary fundamental coverage is 0.0, effective coverage 0.65 secondary_only, and there is no fresh 2026-09-23 Tokyo cash-equity session."
   },
   "position_context": {
     "symbol": "8622.T",
@@ -38,8 +38,8 @@
   },
   "market_context": {
     "regime_label": "CONSTRUCTIVE",
-    "regime_score": 65.46,
-    "regime_date_jst": "2026-09-22",
+    "regime_score": 65.77,
+    "regime_date_jst": "2026-09-23",
     "regime_confidence": 1.0,
     "stress_flag": false,
     "thin_liquidity_flag": false,
@@ -48,13 +48,13 @@
     "sq_execution_stance": "NORMAL"
   },
   "data_quality_caveats": [
-    "September 22, 2026 is a Japanese national holiday; JPX confirms holiday trading only for eligible derivatives, not a new Tokyo cash-equity session.",
-    "The latest 8622.T screen remains JPY937, JP market rank 1, total_score 76.32 and momentum_score 84.73; the screen retrieval timestamp is 2026-09-21T15:52:07Z but does not represent a new Sep 22 Tokyo cash close.",
+    "September 23, 2026 is a Japanese market holiday; there is no fresh Tokyo cash-equity session for 8622.T.",
+    "The latest 8622.T screen remains JPY937, JP market rank 1, total_score 76.32 and momentum_score 84.73; retrieval refreshed but does not constitute a new Sep 23 Tokyo cash close.",
     "Repository primary fundamental coverage is 0.0 and effective fundamental coverage is 0.65 (secondary_only).",
-    "Supply/demand status is partial; its governance explicitly forbids using that layer as an alpha or buy/sell signal.",
+    "Supply/demand status is partial and its governance forbids using it as an alpha or buy/sell signal.",
     "Screening price/factor fields use an unofficial TradingView scanner feed with exact exchange timestamp unavailable."
   ],
-  "reason": "HOLD. The 100-share Mito position remains unchanged. The market regime is constructive and no configured exit condition is challenged, but September 22 is a Tokyo cash-market holiday and there is no fresh security-level evidence that creates positive incremental expected value for ADD or SELL versus doing nothing.",
+  "reason": "HOLD. The 100-share Mito position remains unchanged. The regime is constructive and no exit condition is challenged, but the Tokyo cash market is closed and there is no fresh security-level evidence creating positive incremental expected value for ADD or SELL versus doing nothing.",
   "confidence": 0.99,
   "notes": "SHADOW ONLY. No broker connection and no real-money order."
 }
