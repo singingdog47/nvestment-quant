@@ -1,12 +1,12 @@
 {
-  "generated_at_jst": "2026-09-22T21:40:37+09:00",
+  "generated_at_jst": "2026-09-23T21:49:29+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
-    "reason": "首位と2位の差が0.7点で優位性が弱い",
-    "margin": 0.71
+    "reason": "首位と2位の差が2.0点で優位性が弱い",
+    "margin": 2.0
   },
   "ranking": [
     {
@@ -16,26 +16,12 @@
       "close": 773.5,
       "data_date": "2026-09-21",
       "momentum": 69.42,
-      "macro": 65.7,
+      "macro": 64.57,
       "trend": 99.66,
       "risk": 91.63,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 78.92
-    },
-    {
-      "key": "BTC",
-      "label": "ビットコイン",
-      "ticker": "BTC-USD",
-      "close": 86019.0625,
-      "data_date": "2026-09-22",
-      "momentum": 98.53,
-      "macro": 67.49,
-      "trend": 93.25,
-      "risk": 61.23,
-      "cost": 20.82,
-      "round_trip_cost_pct": 8.8,
-      "total": 78.21
+      "total": 78.63
     },
     {
       "key": "TECH",
@@ -44,12 +30,26 @@
       "close": 741.469970703125,
       "data_date": "2026-09-21",
       "momentum": 71.82,
-      "macro": 57.43,
+      "macro": 54.97,
       "trend": 99.62,
       "risk": 87.29,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 77.25
+      "total": 76.63
+    },
+    {
+      "key": "BTC",
+      "label": "ビットコイン",
+      "ticker": "BTC-USD",
+      "close": 85501.7890625,
+      "data_date": "2026-09-23",
+      "momentum": 91.02,
+      "macro": 66.44,
+      "trend": 93.69,
+      "risk": 64.42,
+      "cost": 20.82,
+      "round_trip_cost_pct": 8.8,
+      "total": 75.73
     },
     {
       "key": "GOLD",
@@ -58,12 +58,12 @@
       "close": 398.3800048828125,
       "data_date": "2026-09-21",
       "momentum": 42.62,
-      "macro": 38.32,
+      "macro": 34.78,
       "trend": 24.2,
       "risk": 68.86,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 45.32
+      "total": 44.44
     }
   ],
   "source_health": [
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-22T12:40:37+00:00",
+      "fetched_at": "2026-09-23T12:49:29+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-22T12:40:37+00:00",
+      "fetched_at": "2026-09-23T12:49:29+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-22T12:40:37+00:00",
+      "fetched_at": "2026-09-23T12:49:29+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,31 +95,31 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-09-22T12:40:37+00:00",
+      "fetched_at": "2026-09-23T12:49:29+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^TNX",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-22T12:40:37+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-23T12:49:29+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
-      "records": 252,
-      "fetched_at": "2026-09-22T12:40:37+00:00",
+      "records": 251,
+      "fetched_at": "2026-09-23T12:49:29+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^VIX",
       "status": "ok",
-      "records": 254,
-      "fetched_at": "2026-09-22T12:40:37+00:00",
+      "records": 253,
+      "fetched_at": "2026-09-23T12:49:29+00:00",
       "error": "",
       "source_tier": "secondary"
     }

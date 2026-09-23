@@ -1,9 +1,9 @@
 {
   "quality": {
-    "generated_at": "2026-09-23T00:37:56+00:00",
+    "generated_at": "2026-09-23T12:47:48+00:00",
     "targets": 36,
     "portfolio_targets": 0,
-    "events": 51,
+    "events": 50,
     "primary_source_health": 1.0,
     "configured_primary_sources": 4,
     "optional_primary_sources_unconfigured": [],
@@ -21,12 +21,12 @@
   "market_regime": {
     "version": "1.5.3",
     "engine_version": "1.5.3",
-    "generated_at": "2026-09-23T00:36:57+00:00",
-    "generated_at_utc": "2026-09-23T00:36:57+00:00",
+    "generated_at": "2026-09-23T12:46:45+00:00",
+    "generated_at_utc": "2026-09-23T12:46:45+00:00",
     "date_jst": "2026-09-23",
     "data_status": "ok",
     "regime_label": "CONSTRUCTIVE",
-    "regime_score": 65.77,
+    "regime_score": 66.2,
     "confidence": 1.0,
     "actionable": true,
     "actionability": {
@@ -43,15 +43,15 @@
     "sq_execution_caution_flag": false,
     "regime_flags": [],
     "components": {
-      "trend": 72.70574660376008,
-      "stress": 81.25249997138977,
-      "participation": 50.01728907330567,
-      "liquidity": 52.44343028463718,
+      "trend": 72.3039880496742,
+      "stress": 81.18499985694885,
+      "participation": 50.43783846065215,
+      "liquidity": 55.691918346619715,
       "positioning": 57.726288981550105
     },
     "evidence": {
       "trend_series": 4,
-      "vix": 14.210000038146973,
+      "vix": 14.300000190734863,
       "hy_oas": 2.66,
       "ig_oas": 0.77,
       "treasury_volatility_proxy": 76.104,
@@ -60,11 +60,11 @@
       "treasury_volatility_as_of_date": "2026-09-22",
       "treasury_volatility_status": "ok",
       "treasury_volatility_is_ice_move": false,
-      "breadth_n": 9568,
+      "breadth_n": 9567,
       "breadth_status": "ok",
-      "breadth_source_as_of_utc": "2026-09-22T12:38:06.847655+00:00",
-      "nfci": -0.56,
-      "volume_ratio20_mean": 0.9630857571159295,
+      "breadth_source_as_of_utc": "2026-09-23T12:46:43.260796+00:00",
+      "nfci": -0.555,
+      "volume_ratio20_mean": 1.045172958665493,
       "positioning_sources": {
         "jpx_raw_healthy": 4,
         "cftc_normalized_values": 22
@@ -159,7 +159,7 @@
     "note": "Guardrail only. This file never places orders."
   },
   "system_health": {
-    "generated_at": "2026-09-23T00:37:56+00:00",
+    "generated_at": "2026-09-23T12:47:48+00:00",
     "components": {
       "market_regime": {
         "status": "ok",
@@ -215,8 +215,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "34cd8d9735033e01a3f279c6",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "4063",
+      "ticker": "4063.T",
+      "name": "信越化学工業",
+      "event_date": "Tue, 15 Sep 2026",
+      "event_type": "financing",
+      "title": "信越化学工業[4063]：ストックオプション（新株予約権）の割当てに関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9zXy1IQms4Z0RtUDJfTzg3WDRXVF9IcE5JcW5MQ0tFUEdkbmhoZDlsU19GRkNaUFpLUGNxUXJDNUF1R1NoTVBXenp4ZnpjTzJiSzlKdlMtSXMyM1I3QjJqeWlwQVFSeWd5T1E?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "critical",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
+      "event_id": "3f8f53953117081168812b79",
       "raw_excerpt": ""
     },
     {
@@ -233,7 +251,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "2df8e3a3d954103575ac10cd",
       "raw_excerpt": ""
     },
@@ -251,7 +269,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "0a6c46ee7bfb61972d2a5085",
       "raw_excerpt": ""
     },
@@ -269,7 +287,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "f85873c62a45cf990359e253",
       "raw_excerpt": ""
     },
@@ -287,7 +305,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "ae4c40c347c678e0b951c141",
       "raw_excerpt": ""
     },
@@ -305,7 +323,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "3c974baf308a343f32ad9b85",
       "raw_excerpt": ""
     },
@@ -323,7 +341,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "9cf5baaffe5dad7262bc0fe3",
       "raw_excerpt": ""
     },
@@ -341,7 +359,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "f14be72112f393512074134b",
       "raw_excerpt": ""
     },
@@ -359,7 +377,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "7a7c892464d9573c4e144022",
       "raw_excerpt": ""
     },
@@ -377,7 +395,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "42b11ef21422035924d2f48a",
       "raw_excerpt": ""
     },
@@ -395,7 +413,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "f0d57d6055bc0f604c63073f",
       "raw_excerpt": ""
     },
@@ -413,7 +431,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "8fa43f3254c366a7f75bc11d",
       "raw_excerpt": ""
     },
@@ -431,7 +449,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "e1b30c0ca118c2f263bbeba1",
       "raw_excerpt": ""
     },
@@ -449,7 +467,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "9057ca905e210933ecd6937f",
       "raw_excerpt": ""
     },
@@ -467,7 +485,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "40cc0c79b09dbdc0279a751d",
       "raw_excerpt": ""
     },
@@ -485,7 +503,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "1646199e13fb3fa238295d5f",
       "raw_excerpt": ""
     },
@@ -503,7 +521,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "88a3917cd58d8540e8876479",
       "raw_excerpt": ""
     },
@@ -521,26 +539,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "d02bdc3baa4c8953f7d469e4",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "IMPP",
-      "ticker": "IMPP",
-      "name": "Imperial Petroleum Inc. - Common Shares",
-      "event_date": "2026-08-28",
-      "event_type": "filing",
-      "title": "SEC 6-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1876581/000119312526372414/d324626d6k.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
-      "event_id": "cb772ced88f591c8a21d9d5f",
       "raw_excerpt": ""
     },
     {
@@ -557,7 +557,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "d153ac2c15d7f78722a5d6e0",
       "raw_excerpt": ""
     },
@@ -575,7 +575,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "0fee6ff3ba4dccf6db0c9214",
       "raw_excerpt": ""
     },
@@ -593,7 +593,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "e69dcfc48b67c26958c4c4c1",
       "raw_excerpt": ""
     },
@@ -611,7 +611,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "506caa2d2e0eab624d93b6b1",
       "raw_excerpt": ""
     },
@@ -629,7 +629,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "c431645ddbeb1f06e99c7cde",
       "raw_excerpt": ""
     },
@@ -647,7 +647,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "2db1c28276f03940684922fe",
       "raw_excerpt": ""
     },
@@ -665,7 +665,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "079711454c48eac35135920c",
       "raw_excerpt": ""
     },
@@ -683,26 +683,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "e71d123796ba4807789d0850",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "IMPP",
-      "ticker": "IMPP",
-      "name": "Imperial Petroleum Inc. - Common Shares",
-      "event_date": "2026-09-11",
-      "event_type": "filing",
-      "title": "SEC 6-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1876581/000119312526389346/d181516d6k.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
-      "event_id": "6b495db54eca0f9bad49a8d4",
       "raw_excerpt": ""
     },
     {
@@ -719,7 +701,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "9cff4f5854f8f1b97b3a0dab",
       "raw_excerpt": ""
     },
@@ -737,7 +719,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "4f2de058b3c176f4ac99ce83",
       "raw_excerpt": ""
     },
@@ -755,26 +737,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "f5c67fe94ddb7e08ae6a2fe9",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "TRMD",
-      "ticker": "TRMD",
-      "name": "TORM plc - Class A Common Stock",
-      "event_date": "2026-09-16",
-      "event_type": "filing",
-      "title": "SEC 6-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1655891/000091957426006339/p15081246_6-k.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
-      "event_id": "1f21ce51a019dc8235b2112f",
       "raw_excerpt": ""
     },
     {
@@ -791,8 +755,26 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "2477a7f913e68a998b852023",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "TRMD",
+      "ticker": "TRMD",
+      "name": "TORM plc - Class A Common Stock",
+      "event_date": "2026-09-16",
+      "event_type": "filing",
+      "title": "SEC 6-K filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1655891/000091957426006339/p15081246_6-k.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
+      "event_id": "1f21ce51a019dc8235b2112f",
       "raw_excerpt": ""
     },
     {
@@ -809,7 +791,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "1357d9806c5004e769a0d23f",
       "raw_excerpt": ""
     },
@@ -827,7 +809,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "295e1cdb5f42fbd25840a09e",
       "raw_excerpt": ""
     },
@@ -845,7 +827,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:40+00:00",
+      "fetched_at": "2026-09-23T12:47:31+00:00",
       "event_id": "56b3b5c31178336b223bec72",
       "raw_excerpt": ""
     },
@@ -863,7 +845,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "10c4cfbbf3462b0654fa29ec",
       "raw_excerpt": ""
     },
@@ -881,7 +863,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "27409884c8b08f5bcda585e0",
       "raw_excerpt": ""
     },
@@ -899,8 +881,26 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
       "event_id": "dbff4c6eb4aed4151c2a058d",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "MRP",
+      "ticker": "MRP",
+      "name": "Millrose Properties, Inc. Class A Common Stock",
+      "event_date": "2026-09-23",
+      "event_type": "filing",
+      "title": "SEC 8-K filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2017206/000119312526398224/d126321d8k.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-09-23T12:47:34+00:00",
+      "event_id": "91b40e7af3ca60ff33cae506",
       "raw_excerpt": ""
     },
     {
@@ -917,7 +917,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "44ec5a2f5cc9172c246209e8",
       "raw_excerpt": ""
     },
@@ -935,26 +935,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "399c1885c8c3ea7e1d1e0534",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "9433",
-      "ticker": "9433.T",
-      "name": "KDDI",
-      "event_date": "Fri, 18 Sep 2026",
-      "event_type": "disclosure",
-      "title": "リテールロボットを活用した分散型データセンター実証を開始 - KDDI ニュースルーム",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5wQkpWejI2M3QtWkZ1SGRmWVp4UUZVWVVtZlNNekhPaGh4VEUtcE9ZSVdIUUhWWWpaekVmLWQ5d1h3aGRIRTNfby00cTkwcjhzaDN5Yi1MNmc1UzZWTmJzOVlfd2ktdGNfWmxjdg?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
-      "event_id": "671d3e8a4420982ce62f3aaa",
       "raw_excerpt": ""
     },
     {
@@ -971,26 +953,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "288e211cd12ea79205dad9f0",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "4063",
-      "ticker": "4063.T",
-      "name": "信越化学工業",
-      "event_date": "Fri, 28 Aug 2026",
-      "event_type": "disclosure",
-      "title": "信越化学工業 化学品銘柄からAI銘柄へ 斉藤社長に聞く【大浜見聞録】 - テレ東BIZ",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE42LTdKd1pkR2ZuYjQ1X29rM3pNd3NJOVc3R3BnbkZZSGJrUldPQ2RNYUNYLUplN3lfSWZvaHEtaVlSbVBVRGpSX3ZLdzJDSm5zcVNNYmhnUmJjWElPLU5sV3lB?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
-      "event_id": "e0bae95c8a6d9f254b4c09c0",
       "raw_excerpt": ""
     },
     {
@@ -1007,7 +971,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "d4da68325a93be73b50c78d3",
       "raw_excerpt": ""
     },
@@ -1025,7 +989,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "47387dcd529739a10f66594e",
       "raw_excerpt": ""
     },
@@ -1043,7 +1007,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "b7b605e66573afb607eafe9d",
       "raw_excerpt": ""
     },
@@ -1057,12 +1021,12 @@
       "title": "手元資金1.6兆円超なのに「借入金」が急増…それでも信越化学工業の財務は盤石といえるワケ - ダイヤモンド・オンライン",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA1WVNyWGFzRTVLZXAxWkFoeV9YblpnQVYydjJHTGdZNm5BV3BULXdiOTJhMUtYT1NWWDYwUldLeWc5RmRScjRZVnMwUWzSAU9BVV95cUxNaHM1bDUxaVBSbFNNeDlWMmJWLXljWlFnYkFWdi04YnZoUzBpd2RIUHRVbktfUVFfcklzUmZ2OGtSTXlhcldmdkxwejVuWUtj?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA1WVNyWGFzRTVLZXAxWkFoeV9YblpnQVYydjJHTGdZNm5BV3BULXdiOTJhMUtYT1NWWDYwUldLeWc5RmRScjRZVnMwUWw?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
-      "event_id": "918c90b17d2c225386b75861",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
+      "event_id": "55fade612fd5913e0f7c25bf",
       "raw_excerpt": ""
     },
     {
@@ -1079,7 +1043,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "e8b70bb63ffeb012c1f1d09c",
       "raw_excerpt": ""
     },
@@ -1097,7 +1061,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "5824339ca73dea10888958b0",
       "raw_excerpt": ""
     },
@@ -1115,8 +1079,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "event_id": "e3e4e2ece3db385a5ec793da",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "9433",
+      "ticker": "9433.T",
+      "name": "KDDI",
+      "event_date": "Wed, 16 Sep 2026",
+      "event_type": "disclosure",
+      "title": "通信事業者間での5Gミリ波の利用エリア拡大に向けた共同検討を開始 - KDDI ニュースルーム",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE42d2stbGpKcl83dzBSZzRUekd4STJhSllvSmFNUEl4VmFCTXQzRGpZR3JPQ2ljTzRMTWZYZ09FRnlDSHluN2VLMUdEdHc2bl9ZSXZ1aGZwSGtYRG5mRWx3cmtOOFY5WFAweURqWA?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
+      "event_id": "648804d8d60565b2c5f003ff",
       "raw_excerpt": ""
     }
   ],
@@ -1124,7 +1106,7 @@
     {
       "source": "TDnet",
       "status": "ok",
-      "fetched_at": "2026-09-23T00:37:38+00:00",
+      "fetched_at": "2026-09-23T12:47:29+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1132,7 +1114,7 @@
     {
       "source": "EDINET",
       "status": "ok",
-      "fetched_at": "2026-09-23T00:37:40+00:00",
+      "fetched_at": "2026-09-23T12:47:31+00:00",
       "records": 1,
       "error": "",
       "source_tier": "primary"
@@ -1140,15 +1122,15 @@
     {
       "source": "SEC",
       "status": "ok",
-      "fetched_at": "2026-09-23T00:37:45+00:00",
-      "records": 37,
+      "fetched_at": "2026-09-23T12:47:34+00:00",
+      "records": 36,
       "error": "",
       "source_tier": "primary"
     },
     {
       "source": "CompanyIR",
       "status": "ok",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1156,7 +1138,7 @@
     {
       "source": "NewsRSS",
       "status": "ok",
-      "fetched_at": "2026-09-23T00:37:48+00:00",
+      "fetched_at": "2026-09-23T12:47:37+00:00",
       "records": 13,
       "error": "",
       "source_tier": "secondary"
@@ -1164,7 +1146,7 @@
     {
       "source": "yfinance",
       "status": "ok",
-      "fetched_at": "2026-09-23T00:37:56+00:00",
+      "fetched_at": "2026-09-23T12:47:48+00:00",
       "records": 36,
       "error": "",
       "source_tier": "secondary"
@@ -1172,7 +1154,7 @@
   ],
   "supply_demand_context": {
     "version": "1.0.0",
-    "generated_at_utc": "2026-09-23T00:37:57+00:00",
+    "generated_at_utc": "2026-09-23T12:47:48+00:00",
     "observed_date_jst": "2026-09-23",
     "data_status": "partial",
     "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
@@ -1196,8 +1178,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.8375399956605227,
-        "avg_daily_float_turnover_ratio": 0.014953191863149506,
-        "current_volume_ratio_30d": 1.6217756821021239,
+        "avg_daily_float_turnover_ratio": 0.015118362170079423,
+        "current_volume_ratio_30d": 1.6040575467531495,
         "short_percent_float": 0.0859,
         "short_interest_change_ratio": 0.3949616870121093,
         "days_to_cover": 5.75,
@@ -1211,8 +1193,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.9167669770731056,
-        "avg_daily_float_turnover_ratio": 0.017483060664128296,
-        "current_volume_ratio_30d": 0.7846278574295188,
+        "avg_daily_float_turnover_ratio": 0.017457726239122975,
+        "current_volume_ratio_30d": 0.7857664991597682,
         "short_percent_float": 0.0929,
         "short_interest_change_ratio": 0.06573218684798787,
         "days_to_cover": 5.62,
@@ -1226,8 +1208,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.7792476728663396,
-        "avg_daily_float_turnover_ratio": 0.021902267314242073,
-        "current_volume_ratio_30d": 1.6909633543257525,
+        "avg_daily_float_turnover_ratio": 0.0219830088200422,
+        "current_volume_ratio_30d": 1.6847526063522258,
         "short_percent_float": 0.044699997,
         "short_interest_change_ratio": 0.02931510779110602,
         "days_to_cover": 2.79,
@@ -1241,8 +1223,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.7147716663685458,
-        "avg_daily_float_turnover_ratio": 0.014174604795490296,
-        "current_volume_ratio_30d": 2.4483211626223214,
+        "avg_daily_float_turnover_ratio": 0.01426850126056701,
+        "current_volume_ratio_30d": 2.432209540361189,
         "short_percent_float": 0.0084,
         "short_interest_change_ratio": -0.31805537359044744,
         "days_to_cover": 1.04,
@@ -1256,8 +1238,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.9927145255408554,
-        "avg_daily_float_turnover_ratio": 0.008332420503589278,
-        "current_volume_ratio_30d": 1.305018064153023,
+        "avg_daily_float_turnover_ratio": 0.00838704986126109,
+        "current_volume_ratio_30d": 1.2965177810052995,
         "short_percent_float": 0.0545,
         "short_interest_change_ratio": 0.030067581273688138,
         "days_to_cover": 7.3,
@@ -1271,27 +1253,12 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.9634700024544378,
-        "avg_daily_float_turnover_ratio": 0.010182789381956506,
-        "current_volume_ratio_30d": 0.8036936506584608,
+        "avg_daily_float_turnover_ratio": 0.010176190623428082,
+        "current_volume_ratio_30d": 0.8042148064158335,
         "short_percent_float": 0.048,
         "short_interest_change_ratio": 0.11061654873912175,
         "days_to_cover": 5.94,
         "context_flags": "SHORT_CROWDING"
-      },
-      {
-        "market": "US",
-        "code": "TRMD",
-        "ticker": "TRMD",
-        "name": "TORM plc - Class A Common Stock",
-        "data_status": "ok",
-        "confidence": 0.7,
-        "free_float_ratio": 0.7052415316356053,
-        "avg_daily_float_turnover_ratio": 0.013632455777467082,
-        "current_volume_ratio_30d": 2.4039183787725578,
-        "short_percent_float": 0.024600001,
-        "short_interest_change_ratio": 0.5310197101384324,
-        "days_to_cover": 2.48,
-        "context_flags": "SHORT_INTEREST_RISING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
       },
       {
         "market": "US",
@@ -1301,12 +1268,27 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.6419799987412794,
-        "avg_daily_float_turnover_ratio": 0.018807861004663032,
-        "current_volume_ratio_30d": 2.112108255589918,
+        "avg_daily_float_turnover_ratio": 0.019006966176092405,
+        "current_volume_ratio_30d": 2.089983121446439,
         "short_percent_float": 0.0675,
         "short_interest_change_ratio": 0.11286377328209496,
         "days_to_cover": 4.38,
         "context_flags": "VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
+      },
+      {
+        "market": "US",
+        "code": "TRMD",
+        "ticker": "TRMD",
+        "name": "TORM plc - Class A Common Stock",
+        "data_status": "ok",
+        "confidence": 0.7,
+        "free_float_ratio": 0.7052415316356053,
+        "avg_daily_float_turnover_ratio": 0.01308827417085516,
+        "current_volume_ratio_30d": 2.503868009139974,
+        "short_percent_float": 0.024600001,
+        "short_interest_change_ratio": 0.5310197101384324,
+        "days_to_cover": 2.48,
+        "context_flags": "SHORT_INTEREST_RISING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
       },
       {
         "market": "US",
@@ -1316,8 +1298,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.9637600043517661,
-        "avg_daily_float_turnover_ratio": 0.01123387514002449,
-        "current_volume_ratio_30d": 1.3571329513169934,
+        "avg_daily_float_turnover_ratio": 0.011269285621397148,
+        "current_volume_ratio_30d": 1.3528685522497104,
         "short_percent_float": 0.0738,
         "short_interest_change_ratio": 0.06580190795887964,
         "days_to_cover": 9.89,
@@ -1325,18 +1307,18 @@
       },
       {
         "market": "US",
-        "code": "IMPP",
-        "ticker": "IMPP",
-        "name": "Imperial Petroleum Inc. - Common Shares",
+        "code": "SPNT",
+        "ticker": "SPNT",
+        "name": "SiriusPoint Ltd. Common Shares",
         "data_status": "ok",
         "confidence": 0.7,
-        "free_float_ratio": 0.4620726366574674,
-        "avg_daily_float_turnover_ratio": 0.016841595136644773,
-        "current_volume_ratio_30d": 1.4953778293543045,
-        "short_percent_float": 0.1097,
-        "short_interest_change_ratio": 0.027674580155279793,
-        "days_to_cover": 9.67,
-        "context_flags": "SHORT_CROWDING"
+        "free_float_ratio": 0.876819997166789,
+        "avg_daily_float_turnover_ratio": 0.008005650419015376,
+        "current_volume_ratio_30d": 3.345971779029754,
+        "short_percent_float": 0.0494,
+        "short_interest_change_ratio": 0.10210420631872807,
+        "days_to_cover": 8.87,
+        "context_flags": "SHORT_CROWDING|VOLUME_EXPANSION"
       }
     ],
     "thresholds": {
