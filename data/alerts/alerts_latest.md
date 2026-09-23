@@ -1,28 +1,20 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-09-22T12:39:10+00:00
-Highest severity: **WARNING**
+Generated: 2026-09-23T00:37:57+00:00
+Highest severity: **WATCH**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 3
-- WATCH: 4
+- WARNING: 0
+- WATCH: 3
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Imperial Petroleum Inc. - Common Shares]: SEC 6-K filing
-  - New company event detected for Imperial Petroleum Inc. - Common Shares.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Imperial Petroleum Inc. - Common Shares]: SEC 6-K filing
-  - New company event detected for Imperial Petroleum Inc. - Common Shares.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Millrose Properties, Inc. Class A Common Stock]: SEC 8-K filing
-  - New company event detected for Millrose Properties, Inc. Class A Common Stock.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: リテールロボットを活用した分散型データセンター実証を開始 - KDDI ニュースルーム
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 攻撃者より先に動くサイバーセキュリティへ - kddi-research.jp
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECと住友電工、ペタビット級海底ケーブルでメタと協業（時事通信） - Yahoo!ニュース
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC川崎「日本一を」 女子バレー SVリーグ来月開幕 - 東京新聞
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC川崎が好きな選手のサイン入りグッズが当たるキャンペーンを開始！ - バレーボールキング
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス(株)【6965】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: マーケット速報 - 北國新聞
   - New company event detected for 浜松ホトニクス.
 
 ## Governance

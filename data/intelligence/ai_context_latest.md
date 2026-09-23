@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-22T12:38:09+00:00",
-  "generated_at_utc": "2026-09-22T12:38:09+00:00",
-  "date_jst": "2026-09-22",
+  "generated_at": "2026-09-23T00:36:57+00:00",
+  "generated_at_utc": "2026-09-23T00:36:57+00:00",
+  "date_jst": "2026-09-23",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 66.0,
+  "regime_score": 65.77,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -28,28 +28,28 @@ Generated quality score: **0.745** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 72.3039880496742,
-    "stress": 80.69750011444091,
+    "trend": 72.70574660376008,
+    "stress": 81.25249997138977,
     "participation": 50.01728907330567,
-    "liquidity": 55.707308988006346,
+    "liquidity": 52.44343028463718,
     "positioning": 57.726288981550105
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 14.65999984741211,
-    "hy_oas": 2.68,
+    "vix": 14.210000038146973,
+    "hy_oas": 2.66,
     "ig_oas": 0.77,
-    "treasury_volatility_proxy": 76.227,
-    "treasury_volatility_percentile_rank": 0.8095,
-    "treasury_volatility_stress_score": 39.29,
-    "treasury_volatility_as_of_date": "2026-09-21",
+    "treasury_volatility_proxy": 76.104,
+    "treasury_volatility_percentile_rank": 0.8016,
+    "treasury_volatility_stress_score": 39.88,
+    "treasury_volatility_as_of_date": "2026-09-22",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-22T12:38:06.847655+00:00",
     "nfci": -0.56,
-    "volume_ratio20_mean": 1.0446827247001587,
+    "volume_ratio20_mean": 0.9630857571159295,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -78,9 +78,9 @@ Generated quality score: **0.745** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-09-22",
+      "as_of_date": "2026-09-23",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 80,
+      "days_to_sq": 79,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -148,7 +148,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-22T12:39:09+00:00",
+  "generated_at": "2026-09-23T00:37:56+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -195,7 +195,7 @@ Generated quality score: **0.745** / actionable=True
 - EDINET: ok / records=1 / tier=primary
 - SEC: ok / records=37 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=14 / tier=secondary
+- NewsRSS: ok / records=13 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
