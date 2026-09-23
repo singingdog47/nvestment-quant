@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-09-22",
+  "as_of_date": "2026-09-23",
   "status": "ACTIVE",
   "data_fresh": true,
   "metrics": {
@@ -17,7 +17,7 @@
   },
   "regime": {
     "label": "CONSTRUCTIVE",
-    "score": 62.34,
+    "score": 66.2,
     "confidence": 1.0
   },
   "fills_today": [],
@@ -33,7 +33,7 @@
       "entry_date": "2026-09-15",
       "last_price": 937.0,
       "peak_price": 937.0,
-      "holding_sessions": 5,
+      "holding_sessions": 6,
       "confidence": 0.66,
       "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
     }
