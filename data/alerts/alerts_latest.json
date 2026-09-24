@@ -1,14 +1,25 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-23T12:47:48+00:00",
+  "generated_at": "2026-09-24T00:32:44+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 2,
-    "WARNING": 2,
+    "WATCH": 8,
+    "WARNING": 3,
     "CRITICAL": 0
   },
   "alerts": [
+    {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_FILING",
+      "title": "SEC 6-K filing",
+      "message": "New company event detected for CMB.TECH NV Ordinary Shares.",
+      "value": null,
+      "threshold": null,
+      "entity": "CMB.TECH NV Ordinary Shares",
+      "source": "SEC EDGAR"
+    },
     {
       "severity": "WARNING",
       "category": "COMPANY_EVENT",
@@ -22,24 +33,79 @@
     },
     {
       "severity": "WARNING",
+      "category": "VOLATILITY",
+      "code": "TREASURY_VOLATILITY_SHOCK",
+      "title": "Treasury yield volatility is unusually high",
+      "message": "The official-Treasury realized-yield-volatility proxy is at or above its 90th percentile. It is not ICE MOVE.",
+      "value": 0.9167,
+      "threshold": 0.9,
+      "entity": null,
+      "source": "market_regime_latest.json"
+    },
+    {
+      "severity": "WATCH",
       "category": "COMPANY_EVENT",
-      "code": "EVENT_FINANCING",
-      "title": "信越化学工業[4063]：ストックオプション（新株予約権）の割当てに関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
-      "message": "New company event detected for 信越化学工業.",
+      "code": "EVENT_DISCLOSURE",
+      "title": "KDDIが光回線＋5Gの「auひかりプラス」を提供する狙い　光コラボを生かして全国展開も視野に：石野純也のMobile Eye（2/3 ページ） - ITmedia Mobile - ITmedia",
+      "message": "New company event detected for KDDI.",
       "value": null,
       "threshold": null,
-      "entity": "信越化学工業",
+      "entity": "KDDI",
       "source": "Google News RSS"
     },
     {
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "通信事業者間での5Gミリ波の利用エリア拡大に向けた共同検討を開始 - KDDI ニュースルーム",
+      "title": "圏外の建設現場にも携帯通信網、KDDIがスターリンク活用技術をNETIS登録 - 日経クロステック",
       "message": "New company event detected for KDDI.",
       "value": null,
       "threshold": null,
       "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - group.nec",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECと住友電工、ペタビット級海底ケーブルでメタと協業（時事通信） - news.yahoo.co.jp",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "【富士通・NEC・三菱電機・京セラ・日立・ソニー・パナソニック】年収の浮沈で「損をした世代」は？富士通だけOB優位、氷河期世代は7社で「勝ち組」ゼロ《20年間の年収推移を5世代別に独自試算・2026年版》《再配信》 - ダイヤモンド・オンライン",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECが覆した顔認証の常識、デザインが生んだ「新たな体験」とは - JBpress",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
       "source": "Google News RSS"
     },
     {
@@ -51,6 +117,17 @@
       "value": null,
       "threshold": null,
       "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "【特許】浜松ホトニクス、反射型エンコーダーの精度向上 - 日本経済新聞",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
       "source": "Google News RSS"
     }
   ],

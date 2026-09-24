@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-09-23T12:47:48+00:00
+Generated (UTC): 2026-09-24T00:32:44+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=83.8%, float turnover=1.5%, volume ratio=1.6040575467531495)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.7%, volume ratio=0.7857664991597682)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=77.9%, float turnover=2.2%, volume ratio=1.6847526063522258)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_FALLING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=71.5%, float turnover=1.4%, volume ratio=2.432209540361189)
-- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING (float=99.3%, float turnover=0.8%, volume ratio=1.2965177810052995)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING (float=96.3%, float turnover=1.0%, volume ratio=0.8042148064158335)
-- [US] Frontline Plc Ordinary Shares: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=64.2%, float turnover=1.9%, volume ratio=2.089983121446439)
-- [US] TORM plc - Class A Common Stock: SHORT_INTEREST_RISING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=70.5%, float turnover=1.3%, volume ratio=2.503868009139974)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.1%, volume ratio=1.3528685522497104)
-- [US] SiriusPoint Ltd. Common Shares: SHORT_CROWDING|VOLUME_EXPANSION (float=87.7%, float turnover=0.8%, volume ratio=3.345971779029754)
+- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=99.3%, float turnover=0.8%, volume ratio=2.3013764557918224)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.7%, volume ratio=0.540766755410257)
+- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=83.8%, float turnover=1.5%, volume ratio=0.9594213435760559)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_FALLING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=71.5%, float turnover=1.4%, volume ratio=2.23055493176855)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING (float=96.3%, float turnover=1.0%, volume ratio=0.9465874198082562)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.1%, volume ratio=0.831555178793095)
+- [US] SiriusPoint Ltd. Common Shares: SHORT_CROWDING (float=87.7%, float turnover=0.8%, volume ratio=1.2823286592709051)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.9%, float turnover=2.2%, volume ratio=1.3810251496670956)
+- [US] Norwood Financial Corp. - Common Stock: SHORT_INTEREST_RISING (float=90.3%, float turnover=0.4%, volume ratio=0.5118886198547216)
+- [US] DigitalBridge Group, Inc.: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION (float=90.8%, float turnover=2.5%, volume ratio=1.874336684578356)
 
 ## Governance
 
