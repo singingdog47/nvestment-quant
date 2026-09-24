@@ -78,7 +78,70 @@
   },
   "market_regime": "NEUTRAL",
   "model_version": "1.7.0",
-  "outcomes": {},
+  "outcomes": {
+    "1w": {
+      "average_benchmark_return": -0.006083308705299939,
+      "average_excess_return": -0.005418318064704719,
+      "average_return": -0.011501626770004658,
+      "benchmark_coverage_n": 4,
+      "evaluated_at": "2026-09-24T12:45:41+00:00",
+      "n": 4,
+      "symbols": [
+        {
+          "benchmark_return": -0.006083308705299939,
+          "benchmark_symbol": "1306.T",
+          "end_price": 915.0,
+          "evaluated_price_date": "2026-09-24",
+          "excess_return": -0.0015088821840709699,
+          "max_down": -0.007592190889370909,
+          "max_up": 0.01626898047722336,
+          "rank": 1.0,
+          "return": -0.007592190889370909,
+          "start_price": 922.0,
+          "symbol": "8622.T"
+        },
+        {
+          "benchmark_return": -0.006083308705299939,
+          "benchmark_symbol": "1306.T",
+          "end_price": 3845.0,
+          "evaluated_price_date": "2026-09-24",
+          "excess_return": -0.008019255397264113,
+          "max_down": -0.019230769230769273,
+          "max_up": 0.0,
+          "rank": 2.0,
+          "return": -0.014102564102564052,
+          "start_price": 3900.0,
+          "symbol": "3932.T"
+        },
+        {
+          "benchmark_return": -0.006083308705299939,
+          "benchmark_symbol": "1306.T",
+          "end_price": 1675.0,
+          "evaluated_price_date": "2026-09-24",
+          "excess_return": 0.0007388906530434447,
+          "max_down": -0.005344418052256494,
+          "max_up": 0.0011876484560569,
+          "rank": 3.0,
+          "return": -0.005344418052256494,
+          "start_price": 1684.0,
+          "symbol": "8624.T"
+        },
+        {
+          "benchmark_return": -0.006083308705299939,
+          "benchmark_symbol": "1306.T",
+          "end_price": 4655.0,
+          "evaluated_price_date": "2026-09-24",
+          "excess_return": -0.012884025330527238,
+          "max_down": -0.018967334035827177,
+          "max_up": 0.0,
+          "rank": 4.0,
+          "return": -0.018967334035827177,
+          "start_price": 4745.0,
+          "symbol": "8707.T"
+        }
+      ]
+    }
+  },
   "policy_guardrails": {
     "absolute_defense_cash_jpy": 500000,
     "cash_target_range": [
