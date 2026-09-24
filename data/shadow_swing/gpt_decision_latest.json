@@ -1,60 +1,62 @@
 {
-  "decision_id": "gpt-shadow-20260923-postclose-1735-market-closed-hold-mito",
-  "decision_date": "2026-09-23",
+  "decision_id": "gpt-shadow-20260924-postclose-1735-stale-data-hold-mito",
+  "decision_date": "2026-09-24",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
   "meta_gate": {
     "passed": false,
     "baseline": "Hold the existing exploratory 100-share 8622.T position entered at JPY933 and retain JPY906,700 cash.",
-    "incremental_edge_source": "None today. September 23, 2026 is a Japanese market holiday, so there is no fresh Tokyo cash-equity session for 8622.T. A stronger macro regime alone is not security-level alpha.",
-    "assessment": "HOLD under the market-closed/data-freshness fail-safe. The repository refreshed on 2026-09-23, but the 8622.T screen remains JPY937 from the prior available cash session. No new company-specific evidence supports ADD and no disconfirming evidence or configured risk trigger supports SELL.",
-    "strongest_counterargument": "The CONSTRUCTIVE regime has strengthened to 65.77 and could justify greater aggregate risk, but converting that context into an ADD for one security without a new cash session or company evidence would violate the meta gate.",
-    "simpler_alternative": "Keep the existing 100 shares unchanged and reassess after the next Tokyo cash-market session produces fresh post-close price/factor evidence."
+    "incremental_edge_source": "No credible incremental security-level edge can be established from the repository at the 2026-09-24 JST post-close decision time because the latest screening observations were retrieved 2026-09-23T12:46:43Z and therefore predate the Sep 24 Tokyo cash session.",
+    "assessment": "HOLD under the stale-data fail-safe. The macro/regime layer is dated Sep 24 and remains constructive, but the held security price/factor data and shadow state still carry JPY937 from the prior available observation. Macro context alone cannot authorize ADD, and there is no fresh evidence supporting SELL.",
+    "strongest_counterargument": "The regime is CONSTRUCTIVE at 66.77 and 8622.T was still JP rank 1 in the latest available screen, so waiting could miss upside. However, acting on yesterday's security-level evidence after today's session would violate the no-lookahead/data-freshness discipline and does not demonstrate positive expected value over HOLD.",
+    "simpler_alternative": "Keep the existing 100 shares unchanged and reassess once a post-Sep-24-close 8622.T price/factor observation is available."
   },
   "existing_thesis_review": {
     "symbol": "8622.T",
     "name": "Mito Securities Co.,Ltd.",
     "market_implied_view": "Working inference: the market treats a meaningful portion of recent earnings strength as cyclical securities-market beta and may not fully capitalize the improved recurring stock-revenue base.",
     "our_differing_view": "Recurring stock revenue and stock assets may support a higher normalized earnings floor than a simple cyclical mean-reversion interpretation implies.",
-    "why_market_may_be_wrong": "Broker earnings cyclicality can obscure structural changes in recurring asset-linked revenue; no new company-specific evidence today materially changes this thesis.",
+    "why_market_may_be_wrong": "Broker earnings cyclicality can obscure structural changes in recurring asset-linked revenue; no fresh company-specific evidence available by this decision materially changes the thesis.",
     "catalyst_or_repricing_path": "Next half-year/Q2 disclosure, continued growth in stock assets and recurring revenue, and dividend/capital-return updates.",
     "disconfirming_condition": "Material deterioration in stock assets or recurring stock revenue, operating profit reverting toward pre-Q1 levels without a temporary explanation, weaker capital returns, or a price decline reaching the configured risk exit without offsetting new evidence.",
     "expected_horizon": "2-12 weeks, with the next half-year/Q2 disclosure as the primary fundamental checkpoint.",
     "confidence": 0.60,
-    "data_quality": "Adequate for holding context, insufficient for a new trade: quality_score 0.745 and actionable=true, but primary fundamental coverage is 0.0, effective coverage 0.65 secondary_only, and there is no fresh 2026-09-23 Tokyo cash-equity session."
+    "data_quality": "Adequate for maintaining the existing thesis but insufficient for a new action: decision-context quality_score is 0.745 and actionable=true, yet primary fundamental coverage is 0.0, effective coverage is 0.65 secondary_only, and the latest security screen predates the Sep 24 Tokyo session."
   },
   "position_context": {
     "symbol": "8622.T",
     "qty": 100,
     "entry_price": 933.0,
     "entry_date": "2026-09-15",
-    "last_price": 937.0,
-    "peak_price": 937.0,
-    "holding_sessions": 5,
-    "unrealized_pnl_jpy": 400.0,
+    "last_price_available": 937.0,
+    "peak_price_available": 937.0,
+    "holding_sessions_state": 6,
+    "unrealized_pnl_jpy_on_last_available_price": 400.0,
     "hard_stop_price_approx": 877.02,
     "pending_orders": 0
   },
   "market_context": {
     "regime_label": "CONSTRUCTIVE",
-    "regime_score": 65.77,
-    "regime_date_jst": "2026-09-23",
+    "regime_score": 66.77,
+    "regime_date_jst": "2026-09-24",
     "regime_confidence": 1.0,
     "stress_flag": false,
     "thin_liquidity_flag": false,
     "overheated_flag": false,
+    "treasury_volatility_shock_flag": true,
     "sq_active": false,
     "sq_execution_stance": "NORMAL"
   },
   "data_quality_caveats": [
-    "September 23, 2026 is a Japanese market holiday; there is no fresh Tokyo cash-equity session for 8622.T.",
-    "The latest 8622.T screen remains JPY937, JP market rank 1, total_score 76.32 and momentum_score 84.73; retrieval refreshed but does not constitute a new Sep 23 Tokyo cash close.",
+    "Latest screening retrieval is 2026-09-23T12:46:43Z, so it does not contain the Sep 24 Tokyo cash-session close required for a post-close security decision.",
+    "The latest available 8622.T screen is JPY937, JP market rank 1, total_score 76.32 and momentum_score 84.73, but these observations are stale for this Sep 24 post-close cycle.",
     "Repository primary fundamental coverage is 0.0 and effective fundamental coverage is 0.65 (secondary_only).",
     "Supply/demand status is partial and its governance forbids using it as an alpha or buy/sell signal.",
-    "Screening price/factor fields use an unofficial TradingView scanner feed with exact exchange timestamp unavailable."
+    "Screening price/factor fields use an unofficial TradingView scanner feed with exact exchange timestamp unavailable.",
+    "The Sep 24 regime is constructive but includes TREASURY_VOLATILITY_SHOCK; regime is context, not a security trade signal."
   ],
-  "reason": "HOLD. The 100-share Mito position remains unchanged. The regime is constructive and no exit condition is challenged, but the Tokyo cash market is closed and there is no fresh security-level evidence creating positive incremental expected value for ADD or SELL versus doing nothing.",
+  "reason": "HOLD. Maintain the 100-share Mito exploratory position. The existing thesis has no observed disconfirmation, but security-level data are stale for the Sep 24 post-close cycle. With no fresh evidence demonstrating positive incremental expected value for ADD or SELL versus the baseline, the meta gate does not authorize a new action.",
   "confidence": 0.99,
   "notes": "SHADOW ONLY. No broker connection and no real-money order."
 }
