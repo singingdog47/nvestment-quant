@@ -13,9 +13,9 @@
       "qty": 100,
       "entry_price": 933.0,
       "entry_date": "2026-09-15",
-      "last_price": 915.0,
+      "last_price": 920.0,
       "peak_price": 937.0,
-      "holding_sessions": 7,
+      "holding_sessions": 8,
       "confidence": 0.66,
       "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
     }
@@ -34,10 +34,10 @@
     "gpt-shadow-20260924-postclose-1735-stale-data-hold-mito"
   ],
   "realized_pnl_jpy": 0.0,
-  "nav_jpy": 998200.0,
+  "nav_jpy": 998700.0,
   "peak_nav_jpy": 1000400.0,
   "max_drawdown_pct": -0.21991203518592073,
   "benchmark_start_price": 422.70001220703125,
-  "last_run_date": "2026-09-24",
+  "last_run_date": "2026-09-25",
   "status": "ACTIVE"
 }
