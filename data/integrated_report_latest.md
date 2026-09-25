@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-09-24T12:47:25+00:00
+Generated (UTC): 2026-09-25T12:50:52+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -10,13 +10,13 @@ Generated (UTC): 2026-09-24T12:47:25+00:00
 - Overall analysis mode: `OPEN_FOR_ANALYSIS`
 
 ## 2. 市場レジーム
-- Regime: **CONSTRUCTIVE**
-- Score: 66.89
+- Regime: **RISK_ON**
+- Score: 70.29
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 15.989999771118164
-- Treasury realized-vol proxy (not ICE MOVE): 82.428 bps annualized; percentile=0.9167
+- VIX: 15.180000305175781
+- Treasury realized-vol proxy (not ICE MOVE): 83.46 bps annualized; percentile=0.9246
 - Flags: TREASURY_VOLATILITY_SHOCK
 
 ## 3. 個別銘柄の需給コンテキスト
@@ -24,58 +24,52 @@ Generated (UTC): 2026-09-24T12:47:25+00:00
 - Scope: public watchlist plus screening leaders; private portfolio excluded
 - Coverage: free-float=97.2%, short-interest=44.4%, current/average volume=100.0%
 - 用途は監視・執行注意・退出流動性の確認に限定し、銘柄順位・ファンダメンタルズ評価・投資仮説は変更しません。
-- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING
-- [US] International Seaways, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_FALLING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|VOLUME_EXPANSION
+- [US] Norwood Financial Corp. - Common Stock: SHORT_CROWDING|VOLUME_EXPANSION
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
+- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_CROWDING|VOLUME_EXPANSION
 - [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING
-- [US] SiriusPoint Ltd. Common Shares: SHORT_CROWDING
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING
+- [US] SiriusPoint Ltd. Common Shares: SHORT_CROWDING|VOLUME_EXPANSION
+- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 14, 'WARNING': 2, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - nikkei.com
+- Counts: {'INFO': 0, 'WATCH': 1, 'WARNING': 1, 'CRITICAL': 0}
 - [WARNING] VOLATILITY / Treasury yield volatility is unusually high
-- [WATCH] COMPANY_EVENT / ＫＤＤＩ(株)【9433】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-- [WATCH] COMPANY_EVENT / フードデリバリー市場で再編加速 KDDIはサービス終了 Woltも日本撤退 - 日経ビジネス電子版
-- [WATCH] COMPANY_EVENT / 次世代シアター「Immersive Zero」に出演者動作連動型3D音響を導入 - KDDI ニュースルーム
-- [WATCH] COMPANY_EVENT / 国プロ採択されたKDDIとスタートアップが対談 「フィジカルAIの社会実装はここ数年が勝負」 - ビジネスネットワーク
-- [WATCH] COMPANY_EVENT / 【 9/29 (火) 16:00 】オリックス、KDDI、NTTデータの実例に学ぶ 新規事業「最速立ち上げ」のリアル 無料オンラインセミナーを開催 - PR TIMES
-- [WATCH] COMPANY_EVENT / NECグループの英国現代奴隷法への対応 : 企業情報 - NEC
+- [WATCH] REGIME / Market regime changed
 
 ## 5. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=75.7132697788804 | cross_pct=100.0
-- 2. IwaiCosmo Holdings,Inc. 8707.T | market_rank=2.0 | raw=74.9110846691339 | cross_pct=99.94890137966274
-- 3. Tokai Tokyo Financial Holdings,Inc. 8616.T | market_rank=3.0 | raw=74.60854682335352 | cross_pct=99.89780275932549
-- 4. Akatsuki Inc. 3932.T | market_rank=4.0 | raw=74.59253622429273 | cross_pct=99.84670413898826
-- 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=72.6320815024964 | cross_pct=99.64230965763925
+- 1. Mito Securities Co.,Ltd. 8622.T | market_rank=1.0 | raw=76.27662922327875 | cross_pct=100.0
+- 2. Ichiyoshi Securities Co.,Ltd. 8624.T | market_rank=2.0 | raw=75.2532051721871 | cross_pct=99.94884910485933
+- 3. IwaiCosmo Holdings,Inc. 8707.T | market_rank=3.0 | raw=75.21252652889879 | cross_pct=99.89769820971867
+- 4. Akatsuki Inc. 3932.T | market_rank=4.0 | raw=75.00063502248385 | cross_pct=99.846547314578
+- 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=73.13103196911995 | cross_pct=99.64194373401534
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.33868354783928 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=82.79431575610923 | cross_pct=99.97087944088527
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=82.69196041305074 | cross_pct=99.94175888177053
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=4.0 | raw=82.03947669402572 | cross_pct=99.9126383226558
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=8.0 | raw=81.41273869911971 | cross_pct=99.79615608619685
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.45593495959231 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=82.92755967999022 | cross_pct=99.97085397843193
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=82.86768151000015 | cross_pct=99.9417079568639
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.11223041950973 | cross_pct=99.88341591372777
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=8.0 | raw=81.33541606379312 | cross_pct=99.79597784902361
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.33868354783928
-- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=75.7132697788804
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97087944088527 | raw=82.79431575610923
-- 4. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.94890137966274 | raw=74.9110846691339
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94175888177053 | raw=82.69196041305074
-- 6. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.9126383226558 | raw=82.03947669402572
-- 7. [JP] Tokai Tokyo Financial Holdings,Inc. | cross_pct=99.89780275932549 | raw=74.60854682335352
-- 8. [JP] Akatsuki Inc. | cross_pct=99.84670413898826 | raw=74.59253622429273
-- 9. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.79615608619685 | raw=81.41273869911971
-- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.76703552708211 | raw=80.8225094376659
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.45593495959231
+- 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=76.27662922327875
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97085397843193 | raw=82.92755967999022
+- 4. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.94884910485933 | raw=75.2532051721871
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.9417079568639 | raw=82.86768151000015
+- 6. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89769820971867 | raw=75.21252652889879
+- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88341591372777 | raw=82.11223041950973
+- 8. [JP] Akatsuki Inc. | cross_pct=99.846547314578 | raw=75.00063502248385
+- 9. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.79597784902361 | raw=81.33541606379312
+- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.76683182745555 | raw=81.00427456034922
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
-- Matured observations: 154
+- Matured observations: 164
 - Eligible for model-change review: True
 - [WATCH] regime / NEUTRAL|1w: Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] rank_bucket / top1|1w: Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
@@ -97,8 +91,8 @@ Generated (UTC): 2026-09-24T12:47:25+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.7点で優位性が弱い
-- 上位: スタンダード 77.2 / テクノロジー 75.4 / ビットコイン 73.8
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.1点で優位性が弱い
+- 上位: スタンダード 76.9 / ビットコイン 75.8 / テクノロジー 75.1
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

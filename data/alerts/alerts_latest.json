@@ -1,47 +1,14 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-25T00:35:25+00:00",
+  "generated_at": "2026-09-25T12:49:20+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 10,
-    "WARNING": 4,
+    "WATCH": 1,
+    "WARNING": 1,
     "CRITICAL": 0
   },
   "alerts": [
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DIVIDEND",
-      "title": "信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
-      "message": "New company event detected for 信越化学工業.",
-      "value": null,
-      "threshold": null,
-      "entity": "信越化学工業",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_FILING",
-      "title": "SEC 6-K filing",
-      "message": "New company event detected for TORM plc - Class A Common Stock.",
-      "value": null,
-      "threshold": null,
-      "entity": "TORM plc - Class A Common Stock",
-      "source": "SEC EDGAR"
-    },
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_GUIDANCE",
-      "title": "決算:浜松ホトニクス、26年9月期の純利益23%増 半導体関連伸び上方修正 - 日本経済新聞",
-      "message": "New company event detected for 浜松ホトニクス.",
-      "value": null,
-      "threshold": null,
-      "entity": "浜松ホトニクス",
-      "source": "Google News RSS"
-    },
     {
       "severity": "WARNING",
       "category": "VOLATILITY",
@@ -55,113 +22,14 @@
     },
     {
       "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "コンビニの品出しはロボットに? KDDI×韓国RLWRLDが挑む「フィジカルAI」 - Impress Watch",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "NTTデータ、KDDI、日立、JR東が語る「判断の再設計」メソッド、AIとデータどう活用？ - ビジネス+IT",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "KDDIら、つくば市で自動運転バスが本格運行へ 筑波大学循環で10月2日開始 - LIGARE（リガーレ）",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "海底ケーブルは「P（ペタ）bpsの時代」へ、NECが大容量化などの取り組みを説明 - INTERNET Watch",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "Meta、NEC、住友電工の3社、ペタビット級海底ケーブル「Petal」の構築に向け協業（クラウド Watch） - Yahoo!ニュース",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "CMP初の認証取得アプリケーション 「ProChemist/CMP」 - NEC",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "NECよどこへ行く 森田改革の成否 - 日経クロステック",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "手元資金1.6兆円超なのに「借入金」が急増…それでも信越化学工業の財務は盤石といえるワケ - ダイヤモンド・オンライン",
-      "message": "New company event detected for 信越化学工業.",
-      "value": null,
-      "threshold": null,
-      "entity": "信越化学工業",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "信越化学のストックオプション発行に対し、投資家はどのように反応しているか - simplywall.st",
-      "message": "New company event detected for 信越化学工業.",
-      "value": null,
-      "threshold": null,
-      "entity": "信越化学工業",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "【特許】浜松ホトニクス、反射型エンコーダーの精度向上 - 日本経済新聞",
-      "message": "New company event detected for 浜松ホトニクス.",
-      "value": null,
-      "threshold": null,
-      "entity": "浜松ホトニクス",
-      "source": "Google News RSS"
+      "category": "REGIME",
+      "code": "REGIME_CHANGE",
+      "title": "Market regime changed",
+      "message": "Market regime changed from CONSTRUCTIVE to RISK_ON.",
+      "value": "RISK_ON",
+      "threshold": "CONSTRUCTIVE",
+      "entity": null,
+      "source": "market_regime_latest.json"
     }
   ],
   "rules": [

@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-24T12:46:02+00:00",
+  "generated_at": "2026-09-25T12:49:26+00:00",
   "horizons": {
     "1m": {
-      "average_excess_return": -0.012372042015230284,
-      "average_return": -0.009359481577363125,
-      "benchmark_n": 38,
-      "n": 38,
-      "outperform_rate": 0.5526315789473685,
-      "win_rate": 0.5
+      "average_excess_return": -0.010421555068046269,
+      "average_return": -0.007189037332845464,
+      "benchmark_n": 43,
+      "n": 43,
+      "outperform_rate": 0.5348837209302325,
+      "win_rate": 0.4883720930232558
     },
     "1w": {
-      "average_excess_return": -0.0053887318247780955,
-      "average_return": -0.002494414749065135,
-      "benchmark_n": 116,
-      "n": 116,
-      "outperform_rate": 0.5258620689655172,
-      "win_rate": 0.4482758620689655
+      "average_excess_return": -0.005420281764146201,
+      "average_return": -0.0022578346568950043,
+      "benchmark_n": 121,
+      "n": 121,
+      "outperform_rate": 0.5206611570247934,
+      "win_rate": 0.4628099173553719
     },
     "3m": {
       "average_excess_return": null,
@@ -26,5 +26,5 @@
       "win_rate": null
     }
   },
-  "rows": 154
+  "rows": 164
 }
