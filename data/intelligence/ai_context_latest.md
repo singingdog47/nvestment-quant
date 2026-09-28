@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-28T15:54:22+00:00",
-  "generated_at_utc": "2026-09-28T15:54:22+00:00",
+  "generated_at": "2026-09-28T16:44:02+00:00",
+  "generated_at_utc": "2026-09-28T16:44:02+00:00",
   "date_jst": "2026-09-29",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 65.17,
+  "regime_score": 66.29,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,15 +30,15 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 82.46884555147233,
-    "stress": 76.12249942779542,
-    "participation": 46.8980627306273,
-    "liquidity": 41.694524467805735,
+    "trend": 82.97244652947049,
+    "stress": 76.4824997997284,
+    "participation": 47.32472324723247,
+    "liquidity": 46.957301520950104,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 16.200000762939453,
+    "vix": 15.720000267028809,
     "hy_oas": 2.93,
     "ig_oas": 0.81,
     "treasury_volatility_proxy": 86.431,
@@ -49,9 +49,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-28T15:54:20.562239+00:00",
+    "breadth_source_as_of_utc": "2026-09-28T16:44:00.401894+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.6952381116951434,
+    "volume_ratio20_mean": 0.8268075380237525,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-28T15:55:27+00:00",
+  "generated_at": "2026-09-28T16:45:10+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -203,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-28T15:54:20.562239+00:00
+- Data retrieved (UTC): 2026-09-28T16:44:00.401894+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -251,15 +251,15 @@ Generated quality score: **0.745** / actionable=True
 | JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.4 | 99.4 | unchanged |
 | JP | 15 | 3989.T | SHARINGTECHNOLOGY.INC | Other | 69.7 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.3 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.9 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.3 | 99.9 | unchanged |
-| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.4 | 99.9 | unchanged |
-| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.0 | 99.9 | unchanged |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
+| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.9 | unchanged |
 | US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.2 | 99.7 | unchanged |
-| US | 13 | FRO | Frontline Plc Ordinary Shares | Other | 80.1 | 99.6 | unchanged |
+| US | 13 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
 | US | 14 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.6 | unchanged |
-| US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.8 | 99.6 | unchanged |
-| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.3 | 99.4 | unchanged |
+| US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.7 | 99.6 | unchanged |
+| US | 20 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.3 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 
@@ -273,6 +273,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
+- [CRITICAL] 9433 KDDI | Mon, 28 Sep 2026 | mna | 買収・争奪戦になっているカカクコム、ＫＤＤＩとの資本提携を解消…業務提携は継続 - 読売新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZEFVX3lxTFBFQlBXdzB5N3V4NlROcm5LenZBUFYyVDFoVURsVEg2MFJROE9kemRTU18tcUdlYjR5a1ItNWpGeWI1TWQzNWhXTmtvVjdMenJpcjRVd2pmWnFUUEo3TUphblcxUDM?oc=5
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-08-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026057375/stng6k-08172026.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426005684/p15057626_6-k.htm

@@ -1,14 +1,25 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-28T15:55:27+00:00",
+  "generated_at": "2026-09-28T16:45:11+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 10,
-    "WARNING": 1,
+    "WATCH": 3,
+    "WARNING": 2,
     "CRITICAL": 0
   },
   "alerts": [
+    {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_MNA",
+      "title": "買収・争奪戦になっているカカクコム、ＫＤＤＩとの資本提携を解消…業務提携は継続 - 読売新聞",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
     {
       "severity": "WARNING",
       "category": "VOLATILITY",
@@ -24,7 +35,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "【アナリスト評価】ＫＤＤＩ、レーティング強気を継続、目標株価3,500円に引上げ（日系大手証券）(アイフィス株予報) - Yahoo!ファイナンス",
+      "title": "日本郵便とKDDI、ドローン社会基盤化へ基本合意書を締結し、郵便局をドローンポート拠点とする実証を開始 - newsroom.kddi.com",
       "message": "New company event detected for KDDI.",
       "value": null,
       "threshold": null,
@@ -35,29 +46,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "日本郵便とKDDI、ドローン社会基盤化へ基本合意書を締結し、郵便局をドローンポート拠点とする実証を開始 - KDDI ニュースルーム",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "カカクコムとＫＤＤＩが資本提携解消、第2位株主の地位変わらず - Reuters",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - NEC",
+      "title": "サイバー攻撃のリスクから事業継続を考える - NEC",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
@@ -68,66 +57,11 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス",
+      "title": "NECよどこへ行く 森田改革の成否 - 日経クロステック",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
       "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "サイバー攻撃のリスクから事業継続を考える - jpn.nec.com",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "NECよどこへ行く 森田改革の成否 - xtech.nikkei.com",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "信越化学工業(株)【4063】：板気配 - Yahoo!ファイナンス",
-      "message": "New company event detected for 信越化学工業.",
-      "value": null,
-      "threshold": null,
-      "entity": "信越化学工業",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "浜松ホトニクス(株)【6965】：決算情報 - Yahoo!ファイナンス",
-      "message": "New company event detected for 浜松ホトニクス.",
-      "value": null,
-      "threshold": null,
-      "entity": "浜松ホトニクス",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "浜松ホトニクス(株)【6965】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス",
-      "message": "New company event detected for 浜松ホトニクス.",
-      "value": null,
-      "threshold": null,
-      "entity": "浜松ホトニクス",
       "source": "Google News RSS"
     }
   ],

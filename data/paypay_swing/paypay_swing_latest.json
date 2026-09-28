@@ -1,69 +1,69 @@
 {
-  "generated_at_jst": "2026-09-29T00:57:20+09:00",
+  "generated_at_jst": "2026-09-29T01:47:30+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
-    "reason": "首位ビットコインは76.2点だが確認閾値未達",
-    "margin": 3.65
+    "reason": "首位ビットコインは76.6点だが確認閾値未達",
+    "margin": 3.82
   },
   "ranking": [
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 83356.9765625,
+      "close": 83628.9765625,
       "data_date": "2026-09-28",
-      "momentum": 89.8,
-      "macro": 67.26,
-      "trend": 95.88,
-      "risk": 67.27,
+      "momentum": 90.46,
+      "macro": 67.43,
+      "trend": 96.06,
+      "risk": 67.61,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 76.23
+      "total": 76.58
     },
     {
       "key": "STANDARD",
       "label": "スタンダード",
       "ticker": "SPY",
-      "close": 765.4099731445312,
+      "close": 766.97998046875,
       "data_date": "2026-09-28",
-      "momentum": 66.05,
+      "momentum": 66.42,
       "macro": 46.0,
-      "trend": 99.04,
-      "risk": 90.54,
+      "trend": 99.16,
+      "risk": 90.8,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 72.58
+      "total": 72.76
     },
     {
       "key": "TECH",
       "label": "テクノロジー",
       "ticker": "QQQ",
-      "close": 735.52001953125,
+      "close": 737.7000122070312,
       "data_date": "2026-09-28",
-      "momentum": 70.13,
-      "macro": 39.48,
-      "trend": 99.04,
-      "risk": 86.7,
+      "momentum": 70.68,
+      "macro": 39.57,
+      "trend": 99.22,
+      "risk": 87.12,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 71.99
+      "total": 72.28
     },
     {
       "key": "GOLD",
       "label": "金（ゴールド）",
       "ticker": "GLD",
-      "close": 378.1300048828125,
+      "close": 378.6300048828125,
       "data_date": "2026-09-28",
-      "momentum": 25.97,
-      "macro": 31.65,
+      "momentum": 26.2,
+      "macro": 31.86,
       "trend": 0.0,
-      "risk": 65.21,
+      "risk": 65.46,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 32.62
+      "total": 32.78
     }
   ],
   "source_health": [
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-28T15:57:20+00:00",
+      "fetched_at": "2026-09-28T16:47:30+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-28T15:57:20+00:00",
+      "fetched_at": "2026-09-28T16:47:30+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-28T15:57:20+00:00",
+      "fetched_at": "2026-09-28T16:47:30+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,7 +95,7 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-09-28T15:57:20+00:00",
+      "fetched_at": "2026-09-28T16:47:30+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -103,7 +103,7 @@
       "source": "yfinance:^TNX",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-28T15:57:20+00:00",
+      "fetched_at": "2026-09-28T16:47:30+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -111,7 +111,7 @@
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-09-28T15:57:20+00:00",
+      "fetched_at": "2026-09-28T16:47:30+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -119,7 +119,7 @@
       "source": "yfinance:^VIX",
       "status": "ok",
       "records": 253,
-      "fetched_at": "2026-09-28T15:57:20+00:00",
+      "fetched_at": "2026-09-28T16:47:30+00:00",
       "error": "",
       "source_tier": "secondary"
     }
