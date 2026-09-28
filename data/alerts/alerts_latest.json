@@ -1,10 +1,10 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-28T17:03:41+00:00",
+  "generated_at": "2026-09-28T17:37:49+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 2,
+    "WATCH": 10,
     "WARNING": 1,
     "CRITICAL": 0
   },
@@ -24,7 +24,29 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - group.nec",
+      "title": "カカクコム、KDDIと資本提携解消（時事通信） - news.yahoo.co.jp",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "【アナリスト評価】ＫＤＤＩ、レーティング強気を継続、目標株価3,500円に引上げ（日系大手証券）(アイフィス株予報) - finance.yahoo.co.jp",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - NEC",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
@@ -35,11 +57,77 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "サイバー攻撃のリスクから事業継続を考える - jpn.nec.com",
+      "title": "サイバー攻撃のリスクから事業継続を考える - NEC",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
       "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "光通信衛星を数百基整備 NEC計画 - news.yahoo.co.jp",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "信越化学工業(株)【4063】：板気配 - finance.yahoo.co.jp",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "浜松ホトニクス(株)【6965】：決算情報 - finance.yahoo.co.jp",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "浜松ホトニクス(株)【6965】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_MANAGEMENT",
+      "title": "＜人事＞浜松ホトニクス - sankei.com",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_MANAGEMENT",
+      "title": "浜松ホトニクス[6965]：取締役候補者の選任及び執行役員人事（予定）に関するお知らせ 2026年9月25日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
       "source": "Google News RSS"
     }
   ],

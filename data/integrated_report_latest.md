@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-09-28T17:05:44+00:00
+Generated (UTC): 2026-09-28T17:39:21+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,11 +11,11 @@ Generated (UTC): 2026-09-28T17:05:44+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 66.38
+- Score: 66.88
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 16.0
+- VIX: 15.9399995803833
 - Treasury realized-vol proxy (not ICE MOVE): 86.431 bps annualized; percentile=0.9405
 - Flags: TREASURY_VOLATILITY_SHOCK
 
@@ -35,10 +35,15 @@ Generated (UTC): 2026-09-28T17:05:44+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 2, 'WARNING': 1, 'CRITICAL': 0}
+- Counts: {'INFO': 0, 'WATCH': 10, 'WARNING': 1, 'CRITICAL': 0}
 - [WARNING] VOLATILITY / Treasury yield volatility is unusually high
-- [WATCH] COMPANY_EVENT / NECグループの英国現代奴隷法への対応 : 企業情報 - group.nec
-- [WATCH] COMPANY_EVENT / サイバー攻撃のリスクから事業継続を考える - jpn.nec.com
+- [WATCH] COMPANY_EVENT / カカクコム、KDDIと資本提携解消（時事通信） - news.yahoo.co.jp
+- [WATCH] COMPANY_EVENT / 【アナリスト評価】ＫＤＤＩ、レーティング強気を継続、目標株価3,500円に引上げ（日系大手証券）(アイフィス株予報) - finance.yahoo.co.jp
+- [WATCH] COMPANY_EVENT / NECグループの英国現代奴隷法への対応 : 企業情報 - NEC
+- [WATCH] COMPANY_EVENT / サイバー攻撃のリスクから事業継続を考える - NEC
+- [WATCH] COMPANY_EVENT / 光通信衛星を数百基整備 NEC計画 - news.yahoo.co.jp
+- [WATCH] COMPANY_EVENT / 信越化学工業(株)【4063】：板気配 - finance.yahoo.co.jp
+- [WATCH] COMPANY_EVENT / 浜松ホトニクス(株)【6965】：決算情報 - finance.yahoo.co.jp
 
 ## 5. スクリーニング上位候補
 
@@ -50,23 +55,23 @@ Generated (UTC): 2026-09-28T17:05:44+00:00
 - 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=73.31859504548693 | cross_pct=99.64102564102564
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.22046499480524 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.83213317380675 | cross_pct=99.97068308413955
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.34317822598003 | cross_pct=99.9413661682791
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.22004288018289 | cross_pct=99.88273233655819
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.92472525681754 | cross_pct=99.85341542069774
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.2815288348109 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.80115187221789 | cross_pct=99.97068308413955
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.3429265746105 | cross_pct=99.9413661682791
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.30223680079172 | cross_pct=99.88273233655819
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.84265150414032 | cross_pct=99.85341542069774
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.22046499480524
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.2815288348109
 - 2. [JP] IwaiCosmo Holdings,Inc. | cross_pct=100.0 | raw=75.31101586297011
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97068308413955 | raw=83.83213317380675
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97068308413955 | raw=83.80115187221789
 - 4. [JP] OKASAN SECURITIES GROUP INC. | cross_pct=99.94871794871794 | raw=75.03358574331655
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.9413661682791 | raw=83.34317822598003
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.9413661682791 | raw=83.3429265746105
 - 6. [JP] Ichiyoshi Securities Co.,Ltd. | cross_pct=99.8974358974359 | raw=74.9195792249367
-- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88273233655819 | raw=82.22004288018289
-- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85341542069774 | raw=81.92472525681754
+- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88273233655819 | raw=82.30223680079172
+- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85341542069774 | raw=81.84265150414032
 - 9. [JP] Akatsuki Inc. | cross_pct=99.7948717948718 | raw=74.81515076865507
-- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.73614775725594 | raw=81.21110316722906
+- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.73614775725594 | raw=81.22038956228035
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -92,8 +97,8 @@ Generated (UTC): 2026-09-28T17:05:44+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは76.5点だが確認閾値未達
-- 上位: ビットコイン 76.5 / スタンダード 72.7 / テクノロジー 72.2
+- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは76.9点だが確認閾値未達
+- 上位: ビットコイン 76.9 / スタンダード 72.8 / テクノロジー 72.3
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

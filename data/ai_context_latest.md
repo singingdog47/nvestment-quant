@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-28T17:02:33+00:00",
-  "generated_at_utc": "2026-09-28T17:02:33+00:00",
+  "generated_at": "2026-09-28T17:36:50+00:00",
+  "generated_at_utc": "2026-09-28T17:36:50+00:00",
   "date_jst": "2026-09-29",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 66.38,
+  "regime_score": 66.88,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,15 +30,15 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 82.89286915708962,
-    "stress": 76.27250000000001,
-    "participation": 47.0479704797048,
-    "liquidity": 48.420852702143854,
+    "trend": 83.10031296659622,
+    "stress": 76.31750031471253,
+    "participation": 47.17193265682657,
+    "liquidity": 51.12278833719238,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 16.0,
+    "vix": 15.9399995803833,
     "hy_oas": 2.93,
     "ig_oas": 0.81,
     "treasury_volatility_proxy": 86.431,
@@ -49,9 +49,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-28T17:02:31.449089+00:00",
+    "breadth_source_as_of_utc": "2026-09-28T17:36:48.038844+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.8633963175535964,
+    "volume_ratio20_mean": 0.9309447084298096,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-28T17:03:40+00:00",
+  "generated_at": "2026-09-28T17:37:48+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -203,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-28T17:02:31.449089+00:00
+- Data retrieved (UTC): 2026-09-28T17:36:48.038844+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -250,16 +250,16 @@ Generated quality score: **0.745** / actionable=True
 | JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.1 | 99.4 | unchanged |
 | JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.4 | 99.4 | unchanged |
 | JP | 15 | 3989.T | SHARINGTECHNOLOGY.INC | Other | 69.7 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.3 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.3 | 99.9 | unchanged |
-| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
-| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.9 | unchanged |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.3 | 99.9 | unchanged |
+| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.9 | unchanged |
 | US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.2 | 99.7 | unchanged |
 | US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.6 | unchanged |
 | US | 14 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
 | US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.7 | 99.6 | unchanged |
-| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.3 | 99.4 | unchanged |
+| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.4 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 
@@ -306,7 +306,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 7172 Japan Investment Adviser Co.,Ltd. | 2026-09-25 | filing | 発行登録書（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2W6
 - [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926110666/tm2626112d1_8k.htm
 - [HIGH] ACNB ACNB Corporation - Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/715579/000162828026063501/acnb-20260925.htm
-- [HIGH] 6965 浜松ホトニクス | Mon, 28 Sep 2026 | dividend | 浜松ホトニクスは2026年9月29日に1株配当金0.1672USDを支払う予定 - Moomoo | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQVhSMWlKQ3dMai1PSE5kZTA5eENBcDViZVI0Y1JMTlNZZ19Help2ek5qdXlRTGRFWWRUTHhaVGd6cXpFMzFSMGRKVEZHRVRMR2hYckFMS05TOS1Sc1d0YVppVmJMYTY0N2FWbzktR3oxaFRnX0pScElfbkJRaUVUMzFRTzdPVzRxOVh3eTVvemJDTHJ6NlRDazRUUVp4RVJ4ampBWDFjaDdPaVE?oc=5
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1UaXotSERuMUFFNlctcE9TT0NPRVhhVVNDbHRCTWFJb0VVVFFxNzd4WUY5cjZ1RWtHemd0WnFraXgySFNUZm14bzhUWm9BV0J2ZVpNSzFrMEt5UldCLVZWeFM0YVNMcmNvdHc?oc=5
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化、今期配当を20円増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE14VEdPRDlYZE1odUpxZzR6TFpHaHl5MW8zQVhPVkkxRWVYbHNXVV9JUlZZV1pZRmlGOWNSZ250aFVycHNWRkx3YnFzN040dUd5c0E?oc=5
 
