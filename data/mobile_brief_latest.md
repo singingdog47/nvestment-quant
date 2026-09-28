@@ -4,21 +4,21 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**RISK_ON**、総合スコアは70.3です。
-市場レジームは前回のCONSTRUCTIVEからRISK_ONへ変わりました。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+市場レジームは**CONSTRUCTIVE**、総合スコアは64.8です。
+地合いの分類は変わっていませんが、流動性が前回より低下しています。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：+3.0ポイント
-- トレンド：+1.7ポイント
-- 市場参加の広がり：+0.3ポイント
-- 流動性：+15.3ポイント
-- CorMedix Inc. - Common Stockの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
+- 総合スコア：-3.5ポイント
+- トレンド：-2.0ポイント
+- 市場参加の広がり：-1.9ポイント
+- 流動性：-14.4ポイント
+- ERI HOLDINGS CO.,LTD.、Imperial Petroleum Inc. - Common Sharesの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
-日本はFinancialsが9銘柄。米国はFinancialsが6銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
-米国債金利の実現ボラは年率83.5bp、過去観測の上位8%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
+日本はFinancialsが9銘柄。米国はFinancialsが7銘柄で、上位銘柄に偏りがあります。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
+米国債金利の実現ボラは年率86.4bp、過去観測の上位6%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## SQ・短期需給
@@ -28,17 +28,19 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 個別銘柄の需給
 
-監視対象の浮動株比率カバレッジは97.2%、空売り需給は44.4%、当日出来高比較は100.0%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING|VOLUME_EXPANSION）、Norwood Financial Corp. - Common Stock（SHORT_CROWDING|VOLUME_EXPANSION）、First Busey Corporation - Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）、Millrose Properties, Inc. Class A Common Stock（SHORT_CROWDING|VOLUME_EXPANSION）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
+監視対象の浮動株比率カバレッジは97.2%、空売り需給は41.7%、当日出来高比較は100.0%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、Norwood Financial Corp. - Common Stock（SHORT_CROWDING）、First Busey Corporation - Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）、Millrose Properties, Inc. Class A Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
 浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。
 
 ## 今日の注意点
 
-- **WARNING** Treasury yield volatility is unusually high — 売買指示ではなく確認対象です。
-- **WATCH** Market regime changed — 売買指示ではなく確認対象です。
+- **WARNING** 信越化、今期配当を20円増額修正 - 株探 — 売買指示ではなく確認対象です。
+- **WARNING** 浜松ホトニクスは2026年9月29日に1株配当金0.1672USDを支払う予定 - Moomoo — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
+- **WARNING** 発行登録書（株券､社債券等） — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Mito Securities Co.,Ltd.、Ichiyoshi Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.、Akatsuki Inc.
+- 日本：IwaiCosmo Holdings,Inc.、OKASAN SECURITIES GROUP INC.、Ichiyoshi Securities Co.,Ltd.、Akatsuki Inc.
 - 米国：Carter Bankshares, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares、International Seaways, Inc. Common Stock 、Norwood Financial Corp. - Common Stock
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
@@ -55,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.1点で優位性が弱い
-- 上位: スタンダード 76.9 / ビットコイン 75.8 / テクノロジー 75.1
+- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは75.9点だが確認閾値未達
+- 上位: ビットコイン 75.9 / テクノロジー 71.9 / スタンダード 65.7
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は74.5%。9567銘柄中5386銘柄を採点し、価格欠損率は9.3%です。
+データ品質は74.5%。9569銘柄中5361銘柄を採点し、価格欠損率は9.4%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-09-25T12:50:52+00:00
+生成時刻（UTC）：2026-09-28T15:35:16+00:00

@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-28T00:48:50+00:00",
-  "generated_at_utc": "2026-09-28T00:48:50+00:00",
-  "date_jst": "2026-09-28",
+  "generated_at": "2026-09-28T15:31:38+00:00",
+  "generated_at_utc": "2026-09-28T15:31:38+00:00",
+  "date_jst": "2026-09-29",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 68.32,
+  "regime_score": 64.77,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,28 +30,28 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 84.40415320367686,
-    "stress": 77.66250008583069,
-    "participation": 48.844913008411105,
-    "liquidity": 53.615619252398425,
+    "trend": 82.41711361291632,
+    "stress": 76.0475005722046,
+    "participation": 46.94995387453874,
+    "liquidity": 39.18840726552996,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 14.869999885559082,
-    "hy_oas": 2.8,
-    "ig_oas": 0.79,
+    "vix": 16.299999237060547,
+    "hy_oas": 2.93,
+    "ig_oas": 0.81,
     "treasury_volatility_proxy": 86.431,
     "treasury_volatility_percentile_rank": 0.9405,
     "treasury_volatility_stress_score": 29.46,
     "treasury_volatility_as_of_date": "2026-09-25",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
-    "breadth_n": 9567,
+    "breadth_n": 9569,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-25T12:47:50.859922+00:00",
+    "breadth_source_as_of_utc": "2026-09-28T15:31:36.045594+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.9932654813099606,
+    "volume_ratio20_mean": 0.6325851816382491,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -71,8 +71,8 @@ Generated quality score: **0.745** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-09-25",
-    "jpx_official_turnover_million_jpy": 8574548.0,
+    "jpx_official_turnover_date": "2026-09-28",
+    "jpx_official_turnover_million_jpy": 8968946.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
@@ -80,9 +80,9 @@ Generated quality score: **0.745** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-09-28",
+      "as_of_date": "2026-09-29",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 74,
+      "days_to_sq": 73,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -94,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 66769.90625,
+        "spot": 66364.203125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-28T00:49:49+00:00",
+  "generated_at": "2026-09-28T15:32:53+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -194,16 +194,16 @@ Generated quality score: **0.745** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=0 / tier=primary
+- EDINET: ok / records=1 / tier=primary
 - SEC: ok / records=31 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=12 / tier=secondary
+- NewsRSS: ok / records=20 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-25T12:47:50.859922+00:00
+- Data retrieved (UTC): 2026-09-28T15:31:36.045594+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -231,35 +231,35 @@ Generated quality score: **0.745** / actionable=True
 |---|---|---:|
 | JP | Financials | 9 |
 | JP | Other | 11 |
-| US | Financials | 6 |
-| US | Mortgage REIT | 2 |
-| US | Other | 7 |
-| US | Shipping | 5 |
+| US | Financials | 7 |
+| US | Mortgage REIT | 1 |
+| US | Other | 6 |
+| US | Shipping | 6 |
 
 ## Research candidates
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 76.3 | 100.0 | unchanged |
-| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 75.3 | 99.9 | new_entry |
-| JP | 3 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.2 | 99.9 | unchanged |
-| JP | 4 | 3932.T | Akatsuki Inc. | Other | 75.0 | 99.8 | unchanged |
-| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.1 | 99.6 | unchanged |
-| JP | 9 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.8 | 99.6 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.1 | 99.5 | unchanged |
-| JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.2 | 99.4 | unchanged |
-| JP | 13 | 8473.T | SBI Holdings,Inc. | Other | 69.9 | 99.4 | unchanged |
-| JP | 14 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 69.9 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.5 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.9 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 82.9 | 99.9 | unchanged |
-| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.1 | 99.9 | unchanged |
-| US | 8 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.3 | 99.8 | unchanged |
-| US | 9 | BUSE | First Busey Corporation - Common Stock | Other | 81.0 | 99.8 | unchanged |
-| US | 12 | FRO | Frontline Plc Ordinary Shares | Other | 79.6 | 99.7 | unchanged |
-| US | 13 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.5 | 99.7 | unchanged |
-| US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.4 | 99.6 | unchanged |
-| US | 17 | TRMD | TORM plc - Class A Common Stock | Other | 79.3 | 99.5 | unchanged |
+| JP | 1 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.3 | 100.0 | unchanged |
+| JP | 2 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 75.0 | 99.9 | new_entry |
+| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 74.9 | 99.9 | unchanged |
+| JP | 5 | 3932.T | Akatsuki Inc. | Other | 74.8 | 99.8 | unchanged |
+| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.3 | 99.6 | unchanged |
+| JP | 10 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.6 | 99.5 | unchanged |
+| JP | 11 | 2121.T | MIXI,Inc. | Other | 71.3 | 99.5 | unchanged |
+| JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.1 | 99.4 | unchanged |
+| JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.4 | 99.4 | unchanged |
+| JP | 15 | 3989.T | SHARINGTECHNOLOGY.INC | Other | 69.7 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.3 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.9 | 100.0 | unchanged |
+| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.3 | 99.9 | unchanged |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.4 | 99.9 | unchanged |
+| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.0 | 99.9 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.2 | 99.7 | unchanged |
+| US | 13 | FRO | Frontline Plc Ordinary Shares | Other | 80.1 | 99.6 | unchanged |
+| US | 14 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.6 | unchanged |
+| US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.8 | 99.6 | unchanged |
+| US | 18 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.5 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 
@@ -295,7 +295,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] FRO Frontline Plc Ordinary Shares | 2026-09-16 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000162828026062234/fro-20260630.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-16 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006339/p15081246_6-k.htm
 - [HIGH] TEN Tsakos Energy Navigation Ltd Common Shares | 2026-09-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1166663/000119312526394366/d67788d6k.htm
-- [HIGH] HTGC Hercules Capital, Inc. Common Stock | 2026-09-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1280784/000128078426000046/htgc-20260917.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-18 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006391/p15095918_6-k.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526396754/d73132d8k.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-22 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526397284/d244618d8k.htm
@@ -303,8 +302,12 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-23 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526398224/d126321d8k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-09-23 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000160448126000010/eurn-20260630.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006471/p15100061_6-k.htm
+- [HIGH] 7172 Japan Investment Adviser Co.,Ltd. | 2026-09-25 | filing | 発行登録書（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2W6
 - [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926110666/tm2626112d1_8k.htm
+- [HIGH] ACNB ACNB Corporation - Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/715579/000162828026063501/acnb-20260925.htm
+- [HIGH] 6965 浜松ホトニクス | Mon, 28 Sep 2026 | dividend | 浜松ホトニクスは2026年9月29日に1株配当金0.1672USDを支払う予定 - Moomoo | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQVhSMWlKQ3dMai1PSE5kZTA5eENBcDViZVI0Y1JMTlNZZ19Help2ek5qdXlRTGRFWWRUTHhaVGd6cXpFMzFSMGRKVEZHRVRMR2hYckFMS05TOS1Sc1d0YVppVmJMYTY0N2FWbzktR3oxaFRnX0pScElfbkJRaUVUMzFRTzdPVzRxOVh3eTVvemJDTHJ6NlRDazRUUVp4RVJ4ampBWDFjaDdPaVE?oc=5
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1UaXotSERuMUFFNlctcE9TT0NPRVhhVVNDbHRCTWFJb0VVVFFxNzd4WUY5cjZ1RWtHemd0WnFraXgySFNUZm14bzhUWm9BV0J2ZVpNSzFrMEt5UldCLVZWeFM0YVNMcmNvdHc?oc=5
+- [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化、今期配当を20円増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE14VEdPRDlYZE1odUpxZzR6TFpHaHl5MW8zQVhPVkkxRWVYbHNXVV9JUlZZV1pZRmlGOWNSZ250aFVycHNWRkx3YnFzN040dUd5c0E?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
