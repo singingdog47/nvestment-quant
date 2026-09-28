@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-25T12:47:53+00:00",
-  "generated_at_utc": "2026-09-25T12:47:53+00:00",
-  "date_jst": "2026-09-25",
+  "generated_at": "2026-09-28T00:48:50+00:00",
+  "generated_at_utc": "2026-09-28T00:48:50+00:00",
+  "date_jst": "2026-09-28",
   "data_status": "ok",
-  "regime_label": "RISK_ON",
-  "regime_score": 70.29,
+  "regime_label": "CONSTRUCTIVE",
+  "regime_score": 68.32,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,28 +30,28 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 83.87673279013714,
-    "stress": 77.97249977111817,
+    "trend": 84.40415320367686,
+    "stress": 77.66250008583069,
     "participation": 48.844913008411105,
-    "liquidity": 67.2741878405309,
-    "positioning": 57.726288981550105
+    "liquidity": 53.615619252398425,
+    "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.180000305175781,
-    "hy_oas": 2.73,
-    "ig_oas": 0.77,
-    "treasury_volatility_proxy": 83.46,
-    "treasury_volatility_percentile_rank": 0.9246,
-    "treasury_volatility_stress_score": 30.65,
-    "treasury_volatility_as_of_date": "2026-09-24",
+    "vix": 14.869999885559082,
+    "hy_oas": 2.8,
+    "ig_oas": 0.79,
+    "treasury_volatility_proxy": 86.431,
+    "treasury_volatility_percentile_rank": 0.9405,
+    "treasury_volatility_stress_score": 29.46,
+    "treasury_volatility_as_of_date": "2026-09-25",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9567,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-25T12:47:50.859922+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 1.3347296960132726,
+    "volume_ratio20_mean": 0.9932654813099606,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -80,9 +80,9 @@ Generated quality score: **0.745** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-09-25",
+      "as_of_date": "2026-09-28",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 77,
+      "days_to_sq": 74,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -94,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 66364.203125,
+        "spot": 66769.90625,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -134,7 +134,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Policy guardrails
 {
-  "regime_label": "risk_on",
+  "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
     0.08,
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-25T12:49:20+00:00",
+  "generated_at": "2026-09-28T00:49:49+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -195,9 +195,9 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=0 / tier=primary
-- SEC: ok / records=33 / tier=primary
+- SEC: ok / records=31 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=0 / tier=secondary
+- NewsRSS: ok / records=12 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -273,9 +273,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-11 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000080/care-20260811.htm
-- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426004935/p15047752_6k.htm
-- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-08-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426005129/p15049955_6k.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-08-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026057375/stng6k-08172026.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426005684/p15057626_6-k.htm
@@ -306,6 +303,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-23 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526398224/d126321d8k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-09-23 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000160448126000010/eurn-20260630.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006471/p15100061_6-k.htm
+- [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926110666/tm2626112d1_8k.htm
+- [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1UaXotSERuMUFFNlctcE9TT0NPRVhhVVNDbHRCTWFJb0VVVFFxNzd4WUY5cjZ1RWtHemd0WnFraXgySFNUZm14bzhUWm9BV0J2ZVpNSzFrMEt5UldCLVZWeFM0YVNMcmNvdHc?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
