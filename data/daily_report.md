@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-28T15:31:36.045594+00:00
+- Data retrieved (UTC): 2026-09-28T15:54:20.562239+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -38,7 +38,7 @@
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.3 | 100.0 | unchanged |
-| JP | 2 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 75.0 | 99.9 | new_entry |
+| JP | 2 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 75.0 | 99.9 | unchanged |
 | JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 74.9 | 99.9 | unchanged |
 | JP | 5 | 3932.T | Akatsuki Inc. | Other | 74.8 | 99.8 | unchanged |
 | JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.3 | 99.6 | unchanged |
@@ -56,7 +56,7 @@
 | US | 13 | FRO | Frontline Plc Ordinary Shares | Other | 80.1 | 99.6 | unchanged |
 | US | 14 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.6 | unchanged |
 | US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.8 | 99.6 | unchanged |
-| US | 18 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.5 | 99.5 | unchanged |
+| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.3 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 

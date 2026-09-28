@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-28T15:31:38+00:00",
-  "generated_at_utc": "2026-09-28T15:31:38+00:00",
+  "generated_at": "2026-09-28T15:54:22+00:00",
+  "generated_at_utc": "2026-09-28T15:54:22+00:00",
   "date_jst": "2026-09-29",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 64.77,
+  "regime_score": 65.17,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,15 +30,15 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 82.41711361291632,
-    "stress": 76.0475005722046,
-    "participation": 46.94995387453874,
-    "liquidity": 39.18840726552996,
+    "trend": 82.46884555147233,
+    "stress": 76.12249942779542,
+    "participation": 46.8980627306273,
+    "liquidity": 41.694524467805735,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 16.299999237060547,
+    "vix": 16.200000762939453,
     "hy_oas": 2.93,
     "ig_oas": 0.81,
     "treasury_volatility_proxy": 86.431,
@@ -49,9 +49,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-28T15:31:36.045594+00:00",
+    "breadth_source_as_of_utc": "2026-09-28T15:54:20.562239+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.6325851816382491,
+    "volume_ratio20_mean": 0.6952381116951434,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-28T15:32:53+00:00",
+  "generated_at": "2026-09-28T15:55:27+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -203,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-28T15:31:36.045594+00:00
+- Data retrieved (UTC): 2026-09-28T15:54:20.562239+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -241,7 +241,7 @@ Generated quality score: **0.745** / actionable=True
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 75.3 | 100.0 | unchanged |
-| JP | 2 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 75.0 | 99.9 | new_entry |
+| JP | 2 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 75.0 | 99.9 | unchanged |
 | JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 74.9 | 99.9 | unchanged |
 | JP | 5 | 3932.T | Akatsuki Inc. | Other | 74.8 | 99.8 | unchanged |
 | JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 73.3 | 99.6 | unchanged |
@@ -259,7 +259,7 @@ Generated quality score: **0.745** / actionable=True
 | US | 13 | FRO | Frontline Plc Ordinary Shares | Other | 80.1 | 99.6 | unchanged |
 | US | 14 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.6 | unchanged |
 | US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.8 | 99.6 | unchanged |
-| US | 18 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.5 | 99.5 | unchanged |
+| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.3 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 
