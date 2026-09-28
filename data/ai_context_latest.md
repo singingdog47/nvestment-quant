@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-28T16:44:02+00:00",
-  "generated_at_utc": "2026-09-28T16:44:02+00:00",
+  "generated_at": "2026-09-28T17:02:33+00:00",
+  "generated_at_utc": "2026-09-28T17:02:33+00:00",
   "date_jst": "2026-09-29",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 66.29,
+  "regime_score": 66.38,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,15 +30,15 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 82.97244652947049,
-    "stress": 76.4824997997284,
-    "participation": 47.32472324723247,
-    "liquidity": 46.957301520950104,
+    "trend": 82.89286915708962,
+    "stress": 76.27250000000001,
+    "participation": 47.0479704797048,
+    "liquidity": 48.420852702143854,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.720000267028809,
+    "vix": 16.0,
     "hy_oas": 2.93,
     "ig_oas": 0.81,
     "treasury_volatility_proxy": 86.431,
@@ -49,9 +49,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-28T16:44:00.401894+00:00",
+    "breadth_source_as_of_utc": "2026-09-28T17:02:31.449089+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.8268075380237525,
+    "volume_ratio20_mean": 0.8633963175535964,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-28T16:45:10+00:00",
+  "generated_at": "2026-09-28T17:03:40+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -203,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-28T16:44:00.401894+00:00
+- Data retrieved (UTC): 2026-09-28T17:02:31.449089+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -250,16 +250,16 @@ Generated quality score: **0.745** / actionable=True
 | JP | 12 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.1 | 99.4 | unchanged |
 | JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.4 | 99.4 | unchanged |
 | JP | 15 | 3989.T | SHARINGTECHNOLOGY.INC | Other | 69.7 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.3 | 100.0 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.3 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
 | US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.9 | unchanged |
 | US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.2 | 99.7 | unchanged |
-| US | 13 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
-| US | 14 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.6 | unchanged |
+| US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.6 | unchanged |
+| US | 14 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
 | US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.7 | 99.6 | unchanged |
-| US | 20 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.3 | 99.4 | unchanged |
+| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.3 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 
@@ -293,8 +293,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] LPG Dorian LPG Ltd. Common Stock | 2026-09-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1596993/000159699326000046/lpg-20260910x8k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-15 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006318/p15075054_6-k.htm
 - [HIGH] NWFL Norwood Financial Corp. - Common Stock | 2026-09-16 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1013272/000101327226000020/nwfl-20260916x8k.htm
-- [HIGH] FRO Frontline Plc Ordinary Shares | 2026-09-16 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000162828026062234/fro-20260630.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-16 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006339/p15081246_6-k.htm
+- [HIGH] FRO Frontline Plc Ordinary Shares | 2026-09-16 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000162828026062234/fro-20260630.htm
 - [HIGH] TEN Tsakos Energy Navigation Ltd Common Shares | 2026-09-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1166663/000119312526394366/d67788d6k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-18 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006391/p15095918_6-k.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526396754/d73132d8k.htm

@@ -1,25 +1,14 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-28T16:45:11+00:00",
+  "generated_at": "2026-09-28T17:03:41+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 3,
-    "WARNING": 2,
+    "WATCH": 2,
+    "WARNING": 1,
     "CRITICAL": 0
   },
   "alerts": [
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_MNA",
-      "title": "買収・争奪戦になっているカカクコム、ＫＤＤＩとの資本提携を解消…業務提携は継続 - 読売新聞",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
     {
       "severity": "WARNING",
       "category": "VOLATILITY",
@@ -35,18 +24,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "日本郵便とKDDI、ドローン社会基盤化へ基本合意書を締結し、郵便局をドローンポート拠点とする実証を開始 - newsroom.kddi.com",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "サイバー攻撃のリスクから事業継続を考える - NEC",
+      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - group.nec",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
@@ -57,7 +35,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "NECよどこへ行く 森田改革の成否 - 日経クロステック",
+      "title": "サイバー攻撃のリスクから事業継続を考える - jpn.nec.com",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
