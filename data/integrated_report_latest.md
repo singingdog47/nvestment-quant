@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-09-29T14:09:08+00:00
+Generated (UTC): 2026-09-29T15:09:04+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,13 +11,13 @@ Generated (UTC): 2026-09-29T14:09:08+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 59.13
+- Score: 63.98
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
 - VIX: 15.9399995803833
 - Treasury realized-vol proxy (not ICE MOVE): 85.54 bps annualized; percentile=0.9365
-- Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
+- Flags: TREASURY_VOLATILITY_SHOCK
 
 ## 3. 個別銘柄の需給コンテキスト
 - Data status: partial
@@ -35,15 +35,9 @@ Generated (UTC): 2026-09-29T14:09:08+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 12, 'WARNING': 4, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / 変更報告書
-- [WARNING] LIQUIDITY / Thin liquidity flag active
+- Counts: {'INFO': 0, 'WATCH': 1, 'WARNING': 1, 'CRITICAL': 0}
 - [WARNING] VOLATILITY / Treasury yield volatility is unusually high
-- [WATCH] COMPANY_EVENT / 楽天モバイル、携帯「独り立ち」へ正念場 ＫＤＤＩの回線貸し出し縮小―基地局整備、ライバルに遅れ - 時事ドットコム
-- [WATCH] COMPANY_EVENT / AI時代の企業ネットワーク基盤となる「AccelWaves」構想を始動 - KDDI ニュースルーム
-- [WATCH] COMPANY_EVENT / KDDIが提供する「SASEゲートウェイ」： SP Interconnect がクローズドネットワークのゼロトラスト化をシンプルに実現 - Palo Alto Networks
-- [WATCH] COMPANY_EVENT / ダイヤモンド・オンラインで、KDDIの広告運用インハウス化7年の取り組みに関する記事が掲載されました - supership.jp
+- [WATCH] COMPANY_EVENT / KDDIが挑んだ「デジタルマーケティング内製化」7年の軌跡！人材育成とコスト削減を実現した組織改革の全貌 - ダイヤモンド・オンライン
 
 ## 5. スクリーニング上位候補
 
@@ -55,22 +49,22 @@ Generated (UTC): 2026-09-29T14:09:08+00:00
 - 5. IwaiCosmo Holdings,Inc. 8707.T | market_rank=5.0 | raw=74.25470383400881 | cross_pct=99.79434447300771
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=83.90789984672283 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.7629506015642 | cross_pct=99.97068308413955
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.20980169110587 | cross_pct=99.9413661682791
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.35920436961652 | cross_pct=99.88273233655819
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=7.0 | raw=81.78684224348076 | cross_pct=99.8240985048373
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=83.94770203633043 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.74323999193896 | cross_pct=99.97066588442358
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.23221264799963 | cross_pct=99.94133176884718
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.1858296170594 | cross_pct=99.88266353769434
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.79480670130835 | cross_pct=99.85332942211792
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=83.90789984672283
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=83.94770203633043
 - 2. [JP] Akatsuki Inc. | cross_pct=100.0 | raw=79.33493737884234
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97068308413955 | raw=83.7629506015642
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97066588442358 | raw=83.74323999193896
 - 4. [JP] Toukei Computer Co.,Ltd. | cross_pct=99.94858611825192 | raw=76.28150142963017
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.9413661682791 | raw=83.20980169110587
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94133176884718 | raw=83.23221264799963
 - 6. [JP] Mito Securities Co.,Ltd. | cross_pct=99.89717223650385 | raw=74.46434225179289
-- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88273233655819 | raw=82.35920436961652
-- 8. [JP] OKASAN SECURITIES GROUP INC. | cross_pct=99.84575835475579 | raw=74.45507514003083
-- 9. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.8240985048373 | raw=81.78684224348076
+- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88266353769434 | raw=82.1858296170594
+- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85332942211792 | raw=81.79480670130835
+- 9. [JP] OKASAN SECURITIES GROUP INC. | cross_pct=99.84575835475579 | raw=74.45507514003083
 - 10. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.79434447300771 | raw=74.25470383400881
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
@@ -98,8 +92,8 @@ Generated (UTC): 2026-09-29T14:09:08+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは77.5点だが確認閾値未達
-- 上位: ビットコイン 77.5 / テクノロジー 71.8 / スタンダード 65.7
+- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは77.1点だが確認閾値未達
+- 上位: ビットコイン 77.1 / テクノロジー 71.8 / スタンダード 65.6
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

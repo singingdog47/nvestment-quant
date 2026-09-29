@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-29T14:06:12+00:00",
-  "generated_at_utc": "2026-09-29T14:06:12+00:00",
-  "date_jst": "2026-09-29",
+  "generated_at": "2026-09-29T15:06:04+00:00",
+  "generated_at_utc": "2026-09-29T15:06:04+00:00",
+  "date_jst": "2026-09-30",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 59.13,
+  "regime_score": 63.98,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,25 +23,24 @@ Generated quality score: **0.745** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": true,
+  "thin_liquidity_flag": false,
   "treasury_volatility_shock_flag": true,
   "sq_execution_caution_flag": false,
   "regime_flags": [
-    "THIN_LIQUIDITY",
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 70.15072444024412,
-    "stress": 76.39250031471252,
-    "participation": 44.26626672819566,
-    "liquidity": 29.134282557934227,
+    "trend": 80.81043047971629,
+    "stress": 75.90250031471253,
+    "participation": 43.97208121827411,
+    "liquidity": 41.33234958549545,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
     "vix": 15.9399995803833,
-    "hy_oas": 2.93,
-    "ig_oas": 0.81,
+    "hy_oas": 3.02,
+    "ig_oas": 0.83,
     "treasury_volatility_proxy": 85.54,
     "treasury_volatility_percentile_rank": 0.9365,
     "treasury_volatility_stress_score": 29.76,
@@ -50,9 +49,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-29T14:06:09.626180+00:00",
+    "breadth_source_as_of_utc": "2026-09-29T15:06:02.606610+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.3812320639483558,
+    "volume_ratio20_mean": 0.6861837396373863,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -81,9 +80,9 @@ Generated quality score: **0.745** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-09-29",
+      "as_of_date": "2026-09-30",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 73,
+      "days_to_sq": 72,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -95,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 65481.26953125,
+        "spot": 65877.6171875,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -138,8 +137,8 @@ Generated quality score: **0.745** / actionable=True
   "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
-    0.15,
-    0.18
+    0.08,
+    0.12
   ],
   "max_single_stock_weight": 0.05,
   "lifestyle_bucket_max_weight": 0.05,
@@ -151,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-29T14:07:20+00:00",
+  "generated_at": "2026-09-29T15:07:06+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -204,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-29T14:06:09.626180+00:00
+- Data retrieved (UTC): 2026-09-29T15:06:02.606610+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -232,8 +231,8 @@ Generated quality score: **0.745** / actionable=True
 |---|---|---:|
 | JP | Financials | 10 |
 | JP | Other | 10 |
-| US | Financials | 7 |
-| US | Mortgage REIT | 1 |
+| US | Financials | 6 |
+| US | Mortgage REIT | 2 |
 | US | Other | 6 |
 | US | Shipping | 6 |
 
@@ -242,25 +241,25 @@ Generated quality score: **0.745** / actionable=True
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 3932.T | Akatsuki Inc. | Other | 79.3 | 100.0 | unchanged |
-| JP | 2 | 4746.T | Toukei Computer Co.,Ltd. | Other | 76.3 | 99.9 | new_entry |
-| JP | 3 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.5 | 99.9 | new_entry |
+| JP | 2 | 4746.T | Toukei Computer Co.,Ltd. | Other | 76.3 | 99.9 | unchanged |
+| JP | 3 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.5 | 99.9 | unchanged |
 | JP | 4 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 74.5 | 99.8 | unchanged |
 | JP | 5 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.3 | 99.8 | unchanged |
-| JP | 10 | 6135.T | Makino Milling Machine Co.,Ltd. | Other | 72.8 | 99.5 | new_entry |
+| JP | 10 | 6135.T | Makino Milling Machine Co.,Ltd. | Other | 72.8 | 99.5 | unchanged |
 | JP | 12 | 6750.T | ELECOM CO.,LTD. | Other | 72.3 | 99.4 | unchanged |
 | JP | 15 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.4 | 99.3 | unchanged |
 | JP | 17 | 2121.T | MIXI,Inc. | Other | 70.9 | 99.2 | unchanged |
 | JP | 18 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.8 | 99.1 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.9 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.7 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.2 | 99.9 | unchanged |
-| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.4 | 99.9 | unchanged |
-| US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.8 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.1 | 99.7 | unchanged |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
+| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.9 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.0 | 99.7 | unchanged |
 | US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 80.1 | 99.6 | unchanged |
 | US | 14 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
 | US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.8 | 99.6 | unchanged |
-| US | 18 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.5 | 99.5 | unchanged |
+| US | 17 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.6 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 
