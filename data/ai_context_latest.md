@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-28T17:36:50+00:00",
-  "generated_at_utc": "2026-09-28T17:36:50+00:00",
+  "generated_at": "2026-09-29T01:59:51+00:00",
+  "generated_at_utc": "2026-09-29T01:59:51+00:00",
   "date_jst": "2026-09-29",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 66.88,
+  "regime_score": 64.3,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,28 +30,28 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 83.10031296659622,
-    "stress": 76.31750031471253,
+    "trend": 70.67504984876422,
+    "stress": 76.29500022888183,
     "participation": 47.17193265682657,
-    "liquidity": 51.12278833719238,
+    "liquidity": 58.80275172583218,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.9399995803833,
+    "vix": 16.06999969482422,
     "hy_oas": 2.93,
     "ig_oas": 0.81,
-    "treasury_volatility_proxy": 86.431,
-    "treasury_volatility_percentile_rank": 0.9405,
-    "treasury_volatility_stress_score": 29.46,
-    "treasury_volatility_as_of_date": "2026-09-25",
+    "treasury_volatility_proxy": 85.54,
+    "treasury_volatility_percentile_rank": 0.9365,
+    "treasury_volatility_stress_score": 29.76,
+    "treasury_volatility_as_of_date": "2026-09-28",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-28T17:36:48.038844+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.9309447084298096,
+    "volume_ratio20_mean": 1.1651685568777777,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -94,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 66364.203125,
+        "spot": 65324.3984375,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,36 +150,36 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-28T17:37:48+00:00",
+  "generated_at": "2026-09-29T02:01:10+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
       "path": "data/regime/market_regime_latest.json",
-      "age_hours": 0.01,
+      "age_hours": 0.0,
       "stale_limit_hours": 36
     },
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -195,7 +195,7 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=1 / tier=primary
-- SEC: ok / records=31 / tier=primary
+- SEC: ok / records=32 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
 - NewsRSS: ok / records=20 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
@@ -273,7 +273,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 9433 KDDI | Mon, 28 Sep 2026 | mna | 買収・争奪戦になっているカカクコム、ＫＤＤＩとの資本提携を解消…業務提携は継続 - 読売新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZEFVX3lxTFBFQlBXdzB5N3V4NlROcm5LenZBUFYyVDFoVURsVEg2MFJROE9kemRTU18tcUdlYjR5a1ItNWpGeWI1TWQzNWhXTmtvVjdMenJpcjRVd2pmWnFUUEo3TUphblcxUDM?oc=5
+- [CRITICAL] 6965 浜松ホトニクス | Fri, 15 May 2026 | guidance | 浜松ホトニクス---ストップ高、1-3月期増益転換で通期予想を上方修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiYEFVX3lxTE9XTHM1aVlfSFZ6NzBMUFN1ZEZCZWNpd3lYRUFDdkdrU3M4d1gxRGN4aFk5eml1dTAwMnpxOFhsVzNsN2wzOTN1QlQ5dURqNHZEZDJxSkhlQ0UwcTZ0M2tIaw?oc=5
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-08-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026057375/stng6k-08172026.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426005684/p15057626_6-k.htm
@@ -306,6 +306,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 7172 Japan Investment Adviser Co.,Ltd. | 2026-09-25 | filing | 発行登録書（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2W6
 - [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926110666/tm2626112d1_8k.htm
 - [HIGH] ACNB ACNB Corporation - Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/715579/000162828026063501/acnb-20260925.htm
+- [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006535/p15101807_6-k.htm
+- [HIGH] 6965 浜松ホトニクス | Mon, 28 Sep 2026 | dividend | 浜松ホトニクスは2026年9月29日に1株配当金0.1672USDを支払う予定 - Moomoo | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQVhSMWlKQ3dMai1PSE5kZTA5eENBcDViZVI0Y1JMTlNZZ19Help2ek5qdXlRTGRFWWRUTHhaVGd6cXpFMzFSMGRKVEZHRVRMR2hYckFMS05TOS1Sc1d0YVppVmJMYTY0N2FWbzktR3oxaFRnX0pScElfbkJRaUVUMzFRTzdPVzRxOVh3eTVvemJDTHJ6NlRDazRUUVp4RVJ4ampBWDFjaDdPaVE?oc=5
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1UaXotSERuMUFFNlctcE9TT0NPRVhhVVNDbHRCTWFJb0VVVFFxNzd4WUY5cjZ1RWtHemd0WnFraXgySFNUZm14bzhUWm9BV0J2ZVpNSzFrMEt5UldCLVZWeFM0YVNMcmNvdHc?oc=5
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化、今期配当を20円増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE14VEdPRDlYZE1odUpxZzR6TFpHaHl5MW8zQVhPVkkxRWVYbHNXVV9JUlZZV1pZRmlGOWNSZ250aFVycHNWRkx3YnFzN040dUd5c0E?oc=5
 

@@ -1,17 +1,17 @@
 # Market Regime v1.5
 
 - Label: **CONSTRUCTIVE**
-- Score: **66.88**
+- Score: **64.3**
 - Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
 - Flags: TREASURY_VOLATILITY_SHOCK
 
 ## Components
-- trend: 83.10031296659622
-- stress: 76.31750031471253
+- trend: 70.67504984876422
+- stress: 76.29500022888183
 - participation: 47.17193265682657
-- liquidity: 51.12278833719238
+- liquidity: 58.80275172583218
 - positioning: 57.66981615729503
 
 ## SQ execution overlay
@@ -28,20 +28,20 @@
 ## Evidence
 {
   "trend_series": 4,
-  "vix": 15.9399995803833,
+  "vix": 16.06999969482422,
   "hy_oas": 2.93,
   "ig_oas": 0.81,
-  "treasury_volatility_proxy": 86.431,
-  "treasury_volatility_percentile_rank": 0.9405,
-  "treasury_volatility_stress_score": 29.46,
-  "treasury_volatility_as_of_date": "2026-09-25",
+  "treasury_volatility_proxy": 85.54,
+  "treasury_volatility_percentile_rank": 0.9365,
+  "treasury_volatility_stress_score": 29.76,
+  "treasury_volatility_as_of_date": "2026-09-28",
   "treasury_volatility_status": "ok",
   "treasury_volatility_is_ice_move": false,
   "breadth_n": 9569,
   "breadth_status": "ok",
   "breadth_source_as_of_utc": "2026-09-28T17:36:48.038844+00:00",
   "nfci": -0.555,
-  "volume_ratio20_mean": 0.9309447084298096,
+  "volume_ratio20_mean": 1.1651685568777777,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22
