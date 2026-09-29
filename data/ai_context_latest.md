@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-29T15:06:04+00:00",
-  "generated_at_utc": "2026-09-29T15:06:04+00:00",
+  "generated_at": "2026-09-29T15:43:09+00:00",
+  "generated_at_utc": "2026-09-29T15:43:09+00:00",
   "date_jst": "2026-09-30",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 63.98,
+  "regime_score": 63.31,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,15 +30,15 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 80.81043047971629,
-    "stress": 75.90250031471253,
-    "participation": 43.97208121827411,
-    "liquidity": 41.33234958549545,
+    "trend": 76.60978017883659,
+    "stress": 75.57250062942505,
+    "participation": 43.77018920166129,
+    "liquidity": 46.085726758851386,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.9399995803833,
+    "vix": 16.3799991607666,
     "hy_oas": 3.02,
     "ig_oas": 0.83,
     "treasury_volatility_proxy": 85.54,
@@ -49,9 +49,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-29T15:06:02.606610+00:00",
+    "breadth_source_as_of_utc": "2026-09-29T15:43:07.055170+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.6861837396373863,
+    "volume_ratio20_mean": 0.8050181689712848,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-29T15:07:06+00:00",
+  "generated_at": "2026-09-29T15:44:10+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -194,8 +194,8 @@ Generated quality score: **0.745** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=1 / tier=primary
-- SEC: ok / records=33 / tier=primary
+- EDINET: ok / records=2 / tier=primary
+- SEC: ok / records=32 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
 - NewsRSS: ok / records=18 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
@@ -203,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-29T15:06:02.606610+00:00
+- Data retrieved (UTC): 2026-09-29T15:43:07.055170+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -229,8 +229,8 @@ Generated quality score: **0.745** / actionable=True
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 10 |
-| JP | Other | 10 |
+| JP | Financials | 8 |
+| JP | Other | 12 |
 | US | Financials | 6 |
 | US | Mortgage REIT | 2 |
 | US | Other | 6 |
@@ -240,26 +240,26 @@ Generated quality score: **0.745** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 3932.T | Akatsuki Inc. | Other | 79.3 | 100.0 | unchanged |
-| JP | 2 | 4746.T | Toukei Computer Co.,Ltd. | Other | 76.3 | 99.9 | unchanged |
-| JP | 3 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.5 | 99.9 | unchanged |
-| JP | 4 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 74.5 | 99.8 | unchanged |
-| JP | 5 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.3 | 99.8 | unchanged |
-| JP | 10 | 6135.T | Makino Milling Machine Co.,Ltd. | Other | 72.8 | 99.5 | unchanged |
-| JP | 12 | 6750.T | ELECOM CO.,LTD. | Other | 72.3 | 99.4 | unchanged |
-| JP | 15 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.4 | 99.3 | unchanged |
-| JP | 17 | 2121.T | MIXI,Inc. | Other | 70.9 | 99.2 | unchanged |
-| JP | 18 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.8 | 99.1 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.9 | 100.0 | unchanged |
+| JP | 1 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 74.9 | 100.0 | unchanged |
+| JP | 2 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.8 | 99.9 | unchanged |
+| JP | 3 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.6 | 99.9 | unchanged |
+| JP | 5 | 3932.T | Akatsuki Inc. | Other | 73.5 | 99.8 | unchanged |
+| JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 72.6 | 99.6 | unchanged |
+| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.8 | 99.5 | unchanged |
+| JP | 11 | 2121.T | MIXI,Inc. | Other | 71.3 | 99.5 | unchanged |
+| JP | 12 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.2 | 99.4 | unchanged |
+| JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.7 | 99.4 | unchanged |
+| JP | 14 | 3989.T | SHARINGTECHNOLOGY.INC | Other | 70.4 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.0 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.7 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.2 | 99.9 | unchanged |
-| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
-| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.9 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.0 | 99.7 | unchanged |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.0 | 99.9 | unchanged |
+| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.9 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.9 | 99.7 | unchanged |
 | US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 80.1 | 99.6 | unchanged |
 | US | 14 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
 | US | 15 | DBRG | DigitalBridge Group, Inc. | Other | 79.8 | 99.6 | unchanged |
-| US | 17 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.6 | 99.5 | unchanged |
+| US | 17 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.7 | 99.5 | unchanged |
 
 ## Required manual checks before an order
 
@@ -303,8 +303,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-23 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526398224/d126321d8k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-09-23 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000160448126000010/eurn-20260630.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006471/p15100061_6-k.htm
+- [HIGH] 7172 Japan Investment Adviser Co.,Ltd. | 2026-09-25 | filing | 発行登録書（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z2W6
 - [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926110666/tm2626112d1_8k.htm
-- [HIGH] ACNB ACNB Corporation - Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/715579/000162828026063501/acnb-20260925.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006535/p15101807_6-k.htm
 - [HIGH] 6701 NEC | 2026-09-29 | filing | 変更報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z50A
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1UaXotSERuMUFFNlctcE9TT0NPRVhhVVNDbHRCTWFJb0VVVFFxNzd4WUY5cjZ1RWtHemd0WnFraXgySFNUZm14bzhUWm9BV0J2ZVpNSzFrMEt5UldCLVZWeFM0YVNMcmNvdHc?oc=5

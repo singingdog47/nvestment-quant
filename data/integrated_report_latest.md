@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-09-29T15:09:04+00:00
+Generated (UTC): 2026-09-29T15:45:35+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,18 +11,18 @@ Generated (UTC): 2026-09-29T15:09:04+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 63.98
+- Score: 63.31
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 15.9399995803833
+- VIX: 16.3799991607666
 - Treasury realized-vol proxy (not ICE MOVE): 85.54 bps annualized; percentile=0.9365
 - Flags: TREASURY_VOLATILITY_SHOCK
 
 ## 3. 個別銘柄の需給コンテキスト
 - Data status: partial
 - Scope: public watchlist plus screening leaders; private portfolio excluded
-- Coverage: free-float=97.2%, short-interest=44.4%, current/average volume=100.0%
+- Coverage: free-float=97.2%, short-interest=41.7%, current/average volume=100.0%
 - 用途は監視・執行注意・退出流動性の確認に限定し、銘柄順位・ファンダメンタルズ評価・投資仮説は変更しません。
 - [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING
 - [JP] Mito Securities Co.,Ltd.: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION
@@ -35,37 +35,40 @@ Generated (UTC): 2026-09-29T15:09:04+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 1, 'WARNING': 1, 'CRITICAL': 0}
+- Counts: {'INFO': 0, 'WATCH': 3, 'WARNING': 2, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / 発行登録書（株券､社債券等）
 - [WARNING] VOLATILITY / Treasury yield volatility is unusually high
-- [WATCH] COMPANY_EVENT / KDDIが挑んだ「デジタルマーケティング内製化」7年の軌跡！人材育成とコスト削減を実現した組織改革の全貌 - ダイヤモンド・オンライン
+- [WATCH] COMPANY_EVENT / KDDIが自律型ネットワーク構想を発表、パロアルトと協業しSASE提供 - ZDNET Japan
+- [WATCH] COMPANY_EVENT / NECグループの英国現代奴隷法への対応 : 企業情報 - group.nec
+- [WATCH] COMPANY_EVENT / NECよどこへ行く 森田改革の成否 - xtech.nikkei.com
 
 ## 5. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Akatsuki Inc. 3932.T | market_rank=1.0 | raw=79.33493737884234 | cross_pct=100.0
-- 2. Toukei Computer Co.,Ltd. 4746.T | market_rank=2.0 | raw=76.28150142963017 | cross_pct=99.94858611825192
-- 3. Mito Securities Co.,Ltd. 8622.T | market_rank=3.0 | raw=74.46434225179289 | cross_pct=99.89717223650385
-- 4. OKASAN SECURITIES GROUP INC. 8609.T | market_rank=4.0 | raw=74.45507514003083 | cross_pct=99.84575835475579
-- 5. IwaiCosmo Holdings,Inc. 8707.T | market_rank=5.0 | raw=74.25470383400881 | cross_pct=99.79434447300771
+- 1. OKASAN SECURITIES GROUP INC. 8609.T | market_rank=1.0 | raw=74.8893359879362 | cross_pct=100.0
+- 2. Mito Securities Co.,Ltd. 8622.T | market_rank=2.0 | raw=74.84573140211728 | cross_pct=99.94858611825192
+- 3. IwaiCosmo Holdings,Inc. 8707.T | market_rank=3.0 | raw=74.64879176683814 | cross_pct=99.89717223650385
+- 4. Akatsuki Inc. 3932.T | market_rank=5.0 | raw=73.4787063775807 | cross_pct=99.79434447300771
+- 5. ELECOM CO.,LTD. 6750.T | market_rank=8.0 | raw=72.63196592151318 | cross_pct=99.6401028277635
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=83.94770203633043 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.74323999193896 | cross_pct=99.97066588442358
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.23221264799963 | cross_pct=99.94133176884718
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.1858296170594 | cross_pct=99.88266353769434
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.79480670130835 | cross_pct=99.85332942211792
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=83.97089148198145 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.74170840334254 | cross_pct=99.97063142437592
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=83.2494274743587 | cross_pct=99.94126284875183
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.0008827152939 | cross_pct=99.88252569750367
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.85704802598681 | cross_pct=99.85315712187959
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=83.94770203633043
-- 2. [JP] Akatsuki Inc. | cross_pct=100.0 | raw=79.33493737884234
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97066588442358 | raw=83.74323999193896
-- 4. [JP] Toukei Computer Co.,Ltd. | cross_pct=99.94858611825192 | raw=76.28150142963017
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94133176884718 | raw=83.23221264799963
-- 6. [JP] Mito Securities Co.,Ltd. | cross_pct=99.89717223650385 | raw=74.46434225179289
-- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88266353769434 | raw=82.1858296170594
-- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85332942211792 | raw=81.79480670130835
-- 9. [JP] OKASAN SECURITIES GROUP INC. | cross_pct=99.84575835475579 | raw=74.45507514003083
-- 10. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.79434447300771 | raw=74.25470383400881
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=83.97089148198145
+- 2. [JP] OKASAN SECURITIES GROUP INC. | cross_pct=100.0 | raw=74.8893359879362
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97063142437592 | raw=83.74170840334254
+- 4. [JP] Mito Securities Co.,Ltd. | cross_pct=99.94858611825192 | raw=74.84573140211728
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94126284875183 | raw=83.2494274743587
+- 6. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89717223650385 | raw=74.64879176683814
+- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88252569750367 | raw=82.0008827152939
+- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85315712187959 | raw=81.85704802598681
+- 9. [JP] Akatsuki Inc. | cross_pct=99.79434447300771 | raw=73.4787063775807
+- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.73568281938327 | raw=80.87887052245995
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -92,8 +95,8 @@ Generated (UTC): 2026-09-29T15:09:04+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは77.1点だが確認閾値未達
-- 上位: ビットコイン 77.1 / テクノロジー 71.8 / スタンダード 65.6
+- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは76.7点だが確認閾値未達
+- 上位: ビットコイン 76.7 / テクノロジー 71.7 / スタンダード 65.5
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

@@ -1,14 +1,25 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-29T15:07:07+00:00",
+  "generated_at": "2026-09-29T15:44:11+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 1,
-    "WARNING": 1,
+    "WATCH": 3,
+    "WARNING": 2,
     "CRITICAL": 0
   },
   "alerts": [
+    {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_FILING",
+      "title": "発行登録書（株券､社債券等）",
+      "message": "New company event detected for Japan Investment Adviser Co.,Ltd..",
+      "value": null,
+      "threshold": null,
+      "entity": "Japan Investment Adviser Co.,Ltd.",
+      "source": "EDINET"
+    },
     {
       "severity": "WARNING",
       "category": "VOLATILITY",
@@ -24,11 +35,33 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "KDDIが挑んだ「デジタルマーケティング内製化」7年の軌跡！人材育成とコスト削減を実現した組織改革の全貌 - ダイヤモンド・オンライン",
+      "title": "KDDIが自律型ネットワーク構想を発表、パロアルトと協業しSASE提供 - ZDNET Japan",
       "message": "New company event detected for KDDI.",
       "value": null,
       "threshold": null,
       "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - group.nec",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECよどこへ行く 森田改革の成否 - xtech.nikkei.com",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
       "source": "Google News RSS"
     }
   ],
