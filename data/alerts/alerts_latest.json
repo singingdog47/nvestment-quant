@@ -1,10 +1,10 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-29T15:44:11+00:00",
+  "generated_at": "2026-09-30T01:19:55+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 3,
+    "WATCH": 10,
     "WARNING": 2,
     "CRITICAL": 0
   },
@@ -12,13 +12,13 @@
     {
       "severity": "WARNING",
       "category": "COMPANY_EVENT",
-      "code": "EVENT_FILING",
-      "title": "発行登録書（株券､社債券等）",
-      "message": "New company event detected for Japan Investment Adviser Co.,Ltd..",
+      "code": "EVENT_DIVIDEND",
+      "title": "信越化、今期配当を20円増額修正 - 株探",
+      "message": "New company event detected for 信越化学工業.",
       "value": null,
       "threshold": null,
-      "entity": "Japan Investment Adviser Co.,Ltd.",
-      "source": "EDINET"
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
     },
     {
       "severity": "WARNING",
@@ -35,7 +35,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "KDDIが自律型ネットワーク構想を発表、パロアルトと協業しSASE提供 - ZDNET Japan",
+      "title": "KDDI、日本郵便とドローン事業で連携 全国の郵便局に発着拠点 - 日本経済新聞",
       "message": "New company event detected for KDDI.",
       "value": null,
       "threshold": null,
@@ -46,7 +46,29 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - group.nec",
+      "title": "KDDI、次世代の法人向けネットワーク基盤「AccelWaves」構想発表、AI本格導入に向け“つぎはぎ状態”の解消をアピール - Yahoo!ニュース",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "KDDI、AI時代の企業ネットワーク基盤「AccelWaves」構想を発表 SASE一体型サービスや自律型ネットワークを展開 - クラウド Watch",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECグループの英国現代奴隷法への対応 : 企業情報 - NEC",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
@@ -57,11 +79,66 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "NECよどこへ行く 森田改革の成否 - xtech.nikkei.com",
+      "title": "NECよどこへ行く 森田改革の成否 - 日経クロステック",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
       "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECなど5社、総務省の令和8年度「ワット・ビット連携関連実証」に採択 (2026年9月30日): プレスリリース - NEC",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NEC（日本電気）の50代後半・部長級の年収は？【1万件の口コミ情報データ】 - ダイヤモンド・オンライン",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECが「AI自律型組織」を新設 「従業員はいらなくなる？」の問いに、CAXOはどう答えたか（ITmedia エンタープライズ） - Yahoo!ニュース",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "浜松ホトニクス ＡＩ向け半導体特化 故障解析装置 新たな主力 顧客開拓狙う - 静岡新聞DIGITAL",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "浜松ホトニクス、AI半導体向け倒立型エミッション顕微鏡を発売 - optronics-media.com",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
       "source": "Google News RSS"
     }
   ],

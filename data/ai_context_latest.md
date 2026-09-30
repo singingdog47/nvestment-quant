@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-29T15:43:09+00:00",
-  "generated_at_utc": "2026-09-29T15:43:09+00:00",
+  "generated_at": "2026-09-30T01:18:57+00:00",
+  "generated_at_utc": "2026-09-30T01:18:57+00:00",
   "date_jst": "2026-09-30",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 63.31,
+  "regime_score": 65.83,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,28 +30,28 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 76.60978017883659,
-    "stress": 75.57250062942505,
+    "trend": 79.83178118702946,
+    "stress": 75.8274993133545,
     "participation": 43.77018920166129,
-    "liquidity": 46.085726758851386,
+    "liquidity": 56.014318375849896,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 16.3799991607666,
+    "vix": 16.040000915527344,
     "hy_oas": 3.02,
     "ig_oas": 0.83,
-    "treasury_volatility_proxy": 85.54,
+    "treasury_volatility_proxy": 86.133,
     "treasury_volatility_percentile_rank": 0.9365,
     "treasury_volatility_stress_score": 29.76,
-    "treasury_volatility_as_of_date": "2026-09-28",
+    "treasury_volatility_as_of_date": "2026-09-29",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9568,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-29T15:43:07.055170+00:00",
     "nfci": -0.555,
-    "volume_ratio20_mean": 0.8050181689712848,
+    "volume_ratio20_mean": 1.09545772312822,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -94,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 65877.6171875,
+        "spot": 66213.65625,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,12 +150,12 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-29T15:44:10+00:00",
+  "generated_at": "2026-09-30T01:19:54+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
       "path": "data/regime/market_regime_latest.json",
-      "age_hours": 0.01,
+      "age_hours": 0.0,
       "stale_limit_hours": 36
     },
     "v1_3_screening": {
@@ -197,7 +197,7 @@ Generated quality score: **0.745** / actionable=True
 - EDINET: ok / records=2 / tier=primary
 - SEC: ok / records=32 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=18 / tier=secondary
+- NewsRSS: ok / records=19 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -308,6 +308,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006535/p15101807_6-k.htm
 - [HIGH] 6701 NEC | 2026-09-29 | filing | 変更報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z50A
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1UaXotSERuMUFFNlctcE9TT0NPRVhhVVNDbHRCTWFJb0VVVFFxNzd4WUY5cjZ1RWtHemd0WnFraXgySFNUZm14bzhUWm9BV0J2ZVpNSzFrMEt5UldCLVZWeFM0YVNMcmNvdHc?oc=5
+- [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化、今期配当を20円増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE14VEdPRDlYZE1odUpxZzR6TFpHaHl5MW8zQVhPVkkxRWVYbHNXVV9JUlZZV1pZRmlGOWNSZ250aFVycHNWRkx3YnFzN040dUd5c0E?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
