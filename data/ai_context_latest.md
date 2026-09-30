@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-30T15:20:25+00:00",
-  "generated_at_utc": "2026-09-30T15:20:25+00:00",
+  "generated_at": "2026-09-30T15:52:29+00:00",
+  "generated_at_utc": "2026-09-30T15:52:29+00:00",
   "date_jst": "2026-10-01",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 60.83,
+  "regime_score": 61.19,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,23 +23,22 @@ Generated quality score: **0.745** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": true,
+  "thin_liquidity_flag": false,
   "treasury_volatility_shock_flag": true,
   "sq_execution_caution_flag": false,
   "regime_flags": [
-    "THIN_LIQUIDITY",
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 72.92850551954385,
-    "stress": 75.67249971389771,
-    "participation": 45.32025389497981,
-    "liquidity": 34.6964041966127,
+    "trend": 73.04520932587762,
+    "stress": 75.64999991416931,
+    "participation": 45.242354298903635,
+    "liquidity": 36.97779913499088,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.850000381469727,
+    "vix": 15.880000114440918,
     "hy_oas": 3.08,
     "ig_oas": 0.84,
     "treasury_volatility_proxy": 86.133,
@@ -50,9 +49,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9567,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-09-30T15:20:23.330950+00:00",
+    "breadth_source_as_of_utc": "2026-09-30T15:52:26.602253+00:00",
     "nfci": -0.548,
-    "volume_ratio20_mean": 0.5215101049153175,
+    "volume_ratio20_mean": 0.5785449783747719,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -138,8 +137,8 @@ Generated quality score: **0.745** / actionable=True
   "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
-    0.15,
-    0.18
+    0.08,
+    0.12
   ],
   "max_single_stock_weight": 0.05,
   "lifestyle_bucket_max_weight": 0.05,
@@ -151,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-30T15:21:30+00:00",
+  "generated_at": "2026-09-30T15:53:30+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -204,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-09-30T15:20:23.330950+00:00
+- Data retrieved (UTC): 2026-09-30T15:52:26.602253+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -241,26 +240,26 @@ Generated quality score: **0.745** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.8 | 100.0 | unchanged |
+| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.7 | 100.0 | unchanged |
 | JP | 2 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.6 | 99.9 | unchanged |
-| JP | 3 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 74.3 | 99.9 | unchanged |
+| JP | 3 | 8609.T | OKASAN SECURITIES GROUP INC. | Financials | 74.2 | 99.9 | unchanged |
 | JP | 5 | 3932.T | Akatsuki Inc. | Other | 73.3 | 99.8 | unchanged |
 | JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 72.1 | 99.6 | unchanged |
 | JP | 10 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 71.4 | 99.5 | unchanged |
 | JP | 11 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.2 | 99.5 | unchanged |
-| JP | 12 | 2121.T | MIXI,Inc. | Other | 71.1 | 99.4 | unchanged |
-| JP | 13 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.6 | 99.4 | unchanged |
-| JP | 14 | 3989.T | SHARINGTECHNOLOGY.INC | Other | 69.8 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.9 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.7 | 100.0 | unchanged |
+| JP | 12 | 2121.T | MIXI,Inc. | Other | 71.0 | 99.4 | unchanged |
+| JP | 13 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.5 | 99.4 | unchanged |
+| JP | 14 | 3989.T | SHARINGTECHNOLOGY.INC | Other | 69.7 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.8 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.1 | 99.9 | unchanged |
 | US | 5 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.7 | 99.9 | unchanged |
 | US | 6 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.6 | 99.9 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.5 | 99.7 | unchanged |
-| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.0 | 99.7 | unchanged |
-| US | 14 | FRO | Frontline Plc Ordinary Shares | Other | 79.9 | 99.6 | unchanged |
-| US | 19 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.1 | 99.5 | unchanged |
-| US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.8 | 99.4 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.4 | 99.7 | unchanged |
+| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.1 | 99.7 | unchanged |
+| US | 13 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
+| US | 20 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.0 | 99.4 | unchanged |
+| US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.7 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 
@@ -274,7 +273,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5
+- [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - nikkei.com | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5
 - [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化(4063) 取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ - みんかぶ | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiRkFVX3lxTE53YmZub2hBZWxIU2hSX3N2dW8yUUx6TUE1MTBnaHlIcUgyZ0Z4c1d1MXlkUGJmTTNQbVFFdXJUMHhib2Z5OHc?oc=5
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-08-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026057375/stng6k-08172026.htm

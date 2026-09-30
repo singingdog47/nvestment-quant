@@ -1,35 +1,24 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-09-30T15:21:31+00:00",
+  "generated_at": "2026-09-30T15:53:31+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 4,
-    "WARNING": 3,
+    "WATCH": 9,
+    "WARNING": 2,
     "CRITICAL": 0
   },
   "alerts": [
     {
       "severity": "WARNING",
       "category": "COMPANY_EVENT",
-      "code": "EVENT_FILING",
-      "title": "SEC 8-K filing",
-      "message": "New company event detected for Aurinia Pharmaceuticals Inc - Common Shares.",
+      "code": "EVENT_FINANCING",
+      "title": "信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - nikkei.com",
+      "message": "New company event detected for 信越化学工業.",
       "value": null,
       "threshold": null,
-      "entity": "Aurinia Pharmaceuticals Inc - Common Shares",
-      "source": "SEC EDGAR"
-    },
-    {
-      "severity": "WARNING",
-      "category": "LIQUIDITY",
-      "code": "THIN_LIQUIDITY",
-      "title": "Thin liquidity flag active",
-      "message": "Market Regime Engine reports thin_liquidity_flag=true.",
-      "value": true,
-      "threshold": true,
-      "entity": null,
-      "source": "market_regime_latest.json"
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
     },
     {
       "severity": "WARNING",
@@ -46,7 +35,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "au PAY アプリ上から使える暗号資産ウォレットを提供開始 - newsroom.kddi.com",
+      "title": "au PAY アプリ上から使える暗号資産ウォレットを提供開始 - KDDI ニュースルーム",
       "message": "New company event detected for KDDI.",
       "value": null,
       "threshold": null,
@@ -57,7 +46,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "KDDI、楽天モバイルへのローミング状況を公開 9月末から大幅減 10月から新たな枠組み（ITmedia Mobile） - Yahoo!ニュース",
+      "title": "KDDI、10月から楽天へ回線貸し縮小 横浜・神戸など18政令市の市街地 - nikkei.com",
       "message": "New company event detected for KDDI.",
       "value": null,
       "threshold": null,
@@ -68,7 +57,18 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "東大・東芝・NECら、反射板とDASを活用した高速道路向けローカル5Gの実証 - ビジネスネットワーク",
+      "title": "KDDI、全国基地局の現地保守支援システムに「テックタッチ」採用 データ入力の誤りを10分の1に削減 - enterprisezine.jp",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECよどこへ行く 森田改革の成否 - xtech.nikkei.com",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
@@ -77,11 +77,55 @@
     },
     {
       "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "NECとシュナイダー、電力・通信設備管理「ArcFM」を国内提供--GISで設計から運用まで一元化 - japan.zdnet.com",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "信越化学工業(株)【4063】：板気配 - finance.yahoo.co.jp",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "浜松ホトニクス、先端半導体の動作解析向け顕微鏡 AIチップに対応 - nikkei.com",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "半導体部品の故障を高い精度で特定 浜松ホトニクス、解析装置の受注開始：ニュース - 中日BIZナビ",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
       "category": "LIQUIDITY",
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 34.6964041966127,
+      "value": 36.97779913499088,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"

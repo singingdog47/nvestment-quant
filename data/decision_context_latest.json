@@ -1,6 +1,6 @@
 {
   "quality": {
-    "generated_at": "2026-09-30T15:21:30+00:00",
+    "generated_at": "2026-09-30T15:53:30+00:00",
     "targets": 36,
     "portfolio_targets": 0,
     "events": 58,
@@ -21,12 +21,12 @@
   "market_regime": {
     "version": "1.5.3",
     "engine_version": "1.5.3",
-    "generated_at": "2026-09-30T15:20:25+00:00",
-    "generated_at_utc": "2026-09-30T15:20:25+00:00",
+    "generated_at": "2026-09-30T15:52:29+00:00",
+    "generated_at_utc": "2026-09-30T15:52:29+00:00",
     "date_jst": "2026-10-01",
     "data_status": "ok",
     "regime_label": "CONSTRUCTIVE",
-    "regime_score": 60.83,
+    "regime_score": 61.19,
     "confidence": 1.0,
     "actionable": true,
     "actionability": {
@@ -38,23 +38,22 @@
     },
     "overheated_flag": false,
     "stress_flag": false,
-    "thin_liquidity_flag": true,
+    "thin_liquidity_flag": false,
     "treasury_volatility_shock_flag": true,
     "sq_execution_caution_flag": false,
     "regime_flags": [
-      "THIN_LIQUIDITY",
       "TREASURY_VOLATILITY_SHOCK"
     ],
     "components": {
-      "trend": 72.92850551954385,
-      "stress": 75.67249971389771,
-      "participation": 45.32025389497981,
-      "liquidity": 34.6964041966127,
+      "trend": 73.04520932587762,
+      "stress": 75.64999991416931,
+      "participation": 45.242354298903635,
+      "liquidity": 36.97779913499088,
       "positioning": 57.66981615729503
     },
     "evidence": {
       "trend_series": 4,
-      "vix": 15.850000381469727,
+      "vix": 15.880000114440918,
       "hy_oas": 3.08,
       "ig_oas": 0.84,
       "treasury_volatility_proxy": 86.133,
@@ -65,9 +64,9 @@
       "treasury_volatility_is_ice_move": false,
       "breadth_n": 9567,
       "breadth_status": "ok",
-      "breadth_source_as_of_utc": "2026-09-30T15:20:23.330950+00:00",
+      "breadth_source_as_of_utc": "2026-09-30T15:52:26.602253+00:00",
       "nfci": -0.548,
-      "volume_ratio20_mean": 0.5215101049153175,
+      "volume_ratio20_mean": 0.5785449783747719,
       "positioning_sources": {
         "jpx_raw_healthy": 4,
         "cftc_normalized_values": 22
@@ -151,8 +150,8 @@
     "regime_label": "constructive",
     "absolute_defense_cash_jpy": 500000,
     "cash_target_range": [
-      0.15,
-      0.18
+      0.08,
+      0.12
     ],
     "max_single_stock_weight": 0.05,
     "lifestyle_bucket_max_weight": 0.05,
@@ -162,7 +161,7 @@
     "note": "Guardrail only. This file never places orders."
   },
   "system_health": {
-    "generated_at": "2026-09-30T15:21:30+00:00",
+    "generated_at": "2026-09-30T15:53:30+00:00",
     "components": {
       "market_regime": {
         "status": "ok",
@@ -211,15 +210,15 @@
       "name": "信越化学工業",
       "event_date": "Wed, 30 Sep 2026",
       "event_type": "financing",
-      "title": "信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "title": "信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - nikkei.com",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "f811f0ecb2b08588fa4a2966",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "17b3c0c4fe40af6beb44888e",
       "raw_excerpt": ""
     },
     {
@@ -236,7 +235,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "6be4fe7ef31125c068f24816",
       "raw_excerpt": ""
     },
@@ -254,7 +253,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "42b11ef21422035924d2f48a",
       "raw_excerpt": ""
     },
@@ -272,7 +271,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "f0d57d6055bc0f604c63073f",
       "raw_excerpt": ""
     },
@@ -290,7 +289,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "e79ef23aaba8d24cf95df4f7",
       "raw_excerpt": ""
     },
@@ -308,7 +307,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "8fa43f3254c366a7f75bc11d",
       "raw_excerpt": ""
     },
@@ -326,7 +325,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "e1b30c0ca118c2f263bbeba1",
       "raw_excerpt": ""
     },
@@ -344,7 +343,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "9057ca905e210933ecd6937f",
       "raw_excerpt": ""
     },
@@ -362,7 +361,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "40cc0c79b09dbdc0279a751d",
       "raw_excerpt": ""
     },
@@ -380,7 +379,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "1646199e13fb3fa238295d5f",
       "raw_excerpt": ""
     },
@@ -398,7 +397,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "88a3917cd58d8540e8876479",
       "raw_excerpt": ""
     },
@@ -416,7 +415,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "d02bdc3baa4c8953f7d469e4",
       "raw_excerpt": ""
     },
@@ -434,7 +433,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "d153ac2c15d7f78722a5d6e0",
       "raw_excerpt": ""
     },
@@ -452,7 +451,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "0fee6ff3ba4dccf6db0c9214",
       "raw_excerpt": ""
     },
@@ -470,7 +469,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "e69dcfc48b67c26958c4c4c1",
       "raw_excerpt": ""
     },
@@ -488,7 +487,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "506caa2d2e0eab624d93b6b1",
       "raw_excerpt": ""
     },
@@ -506,7 +505,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "c431645ddbeb1f06e99c7cde",
       "raw_excerpt": ""
     },
@@ -524,7 +523,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "2db1c28276f03940684922fe",
       "raw_excerpt": ""
     },
@@ -542,7 +541,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "e71d123796ba4807789d0850",
       "raw_excerpt": ""
     },
@@ -560,7 +559,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "9cff4f5854f8f1b97b3a0dab",
       "raw_excerpt": ""
     },
@@ -578,7 +577,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "4f2de058b3c176f4ac99ce83",
       "raw_excerpt": ""
     },
@@ -596,7 +595,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "f5c67fe94ddb7e08ae6a2fe9",
       "raw_excerpt": ""
     },
@@ -614,7 +613,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "1f21ce51a019dc8235b2112f",
       "raw_excerpt": ""
     },
@@ -632,7 +631,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "2477a7f913e68a998b852023",
       "raw_excerpt": ""
     },
@@ -650,7 +649,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "1357d9806c5004e769a0d23f",
       "raw_excerpt": ""
     },
@@ -668,7 +667,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "295e1cdb5f42fbd25840a09e",
       "raw_excerpt": ""
     },
@@ -686,7 +685,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "10c4cfbbf3462b0654fa29ec",
       "raw_excerpt": ""
     },
@@ -704,7 +703,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "27409884c8b08f5bcda585e0",
       "raw_excerpt": ""
     },
@@ -722,7 +721,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "dbff4c6eb4aed4151c2a058d",
       "raw_excerpt": ""
     },
@@ -740,7 +739,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "65a81594f0cc545cdb9cdbf9",
       "raw_excerpt": ""
     },
@@ -758,7 +757,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "91b40e7af3ca60ff33cae506",
       "raw_excerpt": ""
     },
@@ -776,7 +775,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "4c3cf500c9b83fb6b0965a2d",
       "raw_excerpt": ""
     },
@@ -794,7 +793,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "30c4af9554e9a4a09e79fca3",
       "raw_excerpt": ""
     },
@@ -812,7 +811,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:12+00:00",
+      "fetched_at": "2026-09-30T15:53:12+00:00",
       "event_id": "7c455fa5ace4ce22e9f8bb51",
       "raw_excerpt": ""
     },
@@ -830,7 +829,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "7fe7f057556976d83f1616ef",
       "raw_excerpt": ""
     },
@@ -848,7 +847,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "a08e61e296fd89b34cfb40e5",
       "raw_excerpt": ""
     },
@@ -866,7 +865,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "event_id": "48ce076ce76d76db5ec97d78",
       "raw_excerpt": ""
     },
@@ -884,7 +883,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:12+00:00",
+      "fetched_at": "2026-09-30T15:53:12+00:00",
       "event_id": "361ff9c4b1406b9baa47f7d7",
       "raw_excerpt": ""
     },
@@ -902,7 +901,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:12+00:00",
+      "fetched_at": "2026-09-30T15:53:12+00:00",
       "event_id": "60e417a10b9b8627d3462640",
       "raw_excerpt": ""
     },
@@ -920,7 +919,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:12+00:00",
+      "fetched_at": "2026-09-30T15:53:12+00:00",
       "event_id": "fbb81d34d840cb06d7590b90",
       "raw_excerpt": ""
     },
@@ -938,7 +937,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "744b4f0db9f5bbb9e7d99255",
       "raw_excerpt": ""
     },
@@ -956,7 +955,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "918c90b17d2c225386b75861",
       "raw_excerpt": ""
     },
@@ -967,33 +966,15 @@
       "name": "信越化学工業",
       "event_date": "Fri, 25 Sep 2026",
       "event_type": "disclosure",
-      "title": "信越化学工業(株)【4063】：板気配 - Yahoo!ファイナンス",
+      "title": "信越化学工業(株)【4063】：板気配 - finance.yahoo.co.jp",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBSSnpnOTNoS2lTMVhiV3haWVF1ZHdIVlpoMTcwdThHQ1ItRU9VQzVoSl9jSlBVSUFrVkE0X0RaUlFpN19sdUY5Tms1Tk5PMDZ4OW00SU1VeWoycGFlaC1V?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "3de4a4fa01605fba861e96b0",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "9433",
-      "ticker": "9433.T",
-      "name": "KDDI",
-      "event_date": "Mon, 28 Sep 2026",
-      "event_type": "disclosure",
-      "title": "カカクコム、KDDIと資本提携解消（時事通信） - Yahoo!ニュース",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9ZX2laOE03c3VIM0o1NHMzd3BaY2VER2dJb2FINUZzUGsxUm80QkZtMWQwT1BPXzNDdjFvc1A3d3BKd1NwZ2pnMHVsYlowVVlMWW9panE4anJ2dkNlUU5WQ1lhdjdUYjh6MnhkUHpzVE9zZms3ZF80UEdJaWdPLUU?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "884850ff6aedcb9971061ec1",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "e2b1435b3fd08d6157eced93",
       "raw_excerpt": ""
     },
     {
@@ -1003,15 +984,15 @@
       "name": "NEC",
       "event_date": "Mon, 28 Sep 2026",
       "event_type": "disclosure",
-      "title": "NECよどこへ行く 森田改革の成否 - 日経クロステック（xTECH）",
+      "title": "NECよどこへ行く 森田改革の成否 - xtech.nikkei.com",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE95Z29jTm5WMVVhMzRDMkdlU2ZOOGNTQUdVYU5qR2laaHNNWlI3aHBxQVZNM2szTXVzaGlRQ2RMOW5UdjNPNVVrVURwalN3aXZoZHZxeW85SllWM2tyUF93?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "b3d8e0caf60b6d929a1bc5c6",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "bd8dd96ce3643967f8f30413",
       "raw_excerpt": ""
     },
     {
@@ -1028,7 +1009,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "636201d6235b81357cc5071e",
       "raw_excerpt": ""
     },
@@ -1046,7 +1027,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "b19c391c0c58c4aa0641e510",
       "raw_excerpt": ""
     },
@@ -1057,15 +1038,15 @@
       "name": "浜松ホトニクス",
       "event_date": "Tue, 29 Sep 2026",
       "event_type": "disclosure",
-      "title": "浜松ホトニクス、先端半導体の動作解析向け顕微鏡 AIチップに対応 - 日本経済新聞",
+      "title": "浜松ホトニクス、先端半導体の動作解析向け顕微鏡 AIチップに対応 - nikkei.com",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA4bVc3cHBOc3pvR3dpaDJINnZWR3E5VE90RVo4SG5YM203VFItTzFCODJaY0xHQVJRMVhGVndYaHZNOHRDTThSR1E0U2x1Y2EwZXFFTjMwaVRHQ05zZ3BvTGVJcEtWdmFoTnpSWQ?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "ececbdfadf87fd39e3d59f6b",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "4360568fe664460d5a095989",
       "raw_excerpt": ""
     },
     {
@@ -1082,7 +1063,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "fd78ec84721ac77419e72631",
       "raw_excerpt": ""
     },
@@ -1100,7 +1081,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "135e06787f71c9748b264d81",
       "raw_excerpt": ""
     },
@@ -1111,15 +1092,15 @@
       "name": "KDDI",
       "event_date": "Wed, 30 Sep 2026",
       "event_type": "disclosure",
-      "title": "au PAY アプリ上から使える暗号資産ウォレットを提供開始 - newsroom.kddi.com",
+      "title": "au PAY アプリ上から使える暗号資産ウォレットを提供開始 - KDDI ニュースルーム",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1sUHc2M3pwRHhBNFBtcHJRNkdJb1RIRXQxNDRmNHlOTE03YUR4V20xTUVmLVdWc1NGc1poMmtIekZDdExpeXJTXzFBVXZQOHVlNDNoVXhfeUwzNGdteXh5UWV1dUZ0dlhhRk5GYg?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "6e2cb71b95eb8a90d097a58c",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "811e6dc3050318b09dd4170c",
       "raw_excerpt": ""
     },
     {
@@ -1129,15 +1110,15 @@
       "name": "KDDI",
       "event_date": "Wed, 30 Sep 2026",
       "event_type": "disclosure",
-      "title": "KDDI、10月から楽天へ回線貸し縮小 横浜・神戸など18政令市の市街地 - 日本経済新聞",
+      "title": "KDDI、10月から楽天へ回線貸し縮小 横浜・神戸など18政令市の市街地 - nikkei.com",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1CRDNDSG42TEJyeFBoaW50dWFGeDl4eUJiaFZocUhQd0NSNTZnTUJ3VkVtVENVSlR0Z25OTFVmVUpPOWptTEl4Umg2ZVVEUXQzUm8xNV9WaFZMdGNxakhhRGl1OGRNV2dmZzRzYw?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "6c7db8252117df0e96b6b49d",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "a323c06ad672c855c087c510",
       "raw_excerpt": ""
     },
     {
@@ -1154,8 +1135,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "b052b6b3a03c5ba886264976",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "9433",
+      "ticker": "9433.T",
+      "name": "KDDI",
+      "event_date": "Wed, 30 Sep 2026",
+      "event_type": "disclosure",
+      "title": "KDDI、全国基地局の現地保守支援システムに「テックタッチ」採用 データ入力の誤りを10分の1に削減 - enterprisezine.jp",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5pYzlKT3R0UXJiNUNDd0lndTliYUpXYXVhY29aZVNQTUJqb0U3WUhvUkdud1pfMlFzR29BRHpIU3VSNmpfVVlDYVVZbHhCcGZBbF9sbUNIV2c5UQ?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "040097f079ef6e01385f7798",
       "raw_excerpt": ""
     },
     {
@@ -1172,7 +1171,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "0b28de37850ac8a54266a797",
       "raw_excerpt": ""
     },
@@ -1183,15 +1182,15 @@
       "name": "NEC",
       "event_date": "Wed, 30 Sep 2026",
       "event_type": "disclosure",
-      "title": "NECとシュナイダー、電力・通信設備管理「ArcFM」を国内提供--GISで設計から運用まで一元化 - ZDNET Japan",
+      "title": "NECとシュナイダー、電力・通信設備管理「ArcFM」を国内提供--GISで設計から運用まで一元化 - japan.zdnet.com",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBQb3Y3WTZjS29aeXo4bWduRXNoVk9mN1U2T2lXRV9pVkJCREdHMkJZclg1U1RUMnlGdFA0US16NjRnVTZma1YwVnRfRFlabm1fakpR?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "88c4b70fc20173ca05943bc5",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "5f29eb68a31ea13875a71151",
       "raw_excerpt": ""
     },
     {
@@ -1208,7 +1207,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "141553d549dbb906da487dfe",
       "raw_excerpt": ""
     },
@@ -1219,15 +1218,15 @@
       "name": "浜松ホトニクス",
       "event_date": "Wed, 30 Sep 2026",
       "event_type": "disclosure",
-      "title": "半導体部品の故障を高い精度で特定 浜松ホトニクス、解析装置の受注開始：ニュース - biz.chunichi.co.jp",
+      "title": "半導体部品の故障を高い精度で特定 浜松ホトニクス、解析装置の受注開始：ニュース - 中日BIZナビ",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
       "source_url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE41OWN5OFhKZW1nMTNVSy1zc2hGbVVMNm5VUUI2WUFQUUdLVDlxcFBDUDhIckt4TDBjYzdDZmhYMF85Rmx4ZXd2TkM5OTRJT1U3eE5Yb1VYTG1iQVlTX0N3?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
-      "event_id": "16b0310784cea09345afa1c7",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
+      "event_id": "d739d1900e1efd4998e078a2",
       "raw_excerpt": ""
     },
     {
@@ -1244,7 +1243,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "event_id": "839c9365e1f8e90e890de6eb",
       "raw_excerpt": ""
     }
@@ -1253,7 +1252,7 @@
     {
       "source": "TDnet",
       "status": "ok",
-      "fetched_at": "2026-09-30T15:21:09+00:00",
+      "fetched_at": "2026-09-30T15:53:10+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1261,7 +1260,7 @@
     {
       "source": "EDINET",
       "status": "ok",
-      "fetched_at": "2026-09-30T15:21:12+00:00",
+      "fetched_at": "2026-09-30T15:53:12+00:00",
       "records": 4,
       "error": "",
       "source_tier": "primary"
@@ -1269,7 +1268,7 @@
     {
       "source": "SEC",
       "status": "ok",
-      "fetched_at": "2026-09-30T15:21:18+00:00",
+      "fetched_at": "2026-09-30T15:53:19+00:00",
       "records": 34,
       "error": "",
       "source_tier": "primary"
@@ -1277,7 +1276,7 @@
     {
       "source": "CompanyIR",
       "status": "ok",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1285,7 +1284,7 @@
     {
       "source": "NewsRSS",
       "status": "ok",
-      "fetched_at": "2026-09-30T15:21:20+00:00",
+      "fetched_at": "2026-09-30T15:53:20+00:00",
       "records": 20,
       "error": "",
       "source_tier": "secondary"
@@ -1293,7 +1292,7 @@
     {
       "source": "yfinance",
       "status": "ok",
-      "fetched_at": "2026-09-30T15:21:30+00:00",
+      "fetched_at": "2026-09-30T15:53:30+00:00",
       "records": 36,
       "error": "",
       "source_tier": "secondary"
@@ -1301,7 +1300,7 @@
   ],
   "supply_demand_context": {
     "version": "1.0.0",
-    "generated_at_utc": "2026-09-30T15:21:30+00:00",
+    "generated_at_utc": "2026-09-30T15:53:31+00:00",
     "observed_date_jst": "2026-10-01",
     "data_status": "partial",
     "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
@@ -1326,7 +1325,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9167669770731056,
         "avg_daily_float_turnover_ratio": 0.016302890850962145,
-        "current_volume_ratio_30d": 0.0763907142258822,
+        "current_volume_ratio_30d": 0.1147550453919187,
         "short_percent_float": 0.0992,
         "short_interest_change_ratio": 0.08353554816057684,
         "days_to_cover": 8.75,
@@ -1341,7 +1340,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9029617667243865,
         "avg_daily_float_turnover_ratio": 0.003530013136728024,
-        "current_volume_ratio_30d": 0.09093525179856116,
+        "current_volume_ratio_30d": 0.10141007194244604,
         "short_percent_float": 0.0165,
         "short_interest_change_ratio": 0.13861208738198605,
         "days_to_cover": 5.37,
@@ -1356,7 +1355,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9634700024544378,
         "avg_daily_float_turnover_ratio": 0.009785104201310148,
-        "current_volume_ratio_30d": 0.1709811215570316,
+        "current_volume_ratio_30d": 0.21311433294755217,
         "short_percent_float": 0.0559,
         "short_interest_change_ratio": 0.24890224425410823,
         "days_to_cover": 7.59,
@@ -1371,7 +1370,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9927145255408554,
         "avg_daily_float_turnover_ratio": 0.008624044868807931,
-        "current_volume_ratio_30d": 0.5422128478165377,
+        "current_volume_ratio_30d": 0.6545100652842364,
         "short_percent_float": 0.0589,
         "short_interest_change_ratio": 0.16929543518734325,
         "days_to_cover": 7.58,
@@ -1386,7 +1385,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9637600043517661,
         "avg_daily_float_turnover_ratio": 0.010273345547226633,
-        "current_volume_ratio_30d": 0.12471881950529083,
+        "current_volume_ratio_30d": 0.15344030127384242,
         "short_percent_float": 0.066300005,
         "short_interest_change_ratio": -0.010184011331561216,
         "days_to_cover": 7.11,
@@ -1401,7 +1400,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9787300060292479,
         "avg_daily_float_turnover_ratio": 0.010877273773539874,
-        "current_volume_ratio_30d": 0.09456431202668182,
+        "current_volume_ratio_30d": 0.1436116638844067,
         "short_percent_float": 0.062,
         "short_interest_change_ratio": 0.19699945383722284,
         "days_to_cover": 5.15,
@@ -1416,7 +1415,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9161868949156889,
         "avg_daily_float_turnover_ratio": 0.008695948879595681,
-        "current_volume_ratio_30d": 0.31614444354283283,
+        "current_volume_ratio_30d": 0.3738191216619041,
         "short_percent_float": 0.0512,
         "short_interest_change_ratio": -0.12380333266953414,
         "days_to_cover": 6.14,
@@ -1431,7 +1430,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9595199770303237,
         "avg_daily_float_turnover_ratio": 0.007356543708498582,
-        "current_volume_ratio_30d": 0.07619764024126931,
+        "current_volume_ratio_30d": 0.09322022093136641,
         "short_percent_float": 0.044099998,
         "short_interest_change_ratio": 0.2866733873373022,
         "days_to_cover": 5.47,
@@ -1446,7 +1445,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9711799974578201,
         "avg_daily_float_turnover_ratio": 0.00854896907892655,
-        "current_volume_ratio_30d": 0.13393785830868793,
+        "current_volume_ratio_30d": 0.1704411004563358,
         "short_percent_float": 0.0712,
         "short_interest_change_ratio": -0.1080482465901702,
         "days_to_cover": 9.22,
@@ -1461,7 +1460,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.7792476728663396,
         "avg_daily_float_turnover_ratio": 0.021179309255008556,
-        "current_volume_ratio_30d": 0.4726129075579011,
+        "current_volume_ratio_30d": 0.5299314369920839,
         "short_percent_float": 0.0513,
         "short_interest_change_ratio": -0.08954405528630649,
         "days_to_cover": 3.26,
