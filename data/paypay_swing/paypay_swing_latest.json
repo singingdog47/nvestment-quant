@@ -1,69 +1,69 @@
 {
-  "generated_at_jst": "2026-09-30T22:49:45+09:00",
+  "generated_at_jst": "2026-10-01T00:23:35+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
-    "reason": "首位ビットコインは79.3点だが確認閾値未達",
-    "margin": 2.23
+    "reason": "首位ビットコインは78.7点だが確認閾値未達",
+    "margin": 1.5
   },
   "ranking": [
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 84649.828125,
+      "close": 83836.0625,
       "data_date": "2026-09-30",
-      "momentum": 97.67,
-      "macro": 67.2,
-      "trend": 96.75,
-      "risk": 69.23,
+      "momentum": 96.39,
+      "macro": 67.11,
+      "trend": 96.2,
+      "risk": 68.66,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 79.34
+      "total": 78.7
     },
     {
       "key": "STANDARD",
       "label": "スタンダード",
       "ticker": "SPY",
-      "close": 767.1400146484375,
+      "close": 767.989990234375,
       "data_date": "2026-09-30",
-      "momentum": 67.4,
+      "momentum": 67.61,
       "macro": 62.0,
-      "trend": 99.17,
-      "risk": 90.89,
+      "trend": 99.24,
+      "risk": 90.93,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 77.11
+      "total": 77.2
     },
     {
       "key": "TECH",
       "label": "テクノロジー",
       "ticker": "QQQ",
-      "close": 741.8887939453125,
+      "close": 742.9099731445312,
       "data_date": "2026-09-30",
-      "momentum": 73.55,
-      "macro": 51.44,
-      "trend": 99.55,
-      "risk": 88.05,
+      "momentum": 73.81,
+      "macro": 51.4,
+      "trend": 99.63,
+      "risk": 88.11,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 76.42
+      "total": 76.52
     },
     {
       "key": "GOLD",
       "label": "金（ゴールド）",
       "ticker": "GLD",
-      "close": 383.3389892578125,
+      "close": 381.1099853515625,
       "data_date": "2026-09-30",
-      "momentum": 31.87,
-      "macro": 31.58,
+      "momentum": 30.84,
+      "macro": 31.47,
       "trend": 0.0,
-      "risk": 66.71,
+      "risk": 66.39,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 34.82
+      "total": 34.4
     }
   ],
   "source_health": [
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-30T13:49:45+00:00",
+      "fetched_at": "2026-09-30T15:23:35+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-30T13:49:45+00:00",
+      "fetched_at": "2026-09-30T15:23:35+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-30T13:49:45+00:00",
+      "fetched_at": "2026-09-30T15:23:35+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,7 +95,7 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-09-30T13:49:45+00:00",
+      "fetched_at": "2026-09-30T15:23:35+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -103,7 +103,7 @@
       "source": "yfinance:^TNX",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-30T13:49:45+00:00",
+      "fetched_at": "2026-09-30T15:23:35+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -111,7 +111,7 @@
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-09-30T13:49:45+00:00",
+      "fetched_at": "2026-09-30T15:23:35+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -119,7 +119,7 @@
       "source": "yfinance:^VIX",
       "status": "ok",
       "records": 254,
-      "fetched_at": "2026-09-30T13:49:45+00:00",
+      "fetched_at": "2026-09-30T15:23:35+00:00",
       "error": "",
       "source_tier": "secondary"
     }
