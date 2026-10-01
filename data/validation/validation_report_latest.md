@@ -1,6 +1,6 @@
 # Investment Quant Validation Report v2.1
 
-Generated: 2026-10-01T15:42:30+00:00
+Generated: 2026-10-01T16:22:02+00:00
 
 This report evaluates recorded decisions ex post. It is diagnostic evidence, not a trading instruction.
 Benchmark-relative metrics are preferred for judging signal quality; missing benchmark data is not imputed.

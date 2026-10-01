@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-01T15:41:23+00:00",
-  "generated_at_utc": "2026-10-01T15:41:23+00:00",
+  "generated_at": "2026-10-01T16:20:55+00:00",
+  "generated_at_utc": "2026-10-01T16:20:55+00:00",
   "date_jst": "2026-10-02",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 61.0,
+  "regime_score": 61.66,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,15 +30,15 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 72.66510715563918,
-    "stress": 74.57250062942505,
-    "participation": 43.7182594644506,
-    "liquidity": 40.29581130714533,
+    "trend": 72.81412073752588,
+    "stress": 74.6399993133545,
+    "participation": 44.0356648199446,
+    "liquidity": 43.85025456636214,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.1299991607666,
+    "vix": 17.040000915527344,
     "hy_oas": 3.12,
     "ig_oas": 0.84,
     "treasury_volatility_proxy": 86.234,
@@ -49,9 +49,9 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9570,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-01T15:41:21.001238+00:00",
+    "breadth_source_as_of_utc": "2026-10-01T16:20:52.639748+00:00",
     "nfci": -0.548,
-    "volume_ratio20_mean": 0.6614952826786331,
+    "volume_ratio20_mean": 0.7503563641590535,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-01T15:42:25+00:00",
+  "generated_at": "2026-10-01T16:21:57+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -203,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-01T15:41:21.001238+00:00
+- Data retrieved (UTC): 2026-10-01T16:20:52.639748+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -231,9 +231,9 @@ Generated quality score: **0.745** / actionable=True
 |---|---|---:|
 | JP | Financials | 8 |
 | JP | Other | 12 |
-| US | Financials | 8 |
+| US | Financials | 9 |
 | US | Mortgage REIT | 1 |
-| US | Other | 5 |
+| US | Other | 4 |
 | US | Shipping | 6 |
 
 ## Research candidates
@@ -242,7 +242,7 @@ Generated quality score: **0.745** / actionable=True
 |---|---:|---|---|---|---:|---:|---|
 | JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 75.0 | 100.0 | unchanged |
 | JP | 2 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.6 | 99.9 | unchanged |
-| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 74.2 | 99.9 | new_entry |
+| JP | 3 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 74.2 | 99.9 | unchanged |
 | JP | 6 | 3932.T | Akatsuki Inc. | Other | 73.6 | 99.7 | unchanged |
 | JP | 8 | 6750.T | ELECOM CO.,LTD. | Other | 72.7 | 99.6 | unchanged |
 | JP | 10 | 2121.T | MIXI,Inc. | Other | 70.8 | 99.5 | unchanged |
@@ -250,16 +250,16 @@ Generated quality score: **0.745** / actionable=True
 | JP | 12 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.3 | 99.4 | unchanged |
 | JP | 13 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.1 | 99.4 | unchanged |
 | JP | 14 | 8789.T | FinTech Global Incorporated | Other | 69.8 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.1 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.7 | 100.0 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.6 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.2 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 81.9 | 99.9 | unchanged |
-| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.6 | 99.9 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.6 | 99.7 | unchanged |
+| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.5 | 99.9 | unchanged |
+| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | 99.7 | unchanged |
 | US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.3 | 99.7 | unchanged |
-| US | 13 | FRO | Frontline Plc Ordinary Shares | Other | 80.2 | 99.6 | unchanged |
-| US | 20 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 78.6 | 99.4 | unchanged |
-| US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.5 | 99.4 | unchanged |
+| US | 14 | FRO | Frontline Plc Ordinary Shares | Other | 80.2 | 99.6 | unchanged |
+| US | 21 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 78.6 | 99.4 | unchanged |
+| US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.6 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 

@@ -1,10 +1,10 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-01T15:42:26+00:00",
+  "generated_at": "2026-10-01T16:21:58+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 6,
+    "WATCH": 0,
     "WARNING": 1,
     "CRITICAL": 0
   },
@@ -19,72 +19,6 @@
       "threshold": 0.9,
       "entity": null,
       "source": "market_regime_latest.json"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "カカクコム、KDDIと資本提携解消（時事通信） - Yahoo!ニュース",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "KDDI、企業のデータ容量をAIで最適化へ（時事通信） - Yahoo!ニュース",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "信越化学工業(株)【4063】：板気配 - finance.yahoo.co.jp",
-      "message": "New company event detected for 信越化学工業.",
-      "value": null,
-      "threshold": null,
-      "entity": "信越化学工業",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - finance.yahoo.co.jp",
-      "message": "New company event detected for 信越化学工業.",
-      "value": null,
-      "threshold": null,
-      "entity": "信越化学工業",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "半導体部品の故障を高い精度で特定 浜松ホトニクス、解析装置の受注開始：ニュース - biz.chunichi.co.jp",
-      "message": "New company event detected for 浜松ホトニクス.",
-      "value": null,
-      "threshold": null,
-      "entity": "浜松ホトニクス",
-      "source": "Google News RSS"
     }
   ],
   "rules": [
