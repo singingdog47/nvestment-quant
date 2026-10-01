@@ -49,8 +49,12 @@ def build_targets(screening_top_n=30, max_targets=80) -> pd.DataFrame:
             if Path(p).exists():
                 x=_canonical(_read_csv(p),"portfolio","critical")
                 if not x.empty: pieces.append(x)
-    if Path("config/intelligence_watchlist.csv").exists():
-        x=_canonical(_read_csv("config/intelligence_watchlist.csv"),"watchlist","high")
+    watchlist_path = "config/watchlist_master.csv" if Path("config/watchlist_master.csv").exists() else "config/intelligence_watchlist.csv"
+    if Path(watchlist_path).exists():
+        w = _read_csv(watchlist_path)
+        if "status" in w.columns:
+            w = w[w["status"].fillna("active").astype(str).str.lower().eq("active")]
+        x=_canonical(w,"watchlist","high")
         if not x.empty: pieces.append(x)
     for p in ["data/screening_latest.csv","data/screening_full.csv.gz"]:
         if Path(p).exists():
