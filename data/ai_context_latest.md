@@ -6,12 +6,12 @@ Generated quality score: **0.745** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-09-30T15:52:29+00:00",
-  "generated_at_utc": "2026-09-30T15:52:29+00:00",
+  "generated_at": "2026-10-01T01:18:40+00:00",
+  "generated_at_utc": "2026-10-01T01:18:40+00:00",
   "date_jst": "2026-10-01",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 61.19,
+  "regime_score": 66.41,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,28 +30,28 @@ Generated quality score: **0.745** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 73.04520932587762,
-    "stress": 75.64999991416931,
+    "trend": 79.29462294423506,
+    "stress": 75.30499988555908,
     "participation": 45.242354298903635,
-    "liquidity": 36.97779913499088,
+    "liquidity": 59.87025700351543,
     "positioning": 57.66981615729503
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.880000114440918,
+    "vix": 16.34000015258789,
     "hy_oas": 3.08,
     "ig_oas": 0.84,
-    "treasury_volatility_proxy": 86.133,
+    "treasury_volatility_proxy": 86.234,
     "treasury_volatility_percentile_rank": 0.9365,
     "treasury_volatility_stress_score": 29.76,
-    "treasury_volatility_as_of_date": "2026-09-29",
+    "treasury_volatility_as_of_date": "2026-09-30",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9567,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-09-30T15:52:26.602253+00:00",
     "nfci": -0.548,
-    "volume_ratio20_mean": 0.5785449783747719,
+    "volume_ratio20_mean": 1.392716835177685,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -94,7 +94,7 @@ Generated quality score: **0.745** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 65481.26953125,
+        "spot": 67745.78125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-09-30T15:53:30+00:00",
+  "generated_at": "2026-10-01T01:19:42+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -195,9 +195,9 @@ Generated quality score: **0.745** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=4 / tier=primary
-- SEC: ok / records=34 / tier=primary
+- SEC: ok / records=35 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=20 / tier=secondary
+- NewsRSS: ok / records=19 / tier=secondary
 - yfinance: ok / records=36 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -274,7 +274,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 ## Critical / high company events
 - [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - nikkei.com | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5
-- [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化(4063) 取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ - みんかぶ | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiRkFVX3lxTE53YmZub2hBZWxIU2hSX3N2dW8yUUx6TUE1MTBnaHlIcUgyZ0Z4c1d1MXlkUGJmTTNQbVFFdXJUMHhib2Z5OHc?oc=5
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-08-17 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000083/care-20260817.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-08-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026057375/stng6k-08172026.htm
 - [HIGH] AUPH Aurinia Pharmaceuticals Inc - Common Shares | 2026-08-19 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1600620/000160062026000066/auph-20260819.htm
@@ -313,6 +312,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 6701 NEC | 2026-09-29 | filing | 変更報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z50A
 - [HIGH] 4063 信越化学工業 | 2026-09-30 | filing | 訂正臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z5HO
 - [HIGH] 4063 信越化学工業 | 2026-09-30 | filing | 訂正有価証券届出書（参照方式） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z5CC
+- [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-09-30 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026063997/stng6k-09302026.htm
 - [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化、今期配当を20円増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE14VEdPRDlYZE1odUpxZzR6TFpHaHl5MW8zQVhPVkkxRWVYbHNXVV9JUlZZV1pZRmlGOWNSZ250aFVycHNWRkx3YnFzN040dUd5c0E?oc=5
 
 ## Mandatory AI rules
