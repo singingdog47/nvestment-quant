@@ -9,7 +9,7 @@ from .edinet import fetch_edinet
 from .sec import fetch_sec
 from .company_ir import fetch_company_ir
 from .news_rss import fetch_news_rss
-from .primary_fundamentals import collect_primary_fundamentals, write_primary_fundamentals
+from .primary_fundamentals import collect_primary_fundamentals, write_primary_fundamentals, document_id
 from .backfill import scan_historical_edinet, audit_primary_coverage
 from .snapshot import build_snapshot
 from .quality import quality_report
@@ -51,6 +51,17 @@ def main():
         max_documents=int(os.getenv("EDINET_PRIMARY_MAX_DOCUMENTS","12")),
     )
     write_primary_fundamentals(primary, "data/fundamentals_latest.csv")
+    resolved = set(primary_health.get("resolved_document_ids") or [])
+    resolved.update(primary["document_id"].dropna().astype(str).tolist())
+    checkpoint = STATE/"edinet_backfill_checkpoint.json"
+    persisted = load_json(checkpoint, {})
+    if "pending" in persisted:
+        persisted["pending"] = [
+            item for item in persisted["pending"]
+            if document_id(type("EDINETRecord", (), item)()) not in resolved
+        ]
+        save_json(checkpoint, persisted)
+        backfill_status["pending_count"] = len(persisted["pending"])
     save_json(OUT/"primary_fundamentals_health_latest.json",primary_health)
     coverage_rows,coverage_stats=audit_primary_coverage(targets,primary)
     coverage_rows.to_csv(OUT/"primary_fundamentals_coverage_latest.csv",index=False,encoding="utf-8")
