@@ -25,6 +25,7 @@ GENERATED_PRIVATE_OUTPUT_NAMES = {
     "portfolio_monthly_latest.json",
     "portfolio_monthly_latest.md",
     "snapshot_manifest_latest.json",
+    "investment_state_latest.json",
 }
 
 HISTORY_LEDGER_NAME = "investment_quant_private_history_ledger.csv"
@@ -183,6 +184,48 @@ def download_recent_csvs(destination_dir: str | Path, limit: int = 20) -> list[t
         except Exception:
             continue
     return out
+
+
+def download_latest_assetbalance(destination_dir: str | Path, max_pages: int = 20) -> tuple[Path, dict] | None:
+    """Locate assetbalance exports across folder pages; don't assume recent upload = latest snapshot.
+
+    Download only the newest timestamped source. Ignore generated portfolio_latest.csv.
+    Pagination avoids missing a valid snapshot when other files crowd the top 50.
+    """
+    import re
+    from datetime import datetime, timedelta, timezone
+    from portfolio_import import infer_portfolio_source_as_of
+
+    service = _service()
+    folder = _folder_id()
+    query = f"'{folder}' in parents and trashed=false and mimeType!='application/vnd.google-apps.folder'"
+    token = None
+    matches = []
+    for _ in range(max_pages):
+        page = service.files().list(
+            q=query, spaces="drive", fields="nextPageToken,files(id,name,mimeType,modifiedTime)",
+            orderBy="modifiedTime desc", pageSize=100, pageToken=token,
+        ).execute()
+        for meta in page.get("files", []):
+            if re.fullmatch(r"assetbalance\\(all\\)_20\\d{6}_[0-2]\\d[0-5]\\d[0-5]\\d\\.csv", str(meta.get("name") or ""), re.I):
+                as_of, method = infer_portfolio_source_as_of(meta.get("name"), meta.get("modifiedTime"))
+                if method == "filename_embedded_export_time" and as_of:
+                    matches.append((datetime.fromisoformat(as_of), meta))
+        token = page.get("nextPageToken")
+        if not token:
+            break
+    if not matches:
+        return None
+    matches.sort(key=lambda row: (row[0], str(row[1].get("modifiedTime") or "")), reverse=True)
+    destination = Path(destination_dir)
+    destination.mkdir(parents=True, exist_ok=True)
+    for _, meta in matches[:10]:
+        try:
+            path = _download_id(str(meta["id"]), destination / Path(str(meta["name"])).name)
+            return path, meta
+        except Exception:
+            continue
+    return None
 
 
 def download_recent_files(destination_dir: str | Path, limit: int = 50) -> list[tuple[Path, dict]]:
