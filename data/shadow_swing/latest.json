@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-10-02",
+  "as_of_date": "2026-10-03",
   "status": "ACTIVE",
-  "data_fresh": true,
+  "data_fresh": false,
   "metrics": {
     "initial_capital_jpy": 1000000.0,
     "nav_jpy": 996400.0,
@@ -17,7 +17,7 @@
   },
   "regime": {
     "label": "CONSTRUCTIVE",
-    "score": 60.67,
+    "score": 66.06,
     "confidence": 1.0
   },
   "fills_today": [],
@@ -33,7 +33,7 @@
       "entry_date": "2026-09-15",
       "last_price": 897.0,
       "peak_price": 937.0,
-      "holding_sessions": 12,
+      "holding_sessions": 13,
       "confidence": 0.66,
       "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
     }
