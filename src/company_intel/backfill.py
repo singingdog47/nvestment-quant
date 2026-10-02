@@ -41,7 +41,8 @@ def scan_historical_edinet(
     anchor = date.fromisoformat(state.get("anchor_date", today.isoformat()))
     # After completing a historical window, a fresh cycle is explicit, not automatic.
     if state.get("complete"):
-        return [], {**state, "status": "complete", "new_events": 0}
+        pending = [Event(**x) for x in state.get("pending", [])]
+        return pending, {**state, "status": "complete", "new_events": 0}
     if not os.getenv("EDINET_API_KEY"):
         return [], {**state, "status": "unconfigured", "new_events": 0}
     cursor = date.fromisoformat(state["next_date"]) if state.get("next_date") else anchor - timedelta(days=7)
@@ -49,6 +50,7 @@ def scan_historical_edinet(
     codes = _targets_by_code(targets)
     http = session or requests.Session()
     events: list[Event] = []
+    pending_before = [Event(**x) for x in state.get("pending", [])]
     scanned = 0
     errors = []
     until = max(cursor - timedelta(days=max(1, days_per_run) - 1), floor)
@@ -89,7 +91,10 @@ def scan_historical_edinet(
                                 now_iso(), stable_hash(f"edinet|{docid}|{code}|{title}")[:24], ""))
         scanned += 1
         current -= timedelta(days=1)
+    # Persist candidate filings until the numeric downloader confirms processing.
+    pending_by_id = {e.event_id: e for e in pending_before + events}
     state = {
+        "pending": [e.asdict() for e in pending_by_id.values()],
         "anchor_date": anchor.isoformat(),
         "next_date": current.isoformat(),
         "lookback_days": lookback_days,
@@ -101,7 +106,7 @@ def scan_historical_edinet(
         "updated_at_utc": now_iso(),
     }
     save_json(checkpoint_path, state)
-    return events, state
+    return list(pending_by_id.values()), state
 
 
 METRICS = ["net_sales_jpy", "operating_income_jpy", "net_income_jpy",
