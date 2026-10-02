@@ -101,6 +101,9 @@ def parse_orders_bytes(raw: bytes) -> dict:
     def idx(needle: str) -> int | None:
         return next((i for i, value in enumerate(headers) if needle in value), None)
 
+    order_id_i = idx("注文番号")
+    code_i = idx("銘柄コード")
+    name_i = idx("銘柄名")
     status_i = idx("状況")
     side_i = idx("売買")
     qty_i = idx("注文数量")
@@ -112,6 +115,9 @@ def parse_orders_bytes(raw: bytes) -> dict:
             continue
         get = lambda i: "" if i is None or i >= len(row) else str(row[i]).strip()
         items.append({
+            "order_id": get(order_id_i),
+            "code": get(code_i),
+            "name": get(name_i),
             "status": get(status_i),
             "side": get(side_i),
             "quantity": _num(get(qty_i)),
