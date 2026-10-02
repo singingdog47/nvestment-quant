@@ -22,6 +22,7 @@ from private_drive import (
     append_history_ledger,
     canonical_json_sha256,
     download_recent_files,
+    download_latest_assetbalance,
     encode_json_cell,
     file_sha256,
     upload_or_replace,
@@ -67,6 +68,13 @@ def _build_latest_portfolio(private_dir: Path, candidates: list[tuple[Path, dict
     errors: list[dict] = []
     target = _target_date()
     eligible = [(p, m) for p, m in candidates if target is None or _source_local_date(m) == target]
+    # Brokerage export time wins over Drive upload time. The same export can
+    # be re-uploaded later without replacing a newer brokerage snapshot.
+    eligible.sort(
+        key=lambda item: (_parse_dt(infer_portfolio_source_as_of(item[1].get("name"), item[1].get("modifiedTime"))[0])
+                          or datetime.min.replace(tzinfo=timezone.utc)),
+        reverse=True,
+    )
     for path, meta in eligible:
         try:
             parsed = parse_rakuten_csv_bytes(path.read_bytes())
@@ -79,6 +87,7 @@ def _build_latest_portfolio(private_dir: Path, candidates: list[tuple[Path, dict
         manifest = {
             "status": "ok",
             "source_file": meta.get("name"),
+            "source_file_id": meta.get("id"),
             "source_modified_time": meta.get("modifiedTime"),
             "source_as_of": source_as_of_value,
             "source_as_of_method": source_as_of_method,
@@ -412,8 +421,17 @@ def _persist_private_history(
 def main() -> None:
     private_dir = Path(os.getenv("PRIVATE_WORKDIR", ".private")); private_dir.mkdir(parents=True, exist_ok=True)
     candidates = download_recent_files(private_dir / "drive_inbox", limit=int(os.getenv("PORTFOLIO_SCAN_LIMIT", "50")))
+    newest_export = download_latest_assetbalance(private_dir / "drive_inbox" / "assetbalance")
+    if newest_export and not any(meta.get("id") == newest_export[1].get("id") for _, meta in candidates):
+        candidates.append(newest_export)
     local_portfolio, manifest = _build_latest_portfolio(private_dir, candidates)
-    account_inputs = _build_latest_account_inputs(private_dir, candidates)
+    # Account summary must come from the same export as the selected holdings.
+    # Keep newer order/buying-power sources independent.
+    matching = [(p, m) for p, m in candidates if m.get("id") == manifest.get("source_file_id") and m.get("id")]
+    if not matching:
+        matching = [(p, m) for p, m in candidates if m.get("name") == manifest.get("source_file")]
+    other = [(p, m) for p, m in candidates if (p, m) not in matching]
+    account_inputs = _build_latest_account_inputs(private_dir, matching + other)
     os.environ["PORTFOLIO_PATH"] = str(local_portfolio)
     if manifest.get("source_as_of"):
         os.environ["PORTFOLIO_SOURCE_AS_OF"] = str(manifest["source_as_of"])
