@@ -70,16 +70,33 @@ def _merge_file(base, p, suffix):
 
 
 def _merge_existing(base):
-    # 1) Dedicated fundamentals: only these can set fundamental_status="ok".
+    # 1) Primary fundamentals require traceable EDINET provenance plus an
+    # actual numeric standard fact. Metadata alone must NEVER raise coverage.
+    metrics = ["net_sales_jpy", "operating_income_jpy", "net_income_jpy",
+               "operating_cash_flow_jpy", "assets_jpy", "liabilities_jpy"]
     for p in FUNDAMENTAL_FILES:
         if not Path(p).exists():
             continue
-        merged, used, src_cols = _merge_file(base, p, "_fund")
+        merged, used, _ = _merge_file(base, p, "_fund")
         if used:
-            available_cols = [c for c in src_cols if c in merged.columns]
-            if available_cols:
-                available = merged[available_cols].notna().any(axis=1)
-                merged.loc[available, "fundamental_status"] = "ok"
+            verified = pd.Series(False, index=merged.index)
+            provenance = {"source", "source_tier", "document_id", "source_url",
+                          "filed_date", "currency_unit", "period_context"}
+            if provenance.issubset(merged.columns):
+                # Target rows already have a 'source' column (watchlist/screening).
+                # The merged filing source must be read from its suffixed column.
+                filing_source = "source_fund" if "source_fund" in merged.columns else "source"
+                provenance_ok = (
+                    merged[filing_source].eq("EDINET") & merged["source_tier"].eq("primary")
+                    & merged["document_id"].notna() & merged["source_url"].notna()
+                    & merged["filed_date"].notna() & merged["currency_unit"].eq("JPY")
+                    & merged["period_context"].eq("CurrentYear")
+                )
+                available = [c for c in metrics if c in merged.columns]
+                if available:
+                    numeric = merged[available].apply(pd.to_numeric, errors="coerce")
+                    verified = provenance_ok & numeric.notna().any(axis=1)
+            merged.loc[verified, "fundamental_status"] = "ok"
             merged["fundamental_source_file"] = p
             merged["secondary_fundamental_status"] = "missing"
             merged["secondary_fundamental_source_file"] = ""
