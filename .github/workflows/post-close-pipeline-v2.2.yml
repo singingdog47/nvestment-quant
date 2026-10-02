@@ -140,7 +140,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json data/data_coverage_latest.json data/daily_report.md data/integrated_report_latest.md data/mobile_brief_latest.md data/regime data/intelligence data/supply_demand/supply_demand_latest.csv data/supply_demand/supply_demand_summary_latest.json data/supply_demand/supply_demand_summary_latest.md data/supply_demand/supply_demand_history.csv data/alerts data/state data/ai_context_latest.md data/decision_context_latest.json data/validation data/paypay_swing
+          git add -- data/fundamentals_latest.csv data/screening_latest.csv data/screening_full.csv.gz data/quality_report.json data/data_coverage_latest.json data/daily_report.md data/integrated_report_latest.md data/mobile_brief_latest.md data/regime data/intelligence data/supply_demand/supply_demand_latest.csv data/supply_demand/supply_demand_summary_latest.json data/supply_demand/supply_demand_summary_latest.md data/supply_demand/supply_demand_history.csv data/alerts data/state data/ai_context_latest.md data/decision_context_latest.json data/validation data/paypay_swing
           if git diff --cached --quiet; then
             echo "No post-close output changes to commit."
             exit 0
