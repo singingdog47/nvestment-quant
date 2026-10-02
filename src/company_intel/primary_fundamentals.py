@@ -140,6 +140,7 @@ def collect_primary_fundamentals(events, previous_path: str | Path, *, session=N
     added = []
     errors = []
     seen = set()
+    resolved = []
     for _, docid, e in eligible:
         if docid in seen or len(seen) >= max_documents:
             continue
@@ -155,6 +156,7 @@ def collect_primary_fundamentals(events, previous_path: str | Path, *, session=N
             )
             response.raise_for_status()
             facts = extract_csv_zip(response.content)
+            resolved.append(docid)
             if not facts:
                 continue
             added.append({
@@ -173,7 +175,8 @@ def collect_primary_fundamentals(events, previous_path: str | Path, *, session=N
         all_rows = all_rows.drop_duplicates("document_id", keep="first")
         # Keep document lineage for audit elsewhere; snapshot uses latest per company.
         all_rows = all_rows.drop_duplicates("code", keep="first").reset_index(drop=True)
-    return all_rows, {"checked": len(seen), "new_companies": len(fresh), "errors": errors,
+    return all_rows, {"checked": len(seen), "resolved_document_ids": resolved,
+                      "new_companies": len(fresh), "errors": errors,
                       "primary_companies": len(all_rows), "status": "partial" if errors else "ok"}
 
 

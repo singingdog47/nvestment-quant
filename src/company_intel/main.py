@@ -9,7 +9,8 @@ from .edinet import fetch_edinet
 from .sec import fetch_sec
 from .company_ir import fetch_company_ir
 from .news_rss import fetch_news_rss
-from .primary_fundamentals import collect_primary_fundamentals, write_primary_fundamentals
+from .primary_fundamentals import collect_primary_fundamentals, write_primary_fundamentals, document_id
+from .backfill import scan_historical_edinet, audit_primary_coverage
 from .snapshot import build_snapshot
 from .quality import quality_report
 from .brief import build_brief, load_market_regime
@@ -40,9 +41,31 @@ def main():
     order={"critical":0,"high":1,"normal":2,"low":3}; events.sort(key=lambda e:(order.get(e.priority,2),e.event_date),reverse=False)
     cols=["market","code","ticker","name","event_date","event_type","title","summary","source","source_url","source_tier","data_status","priority","fetched_at","event_id","raw_excerpt"]
     pd.DataFrame([e.asdict() for e in events],columns=cols).to_csv(OUT/"company_events_latest.csv",index=False,encoding="utf-8-sig")
-    primary,primary_health=collect_primary_fundamentals(events, "data/fundamentals_latest.csv")
+    historical,backfill_status=scan_historical_edinet(
+        targets, STATE/"edinet_backfill_checkpoint.json",
+        days_per_run=int(os.getenv("EDINET_BACKFILL_DAYS_PER_RUN","14")),
+    )
+    save_json(OUT/"edinet_backfill_status_latest.json",backfill_status)
+    primary,primary_health=collect_primary_fundamentals(
+        events + historical, "data/fundamentals_latest.csv",
+        max_documents=int(os.getenv("EDINET_PRIMARY_MAX_DOCUMENTS","12")),
+    )
     write_primary_fundamentals(primary, "data/fundamentals_latest.csv")
+    resolved = set(primary_health.get("resolved_document_ids") or [])
+    resolved.update(primary["document_id"].dropna().astype(str).tolist())
+    checkpoint = STATE/"edinet_backfill_checkpoint.json"
+    persisted = load_json(checkpoint, {})
+    if "pending" in persisted:
+        persisted["pending"] = [
+            item for item in persisted["pending"]
+            if document_id(type("EDINETRecord", (), item)()) not in resolved
+        ]
+        save_json(checkpoint, persisted)
+        backfill_status["pending_count"] = len(persisted["pending"])
     save_json(OUT/"primary_fundamentals_health_latest.json",primary_health)
+    coverage_rows,coverage_stats=audit_primary_coverage(targets,primary)
+    coverage_rows.to_csv(OUT/"primary_fundamentals_coverage_latest.csv",index=False,encoding="utf-8")
+    save_json(OUT/"primary_fundamentals_coverage_latest.json",coverage_stats)
     snapshot,yfh=build_snapshot(targets,s.get("yfinance",{}).get("enabled",True),s.get("yfinance",{}).get("max_targets",40)); health.append(yfh); snapshot.to_csv(OUT/"company_snapshot_latest.csv",index=False,encoding="utf-8-sig")
     pd.DataFrame([h.__dict__ for h in health]).to_csv(OUT/"source_health_latest.csv",index=False,encoding="utf-8-sig")
     quality=quality_report(targets,events,health,snapshot,qcfg.get("minimum_actionable_score",0.72)); save_json(OUT/"data_quality_latest.json",quality)
@@ -55,7 +78,7 @@ def main():
     regime=load_market_regime(); syshealth=integration_health(); policy=build_policy_guardrails(regime,quality); save_json(OUT/"system_health_latest.json",syshealth); save_json(OUT/"policy_guardrails_latest.json",policy); brief=build_brief(targets,events,health,quality,snapshot,regime,policy,syshealth)
     (OUT/"ai_context_latest.md").write_text(brief,encoding="utf-8")
     Path("data/ai_context_latest.md").write_text(brief,encoding="utf-8")
-    context={"primary_fundamentals":primary_health,"quality":quality,"market_regime":regime,"policy_guardrails":policy,"system_health":syshealth,"events":[e.asdict() for e in events[:100]],"source_health":[h.__dict__ for h in health]}
+    context={"primary_fundamentals":primary_health,"historical_backfill":backfill_status,"primary_coverage_audit":coverage_stats,"quality":quality,"market_regime":regime,"policy_guardrails":policy,"system_health":syshealth,"events":[e.asdict() for e in events[:100]],"source_health":[h.__dict__ for h in health]}
     save_json(OUT/"decision_context_latest.json",context)
     save_json("data/decision_context_latest.json",context)
     result=publish_directory(str(OUT)); save_json(OUT/"drive_publish_status.json",result)
