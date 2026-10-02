@@ -27,6 +27,7 @@ from private_drive import (
     upload_or_replace,
 )
 from portfolio_risk import main as run_risk
+from investment_state import build_investment_state, write_investment_state
 from release_status import SYSTEM_VERSION
 
 JST = timezone(timedelta(hours=9))
@@ -223,6 +224,16 @@ def _write_valuation_and_monthly(
     return valuation, monthly
 
 
+def _write_shared_investment_state(private_dir: Path, account_inputs: dict, manifest: dict, policy_payload: dict) -> dict:
+    state = build_investment_state(account_inputs, manifest, policy_payload)
+    path = write_investment_state(state, private_dir / "investment_state_latest.json")
+    written = False
+    if _truthy_env("INVESTMENT_STATE_DRIVE_WRITEBACK", "true"):
+        upload_or_replace(path, "investment_state_latest.json", "application/json")
+        written = True
+    return {"state": state, "path": str(path), "drive_writeback": written}
+
+
 def _maybe_write_back_to_drive(private_dir: Path, out_dir: Path) -> bool:
     if not _truthy_env("PORTFOLIO_DRIVE_WRITEBACK"):
         return False
@@ -413,6 +424,7 @@ def main() -> None:
         local_portfolio, candidates, out_dir, cutoff_date=_target_date()
     )
     private_alerts_written = _write_private_alerts(out_dir)
+    shared_state = _write_shared_investment_state(private_dir, account_inputs, manifest, policy_payload)
     writeback = _maybe_write_back_to_drive(private_dir, out_dir)
     history = _persist_private_history(private_dir, out_dir, manifest, valuation_payload, monthly_payload)
     print(json.dumps({
@@ -426,6 +438,8 @@ def main() -> None:
         "account_input_types": sorted((account_inputs.get("inputs") or {}).keys()),
         "account_selection_policy": account_inputs.get("selection_policy"),
         "portfolio_policy_status": policy_payload.get("status"),
+        "investment_state_drive_writeback": shared_state.get("drive_writeback"),
+        "investment_state_open_orders": (shared_state.get("state") or {}).get("open_orders", {}).get("count"),
         "portfolio_valuation_status": valuation_payload.get("status"),
         "portfolio_valuation_mode": valuation_payload.get("analysis_mode"),
         "monthly_performance_status": monthly_payload.get("status"),
