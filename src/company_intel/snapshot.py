@@ -83,8 +83,11 @@ def _merge_existing(base):
             provenance = {"source", "source_tier", "document_id", "source_url",
                           "filed_date", "currency_unit", "period_context"}
             if provenance.issubset(merged.columns):
+                # Target rows already have a 'source' column (watchlist/screening).
+                # The merged filing source must be read from its suffixed column.
+                filing_source = "source_fund" if "source_fund" in merged.columns else "source"
                 provenance_ok = (
-                    merged["source"].eq("EDINET") & merged["source_tier"].eq("primary")
+                    merged[filing_source].eq("EDINET") & merged["source_tier"].eq("primary")
                     & merged["document_id"].notna() & merged["source_url"].notna()
                     & merged["filed_date"].notna() & merged["currency_unit"].eq("JPY")
                     & merged["period_context"].eq("CurrentYear")
