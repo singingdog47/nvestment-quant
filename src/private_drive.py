@@ -192,8 +192,7 @@ def download_latest_assetbalance(destination_dir: str | Path, max_pages: int = 2
     Download only the newest timestamped source. Ignore generated portfolio_latest.csv.
     Pagination avoids missing a valid snapshot when other files crowd the top 50.
     """
-    import re
-    from datetime import datetime, timedelta, timezone
+    from datetime import datetime
     from portfolio_import import infer_portfolio_source_as_of
 
     service = _service()
@@ -207,7 +206,7 @@ def download_latest_assetbalance(destination_dir: str | Path, max_pages: int = 2
             orderBy="modifiedTime desc", pageSize=100, pageToken=token,
         ).execute()
         for meta in page.get("files", []):
-            if re.fullmatch(r"assetbalance\\(all\\)_20\\d{6}_[0-2]\\d[0-5]\\d[0-5]\\d\\.csv", str(meta.get("name") or ""), re.I):
+            if str(meta.get("name") or "").lower().startswith("assetbalance(all)_") and str(meta.get("name") or "").lower().endswith(".csv"):
                 as_of, method = infer_portfolio_source_as_of(meta.get("name"), meta.get("modifiedTime"))
                 if method == "filename_embedded_export_time" and as_of:
                     matches.append((datetime.fromisoformat(as_of), meta))
