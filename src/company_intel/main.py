@@ -9,6 +9,7 @@ from .edinet import fetch_edinet
 from .sec import fetch_sec
 from .company_ir import fetch_company_ir
 from .news_rss import fetch_news_rss
+from .primary_fundamentals import collect_primary_fundamentals, write_primary_fundamentals
 from .snapshot import build_snapshot
 from .quality import quality_report
 from .brief import build_brief, load_market_regime
@@ -39,6 +40,9 @@ def main():
     order={"critical":0,"high":1,"normal":2,"low":3}; events.sort(key=lambda e:(order.get(e.priority,2),e.event_date),reverse=False)
     cols=["market","code","ticker","name","event_date","event_type","title","summary","source","source_url","source_tier","data_status","priority","fetched_at","event_id","raw_excerpt"]
     pd.DataFrame([e.asdict() for e in events],columns=cols).to_csv(OUT/"company_events_latest.csv",index=False,encoding="utf-8-sig")
+    primary,primary_health=collect_primary_fundamentals(events, "data/fundamentals_latest.csv")
+    write_primary_fundamentals(primary, "data/fundamentals_latest.csv")
+    save_json(OUT/"primary_fundamentals_health_latest.json",primary_health)
     snapshot,yfh=build_snapshot(targets,s.get("yfinance",{}).get("enabled",True),s.get("yfinance",{}).get("max_targets",40)); health.append(yfh); snapshot.to_csv(OUT/"company_snapshot_latest.csv",index=False,encoding="utf-8-sig")
     pd.DataFrame([h.__dict__ for h in health]).to_csv(OUT/"source_health_latest.csv",index=False,encoding="utf-8-sig")
     quality=quality_report(targets,events,health,snapshot,qcfg.get("minimum_actionable_score",0.72)); save_json(OUT/"data_quality_latest.json",quality)
@@ -51,7 +55,7 @@ def main():
     regime=load_market_regime(); syshealth=integration_health(); policy=build_policy_guardrails(regime,quality); save_json(OUT/"system_health_latest.json",syshealth); save_json(OUT/"policy_guardrails_latest.json",policy); brief=build_brief(targets,events,health,quality,snapshot,regime,policy,syshealth)
     (OUT/"ai_context_latest.md").write_text(brief,encoding="utf-8")
     Path("data/ai_context_latest.md").write_text(brief,encoding="utf-8")
-    context={"quality":quality,"market_regime":regime,"policy_guardrails":policy,"system_health":syshealth,"events":[e.asdict() for e in events[:100]],"source_health":[h.__dict__ for h in health]}
+    context={"primary_fundamentals":primary_health,"quality":quality,"market_regime":regime,"policy_guardrails":policy,"system_health":syshealth,"events":[e.asdict() for e in events[:100]],"source_health":[h.__dict__ for h in health]}
     save_json(OUT/"decision_context_latest.json",context)
     save_json("data/decision_context_latest.json",context)
     result=publish_directory(str(OUT)); save_json(OUT/"drive_publish_status.json",result)
