@@ -1,0 +1,26 @@
+market,code,ticker,name,priority,status,thesis,sector,trigger,event_type,event_date,split_ratio,last_review,invalidation
+JP,2726,2726.T,パルグループホールディングス,normal,active,中期カタリスト監視,Retail,,,,,2026-10-01,
+JP,215A,215A.T,タイミー,normal,active,中期カタリスト監視,Internet Services,,,,,2026-10-01,
+JP,3635,3635.T,コーエーテクモホールディングス,high,active,IP価値とゲーム事業・金融運用の再評価,Games,1600-1630円帯と決算確認,earnings,2026-10-26,,2026-10-01,業績・IP収益性の持続悪化
+JP,4063,4063.T,信越化学工業,high,active,グローバルB2B・半導体材料クオリティ,Chemicals,6000円台定着確認,,,,2026-10-01,
+JP,9433,9433.T,KDDI,high,active,通信ディフェンシブ・株主還元,Telecom,,,,,2026-10-01,
+JP,6701,6701.T,NEC,high,active,DX・防衛・ITサービス,IT Services,,,,,2026-10-01,
+JP,6965,6965.T,浜松ホトニクス,high,active,光検出器の技術モート・半導体医用サイクル底打ち監視,Electronic Components,,,,,2026-10-01,
+JP,5032,5032.T,ANYCOLOR,high,active,成長力に対する評価不足・IP収益力,Entertainment,成長継続とバリュエーション乖離確認,,,,2026-10-01,利益成長・IP収益性の構造悪化
+JP,2585,2585.T,ライフドリンク カンパニー,high,active,高成長継続とM&A・設備投資負担の評価差,Beverages,FCFと負債を含む成長品質確認,,,,2026-10-01,FCF悪化とレバレッジ上昇の併発
+JP,8766,8766.T,東京海上ホールディングス,high,active,保険収益・海外事業・資本還元の複利成長,Insurance,分割後の価格形成と還元余力確認,stock_split,2026-10-01,1:15,2026-10-01,基礎利益・還元余力の持続悪化
+JP,4996,4996.T,クミアイ化学工業,normal,active,業績悪化の過剰織込み余地,Agrichemicals,業績底打ち確認,,,,2026-10-01,アクシーブ環境の追加悪化
+JP,3678,3678.T,メディアドゥ,normal,active,売られ過ぎと業績転換の検証,Digital Content,決算確認,earnings,2026-10-14,,2026-10-01,決算で収益悪化継続
+JP,9553,9553.T,マイクロアド,normal,active,小型成長株の反転需給,Advertising Tech,650円台突破と出来高,,,,2026-10-01,反転失敗・安値更新
+JP,6750,6750.T,エレコム,normal,active,安定収益・生活関連,Electronics,1900-1930円帯,,,,2026-10-01,
+JP,5706,5706.T,三井金属,normal,active,材料技術と成長カタリスト,Nonferrous Metals,分割後の過熱解消,stock_split,2026-10-01,1:10,2026-10-01,
+JP,3099,3099.T,三越伊勢丹ホールディングス,high,active,百貨店収益性・インバウンド・株主還元,Retail,1450-1500円監視・1350-1400円再評価,stock_split,2026-10-01,1:2,2026-10-01,
+JP,8377,8377.T,ほくほくフィナンシャルグループ,high,active,地域金融・金利正常化,Banks,750-780円監視・680-720円再評価,stock_split,2026-10-01,1:10,2026-10-01,
+JP,8622,8622.T,水戸証券,high,active,高齢者資産移転・証券収益・還元,Securities,2Q収益と下げ止まり確認,,,,2026-10-01,
+JP,3563,3563.T,FOOD & LIFE COMPANIES,high,active,Quality Growth・海外成長,Restaurants,成長率と評価倍率の再確認,,,,2026-10-01,
+JP,6976,6976.T,太陽誘電,normal,active,MLCCサイクル底打ち・AI電子部品,Electronic Components,急騰後の過熱解消,,,,2026-10-01,
+JP,2802,2802.T,味の素,normal,active,高品質消費・半導体材料,Foods,価格調整待ち,,,,2026-10-01,
+JP,8737,8737.T,あかつき本社,low,active,配当・証券市況,Securities,,,,,2026-10-01,
+JP,6561,6561.T,HANATOUR JAPAN,low,active,インバウンド回復,Travel,出来高・業績改善確認,,,,2026-10-01,
+JP,409A,409A.T,オリオンビール,low,active,上場後の価格発見・地域ブランド,Beverages,IPO後の価格形成確認,,,,2026-10-01,
+JP,7564,7564.T,ワークマン,normal,active,小売再成長と収益性,Retail,決算・既存店改善確認,,,,2026-10-01,
