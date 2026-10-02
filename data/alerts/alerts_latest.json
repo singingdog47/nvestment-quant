@@ -1,24 +1,112 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-01T16:21:58+00:00",
+  "generated_at": "2026-10-02T01:43:17+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 0,
-    "WARNING": 1,
+    "WATCH": 7,
+    "WARNING": 2,
     "CRITICAL": 0
   },
   "alerts": [
+    {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DIVIDEND",
+      "title": "信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
     {
       "severity": "WARNING",
       "category": "VOLATILITY",
       "code": "TREASURY_VOLATILITY_SHOCK",
       "title": "Treasury yield volatility is unusually high",
       "message": "The official-Treasury realized-yield-volatility proxy is at or above its 90th percentile. It is not ICE MOVE.",
-      "value": 0.9365,
+      "value": 0.9683,
       "threshold": 0.9,
       "entity": null,
       "source": "market_regime_latest.json"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "AI時代の企業ネットワーク基盤となる「AccelWaves」構想を始動 - KDDI ニュースルーム",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "KDDI、10月から楽天へ回線貸し縮小 横浜・神戸など18政令市の市街地 - 日本経済新聞",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "auの回線貸し出し10月から縮小…楽天のつながりやすさどうなる？ - 朝日新聞",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "浜松ホトニクスが半導体解析顕微鏡 故障個所を特定 - chemicaldaily.com",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "半導体部品の故障を高い精度で特定 浜松ホトニクス、解析装置の受注開始：ニュース - 中日BIZナビ",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
     }
   ],
   "rules": [
