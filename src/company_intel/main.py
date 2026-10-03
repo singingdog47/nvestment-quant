@@ -3,7 +3,7 @@ import json, os
 from datetime import date, timedelta
 from pathlib import Path
 import pandas as pd, yaml
-from .common import ensure_dir, save_json, load_json
+from .common import ensure_dir, save_json, load_json, Event
 from .targets import build_targets
 from .tdnet import fetch_tdnet
 from .edinet import fetch_edinet
@@ -58,7 +58,7 @@ def main():
         )
         probe_events.extend(probe)
         probe_status.append({"date": filing_day.isoformat(), **status})
-    save_json(OUT/"edinet_probe_status_latest.json",probe_status)
+    # Retry previously discovered filings with no verified numeric snapshot.\n    for previous in load_json(OUT/"edinet_probe_status_latest.json", []):\n        probe_events.extend(Event(**item) for item in previous.get("pending", []))\n    save_json(OUT/"edinet_probe_status_latest.json",probe_status)
     save_json(OUT/"edinet_backfill_status_latest.json",backfill_status)
     primary,primary_health=collect_primary_fundamentals(
         events + probe_events + historical, "data/fundamentals_latest.csv",
