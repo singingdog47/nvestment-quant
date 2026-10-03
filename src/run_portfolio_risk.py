@@ -238,8 +238,11 @@ def _write_shared_investment_state(private_dir: Path, account_inputs: dict, mani
     path = write_investment_state(state, private_dir / "investment_state_latest.json")
     written = False
     if _truthy_env("INVESTMENT_STATE_DRIVE_WRITEBACK", "true"):
-        upload_or_replace(path, "investment_state_latest.json", "application/json")
-        written = True
+        try:
+            upload_or_replace(path, "investment_state_latest.json", "application/json")
+            written = True
+        except Exception as exc:
+            print("WARNING: investment state Drive writeback failed: " + type(exc).__name__)
     return {"state": state, "path": str(path), "drive_writeback": written}
 
 
@@ -444,7 +447,11 @@ def main() -> None:
     private_alerts_written = _write_private_alerts(out_dir)
     shared_state = _write_shared_investment_state(private_dir, account_inputs, manifest, policy_payload)
     writeback = _maybe_write_back_to_drive(private_dir, out_dir)
-    history = _persist_private_history(private_dir, out_dir, manifest, valuation_payload, monthly_payload)
+    try:
+        history = _persist_private_history(private_dir, out_dir, manifest, valuation_payload, monthly_payload)
+    except Exception as exc:
+        history = {"status": "error", "written": False, "error_type": type(exc).__name__}
+        print("WARNING: private history writeback failed: " + type(exc).__name__)
     print(json.dumps({
         "status": "ok",
         "source_file": manifest.get("source_file"),
