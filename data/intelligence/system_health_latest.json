@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T01:43:16+00:00",
+  "generated_at": "2026-10-03T00:11:20+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -32,9 +32,9 @@
       "stale_limit_hours": 36
     },
     "fundamentals": {
-      "status": "missing",
-      "path": "",
-      "age_hours": null,
+      "status": "ok",
+      "path": "data/fundamentals_latest.csv",
+      "age_hours": 0.0,
       "stale_limit_hours": 3600
     }
   },

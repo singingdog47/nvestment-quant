@@ -4,21 +4,21 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**CONSTRUCTIVE**、総合スコアは61.7です。
-市場レジームは前回からほぼ横ばいです。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+市場レジームは**CONSTRUCTIVE**、総合スコアは68.7です。
+市場レジームは維持され、総合状態は前回より改善しています。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：+0.7ポイント
-- トレンド：+0.1ポイント
-- 市場参加の広がり：+0.3ポイント
-- 流動性：+3.6ポイント
-- 上位候補に大きな順位上昇はなく、新しい強いトレンドが出たというより、既存の選好が続いています。
+- 総合スコア：+2.6ポイント
+- トレンド：+5.1ポイント
+- 市場参加の広がり：+0.4ポイント
+- 流動性：+7.1ポイント
+- BASE,Inc.、SHARINGTECHNOLOGY.INCの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
-日本はFinancialsが8銘柄。米国はFinancialsが9銘柄、Shippingが6銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
-米国債金利の実現ボラは年率86.2bp、過去観測の上位6%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
+日本はFinancialsが9銘柄。米国はFinancialsが9銘柄、Shippingが6銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+米国債金利の実現ボラは年率90.4bp、過去観測の上位4%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## SQ・短期需給
@@ -28,16 +28,19 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 個別銘柄の需給
 
-監視対象の浮動株比率カバレッジは94.4%、空売り需給は41.7%、当日出来高比較は100.0%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、Norwood Financial Corp. - Common Stock（SHORT_CROWDING）、First Busey Corporation - Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）、Millrose Properties, Inc. Class A Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
+監視対象の浮動株比率カバレッジは71.2%、空売り需給は28.8%、当日出来高比較は76.9%です。 例外観測はMillrose Properties, Inc. Class A Common Stock（SHORT_CROWDING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、Carter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、Norwood Financial Corp. - Common Stock（SHORT_CROWDING）、First Busey Corporation - Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
 浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。
 
 ## 今日の注意点
 
-- **WARNING** Treasury yield volatility is unusually high — 売買指示ではなく確認対象です。
+- **WARNING** ＡＮＹＣＯＬＯＲ[5032]：自己株式の取得状況に関するお知らせ 2026年10月2日(適時開示) ：日経会社情報DIGITAL - nikkei.com — 売買指示ではなく確認対象です。
+- **WARNING** 三越伊勢丹ホールディングス[3099]：自己株式の取得状況（途中経過）に関するお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - nikkei.com — 売買指示ではなく確認対象です。
+- **WARNING** 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン — 売買指示ではなく確認対象です。
+- **WARNING** 水戸証券[8622]：2027年３月期の中間配当（普通配当および創業105周年記念配当）予定に関するお知らせ 2026年9月17日(適時開示) ：日経会社情報DIGITAL - nikkei.com — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Mito Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.、Ichiyoshi Securities Co.,Ltd.、Akatsuki Inc.
+- 日本：Mito Securities Co.,Ltd.、IwaiCosmo Holdings,Inc.、Akatsuki Inc.、Tokai Tokyo Financial Holdings,Inc.
 - 米国：Carter Bankshares, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares、International Seaways, Inc. Common Stock 、Norwood Financial Corp. - Common Stock
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
@@ -54,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは78.1点だが確認閾値未達
-- 上位: ビットコイン 78.1 / テクノロジー 72.6 / スタンダード 57.3
+- 監視判定: **WAIT_RESEARCH** — 首位ビットコインは78.2点だが確認閾値未達
+- 上位: ビットコイン 78.2 / テクノロジー 72.9 / スタンダード 65.9
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は74.5%。9570銘柄中5339銘柄を採点し、価格欠損率は9.5%です。
+データ品質は74.5%。9569銘柄中5338銘柄を採点し、価格欠損率は9.4%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-10-01T16:23:22+00:00
+生成時刻（UTC）：2026-10-03T00:12:38+00:00

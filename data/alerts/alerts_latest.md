@@ -1,33 +1,119 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-10-02T01:43:17+00:00
+Generated: 2026-10-03T00:11:21+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 2
-- WATCH: 7
+- WARNING: 15
+- WATCH: 37
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [信越化学工業]: 信越化学工業[4063]：創立100周年記念配当の実施 及び 配当予想の修正に関するお知らせ 2026年9月15日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [ANYCOLOR]: ＡＮＹＣＯＬＯＲ[5032]：自己株式の取得状況に関するお知らせ 2026年10月2日(適時開示) ：日経会社情報DIGITAL - nikkei.com
+  - New company event detected for ANYCOLOR.
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [三越伊勢丹ホールディングス]: 三越伊勢丹ホールディングス[3099]：自己株式の取得状況（途中経過）に関するお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - nikkei.com
+  - New company event detected for 三越伊勢丹ホールディングス.
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [水戸証券]: 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン
+  - New company event detected for 水戸証券.
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [水戸証券]: 水戸証券[8622]：2027年３月期の中間配当（普通配当および創業105周年記念配当）予定に関するお知らせ 2026年9月17日(適時開示) ：日経会社情報DIGITAL - nikkei.com
+  - New company event detected for 水戸証券.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ANYCOLOR]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
+  - New company event detected for ANYCOLOR.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [BASE,Inc.]: 訂正意見表明報告書
+  - New company event detected for BASE,Inc..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [FOOD & LIFE COMPANIES]: 臨時報告書
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [FOOD & LIFE COMPANIES]: 訂正発行登録書
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [WesBanco, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for WesBanco, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [あかつき本社]: 発行登録追補書類（株券､社債券等）
+  - New company event detected for あかつき本社.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [マイクロアド]: 臨時報告書
+  - New company event detected for マイクロアド.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [メディアドゥ]: 臨時報告書
+  - New company event detected for メディアドゥ.
+- **WARNING** COMPANY_EVENT/EVENT_FINANCING [信越化学工業]: 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - nikkei.com
   - New company event detected for 信越化学工業.
+- **WARNING** COMPANY_EVENT/EVENT_MNA [東京海上ホールディングス]: 東京海上、M&A「連邦経営」に評価 27年発表見込みの中計に注目 - nikkei.com
+  - New company event detected for 東京海上ホールディングス.
 - **WARNING** VOLATILITY/TREASURY_VOLATILITY_SHOCK: Treasury yield volatility is unusually high
   - The official-Treasury realized-yield-volatility proxy is at or above its 90th percentile. It is not ICE MOVE.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: AI時代の企業ネットワーク基盤となる「AccelWaves」構想を始動 - KDDI ニュースルーム
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: ＡＮＹＣＯＬＯＲ(株)【5032】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+  - New company event detected for ANYCOLOR.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: 「にじさんじ FAN CLUB」天宮こころ、魁星、蝸堂みかる、早乙女ベリー、山神カルタ、あるてぃめっとくりえいたーず 新プラン追加 & 11月号会報発行！ & 会員証発送受付開始！ | ANYCOLOR株式会社のプレスリリース - PR TIMES
+  - New company event detected for ANYCOLOR.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: ANYCOLOR(5032)株価下落の理由｜1Q決算と今後の見通し - 日本投資機構株式会社
+  - New company event detected for ANYCOLOR.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: 「にじフェス2026」レポート ライバーコメント満載！ “距離が縮まる”特別な体験 - ANYCOLOR MAGAZINE
+  - New company event detected for ANYCOLOR.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: (株)ＦＯＯＤ ＆ ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ【3563】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: FOOD＆LIFE（3563）FY2026 月次情報 (9月期) - 四季報オンライン
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: FOOD & LIFE COMPANIES、中国孫会社の北京寿司郎餐飲の回転寿司店舗運営事業などを分社化 新会社「上海寿司郎餐飲(仮称)」を設立 - marr.jp
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: 「スシロー×食べログ」全国名店監修シリーズ！好評につき再登場！人気店“すみれ”監修「札幌濃厚みそラーメン」が復活！ - PR TIMES
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 国産AI「LLM-jp-4」ベースのAIモデル、KDDI傘下のELYZAが無料公開 - ITmedia
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI、10月から楽天へ回線貸し縮小 横浜・神戸など18政令市の市街地 - 日本経済新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI 自動運転バスをつくばで本格運行へ ついにレベル4実現か - 自動運転ラボ
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: auの回線貸し出し10月から縮小…楽天のつながりやすさどうなる？ - 朝日新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 石川：地域見守りにドローン活用 ＫＤＤＩ、日本郵便実験：地域ニュース - 読売新聞
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI、10月から楽天へ回線貸し縮小 横浜・神戸など18政令市の市街地 - nikkei.com
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECネクサソリューションズ、国際物流省力化を解説 - LOGISTICS TODAY
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくＦＧ - nikkei.com
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくフィナンシャルグループが株式10分割 優待制度も見直し - nikkei.com
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: マーケット速報 - 佐賀新聞
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 【KT App】呂布戦で大盛り上がりの『真・三國無双２ with 猛将伝 Remastered』ステージアフターインタビュー！(抜粋版) - gamecity.ne.jp
+  - New company event detected for コーエーテクモホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: (株)コーエーテクモホールディングス【3635】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+  - New company event detected for コーエーテクモホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 『DEAD OR ALIVE 6 Last Round』 無料アップデート「ハッピーハロウィン」を配信開始！ - gamecity.ne.jp
+  - New company event detected for コーエーテクモホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 株価反転探るコーエーテクモホールディングス、「ポケモン」新作の貢献に期待 - 日経ヴェリタス - nikkei.com
+  - New company event detected for コーエーテクモホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: マーケット速報 - 佐賀新聞
+  - New company event detected for コーエーテクモホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: ライフドリンクカンパニー（2585）、2027年3月期は増産+20％、増収+37％、営業増益+22％を目指す - ログミーFinance
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: 三菱UFJ信託銀行株式会社が株式会社ライフドリンク　カンパニー＜2585＞株式の変更報告書を提出 - ｄメニューニュース
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: ライフドリンクカンパニー[2585]：（開示事項の経過）当社連結子会社における自動販売機事業の吸収分割による承継完了のお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - nikkei.com
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: 「安さのその先へ」──ライフドリンク カンパニーの成長を支える「脱付加価値戦略」とは - ECのミカタ
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: 2026.10.02 貨物列車（3099列車）秋田駅発車 - YouTube
+  - New company event detected for 三越伊勢丹ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: 三越伊勢丹ホールディングスは2026年9月29日付をもって1株を2株に分割 - Moomoo
+  - New company event detected for 三越伊勢丹ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業[4063]：臨時報告書 臨時報告書の訂正および発行条件の決定など (有価証券報告書) ：日経会社情報DIGITAL - nikkei.com
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクスが半導体解析顕微鏡 故障個所を特定 - chemicaldaily.com
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: 【株主優待ガイド】東京海上HDや阿波銀行も新設！1円単位で使える「QUOカード」「デジタルギフト」銘柄（＠ＤＩＭＥ） - Yahoo!ニュース
+  - New company event detected for 東京海上ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: 東京海上ホールディングス[8766]：定款 2026/10/01 2026年10月1日(適時開示) ：日経会社情報DIGITAL - nikkei.com
+  - New company event detected for 東京海上ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [水戸証券]: 2026水戸証券チャレンジフェスティバル開催のお知らせ《7/27情報更新》 - 水戸ホーリーホック公式サイト
+  - New company event detected for 水戸証券.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [水戸証券]: 【10.4代々木第2】観戦も街歩きもこれ1枚！オリジナルグラフィックが映える万能なロングスリーブTシャツが新登場！ - noah.co.jp
+  - New company event detected for 水戸証券.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [水戸証券]: マーケット速報 - 北國新聞
+  - New company event detected for 水戸証券.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 先進半導体パッケージの故障解析、浜松ホトニクスが新装置 (EE Times Japan) - Yahoo!ニュース
   - New company event detected for 浜松ホトニクス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 半導体部品の故障を高い精度で特定 浜松ホトニクス、解析装置の受注開始：ニュース - 中日BIZナビ
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 先端半導体の後工程向け…浜松ホトニクス、故障解析装置の機能 - ニュースイッチ by 日刊工業新聞社
   - New company event detected for 浜松ホトニクス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス[6965]の株価・株主優待など。 - nikkei.com
+  - New company event detected for 浜松ホトニクス.
+- **WATCH** SCREENING/RANK_JUMP [BASE,Inc.]: Screening rank jumped
+  - BASE,Inc. improved by at least 15 ranks.
 
 ## Governance
 - Alerts are deterministic exception flags, not buy/sell signals.
