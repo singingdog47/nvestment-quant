@@ -1,8 +1,16 @@
 {
-  "checked": 0,
-  "resolved_document_ids": [],
-  "new_companies": 0,
+  "checked": 7,
+  "resolved_document_ids": [
+    "S100YKG2",
+    "S100YK3R",
+    "S100YK25",
+    "S100YGNI",
+    "S100YEES",
+    "S100YE9I",
+    "S100YE1D"
+  ],
+  "new_companies": 4,
   "errors": [],
-  "primary_companies": 0,
+  "primary_companies": 4,
   "status": "ok"
 }

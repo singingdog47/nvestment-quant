@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-10-03T00:11:20+00:00
+Generated (UTC): 2026-10-03T00:21:51+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 

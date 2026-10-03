@@ -1,13 +1,13 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.745** / actionable=True
+Generated quality score: **0.735** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-03T00:10:09+00:00",
-  "generated_at_utc": "2026-10-03T00:10:09+00:00",
+  "generated_at": "2026-10-03T00:20:34+00:00",
+  "generated_at_utc": "2026-10-03T00:20:34+00:00",
   "date_jst": "2026-10-03",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
@@ -49,7 +49,7 @@ Generated quality score: **0.745** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9569,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-03T00:10:06.958854+00:00",
+    "breadth_source_as_of_utc": "2026-10-03T00:20:32.526590+00:00",
     "nfci": -0.548,
     "volume_ratio20_mean": 1.3255552786436957,
     "positioning_sources": {
@@ -150,7 +150,7 @@ Generated quality score: **0.745** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-03T00:11:20+00:00",
+  "generated_at": "2026-10-03T00:21:50+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -203,7 +203,7 @@ Generated quality score: **0.745** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-03T00:10:06.958854+00:00
+- Data retrieved (UTC): 2026-10-03T00:20:32.526590+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -242,7 +242,7 @@ Generated quality score: **0.745** / actionable=True
 | JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 75.1 | 100.0 | unchanged |
 | JP | 2 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.5 | 99.9 | unchanged |
 | JP | 3 | 3932.T | Akatsuki Inc. | Other | 74.5 | 99.9 | unchanged |
-| JP | 4 | 8616.T | Tokai Tokyo Financial Holdings,Inc. | Financials | 74.3 | 99.8 | new_entry |
+| JP | 4 | 8616.T | Tokai Tokyo Financial Holdings,Inc. | Financials | 74.3 | 99.8 | unchanged |
 | JP | 7 | 6750.T | ELECOM CO.,LTD. | Other | 72.5 | 99.7 | unchanged |
 | JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.5 | 99.5 | unchanged |
 | JP | 11 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.0 | 99.5 | unchanged |

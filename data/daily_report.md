@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-03T00:10:06.958854+00:00
+- Data retrieved (UTC): 2026-10-03T00:20:32.526590+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -39,7 +39,7 @@
 | JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 75.1 | 100.0 | unchanged |
 | JP | 2 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.5 | 99.9 | unchanged |
 | JP | 3 | 3932.T | Akatsuki Inc. | Other | 74.5 | 99.9 | unchanged |
-| JP | 4 | 8616.T | Tokai Tokyo Financial Holdings,Inc. | Financials | 74.3 | 99.8 | new_entry |
+| JP | 4 | 8616.T | Tokai Tokyo Financial Holdings,Inc. | Financials | 74.3 | 99.8 | unchanged |
 | JP | 7 | 6750.T | ELECOM CO.,LTD. | Other | 72.5 | 99.7 | unchanged |
 | JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.5 | 99.5 | unchanged |
 | JP | 11 | 4763.T | CREEK & RIVER Co.,Ltd. | Other | 70.0 | 99.5 | unchanged |

@@ -39,7 +39,7 @@
   "treasury_volatility_is_ice_move": false,
   "breadth_n": 9569,
   "breadth_status": "ok",
-  "breadth_source_as_of_utc": "2026-10-03T00:10:06.958854+00:00",
+  "breadth_source_as_of_utc": "2026-10-03T00:20:32.526590+00:00",
   "nfci": -0.548,
   "volume_ratio20_mean": 1.3255552786436957,
   "positioning_sources": {

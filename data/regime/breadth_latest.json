@@ -1,9 +1,9 @@
 {
   "status": "ok",
-  "fetched_at": "2026-10-03T00:10:47+00:00",
+  "fetched_at": "2026-10-03T00:21:11+00:00",
   "source": "data/screening_full.csv.gz",
   "n": 9569,
-  "source_as_of_utc": "2026-10-03T00:10:06.958854+00:00",
+  "source_as_of_utc": "2026-10-03T00:20:32.526590+00:00",
   "source_date_jst": "2026-10-03",
   "business_age_days": 0,
   "pct_positive_return_1m": 0.3103726779739241,
@@ -13,7 +13,7 @@
   "participation_proxy": 0.44389638860043845,
   "participation_columns": "return_1m,return_3m,return_6m,return_12m",
   "turnover_metric_column": "avg_turnover_30d",
-  "turnover_universe_sum": 9619870743120.691,
-  "turnover_universe_median": 20976848.761833332,
+  "turnover_universe_sum": 9619873697435.727,
+  "turnover_universe_median": 20976879.1485,
   "turnover_coverage": 0.9031246734246002
 }

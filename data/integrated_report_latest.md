@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-03T00:12:38+00:00
+Generated (UTC): 2026-10-03T00:22:53+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -35,15 +35,8 @@ Generated (UTC): 2026-10-03T00:12:38+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 37, 'WARNING': 15, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / ＡＮＹＣＯＬＯＲ[5032]：自己株式の取得状況に関するお知らせ 2026年10月2日(適時開示) ：日経会社情報DIGITAL - nikkei.com
-- [WARNING] COMPANY_EVENT / 三越伊勢丹ホールディングス[3099]：自己株式の取得状況（途中経過）に関するお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - nikkei.com
-- [WARNING] COMPANY_EVENT / 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン
-- [WARNING] COMPANY_EVENT / 水戸証券[8622]：2027年３月期の中間配当（普通配当および創業105周年記念配当）予定に関するお知らせ 2026年9月17日(適時開示) ：日経会社情報DIGITAL - nikkei.com
-- [WARNING] COMPANY_EVENT / 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
-- [WARNING] COMPANY_EVENT / 訂正意見表明報告書
-- [WARNING] COMPANY_EVENT / 臨時報告書
-- [WARNING] COMPANY_EVENT / 訂正発行登録書
+- Counts: {'INFO': 0, 'WATCH': 0, 'WARNING': 1, 'CRITICAL': 0}
+- [WARNING] VOLATILITY / Treasury yield volatility is unusually high
 
 ## 5. スクリーニング上位候補
 
@@ -82,12 +75,12 @@ Generated (UTC): 2026-10-03T00:12:38+00:00
 - [INFO] rank_bucket / top3|1w: Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## 7. データ品質 / 反証
-- Quality score: 0.745
+- Quality score: 0.735
 - Primary source health (configured feeds only): 1.0
-- Primary fundamental coverage: 0.0
-- Secondary fundamental coverage: 1.0
-- Effective fundamental coverage: 0.65
-- Fundamental evidence tier: secondary_only
+- Primary fundamental coverage: 0.077
+- Secondary fundamental coverage: 0.769
+- Effective fundamental coverage: 0.577
+- Fundamental evidence tier: mixed
 - Missing data must not be converted into unsupported buy/sell conclusions.
 
 ## 8. ポートフォリオ

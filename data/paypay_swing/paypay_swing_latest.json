@@ -1,27 +1,27 @@
 {
-  "generated_at_jst": "2026-10-03T09:12:38+09:00",
+  "generated_at_jst": "2026-10-03T09:22:53+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
     "reason": "首位ビットコインは78.2点だが確認閾値未達",
-    "margin": 5.25
+    "margin": 5.28
   },
   "ranking": [
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 84497.0390625,
+      "close": 84527.6484375,
       "data_date": "2026-10-03",
-      "momentum": 96.11,
+      "momentum": 96.19,
       "macro": 64.68,
-      "trend": 96.85,
-      "risk": 69.14,
+      "trend": 96.87,
+      "risk": 69.17,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 78.18
+      "total": 78.21
     },
     {
       "key": "TECH",
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-03T00:12:38+00:00",
+      "fetched_at": "2026-10-03T00:22:53+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-03T00:12:38+00:00",
+      "fetched_at": "2026-10-03T00:22:53+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-03T00:12:38+00:00",
+      "fetched_at": "2026-10-03T00:22:53+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,7 +95,7 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 365,
-      "fetched_at": "2026-10-03T00:12:38+00:00",
+      "fetched_at": "2026-10-03T00:22:53+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -103,7 +103,7 @@
       "source": "yfinance:^TNX",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-10-03T00:12:38+00:00",
+      "fetched_at": "2026-10-03T00:22:53+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -111,7 +111,7 @@
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
       "records": 252,
-      "fetched_at": "2026-10-03T00:12:38+00:00",
+      "fetched_at": "2026-10-03T00:22:53+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -119,7 +119,7 @@
       "source": "yfinance:^VIX",
       "status": "ok",
       "records": 254,
-      "fetched_at": "2026-10-03T00:12:38+00:00",
+      "fetched_at": "2026-10-03T00:22:53+00:00",
       "error": "",
       "source_tier": "secondary"
     }
