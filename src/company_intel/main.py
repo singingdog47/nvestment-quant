@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json, os
+from datetime import date, timedelta
 from pathlib import Path
 import pandas as pd, yaml
 from .common import ensure_dir, save_json, load_json
@@ -45,23 +46,40 @@ def main():
         targets, STATE/"edinet_backfill_checkpoint.json",
         days_per_run=int(os.getenv("EDINET_BACKFILL_DAYS_PER_RUN","14")),
     )
+    # Probe two independently identified June filing dates without advancing
+    # the normal chronological backfill cursor. Checkpoint each date separately.
+    probe_events = []
+    probe_status = []
+    for filing_day in (date(2026, 6, 19), date(2026, 6, 25)):
+        probe, status = scan_historical_edinet(
+            targets, STATE/f"edinet_probe_{filing_day.isoformat()}.json",
+            today=filing_day + timedelta(days=7),
+            days_per_run=1, lookback_days=7,
+        )
+        probe_events.extend(probe)
+        probe_status.append({"date": filing_day.isoformat(), **status})
+    save_json(OUT/"edinet_probe_status_latest.json",probe_status)
     save_json(OUT/"edinet_backfill_status_latest.json",backfill_status)
     primary,primary_health=collect_primary_fundamentals(
-        events + historical, "data/fundamentals_latest.csv",
+        events + probe_events + historical, "data/fundamentals_latest.csv",
         max_documents=int(os.getenv("EDINET_PRIMARY_MAX_DOCUMENTS","12")),
     )
     write_primary_fundamentals(primary, "data/fundamentals_latest.csv")
     resolved = set(primary_health.get("resolved_document_ids") or [])
     resolved.update(primary["document_id"].dropna().astype(str).tolist())
-    checkpoint = STATE/"edinet_backfill_checkpoint.json"
-    persisted = load_json(checkpoint, {})
-    if "pending" in persisted:
-        persisted["pending"] = [
-            item for item in persisted["pending"]
-            if document_id(type("EDINETRecord", (), item)()) not in resolved
-        ]
-        save_json(checkpoint, persisted)
-        backfill_status["pending_count"] = len(persisted["pending"])
+    for checkpoint in [
+        STATE/"edinet_backfill_checkpoint.json",
+        *(STATE/f"edinet_probe_{day}.json" for day in ("2026-06-19", "2026-06-25")),
+    ]:
+        persisted = load_json(checkpoint, {})
+        if "pending" in persisted:
+            persisted["pending"] = [
+                item for item in persisted["pending"]
+                if document_id(type("EDINETRecord", (), item)()) not in resolved
+            ]
+            save_json(checkpoint, persisted)
+            if checkpoint.name == "edinet_backfill_checkpoint.json":
+                backfill_status["pending_count"] = len(persisted["pending"])
     save_json(OUT/"primary_fundamentals_health_latest.json",primary_health)
     coverage_rows,coverage_stats=audit_primary_coverage(targets,primary)
     coverage_rows.to_csv(OUT/"primary_fundamentals_coverage_latest.csv",index=False,encoding="utf-8")
@@ -78,7 +96,7 @@ def main():
     regime=load_market_regime(); syshealth=integration_health(); policy=build_policy_guardrails(regime,quality); save_json(OUT/"system_health_latest.json",syshealth); save_json(OUT/"policy_guardrails_latest.json",policy); brief=build_brief(targets,events,health,quality,snapshot,regime,policy,syshealth)
     (OUT/"ai_context_latest.md").write_text(brief,encoding="utf-8")
     Path("data/ai_context_latest.md").write_text(brief,encoding="utf-8")
-    context={"primary_fundamentals":primary_health,"historical_backfill":backfill_status,"primary_coverage_audit":coverage_stats,"quality":quality,"market_regime":regime,"policy_guardrails":policy,"system_health":syshealth,"events":[e.asdict() for e in events[:100]],"source_health":[h.__dict__ for h in health]}
+    context={"primary_fundamentals":primary_health,"historical_backfill":backfill_status,"known_date_probes":probe_status,"primary_coverage_audit":coverage_stats,"quality":quality,"market_regime":regime,"policy_guardrails":policy,"system_health":syshealth,"events":[e.asdict() for e in events[:100]],"source_health":[h.__dict__ for h in health]}
     save_json(OUT/"decision_context_latest.json",context)
     save_json("data/decision_context_latest.json",context)
     result=publish_directory(str(OUT)); save_json(OUT/"drive_publish_status.json",result)
