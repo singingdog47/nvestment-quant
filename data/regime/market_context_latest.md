@@ -1,23 +1,23 @@
 # Market Regime v1.5
 
 - Label: **CONSTRUCTIVE**
-- Score: **68.65**
+- Score: **67.87**
 - Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
 - Flags: TREASURY_VOLATILITY_SHOCK
 
 ## Components
-- trend: 84.85661201592544
+- trend: 88.59737534312447
 - stress: 74.82249968528748
 - participation: 44.389638860043846
-- liquidity: 66.64965809675982
+- liquidity: 53.954077114901466
 - positioning: 56.133531942148466
 
 ## SQ execution overlay
 - Active: **False**
 - Next major SQ: **2026-12-11**
-- Days to SQ: **69**
+- Days to SQ: **67**
 - Execution caution: **0.0/15.0**
 - Confidence: **0.4**
 - Data status: **partial**
@@ -41,7 +41,7 @@
   "breadth_status": "ok",
   "breadth_source_as_of_utc": "2026-10-03T00:20:32.526590+00:00",
   "nfci": -0.548,
-  "volume_ratio20_mean": 1.3255552786436957,
+  "volume_ratio20_mean": 1.0029519278725365,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22

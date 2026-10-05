@@ -6,12 +6,12 @@ Generated quality score: **0.735** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-03T00:20:34+00:00",
-  "generated_at_utc": "2026-10-03T00:20:34+00:00",
-  "date_jst": "2026-10-03",
+  "generated_at": "2026-10-05T00:58:06+00:00",
+  "generated_at_utc": "2026-10-05T00:58:06+00:00",
+  "date_jst": "2026-10-05",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 68.65,
+  "regime_score": 67.87,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,10 +30,10 @@ Generated quality score: **0.735** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 84.85661201592544,
+    "trend": 88.59737534312447,
     "stress": 74.82249968528748,
     "participation": 44.389638860043846,
-    "liquidity": 66.64965809675982,
+    "liquidity": 53.954077114901466,
     "positioning": 56.133531942148466
   },
   "evidence": {
@@ -51,7 +51,7 @@ Generated quality score: **0.735** / actionable=True
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-10-03T00:20:32.526590+00:00",
     "nfci": -0.548,
-    "volume_ratio20_mean": 1.3255552786436957,
+    "volume_ratio20_mean": 1.0029519278725365,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -80,9 +80,9 @@ Generated quality score: **0.735** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-10-03",
+      "as_of_date": "2026-10-05",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 69,
+      "days_to_sq": 67,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -94,7 +94,7 @@ Generated quality score: **0.735** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 68956.71875,
+        "spot": 69811.828125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +150,7 @@ Generated quality score: **0.735** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-03T00:21:50+00:00",
+  "generated_at": "2026-10-05T00:59:16+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -161,25 +161,25 @@ Generated quality score: **0.735** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -197,7 +197,7 @@ Generated quality score: **0.735** / actionable=True
 - EDINET: ok / records=10 / tier=primary
 - SEC: ok / records=33 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=53 / tier=secondary
+- NewsRSS: ok / records=45 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -272,8 +272,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - nikkei.com | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5
-- [CRITICAL] 8766 東京海上ホールディングス | Wed, 30 Sep 2026 | mna | 東京海上、M&A「連邦経営」に評価 27年発表見込みの中計に注目 - nikkei.com | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMifkFVX3lxTE1MUm54MHRSRWYxN2ExbWZzdVZTWHJlcFlFbWVGWVg4Q1d2SzlaZFJUbHJXOVd4UG1wYmlLWjZRWU16R2llM0ppRDZqbVlCR3h4S2tJT0dVODZkUDFlNFFHUVFOeGY2bWJVU1RaQnRMTWpVNnZ5RFpxb3RTYWQyZw?oc=5
+- [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426005684/p15057626_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-26 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000162828026058979/trmd-20260630.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-26 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000162828026058978/tormplc6-kaugust262026pres.htm
@@ -317,11 +316,10 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 8737 あかつき本社 | 2026-10-01 | filing | 発行登録追補書類（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z5JN
 - [HIGH] 5032 ANYCOLOR | 2026-10-02 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z62Q
 - [HIGH] WSBC WesBanco, Inc. - Common Stock | 2026-10-02 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/203596/000119312526412356/wsbc-20261002.htm
-- [HIGH] 5032 ANYCOLOR | Fri, 02 Oct 2026 | buyback | ＡＮＹＣＯＬＯＲ[5032]：自己株式の取得状況に関するお知らせ 2026年10月2日(適時開示) ：日経会社情報DIGITAL - nikkei.com | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5nWktIU3UxdkJvNEhjalZRS25fMUlkUGJmWV9IN0tGd2NLYTUxNmdiajRmUVBGUmpxMUNyODZmV2hjS3FBSUNkREQ0ZDdfY29wZW1qcU1uUWFRa3VBRURybFRPZDZuZnVrZEE?oc=5
-- [HIGH] 8622 水戸証券 | Mon, 09 Mar 2026 | dividend | 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QRlFKekV1VHlONVFFNmFzTzBKQ1FiajFfb2RmSjJIdE9qZmR4MkJ4RnEtRGhVLU51ZFo0dzRkMGJJNjY3d242azlHN19TLXZ6R1V3?oc=5
-- [HIGH] 3099 三越伊勢丹ホールディングス | Thu, 01 Oct 2026 | buyback | 三越伊勢丹ホールディングス[3099]：自己株式の取得状況（途中経過）に関するお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - nikkei.com | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9adGlxc0NDOW5sa2daeTBzZ09YTFBQM2tuaUFkNFR4ckpmMWJ4NDh3Q0h5T2oyRkZhcDZsV2h3RVNDUTR4WmgtUTNObjhEN0luVnBnamJBc2duWWNDall4YlV5MWx3bXdhcWc?oc=5
-- [HIGH] 8622 水戸証券 | Thu, 17 Sep 2026 | dividend | 水戸証券[8622]：2027年３月期の中間配当（普通配当および創業105周年記念配当）予定に関するお知らせ 2026年9月17日(適時開示) ：日経会社情報DIGITAL - nikkei.com | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE13VEdRV3RNcWpkWUQ0WndkYTAtNi15VFRVeVNLM2s4VlFVSjZFTGJDUWd2eVNKd2k5YlpWMnZBTkpwZjdSeS1jcjN3LVdvLTl2NnVuUll5eVA3UnlFUWVzWjExUmZJVlEzSEE?oc=5
-- [HIGH] 4063 信越化学工業 | Tue, 15 Sep 2026 | dividend | 信越化、今期配当を20円増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE14VEdPRDlYZE1odUpxZzR6TFpHaHl5MW8zQVhPVkkxRWVYbHNXVV9JUlZZV1pZRmlGOWNSZ250aFVycHNWRkx3YnFzN040dUd5c0E?oc=5
+- [HIGH] 5032 ANYCOLOR | Fri, 02 Oct 2026 | buyback | ＡＮＹＣＯＬＯＲ[5032]：自己株式の取得状況に関するお知らせ 2026年10月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5nWktIU3UxdkJvNEhjalZRS25fMUlkUGJmWV9IN0tGd2NLYTUxNmdiajRmUVBGUmpxMUNyODZmV2hjS3FBSUNkREQ0ZDdfY29wZW1qcU1uUWFRa3VBRURybFRPZDZuZnVrZEE?oc=5
+- [HIGH] 8622 水戸証券 | Sat, 07 Mar 2026 | dividend | 水戸証券(8622)、4期連続となる「増配」を発表し、配当利回り5.9％に！ 年間配当は4年で3.0倍に増加、2026年3月期は前期比13円増の｢1株あたり43円｣に！ - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1hN2dNanhnWGxoWUxBZ0JIaXpYYjUxU29WY2V4SDVrV05QZGV2OEFSbnFpS1ZyUHllaUJod0EycUgxUFA5ak4zVktwZ3Jjb1M2SjFN?oc=5
+- [HIGH] 3099 三越伊勢丹ホールディングス | Thu, 01 Oct 2026 | buyback | 三越伊勢丹ホールディングス[3099]：自己株式の取得状況（途中経過）に関するお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9adGlxc0NDOW5sa2daeTBzZ09YTFBQM2tuaUFkNFR4ckpmMWJ4NDh3Q0h5T2oyRkZhcDZsV2h3RVNDUTR4WmgtUTNObjhEN0luVnBnamJBc2duWWNDall4YlV5MWx3bXdhcWc?oc=5
+- [HIGH] 8622 水戸証券 | Thu, 17 Sep 2026 | dividend | 水戸証券[8622]：2027年３月期の中間配当（普通配当および創業105周年記念配当）予定に関するお知らせ 2026年9月17日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE13VEdRV3RNcWpkWUQ0WndkYTAtNi15VFRVeVNLM2s4VlFVSjZFTGJDUWd2eVNKd2k5YlpWMnZBTkpwZjdSeS1jcjN3LVdvLTl2NnVuUll5eVA3UnlFUWVzWjExUmZJVlEzSEE?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
