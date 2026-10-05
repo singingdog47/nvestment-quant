@@ -1,27 +1,23 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-10-05T17:07:39+00:00
+Generated: 2026-10-05T17:26:40+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 2
-- WATCH: 5
+- WARNING: 3
+- WATCH: 2
 - INFO: 0
 
 ## Alerts
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [ほくほくフィナンシャルグループ]: ほくほくフィナンシャルグループ[8377]：2027年3月期 第1四半期決算短信〔日本基準〕（連結） 2026年7月29日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for ほくほくフィナンシャルグループ.
 - **WARNING** LIQUIDITY/THIN_LIQUIDITY: Thin liquidity flag active
   - Market Regime Engine reports thin_liquidity_flag=true.
 - **WARNING** VOLATILITY/TREASURY_VOLATILITY_SHOCK: Treasury yield volatility is unusually high
   - The official-Treasury realized-yield-volatility proxy is at or above its 90th percentile. It is not ICE MOVE.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI、150ジョブ「図鑑」でキャリア磨き 職務定義書はあえて大ざっぱ - 日本経済新聞
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、欧州にセキュリティ監視センターを設置--24時間の監視体制 - ZDNET Japan
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: 「安さのその先へ」──ライフドリンク カンパニーの成長を支える「脱付加価値戦略」とは - ecnomikata.com
-  - New company event detected for ライフドリンク カンパニー.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 先端半導体の後工程向け…浜松ホトニクス、故障解析装置の機能 - ニュースイッチ by 日刊工業新聞社
-  - New company event detected for 浜松ホトニクス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくフィナンシャルグループ (8377) : 今後の予想・売買予想・AI株価診断 [HFG] - みんかぶ
+  - New company event detected for ほくほくフィナンシャルグループ.
 - **WATCH** LIQUIDITY/LIQUIDITY_SOFT: Market liquidity is soft
   - Liquidity component fell below 40/100.
 

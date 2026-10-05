@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-10-05T17:07:38+00:00
+Generated (UTC): 2026-10-05T17:26:40+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,15 +16,15 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.6%, volume ratio=0.12251214042799649)
-- [US] Norwood Financial Corp. - Common Stock: SHORT_CROWDING (float=90.1%, float turnover=0.4%, volume ratio=0.2129781775202514)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=1.0%, volume ratio=0.3130232463107783)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.0%, volume ratio=0.13237751707524828)
-- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING (float=97.9%, float turnover=1.1%, volume ratio=0.30199465808307363)
-- [US] ACNB Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.0%, float turnover=0.7%, volume ratio=0.5746153300716159)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.6%, volume ratio=0.13300562840637392)
+- [US] Norwood Financial Corp. - Common Stock: SHORT_CROWDING (float=90.1%, float turnover=0.4%, volume ratio=0.22442272766583066)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=1.0%, volume ratio=0.3255058154086621)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.0%, volume ratio=0.13759610222859853)
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING (float=97.9%, float turnover=1.1%, volume ratio=0.32025990480430094)
+- [US] ACNB Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.0%, float turnover=0.7%, volume ratio=0.5943841735800893)
 - [JP] ANYCOLOR: HIGH_FLOAT_TURNOVER (float=48.2%, float turnover=2.1%, volume ratio=0.6148848833381481)
 - [JP] ほくほくフィナンシャルグループ: VOLUME_EXPANSION (float=67.5%, float turnover=0.2%, volume ratio=4.207108206507603)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.2%, volume ratio=0.3515209692996576)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.2%, volume ratio=0.36659662266967136)
 - [JP] Tokai Tokyo Financial Holdings,Inc.: VOLUME_EXPANSION (float=93.5%, float turnover=0.4%, volume ratio=1.8855767128144485)
 
 ## Governance

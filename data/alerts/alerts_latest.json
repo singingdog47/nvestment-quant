@@ -1,14 +1,25 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-05T17:07:39+00:00",
+  "generated_at": "2026-10-05T17:26:40+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 5,
-    "WARNING": 2,
+    "WATCH": 2,
+    "WARNING": 3,
     "CRITICAL": 0
   },
   "alerts": [
+    {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_EARNINGS",
+      "title": "ほくほくフィナンシャルグループ[8377]：2027年3月期 第1四半期決算短信〔日本基準〕（連結） 2026年7月29日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "message": "New company event detected for ほくほくフィナンシャルグループ.",
+      "value": null,
+      "threshold": null,
+      "entity": "ほくほくフィナンシャルグループ",
+      "source": "Google News RSS"
+    },
     {
       "severity": "WARNING",
       "category": "LIQUIDITY",
@@ -35,44 +46,11 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "KDDI、150ジョブ「図鑑」でキャリア磨き 職務定義書はあえて大ざっぱ - 日本経済新聞",
-      "message": "New company event detected for KDDI.",
+      "title": "ほくほくフィナンシャルグループ (8377) : 今後の予想・売買予想・AI株価診断 [HFG] - みんかぶ",
+      "message": "New company event detected for ほくほくフィナンシャルグループ.",
       "value": null,
       "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "NEC、欧州にセキュリティ監視センターを設置--24時間の監視体制 - ZDNET Japan",
-      "message": "New company event detected for NEC.",
-      "value": null,
-      "threshold": null,
-      "entity": "NEC",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "「安さのその先へ」──ライフドリンク カンパニーの成長を支える「脱付加価値戦略」とは - ecnomikata.com",
-      "message": "New company event detected for ライフドリンク カンパニー.",
-      "value": null,
-      "threshold": null,
-      "entity": "ライフドリンク カンパニー",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "先端半導体の後工程向け…浜松ホトニクス、故障解析装置の機能 - ニュースイッチ by 日刊工業新聞社",
-      "message": "New company event detected for 浜松ホトニクス.",
-      "value": null,
-      "threshold": null,
-      "entity": "浜松ホトニクス",
+      "entity": "ほくほくフィナンシャルグループ",
       "source": "Google News RSS"
     },
     {
@@ -81,7 +59,7 @@
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 32.10892966516319,
+      "value": 32.611415523104256,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"

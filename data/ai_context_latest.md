@@ -1,17 +1,17 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.735** / actionable=True
+Generated quality score: **0.795** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-05T17:06:24+00:00",
-  "generated_at_utc": "2026-10-05T17:06:24+00:00",
+  "generated_at": "2026-10-05T17:25:07+00:00",
+  "generated_at_utc": "2026-10-05T17:25:07+00:00",
   "date_jst": "2026-10-06",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 63.83,
+  "regime_score": 63.96,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,15 +31,15 @@ Generated quality score: **0.735** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 86.74898702781083,
-    "stress": 75.2575,
-    "participation": 42.81841255191509,
-    "liquidity": 32.10892966516319,
+    "trend": 86.93205687079154,
+    "stress": 75.26500017166137,
+    "participation": 42.78380249192432,
+    "liquidity": 32.611415523104256,
     "positioning": 56.133531942148466
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.5,
+    "vix": 15.489999771118164,
     "hy_oas": 3.1,
     "ig_oas": 0.85,
     "treasury_volatility_proxy": 90.387,
@@ -50,9 +50,9 @@ Generated quality score: **0.735** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9562,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-05T17:06:22.023551+00:00",
+    "breadth_source_as_of_utc": "2026-10-05T17:25:04.925523+00:00",
     "nfci": -0.548,
-    "volume_ratio20_mean": 0.45682324162907956,
+    "volume_ratio20_mean": 0.4693853880776063,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -151,7 +151,7 @@ Generated quality score: **0.735** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-05T17:07:38+00:00",
+  "generated_at": "2026-10-05T17:26:39+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -162,25 +162,25 @@ Generated quality score: **0.735** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -204,7 +204,7 @@ Generated quality score: **0.735** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-05T17:06:22.023551+00:00
+- Data retrieved (UTC): 2026-10-05T17:25:04.925523+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -232,8 +232,8 @@ Generated quality score: **0.735** / actionable=True
 |---|---|---:|
 | JP | Financials | 7 |
 | JP | Other | 13 |
-| US | Financials | 9 |
-| US | Other | 5 |
+| US | Financials | 10 |
+| US | Other | 4 |
 | US | Shipping | 6 |
 
 ## Research candidates
@@ -250,16 +250,16 @@ Generated quality score: **0.735** / actionable=True
 | JP | 12 | 2121.T | MIXI,Inc. | Other | 70.2 | 99.4 | unchanged |
 | JP | 13 | 8789.T | FinTech Global Incorporated | Other | 69.2 | 99.4 | unchanged |
 | JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 68.8 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.7 | 100.0 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.8 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.0 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
 | US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.5 | 99.8 | unchanged |
 | US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | 99.7 | unchanged |
-| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.2 | 99.7 | unchanged |
+| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.3 | 99.7 | unchanged |
 | US | 14 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
-| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.8 | 99.4 | unchanged |
-| US | 24 | CMBT | CMB.TECH NV Ordinary Shares | Other | 78.0 | 99.3 | unchanged |
+| US | 21 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.8 | 99.4 | unchanged |
+| US | 24 | CMBT | CMB.TECH NV Ordinary Shares | Other | 78.1 | 99.3 | unchanged |
 
 ## Required manual checks before an order
 
@@ -273,7 +273,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 8377 ほくほくフィナンシャルグループ | Fri, 29 May 2026 | guidance | ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE5mOXJYY0tyRW8yQUhTZ09US2tkWVM0bEwzUEgteml0SlBUdVZTaU14M3NWZGNUX2FvLTdCb2Z3dHBTVi1WdmlkUVV5ZWZSRVM5SlE?oc=5
+- [CRITICAL] 8377 ほくほくフィナンシャルグループ | Wed, 29 Jul 2026 | earnings | ほくほくフィナンシャルグループ[8377]：2027年3月期 第1四半期決算短信〔日本基準〕（連結） 2026年7月29日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1GMWtCNGVHX01TRDB3UW05NWhHSHo5TjZNYWhyQ1BSVERtTkczRXVMMk9lb0Y3MkozaHZiYWlHdDZUX1ZjcDc1LWNnWHBPQzJFd0FqWDFpSUtHRS1TYk1KQ21CTnhtRTRIS1E?oc=5
 - [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426005684/p15057626_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-26 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000162828026058979/trmd-20260630.htm

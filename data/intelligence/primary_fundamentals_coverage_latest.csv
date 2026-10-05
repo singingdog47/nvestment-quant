@@ -5,20 +5,20 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 6701,6701.T,NEC,watchlist,,,missing,0,0,0,0,0,0
 6965,6965.T,浜松ホトニクス,watchlist,,,missing,0,0,0,0,0,0
 5032,5032.T,ANYCOLOR,watchlist,,,missing,0,0,0,0,0,0
-2585,2585.T,ライフドリンク カンパニー,watchlist,,,missing,0,0,0,0,0,0
+2585,2585.T,ライフドリンク カンパニー,watchlist,S100YIP0,2026-06-24,complete,1,1,1,1,1,1
 8766,8766.T,東京海上ホールディングス,watchlist,,,missing,0,0,0,0,0,0
 3099,3099.T,三越伊勢丹ホールディングス,watchlist,,,missing,0,0,0,0,0,0
 8377,8377.T,ほくほくフィナンシャルグループ,watchlist,,,missing,0,0,0,0,0,0
 8622,8622.T,水戸証券,watchlist,,,missing,0,0,0,0,0,0
 3563,3563.T,FOOD & LIFE COMPANIES,watchlist,,,missing,0,0,0,0,0,0
-3932,3932.T,Akatsuki Inc.,screening,,,missing,0,0,0,0,0,0
-8707,8707.T,"IwaiCosmo Holdings,Inc.",screening,,,missing,0,0,0,0,0,0
-8616,8616.T,"Tokai Tokyo Financial Holdings,Inc.",screening,,,missing,0,0,0,0,0,0
+3932,3932.T,Akatsuki Inc.,screening,S100YLRB,2026-06-26,complete,1,1,1,1,1,1
+8707,8707.T,"IwaiCosmo Holdings,Inc.",screening,S100YG9I,2026-06-23,partial,0,1,1,1,1,1
+8616,8616.T,"Tokai Tokyo Financial Holdings,Inc.",screening,S100YGI5,2026-06-23,partial,0,1,1,1,1,1
 6750,6750.T,"ELECOM CO.,LTD.",screening,S100YK25,2026-06-25,complete,1,1,1,1,1,1
 4763,4763.T,"CREEK & RIVER Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
 2121,2121.T,"MIXI,Inc.",screening,S100YE1D,2026-06-19,complete,1,1,1,1,1,1
 8789,8789.T,FinTech Global Incorporated,screening,,,missing,0,0,0,0,0,0
-5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",screening,,,missing,0,0,0,0,0,0
+5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",screening,S100YFV6,2026-06-22,complete,1,1,1,1,1,1
 3989,3989.T,SHARINGTECHNOLOGY INC.,screening,,,missing,0,0,0,0,0,0
 8739,8739.T,"SPARX Group Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
 7172,7172.T,"Japan Investment Adviser Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
@@ -29,8 +29,8 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 4996,4996.T,クミアイ化学工業,watchlist,,,missing,0,0,0,0,0,0
 3678,3678.T,メディアドゥ,watchlist,,,missing,0,0,0,0,0,0
 9553,9553.T,マイクロアド,watchlist,,,missing,0,0,0,0,0,0
-5706,5706.T,三井金属,watchlist,,,missing,0,0,0,0,0,0
-6976,6976.T,太陽誘電,watchlist,,,missing,0,0,0,0,0,0
+5706,5706.T,三井金属,watchlist,S100YBQV,2026-06-24,complete,1,1,1,1,1,1
+6976,6976.T,太陽誘電,watchlist,S100YHU5,2026-06-23,complete,1,1,1,1,1,1
 2802,2802.T,味の素,watchlist,,,missing,0,0,0,0,0,0
 7564,7564.T,ワークマン,watchlist,,,missing,0,0,0,0,0,0
 8737,8737.T,あかつき本社,watchlist,,,missing,0,0,0,0,0,0
