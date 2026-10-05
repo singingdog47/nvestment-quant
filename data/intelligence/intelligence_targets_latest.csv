@@ -12,10 +12,10 @@ JP,8377,8377.T,ほくほくフィナンシャルグループ,high,watchlist
 JP,8622,8622.T,水戸証券,high,watchlist
 JP,3563,3563.T,FOOD & LIFE COMPANIES,high,watchlist
 US,CARE,CARE,"Carter Bankshares, Inc. - Common Stock",normal,screening
-US,STNG,STNG,Scorpio Tankers Inc. Common Shares,normal,screening
-JP,8707,8707.T,"IwaiCosmo Holdings,Inc.",normal,screening
-US,INSW,INSW,"International Seaways, Inc. Common Stock ",normal,screening
 JP,3932,3932.T,Akatsuki Inc.,normal,screening
+US,STNG,STNG,Scorpio Tankers Inc. Common Shares,normal,screening
+US,INSW,INSW,"International Seaways, Inc. Common Stock ",normal,screening
+JP,8707,8707.T,"IwaiCosmo Holdings,Inc.",normal,screening
 US,NWFL,NWFL,Norwood Financial Corp. - Common Stock,normal,screening
 JP,8616,8616.T,"Tokai Tokyo Financial Holdings,Inc.",normal,screening
 US,TEN,TEN,Tsakos Energy Navigation Ltd Common Shares,normal,screening
@@ -29,16 +29,16 @@ JP,2121,2121.T,"MIXI,Inc.",normal,screening
 JP,8789,8789.T,FinTech Global Incorporated,normal,screening
 JP,5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",normal,screening
 US,CMBT,CMBT,CMB.TECH NV Ordinary Shares,normal,screening
-JP,8739,8739.T,"SPARX Group Co.,Ltd.",normal,screening
-US,LPG,LPG,Dorian LPG Ltd. Common Stock,normal,screening
-JP,545A,545A.T,"Toranvia Co.,Ltd.",normal,screening
-US,ACNB,ACNB,ACNB Corporation - Common Stock,normal,screening
-US,MRP,MRP,"Millrose Properties, Inc. Class A Common Stock",normal,screening
-JP,8473,8473.T,"SBI Holdings,Inc.",normal,screening
+JP,3989,3989.T,SHARINGTECHNOLOGY INC.,normal,screening
 US,LTC,LTC,"LTC Properties, Inc. Common Stock",normal,screening
+JP,8739,8739.T,"SPARX Group Co.,Ltd.",normal,screening
+US,ACNB,ACNB,ACNB Corporation - Common Stock,normal,screening
 JP,7172,7172.T,"Japan Investment Adviser Co.,Ltd.",normal,screening
-US,HTGC,HTGC,"Hercules Capital, Inc. Common Stock",normal,screening
-JP,4477,4477.T,"BASE,Inc.",normal,screening
+US,LPG,LPG,Dorian LPG Ltd. Common Stock,normal,screening
+JP,2914,2914.T,JAPAN TOBACCO INC.,normal,screening
+US,MU,MU,"Micron Technology, Inc. - Common Stock",normal,screening
+JP,6191,6191.T,AirTrip Corp.,normal,screening
+US,HCI,HCI,"HCI Group, Inc. Common Stock",normal,screening
 JP,2726,2726.T,パルグループホールディングス,normal,watchlist
 JP,215A,215A.T,タイミー,normal,watchlist
 JP,4996,4996.T,クミアイ化学工業,normal,watchlist
