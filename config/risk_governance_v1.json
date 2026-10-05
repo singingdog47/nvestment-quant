@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "effective_date": "2026-10-05",
+  "status": "observe_only",
+  "purpose": "Measure portfolio performance and risk-state evidence without automatically changing exposure.",
+  "design_principle": "Separate measurement from action. Risk overlays must earn implementation through out-of-sample evidence against the current Human + Quant + AI baseline.",
+  "metrics": {
+    "ytd_performance": {
+      "enabled": true,
+      "separate_realized_unrealized_income_and_external_flows": true,
+      "preferred_return_measure": "TWR_when_cash_flow_history_is_available",
+      "fallback": "report_components_without_inventing_a_return_rate"
+    },
+    "profit_drawdown": {
+      "enabled": true,
+      "definition": "decline in portfolio total-return NAV from its year-to-date high-water mark",
+      "do_not_use": "raw yen profit high-water mark when external contributions or withdrawals are not normalized"
+    },
+    "market_beta": {"enabled": true, "benchmark": "1306.T", "report_only": true},
+    "factor_and_concentration": {"enabled": true, "report_only": true},
+    "regime": {"enabled": true, "report_only": true}
+  },
+  "execution_policy": {
+    "cash_round_lot": "preferred when 100 shares is a reasonable position size and a resting limit order is useful",
+    "odd_lot": "consider only when the user can act intraday because odd-lot orders are real-time only in the user's workflow",
+    "margin": "consider selectively only with explicit holding horizon, maximum loss, exit condition, and cash-position relationship; never treat margin as new investment capital"
+  },
+  "prohibited_until_validated": [
+    "automatic de-risking from YTD profit level alone",
+    "fixed yen profit-lock thresholds",
+    "automatic beta-budget cuts",
+    "automatic alpha-budget increases",
+    "automatic leverage changes",
+    "automatic sell orders from regime labels"
+  ],
+  "validation_gate": {
+    "baseline": "current Human + Quant + AI process with existing portfolio risk engine",
+    "candidate_overlays": [
+      "profit_drawdown_overlay",
+      "beta_budget_overlay",
+      "regime_conditioned_risk_overlay"
+    ],
+    "required_tests": [
+      "walk_forward_or_expanding_window_out_of_sample",
+      "transaction_cost_and_tax_sensitivity",
+      "parameter_sensitivity",
+      "whipsaw_analysis",
+      "fast_crash_and_slow_bear_scenarios",
+      "bull_market_opportunity_cost",
+      "cash_flow_normalization",
+      "comparison_with_simpler_volatility_momentum_baseline"
+    ],
+    "success_metrics": [
+      "maximum_drawdown",
+      "conditional_drawdown_at_risk_or_equivalent",
+      "geometric_return",
+      "sharpe_or_sortino",
+      "turnover",
+      "tax_and_cost_drag",
+      "missed_upside_after_reentry",
+      "stability_across_parameter_ranges"
+    ],
+    "promotion_rule": "No overlay may change recommended exposure unless it shows a material and robust improvement in downside control without unacceptable degradation of long-run geometric return versus both the current baseline and a simpler alternative.",
+    "default_if_inconclusive": "KEEP_OBSERVE_ONLY"
+  },
+  "governance": {
+    "risk_signal_is_permission_not_command": true,
+    "regime_label_is_not_trade_authorization": true,
+    "manual_review_required_for_first_live_policy_change": true,
+    "reversible": true
+  }
+}
