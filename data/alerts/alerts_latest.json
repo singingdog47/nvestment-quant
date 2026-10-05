@@ -1,6 +1,6 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-05T17:26:40+00:00",
+  "generated_at": "2026-10-05T18:22:16+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
@@ -12,13 +12,13 @@
     {
       "severity": "WARNING",
       "category": "COMPANY_EVENT",
-      "code": "EVENT_EARNINGS",
-      "title": "ほくほくフィナンシャルグループ[8377]：2027年3月期 第1四半期決算短信〔日本基準〕（連結） 2026年7月29日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
-      "message": "New company event detected for ほくほくフィナンシャルグループ.",
+      "code": "EVENT_FILING",
+      "title": "SEC 8-K filing",
+      "message": "New company event detected for Hercules Capital, Inc. Common Stock.",
       "value": null,
       "threshold": null,
-      "entity": "ほくほくフィナンシャルグループ",
-      "source": "Google News RSS"
+      "entity": "Hercules Capital, Inc. Common Stock",
+      "source": "SEC EDGAR"
     },
     {
       "severity": "WARNING",
@@ -46,11 +46,11 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "ほくほくフィナンシャルグループ (8377) : 今後の予想・売買予想・AI株価診断 [HFG] - みんかぶ",
-      "message": "New company event detected for ほくほくフィナンシャルグループ.",
+      "title": "株価｜Web東奥 - toonippo.co.jp",
+      "message": "New company event detected for 信越化学工業.",
       "value": null,
       "threshold": null,
-      "entity": "ほくほくフィナンシャルグループ",
+      "entity": "信越化学工業",
       "source": "Google News RSS"
     },
     {
@@ -59,7 +59,7 @@
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 32.611415523104256,
+      "value": 34.20520093357121,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"

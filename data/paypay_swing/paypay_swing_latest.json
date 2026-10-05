@@ -1,69 +1,69 @@
 {
-  "generated_at_jst": "2026-10-06T02:27:44+09:00",
+  "generated_at_jst": "2026-10-06T03:23:25+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
-    "reason": "首位ビットコインは79.8点だが確認閾値未達",
-    "margin": 2.57
+    "reason": "首位ビットコインは79.9点だが確認閾値未達",
+    "margin": 2.58
   },
   "ranking": [
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 85355.0,
+      "close": 85515.0625,
       "data_date": "2026-10-05",
       "momentum": 100.0,
-      "macro": 64.34,
-      "trend": 97.42,
-      "risk": 71.44,
+      "macro": 64.51,
+      "trend": 97.53,
+      "risk": 71.66,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 79.8
+      "total": 79.88
     },
     {
       "key": "STANDARD",
       "label": "スタンダード",
       "ticker": "SPY",
-      "close": 774.2650146484375,
+      "close": 774.8800048828125,
       "data_date": "2026-10-05",
-      "momentum": 67.17,
+      "momentum": 67.31,
       "macro": 62.0,
-      "trend": 99.72,
-      "risk": 91.81,
+      "trend": 99.77,
+      "risk": 91.82,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 77.23
+      "total": 77.3
     },
     {
       "key": "TECH",
       "label": "テクノロジー",
       "ticker": "QQQ",
-      "close": 754.6199951171875,
+      "close": 755.2600708007812,
       "data_date": "2026-10-05",
-      "momentum": 73.36,
-      "macro": 49.86,
+      "momentum": 73.52,
+      "macro": 49.95,
       "trend": 100.0,
-      "risk": 88.63,
+      "risk": 88.61,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 76.1
+      "total": 76.18
     },
     {
       "key": "GOLD",
       "label": "金（ゴールド）",
       "ticker": "GLD",
-      "close": 378.4949951171875,
+      "close": 379.04998779296875,
       "data_date": "2026-10-05",
-      "momentum": 26.9,
-      "macro": 28.09,
+      "momentum": 27.15,
+      "macro": 28.29,
       "trend": 0.0,
-      "risk": 67.64,
+      "risk": 67.72,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 32.3
+      "total": 32.45
     }
   ],
   "source_health": [
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-05T17:27:44+00:00",
+      "fetched_at": "2026-10-05T18:23:25+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-05T17:27:44+00:00",
+      "fetched_at": "2026-10-05T18:23:25+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-05T17:27:44+00:00",
+      "fetched_at": "2026-10-05T18:23:25+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,7 +95,7 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-10-05T17:27:44+00:00",
+      "fetched_at": "2026-10-05T18:23:25+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -103,7 +103,7 @@
       "source": "yfinance:^TNX",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-05T17:27:44+00:00",
+      "fetched_at": "2026-10-05T18:23:25+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -111,7 +111,7 @@
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-05T17:27:44+00:00",
+      "fetched_at": "2026-10-05T18:23:25+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -119,7 +119,7 @@
       "source": "yfinance:^VIX",
       "status": "ok",
       "records": 253,
-      "fetched_at": "2026-10-05T17:27:44+00:00",
+      "fetched_at": "2026-10-05T18:23:25+00:00",
       "error": "",
       "source_tier": "secondary"
     }

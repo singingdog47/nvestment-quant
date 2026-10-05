@@ -7,8 +7,8 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 5032,5032.T,ANYCOLOR,watchlist,,,missing,0,0,0,0,0,0
 2585,2585.T,ライフドリンク カンパニー,watchlist,S100YIP0,2026-06-24,complete,1,1,1,1,1,1
 8766,8766.T,東京海上ホールディングス,watchlist,,,missing,0,0,0,0,0,0
-3099,3099.T,三越伊勢丹ホールディングス,watchlist,,,missing,0,0,0,0,0,0
-8377,8377.T,ほくほくフィナンシャルグループ,watchlist,,,missing,0,0,0,0,0,0
+3099,3099.T,三越伊勢丹ホールディングス,watchlist,S100YD7C,2026-06-17,complete,1,1,1,1,1,1
+8377,8377.T,ほくほくフィナンシャルグループ,watchlist,S100YBV5,2026-06-16,partial,0,0,1,1,1,1
 8622,8622.T,水戸証券,watchlist,,,missing,0,0,0,0,0,0
 3563,3563.T,FOOD & LIFE COMPANIES,watchlist,,,missing,0,0,0,0,0,0
 3932,3932.T,Akatsuki Inc.,screening,S100YLRB,2026-06-26,complete,1,1,1,1,1,1
@@ -33,6 +33,6 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 6976,6976.T,太陽誘電,watchlist,S100YHU5,2026-06-23,complete,1,1,1,1,1,1
 2802,2802.T,味の素,watchlist,,,missing,0,0,0,0,0,0
 7564,7564.T,ワークマン,watchlist,,,missing,0,0,0,0,0,0
-8737,8737.T,あかつき本社,watchlist,,,missing,0,0,0,0,0,0
+8737,8737.T,あかつき本社,watchlist,S100YBUN,2026-06-17,partial,0,1,1,1,1,1
 6561,6561.T,HANATOUR JAPAN,watchlist,,,missing,0,0,0,0,0,0
 409A,409A.T,オリオンビール,watchlist,,,missing,0,0,0,0,0,0

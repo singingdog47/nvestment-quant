@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-05T17:25:04.925523+00:00
+- Data retrieved (UTC): 2026-10-05T18:20:57.084630+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -28,8 +28,8 @@
 |---|---|---:|
 | JP | Financials | 7 |
 | JP | Other | 13 |
-| US | Financials | 10 |
-| US | Other | 4 |
+| US | Financials | 9 |
+| US | Other | 5 |
 | US | Shipping | 6 |
 
 ## Research candidates
@@ -46,16 +46,16 @@
 | JP | 12 | 2121.T | MIXI,Inc. | Other | 70.2 | 99.4 | unchanged |
 | JP | 13 | 8789.T | FinTech Global Incorporated | Other | 69.2 | 99.4 | unchanged |
 | JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 68.8 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.8 | 100.0 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.7 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.0 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
-| US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.5 | 99.8 | unchanged |
+| US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.6 | 99.8 | unchanged |
 | US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | 99.7 | unchanged |
 | US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.3 | 99.7 | unchanged |
 | US | 14 | FRO | Frontline Plc Ordinary Shares | Other | 80.0 | 99.6 | unchanged |
-| US | 21 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.8 | 99.4 | unchanged |
-| US | 24 | CMBT | CMB.TECH NV Ordinary Shares | Other | 78.1 | 99.3 | unchanged |
+| US | 20 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.8 | 99.4 | unchanged |
+| US | 24 | CMBT | CMB.TECH NV Ordinary Shares | Other | 78.0 | 99.3 | unchanged |
 
 ## Required manual checks before an order
 
