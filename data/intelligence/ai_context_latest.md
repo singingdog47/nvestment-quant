@@ -6,12 +6,12 @@ Generated quality score: **0.735** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-05T16:03:56+00:00",
-  "generated_at_utc": "2026-10-05T16:03:56+00:00",
+  "generated_at": "2026-10-05T16:21:28+00:00",
+  "generated_at_utc": "2026-10-05T16:21:28+00:00",
   "date_jst": "2026-10-06",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 63.17,
+  "regime_score": 63.36,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,15 +31,15 @@ Generated quality score: **0.735** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 86.54237848506816,
-    "stress": 75.18999988555908,
-    "participation": 42.61363636363637,
-    "liquidity": 28.506387917709468,
+    "trend": 86.48487273437607,
+    "stress": 75.21249968528747,
+    "participation": 42.61652053530226,
+    "liquidity": 29.801088725663313,
     "positioning": 56.133531942148466
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.59000015258789,
+    "vix": 15.5600004196167,
     "hy_oas": 3.1,
     "ig_oas": 0.85,
     "treasury_volatility_proxy": 90.387,
@@ -50,9 +50,9 @@ Generated quality score: **0.735** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9562,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-05T16:03:53.619933+00:00",
+    "breadth_source_as_of_utc": "2026-10-05T16:21:26.481001+00:00",
     "nfci": -0.548,
-    "volume_ratio20_mean": 0.3667596979427366,
+    "volume_ratio20_mean": 0.3991272181415828,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -151,7 +151,7 @@ Generated quality score: **0.735** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-05T16:05:06+00:00",
+  "generated_at": "2026-10-05T16:22:36+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -204,7 +204,7 @@ Generated quality score: **0.735** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-05T16:03:53.619933+00:00
+- Data retrieved (UTC): 2026-10-05T16:21:26.481001+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -273,7 +273,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 8377 ほくほくフィナンシャルグループ | Wed, 29 Jul 2026 | earnings | ほくほくフィナンシャルグループ[8377]：2027年3月期 第1四半期決算短信〔日本基準〕（連結） 2026年7月29日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1GMWtCNGVHX01TRDB3UW05NWhHSHo5TjZNYWhyQ1BSVERtTkczRXVMMk9lb0Y3MkozaHZiYWlHdDZUX1ZjcDc1LWNnWHBPQzJFd0FqWDFpSUtHRS1TYk1KQ21CTnhtRTRIS1E?oc=5
+- [CRITICAL] 8377 ほくほくフィナンシャルグループ | Fri, 29 May 2026 | guidance | ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE5mOXJYY0tyRW8yQUhTZ09US2tkWVM0bEwzUEgteml0SlBUdVZTaU14M3NWZGNUX2FvLTdCb2Z3dHBTVi1WdmlkUVV5ZWZSRVM5SlE?oc=5
 - [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426005684/p15057626_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-26 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000162828026058979/trmd-20260630.htm
