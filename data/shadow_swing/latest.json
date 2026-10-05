@@ -1,27 +1,40 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-10-03",
+  "as_of_date": "2026-10-06",
   "status": "ACTIVE",
-  "data_fresh": false,
+  "data_fresh": true,
   "metrics": {
     "initial_capital_jpy": 1000000.0,
-    "nav_jpy": 996400.0,
+    "nav_jpy": 992200.0,
     "cash_jpy": 906700.0,
-    "total_return_pct": -0.36,
+    "total_return_pct": -0.78,
     "benchmark_return_pct": null,
     "alpha_pct": null,
     "realized_pnl_jpy": 0.0,
-    "max_drawdown_pct": -0.4,
+    "max_drawdown_pct": -0.82,
     "positions": 1,
-    "pending_orders": 0
+    "pending_orders": 1
   },
   "regime": {
     "label": "CONSTRUCTIVE",
-    "score": 66.06,
+    "score": 63.83,
     "confidence": 1.0
   },
   "fills_today": [],
-  "pending_orders": [],
+  "pending_orders": [
+    {
+      "created_at_utc": "2026-10-05T17:28:24.965252+00:00",
+      "signal_date": "2026-10-06",
+      "side": "SELL",
+      "symbol": "8622.T",
+      "code": "8622",
+      "name": "Mito Securities Co.,Ltd.",
+      "qty": 100,
+      "order_type": "MARKET_NEXT_OPEN",
+      "reason": "hard_stop",
+      "status": "PENDING"
+    }
+  ],
   "positions": [
     {
       "symbol": "8622.T",
@@ -31,9 +44,9 @@
       "qty": 100,
       "entry_price": 933.0,
       "entry_date": "2026-09-15",
-      "last_price": 897.0,
+      "last_price": 855.0,
       "peak_price": 937.0,
-      "holding_sessions": 13,
+      "holding_sessions": 14,
       "confidence": 0.66,
       "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
     }
