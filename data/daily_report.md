@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-05T16:21:26.481001+00:00
+- Data retrieved (UTC): 2026-10-05T17:06:22.023551+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -48,7 +48,7 @@
 | JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 68.8 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.7 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 82.9 | 99.9 | unchanged |
+| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.0 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
 | US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.5 | 99.8 | unchanged |
 | US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | 99.7 | unchanged |

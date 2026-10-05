@@ -1,9 +1,6 @@
 {
-  "checked": 2,
-  "resolved_document_ids": [
-    "S100YTCC",
-    "S100YSEA"
-  ],
+  "checked": 0,
+  "resolved_document_ids": [],
   "new_companies": 0,
   "errors": [],
   "primary_companies": 4,

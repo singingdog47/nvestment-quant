@@ -1,49 +1,12 @@
 {
-  "pending": [
-    {
-      "market": "JP",
-      "code": "2914",
-      "ticker": "2914.T",
-      "name": "JAPAN TOBACCO INC.",
-      "event_date": "2026-07-30",
-      "event_type": "filing",
-      "title": "半期報告書－第42期(2026/01/01－2026/12/31)",
-      "summary": "",
-      "source": "EDINET",
-      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100YTCC",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-10-05T16:22:25+00:00",
-      "event_id": "ca4943132ab6b1db36e168b0",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "5032",
-      "ticker": "5032.T",
-      "name": "ANYCOLOR",
-      "event_date": "2026-07-27",
-      "event_type": "filing",
-      "title": "有価証券報告書－第9期(2025/05/01－2026/04/30)",
-      "summary": "",
-      "source": "EDINET",
-      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100YSEA",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-10-05T16:22:26+00:00",
-      "event_id": "ec64768c5af3f9b5d42442d9",
-      "raw_excerpt": ""
-    }
-  ],
+  "pending": [],
   "anchor_date": "2026-10-03",
-  "next_date": "2026-07-18",
+  "next_date": "2026-07-04",
   "lookback_days": 450,
   "days_scanned_this_run": 14,
-  "new_events": 2,
+  "new_events": 0,
   "failures": [],
   "complete": false,
   "status": "in_progress",
-  "updated_at_utc": "2026-10-05T16:22:27+00:00"
+  "updated_at_utc": "2026-10-05T17:07:29+00:00"
 }

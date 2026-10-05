@@ -6,12 +6,12 @@ Generated quality score: **0.735** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-05T16:21:28+00:00",
-  "generated_at_utc": "2026-10-05T16:21:28+00:00",
+  "generated_at": "2026-10-05T17:06:24+00:00",
+  "generated_at_utc": "2026-10-05T17:06:24+00:00",
   "date_jst": "2026-10-06",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 63.36,
+  "regime_score": 63.83,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,15 +31,15 @@ Generated quality score: **0.735** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 86.48487273437607,
-    "stress": 75.21249968528747,
-    "participation": 42.61652053530226,
-    "liquidity": 29.801088725663313,
+    "trend": 86.74898702781083,
+    "stress": 75.2575,
+    "participation": 42.81841255191509,
+    "liquidity": 32.10892966516319,
     "positioning": 56.133531942148466
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.5600004196167,
+    "vix": 15.5,
     "hy_oas": 3.1,
     "ig_oas": 0.85,
     "treasury_volatility_proxy": 90.387,
@@ -50,9 +50,9 @@ Generated quality score: **0.735** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9562,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-05T16:21:26.481001+00:00",
+    "breadth_source_as_of_utc": "2026-10-05T17:06:22.023551+00:00",
     "nfci": -0.548,
-    "volume_ratio20_mean": 0.3991272181415828,
+    "volume_ratio20_mean": 0.45682324162907956,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -151,7 +151,7 @@ Generated quality score: **0.735** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-05T16:22:36+00:00",
+  "generated_at": "2026-10-05T17:07:38+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -204,7 +204,7 @@ Generated quality score: **0.735** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-05T16:21:26.481001+00:00
+- Data retrieved (UTC): 2026-10-05T17:06:22.023551+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -252,7 +252,7 @@ Generated quality score: **0.735** / actionable=True
 | JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 68.8 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.7 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.8 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 82.9 | 99.9 | unchanged |
+| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.0 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.2 | 99.9 | unchanged |
 | US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.5 | 99.8 | unchanged |
 | US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 80.7 | 99.7 | unchanged |
