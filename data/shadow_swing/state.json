@@ -15,7 +15,7 @@
       "entry_date": "2026-09-15",
       "last_price": 855.0,
       "peak_price": 937.0,
-      "holding_sessions": 14,
+      "holding_sessions": 15,
       "confidence": 0.66,
       "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
     }
@@ -51,6 +51,6 @@
   "peak_nav_jpy": 1000400.0,
   "max_drawdown_pct": -0.8196721311475419,
   "benchmark_start_price": 422.70001220703125,
-  "last_run_date": "2026-10-06",
+  "last_run_date": "2026-10-07",
   "status": "ACTIVE"
 }
