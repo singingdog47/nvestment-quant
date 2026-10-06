@@ -15,19 +15,19 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 8707,8707.T,"IwaiCosmo Holdings,Inc.",screening,S100YG9I,2026-06-23,partial,0,1,1,1,1,1
 8616,8616.T,"Tokai Tokyo Financial Holdings,Inc.",screening,S100YGI5,2026-06-23,partial,0,1,1,1,1,1
 6750,6750.T,"ELECOM CO.,LTD.",screening,S100YK25,2026-06-25,complete,1,1,1,1,1,1
-4763,4763.T,"CREEK & RIVER Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
+4763,4763.T,"CREEK & RIVER Co.,Ltd.",screening,S100Y6IG,2026-05-26,complete,1,1,1,1,1,1
 2121,2121.T,"MIXI,Inc.",screening,S100YE1D,2026-06-19,complete,1,1,1,1,1,1
 8789,8789.T,FinTech Global Incorporated,screening,,,missing,0,0,0,0,0,0
 5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",screening,S100YFV6,2026-06-22,complete,1,1,1,1,1,1
 3989,3989.T,SHARINGTECHNOLOGY INC.,screening,,,missing,0,0,0,0,0,0
-8739,8739.T,"SPARX Group Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
+8739,8739.T,"SPARX Group Co.,Ltd.",screening,S100Y7MV,2026-05-29,partial,0,1,1,1,1,1
 7172,7172.T,"Japan Investment Adviser Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
 2914,2914.T,JAPAN TOBACCO INC.,screening,,,missing,0,0,0,0,0,0
 6191,6191.T,AirTrip Corp.,screening,,,missing,0,0,0,0,0,0
-2726,2726.T,パルグループホールディングス,watchlist,,,missing,0,0,0,0,0,0
+2726,2726.T,パルグループホールディングス,watchlist,S100Y647,2026-05-26,complete,1,1,1,1,1,1
 215A,215A.T,タイミー,watchlist,,,missing,0,0,0,0,0,0
 4996,4996.T,クミアイ化学工業,watchlist,,,missing,0,0,0,0,0,0
-3678,3678.T,メディアドゥ,watchlist,,,missing,0,0,0,0,0,0
+3678,3678.T,メディアドゥ,watchlist,S100Y71R,2026-05-28,complete,1,1,1,1,1,1
 9553,9553.T,マイクロアド,watchlist,,,missing,0,0,0,0,0,0
 5706,5706.T,三井金属,watchlist,S100YBQV,2026-06-24,complete,1,1,1,1,1,1
 6976,6976.T,太陽誘電,watchlist,S100YHU5,2026-06-23,complete,1,1,1,1,1,1

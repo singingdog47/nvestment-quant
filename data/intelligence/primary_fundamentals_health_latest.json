@@ -1,16 +1,13 @@
 {
-  "checked": 7,
+  "checked": 4,
   "resolved_document_ids": [
-    "S100YDIT",
-    "S100YBFV",
-    "S100YD7C",
-    "S100YBUN",
-    "S100YBV5",
-    "S100Y9R9",
-    "S100Y992"
+    "S100Y7MV",
+    "S100Y71R",
+    "S100Y6IG",
+    "S100Y647"
   ],
-  "new_companies": 3,
+  "new_companies": 4,
   "errors": [],
-  "primary_companies": 14,
+  "primary_companies": 18,
   "status": "ok"
 }

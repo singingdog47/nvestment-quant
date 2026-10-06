@@ -1,17 +1,17 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.821** / actionable=True
+Generated quality score: **0.856** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-05T18:20:59+00:00",
-  "generated_at_utc": "2026-10-05T18:20:59+00:00",
+  "generated_at": "2026-10-06T02:19:41+00:00",
+  "generated_at_utc": "2026-10-06T02:19:41+00:00",
   "date_jst": "2026-10-06",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 64.2,
+  "regime_score": 66.62,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,36 +23,35 @@ Generated quality score: **0.821** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": true,
+  "thin_liquidity_flag": false,
   "treasury_volatility_shock_flag": true,
   "sq_execution_caution_flag": false,
   "regime_flags": [
-    "THIN_LIQUIDITY",
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 87.01783573013375,
-    "stress": 75.16750008583068,
+    "trend": 91.98055929406239,
+    "stress": 75.31749965667724,
     "participation": 42.79245500692201,
-    "liquidity": 34.20520093357121,
+    "liquidity": 40.178951358693624,
     "positioning": 56.133531942148466
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.619999885559082,
+    "vix": 15.520000457763672,
     "hy_oas": 3.1,
     "ig_oas": 0.85,
-    "treasury_volatility_proxy": 90.387,
-    "treasury_volatility_percentile_rank": 0.9643,
-    "treasury_volatility_stress_score": 27.68,
-    "treasury_volatility_as_of_date": "2026-10-02",
+    "treasury_volatility_proxy": 90.346,
+    "treasury_volatility_percentile_rank": 0.9603,
+    "treasury_volatility_stress_score": 27.98,
+    "treasury_volatility_as_of_date": "2026-10-05",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9562,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-10-05T18:20:57.084630+00:00",
     "nfci": -0.548,
-    "volume_ratio20_mean": 0.5092300233392802,
+    "volume_ratio20_mean": 0.6585737839673405,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -95,7 +94,7 @@ Generated quality score: **0.821** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 68309.4609375,
+        "spot": 70136.03125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -138,8 +137,8 @@ Generated quality score: **0.821** / actionable=True
   "regime_label": "constructive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
-    0.15,
-    0.18
+    0.08,
+    0.12
   ],
   "max_single_stock_weight": 0.05,
   "lifestyle_bucket_max_weight": 0.05,
@@ -151,7 +150,7 @@ Generated quality score: **0.821** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-05T18:22:16+00:00",
+  "generated_at": "2026-10-06T02:20:55+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -162,25 +161,25 @@ Generated quality score: **0.821** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -195,10 +194,10 @@ Generated quality score: **0.821** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=9 / tier=primary
-- SEC: ok / records=30 / tier=primary
+- EDINET: ok / records=7 / tier=primary
+- SEC: ok / records=31 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=55 / tier=secondary
+- NewsRSS: ok / records=56 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -273,6 +272,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
+- [CRITICAL] 2585 ライフドリンク カンパニー | Fri, 06 Mar 2026 | mna | ライフドリンクカンパニー、新設子会社を通じてスキマデパートからSDネクストおよびSDボトラーズを買収 - marr.jp | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiTEFVX3lxTE0zcktvY1d5azNITkxuMnBkMjAwZEFUN3hONTVEdWE3U20wQVJYU29JOU5IMHJEcVNiWUhONWNQQ1VEODEzamFFSnh1aEQ?oc=5
 - [CRITICAL] 8377 ほくほくフィナンシャルグループ | Wed, 29 Jul 2026 | earnings | ほくほくフィナンシャルグループ[8377]：2027年3月期 第1四半期決算短信〔日本基準〕（連結） 2026年7月29日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1GMWtCNGVHX01TRDB3UW05NWhHSHo5TjZNYWhyQ1BSVERtTkczRXVMMk9lb0Y3MkozaHZiYWlHdDZUX1ZjcDc1LWNnWHBPQzJFd0FqWDFpSUtHRS1TYk1KQ21CTnhtRTRIS1E?oc=5
 - [CRITICAL] 4063 信越化学工業 | Wed, 30 Sep 2026 | financing | 信越化学工業[4063]：取締役、執行役員及び従業員に対するストックオプション（新株予約権）の払込金額確定のお知らせ 2026年9月30日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5zMFJma2EzNDVTUnlraDhFdnhBSXlQdksydzlWMjlCQjlNZ0p0NDVZTkZhVmlXbDRnLU5SWk40N1RHVWw5OXVjaklmQTVKY0tpb25IcGJkWkNXTm93WU5vYjdmZzRjRDYzVXc?oc=5
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-08-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426005684/p15057626_6-k.htm
@@ -302,8 +302,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926110666/tm2626112d1_8k.htm
 - [HIGH] ACNB ACNB Corporation - Common Stock | 2026-09-25 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/715579/000162828026063501/acnb-20260925.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006535/p15101807_6-k.htm
-- [HIGH] 6701 NEC | 2026-09-29 | filing | 変更報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z50A
-- [HIGH] 9553 マイクロアド | 2026-09-29 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z4M5
 - [HIGH] 3678 メディアドゥ | 2026-09-30 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z5BQ
 - [HIGH] 4063 信越化学工業 | 2026-09-30 | filing | 訂正臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z5HO
 - [HIGH] 4063 信越化学工業 | 2026-09-30 | filing | 訂正有価証券届出書（参照方式） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z5CC
@@ -314,9 +312,10 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 8737 あかつき本社 | 2026-10-01 | filing | 発行登録追補書類（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z5JN
 - [HIGH] 5032 ANYCOLOR | 2026-10-02 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z62Q
 - [HIGH] WSBC WesBanco, Inc. - Common Stock | 2026-10-02 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/203596/000119312526412356/wsbc-20261002.htm
-- [HIGH] 5032 ANYCOLOR | Fri, 02 Oct 2026 | buyback | ＡＮＹＣＯＬＯＲ[5032]：自己株式の取得状況に関するお知らせ 2026年10月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5nWktIU3UxdkJvNEhjalZRS25fMUlkUGJmWV9IN0tGd2NLYTUxNmdiajRmUVBGUmpxMUNyODZmV2hjS3FBSUNkREQ0ZDdfY29wZW1qcU1uUWFRa3VBRURybFRPZDZuZnVrZEE?oc=5
-- [HIGH] 8622 水戸証券 | Sat, 07 Mar 2026 | dividend | 水戸証券(8622)、4期連続となる「増配」を発表し、配当利回り5.9％に！ 年間配当は4年で3.0倍に増加、2026年3月期は前期比13円増の｢1株あたり43円｣に！ - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1hN2dNanhnWGxoWUxBZ0JIaXpYYjUxU29WY2V4SDVrV05QZGV2OEFSbnFpS1ZyUHllaUJod0EycUgxUFA5ak4zVktwZ3Jjb1M2SjFN?oc=5
+- [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-05 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006663/p15102252_6-k.htm
+- [HIGH] 8622 水戸証券 | Sat, 07 Mar 2026 | dividend | 水戸証券(8622)、4期連続となる「増配」を発表し、配当利回り5.9％に！ 年間配当は4年で3.0倍に増加、2026年3月期は前期比13円増の｢1株あたり43円｣に！ - diamond.jp | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1hN2dNanhnWGxoWUxBZ0JIaXpYYjUxU29WY2V4SDVrV05QZGV2OEFSbnFpS1ZyUHllaUJod0EycUgxUFA5ak4zVktwZ3Jjb1M2SjFN?oc=5
 - [HIGH] 3099 三越伊勢丹ホールディングス | Thu, 01 Oct 2026 | buyback | 三越伊勢丹ホールディングス[3099]：自己株式の取得状況（途中経過）に関するお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9adGlxc0NDOW5sa2daeTBzZ09YTFBQM2tuaUFkNFR4ckpmMWJ4NDh3Q0h5T2oyRkZhcDZsV2h3RVNDUTR4WmgtUTNObjhEN0luVnBnamJBc2duWWNDall4YlV5MWx3bXdhcWc?oc=5
+- [HIGH] 5032 ANYCOLOR | Wed, 09 Sep 2026 | buyback | 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE9SUEU1ZE41TXRpU2h5VTAyb1F4N3BWRTR5YTFFM0FDR1hJTHZrNWlRVUp3MlRuelBKYlpKNU0zTU15QWxaclYwejV0Y2pNWXkxMXgwVFY4U3RYRFpIRmNZanA3MExrQUF4Slk3eg?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
