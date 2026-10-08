@@ -1,0 +1,35 @@
+name: AI Credit CDS Research (observe only)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "scripts/ai_credit_monitor.py"
+      - "tests/test_ai_credit_monitor.py"
+      - "docs/ai_credit_research.md"
+      - ".github/workflows/ai_credit_research.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  research-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install pytest
+      - run: python -m pytest -q tests/test_ai_credit_monitor.py
+      - name: Fail closed without licensed input
+        run: |
+          python -m scripts.ai_credit_monitor --cds-csv /tmp/not_available_cds.csv --output /tmp/ai_credit_assessment.json
+          python - <<'PY'
+          import json
+          obj = json.load(open("/tmp/ai_credit_assessment.json"))
+          assert obj["data_status"] == "unavailable"
+          assert obj["actionable"] is False
+          assert obj["trade_signal"] is False
+          PY
