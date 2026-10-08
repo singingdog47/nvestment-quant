@@ -102,12 +102,12 @@ def forward_study(panel, prices_path, *, horizon=5):
     samples = []
     for obs in panel:
         i = lookup.get(obs["date"])
-        if i is None or i + horizon >= len(rows) or rows[i][1] <= 0:
+        if i is None or i + 1 + horizon >= len(rows) or rows[i + 1][1] <= 0:
             continue
         samples.append({"signal_date": obs["date"],
                         "ai_minus_control_bp": obs["ai_minus_control_bp"],
                         "forward_sessions": horizon,
-                        "forward_return": round(rows[i + horizon][1] / rows[i][1] - 1, 8)})
+                        "forward_return": round(rows[i + 1 + horizon][1] / rows[i + 1][1] - 1, 8)})
     return {"status": "unvalidated_observations", "samples": samples}
 
 
