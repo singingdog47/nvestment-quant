@@ -72,4 +72,4 @@ def test_forward_study_avoids_unrealized_and_same_day(tmp_path):
            {"date": "2026-10-07", "ai_minus_control_bp": 55}]
     study = forward_study(obs, file, horizon=5)
     assert len(study["samples"]) == 1
-    assert study["samples"][0]["forward_return"] == -0.05
+    assert study["samples"][0]["forward_return"] == round(90 / 110 - 1, 8)
