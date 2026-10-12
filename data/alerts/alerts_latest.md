@@ -1,12 +1,12 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-10-12T16:59:56+00:00
+Generated: 2026-10-12T17:50:26+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
 - WARNING: 2
-- WATCH: 2
+- WATCH: 1
 - INFO: 0
 
 ## Alerts
@@ -14,8 +14,6 @@ Highest severity: **WARNING**
   - Market Regime Engine reports thin_liquidity_flag=true.
 - **WARNING** VOLATILITY/TREASURY_VOLATILITY_SHOCK: Treasury yield volatility is unusually high
   - The official-Treasury realized-yield-volatility proxy is at or above its 90th percentile. It is not ICE MOVE.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: (株)ほくほくフィナンシャルグループ【8377】：板気配 - Yahoo!ファイナンス
-  - New company event detected for ほくほくフィナンシャルグループ.
 - **WATCH** LIQUIDITY/LIQUIDITY_SOFT: Market liquidity is soft
   - Liquidity component fell below 40/100.
 

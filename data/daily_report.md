@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-12T16:58:34.452082+00:00
+- Data retrieved (UTC): 2026-10-12T17:49:10.599430+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -49,10 +49,10 @@
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.1 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.3 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 82.9 | 99.9 | unchanged |
-| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.4 | 99.9 | unchanged |
-| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.9 | 99.9 | unchanged |
-| US | 11 | TRMD | TORM plc - Class A Common Stock | Other | 80.5 | 99.7 | unchanged |
-| US | 13 | BUSE | First Busey Corporation - Common Stock | Other | 80.5 | 99.6 | unchanged |
+| US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.3 | 99.9 | unchanged |
+| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.9 | unchanged |
+| US | 11 | TRMD | TORM plc - Class A Common Stock | Other | 80.6 | 99.7 | unchanged |
+| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 80.5 | 99.7 | unchanged |
 | US | 15 | FRO | Frontline Plc Ordinary Shares | Other | 79.8 | 99.6 | unchanged |
 | US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.7 | 99.4 | unchanged |
 | US | 24 | HCI | HCI Group, Inc. Common Stock | Other | 77.9 | 99.3 | unchanged |

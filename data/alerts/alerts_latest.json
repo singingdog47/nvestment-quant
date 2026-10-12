@@ -1,10 +1,10 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-12T16:59:56+00:00",
+  "generated_at": "2026-10-12T17:50:26+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 2,
+    "WATCH": 1,
     "WARNING": 2,
     "CRITICAL": 0
   },
@@ -33,22 +33,11 @@
     },
     {
       "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "(株)ほくほくフィナンシャルグループ【8377】：板気配 - Yahoo!ファイナンス",
-      "message": "New company event detected for ほくほくフィナンシャルグループ.",
-      "value": null,
-      "threshold": null,
-      "entity": "ほくほくフィナンシャルグループ",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
       "category": "LIQUIDITY",
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 26.727403494166516,
+      "value": 27.45880029232553,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"
