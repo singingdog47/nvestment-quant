@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-10-06T02:20:55+00:00
+Generated (UTC): 2026-10-12T07:41:31+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.6%, volume ratio=0.362115814442133)
-- [US] Norwood Financial Corp. - Common Stock: SHORT_CROWDING (float=90.1%, float turnover=0.4%, volume ratio=0.9018352049168558)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=1.0%, volume ratio=0.7968595638933871)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.0%, volume ratio=1.1193307221562694)
-- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING (float=97.9%, float turnover=1.1%, volume ratio=1.1584451584451585)
-- [US] ACNB Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=95.6%, float turnover=0.7%, volume ratio=1.0067877791633602)
-- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING (float=91.6%, float turnover=0.9%, volume ratio=0.7842289883915533)
-- [JP] ANYCOLOR: HIGH_FLOAT_TURNOVER (float=48.2%, float turnover=2.0%, volume ratio=0.19462707215103603)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.2%, volume ratio=0.9133627431368352)
-- [US] International Seaways, Inc. Common Stock: VOLUME_EXPANSION (float=83.8%, float turnover=1.5%, volume ratio=1.7877479380307082)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.5%, volume ratio=0.4941033726649761)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=1.0%, volume ratio=0.6888587691048246)
+- [JP] CREEK & RIVER Co.,Ltd.: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=41.7%, float turnover=0.6%, volume ratio=3.2200357781753133)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.0%, volume ratio=0.7124168065676018)
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=97.9%, float turnover=1.1%, volume ratio=0.5285176764254655)
+- [US] ACNB Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.0%, float turnover=0.7%, volume ratio=0.47964051452423545)
+- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING (float=91.6%, float turnover=0.9%, volume ratio=0.5580941846412257)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.3%, volume ratio=1.2067772395218586)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.5%, float turnover=1.6%, volume ratio=0.8858085867249742)
+- [US] Frontline Plc Ordinary Shares: HIGH_FLOAT_TURNOVER (float=64.2%, float turnover=2.0%, volume ratio=1.012427451354857)
 
 ## Governance
 
