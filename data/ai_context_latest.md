@@ -6,12 +6,12 @@ Generated quality score: **0.847** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-12T18:13:31+00:00",
-  "generated_at_utc": "2026-10-12T18:13:31+00:00",
+  "generated_at": "2026-10-12T18:56:36+00:00",
+  "generated_at_utc": "2026-10-12T18:56:36+00:00",
   "date_jst": "2026-10-13",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 65.55,
+  "regime_score": 65.6,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,15 +31,15 @@ Generated quality score: **0.847** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 93.13645629807371,
-    "stress": 76.32749977111817,
-    "participation": 42.754960775265346,
-    "liquidity": 28.25702962193866,
+    "trend": 93.00950922219205,
+    "stress": 76.26749982833863,
+    "participation": 42.71746654360867,
+    "liquidity": 29.009063680443784,
     "positioning": 57.382181808165846
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.180000305175781,
+    "vix": 15.260000228881836,
     "hy_oas": 3.15,
     "ig_oas": 0.82,
     "treasury_volatility_proxy": 87.562,
@@ -50,9 +50,9 @@ Generated quality score: **0.847** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9561,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-12T18:13:28.698147+00:00",
+    "breadth_source_as_of_utc": "2026-10-12T18:56:34.299277+00:00",
     "nfci": -0.494,
-    "volume_ratio20_mean": 0.36997574054846644,
+    "volume_ratio20_mean": 0.38877659201109466,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -151,7 +151,7 @@ Generated quality score: **0.847** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-12T18:14:49+00:00",
+  "generated_at": "2026-10-12T18:57:51+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -198,13 +198,13 @@ Generated quality score: **0.847** / actionable=True
 - EDINET: ok / records=7 / tier=primary
 - SEC: ok / records=31 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=54 / tier=secondary
+- NewsRSS: ok / records=55 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-12T18:13:28.698147+00:00
+- Data retrieved (UTC): 2026-10-12T18:56:34.299277+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -251,15 +251,15 @@ Generated quality score: **0.847** / actionable=True
 | JP | 13 | 8789.T | FinTech Global Incorporated | Other | 69.3 | 99.4 | unchanged |
 | JP | 14 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 69.3 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.1 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.4 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.3 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 82.9 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.4 | 99.9 | unchanged |
 | US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.9 | unchanged |
 | US | 11 | TRMD | TORM plc - Class A Common Stock | Other | 80.6 | 99.7 | unchanged |
-| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 80.6 | 99.7 | unchanged |
+| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 80.5 | 99.7 | unchanged |
 | US | 15 | FRO | Frontline Plc Ordinary Shares | Other | 79.8 | 99.6 | unchanged |
 | US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.7 | 99.4 | unchanged |
-| US | 24 | HCI | HCI Group, Inc. Common Stock | Other | 77.9 | 99.3 | unchanged |
+| US | 24 | HCI | HCI Group, Inc. Common Stock | Other | 78.0 | 99.3 | unchanged |
 
 ## Required manual checks before an order
 

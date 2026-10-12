@@ -1,13 +1,9 @@
 {
-  "checked": 5,
+  "checked": 1,
   "resolved_document_ids": [
-    "S100Z6LI",
-    "S100XUVD",
-    "S100XU2F",
-    "S100XS3C",
-    "S100XRRA"
+    "S100Z6LI"
   ],
-  "new_companies": 3,
+  "new_companies": 0,
   "errors": [],
   "primary_companies": 17,
   "status": "ok"
