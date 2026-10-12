@@ -135,7 +135,7 @@ def collect_primary_fundamentals(events, previous_path: str | Path, *, session=N
         if not any(x in title for x in ("有価証券報告書", "半期報告書", "四半期報告書")):
             continue
         eligible.append((str(getattr(e, "event_date", "")), docid, e))
-    eligible.sort(reverse=True)
+    eligible.sort(key=lambda item: (item[0], item[1]), reverse=True)
     http = session or requests.Session()
     added = []
     errors = []
