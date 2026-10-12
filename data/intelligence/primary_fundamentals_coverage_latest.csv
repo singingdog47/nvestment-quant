@@ -21,8 +21,8 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 7744,7744.T,"Noritsu Koki Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
 8739,8739.T,"SPARX Group Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
 3989,3989.T,SHARINGTECHNOLOGY INC.,screening,,,missing,0,0,0,0,0,0
-9757,9757.T,Funai Soken Holdings Incorporated,screening,,,missing,0,0,0,0,0,0
-7172,7172.T,"Japan Investment Adviser Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
+9757,9757.T,Funai Soken Holdings Incorporated,screening,S100XUVD,2026-03-27,complete,1,1,1,1,1,1
+7172,7172.T,"Japan Investment Adviser Co.,Ltd.",screening,S100XRRA,2026-03-18,complete,1,1,1,1,1,1
 8935,8935.T,"FJ NEXT HOLDINGS CO.,LTD.",screening,,,missing,0,0,0,0,0,0
 2726,2726.T,パルグループホールディングス,watchlist,,,missing,0,0,0,0,0,0
 215A,215A.T,タイミー,watchlist,,,missing,0,0,0,0,0,0
@@ -34,5 +34,5 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 2802,2802.T,味の素,watchlist,,,missing,0,0,0,0,0,0
 7564,7564.T,ワークマン,watchlist,,,missing,0,0,0,0,0,0
 8737,8737.T,あかつき本社,watchlist,S100YBUN,2026-06-17,partial,0,1,1,1,1,1
-6561,6561.T,HANATOUR JAPAN,watchlist,,,missing,0,0,0,0,0,0
+6561,6561.T,HANATOUR JAPAN,watchlist,S100XU2F,2026-03-26,complete,1,1,1,1,1,1
 409A,409A.T,オリオンビール,watchlist,,,missing,0,0,0,0,0,0

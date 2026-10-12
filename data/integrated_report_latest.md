@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-12T17:51:58+00:00
+Generated (UTC): 2026-10-12T18:16:15+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,11 +11,11 @@ Generated (UTC): 2026-10-12T17:51:58+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 65.43
+- Score: 65.55
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 15.220000267028809
+- VIX: 15.180000305175781
 - Treasury realized-vol proxy (not ICE MOVE): 87.562 bps annualized; percentile=0.9246
 - Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
@@ -50,23 +50,23 @@ Generated (UTC): 2026-10-12T17:51:58+00:00
 - 5. ELECOM CO.,LTD. 6750.T | market_rank=7.0 | raw=72.93745210275051 | cross_pct=99.68944099378882
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.10730957027468 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.30120468904302 | cross_pct=99.97038791827066
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=82.90491798760053 | cross_pct=99.9407758365413
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.25373541208249 | cross_pct=99.88155167308261
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.83321820072834 | cross_pct=99.85193959135327
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.10271501852625 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.3605138843671 | cross_pct=99.97038791827066
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=82.92544789665206 | cross_pct=99.9407758365413
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.41389013499976 | cross_pct=99.88155167308261
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.83935337120738 | cross_pct=99.85193959135327
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.10730957027468
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.10271501852625
 - 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=75.55503873052794
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97038791827066 | raw=83.30120468904302
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97038791827066 | raw=83.3605138843671
 - 4. [JP] Akatsuki Inc. | cross_pct=99.94824016563147 | raw=75.41784043512763
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.9407758365413 | raw=82.90491798760053
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.9407758365413 | raw=82.92544789665206
 - 6. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.89648033126294 | raw=74.2002557581231
-- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88155167308261 | raw=82.25373541208249
-- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85193959135327 | raw=81.83321820072834
+- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88155167308261 | raw=82.41389013499976
+- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85193959135327 | raw=81.83935337120738
 - 9. [JP] Tokai Tokyo Financial Holdings,Inc. | cross_pct=99.84472049689441 | raw=74.1558453580007
-- 10. [US] TORM plc - Class A Common Stock | cross_pct=99.70387918270654 | raw=80.56198190777037
+- 10. [US] TORM plc - Class A Common Stock | cross_pct=99.70387918270654 | raw=80.57383971434085
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -80,11 +80,11 @@ Generated (UTC): 2026-10-12T17:51:58+00:00
 - [INFO] rank_bucket / top3|1w: Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## 7. データ品質 / 反証
-- Quality score: 0.821
+- Quality score: 0.847
 - Primary source health (configured feeds only): 1.0
-- Primary fundamental coverage: 0.269
+- Primary fundamental coverage: 0.327
 - Secondary fundamental coverage: 0.769
-- Effective fundamental coverage: 0.769
+- Effective fundamental coverage: 0.827
 - Fundamental evidence tier: mixed
 - Missing data must not be converted into unsupported buy/sell conclusions.
 
@@ -97,7 +97,7 @@ Generated (UTC): 2026-10-12T17:51:58+00:00
 ## PayPay Swing
 
 - 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.5点で優位性が弱い
-- 上位: スタンダード 79.2 / テクノロジー 77.7 / ビットコイン 66.3
+- 上位: スタンダード 79.2 / テクノロジー 77.6 / ビットコイン 66.2
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

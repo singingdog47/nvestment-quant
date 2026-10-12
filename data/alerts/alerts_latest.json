@@ -1,6 +1,6 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-12T17:50:26+00:00",
+  "generated_at": "2026-10-12T18:14:49+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
@@ -37,7 +37,7 @@
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 27.45880029232553,
+      "value": 28.25702962193866,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"
