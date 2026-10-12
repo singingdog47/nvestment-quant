@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at_utc": "2026-10-12T16:47:00+00:00",
+  "generated_at_utc": "2026-10-12T16:59:56+00:00",
   "observed_date_jst": "2026-10-13",
   "data_status": "partial",
   "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
@@ -25,11 +25,26 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9167669770731056,
       "avg_daily_float_turnover_ratio": 0.015097386612790673,
-      "current_volume_ratio_30d": 0.09837277414404551,
-      "short_percent_float": 0.1173,
-      "short_interest_change_ratio": 0.2622616234641022,
-      "days_to_cover": 9.73,
-      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
+      "current_volume_ratio_30d": 0.10431462818965276,
+      "short_percent_float": 0.0992,
+      "short_interest_change_ratio": 0.08353554816057684,
+      "days_to_cover": 8.75,
+      "context_flags": "SHORT_CROWDING"
+    },
+    {
+      "market": "US",
+      "code": "NWFL",
+      "ticker": "NWFL",
+      "name": "Norwood Financial Corp. - Common Stock",
+      "data_status": "ok",
+      "confidence": 0.7,
+      "free_float_ratio": 0.9011712817212578,
+      "avg_daily_float_turnover_ratio": 0.0035347874465781735,
+      "current_volume_ratio_30d": 0.20968670813176687,
+      "short_percent_float": 0.0165,
+      "short_interest_change_ratio": 0.13861208738198605,
+      "days_to_cover": 5.37,
+      "context_flags": "SHORT_CROWDING"
     },
     {
       "market": "US",
@@ -40,10 +55,10 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9634700024544378,
       "avg_daily_float_turnover_ratio": 0.009764880577553512,
-      "current_volume_ratio_30d": 0.20627933139228058,
-      "short_percent_float": 0.0622,
-      "short_interest_change_ratio": 0.2977849223484257,
-      "days_to_cover": 6.32,
+      "current_volume_ratio_30d": 0.2133960957551699,
+      "short_percent_float": 0.0559,
+      "short_interest_change_ratio": 0.24890224425410823,
+      "days_to_cover": 7.59,
       "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
     },
     {
@@ -55,10 +70,10 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9637600043517661,
       "avg_daily_float_turnover_ratio": 0.010317519392458703,
-      "current_volume_ratio_30d": 0.11484704572217719,
-      "short_percent_float": 0.0686,
-      "short_interest_change_ratio": -0.07088711132736913,
-      "days_to_cover": 5.99,
+      "current_volume_ratio_30d": 0.12228267993217645,
+      "short_percent_float": 0.066300005,
+      "short_interest_change_ratio": -0.010184011331561216,
+      "days_to_cover": 7.11,
       "context_flags": "SHORT_CROWDING"
     },
     {
@@ -70,10 +85,10 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9364100054141792,
       "avg_daily_float_turnover_ratio": 0.011605703030957456,
-      "current_volume_ratio_30d": 0.1796133693013493,
-      "short_percent_float": 0.1287,
-      "short_interest_change_ratio": -0.013666771512680143,
-      "days_to_cover": 6.79,
+      "current_volume_ratio_30d": 0.19281225561745519,
+      "short_percent_float": 0.13430001,
+      "short_interest_change_ratio": 0.04078914647529519,
+      "days_to_cover": 10.48,
       "context_flags": "SHORT_CROWDING"
     },
     {
@@ -85,11 +100,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9787300060292479,
       "avg_daily_float_turnover_ratio": 0.01132919673673826,
-      "current_volume_ratio_30d": 0.1823722597818031,
-      "short_percent_float": 0.0722,
-      "short_interest_change_ratio": 0.284427291551427,
-      "days_to_cover": 5.13,
-      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
+      "current_volume_ratio_30d": 0.1919888509110499,
+      "short_percent_float": 0.062,
+      "short_interest_change_ratio": 0.19699945383722284,
+      "days_to_cover": 5.15,
+      "context_flags": "SHORT_CROWDING"
     },
     {
       "market": "US",
@@ -98,12 +113,12 @@
       "name": "Imperial Petroleum Inc. - Common Shares",
       "data_status": "ok",
       "confidence": 0.7,
-      "free_float_ratio": 0.448503812719599,
+      "free_float_ratio": 0.4444947667714675,
       "avg_daily_float_turnover_ratio": 0.01946302926380445,
-      "current_volume_ratio_30d": 0.4394916400840172,
-      "short_percent_float": 0.1091,
-      "short_interest_change_ratio": -0.005302839802411419,
-      "days_to_cover": 6.32,
+      "current_volume_ratio_30d": 0.4506601533896995,
+      "short_percent_float": 0.1089,
+      "short_interest_change_ratio": 0.025072474525728694,
+      "days_to_cover": 6.69,
       "context_flags": "SHORT_CROWDING"
     },
     {
@@ -113,12 +128,12 @@
       "name": "ACNB Corporation - Common Stock",
       "data_status": "ok",
       "confidence": 0.7,
-      "free_float_ratio": 0.9595199770303237,
+      "free_float_ratio": 0.9555629607549674,
       "avg_daily_float_turnover_ratio": 0.007217891812784894,
-      "current_volume_ratio_30d": 0.25906522418150324,
-      "short_percent_float": 0.0572,
-      "short_interest_change_ratio": 0.36507572224840024,
-      "days_to_cover": 7.78,
+      "current_volume_ratio_30d": 0.26081153988130734,
+      "short_percent_float": 0.044099998,
+      "short_interest_change_ratio": 0.2866733873373022,
+      "days_to_cover": 5.47,
       "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
     },
     {
@@ -130,10 +145,10 @@
       "confidence": 0.7,
       "free_float_ratio": 0.7620010737729285,
       "avg_daily_float_turnover_ratio": 0.023000130705787145,
-      "current_volume_ratio_30d": 0.36400290749340347,
-      "short_percent_float": 0.0421,
-      "short_interest_change_ratio": -0.057465507901471646,
-      "days_to_cover": 1.93,
+      "current_volume_ratio_30d": 0.3702394352718142,
+      "short_percent_float": 0.0513,
+      "short_interest_change_ratio": -0.08954405528630649,
+      "days_to_cover": 3.26,
       "context_flags": "HIGH_FLOAT_TURNOVER"
     },
     {
@@ -145,26 +160,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.7150999367589914,
       "avg_daily_float_turnover_ratio": 0.015666409691645292,
-      "current_volume_ratio_30d": 0.7623673786223673,
-      "short_percent_float": 0.0109,
-      "short_interest_change_ratio": 0.301118314352222,
-      "days_to_cover": 0.55,
+      "current_volume_ratio_30d": 0.7894501379173444,
+      "short_percent_float": 0.0108,
+      "short_interest_change_ratio": 0.40178427315813425,
+      "days_to_cover": 0.8,
       "context_flags": "SHORT_INTEREST_RISING"
-    },
-    {
-      "market": "US",
-      "code": "FRO",
-      "ticker": "FRO",
-      "name": "Frontline Plc Ordinary Shares",
-      "data_status": "ok",
-      "confidence": 0.7,
-      "free_float_ratio": 0.6419799987412794,
-      "avg_daily_float_turnover_ratio": 0.020077422356574833,
-      "current_volume_ratio_30d": 1.0564487181184992,
-      "short_percent_float": 0.0635,
-      "short_interest_change_ratio": -0.05874510459187188,
-      "days_to_cover": 2.43,
-      "context_flags": "HIGH_FLOAT_TURNOVER"
     }
   ],
   "thresholds": {

@@ -1,47 +1,14 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-12T16:47:01+00:00",
+  "generated_at": "2026-10-12T16:59:56+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 4,
-    "WARNING": 5,
+    "WATCH": 2,
+    "WARNING": 2,
     "CRITICAL": 0
   },
   "alerts": [
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_FILING",
-      "title": "SEC 6-K filing",
-      "message": "New company event detected for Imperial Petroleum Inc. - Common Shares.",
-      "value": null,
-      "threshold": null,
-      "entity": "Imperial Petroleum Inc. - Common Shares",
-      "source": "SEC EDGAR"
-    },
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_FILING",
-      "title": "SEC 6-K filing",
-      "message": "New company event detected for Imperial Petroleum Inc. - Common Shares.",
-      "value": null,
-      "threshold": null,
-      "entity": "Imperial Petroleum Inc. - Common Shares",
-      "source": "SEC EDGAR"
-    },
-    {
-      "severity": "WARNING",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_FILING",
-      "title": "SEC 6-K filing",
-      "message": "New company event detected for Imperial Petroleum Inc. - Common Shares.",
-      "value": null,
-      "threshold": null,
-      "entity": "Imperial Petroleum Inc. - Common Shares",
-      "source": "SEC EDGAR"
-    },
     {
       "severity": "WARNING",
       "category": "LIQUIDITY",
@@ -68,22 +35,11 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "人とAIで実現する次世代セキュリティ｜KDDI SUMMIT 2026 | イベント・セミナー | LAC WATCH - 株式会社ラック",
-      "message": "New company event detected for KDDI.",
+      "title": "(株)ほくほくフィナンシャルグループ【8377】：板気配 - Yahoo!ファイナンス",
+      "message": "New company event detected for ほくほくフィナンシャルグループ.",
       "value": null,
       "threshold": null,
-      "entity": "KDDI",
-      "source": "Google News RSS"
-    },
-    {
-      "severity": "WATCH",
-      "category": "COMPANY_EVENT",
-      "code": "EVENT_DISCLOSURE",
-      "title": "au PAY アプリ上から使える暗号資産ウォレットを提供開始 - KDDI ニュースルーム",
-      "message": "New company event detected for KDDI.",
-      "value": null,
-      "threshold": null,
-      "entity": "KDDI",
+      "entity": "ほくほくフィナンシャルグループ",
       "source": "Google News RSS"
     },
     {
@@ -92,19 +48,8 @@
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 26.455687790694384,
+      "value": 26.727403494166516,
       "threshold": 40,
-      "entity": null,
-      "source": "market_regime_latest.json"
-    },
-    {
-      "severity": "WATCH",
-      "category": "REGIME",
-      "code": "REGIME_CHANGE",
-      "title": "Market regime changed",
-      "message": "Market regime changed from RISK_ON to CONSTRUCTIVE.",
-      "value": "CONSTRUCTIVE",
-      "threshold": "RISK_ON",
       "entity": null,
       "source": "market_regime_latest.json"
     }

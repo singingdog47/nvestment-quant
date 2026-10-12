@@ -5,15 +5,15 @@
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
 市場レジームは**CONSTRUCTIVE**、総合スコアは65.3です。
-市場レジームは前回のRISK_ONからCONSTRUCTIVEへ変わりました。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
+市場レジームは前回からほぼ横ばいです。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：-8.6ポイント
-- トレンド：+1.3ポイント
-- 市場参加の広がり：算出不能ポイント
-- 流動性：-18.7ポイント
-- Noritsu Koki Co.,Ltd.、Innoviva, Inc. - Common Stock、Central Bancompany, Inc. - Class A Common Stockの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
+- 総合スコア：+0.0ポイント
+- トレンド：-0.1ポイント
+- 市場参加の広がり：-0.0ポイント
+- 流動性：+0.3ポイント
+- 上位候補に大きな順位上昇はなく、新しい強いトレンドが出たというより、既存の選好が続いています。
 
 ## 今の相場を人間の言葉で
 
@@ -28,15 +28,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 個別銘柄の需給
 
-監視対象の浮動株比率カバレッジは73.1%、空売り需給は28.8%、当日出来高比較は76.9%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）、First Busey Corporation - Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）、WesBanco, Inc. - Common Stock（SHORT_CROWDING）、Innoviva, Inc. - Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
+監視対象の浮動株比率カバレッジは73.1%、空売り需給は28.8%、当日出来高比較は76.9%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、Norwood Financial Corp. - Common Stock（SHORT_CROWDING）、First Busey Corporation - Common Stock（SHORT_CROWDING|SHORT_INTEREST_RISING）、WesBanco, Inc. - Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
 浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。
 
 ## 今日の注意点
 
-- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
-- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
-- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
 - **WARNING** Thin liquidity flag active — 売買指示ではなく確認対象です。
+- **WARNING** Treasury yield volatility is unusually high — 売買指示ではなく確認対象です。
+- **WATCH** (株)ほくほくフィナンシャルグループ【8377】：板気配 - Yahoo!ファイナンス — 売買指示ではなく確認対象です。
+- **WATCH** Market liquidity is soft — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
@@ -57,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.5点で優位性が弱い
-- 上位: スタンダード 79.2 / テクノロジー 77.7 / ビットコイン 66.4
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.6点で優位性が弱い
+- 上位: スタンダード 79.2 / テクノロジー 77.6 / ビットコイン 66.2
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は82.1%。9561銘柄中5307銘柄を採点し、価格欠損率は9.3%です。
+データ品質は82.1%。9561銘柄中5308銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-10-12T16:49:52+00:00
+生成時刻（UTC）：2026-10-12T17:01:25+00:00
