@@ -89,3 +89,34 @@ def test_source_metadata_alone_cannot_raise_coverage(tmp_path, monkeypatch):
     }]).to_csv(path, index=False)
     base = pd.DataFrame([{"code": "2585", "fundamental_status": "missing"}])
     assert _merge_existing(base).loc[0, "fundamental_status"] == "missing"
+
+
+def test_duplicate_edinet_events_sort_without_comparing_event_objects(tmp_path, monkeypatch):
+    """Same date/document ID must not trigger TypeError when sorting Events."""
+    monkeypatch.setenv("EDINET_API_KEY", "test_key")
+    url = "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S1234567"
+    events = [SimpleNamespace(
+        source="EDINET", source_url=url, title="有価証券報告書",
+        code="2585", ticker="2585.T", event_date="2026-10-02",
+    ) for _ in range(2)]
+    payload = make_zip([["jpcrp_cor:NetSales", "CurrentYearDuration", "JPY", "42000"]])
+
+    class Response:
+        content = payload
+        def raise_for_status(self):
+            pass
+
+    class Session:
+        def __init__(self):
+            self.calls = 0
+        def get(self, url, params, timeout):
+            self.calls += 1
+            return Response()
+
+    session = Session()
+    frame, health = collect_primary_fundamentals(
+        events, tmp_path / "fundamentals.csv", session=session,
+    )
+    assert session.calls == 1
+    assert health["new_companies"] == 1
+    assert len(frame) == 1
