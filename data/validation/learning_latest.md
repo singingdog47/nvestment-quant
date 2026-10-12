@@ -1,19 +1,22 @@
 # Investment Quant Validation Learning v2.1
 
-Generated: 2026-10-05T18:22:22+00:00
+Generated: 2026-10-12T16:48:30+00:00
 
 This is a diagnostic learning layer. It does not automatically change factor weights or issue orders.
 
 ## Model-change gate
-- Matured absolute-return observations: 291
-- Benchmark-relative observations: 291
+- Matured absolute-return observations: 487
+- Benchmark-relative observations: 487
 - Minimum benchmark-relative observations for review: 60
 - Eligible for human model-change review: True
 
 ## Findings
+- [WATCH] regime / CONSTRUCTIVE|1m (n=126): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] regime / NEUTRAL|1w (n=20): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] rank_bucket / top1|1w (n=41): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [INFO] rank_bucket / top3|1w (n=82): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
+- [WATCH] rank_bucket / top1|1m (n=26): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top1|1w (n=73): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top3|1m (n=52): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [INFO] rank_bucket / top3|1w (n=146): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## Known limits
 - Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.

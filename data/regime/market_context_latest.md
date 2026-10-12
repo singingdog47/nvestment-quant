@@ -1,23 +1,23 @@
 # Market Regime v1.5
 
-- Label: **RISK_ON**
-- Score: **73.95**
-- Confidence: **0.8**
+- Label: **CONSTRUCTIVE**
+- Score: **65.33**
+- Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
-- Flags: TREASURY_VOLATILITY_SHOCK
+- Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
 ## Components
-- trend: 92.02414619105342
-- stress: 76.16999974250794
-- participation: None
-- liquidity: 45.135007244833446
+- trend: 93.29333273986853
+- stress: 76.31250014305115
+- participation: 42.808930425752855
+- liquidity: 26.455687790694384
 - positioning: 57.382181808165846
 
 ## SQ execution overlay
 - Active: **False**
 - Next major SQ: **2026-12-11**
-- Days to SQ: **60**
+- Days to SQ: **59**
 - Execution caution: **0.0/15.0**
 - Confidence: **0.4**
 - Data status: **partial**
@@ -28,7 +28,7 @@
 ## Evidence
 {
   "trend_series": 4,
-  "vix": 15.390000343322754,
+  "vix": 15.199999809265137,
   "hy_oas": 3.15,
   "ig_oas": 0.82,
   "treasury_volatility_proxy": 87.562,
@@ -37,11 +37,11 @@
   "treasury_volatility_as_of_date": "2026-10-09",
   "treasury_volatility_status": "ok",
   "treasury_volatility_is_ice_move": false,
-  "breadth_n": 9562,
-  "breadth_status": "stale",
-  "breadth_source_as_of_utc": "2026-10-05T18:20:57.084630+00:00",
+  "breadth_n": 9561,
+  "breadth_status": "ok",
+  "breadth_source_as_of_utc": "2026-10-12T16:45:37.600136+00:00",
   "nfci": -0.494,
-  "volume_ratio20_mean": 0.7919251811208363,
+  "volume_ratio20_mean": 0.3249421947673597,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22
@@ -49,7 +49,7 @@
   "component_coverage": {
     "trend": 1.0,
     "stress": 1.0,
-    "participation": 0.0,
+    "participation": 1.0,
     "liquidity": 1.0,
     "positioning": 1.0
   },
@@ -59,7 +59,7 @@
     "expected": 3,
     "multiplier": 1.0
   },
-  "base_weighted_coverage": 0.8,
+  "base_weighted_coverage": 1.0,
   "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
   "jpx_official_turnover_date": "2026-10-09",
   "jpx_official_turnover_million_jpy": 8793501.0,
