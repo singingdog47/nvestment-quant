@@ -1,14 +1,25 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-12T18:57:51+00:00",
+  "generated_at": "2026-10-13T03:05:23+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 2,
-    "WARNING": 2,
+    "WATCH": 11,
+    "WARNING": 3,
     "CRITICAL": 0
   },
   "alerts": [
+    {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DIVIDEND",
+      "title": "キヤノン、信越化学工業も…「下落が怖い」人向け\"高配当\"半導体・AI株7銘柄の実名 - 現代ビジネス",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
     {
       "severity": "WARNING",
       "category": "LIQUIDITY",
@@ -35,7 +46,95 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "(株)三越伊勢丹ホールディングス【3099】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス",
+      "title": "にじさんじ「ハロウィンゾンビボイス」2026年10月15日(木)17時より発売決定！ - PR TIMES",
+      "message": "New company event detected for ANYCOLOR.",
+      "value": null,
+      "threshold": null,
+      "entity": "ANYCOLOR",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "すぷれあ“先生”対談 「かわいいに全力」なアイドルたちの素顔 - ANYCOLOR MAGAZINE",
+      "message": "New company event detected for ANYCOLOR.",
+      "value": null,
+      "threshold": null,
+      "entity": "ANYCOLOR",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "AIキャラ会話サービス「zeta」でにじさんじVTuberを無断生成 ANYCOLORが削除要請 - KAI-YOU",
+      "message": "New company event detected for ANYCOLOR.",
+      "value": null,
+      "threshold": null,
+      "entity": "ANYCOLOR",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "KDDI金融子会社がナッジと提携 若年層カード発行で - 日本経済新聞",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "KDDIが日本郵便と連携し、ドローンポートの郵便局に！設置されると何がどうなる？ - @DIME アットダイム",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "ＫＤＤＩ ａｕ Ｓｔａｒｌｉｎｋ ＳｔａｔｉｏｎをＮＥＴＩＳ登録 - 建通新聞",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "A山形 vs NEC川崎｜SV.LEAGUE 公式サイト - svleague.jp",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "PRODUCT（3635ページ目） - Gizmodo",
+      "message": "New company event detected for コーエーテクモホールディングス.",
+      "value": null,
+      "threshold": null,
+      "entity": "コーエーテクモホールディングス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "日本橋三越本店で「大中央区展」を開催！中央区の食と技がつながるコラボに出会える1週間。10月21日(水)から - PR TIMES",
       "message": "New company event detected for 三越伊勢丹ホールディングス.",
       "value": null,
       "threshold": null,
@@ -44,11 +143,22 @@
     },
     {
       "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "ノーベル賞受賞貢献は3度目「当たり前のようにやってきたことが大きなことになり非常に誇り」 研究支えた浜松ホトニクスの技術＝静岡 - TBS NEWS DIG",
+      "message": "New company event detected for 浜松ホトニクス.",
+      "value": null,
+      "threshold": null,
+      "entity": "浜松ホトニクス",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
       "category": "LIQUIDITY",
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 29.009063680443784,
+      "value": 29.827453078958126,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"

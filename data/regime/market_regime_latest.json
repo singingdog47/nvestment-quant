@@ -1,12 +1,12 @@
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-12T18:56:36+00:00",
-  "generated_at_utc": "2026-10-12T18:56:36+00:00",
+  "generated_at": "2026-10-13T03:04:04+00:00",
+  "generated_at_utc": "2026-10-13T03:04:04+00:00",
   "date_jst": "2026-10-13",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 65.6,
+  "regime_score": 65.37,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -26,15 +26,15 @@
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 93.00950922219205,
-    "stress": 76.26749982833863,
+    "trend": 91.78628385821894,
+    "stress": 76.30499997138978,
     "participation": 42.71746654360867,
-    "liquidity": 29.009063680443784,
+    "liquidity": 29.827453078958126,
     "positioning": 57.382181808165846
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.260000228881836,
+    "vix": 15.210000038146973,
     "hy_oas": 3.15,
     "ig_oas": 0.82,
     "treasury_volatility_proxy": 87.562,
@@ -47,7 +47,7 @@
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-10-12T18:56:34.299277+00:00",
     "nfci": -0.494,
-    "volume_ratio20_mean": 0.38877659201109466,
+    "volume_ratio20_mean": 0.40923632697395323,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -90,7 +90,7 @@
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 69030.921875,
+        "spot": 67292.390625,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,

@@ -16,7 +16,7 @@
   "execution_stance": "NORMAL",
   "directional_bias": "UNDETERMINED",
   "price_structure": {
-    "spot": 69030.921875,
+    "spot": 67292.390625,
     "put_wall": null,
     "call_wall": null,
     "magnet_strike": null,
