@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-13T15:08:19+00:00
+Generated (UTC): 2026-10-13T15:18:17+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,11 +11,11 @@ Generated (UTC): 2026-10-13T15:08:19+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 66.31
+- Score: 66.36
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 15.260000228881836
+- VIX: 15.329999923706055
 - Treasury realized-vol proxy (not ICE MOVE): 87.562 bps annualized; percentile=0.9246
 - Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
@@ -35,15 +35,11 @@ Generated (UTC): 2026-10-13T15:08:19+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 14, 'WARNING': 8, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
+- Counts: {'INFO': 0, 'WATCH': 2, 'WARNING': 2, 'CRITICAL': 0}
 - [WARNING] LIQUIDITY / Thin liquidity flag active
 - [WARNING] VOLATILITY / Treasury yield volatility is unusually high
+- [WATCH] COMPANY_EVENT / 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- [WATCH] LIQUIDITY / Market liquidity is soft
 
 ## 5. スクリーニング上位候補
 
@@ -55,21 +51,21 @@ Generated (UTC): 2026-10-13T15:08:19+00:00
 - 5. ELECOM CO.,LTD. 6750.T | market_rank=6.0 | raw=73.87805725330627 | cross_pct=99.74173553719008
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.08220210490326 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.56867453602949 | cross_pct=99.97027348394768
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=82.9447994405649 | cross_pct=99.94054696789536
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.41141401119788 | cross_pct=99.88109393579072
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.8341857249908 | cross_pct=99.8513674197384
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.14356611152832 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.55660737749895 | cross_pct=99.97026464466249
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=82.95600346439613 | cross_pct=99.94052928932501
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.4262563546716 | cross_pct=99.88105857865001
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.8360541550564 | cross_pct=99.85132322331252
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.08220210490326
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.14356611152832
 - 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=75.84407855839079
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97027348394768 | raw=83.56867453602949
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97026464466249 | raw=83.55660737749895
 - 4. [JP] Akatsuki Inc. | cross_pct=99.94834710743802 | raw=75.65691043711435
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94054696789536 | raw=82.9447994405649
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94052928932501 | raw=82.95600346439613
 - 6. [JP] Tokai Tokyo Financial Holdings,Inc. | cross_pct=99.89669421487604 | raw=74.87932207563745
-- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88109393579072 | raw=82.41141401119788
-- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.8513674197384 | raw=81.8341857249908
+- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88105857865001 | raw=82.4262563546716
+- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85132322331252 | raw=81.8360541550564
 - 9. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.84504132231406 | raw=74.57688664719679
 - 10. [JP] ELECOM CO.,LTD. | cross_pct=99.74173553719008 | raw=73.87805725330627
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
@@ -85,11 +81,11 @@ Generated (UTC): 2026-10-13T15:08:19+00:00
 - [WATCH] rank_bucket / top3|1m: Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 
 ## 7. データ品質 / 反証
-- Quality score: 0.847
+- Quality score: 0.856
 - Primary source health (configured feeds only): 1.0
-- Primary fundamental coverage: 0.327
+- Primary fundamental coverage: 0.346
 - Secondary fundamental coverage: 0.769
-- Effective fundamental coverage: 0.827
+- Effective fundamental coverage: 0.846
 - Fundamental evidence tier: mixed
 - Missing data must not be converted into unsupported buy/sell conclusions.
 
@@ -101,8 +97,8 @@ Generated (UTC): 2026-10-13T15:08:19+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.6点で優位性が弱い
-- 上位: スタンダード 79.7 / テクノロジー 78.0 / ビットコイン 68.5
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.7点で優位性が弱い
+- 上位: スタンダード 79.6 / テクノロジー 78.0 / ビットコイン 68.5
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

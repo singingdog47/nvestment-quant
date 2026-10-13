@@ -1,17 +1,17 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.847** / actionable=True
+Generated quality score: **0.856** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-13T15:05:19+00:00",
-  "generated_at_utc": "2026-10-13T15:05:19+00:00",
+  "generated_at": "2026-10-13T15:15:19+00:00",
+  "generated_at_utc": "2026-10-13T15:15:19+00:00",
   "date_jst": "2026-10-14",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 66.31,
+  "regime_score": 66.36,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,15 +31,15 @@ Generated quality score: **0.847** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 94.07367235463444,
-    "stress": 76.31999982833862,
-    "participation": 44.05283802491925,
-    "liquidity": 29.73831260229847,
+    "trend": 94.07211662959712,
+    "stress": 76.26750005722046,
+    "participation": 44.06149053991694,
+    "liquidity": 30.123325363933,
     "positioning": 57.382181808165846
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.260000228881836,
+    "vix": 15.329999923706055,
     "hy_oas": 3.11,
     "ig_oas": 0.83,
     "treasury_volatility_proxy": 87.562,
@@ -50,9 +50,9 @@ Generated quality score: **0.847** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9560,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-13T15:05:16.461712+00:00",
+    "breadth_source_as_of_utc": "2026-10-13T15:15:17.267151+00:00",
     "nfci": -0.494,
-    "volume_ratio20_mean": 0.4070078150574618,
+    "volume_ratio20_mean": 0.41663313409832503,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -151,7 +151,7 @@ Generated quality score: **0.847** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-13T15:06:31+00:00",
+  "generated_at": "2026-10-13T15:16:46+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -204,7 +204,7 @@ Generated quality score: **0.847** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-13T15:05:16.461712+00:00
+- Data retrieved (UTC): 2026-10-13T15:15:17.267151+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -252,13 +252,13 @@ Generated quality score: **0.847** / actionable=True
 | JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.0 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.1 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.6 | 100.0 | unchanged |
-| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 82.9 | 99.9 | unchanged |
+| US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.0 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.4 | 99.9 | unchanged |
 | US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.9 | unchanged |
-| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.7 | unchanged |
+| US | 11 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.7 | unchanged |
 | US | 13 | BUSE | First Busey Corporation - Common Stock | Other | 80.5 | 99.6 | unchanged |
 | US | 15 | FRO | Frontline Plc Ordinary Shares | Other | 79.8 | 99.6 | unchanged |
-| US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.7 | 99.4 | unchanged |
+| US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.8 | 99.4 | unchanged |
 | US | 24 | HCI | HCI Group, Inc. Common Stock | Other | 78.0 | 99.3 | unchanged |
 
 ## Required manual checks before an order
