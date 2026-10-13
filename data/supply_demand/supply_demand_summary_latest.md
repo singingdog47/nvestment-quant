@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-10-13T15:56:01+00:00
+Generated (UTC): 2026-10-13T16:28:46+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,15 +16,15 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.5%, volume ratio=0.06786395021522071)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=1.0%, volume ratio=0.23737830373935886)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.0%, volume ratio=0.1210687117505149)
-- [US] Imperial Petroleum Inc. - Common Shares: SHORT_CROWDING (float=44.4%, float turnover=2.0%, volume ratio=0.2944262642255311)
-- [US] Innoviva, Inc. - Common Stock: SHORT_CROWDING (float=93.6%, float turnover=1.2%, volume ratio=0.23055819150238765)
-- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=97.9%, float turnover=1.1%, volume ratio=0.10971874549701253)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.3%, volume ratio=0.30018033469395144)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.5%, float turnover=1.6%, volume ratio=0.9729651716593254)
-- [US] Frontline Plc Ordinary Shares: HIGH_FLOAT_TURNOVER (float=64.2%, float turnover=2.0%, volume ratio=0.5042234053269867)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.5%, volume ratio=0.08264222870198558)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=1.0%, volume ratio=0.2654778990782431)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.0%, volume ratio=0.13703280095196385)
+- [US] Imperial Petroleum Inc. - Common Shares: SHORT_CROWDING (float=44.4%, float turnover=2.0%, volume ratio=0.31862416361188567)
+- [US] Innoviva, Inc. - Common Stock: SHORT_CROWDING (float=93.6%, float turnover=1.2%, volume ratio=0.25121551161177097)
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=97.9%, float turnover=1.1%, volume ratio=0.12819146618947566)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.3%, volume ratio=0.34840232964367496)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.5%, float turnover=1.6%, volume ratio=1.0621720230226128)
+- [US] Frontline Plc Ordinary Shares: HIGH_FLOAT_TURNOVER (float=64.2%, float turnover=2.0%, volume ratio=0.5494737361478405)
 - [JP] FinTech Global Incorporated: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=84.4%, float turnover=0.8%, volume ratio=1.9820426255456391)
 
 ## Governance

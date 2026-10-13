@@ -1,12 +1,49 @@
 {
-  "pending": [],
+  "pending": [
+    {
+      "market": "JP",
+      "code": "6976",
+      "ticker": "6976.T",
+      "name": "太陽誘電",
+      "event_date": "2025-12-22",
+      "event_type": "filing",
+      "title": "半期報告書－第85期(2025/04/01－2026/03/31)",
+      "summary": "",
+      "source": "EDINET",
+      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100X4FD",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-10-13T16:28:32+00:00",
+      "event_id": "057772abcd7f7473c195aa10",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "3563",
+      "ticker": "3563.T",
+      "name": "FOOD & LIFE COMPANIES",
+      "event_date": "2025-12-22",
+      "event_type": "filing",
+      "title": "有価証券報告書－第11期(2024/10/01－2025/09/30)",
+      "summary": "",
+      "source": "EDINET",
+      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100XBTY",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-10-13T16:28:32+00:00",
+      "event_id": "bcc122978006667762c96a3e",
+      "raw_excerpt": ""
+    }
+  ],
   "anchor_date": "2026-10-03",
-  "next_date": "2026-01-03",
+  "next_date": "2025-12-20",
   "lookback_days": 450,
   "days_scanned_this_run": 14,
-  "new_events": 0,
+  "new_events": 2,
   "failures": [],
   "complete": false,
   "status": "in_progress",
-  "updated_at_utc": "2026-10-13T15:55:48+00:00"
+  "updated_at_utc": "2026-10-13T16:28:32+00:00"
 }

@@ -6,12 +6,12 @@ Generated quality score: **0.856** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-13T15:54:45+00:00",
-  "generated_at_utc": "2026-10-13T15:54:45+00:00",
+  "generated_at": "2026-10-13T16:27:33+00:00",
+  "generated_at_utc": "2026-10-13T16:27:33+00:00",
   "date_jst": "2026-10-14",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 66.6,
+  "regime_score": 66.81,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,15 +31,15 @@ Generated quality score: **0.856** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 94.01164418480876,
-    "stress": 76.22249974250794,
-    "participation": 43.957660359944626,
-    "liquidity": 32.06297620560065,
+    "trend": 94.09008349920103,
+    "stress": 76.17750014305115,
+    "participation": 44.02399630826027,
+    "liquidity": 33.314075869327134,
     "positioning": 57.382181808165846
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.390000343322754,
+    "vix": 15.449999809265137,
     "hy_oas": 3.11,
     "ig_oas": 0.83,
     "treasury_volatility_proxy": 87.562,
@@ -50,9 +50,9 @@ Generated quality score: **0.856** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9560,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-13T15:54:43.514390+00:00",
+    "breadth_source_as_of_utc": "2026-10-13T16:27:30.963420+00:00",
     "nfci": -0.494,
-    "volume_ratio20_mean": 0.4651244051400163,
+    "volume_ratio20_mean": 0.49640189673317836,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -151,7 +151,7 @@ Generated quality score: **0.856** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-13T15:56:00+00:00",
+  "generated_at": "2026-10-13T16:28:46+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -204,7 +204,7 @@ Generated quality score: **0.856** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-13T15:54:43.514390+00:00
+- Data retrieved (UTC): 2026-10-13T16:27:30.963420+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -250,15 +250,15 @@ Generated quality score: **0.856** / actionable=True
 | JP | 12 | 8789.T | FinTech Global Incorporated | Other | 70.4 | 99.4 | unchanged |
 | JP | 13 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.2 | 99.4 | unchanged |
 | JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.0 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.2 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.5 | 100.0 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.0 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.6 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 83.0 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.4 | 99.9 | unchanged |
 | US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.9 | unchanged |
-| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.7 | unchanged |
-| US | 13 | BUSE | First Busey Corporation - Common Stock | Other | 80.5 | 99.6 | unchanged |
+| US | 11 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.7 | unchanged |
+| US | 13 | BUSE | First Busey Corporation - Common Stock | Other | 80.4 | 99.6 | unchanged |
 | US | 15 | FRO | Frontline Plc Ordinary Shares | Other | 79.8 | 99.6 | unchanged |
-| US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.8 | 99.4 | unchanged |
+| US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.7 | 99.4 | unchanged |
 | US | 24 | HCI | HCI Group, Inc. Common Stock | Other | 78.1 | 99.3 | unchanged |
 
 ## Required manual checks before an order

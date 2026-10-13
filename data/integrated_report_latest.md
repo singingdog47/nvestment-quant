@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-13T15:57:26+00:00
+Generated (UTC): 2026-10-13T16:30:07+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,11 +11,11 @@ Generated (UTC): 2026-10-13T15:57:26+00:00
 
 ## 2. 市場レジーム
 - Regime: **CONSTRUCTIVE**
-- Score: 66.6
+- Score: 66.81
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 15.390000343322754
+- VIX: 15.449999809265137
 - Treasury realized-vol proxy (not ICE MOVE): 87.562 bps annualized; percentile=0.9246
 - Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
@@ -35,13 +35,10 @@ Generated (UTC): 2026-10-13T15:57:26+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 5, 'WARNING': 2, 'CRITICAL': 0}
+- Counts: {'INFO': 0, 'WATCH': 2, 'WARNING': 2, 'CRITICAL': 0}
 - [WARNING] LIQUIDITY / Thin liquidity flag active
 - [WARNING] VOLATILITY / Treasury yield volatility is unusually high
-- [WATCH] COMPANY_EVENT / KDDIと連携し店付近でモバイルバッテリー等の回収を都内1カ所で実施｜ローソン公式サイト - LAWSON
-- [WATCH] COMPANY_EVENT / 「安さのその先へ」──ライフドリンク カンパニーの成長を支える「脱付加価値戦略」とは - ECのミカタ
-- [WATCH] COMPANY_EVENT / 手元資金1.6兆円超なのに「借入金」が急増…それでも信越化学工業の財務は盤石といえるワケ - ダイヤモンド・オンライン
-- [WATCH] COMPANY_EVENT / 浜松ホトニクス(株)【6965】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- [WATCH] COMPANY_EVENT / （府中市）府中市の２大企業、東芝とＮＥＣをはじめとする企業城下町の歴史（府中市議会議員 ゆうきりょう） - 市民派無所属 府中市議会議員 結城亮
 - [WATCH] LIQUIDITY / Market liquidity is soft
 
 ## 5. スクリーニング上位候補
@@ -54,21 +51,21 @@ Generated (UTC): 2026-10-13T15:57:26+00:00
 - 5. ELECOM CO.,LTD. 6750.T | market_rank=6.0 | raw=73.87805725330627 | cross_pct=99.74173553719008
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.15247791542929 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.53432393889307 | cross_pct=99.9702469503124
-- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=82.96089265860903 | cross_pct=99.94049390062482
-- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.43792337615581 | cross_pct=99.88098780124963
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.83932787877603 | cross_pct=99.85123475156203
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.03481590751167 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.57473191838828 | cross_pct=99.97025580011898
+- 3. International Seaways, Inc. Common Stock  INSW | market_rank=3.0 | raw=82.95736526679875 | cross_pct=99.94051160023795
+- 4. Norwood Financial Corp. - Common Stock NWFL | market_rank=5.0 | raw=82.4180657224198 | cross_pct=99.88102320047591
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=6.0 | raw=81.83858241894322 | cross_pct=99.85127900059489
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.15247791542929
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.03481590751167
 - 2. [JP] Mito Securities Co.,Ltd. | cross_pct=100.0 | raw=75.84407855839079
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.9702469503124 | raw=83.53432393889307
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.97025580011898 | raw=83.57473191838828
 - 4. [JP] Akatsuki Inc. | cross_pct=99.94834710743802 | raw=75.65691043711435
-- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94049390062482 | raw=82.96089265860903
+- 5. [US] International Seaways, Inc. Common Stock  | cross_pct=99.94051160023795 | raw=82.95736526679875
 - 6. [JP] Tokai Tokyo Financial Holdings,Inc. | cross_pct=99.89669421487604 | raw=74.87932207563745
-- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88098780124963 | raw=82.43792337615581
-- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85123475156203 | raw=81.83932787877603
+- 7. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.88102320047591 | raw=82.4180657224198
+- 8. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.85127900059489 | raw=81.83858241894322
 - 9. [JP] IwaiCosmo Holdings,Inc. | cross_pct=99.84504132231406 | raw=74.57688664719679
 - 10. [JP] ELECOM CO.,LTD. | cross_pct=99.74173553719008 | raw=73.87805725330627
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
@@ -100,8 +97,8 @@ Generated (UTC): 2026-10-13T15:57:26+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.6点で優位性が弱い
-- 上位: スタンダード 79.6 / テクノロジー 77.9 / ビットコイン 68.3
+- 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.5点で優位性が弱い
+- 上位: スタンダード 79.7 / テクノロジー 78.2 / ビットコイン 68.5
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
