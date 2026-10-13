@@ -1,11 +1,13 @@
 {
-  "checked": 2,
+  "checked": 4,
   "resolved_document_ids": [
-    "S100XBTY",
-    "S100X4FD"
+    "S100XBWH",
+    "S100XAWU",
+    "S100XAOR",
+    "S100X9GP"
   ],
-  "new_companies": 0,
+  "new_companies": 3,
   "errors": [],
-  "primary_companies": 18,
+  "primary_companies": 21,
   "status": "ok"
 }

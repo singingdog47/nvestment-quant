@@ -3,7 +3,7 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 4063,4063.T,信越化学工業,watchlist,S100YE9I,2026-06-19,complete,1,1,1,1,1,1
 9433,9433.T,KDDI,watchlist,,,missing,0,0,0,0,0,0
 6701,6701.T,NEC,watchlist,,,missing,0,0,0,0,0,0
-6965,6965.T,浜松ホトニクス,watchlist,,,missing,0,0,0,0,0,0
+6965,6965.T,浜松ホトニクス,watchlist,S100XAWU,2025-12-18,complete,1,1,1,1,1,1
 5032,5032.T,ANYCOLOR,watchlist,,,missing,0,0,0,0,0,0
 2585,2585.T,ライフドリンク カンパニー,watchlist,S100YIP0,2026-06-24,complete,1,1,1,1,1,1
 8766,8766.T,東京海上ホールディングス,watchlist,,,missing,0,0,0,0,0,0
@@ -17,7 +17,7 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 6750,6750.T,"ELECOM CO.,LTD.",screening,S100YK25,2026-06-25,complete,1,1,1,1,1,1
 2121,2121.T,"MIXI,Inc.",screening,S100YE1D,2026-06-19,complete,1,1,1,1,1,1
 7744,7744.T,"Noritsu Koki Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
-8789,8789.T,FinTech Global Incorporated,screening,,,missing,0,0,0,0,0,0
+8789,8789.T,FinTech Global Incorporated,screening,S100XAOR,2025-12-16,complete,1,1,1,1,1,1
 5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",screening,S100YFV6,2026-06-22,complete,1,1,1,1,1,1
 8935,8935.T,"FJ NEXT HOLDINGS CO.,LTD.",screening,,,missing,0,0,0,0,0,0
 8630,8630.T,"Sompo Holdings,Inc.",screening,,,missing,0,0,0,0,0,0
@@ -28,7 +28,7 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 215A,215A.T,タイミー,watchlist,,,missing,0,0,0,0,0,0
 4996,4996.T,クミアイ化学工業,watchlist,S100XH23,2026-01-27,complete,1,1,1,1,1,1
 3678,3678.T,メディアドゥ,watchlist,,,missing,0,0,0,0,0,0
-9553,9553.T,マイクロアド,watchlist,,,missing,0,0,0,0,0,0
+9553,9553.T,マイクロアド,watchlist,S100XBWH,2025-12-19,complete,1,1,1,1,1,1
 5706,5706.T,三井金属,watchlist,S100YBQV,2026-06-24,complete,1,1,1,1,1,1
 6976,6976.T,太陽誘電,watchlist,S100YHU5,2026-06-23,complete,1,1,1,1,1,1
 2802,2802.T,味の素,watchlist,,,missing,0,0,0,0,0,0

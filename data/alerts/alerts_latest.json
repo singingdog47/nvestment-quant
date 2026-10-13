@@ -1,14 +1,25 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-13T16:28:47+00:00",
+  "generated_at": "2026-10-13T16:55:54+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 2,
-    "WARNING": 2,
+    "WATCH": 3,
+    "WARNING": 3,
     "CRITICAL": 0
   },
   "alerts": [
+    {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DIVIDEND",
+      "title": "キヤノン、信越化学工業も 「高配当」半導体・AI株7銘柄の実名 - 現代ビジネス",
+      "message": "New company event detected for 信越化学工業.",
+      "value": null,
+      "threshold": null,
+      "entity": "信越化学工業",
+      "source": "Google News RSS"
+    },
     {
       "severity": "WARNING",
       "category": "LIQUIDITY",
@@ -35,7 +46,7 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "（府中市）府中市の２大企業、東芝とＮＥＣをはじめとする企業城下町の歴史（府中市議会議員 ゆうきりょう） - 市民派無所属 府中市議会議員 結城亮",
+      "title": "NEC川崎 vs 大阪MV｜SV.LEAGUE 公式サイト - svleague.jp",
       "message": "New company event detected for NEC.",
       "value": null,
       "threshold": null,
@@ -44,11 +55,22 @@
     },
     {
       "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "マーケット速報 - 北國新聞",
+      "message": "New company event detected for ライフドリンク カンパニー.",
+      "value": null,
+      "threshold": null,
+      "entity": "ライフドリンク カンパニー",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
       "category": "LIQUIDITY",
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 33.314075869327134,
+      "value": 34.62718249826001,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"

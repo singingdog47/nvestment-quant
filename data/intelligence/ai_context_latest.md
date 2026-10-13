@@ -1,17 +1,17 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.856** / actionable=True
+Generated quality score: **0.882** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-13T16:27:33+00:00",
-  "generated_at_utc": "2026-10-13T16:27:33+00:00",
+  "generated_at": "2026-10-13T16:54:30+00:00",
+  "generated_at_utc": "2026-10-13T16:54:30+00:00",
   "date_jst": "2026-10-14",
   "data_status": "ok",
   "regime_label": "CONSTRUCTIVE",
-  "regime_score": 66.81,
+  "regime_score": 67.04,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,15 +31,15 @@ Generated quality score: **0.856** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 94.09008349920103,
-    "stress": 76.17750014305115,
-    "participation": 44.02399630826027,
-    "liquidity": 33.314075869327134,
+    "trend": 94.14122942195043,
+    "stress": 76.20750011444092,
+    "participation": 44.07014305491463,
+    "liquidity": 34.62718249826001,
     "positioning": 57.382181808165846
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 15.449999809265137,
+    "vix": 15.40999984741211,
     "hy_oas": 3.11,
     "ig_oas": 0.83,
     "treasury_volatility_proxy": 87.562,
@@ -50,9 +50,9 @@ Generated quality score: **0.856** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9560,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-13T16:27:30.963420+00:00",
+    "breadth_source_as_of_utc": "2026-10-13T16:54:28.579434+00:00",
     "nfci": -0.494,
-    "volume_ratio20_mean": 0.49640189673317836,
+    "volume_ratio20_mean": 0.5292295624565003,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -151,7 +151,7 @@ Generated quality score: **0.856** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-13T16:28:46+00:00",
+  "generated_at": "2026-10-13T16:55:54+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -198,13 +198,13 @@ Generated quality score: **0.856** / actionable=True
 - EDINET: ok / records=6 / tier=primary
 - SEC: ok / records=30 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=53 / tier=secondary
+- NewsRSS: ok / records=52 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-13T16:27:30.963420+00:00
+- Data retrieved (UTC): 2026-10-13T16:54:28.579434+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -311,9 +311,9 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-10-09 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426006836/p15110415_6-k.htm
 - [HIGH] 8766 東京海上ホールディングス | 2026-10-13 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z7I6
 - [HIGH] 8622 水戸証券 | Mon, 09 Mar 2026 | dividend | 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QRlFKekV1VHlONVFFNmFzTzBKQ1FiajFfb2RmSjJIdE9qZmR4MkJ4RnEtRGhVLU51ZFo0dzRkMGJJNjY3d242azlHN19TLXZ6R1V3?oc=5
-- [HIGH] 4063 信越化学工業 | Mon, 12 Oct 2026 | dividend | キヤノン、信越化学工業も…「下落が怖い」人向け"高配当"半導体・AI株7銘柄の実名 - 現代ビジネス | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiT0FVX3lxTE8wMFVHbTE4ZVctZUI0ZU9QQkNBbXhPTW4zQkpXOERvalhkTHpNR2dNSFQ2Tjc1WHVFbU9kQVkwMm0xRExqV1JoRTUyYWhQNUU?oc=5
 - [HIGH] 3099 三越伊勢丹ホールディングス | Thu, 01 Oct 2026 | buyback | 三越伊勢丹ホールディングス[3099]：自己株式の取得状況（途中経過）に関するお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9adGlxc0NDOW5sa2daeTBzZ09YTFBQM2tuaUFkNFR4ckpmMWJ4NDh3Q0h5T2oyRkZhcDZsV2h3RVNDUTR4WmgtUTNObjhEN0luVnBnamJBc2duWWNDall4YlV5MWx3bXdhcWc?oc=5
 - [HIGH] 8622 水戸証券 | Thu, 17 Sep 2026 | dividend | 水戸証券[8622]：2027年３月期の中間配当（普通配当および創業105周年記念配当）予定に関するお知らせ 2026年9月17日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE13VEdRV3RNcWpkWUQ0WndkYTAtNi15VFRVeVNLM2s4VlFVSjZFTGJDUWd2eVNKd2k5YlpWMnZBTkpwZjdSeS1jcjN3LVdvLTl2NnVuUll5eVA3UnlFUWVzWjExUmZJVlEzSEE?oc=5
+- [HIGH] 4063 信越化学工業 | Tue, 13 Oct 2026 | dividend | キヤノン、信越化学工業も 「高配当」半導体・AI株7銘柄の実名 - 現代ビジネス | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiWEFVX3lxTE04OEpYMVZFQU1VUkVjN1pWcW1SQ3Bsa2lEMzBOaGJLZkJKT2ppa1BEZHY0dTI4eXZCOTZCUk90a0FVVF9PUlZtWUFfbHZDTEM4WVpZNjgyV2s?oc=5
 - [HIGH] 5032 ANYCOLOR | Wed, 09 Sep 2026 | buyback | 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE9SUEU1ZE41TXRpU2h5VTAyb1F4N3BWRTR5YTFFM0FDR1hJTHZrNWlRVUp3MlRuelBKYlpKNU0zTU15QWxaclYwejV0Y2pNWXkxMXgwVFY4U3RYRFpIRmNZanA3MExrQUF4Slk3eg?oc=5
 
 ## Mandatory AI rules
