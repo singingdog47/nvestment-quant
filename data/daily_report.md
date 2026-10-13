@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-12T18:56:34.299277+00:00
+- Data retrieved (UTC): 2026-10-13T15:05:16.461712+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -36,23 +36,23 @@
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 75.6 | 100.0 | unchanged |
-| JP | 2 | 3932.T | Akatsuki Inc. | Other | 75.4 | 99.9 | unchanged |
-| JP | 3 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.2 | 99.9 | unchanged |
-| JP | 4 | 8616.T | Tokai Tokyo Financial Holdings,Inc. | Financials | 74.2 | 99.8 | unchanged |
-| JP | 7 | 6750.T | ELECOM CO.,LTD. | Other | 72.9 | 99.7 | unchanged |
-| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.0 | 99.5 | unchanged |
-| JP | 11 | 2121.T | MIXI,Inc. | Other | 70.7 | 99.5 | unchanged |
-| JP | 12 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 69.7 | 99.4 | unchanged |
-| JP | 13 | 8789.T | FinTech Global Incorporated | Other | 69.3 | 99.4 | unchanged |
-| JP | 14 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 69.3 | 99.3 | unchanged |
+| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 75.8 | 100.0 | unchanged |
+| JP | 2 | 3932.T | Akatsuki Inc. | Other | 75.7 | 99.9 | unchanged |
+| JP | 3 | 8616.T | Tokai Tokyo Financial Holdings,Inc. | Financials | 74.9 | 99.9 | unchanged |
+| JP | 4 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 74.6 | 99.8 | unchanged |
+| JP | 6 | 6750.T | ELECOM CO.,LTD. | Other | 73.9 | 99.7 | unchanged |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.1 | 99.5 | unchanged |
+| JP | 11 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 70.6 | 99.5 | unchanged |
+| JP | 12 | 8789.T | FinTech Global Incorporated | Other | 70.4 | 99.4 | unchanged |
+| JP | 13 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 70.2 | 99.4 | unchanged |
+| JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.0 | 99.3 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.1 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.3 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.6 | 100.0 | unchanged |
 | US | 3 | INSW | International Seaways, Inc. Common Stock  | Shipping | 82.9 | 99.9 | unchanged |
 | US | 5 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.4 | 99.9 | unchanged |
 | US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.9 | unchanged |
-| US | 11 | TRMD | TORM plc - Class A Common Stock | Other | 80.6 | 99.7 | unchanged |
-| US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 80.5 | 99.7 | unchanged |
+| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.7 | unchanged |
+| US | 13 | BUSE | First Busey Corporation - Common Stock | Other | 80.5 | 99.6 | unchanged |
 | US | 15 | FRO | Frontline Plc Ordinary Shares | Other | 79.8 | 99.6 | unchanged |
 | US | 22 | WSBC | WesBanco, Inc. - Common Stock | Other | 78.7 | 99.4 | unchanged |
 | US | 24 | HCI | HCI Group, Inc. Common Stock | Other | 78.0 | 99.3 | unchanged |

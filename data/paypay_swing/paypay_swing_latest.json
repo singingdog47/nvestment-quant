@@ -1,93 +1,93 @@
 {
-  "generated_at_jst": "2026-10-13T03:59:15+09:00",
+  "generated_at_jst": "2026-10-14T00:08:19+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
     "reason": "首位と2位の差が1.6点で優位性が弱い",
-    "margin": 1.62
+    "margin": 1.61
   },
   "ranking": [
     {
       "key": "STANDARD",
       "label": "スタンダード",
       "ticker": "SPY",
-      "close": 777.2449951171875,
-      "data_date": "2026-10-12",
-      "momentum": 70.32,
-      "macro": 64.94,
-      "trend": 99.86,
-      "risk": 92.46,
+      "close": 776.8800048828125,
+      "data_date": "2026-10-13",
+      "momentum": 70.9,
+      "macro": 66.05,
+      "trend": 99.83,
+      "risk": 92.59,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 79.17
+      "total": 79.65
     },
     {
       "key": "TECH",
       "label": "テクノロジー",
       "ticker": "QQQ",
-      "close": 744.9600219726562,
-      "data_date": "2026-10-12",
-      "momentum": 75.34,
-      "macro": 54.42,
-      "trend": 98.84,
-      "risk": 87.06,
+      "close": 741.5800170898438,
+      "data_date": "2026-10-13",
+      "momentum": 75.23,
+      "macro": 56.82,
+      "trend": 98.57,
+      "risk": 86.87,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 77.55
+      "total": 78.04
     },
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 82312.71875,
-      "data_date": "2026-10-12",
-      "momentum": 69.52,
-      "macro": 64.34,
-      "trend": 77.03,
-      "risk": 82.04,
+      "close": 83510.2890625,
+      "data_date": "2026-10-13",
+      "momentum": 75.32,
+      "macro": 65.31,
+      "trend": 77.86,
+      "risk": 82.06,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 66.11
+      "total": 68.55
     },
     {
       "key": "GOLD",
       "label": "金（ゴールド）",
       "ticker": "GLD",
-      "close": 382.0249938964844,
-      "data_date": "2026-10-12",
-      "momentum": 33.91,
-      "macro": 32.96,
+      "close": 381.7300109863281,
+      "data_date": "2026-10-13",
+      "momentum": 33.53,
+      "macro": 36.38,
       "trend": 0.0,
-      "risk": 68.3,
+      "risk": 68.32,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 36.04
+      "total": 36.76
     }
   ],
   "source_health": [
     {
       "source": "yfinance:GLD",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-12T18:59:15+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-13T15:08:19+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:QQQ",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-12T18:59:15+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-13T15:08:19+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:SPY",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-12T18:59:15+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-13T15:08:19+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,31 +95,31 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-10-12T18:59:15+00:00",
+      "fetched_at": "2026-10-13T15:08:19+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^TNX",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-12T18:59:15+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-13T15:08:19+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-12T18:59:15+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-13T15:08:19+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^VIX",
       "status": "ok",
-      "records": 253,
-      "fetched_at": "2026-10-12T18:59:15+00:00",
+      "records": 254,
+      "fetched_at": "2026-10-13T15:08:19+00:00",
       "error": "",
       "source_tier": "secondary"
     }

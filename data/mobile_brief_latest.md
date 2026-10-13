@@ -4,16 +4,16 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**CONSTRUCTIVE**、総合スコアは65.6です。
+市場レジームは**CONSTRUCTIVE**、総合スコアは66.3です。
 市場レジームは前回からほぼ横ばいです。VIXは落ち着いている一方、売買の厚みは弱めです。指数が穏やかでも、個別株では値が飛びやすい状態です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：+0.0ポイント
-- トレンド：-0.1ポイント
-- 市場参加の広がり：-0.0ポイント
-- 流動性：+0.8ポイント
-- 上位候補に大きな順位上昇はなく、新しい強いトレンドが出たというより、既存の選好が続いています。
+- 総合スコア：+0.9ポイント
+- トレンド：+2.3ポイント
+- 市場参加の広がり：+1.3ポイント
+- 流動性：-0.1ポイント
+- Allstate Corporation (The) Common Stock、Mercury General Corporation Common Stockの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
@@ -33,14 +33,14 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 今日の注意点
 
-- **WARNING** Thin liquidity flag active — 売買指示ではなく確認対象です。
-- **WARNING** Treasury yield volatility is unusually high — 売買指示ではなく確認対象です。
-- **WATCH** (株)三越伊勢丹ホールディングス【3099】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス — 売買指示ではなく確認対象です。
-- **WATCH** Market liquidity is soft — 売買指示ではなく確認対象です。
+- **WARNING** 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Mito Securities Co.,Ltd.、Akatsuki Inc.、IwaiCosmo Holdings,Inc.、Tokai Tokyo Financial Holdings,Inc.
+- 日本：Mito Securities Co.,Ltd.、Akatsuki Inc.、Tokai Tokyo Financial Holdings,Inc.、IwaiCosmo Holdings,Inc.
 - 米国：Carter Bankshares, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares、International Seaways, Inc. Common Stock 、Norwood Financial Corp. - Common Stock
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
@@ -58,14 +58,14 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 ## PayPay Swing
 
 - 監視判定: **WAIT_RESEARCH** — 首位と2位の差が1.6点で優位性が弱い
-- 上位: スタンダード 79.2 / テクノロジー 77.5 / ビットコイン 66.1
+- 上位: スタンダード 79.7 / テクノロジー 78.0 / ビットコイン 68.5
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は84.7%。9561銘柄中5312銘柄を採点し、価格欠損率は9.3%です。
+データ品質は84.7%。9560銘柄中5300銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-10-12T18:59:14+00:00
+生成時刻（UTC）：2026-10-13T15:08:19+00:00
