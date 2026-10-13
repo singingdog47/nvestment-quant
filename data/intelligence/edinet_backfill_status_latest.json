@@ -1,31 +1,12 @@
 {
-  "pending": [
-    {
-      "market": "JP",
-      "code": "4996",
-      "ticker": "4996.T",
-      "name": "クミアイ化学工業",
-      "event_date": "2026-01-27",
-      "event_type": "filing",
-      "title": "有価証券報告書－第77期(2024/11/01－2025/10/31)",
-      "summary": "",
-      "source": "EDINET",
-      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100XH23",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-10-13T15:16:27+00:00",
-      "event_id": "651a9baca65ad35dc0b8766b",
-      "raw_excerpt": ""
-    }
-  ],
+  "pending": [],
   "anchor_date": "2026-10-03",
-  "next_date": "2026-01-17",
+  "next_date": "2026-01-03",
   "lookback_days": 450,
   "days_scanned_this_run": 14,
-  "new_events": 1,
+  "new_events": 0,
   "failures": [],
   "complete": false,
   "status": "in_progress",
-  "updated_at_utc": "2026-10-13T15:16:30+00:00"
+  "updated_at_utc": "2026-10-13T15:55:48+00:00"
 }

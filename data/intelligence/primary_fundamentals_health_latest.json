@@ -1,9 +1,7 @@
 {
-  "checked": 1,
-  "resolved_document_ids": [
-    "S100XH23"
-  ],
-  "new_companies": 1,
+  "checked": 0,
+  "resolved_document_ids": [],
+  "new_companies": 0,
   "errors": [],
   "primary_companies": 18,
   "status": "ok"
