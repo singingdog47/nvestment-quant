@@ -1,10 +1,10 @@
 # AI Shadow Swing — Daily Status
 
-- As of: 2026-10-15 JST
+- As of: 2026-10-16 JST
 - Experiment: ¥1,000,000 / 2026-09-10 → 2026-12-10
 - Mode: SHADOW ONLY — no broker connection and no real orders
 - NAV: ¥987,919 | Cash: ¥987,919
-- Return: -1.21% | Benchmark: +0.10% | Alpha: -1.30%
+- Return: -1.21% | Benchmark: N/A | Alpha: N/A
 - Max DD: -1.25% | Status: ACTIVE
 
 ## Positions
@@ -14,7 +14,7 @@
 - None
 
 ## Fills today
-- SELL 8622.T 100 @ ¥812.19 / hard_stop
+- None
 
 ## Rules
 - ChatGPT supplies discretionary BUY/SELL/HOLD decisions; code enforces sizing and loss limits.

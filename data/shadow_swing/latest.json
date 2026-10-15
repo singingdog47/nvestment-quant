@@ -1,39 +1,35 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-10-15",
+  "as_of_date": "2026-10-16",
   "status": "ACTIVE",
-  "data_fresh": true,
+  "data_fresh": false,
+  "screening_fresh": false,
+  "regime_fresh": false,
+  "priced_symbols": [],
+  "execution_integrity": {
+    "status": "OK",
+    "missing_ohlc_orders": [],
+    "overdue_sell_orders": [],
+    "delayed_fills": []
+  },
   "metrics": {
     "initial_capital_jpy": 1000000.0,
     "nav_jpy": 987918.7,
     "cash_jpy": 987918.7,
     "total_return_pct": -1.208,
-    "benchmark_return_pct": 0.095,
-    "alpha_pct": -1.303,
+    "benchmark_return_pct": null,
+    "alpha_pct": null,
     "realized_pnl_jpy": -12081.3,
     "max_drawdown_pct": -1.248,
     "positions": 0,
     "pending_orders": 0
   },
   "regime": {
-    "label": "NEUTRAL",
-    "score": 56.95,
+    "label": "CONSTRUCTIVE",
+    "score": 58.48,
     "confidence": 1.0
   },
-  "fills_today": [
-    {
-      "date": "2026-10-15",
-      "symbol": "8622.T",
-      "side": "SELL",
-      "qty": 100,
-      "fill_price": 812.187,
-      "value_jpy": 81218.7,
-      "realized_pnl_jpy": -12081.3,
-      "reason": "hard_stop",
-      "signal_date": "2026-10-06",
-      "decision_id": null
-    }
-  ],
+  "fills_today": [],
   "pending_orders": [],
   "positions": []
 }
