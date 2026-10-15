@@ -16,6 +16,7 @@ VERSION = "1.0.0"
 ROOT = Path("data")
 OUT = ROOT / "shadow_swing"
 CONFIG = Path("config/shadow_swing_v1.json")
+META_CONFIG = Path("config/decision_meta_gate_v1.json")
 JST = ZoneInfo("Asia/Tokyo")
 
 
@@ -156,9 +157,13 @@ def ingest_gpt_decision(state: dict[str, Any], as_of: date, cfg: dict[str, Any])
         signal_date = date.fromisoformat(decision_date_text)
     except ValueError:
         return
-    if signal_date > as_of or decision_id in set(state.get("processed_gpt_decision_ids", [])):
+    # A stale discretionary instruction must never queue a delayed BUY or SELL.
+    if signal_date != as_of or decision_id in set(state.get("processed_gpt_decision_ids", [])):
         return
 
+    meta_rules = read_json(META_CONFIG, {})
+    thesis_fields = meta_rules.get("investment_action_gate", {}).get("required_for_buy_or_add", [])
+    gate_passed = decision.get("meta_gate", {}).get("passed") is True
     risk = cfg["risk"]
     initial = float(cfg["initial_cash_jpy"])
     pending_symbols = {str(x.get("symbol")) for x in state.get("pending_orders", [])}
@@ -194,6 +199,11 @@ def ingest_gpt_decision(state: dict[str, Any], as_of: date, cfg: dict[str, Any])
             pending_symbols.add(symbol)
             continue
 
+        # Rank/score cannot substitute for a falsifiable mispricing thesis.
+        thesis = action.get("mispricing_thesis") or action
+        if (not gate_passed or not thesis_fields or not isinstance(thesis, dict)
+                or any(thesis.get(field) in (None, "") for field in thesis_fields)):
+            continue
         if symbol in state.get("positions", {}) or symbol in pending_symbols:
             continue
         active_buys = sum(1 for x in state.get("pending_orders", []) if x.get("side") == "BUY")
@@ -257,6 +267,9 @@ def process_pending(state: dict[str, Any], as_of: date, cfg: dict[str, Any]) -> 
             continue
         bar = robust_fetch_bar(order["symbol"], as_of)
         if not bar:
+            order["execution_blocker"] = "MISSING_VERIFIED_OHLC"
+            order["last_attempt_date"] = as_of.isoformat()
+            order["blocked_attempts"] = int(order.get("blocked_attempts", 0)) + 1
             keep.append(order)
             continue
 
@@ -313,7 +326,13 @@ def process_pending(state: dict[str, Any], as_of: date, cfg: dict[str, Any]) -> 
             state["cash_jpy"] = float(state["cash_jpy"]) + value
             state["realized_pnl_jpy"] = float(state.get("realized_pnl_jpy", 0.0)) + pnl
 
+        days_since_signal = (as_of - signal_date).days
+        late_fill = days_since_signal > 4 or int(order.get("blocked_attempts", 0)) > 0
+        if late_fill:
+            order["execution_warning"] = "DELAYED_EXECUTION"
         fill = {
+            "execution_warning": "DELAYED_EXECUTION" if late_fill else None,
+            "signal_to_fill_calendar_days": days_since_signal,
             "date": as_of.isoformat(),
             "symbol": order["symbol"],
             "side": side,
@@ -340,6 +359,50 @@ def process_pending(state: dict[str, Any], as_of: date, cfg: dict[str, Any]) -> 
     return fills
 
 
+def screening_is_postclose(screen: pd.DataFrame, as_of: date) -> bool:
+    """Require the screen's own after-close retrieval timestamp, not regime date."""
+    if screen.empty or "data_retrieved_at_utc" not in screen:
+        return False
+    stamps = screen["data_retrieved_at_utc"].dropna().astype(str).unique()
+    if len(stamps) != 1 or len(screen["data_retrieved_at_utc"].dropna()) != len(screen):
+        return False
+    try:
+        stamp = datetime.fromisoformat(stamps[0].replace("Z", "+00:00"))
+        if stamp.tzinfo is None:
+            return False
+        local = stamp.astimezone(JST)
+        return local.date() == as_of and (local.hour, local.minute) >= (15, 30)
+    except (TypeError, ValueError):
+        return False
+
+
+def pending_execution_integrity(state: dict[str, Any], as_of: date,
+                                fills: list[dict[str, Any]]) -> dict[str, Any]:
+    blocked = []
+    overdue = []
+    for order in state.get("pending_orders", []):
+        if order.get("status") != "PENDING":
+            continue
+        try:
+            days = (as_of - date.fromisoformat(order["signal_date"])).days
+        except (KeyError, ValueError, TypeError):
+            days = None
+        if order.get("execution_blocker") == "MISSING_VERIFIED_OHLC":
+            blocked.append({"symbol": order.get("symbol"), "side": order.get("side"),
+                            "signal_date": order.get("signal_date"),
+                            "blocked_attempts": order.get("blocked_attempts", 0)})
+        # Calendar-day alarm is conservative but not an exchange holiday calendar.
+        if days is not None and days > 4 and order.get("side") == "SELL":
+            overdue.append({"symbol": order.get("symbol"),
+                            "signal_date": order.get("signal_date"), "calendar_days": days})
+    delayed_fills = [fill for fill in fills if fill.get("execution_warning")]
+    status = ("BLOCKED_EXIT" if any(x["side"] == "SELL" for x in blocked)
+              else "OVERDUE_EXIT" if overdue
+              else "DELAYED_EXECUTION" if delayed_fills else "OK")
+    return {"status": status, "missing_ohlc_orders": blocked,
+            "overdue_sell_orders": overdue, "delayed_fills": delayed_fills}
+
+
 def screening_price_map(screen: pd.DataFrame) -> dict[str, float]:
     prices: dict[str, float] = {}
     if screen.empty:
@@ -357,23 +420,30 @@ def screening_price_map(screen: pd.DataFrame) -> dict[str, float]:
     return prices
 
 
-def mark_to_market(state: dict[str, Any], screen: pd.DataFrame, as_of: date) -> None:
+def mark_to_market(state: dict[str, Any], screen: pd.DataFrame, as_of: date) -> set[str]:
     prices = screening_price_map(screen)
+    priced_symbols: set[str] = set()
     market_value = 0.0
     for symbol, pos in state.get("positions", {}).items():
         price = prices.get(symbol)
         if price is None:
             bar = robust_fetch_bar(symbol, as_of)
-            price = bar["close"] if bar else float(pos["last_price"])
+            price = bar["close"] if bar else None
+        if price is None:
+            # Last-known price is a valuation placeholder, never a fresh exit signal.
+            price = float(pos["last_price"])
+        else:
+            priced_symbols.add(symbol)
+            pos["holding_sessions"] = int(pos.get("holding_sessions", 0)) + 1
         pos["last_price"] = float(price)
         pos["peak_price"] = max(float(pos.get("peak_price", price)), float(price))
-        pos["holding_sessions"] = int(pos.get("holding_sessions", 0)) + 1
         market_value += float(price) * int(pos["qty"])
     nav = float(state["cash_jpy"]) + market_value
     state["nav_jpy"] = nav
     state["peak_nav_jpy"] = max(float(state.get("peak_nav_jpy", nav)), nav)
     dd = nav / float(state["peak_nav_jpy"]) - 1 if state["peak_nav_jpy"] else 0.0
     state["max_drawdown_pct"] = min(float(state.get("max_drawdown_pct", 0.0)), dd * 100)
+    return priced_symbols
 
 
 def market_is_stressed(regime: dict[str, Any]) -> bool:
@@ -381,11 +451,15 @@ def market_is_stressed(regime: dict[str, Any]) -> bool:
     return bool(regime.get("stress_flag")) or any(x in label for x in ("PANIC", "RISK_OFF", "RISK-OFF"))
 
 
-def queue_mechanical_exits(state: dict[str, Any], as_of: date, cfg: dict[str, Any], regime: dict[str, Any]) -> None:
+def queue_mechanical_exits(state: dict[str, Any], as_of: date, cfg: dict[str, Any],
+                           regime: dict[str, Any], priced_symbols: set[str] | None = None) -> None:
     risk = cfg["risk"]
     pending = {str(x.get("symbol")) for x in state.get("pending_orders", [])}
     for symbol, pos in list(state.get("positions", {}).items()):
         if symbol in pending:
+            continue
+        if (priced_symbols is not None and symbol not in priced_symbols
+                and state.get("status") != "KILL_SWITCH" and not market_is_stressed(regime)):
             continue
         entry = float(pos["entry_price"])
         price = float(pos["last_price"])
@@ -512,16 +586,20 @@ def run(as_of: date | None = None) -> dict[str, Any]:
     state = read_json(state_path, None) or new_state(cfg)
     if state.get("last_run_date") == as_of.isoformat():
         return {"status": "IDEMPOTENT_NOOP", **read_json(OUT / "latest.json", {})}
+    if as_of.weekday() >= 5:
+        return {"status": "NON_TRADING_DAY", "as_of_date": as_of.isoformat()}
 
     screen_path = ROOT / "screening_latest.csv"
     screen = pd.read_csv(screen_path) if screen_path.exists() else pd.DataFrame()
     regime = read_json(ROOT / "regime" / "market_regime_latest.json", {})
-    data_fresh = str(regime.get("date_jst") or "") == as_of.isoformat()
+    regime_fresh = str(regime.get("date_jst") or "") == as_of.isoformat()
+    screen_fresh = screening_is_postclose(screen, as_of)
+    data_fresh = regime_fresh and screen_fresh
 
     if state.get("status") == "ACTIVE" and as_of < end:
         ingest_gpt_decision(state, as_of, cfg)
     fills = process_pending(state, as_of, cfg)
-    mark_to_market(state, screen if data_fresh else pd.DataFrame(), as_of)
+    priced_symbols = mark_to_market(state, screen if screen_fresh else pd.DataFrame(), as_of)
 
     drawdown = float(state["nav_jpy"]) / float(state["peak_nav_jpy"]) - 1 if state["peak_nav_jpy"] else 0.0
     if drawdown <= float(cfg["risk"]["portfolio_kill_switch_drawdown_pct"]):
@@ -529,7 +607,9 @@ def run(as_of: date | None = None) -> dict[str, Any]:
     if as_of >= end:
         state["status"] = "ENDED"
     if state["status"] != "ENDED":
-        queue_mechanical_exits(state, as_of, cfg, regime)
+        queue_mechanical_exits(state, as_of, cfg, regime if regime_fresh else {},
+                               priced_symbols)
+    integrity = pending_execution_integrity(state, as_of, fills)
 
     bench = benchmark_return(cfg, state, as_of)
     m = metrics(cfg, state, bench)
@@ -542,6 +622,10 @@ def run(as_of: date | None = None) -> dict[str, Any]:
         "as_of_date": as_of.isoformat(),
         "status": state["status"],
         "data_fresh": data_fresh,
+        "screening_fresh": screen_fresh,
+        "regime_fresh": regime_fresh,
+        "priced_symbols": sorted(priced_symbols),
+        "execution_integrity": integrity,
         "metrics": m,
         "regime": {
             "label": regime.get("regime_label"),
