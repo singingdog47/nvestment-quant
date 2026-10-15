@@ -101,6 +101,25 @@ def fetch_bar(symbol: str, session_date: date) -> dict[str, float] | None:
     return None
 
 
+
+def robust_fetch_bar(symbol: str, session_date: date) -> dict[str, float] | None:
+    """Retry independently through verified OHLC fallback; never fake market fills.
+
+    Keep the original v1 ledger and original order signal dates unchanged.
+    Missed execution cannot be retroactively backfilled at an imagined price.
+    """
+    bar = fetch_bar(symbol, session_date)
+    if bar is not None:
+        return bar
+    # Lazy import avoids dependency cycles: v2 fallback calls base fetch_bar,
+    # never robust_fetch_bar.
+    try:
+        from shadow_swing_v2 import verified_daily_bar
+        return verified_daily_bar(symbol, session_date)
+    except Exception:
+        return None
+
+
 def append_jsonl(path: Path, row: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a", encoding="utf-8") as f:
@@ -236,7 +255,7 @@ def process_pending(state: dict[str, Any], as_of: date, cfg: dict[str, Any]) -> 
         if as_of <= signal_date:
             keep.append(order)
             continue
-        bar = fetch_bar(order["symbol"], as_of)
+        bar = robust_fetch_bar(order["symbol"], as_of)
         if not bar:
             keep.append(order)
             continue
@@ -344,7 +363,7 @@ def mark_to_market(state: dict[str, Any], screen: pd.DataFrame, as_of: date) -> 
     for symbol, pos in state.get("positions", {}).items():
         price = prices.get(symbol)
         if price is None:
-            bar = fetch_bar(symbol, as_of)
+            bar = robust_fetch_bar(symbol, as_of)
             price = bar["close"] if bar else float(pos["last_price"])
         pos["last_price"] = float(price)
         pos["peak_price"] = max(float(pos.get("peak_price", price)), float(price))
@@ -403,8 +422,8 @@ def queue_mechanical_exits(state: dict[str, Any], as_of: date, cfg: dict[str, An
 def benchmark_return(cfg: dict[str, Any], state: dict[str, Any], as_of: date) -> float | None:
     symbol = str(cfg["benchmark_symbol"])
     start_date = date.fromisoformat(cfg["start_date"])
-    start_bar = fetch_bar(symbol, start_date)
-    now_bar = fetch_bar(symbol, as_of)
+    start_bar = robust_fetch_bar(symbol, start_date)
+    now_bar = robust_fetch_bar(symbol, as_of)
     if state.get("benchmark_start_price") is None and start_bar:
         state["benchmark_start_price"] = start_bar["close"]
     base = as_float(state.get("benchmark_start_price"))

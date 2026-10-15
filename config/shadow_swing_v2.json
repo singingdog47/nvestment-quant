@@ -1,0 +1,50 @@
+{
+  "version": "2.0.0",
+  "cohort": "2026-10-15-v2-5m-adversarial",
+  "mode": "SHADOW_ONLY",
+  "start_date": "2026-10-15",
+  "end_date": "2027-01-15",
+  "initial_cash_jpy": 5000000,
+  "risk": {
+    "max_positions": 8,
+    "max_positions_per_theme": 2,
+    "max_new_entries_per_session": 2,
+    "max_position_pct": 0.125,
+    "max_gross_invested_pct": 0.8,
+    "uncertainty_size_multiplier": 0.5,
+    "stop_loss_pct": 5,
+    "take_profit_pct": 10,
+    "max_holding_sessions": 10
+  },
+  "execution": {
+    "round_lot_shares": 100,
+    "slippage_bps": 15,
+    "max_open_gap_pct": 3,
+    "expiry_calendar_days": 4,
+    "max_turnover_participation_pct": 2
+  },
+  "gate": {
+    "audit_top_japan_candidates": 80,
+    "min_history_sessions": 4,
+    "min_total_score": 68,
+    "min_momentum_score": 60,
+    "min_risk_score": 42,
+    "min_liquidity_score": 48,
+    "min_return_1m_pct": 3,
+    "min_return_3m_pct": 0,
+    "max_return_1m_pct": 45,
+    "min_avg_turnover_jpy": 100000000,
+    "max_price_source_disagreement_pct": 3
+  },
+  "governance": {
+    "real_orders_forbidden": true,
+    "single_cohort_immutable": true,
+    "no_lookahead": true,
+    "no_synthetic_fills": true,
+    "independent_adversarial_veto": true,
+    "require_evidence_for_trade": true,
+    "control_cohort": "data/shadow_swing (v1)",
+    "hypothesis_status": "UNVALIDATED",
+    "success_review_after_closed_trades": 30
+  }
+}
