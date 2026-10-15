@@ -118,7 +118,7 @@ def setup_run(monkeypatch, tmp_path):
 
 def test_market_feed_failure_blocks_new_entries_without_fabricated_fills(monkeypatch, tmp_path):
     setup_run(monkeypatch, tmp_path)
-    monkeypatch.setattr(v2, "fetch_bar", lambda *a: None)
+    monkeypatch.setattr(v2, "verified_daily_bar", lambda *a: None)
     report = v2.run(DAY)
     assert "benchmark_bar_unavailable" in report["market_data_blockers"]
     state = v2.read_json(v2.OUT / "state.json")
@@ -141,7 +141,7 @@ def test_intraday_stop_counts_actual_closed_trade_with_cost(monkeypatch, tmp_pat
         if symbol == "1306.T":
             return {"open": 100, "high": 101, "low": 99, "close": 100}
         return {"open": 100, "high": 101, "low": 94, "close": 97}
-    monkeypatch.setattr(v2, "fetch_bar", fake)
+    monkeypatch.setattr(v2, "verified_daily_bar", fake)
     result = v2.run(DAY)
     assert result["completed_trades"] == 1
     assert not v2.read_json(v2.OUT / "state.json")["positions"]
@@ -160,7 +160,7 @@ def test_time_exit_cannot_fill_using_same_sessions_open(monkeypatch, tmp_path):
                    "theme": "Other", "unknowns": [], "demand_mode": "trend"}
     }
     v2.save_json(v2.OUT / "state.json", state)
-    monkeypatch.setattr(v2, "fetch_bar", lambda symbol, day:
+    monkeypatch.setattr(v2, "verified_daily_bar", lambda symbol, day:
         {"open": 102, "high": 103, "low": 99, "close": 101})
     first = v2.run(DAY)
     assert first["completed_trades"] == 0
@@ -169,3 +169,35 @@ def test_time_exit_cannot_fill_using_same_sessions_open(monkeypatch, tmp_path):
     second = v2.run(date(2026, 10, 16))
     assert second["completed_trades"] == 1
     assert any(x["reason"] == "time_exit" for x in second["events"] if x["event"] == "SELL_FILLED")
+
+
+def test_morning_supply_is_not_falsely_treated_as_full_session():
+    p = supply()
+    p["price_as_of"] = "2026-10-15T00:20:00+00:00"  # 09:20 JST
+    audit = v2.evaluate_candidate(screen(), p, [101, 102, 105, 108], CFG, DAY)
+    assert "exchange_price_timestamp_stale" in audit["vetoes"]
+
+
+def test_benchmark_feed_fallback_validates_provider_ohlc(monkeypatch):
+    import sys
+    import types
+    import pandas as pd
+
+    monkeypatch.setattr(v2, "fetch_bar", lambda *_: None)
+    df = pd.DataFrame(
+        [{"Open": 100, "High": 103, "Low": 98, "Close": 101}],
+        index=pd.DatetimeIndex(["2026-10-15"]),
+    )
+    monkeypatch.setitem(sys.modules, "yfinance", types.SimpleNamespace(
+        download=lambda *args, **kwargs: df))
+    assert v2.verified_daily_bar("1234.T", DAY) == {
+        "open": 100.0, "high": 103.0, "low": 98.0, "close": 101.0
+    }
+
+
+def test_source_disagreement_is_a_critical_not_soft_warning():
+    p = supply()
+    p["current_price"] = "125"
+    audit = v2.evaluate_candidate(screen(), p, [101, 102, 105, 108], CFG, DAY)
+    assert not audit["eligible"]
+    assert "price_source_disagreement" in audit["vetoes"]
