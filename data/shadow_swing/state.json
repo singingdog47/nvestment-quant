@@ -3,37 +3,9 @@
   "mode": "SHADOW_ONLY",
   "start_date": "2026-09-10",
   "end_date": "2026-12-10",
-  "cash_jpy": 906700.0,
-  "positions": {
-    "8622.T": {
-      "symbol": "8622.T",
-      "code": "8622",
-      "name": "Mito Securities Co.,Ltd.",
-      "theme": "Financials",
-      "qty": 100,
-      "entry_price": 933.0,
-      "entry_date": "2026-09-15",
-      "last_price": 835.0,
-      "peak_price": 937.0,
-      "holding_sessions": 20,
-      "confidence": 0.66,
-      "decision_id": "gpt-shadow-20260914-postclose-1735-meta-buy-mito"
-    }
-  },
-  "pending_orders": [
-    {
-      "created_at_utc": "2026-10-05T17:28:24.965252+00:00",
-      "signal_date": "2026-10-06",
-      "side": "SELL",
-      "symbol": "8622.T",
-      "code": "8622",
-      "name": "Mito Securities Co.,Ltd.",
-      "qty": 100,
-      "order_type": "MARKET_NEXT_OPEN",
-      "reason": "hard_stop",
-      "status": "PENDING"
-    }
-  ],
+  "cash_jpy": 987918.7,
+  "positions": {},
+  "pending_orders": [],
   "processed_gpt_decision_ids": [
     "gpt-shadow-20260910-initial-hold",
     "gpt-shadow-20260911-postclose-1732-meta-hold",
@@ -44,13 +16,14 @@
     "gpt-shadow-20260918-postclose-1733-data-stale-hold-mito",
     "gpt-shadow-20260921-postclose-1735-market-closed-hold-mito",
     "gpt-shadow-20260923-postclose-1735-market-closed-hold-mito",
-    "gpt-shadow-20260924-postclose-1735-stale-data-hold-mito"
+    "gpt-shadow-20260924-postclose-1735-stale-data-hold-mito",
+    "gpt-shadow-20261015-preclose-restart-audit-hold-001"
   ],
-  "realized_pnl_jpy": 0.0,
-  "nav_jpy": 990200.0,
+  "realized_pnl_jpy": -12081.3,
+  "nav_jpy": 987918.7,
   "peak_nav_jpy": 1000400.0,
-  "max_drawdown_pct": -1.0195921631347415,
+  "max_drawdown_pct": -1.247630947620959,
   "benchmark_start_price": 422.70001220703125,
-  "last_run_date": "2026-10-14",
+  "last_run_date": "2026-10-15",
   "status": "ACTIVE"
 }
