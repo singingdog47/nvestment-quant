@@ -79,6 +79,68 @@
   "market_regime": "CONSTRUCTIVE",
   "model_version": "1.7.0",
   "outcomes": {
+    "1m": {
+      "average_benchmark_return": -0.0007120526979843556,
+      "average_excess_return": -0.03319015251819393,
+      "average_return": -0.03390220521617829,
+      "benchmark_coverage_n": 4,
+      "evaluated_at": "2026-10-15T12:42:23+00:00",
+      "n": 4,
+      "symbols": [
+        {
+          "benchmark_return": -0.0007120526979843556,
+          "benchmark_symbol": "1306.T",
+          "end_price": 807.0,
+          "evaluated_price_date": "2026-10-15",
+          "excess_return": -0.12000912430868627,
+          "max_down": -0.12072117700667062,
+          "max_up": 0.0021390291115443993,
+          "rank": 1.0,
+          "return": -0.12072117700667062,
+          "start_price": 917.797607421875,
+          "symbol": "8622.T"
+        },
+        {
+          "benchmark_return": -0.0007120526979843556,
+          "benchmark_symbol": "1306.T",
+          "end_price": 1532.0,
+          "evaluated_price_date": "2026-10-15",
+          "excess_return": -0.08357984455301115,
+          "max_down": -0.08488961794469596,
+          "max_up": 0.0005844412544604438,
+          "rank": 2.0,
+          "return": -0.0842918972509955,
+          "start_price": 1673.022216796875,
+          "symbol": "8624.T"
+        },
+        {
+          "benchmark_return": -0.0007120526979843556,
+          "benchmark_symbol": "1306.T",
+          "end_price": 1321.0,
+          "evaluated_price_date": "2026-10-15",
+          "excess_return": 0.1251392086515256,
+          "max_down": -0.005412645653440462,
+          "max_up": 0.14145103416631266,
+          "rank": 3.0,
+          "return": 0.12442715595354126,
+          "start_price": 1174.8204345703125,
+          "symbol": "3932.T"
+        },
+        {
+          "benchmark_return": -0.0007120526979843556,
+          "benchmark_symbol": "1306.T",
+          "end_price": 4390.0,
+          "evaluated_price_date": "2026-10-15",
+          "excess_return": -0.05431084986260393,
+          "max_down": -0.05502290256058828,
+          "max_up": 0.01816438972401313,
+          "rank": 4.0,
+          "return": -0.05502290256058828,
+          "start_price": 4645.615234375,
+          "symbol": "8707.T"
+        }
+      ]
+    },
     "1w": {
       "average_benchmark_return": 0.017511606206962193,
       "average_excess_return": -0.055886446944873436,
