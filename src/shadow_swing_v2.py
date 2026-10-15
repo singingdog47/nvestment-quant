@@ -327,8 +327,11 @@ def run(as_of=None):
         age = int(pos["holding_sessions"]) + 1
         exit_price = None
         reason = None
-        # Conservative intraday priority when both target and stop were touched.
-        if bar["open"] <= stop:
+        # A close-based time exit may only fill on a LATER session's open.
+        if pos.get("exit_next_open") and pos.get("exit_signal_date", "") < as_of.isoformat():
+            exit_price, reason = bar["open"] * (1 - slippage), pos["exit_next_open"]
+        # Conservative stop-first assumption for ambiguous same-day OHLC ordering.
+        elif bar["open"] <= stop:
             exit_price, reason = bar["open"] * (1 - slippage), "gap_through_stop"
         elif bar["low"] <= stop:
             exit_price, reason = stop * (1 - slippage), "intraday_stop"
@@ -336,12 +339,9 @@ def run(as_of=None):
             exit_price, reason = bar["open"] * (1 - slippage), "gap_through_target"
         elif bar["high"] >= target:
             exit_price, reason = target * (1 - slippage), "intraday_target"
-        elif age >= cfg["risk"]["max_holding_sessions"]:
-            # Day-close time exit is an analysis decision: next session open fills.
+        elif age >= cfg["risk"]["max_holding_sessions"] and not pos.get("exit_next_open"):
             pos["exit_next_open"] = "time_exit"
-        if pos.get("exit_next_open") and pos["entry_date"] != as_of.isoformat() and exit_price is None:
-            # Previously queued close-based exit fills at today's open.
-            exit_price, reason = bar["open"] * (1 - slippage), pos["exit_next_open"]
+            pos["exit_signal_date"] = as_of.isoformat()
         if exit_price is not None:
             record_trade(state, as_of, symbol, pos, exit_price, reason, benchmark_close)
             events.append({"event": "SELL_FILLED", "symbol": symbol, "reason": reason,
