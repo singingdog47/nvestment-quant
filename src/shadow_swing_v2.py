@@ -56,6 +56,50 @@ def append_csv(path, row, fields):
         writer.writerow({x: row.get(x) for x in fields})
 
 
+def verified_daily_bar(symbol, as_of):
+    """Verified same-session OHLC; independent Yahoo chart and yfinance fallback.
+
+    If BOTH sources fail, report an execution blocker. Never convert a
+    screening/scanner 'last price' into fictional OHLC.
+    """
+    bar = fetch_bar(symbol, as_of)
+    if bar is not None:
+        return bar
+    try:
+        import yfinance as yf
+        df = yf.download(
+            symbol, start=as_of.isoformat(),
+            end=(as_of + timedelta(days=1)).isoformat(),
+            auto_adjust=False, progress=False, threads=False, timeout=12,
+        )
+        if df is None or df.empty:
+            return None
+        if getattr(df.columns, "nlevels", 1) > 1:
+            df.columns = df.columns.get_level_values(0)
+        rows = df.loc[df.index.date == as_of]
+        if rows.empty:
+            return None
+        row = rows.iloc[-1]
+        values = {key: number(row[key.capitalize()]) for key in ("open", "high", "low", "close")}
+        if any(v is None or v <= 0 for v in values.values()):
+            return None
+        if (values["high"] < max(values["open"], values["close"])
+                or values["low"] > min(values["open"], values["close"])
+                or values["low"] > values["high"]):
+            return None
+        return values
+    except Exception:
+        return None
+
+
+def after_jp_market_close(timestamp, day):
+    if not is_same_jst_date(timestamp, day):
+        return False
+    dt = datetime.fromisoformat(str(timestamp).replace("Z", "+00:00"))
+    local = dt.astimezone(JST)
+    return (local.hour, local.minute) >= (15, 30)
+
+
 def initial_state(cfg):
     capital = int(cfg["initial_cash_jpy"])
     return {
@@ -109,11 +153,11 @@ def evaluate_candidate(screen, supply, historical_prices, cfg, as_of):
         failures.append("not_screening_eligible")
     if str(screen.get("research_candidate")).lower() != "true":
         failures.append("not_research_candidate")
-    if not is_same_jst_date(screen.get("data_retrieved_at_utc"), as_of):
+    if not after_jp_market_close(screen.get("data_retrieved_at_utc"), as_of):
         failures.append("screen_timestamp_stale")
     if not supply or supply.get("observed_date") != as_of.isoformat():
         failures.append("supply_snapshot_missing_or_stale")
-    if supply and not is_same_jst_date(supply.get("price_as_of"), as_of):
+    if supply and not after_jp_market_close(supply.get("price_as_of"), as_of):
         failures.append("exchange_price_timestamp_stale")
 
     total = number(screen.get("total_score"))
@@ -267,7 +311,7 @@ def run(as_of=None):
     bars = {}
     def market_bar(symbol):
         if symbol not in bars:
-            bars[symbol] = fetch_bar(symbol, as_of)
+            bars[symbol] = verified_daily_bar(symbol, as_of)
         return bars[symbol]
 
     slippage = cfg["execution"]["slippage_bps"] / 10000
@@ -357,7 +401,7 @@ def run(as_of=None):
     entries = 0
     regime = read_json(ROOT / "regime" / "market_regime_latest.json", {})
     screen = read_csv(ROOT / "screening_latest.csv")
-    if not screen or not is_same_jst_date(screen[0].get("data_retrieved_at_utc"), as_of):
+    if not screen or not after_jp_market_close(screen[0].get("data_retrieved_at_utc"), as_of):
         failures.append("screen_outdated_no_new_trades")
     if regime.get("date_jst") != as_of.isoformat() or not regime.get("actionable", False):
         failures.append("regime_stale_or_non_actionable")
