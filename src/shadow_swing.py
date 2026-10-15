@@ -16,6 +16,7 @@ VERSION = "1.0.0"
 ROOT = Path("data")
 OUT = ROOT / "shadow_swing"
 CONFIG = Path("config/shadow_swing_v1.json")
+META_CONFIG = Path("config/decision_meta_gate_v1.json")
 JST = ZoneInfo("Asia/Tokyo")
 
 
@@ -156,9 +157,13 @@ def ingest_gpt_decision(state: dict[str, Any], as_of: date, cfg: dict[str, Any])
         signal_date = date.fromisoformat(decision_date_text)
     except ValueError:
         return
-    if signal_date > as_of or decision_id in set(state.get("processed_gpt_decision_ids", [])):
+    # A stale discretionary instruction must never queue a delayed BUY or SELL.
+    if signal_date != as_of or decision_id in set(state.get("processed_gpt_decision_ids", [])):
         return
 
+    meta_rules = read_json(META_CONFIG, {})
+    thesis_fields = meta_rules.get("investment_action_gate", {}).get("required_for_buy_or_add", [])
+    gate_passed = decision.get("meta_gate", {}).get("passed") is True
     risk = cfg["risk"]
     initial = float(cfg["initial_cash_jpy"])
     pending_symbols = {str(x.get("symbol")) for x in state.get("pending_orders", [])}
@@ -194,6 +199,11 @@ def ingest_gpt_decision(state: dict[str, Any], as_of: date, cfg: dict[str, Any])
             pending_symbols.add(symbol)
             continue
 
+        # Rank/score cannot substitute for a falsifiable mispricing thesis.
+        thesis = action.get("mispricing_thesis") or action
+        if (not gate_passed or not thesis_fields or not isinstance(thesis, dict)
+                or any(thesis.get(field) in (None, "") for field in thesis_fields)):
+            continue
         if symbol in state.get("positions", {}) or symbol in pending_symbols:
             continue
         active_buys = sum(1 for x in state.get("pending_orders", []) if x.get("side") == "BUY")
@@ -257,6 +267,9 @@ def process_pending(state: dict[str, Any], as_of: date, cfg: dict[str, Any]) -> 
             continue
         bar = robust_fetch_bar(order["symbol"], as_of)
         if not bar:
+            order["execution_blocker"] = "MISSING_VERIFIED_OHLC"
+            order["last_attempt_date"] = as_of.isoformat()
+            order["blocked_attempts"] = int(order.get("blocked_attempts", 0)) + 1
             keep.append(order)
             continue
 
@@ -313,7 +326,13 @@ def process_pending(state: dict[str, Any], as_of: date, cfg: dict[str, Any]) -> 
             state["cash_jpy"] = float(state["cash_jpy"]) + value
             state["realized_pnl_jpy"] = float(state.get("realized_pnl_jpy", 0.0)) + pnl
 
+        days_since_signal = (as_of - signal_date).days
+        late_fill = days_since_signal > 4 or int(order.get("blocked_attempts", 0)) > 0
+        if late_fill:
+            order["execution_warning"] = "DELAYED_EXECUTION"
         fill = {
+            "execution_warning": "DELAYED_EXECUTION" if late_fill else None,
+            "signal_to_fill_calendar_days": days_since_signal,
             "date": as_of.isoformat(),
             "symbol": order["symbol"],
             "side": side,
