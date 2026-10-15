@@ -37,6 +37,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -r requirements.txt
+          python -m pip install 'yfinance>=0.2.65,<1'
           python -m pip install pytest
       - name: Validate adversarial and legacy safety guards
         run: python -m pytest -q tests/test_shadow_swing.py tests/test_shadow_swing_v2.py
