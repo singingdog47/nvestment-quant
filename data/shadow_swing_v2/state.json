@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "mode": "SHADOW_ONLY",
+  "cohort": "2026-10-15-v2-5m-adversarial",
+  "start_date": "2026-10-15",
+  "initial_cash_jpy": 5000000,
+  "cash_jpy": 5000000,
+  "positions": {},
+  "pending_buys": [],
+  "completed_trades": 0,
+  "realized_pnl_jpy": 0,
+  "nav_jpy": 5000000,
+  "peak_nav_jpy": 5000000,
+  "max_drawdown_pct": 0.0,
+  "last_run_date": "2026-10-15",
+  "missing_market_data": []
+}
