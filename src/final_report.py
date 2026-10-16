@@ -61,6 +61,8 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
     supply = _load_json(root / "data/supply_demand/supply_demand_summary_latest.json")
     alerts = _load_json(root / "data/alerts/alerts_latest.json")
     learning = _load_json(root / "data/validation/learning_latest.json")
+    horizon = _load_json(root / "data/horizon_outlook/horizon_latest.json")
+    horizon_learning = _load_json(root / "data/horizon_outlook/learning_latest.json")
     rows = _screening_rows(root / "data/screening_latest.csv")
     quality = ctx.get("quality") or {}
     policy = ctx.get("policy_guardrails") or {}
@@ -123,6 +125,27 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
             lines.append(f"- [{item.get('market', '?')}] {label}: {item.get('context_flags', 'NO_EXCEPTION')}")
     else:
         lines.append("- 例外なし、または必要データ未取得。欠損を前回値で補完しません。")
+    lines += ["", "## 3a. 短中長期の需給仮説（研究用）"]
+    for item in horizon.get("horizons", []):
+        lines.append(
+            f"- {item.get('name')} / {item.get('label')}: {item.get('view')}; "
+            f"仮説={item.get('hypothesis')}; 反証={item.get('invalidation')}; "
+            f"方針={item.get('trade_policy')}"
+        )
+    forecasts = horizon.get("prospective_hypotheses") or []
+    if forecasts:
+        for prediction in forecasts:
+            lines.append(
+                f"- [未校正予測] {prediction.get('symbol')} 1w relative "
+                f"{prediction.get('expected_sign')} vs {prediction.get('benchmark_symbol')}; "
+                f"p={prediction.get('probability')} (研究上の事前確率)"
+            )
+    else:
+        lines.append("- 検証可能な新規需給シグナルなし。欠損を方向予測に変換しません。")
+    lines.append(
+        f"- 事後検証: n={horizon_learning.get('graded_n', 0)}, "
+        f"Brier={horizon_learning.get('mean_brier', None)}（未校正）"
+    )
     lines += [
         "",
         "## 4. 例外検知 / アラート",
