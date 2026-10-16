@@ -1,12 +1,12 @@
 {
   "pending": [],
   "anchor_date": "2026-10-03",
-  "next_date": "2025-10-11",
+  "next_date": "2025-09-27",
   "lookback_days": 450,
   "days_scanned_this_run": 14,
   "new_events": 1,
   "failures": [],
   "complete": false,
   "status": "in_progress",
-  "updated_at_utc": "2026-10-15T12:42:09+00:00"
+  "updated_at_utc": "2026-10-16T00:27:08+00:00"
 }

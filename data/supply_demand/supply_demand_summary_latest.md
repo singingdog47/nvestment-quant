@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-10-15T12:42:23+00:00
+Generated (UTC): 2026-10-16T00:27:20+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.5%, volume ratio=0.6271219834626702)
-- [US] International Seaways, Inc. Common Stock: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=84.9%, float turnover=1.5%, volume ratio=1.540978933883158)
-- [US] TORM plc - Class A Common Stock: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=79.8%, float turnover=1.6%, volume ratio=1.8003172685255537)
-- [JP] IwaiCosmo Holdings,Inc.: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=81.5%, float turnover=0.6%, volume ratio=2.457865168539326)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=1.0%, volume ratio=1.2668729394917164)
-- [US] Frontline Plc Ordinary Shares: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=64.2%, float turnover=2.1%, volume ratio=2.3970001982614204)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.0%, volume ratio=0.9829582273666945)
-- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=97.9%, float turnover=1.1%, volume ratio=0.8754820552588243)
-- [US] Equity Bancshares, Inc. Class A Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION (float=85.9%, float turnover=0.6%, volume ratio=1.6502331959116292)
-- [US] ACNB Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.0%, float turnover=0.7%, volume ratio=0.8760718748653423)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.5%, volume ratio=0.36045277454700303)
+- [US] TORM plc - Class A Common Stock: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=79.8%, float turnover=1.6%, volume ratio=1.5254315185524252)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=1.0%, volume ratio=0.9045795426045214)
+- [US] Frontline Plc Ordinary Shares: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=64.2%, float turnover=2.1%, volume ratio=2.0164247611216006)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=1.0%, volume ratio=0.6990250006905094)
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION (float=97.9%, float turnover=1.1%, volume ratio=1.715543395864737)
+- [US] Equity Bancshares, Inc. Class A Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION (float=85.9%, float turnover=0.6%, volume ratio=2.2548917014731487)
+- [US] ACNB Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=95.6%, float turnover=0.7%, volume ratio=0.8445871217017854)
+- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING (float=91.6%, float turnover=0.8%, volume ratio=0.8095732753847857)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.4%, volume ratio=1.4744915475509286)
 
 ## Governance
 

@@ -6,12 +6,12 @@ Generated quality score: **0.882** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-15T12:41:00+00:00",
-  "generated_at_utc": "2026-10-15T12:41:00+00:00",
-  "date_jst": "2026-10-15",
+  "generated_at": "2026-10-16T00:25:57+00:00",
+  "generated_at_utc": "2026-10-16T00:25:57+00:00",
+  "date_jst": "2026-10-16",
   "data_status": "ok",
-  "regime_label": "CONSTRUCTIVE",
-  "regime_score": 58.48,
+  "regime_label": "NEUTRAL",
+  "regime_score": 57.04,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,28 +30,28 @@ Generated quality score: **0.882** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 56.09389958668825,
-    "stress": 74.11000034332275,
+    "trend": 61.84584244305307,
+    "stress": 73.8775006866455,
     "participation": 40.464096051720155,
-    "liquidity": 61.92718347958917,
+    "liquidity": 41.24923330356953,
     "positioning": 57.382181808165846
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.479999542236328,
-    "hy_oas": 3.16,
-    "ig_oas": 0.83,
-    "treasury_volatility_proxy": 89.067,
-    "treasury_volatility_percentile_rank": 0.9444,
-    "treasury_volatility_stress_score": 29.17,
-    "treasury_volatility_as_of_date": "2026-10-14",
+    "vix": 16.459999084472656,
+    "hy_oas": 3.25,
+    "ig_oas": 0.84,
+    "treasury_volatility_proxy": 93.704,
+    "treasury_volatility_percentile_rank": 0.9762,
+    "treasury_volatility_stress_score": 26.79,
+    "treasury_volatility_as_of_date": "2026-10-15",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9559,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-10-15T12:40:57.792222+00:00",
     "nfci": -0.499,
-    "volume_ratio20_mean": 1.2108545869897291,
+    "volume_ratio20_mean": 0.6939058325892384,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -80,9 +80,9 @@ Generated quality score: **0.882** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-10-15",
+      "as_of_date": "2026-10-16",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 57,
+      "days_to_sq": 56,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -94,7 +94,7 @@ Generated quality score: **0.882** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 64425.94921875,
+        "spot": 65045.76953125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -134,7 +134,7 @@ Generated quality score: **0.882** / actionable=True
 
 ## Policy guardrails
 {
-  "regime_label": "constructive",
+  "regime_label": "neutral",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
     0.08,
@@ -150,7 +150,7 @@ Generated quality score: **0.882** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-15T12:42:22+00:00",
+  "generated_at": "2026-10-16T00:27:19+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -161,25 +161,25 @@ Generated quality score: **0.882** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -194,10 +194,10 @@ Generated quality score: **0.882** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=8 / tier=primary
+- EDINET: ok / records=6 / tier=primary
 - SEC: ok / records=33 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=55 / tier=secondary
+- NewsRSS: ok / records=56 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -302,8 +302,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-07 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006740/p15109105_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-07 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006733/p15107743_6-k.htm
 - [HIGH] HTGC Hercules Capital, Inc. Common Stock | 2026-10-08 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1280784/000162828026065459/htgc-20261005.htm
-- [HIGH] 4063 信越化学工業 | 2026-10-09 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z7B5
-- [HIGH] 9433 KDDI | 2026-10-09 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z61I
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-09 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006837/p15110413_6-k.htm
 - [HIGH] 8766 東京海上ホールディングス | 2026-10-13 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z7I6
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006892/p15111556_6-k.htm
@@ -317,7 +315,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 6965 浜松ホトニクス | 2026-10-15 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z8FG
 - [HIGH] 8622 水戸証券 | Mon, 09 Mar 2026 | dividend | 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QRlFKekV1VHlONVFFNmFzTzBKQ1FiajFfb2RmSjJIdE9qZmR4MkJ4RnEtRGhVLU51ZFo0dzRkMGJJNjY3d242azlHN19TLXZ6R1V3?oc=5
 - [HIGH] 4063 信越化学工業 | Mon, 12 Oct 2026 | dividend | キヤノン、信越化学工業も…「下落が怖い」人向け"高配当"半導体・AI株7銘柄の実名 - 現代ビジネス | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiT0FVX3lxTE8wMFVHbTE4ZVctZUI0ZU9QQkNBbXhPTW4zQkpXOERvalhkTHpNR2dNSFQ2Tjc1WHVFbU9kQVkwMm0xRExqV1JoRTUyYWhQNUU?oc=5
-- [HIGH] 3099 三越伊勢丹ホールディングス | Thu, 01 Oct 2026 | buyback | 三越伊勢丹ホールディングス[3099]：自己株式の取得状況（途中経過）に関するお知らせ 2026年10月1日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9adGlxc0NDOW5sa2daeTBzZ09YTFBQM2tuaUFkNFR4ckpmMWJ4NDh3Q0h5T2oyRkZhcDZsV2h3RVNDUTR4WmgtUTNObjhEN0luVnBnamJBc2duWWNDall4YlV5MWx3bXdhcWc?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
