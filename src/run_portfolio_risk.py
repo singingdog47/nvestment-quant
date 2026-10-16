@@ -29,6 +29,7 @@ from private_drive import (
 )
 from portfolio_risk import main as run_risk
 from investment_state import build_investment_state, write_investment_state
+from private_horizon_decision import write_private_matrix
 from release_status import SYSTEM_VERSION
 
 JST = timezone(timedelta(hours=9))
@@ -446,6 +447,11 @@ def main() -> None:
     )
     private_alerts_written = _write_private_alerts(out_dir)
     shared_state = _write_shared_investment_state(private_dir, account_inputs, manifest, policy_payload)
+    horizon_private = write_private_matrix(
+        local_portfolio, source_as_of=manifest.get('source_as_of'),
+        policy_payload=policy_payload, investment_state=shared_state['state'],
+        output_dir=out_dir,
+    )
     writeback = _maybe_write_back_to_drive(private_dir, out_dir)
     try:
         history = _persist_private_history(private_dir, out_dir, manifest, valuation_payload, monthly_payload)
@@ -463,6 +469,8 @@ def main() -> None:
         "account_input_types": sorted((account_inputs.get("inputs") or {}).keys()),
         "account_selection_policy": account_inputs.get("selection_policy"),
         "portfolio_policy_status": policy_payload.get("status"),
+        "horizon_private_status": horizon_private.get("status"),
+        "horizon_private_count": horizon_private.get("holding_count"),
         "investment_state_drive_writeback": shared_state.get("drive_writeback"),
         "investment_state_open_orders": (shared_state.get("state") or {}).get("open_orders", {}).get("count"),
         "portfolio_valuation_status": valuation_payload.get("status"),
