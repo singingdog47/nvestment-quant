@@ -8,7 +8,7 @@ def make_args():
     holdings = pd.DataFrame([
         {"asset_type":"国内株式","code":"6701","ticker":"6701.T","name":"NEC","account":"特定","market_value":500000},
         {"asset_type":"国内株式","code":"5803","ticker":"5803.T","name":"フジクラ","account":"特定","market_value":500000},
-        {"asset_type":"投資信託","code":"","ticker":"","name":"VTI","account":"旧NISA","market_value":500000},
+        {"asset_type":"投資信託","code":"","ticker":"","name":"VTI","account":"旧NISA","market_value":12000000},
     ])
     return holdings, dict(
         outlook={"as_of_jst":"2026-10-16","prospective_hypotheses":[{"symbol":"6701.T","as_of_jst":"2026-10-16","expected_sign":"positive","id":"a1"}]},
