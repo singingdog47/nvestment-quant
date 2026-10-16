@@ -99,6 +99,9 @@ def _eligible_signals(
             continue
         if (_float(obs.get("confidence")) or 0) < 0.6:
             continue
+        price_stamp = _date(obs.get("price_as_of"))
+        if price_stamp is None or price_stamp.astimezone(JST).date().isoformat() != day:
+            continue  # price must be dated; a fresh processing timestamp is not enough
         flags = set(str(obs.get("context_flags") or "").split("|"))
         volume = _float(obs.get("current_volume_ratio_30d"))
         if volume is None or volume < 1.5 or "VOLUME_EXPANSION" not in flags:
@@ -157,9 +160,9 @@ def build_outlook(
     label = str(regime.get("regime_label") or "UNKNOWN") if regime_fresh else "UNKNOWN"
     score = _float(regime.get("regime_score")) if regime_fresh else None
     supply_coverage = supply_summary.get("coverage") if supply_fresh else {}
-    signal_count = len(_eligible_signals(screening_rows, supply_rows, day, issued_at)) if supply_fresh else 0
     hypotheses = (_eligible_signals(screening_rows, supply_rows, day, issued_at)
                   if regime_fresh and supply_fresh else [])
+    signal_count = len(hypotheses)
     if not regime_fresh:
         short_view = "INSUFFICIENT_DATA"
         medium_view = "INSUFFICIENT_DATA"
