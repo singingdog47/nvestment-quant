@@ -1,31 +1,12 @@
 {
-  "pending": [
-    {
-      "market": "JP",
-      "code": "2726",
-      "ticker": "2726.T",
-      "name": "パルグループホールディングス",
-      "event_date": "2025-10-07",
-      "event_type": "filing",
-      "title": "半期報告書－第54期(2025/03/01－2026/02/28)",
-      "summary": "",
-      "source": "EDINET",
-      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100WTTI",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-10-16T00:27:07+00:00",
-      "event_id": "0d0e1193cbb65ca164c07f36",
-      "raw_excerpt": ""
-    }
-  ],
+  "pending": [],
   "anchor_date": "2026-10-03",
-  "next_date": "2025-09-27",
+  "next_date": "2025-09-13",
   "lookback_days": 450,
   "days_scanned_this_run": 14,
-  "new_events": 1,
+  "new_events": 0,
   "failures": [],
   "complete": false,
   "status": "in_progress",
-  "updated_at_utc": "2026-10-16T00:27:08+00:00"
+  "updated_at_utc": "2026-10-16T12:28:48+00:00"
 }

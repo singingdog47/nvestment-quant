@@ -1,22 +1,22 @@
 # Investment Quant Validation Learning v2.1
 
-Generated: 2026-10-15T12:42:30+00:00
+Generated: 2026-10-16T12:29:01+00:00
 
 This is a diagnostic learning layer. It does not automatically change factor weights or issue orders.
 
 ## Model-change gate
-- Matured absolute-return observations: 516
-- Benchmark-relative observations: 516
+- Matured absolute-return observations: 520
+- Benchmark-relative observations: 520
 - Minimum benchmark-relative observations for review: 60
 - Eligible for human model-change review: True
 
 ## Findings
 - [WATCH] regime / CONSTRUCTIVE|1m (n=130): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] regime / NEUTRAL|1w (n=20): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] rank_bucket / top1|1m (n=27): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top1|1m (n=28): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] rank_bucket / top1|1w (n=78): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [INFO] rank_bucket / top10|1w (n=146): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
-- [WATCH] rank_bucket / top3|1m (n=54): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top3|1m (n=56): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [INFO] rank_bucket / top3|1w (n=156): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## Known limits
