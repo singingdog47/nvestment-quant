@@ -181,8 +181,9 @@ def build_final_report(root: str | Path = ".") -> tuple[Path, Path | None]:
     private_alerts = root / ".private/portfolio_risk/portfolio_alerts_latest.md"
     private_valuation = root / ".private/portfolio_risk/portfolio_valuation_latest.md"
     private_monthly = root / ".private/portfolio_risk/portfolio_monthly_latest.md"
+    private_horizon = root / ".private/portfolio_risk/portfolio_horizon_decision_latest.md"
     private_path: Path | None = None
-    private_sections = [private_risk, private_valuation, private_monthly, private_alerts]
+    private_sections = [private_risk, private_valuation, private_monthly, private_alerts, private_horizon]
     if any(path.exists() for path in private_sections):
         private_path = root / ".private/integrated_report_private_latest.md"
         private_path.parent.mkdir(parents=True, exist_ok=True)
