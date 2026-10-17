@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "cohort": "2026-10-19-ai-ma-v1-5m",
+  "mode": "SHADOW_ONLY",
+  "start_date": "2026-10-19",
+  "end_date": "2027-10-19",
+  "virtual_initial_cash_jpy": 5000000,
+  "benchmark_symbol": "1306.T",
+  "gate": {
+    "market_cap_min": 4000000000,
+    "market_cap_max": 150000000000,
+    "pe_max": 17,
+    "pb_max": 1.5,
+    "roe_min": 4,
+    "operating_margin_min": 2,
+    "turnover_min": 150000000
+  },
+  "risk": {
+    "max_positions": 8,
+    "max_position_weight": 0.1,
+    "max_new_entries_per_day": 2,
+    "max_holding_calendar_days": 90,
+    "max_avg_turnover_participation": 0.02
+  },
+  "execution": {
+    "slippage_bps": 15,
+    "max_open_gap_pct": 5,
+    "lot": 100
+  },
+  "audit": {
+    "max_candidates": 15
+  },
+  "governance": {
+    "real_orders_forbidden": true,
+    "no_lookahead": true,
+    "no_synthetic_fills": true,
+    "independent_from_v1_v2": true,
+    "not_an_AI_or_MA_alpha_model_yet": true,
+    "require_verified_past_close": true
+  }
+}
