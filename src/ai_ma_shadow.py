@@ -155,12 +155,15 @@ def run(as_of=None, root=ROOT, cfg_path=CONFIG, price_loader=verified_daily_bar)
         holding["last_close"]=bar["close"]
         held_calendar=(day-date.fromisoformat(holding["entry_date"])).days
         if held_calendar >= cfg["risk"]["max_holding_calendar_days"] and symbol not in state["pending_sells"]:
-            state["pending_sells"].append(symbol)
+            state["pending_sells"].append({"symbol":symbol,"signal_date":day.isoformat()})
             events.append({"event":"TIME_EXIT_QUEUED","symbol":symbol})
-    for symbol in list(state["pending_sells"]):
+    for sell_order in list(state["pending_sells"]):
+        symbol=sell_order["symbol"]
+        if sell_order["signal_date"] >= day.isoformat():
+            continue
         holding=state["positions"].get(symbol)
         if not holding:
-            state["pending_sells"].remove(symbol)
+            state["pending_sells"].remove(sell_order)
             continue
         # Positions are not closed at the signal-day close. Previous session exit is
         # executed at a verified later open, but never on the same entry session.
@@ -177,7 +180,7 @@ def run(as_of=None, root=ROOT, cfg_path=CONFIG, price_loader=verified_daily_bar)
             "entry_date":holding["entry_date"],"entry_price":holding["entry_price"],
             "exit_price":value,"qty":holding["qty"],"pnl_jpy":amount-holding["cost_jpy"]})
         del state["positions"][symbol]
-        state["pending_sells"].remove(symbol)
+        state["pending_sells"].remove(sell_order)
         events.append({"event":"VIRTUAL_SELL","symbol":symbol})
     for order in list(state["pending_buys"]):
         if order["signal_date"] >= day.isoformat():
