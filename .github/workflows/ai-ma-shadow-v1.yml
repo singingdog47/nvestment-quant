@@ -39,9 +39,11 @@ jobs:
           python -m pip install 'yfinance>=0.2.65,<1'
           python -m pip install pytest
       - name: Validate AI-MA paper rules
-        run: python -m pytest -q tests/test_ai_ma_shadow.py
+        run: python -m pytest -q tests/test_ai_ma_shadow.py tests/test_ai_ma_historical.py
       - name: Run separate virtual study
         run: python src/ai_ma_shadow.py
+      - name: Refresh historical feasibility and evidence audit
+        run: python src/ai_ma_historical.py
       - name: Upload no-money public paper audit
         uses: actions/upload-artifact@v4
         with:
@@ -50,6 +52,8 @@ jobs:
             data/ai_ma_shadow/latest.json
             data/ai_ma_shadow/latest_report.md
             data/ai_ma_shadow/equity_curve.csv
+            data/ai_ma_shadow/historical/historical_audit_latest.json
+            data/ai_ma_shadow/historical/historical_audit_latest.md
           if-no-files-found: warn
           retention-days: 30
       - name: Commit independent research ledger
