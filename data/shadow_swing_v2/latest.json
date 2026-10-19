@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-10-19",
+  "as_of_date": "2026-10-20",
   "cohort": "2026-10-15-v2-5m-adversarial",
   "mode": "SHADOW_ONLY",
   "initial_cash_jpy": 5000000,
@@ -10,7 +10,9 @@
   "completed_trades": 0,
   "queued_buys": 0,
   "market_data_blockers": [
-    "market_stress_no_new_entries"
+    "benchmark_bar_unavailable",
+    "market_stress_no_new_entries",
+    "screen_outdated_no_new_trades"
   ],
   "events": [],
   "candidate_audit": [],

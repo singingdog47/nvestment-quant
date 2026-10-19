@@ -1,9 +1,11 @@
 {
-  "as_of_date": "2026-10-19",
+  "as_of_date": "2026-10-20",
   "critical_question": "What independent evidence of buying pressure exists, and why not stay in cash?",
   "candidate_audit": [],
   "blockers": [
-    "market_stress_no_new_entries"
+    "benchmark_bar_unavailable",
+    "market_stress_no_new_entries",
+    "screen_outdated_no_new_trades"
   ],
   "interpretation": "Missing short/margin data are explicitly unknown; scores never override vetoes."
 }
