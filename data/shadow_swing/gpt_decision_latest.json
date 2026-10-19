@@ -1,50 +1,18 @@
 {
-  "decision_id": "gpt-shadow-20261015-preclose-restart-audit-hold-001",
-  "decision_date": "2026-10-15",
-  "decision_time_context": "2026-10-15 09:30 JST; pre-close; latest complete repository session 2026-10-14",
+  "decision_id": "gpt-shadow-20261019-postclose-1735-hold-002",
+  "decision_date": "2026-10-19",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
   "meta_gate": {
     "passed": false,
-    "baseline": "Maintain existing simulated 100 shares of 8622.T and existing pending hard-stop SELL; do not create a duplicate order.",
-    "incremental_edge_source": "No evidenced positive incremental return from discretionary new action; an existing risk exit is pending and post-close 2026-10-15 data are not yet available.",
-    "assessment": "HOLD; pending execution integrity takes priority over new buys. No new BUY/ADD/SELL.",
-    "strongest_counterargument": "Existing hard stop has already triggered, but another SELL would duplicate an outstanding order and could corrupt simulation.",
-    "simpler_alternative": "Audit and repair execution-engine processing in a separate governed code review, not by falsifying state or orders."
-  },
-  "position_context": {
-    "symbol": "8622.T",
-    "qty": 100,
-    "entry_price": 933,
-    "last_state_price": 835,
-    "screening_price_as_of_2026_10_14": 826,
-    "hard_stop_price_approx": 877.02,
-    "pending_order": {
-      "side": "SELL",
-      "qty": 100,
-      "order_type": "MARKET_NEXT_OPEN",
-      "signal_date": "2026-10-06",
-      "reason": "hard_stop",
-      "status": "PENDING"
-    },
-    "realized_pnl_jpy": 0
-  },
-  "market_context": {
-    "regime_label": "CONSTRUCTIVE",
-    "regime_score": 68.01,
-    "regime_as_of_date": "2026-10-14",
-    "treasury_volatility_shock_flag": true
+    "baseline": "Cash; no positions or pending orders.",
+    "incremental_edge_source": "None verified; screening is stale.",
+    "assessment": "No actionable BUY or ADD."
   },
   "data_quality_caveats": [
-    "Decision run is pre-close on 2026-10-15; 2026-10-15 close not available.",
-    "2026-10-14 screening 8622.T 826 JPY from unofficial TradingView scanner; exact exchange timestamp unverified.",
-    "State price 835 JPY and latest NAV 990200 JPY as of 2026-10-14; screening price 826 JPY not reconciled to state.",
-    "Hard-stop SELL signaled 2026-10-06 still PENDING as of 2026-10-14 despite MARKET_NEXT_OPEN instruction; execution engine requires investigation.",
-    "Benchmark return and alpha are null; cannot assess benchmark-relative edge.",
-    "Supply/demand partial; SQ overlay partial."
+    "Latest screening was retrieved 2026-10-16, not 2026-10-19.",
+    "Latest ledger is 2026-10-16; its execution_integrity is OK, but the historical 2026-10-06 hard-stop exit was delayed to 2026-10-15."
   ],
-  "reason": "HOLD. Avoid duplicate SELL while a hard-stop exit is already pending; no defensible BUY/ADD mispricing thesis and no 2026-10-15 post-close data yet.",
-  "confidence": 0.99,
-  "notes": "Shadow-only audit. No broker or real orders. State and prices were not manually rewritten."
+  "reason": "HOLD; no verified current post-close screening or positive incremental edge."
 }
