@@ -1,11 +1,11 @@
 {
   "version": "1.9.1",
-  "generated_at": "2026-10-19T15:34:35+00:00",
+  "generated_at": "2026-10-19T16:26:41+00:00",
   "highest_severity": "WARNING",
   "counts": {
     "INFO": 0,
-    "WATCH": 2,
-    "WARNING": 3,
+    "WATCH": 4,
+    "WARNING": 4,
     "CRITICAL": 0
   },
   "alerts": [
@@ -13,11 +13,22 @@
       "severity": "WARNING",
       "category": "COMPANY_EVENT",
       "code": "EVENT_FILING",
-      "title": "SEC 8-K filing",
-      "message": "New company event detected for International Seaways, Inc. Common Stock .",
+      "title": "SEC 6-K filing",
+      "message": "New company event detected for Scorpio Tankers Inc. Common Shares.",
       "value": null,
       "threshold": null,
-      "entity": "International Seaways, Inc. Common Stock ",
+      "entity": "Scorpio Tankers Inc. Common Shares",
+      "source": "SEC EDGAR"
+    },
+    {
+      "severity": "WARNING",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_FILING",
+      "title": "SEC 6-K filing",
+      "message": "New company event detected for Scorpio Tankers Inc. Common Shares.",
+      "value": null,
+      "threshold": null,
+      "entity": "Scorpio Tankers Inc. Common Shares",
       "source": "SEC EDGAR"
     },
     {
@@ -46,7 +57,29 @@
       "severity": "WATCH",
       "category": "COMPANY_EVENT",
       "code": "EVENT_DISCLOSURE",
-      "title": "(株)ライフドリンクカンパニー【2585】：決算情報 - Yahoo!ファイナンス",
+      "title": "都市部でKDDIローミング縮小、楽天モバイルに問われる通信品質と収益改善 - 日経クロステック",
+      "message": "New company event detected for KDDI.",
+      "value": null,
+      "threshold": null,
+      "entity": "KDDI",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "ハセットNEC委員長、インフレになお政策対応必要との見方示す－CNBC - Bloomberg.com",
+      "message": "New company event detected for NEC.",
+      "value": null,
+      "threshold": null,
+      "entity": "NEC",
+      "source": "Google News RSS"
+    },
+    {
+      "severity": "WATCH",
+      "category": "COMPANY_EVENT",
+      "code": "EVENT_DISCLOSURE",
+      "title": "(株)ライフドリンクカンパニー【2585】：決算説明会書き起こし - Yahoo!ファイナンス",
       "message": "New company event detected for ライフドリンク カンパニー.",
       "value": null,
       "threshold": null,
@@ -59,7 +92,7 @@
       "code": "LIQUIDITY_SOFT",
       "title": "Market liquidity is soft",
       "message": "Liquidity component fell below 40/100.",
-      "value": 27.92936233669884,
+      "value": 29.59919723327122,
       "threshold": 40,
       "entity": null,
       "source": "market_regime_latest.json"

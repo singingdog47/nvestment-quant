@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-19T15:36:06+00:00
+Generated (UTC): 2026-10-19T16:28:00+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,11 +11,11 @@ Generated (UTC): 2026-10-19T15:36:06+00:00
 
 ## 2. 市場レジーム
 - Regime: **NEUTRAL**
-- Score: 54.34
+- Score: 54.41
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 17.649999618530273
+- VIX: 17.950000762939453
 - Treasury realized-vol proxy (not ICE MOVE): 90.011 bps annualized; percentile=0.9444
 - Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
@@ -30,8 +30,8 @@ Generated (UTC): 2026-10-19T15:36:06+00:00
 - [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING
 - [US] Equity Bancshares, Inc. Class A Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
 - [US] ACNB Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER
 - [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING
-- [JP] IwaiCosmo Holdings,Inc.: VOLUME_EXPANSION
 
 ## 3a. 短中長期の需給仮説（研究用）
 - short / 1-2 weeks: TWO_WAY_WITH_RATES_VOLATILITY_RISK; 仮説=Volume-supported directional continuation is plausible for individually flagged watchlist names; cross-market risk can override.; 反証=A contrary relative return at the predetermined endpoint or worsening rates/credit stress.; 方針=Existing orders unchanged. New purchase only after liquidity, risk and human review.
@@ -42,40 +42,43 @@ Generated (UTC): 2026-10-19T15:36:06+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 2, 'WARNING': 3, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
+- Counts: {'INFO': 0, 'WATCH': 4, 'WARNING': 4, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
+- [WARNING] COMPANY_EVENT / SEC 6-K filing
 - [WARNING] LIQUIDITY / Thin liquidity flag active
 - [WARNING] VOLATILITY / Treasury yield volatility is unusually high
-- [WATCH] COMPANY_EVENT / (株)ライフドリンクカンパニー【2585】：決算情報 - Yahoo!ファイナンス
+- [WATCH] COMPANY_EVENT / 都市部でKDDIローミング縮小、楽天モバイルに問われる通信品質と収益改善 - 日経クロステック
+- [WATCH] COMPANY_EVENT / ハセットNEC委員長、インフレになお政策対応必要との見方示す－CNBC - Bloomberg.com
+- [WATCH] COMPANY_EVENT / (株)ライフドリンクカンパニー【2585】：決算説明会書き起こし - Yahoo!ファイナンス
 - [WATCH] LIQUIDITY / Market liquidity is soft
 
 ## 5. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Marusan Securities Co.,Ltd. 8613.T | market_rank=1.0 | raw=81.8655829027422 | cross_pct=100.0
-- 2. KYOKUTO SECURITIES CO.,LTD. 8706.T | market_rank=2.0 | raw=76.00098141590935 | cross_pct=99.9484004127967
-- 3. Akatsuki Inc. 3932.T | market_rank=4.0 | raw=75.12075512633331 | cross_pct=99.84520123839009
-- 4. ELECOM CO.,LTD. 6750.T | market_rank=5.0 | raw=73.73520117418616 | cross_pct=99.79360165118679
-- 5. KOEI TECMO HOLDINGS CO.,LTD. 3635.T | market_rank=9.0 | raw=71.38207054582386 | cross_pct=99.58720330237358
+- 1. Marusan Securities Co.,Ltd. 8613.T | market_rank=1.0 | raw=81.87124158570334 | cross_pct=100.0
+- 2. KYOKUTO SECURITIES CO.,LTD. 8706.T | market_rank=2.0 | raw=76.00066458417221 | cross_pct=99.9484004127967
+- 3. Akatsuki Inc. 3932.T | market_rank=4.0 | raw=75.12344992363977 | cross_pct=99.84520123839009
+- 4. ELECOM CO.,LTD. 6750.T | market_rank=6.0 | raw=73.74289759729616 | cross_pct=99.74200206398349
+- 5. KOEI TECMO HOLDINGS CO.,LTD. 3635.T | market_rank=9.0 | raw=71.39272845420324 | cross_pct=99.58720330237358
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.63994973311937 | cross_pct=100.0
-- 2. Norwood Financial Corp. - Common Stock NWFL | market_rank=2.0 | raw=82.45584436520816 | cross_pct=99.96989765201685
-- 3. DHT Holdings, Inc. DHT | market_rank=4.0 | raw=81.62930810940598 | cross_pct=99.90969295605056
-- 4. International Seaways, Inc. Common Stock  INSW | market_rank=5.0 | raw=81.42417285135235 | cross_pct=99.87959060806743
-- 5. First Busey Corporation - Common Stock BUSE | market_rank=7.0 | raw=81.34793383542473 | cross_pct=99.81938591210114
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.57909599940211 | cross_pct=100.0
+- 2. Norwood Financial Corp. - Common Stock NWFL | market_rank=2.0 | raw=82.46692521319572 | cross_pct=99.96989765201685
+- 3. DHT Holdings, Inc. DHT | market_rank=4.0 | raw=81.42681319720671 | cross_pct=99.90969295605056
+- 4. First Busey Corporation - Common Stock BUSE | market_rank=5.0 | raw=81.33917553093778 | cross_pct=99.87959060806743
+- 5. Scorpio Tankers Inc. Common Shares STNG | market_rank=6.0 | raw=81.24846058583502 | cross_pct=99.84948826008429
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.63994973311937
-- 2. [JP] Marusan Securities Co.,Ltd. | cross_pct=100.0 | raw=81.8655829027422
-- 3. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.96989765201685 | raw=82.45584436520816
-- 4. [JP] KYOKUTO SECURITIES CO.,LTD. | cross_pct=99.9484004127967 | raw=76.00098141590935
-- 5. [US] DHT Holdings, Inc. | cross_pct=99.90969295605056 | raw=81.62930810940598
-- 6. [US] International Seaways, Inc. Common Stock  | cross_pct=99.87959060806743 | raw=81.42417285135235
-- 7. [JP] Akatsuki Inc. | cross_pct=99.84520123839009 | raw=75.12075512633331
-- 8. [US] First Busey Corporation - Common Stock | cross_pct=99.81938591210114 | raw=81.34793383542473
-- 9. [JP] ELECOM CO.,LTD. | cross_pct=99.79360165118679 | raw=73.73520117418616
-- 10. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.72907886815172 | raw=80.56368807314058
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.57909599940211
+- 2. [JP] Marusan Securities Co.,Ltd. | cross_pct=100.0 | raw=81.87124158570334
+- 3. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.96989765201685 | raw=82.46692521319572
+- 4. [JP] KYOKUTO SECURITIES CO.,LTD. | cross_pct=99.9484004127967 | raw=76.00066458417221
+- 5. [US] DHT Holdings, Inc. | cross_pct=99.90969295605056 | raw=81.42681319720671
+- 6. [US] First Busey Corporation - Common Stock | cross_pct=99.87959060806743 | raw=81.33917553093778
+- 7. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.84948826008429 | raw=81.24846058583502
+- 8. [JP] Akatsuki Inc. | cross_pct=99.84520123839009 | raw=75.12344992363977
+- 9. [JP] ELECOM CO.,LTD. | cross_pct=99.74200206398349 | raw=73.74289759729616
+- 10. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.69897652016857 | raw=80.42510487247061
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -105,8 +108,8 @@ Generated (UTC): 2026-10-19T15:36:06+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは67.6点だが確認閾値未達
-- 上位: スタンダード 67.6 / ビットコイン 59.1 / テクノロジー 56.7
+- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは59.0点だが確認閾値未達
+- 上位: スタンダード 59.0 / ビットコイン 58.9 / テクノロジー 56.3
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
