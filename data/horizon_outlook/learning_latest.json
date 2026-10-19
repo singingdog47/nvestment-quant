@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "graded_n": 0,
+  "pending_n": 0,
+  "accuracy": null,
+  "mean_brier": null,
+  "calibrated": false,
+  "observations": [],
+  "interpretation": "Research-prior scoring only. Compare to base rates and baselines before claiming forecasting skill."
+}
