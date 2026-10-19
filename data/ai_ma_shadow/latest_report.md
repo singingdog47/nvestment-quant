@@ -1,12 +1,12 @@
 # AI restructuring / M&A shadow research
-Date: 2026-10-19
+Date: 2026-10-20
 Initial virtual capital: ¥5,000,000
 NAV: ¥5,000,000; TOPIX benchmark NAV: 5000000.0
 Qualified: 9 / JP screen: 50
 Completed trades: 0; queued: 2
 No takeover predictions or proven AI synergies: all unverified.
 Current score is a value+quality baseline, not incremental AI/M&A skill.
-Missing: none
+Missing: benchmark_price_unavailable, entry_missing_bar:5351.T, entry_missing_bar:6505.T
 
 ## Candidates (NOT BUY RECOMMENDATIONS)
 - 5351.T SHINAGAWA REFRA CO.,LTD.: PER=3.0848429389991194, PBR=0.8118740389026843 (AI and M&A unverified)

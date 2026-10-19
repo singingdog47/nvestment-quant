@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-10-19",
+  "as_of_date": "2026-10-20",
   "cohort": "2026-10-19-ai-ma-v1-5m",
   "mode": "SHADOW_ONLY",
   "status": "RESEARCH_NOT_VALIDATED",
@@ -15,7 +15,7 @@
   "rejected_count": 41,
   "candidates": [
     {
-      "id": "0a9ddafa6434df6d8c",
+      "id": "37836514f7fe2e480b",
       "symbol": "5351.T",
       "name": "SHINAGAWA REFRA CO.,LTD.",
       "observable": {
@@ -33,7 +33,7 @@
       "eligible": true
     },
     {
-      "id": "6362c3ac21c0cb3f0f",
+      "id": "ef9059c05fff599db3",
       "symbol": "6505.T",
       "name": "TOYO DENKI SEIZO K.K.(TOYO ELECTRIC MFG.CO.,LTD.)",
       "observable": {
@@ -51,7 +51,7 @@
       "eligible": true
     },
     {
-      "id": "a29ca8d699dd218eea",
+      "id": "bb838b20862a401d1b",
       "symbol": "6418.T",
       "name": "JAPAN CASH MACHINE CO.,LTD.",
       "observable": {
@@ -69,7 +69,7 @@
       "eligible": true
     },
     {
-      "id": "5d870f457660def96f",
+      "id": "71b715e93c4bfb12bf",
       "symbol": "3284.T",
       "name": "Hoosiers Holdings Co.,Ltd.",
       "observable": {
@@ -87,7 +87,7 @@
       "eligible": true
     },
     {
-      "id": "dac63da584269f6018",
+      "id": "5ebc3ccc0fa92530f9",
       "symbol": "6741.T",
       "name": "Nippon Signal Company,Limited",
       "observable": {
@@ -105,7 +105,7 @@
       "eligible": true
     },
     {
-      "id": "2030d9ba826368adc6",
+      "id": "f0a81018fbe5a09a34",
       "symbol": "5195.T",
       "name": "Bando Chemical Industries,Ltd.",
       "observable": {
@@ -123,7 +123,7 @@
       "eligible": true
     },
     {
-      "id": "508139b0f3d92695a2",
+      "id": "47df65e11d94b678fd",
       "symbol": "3932.T",
       "name": "Akatsuki Inc.",
       "observable": {
@@ -141,7 +141,7 @@
       "eligible": true
     },
     {
-      "id": "6938c63dd112a571de",
+      "id": "e0133ffc35422fb698",
       "symbol": "8707.T",
       "name": "IwaiCosmo Holdings,Inc.",
       "observable": {
@@ -159,7 +159,7 @@
       "eligible": true
     },
     {
-      "id": "50e29cd164683d684c",
+      "id": "8cc9fb17a4e61b1196",
       "symbol": "3076.T",
       "name": "Ai Holdings Corporation",
       "observable": {
@@ -177,17 +177,12 @@
       "eligible": true
     }
   ],
-  "data_blockers": [],
-  "events": [
-    {
-      "event": "VIRTUAL_BUY_QUEUED_NEXT_OPEN",
-      "symbol": "5351.T"
-    },
-    {
-      "event": "VIRTUAL_BUY_QUEUED_NEXT_OPEN",
-      "symbol": "6505.T"
-    }
+  "data_blockers": [
+    "benchmark_price_unavailable",
+    "entry_missing_bar:5351.T",
+    "entry_missing_bar:6505.T"
   ],
+  "events": [],
   "hypothesis": {
     "H1": "AI-enabled cost/sales improvements improve future margins; unverified until operating data obtained",
     "H2": "Acquisition/privatization becomes more common among candidates; target probabilities unverified",
