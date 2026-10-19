@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-10-16",
+  "as_of_date": "2026-10-20",
   "status": "ACTIVE",
   "data_fresh": false,
   "screening_fresh": false,
-  "regime_fresh": false,
+  "regime_fresh": true,
   "priced_symbols": [],
   "execution_integrity": {
     "status": "OK",
@@ -25,8 +25,8 @@
     "pending_orders": 0
   },
   "regime": {
-    "label": "CONSTRUCTIVE",
-    "score": 58.48,
+    "label": "NEUTRAL",
+    "score": 54.41,
     "confidence": 1.0
   },
   "fills_today": [],
