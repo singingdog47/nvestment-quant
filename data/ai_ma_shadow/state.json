@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "cohort": "2026-10-19-ai-ma-v1-5m",
+  "mode": "SHADOW_ONLY",
+  "initial_cash_jpy": 5000000,
+  "cash_jpy": 5000000,
+  "positions": {},
+  "pending_buys": [
+    {
+      "signal_date": "2026-10-19",
+      "symbol": "5351.T",
+      "qty": 200,
+      "signal_price": 1960.0,
+      "id": "0a9ddafa6434df6d8c",
+      "thesis": "value+operating_quality; AI/M&A unverified and not priced into eligibility"
+    },
+    {
+      "signal_date": "2026-10-19",
+      "symbol": "6505.T",
+      "qty": 100,
+      "signal_price": 3130.0,
+      "id": "6362c3ac21c0cb3f0f",
+      "thesis": "value+operating_quality; AI/M&A unverified and not priced into eligibility"
+    }
+  ],
+  "pending_sells": [],
+  "completed_trades": [],
+  "last_run_date": "2026-10-19",
+  "nav_jpy": 5000000,
+  "peak_nav_jpy": 5000000,
+  "max_drawdown_pct": 0.0,
+  "benchmark_start_close": 427.1000061035156,
+  "baseline_benchmark_nav_jpy": 5000000.0
+}

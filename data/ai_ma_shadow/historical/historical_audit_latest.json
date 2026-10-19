@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "strategy": "AI_restructuring_and_MA_optional_value",
+  "status": "INSUFFICIENT_POINT_IN_TIME_AI_MA_EVIDENCE",
+  "historical_public_validation": {
+    "first_prediction_captured_at": "2026-08-23T14:13:27+00:00",
+    "last_prediction_captured_at": "2026-10-05T18:22:16+00:00",
+    "usable_outcomes_1w": 380,
+    "usable_outcomes_1m": 170,
+    "is_AI_MA_target_labeled": false,
+    "usable_for_market_baseline_only": true
+  },
+  "paper_cohort_snapshots": {
+    "usable_days": 1,
+    "summary": [
+      {
+        "date": "2026-10-19",
+        "qualified": 9,
+        "count": 50
+      }
+    ],
+    "issues": []
+  },
+  "corporate_event_evidence": {
+    "verified_events": 0,
+    "unverified_or_invalid_events": 0,
+    "event_file_present": false,
+    "valid_events": [],
+    "invalid_events": []
+  },
+  "historical_ai_operating_evidence": {
+    "point_in_time_ai_adoption_and_sga_snapshots": 0,
+    "status": "MISSING",
+    "reason": "Original financial disclosure date and company operations not tracked historically."
+  },
+  "matched_value_only_control": {
+    "status": "NOT_ESTIMABLE",
+    "reason": "No point-in-time full-universe valuation snapshots, survival history, delisting/TOB proceeds or return calendar for both strategies."
+  },
+  "alpha_estimate": null,
+  "takeover_probability_estimate": null,
+  "trial_result": "NO_STATISTICAL_CONCLUSION",
+  "requirements_to_validate": [
+    "Archived full-universe monthly constituent and delisted-ticker universe",
+    "Financial fundamentals aligned to actual publication timestamps",
+    "AI-intensity and SG&A cost model with evidence dated before signal",
+    "Shareholder control/free float and approved M&A events with announcement dates",
+    "Corporate-action adjusted total returns, TOB cash settlement and brokerage cost assumptions",
+    "Risk/sector/cap/liquidity matched value-only control and purged walk-forward splits"
+  ],
+  "reason": "Existing 1w/1m outcomes measure prior standard screen, not causal incremental AI/M&A factors."
+}
