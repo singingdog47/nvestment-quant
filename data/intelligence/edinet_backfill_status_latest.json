@@ -1,49 +1,12 @@
 {
-  "pending": [
-    {
-      "market": "JP",
-      "code": "7172",
-      "ticker": "7172.T",
-      "name": "Japan Investment Adviser Co.,Ltd.",
-      "event_date": "2025-08-01",
-      "event_type": "filing",
-      "title": "半期報告書－第20期(2025/01/01－2025/12/31)",
-      "summary": "",
-      "source": "EDINET",
-      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100WEH7",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-10-19T16:26:27+00:00",
-      "event_id": "28957fb7f73d3eb6814b475d",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "5032",
-      "ticker": "5032.T",
-      "name": "ANYCOLOR",
-      "event_date": "2025-07-30",
-      "event_type": "filing",
-      "title": "有価証券報告書－第8期(2024/05/01－2025/04/30)",
-      "summary": "",
-      "source": "EDINET",
-      "source_url": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100WFMJ",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-10-19T16:26:27+00:00",
-      "event_id": "66533ff4d85a5a2749973156",
-      "raw_excerpt": ""
-    }
-  ],
+  "pending": [],
   "anchor_date": "2026-10-03",
-  "next_date": "2025-07-19",
+  "next_date": "2025-07-09",
   "lookback_days": 450,
-  "days_scanned_this_run": 14,
-  "new_events": 2,
+  "days_scanned_this_run": 10,
+  "new_events": 0,
   "failures": [],
-  "complete": false,
-  "status": "in_progress",
-  "updated_at_utc": "2026-10-19T16:26:28+00:00"
+  "complete": true,
+  "status": "complete",
+  "updated_at_utc": "2026-10-20T01:07:08+00:00"
 }

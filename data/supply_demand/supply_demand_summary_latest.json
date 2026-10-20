@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at_utc": "2026-10-19T16:26:41+00:00",
+  "generated_at_utc": "2026-10-20T01:07:17+00:00",
   "observed_date_jst": "2026-10-20",
   "data_status": "partial",
   "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
@@ -18,21 +18,6 @@
   "notable_contexts": [
     {
       "market": "US",
-      "code": "CARE",
-      "ticker": "CARE",
-      "name": "Carter Bankshares, Inc. - Common Stock",
-      "data_status": "ok",
-      "confidence": 0.7,
-      "free_float_ratio": 0.9167669770731056,
-      "avg_daily_float_turnover_ratio": 0.01427576013046193,
-      "current_volume_ratio_30d": 0.07115408086185797,
-      "short_percent_float": 0.1173,
-      "short_interest_change_ratio": 0.2622616234641022,
-      "days_to_cover": 9.73,
-      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
-    },
-    {
-      "market": "US",
       "code": "DHT",
       "ticker": "DHT",
       "name": "DHT Holdings, Inc.",
@@ -40,11 +25,26 @@
       "confidence": 0.7,
       "free_float_ratio": 0.8989499978394966,
       "avg_daily_float_turnover_ratio": 0.026711862820179764,
-      "current_volume_ratio_30d": 0.6248937802355043,
+      "current_volume_ratio_30d": 1.7629908386260265,
       "short_percent_float": 0.10569999,
       "short_interest_change_ratio": 0.0887095731602241,
       "days_to_cover": 3.55,
-      "context_flags": "HIGH_FLOAT_TURNOVER|SHORT_CROWDING"
+      "context_flags": "HIGH_FLOAT_TURNOVER|SHORT_CROWDING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
+    },
+    {
+      "market": "US",
+      "code": "CARE",
+      "ticker": "CARE",
+      "name": "Carter Bankshares, Inc. - Common Stock",
+      "data_status": "ok",
+      "confidence": 0.7,
+      "free_float_ratio": 0.9167669770731056,
+      "avg_daily_float_turnover_ratio": 0.01427576013046193,
+      "current_volume_ratio_30d": 0.5754274159764348,
+      "short_percent_float": 0.1173,
+      "short_interest_change_ratio": 0.2622616234641022,
+      "days_to_cover": 9.73,
+      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
     },
     {
       "market": "US",
@@ -55,7 +55,7 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9634800052450468,
       "avg_daily_float_turnover_ratio": 0.00961067150708022,
-      "current_volume_ratio_30d": 0.29385708512666797,
+      "current_volume_ratio_30d": 0.8112228416882782,
       "short_percent_float": 0.0622,
       "short_interest_change_ratio": 0.2977849223484257,
       "days_to_cover": 6.32,
@@ -70,7 +70,7 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9637600043517661,
       "avg_daily_float_turnover_ratio": 0.009988341480376665,
-      "current_volume_ratio_30d": 0.12541254840369356,
+      "current_volume_ratio_30d": 0.56914186682553,
       "short_percent_float": 0.0686,
       "short_interest_change_ratio": -0.07088711132736913,
       "days_to_cover": 5.99,
@@ -85,11 +85,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.8589780060594906,
       "avg_daily_float_turnover_ratio": 0.0062914902431501244,
-      "current_volume_ratio_30d": 0.8783415852705168,
+      "current_volume_ratio_30d": 2.27538706228041,
       "short_percent_float": 0.0334,
       "short_interest_change_ratio": 0.2717247634255846,
       "days_to_cover": 5.58,
-      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
+      "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION"
     },
     {
       "market": "US",
@@ -98,13 +98,28 @@
       "name": "ACNB Corporation - Common Stock",
       "data_status": "ok",
       "confidence": 0.7,
-      "free_float_ratio": 0.9555629607549674,
+      "free_float_ratio": 0.9595199770303237,
       "avg_daily_float_turnover_ratio": 0.007106601377644416,
-      "current_volume_ratio_30d": 0.20528349772163582,
+      "current_volume_ratio_30d": 0.706220799446271,
       "short_percent_float": 0.0572,
       "short_interest_change_ratio": 0.36507572224840024,
       "days_to_cover": 7.78,
       "context_flags": "SHORT_CROWDING|SHORT_INTEREST_RISING"
+    },
+    {
+      "market": "US",
+      "code": "FRO",
+      "ticker": "FRO",
+      "name": "Frontline Plc Ordinary Shares",
+      "data_status": "ok",
+      "confidence": 0.7,
+      "free_float_ratio": 0.6419799987412794,
+      "avg_daily_float_turnover_ratio": 0.021744963152039175,
+      "current_volume_ratio_30d": 1.8748951823457145,
+      "short_percent_float": 0.0635,
+      "short_interest_change_ratio": -0.05874510459187188,
+      "days_to_cover": 2.43,
+      "context_flags": "HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
     },
     {
       "market": "US",
@@ -115,7 +130,7 @@
       "confidence": 0.7,
       "free_float_ratio": 0.7620010737729285,
       "avg_daily_float_turnover_ratio": 0.024086786336706703,
-      "current_volume_ratio_30d": 0.3374974570306168,
+      "current_volume_ratio_30d": 1.396314842999518,
       "short_percent_float": 0.0421,
       "short_interest_change_ratio": -0.057465507901471646,
       "days_to_cover": 1.93,
@@ -130,26 +145,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.7152591263234582,
       "avg_daily_float_turnover_ratio": 0.017100713010781962,
-      "current_volume_ratio_30d": 0.2827594815795758,
+      "current_volume_ratio_30d": 1.1596237761326877,
       "short_percent_float": 0.0109,
       "short_interest_change_ratio": 0.301118314352222,
       "days_to_cover": 0.55,
       "context_flags": "SHORT_INTEREST_RISING"
-    },
-    {
-      "market": "JP",
-      "code": "8707",
-      "ticker": "8707.T",
-      "name": "IwaiCosmo Holdings,Inc.",
-      "data_status": "ok",
-      "confidence": 0.7,
-      "free_float_ratio": 0.8149799957213514,
-      "avg_daily_float_turnover_ratio": 0.006366035219119252,
-      "current_volume_ratio_30d": 1.7445677148296461,
-      "short_percent_float": null,
-      "short_interest_change_ratio": null,
-      "days_to_cover": null,
-      "context_flags": "VOLUME_EXPANSION"
     },
     {
       "market": "US",
@@ -160,11 +160,11 @@
       "confidence": 0.7,
       "free_float_ratio": 0.9847234646930474,
       "avg_daily_float_turnover_ratio": 0.010143899715232906,
-      "current_volume_ratio_30d": 1.0742854886497697,
+      "current_volume_ratio_30d": 2.78849826710605,
       "short_percent_float": 0.0585,
       "short_interest_change_ratio": 0.21244552391715077,
       "days_to_cover": 4.58,
-      "context_flags": "SHORT_INTEREST_RISING"
+      "context_flags": "SHORT_INTEREST_RISING|VOLUME_EXPANSION"
     }
   ],
   "thresholds": {
