@@ -1,6 +1,11 @@
 name: Quant Health Snapshot for ChatGPT
 
 on:
+  pull_request:
+    paths:
+      - 'src/health_report.py'
+      - 'tests/test_health_report.py'
+      - '.github/workflows/quant-health.yml'
   workflow_dispatch:
   schedule:
     - cron: '40 13 * * 1-5' # 22:40 JST, after both paper cohorts
@@ -22,7 +27,7 @@ jobs:
       - name: Checkout latest main
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
       - name: Python setup
         uses: actions/setup-python@v5
         with:
@@ -40,6 +45,7 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
       - name: Commit observer-only health status
+        if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
