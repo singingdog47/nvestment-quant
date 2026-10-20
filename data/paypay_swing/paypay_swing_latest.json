@@ -1,69 +1,69 @@
 {
-  "generated_at_jst": "2026-10-20T01:28:01+09:00",
+  "generated_at_jst": "2026-10-20T21:47:51+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
-    "reason": "首位スタンダードは59.0点だが確認閾値未達",
-    "margin": 0.13
+    "reason": "首位スタンダードは59.2点だが確認閾値未達",
+    "margin": 2.0
   },
   "ranking": [
     {
       "key": "STANDARD",
       "label": "スタンダード",
       "ticker": "SPY",
-      "close": 768.1900024414062,
+      "close": 766.47998046875,
       "data_date": "2026-10-19",
-      "momentum": 48.55,
-      "macro": 50.72,
-      "trend": 55.16,
-      "risk": 92.19,
+      "momentum": 48.15,
+      "macro": 52.03,
+      "trend": 55.03,
+      "risk": 92.18,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 59.02
+      "total": 59.18
     },
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 81883.640625,
-      "data_date": "2026-10-19",
-      "momentum": 61.78,
-      "macro": 47.2,
-      "trend": 76.73,
-      "risk": 80.4,
+      "close": 81556.2265625,
+      "data_date": "2026-10-20",
+      "momentum": 56.6,
+      "macro": 47.9,
+      "trend": 76.5,
+      "risk": 80.12,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 58.89
+      "total": 57.18
     },
     {
       "key": "TECH",
       "label": "テクノロジー",
       "ticker": "QQQ",
-      "close": 721.510009765625,
+      "close": 718.3599853515625,
       "data_date": "2026-10-19",
-      "momentum": 47.04,
-      "macro": 46.97,
-      "trend": 52.99,
-      "risk": 84.23,
+      "momentum": 46.25,
+      "macro": 49.54,
+      "trend": 52.74,
+      "risk": 84.37,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 56.33
+      "total": 56.66
     },
     {
       "key": "GOLD",
       "label": "金（ゴールド）",
       "ticker": "GLD",
-      "close": 379.7650146484375,
+      "close": 379.69000244140625,
       "data_date": "2026-10-19",
-      "momentum": 30.66,
-      "macro": 40.01,
+      "momentum": 30.63,
+      "macro": 43.48,
       "trend": 0.0,
-      "risk": 67.81,
+      "risk": 67.8,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 36.61
+      "total": 37.47
     }
   ],
   "source_health": [
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-19T16:28:01+00:00",
+      "fetched_at": "2026-10-20T12:47:51+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-19T16:28:01+00:00",
+      "fetched_at": "2026-10-20T12:47:51+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-19T16:28:01+00:00",
+      "fetched_at": "2026-10-20T12:47:51+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,31 +95,31 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-10-19T16:28:01+00:00",
+      "fetched_at": "2026-10-20T12:47:51+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^TNX",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-19T16:28:01+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-20T12:47:51+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-19T16:28:01+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-20T12:47:51+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^VIX",
       "status": "ok",
-      "records": 253,
-      "fetched_at": "2026-10-19T16:28:01+00:00",
+      "records": 254,
+      "fetched_at": "2026-10-20T12:47:51+00:00",
       "error": "",
       "source_tier": "secondary"
     }

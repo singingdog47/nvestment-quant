@@ -12,20 +12,20 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 8622,8622.T,水戸証券,watchlist,,,missing,0,0,0,0,0,0
 3563,3563.T,FOOD & LIFE COMPANIES,watchlist,,,missing,0,0,0,0,0,0
 8613,8613.T,"Marusan Securities Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
-8706,8706.T,"KYOKUTO SECURITIES CO.,LTD.",screening,,,missing,0,0,0,0,0,0
+8624,8624.T,"Ichiyoshi Securities Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
 3932,3932.T,Akatsuki Inc.,screening,S100YLRB,2026-06-26,complete,1,1,1,1,1,1
 6750,6750.T,"ELECOM CO.,LTD.",screening,S100YK25,2026-06-25,complete,1,1,1,1,1,1
 2121,2121.T,"MIXI,Inc.",screening,S100YE1D,2026-06-19,complete,1,1,1,1,1,1
-8707,8707.T,"IwaiCosmo Holdings,Inc.",screening,S100YG9I,2026-06-23,partial,0,1,1,1,1,1
 8789,8789.T,FinTech Global Incorporated,screening,S100XAOR,2025-12-16,complete,1,1,1,1,1,1
 7744,7744.T,"Noritsu Koki Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
+8707,8707.T,"IwaiCosmo Holdings,Inc.",screening,S100YG9I,2026-06-23,partial,0,1,1,1,1,1
 5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",screening,S100YFV6,2026-06-22,complete,1,1,1,1,1,1
-8630,8630.T,"Sompo Holdings,Inc.",screening,,,missing,0,0,0,0,0,0
-8935,8935.T,"FJ NEXT HOLDINGS CO.,LTD.",screening,,,missing,0,0,0,0,0,0
 9757,9757.T,Funai Soken Holdings Incorporated,screening,S100XUVD,2026-03-27,complete,1,1,1,1,1,1
+545A,545A.T,"Toranvia Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
 6070,6070.T,"CAREERLINK CO.,LTD.",screening,,,missing,0,0,0,0,0,0
-7172,7172.T,"Japan Investment Adviser Co.,Ltd.",screening,S100XRRA,2026-03-18,complete,1,1,1,1,1,1
 9746,9746.T,TKC Corporation,screening,,,missing,0,0,0,0,0,0
+4507,4507.T,"Shionogi & Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
+2914,2914.T,JAPAN TOBACCO INC.,screening,,,missing,0,0,0,0,0,0
 2726,2726.T,パルグループホールディングス,watchlist,,,missing,0,0,0,0,0,0
 215A,215A.T,タイミー,watchlist,,,missing,0,0,0,0,0,0
 4996,4996.T,クミアイ化学工業,watchlist,S100XH23,2026-01-27,complete,1,1,1,1,1,1

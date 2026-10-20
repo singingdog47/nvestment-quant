@@ -1,17 +1,17 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.867** / actionable=True
+Generated quality score: **0.858** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-20T01:06:06+00:00",
-  "generated_at_utc": "2026-10-20T01:06:06+00:00",
+  "generated_at": "2026-10-20T12:44:51+00:00",
+  "generated_at_utc": "2026-10-20T12:44:51+00:00",
   "date_jst": "2026-10-20",
   "data_status": "ok",
   "regime_label": "NEUTRAL",
-  "regime_score": 52.65,
+  "regime_score": 52.02,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -30,15 +30,15 @@ Generated quality score: **0.867** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 47.59022564085036,
-    "stress": 73.28499959945678,
-    "participation": 41.62045060658579,
-    "liquidity": 40.369410460167174,
+    "trend": 45.534046752025574,
+    "stress": 72.7899997138977,
+    "participation": 39.791498209541416,
+    "liquidity": 43.54916931322708,
     "positioning": 56.71738287234125
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 18.440000534057617,
+    "vix": 19.100000381469727,
     "hy_oas": 3.31,
     "ig_oas": 0.85,
     "treasury_volatility_proxy": 87.824,
@@ -47,11 +47,11 @@ Generated quality score: **0.867** / actionable=True
     "treasury_volatility_as_of_date": "2026-10-19",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
-    "breadth_n": 9559,
+    "breadth_n": 9558,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-19T16:25:27.230575+00:00",
+    "breadth_source_as_of_utc": "2026-10-20T12:44:49.309669+00:00",
     "nfci": -0.499,
-    "volume_ratio20_mean": 0.6719102615041792,
+    "volume_ratio20_mean": 0.751404232830677,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -71,8 +71,8 @@ Generated quality score: **0.867** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-10-19",
-    "jpx_official_turnover_million_jpy": 7545149.0,
+    "jpx_official_turnover_date": "2026-10-20",
+    "jpx_official_turnover_million_jpy": 7563457.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
@@ -94,7 +94,7 @@ Generated quality score: **0.867** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 64093.73828125,
+        "spot": 64075.421875,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +150,7 @@ Generated quality score: **0.867** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-20T01:07:16+00:00",
+  "generated_at": "2026-10-20T12:46:03+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -161,25 +161,25 @@ Generated quality score: **0.867** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.03,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.03,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.03,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.03,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -197,13 +197,13 @@ Generated quality score: **0.867** / actionable=True
 - EDINET: ok / records=6 / tier=primary
 - SEC: ok / records=31 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=59 / tier=secondary
+- NewsRSS: ok / records=60 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-19T16:25:27.230575+00:00
+- Data retrieved (UTC): 2026-10-20T12:44:49.309669+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -239,26 +239,26 @@ Generated quality score: **0.867** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8613.T | Marusan Securities Co.,Ltd. | Financials | 81.9 | 100.0 | unchanged |
-| JP | 2 | 8706.T | KYOKUTO SECURITIES CO.,LTD. | Financials | 76.0 | 99.9 | unchanged |
+| JP | 1 | 8613.T | Marusan Securities Co.,Ltd. | Financials | 81.8 | 100.0 | unchanged |
+| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 77.7 | 99.9 | new_entry |
 | JP | 4 | 3932.T | Akatsuki Inc. | Other | 75.1 | 99.8 | unchanged |
-| JP | 6 | 6750.T | ELECOM CO.,LTD. | Other | 73.7 | 99.7 | unchanged |
-| JP | 9 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.4 | 99.6 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.1 | 99.5 | unchanged |
-| JP | 11 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 71.0 | 99.5 | unchanged |
-| JP | 12 | 8789.T | FinTech Global Incorporated | Other | 70.5 | 99.4 | unchanged |
-| JP | 13 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 69.9 | 99.4 | unchanged |
-| JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 69.8 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.6 | 100.0 | unchanged |
+| JP | 6 | 6750.T | ELECOM CO.,LTD. | Other | 73.8 | 99.7 | unchanged |
+| JP | 7 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 73.1 | 99.7 | unchanged |
+| JP | 9 | 2121.T | MIXI,Inc. | Other | 71.3 | 99.6 | unchanged |
+| JP | 11 | 8789.T | FinTech Global Incorporated | Other | 70.5 | 99.5 | unchanged |
+| JP | 12 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 70.0 | 99.4 | unchanged |
+| JP | 13 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 70.0 | 99.4 | unchanged |
+| JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 69.9 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.3 | 100.0 | unchanged |
 | US | 2 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.5 | 100.0 | unchanged |
-| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 81.4 | 99.9 | unchanged |
-| US | 5 | BUSE | First Busey Corporation - Common Stock | Other | 81.3 | 99.9 | unchanged |
-| US | 6 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 81.2 | 99.8 | new_entry |
-| US | 11 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 80.4 | 99.7 | unchanged |
+| US | 4 | BUSE | First Busey Corporation - Common Stock | Other | 81.3 | 99.9 | unchanged |
+| US | 5 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 81.3 | 99.9 | unchanged |
+| US | 6 | DHT | DHT Holdings, Inc. | Shipping | 81.2 | 99.8 | unchanged |
+| US | 11 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 80.3 | 99.7 | unchanged |
 | US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 80.2 | 99.6 | unchanged |
-| US | 16 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.9 | 99.5 | unchanged |
-| US | 22 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.0 | 99.4 | unchanged |
-| US | 23 | EXE | Expand Energy Corporation - Common Stock | Other | 78.9 | 99.3 | unchanged |
+| US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 79.9 | 99.6 | unchanged |
+| US | 21 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.0 | 99.4 | unchanged |
+| US | 23 | EXE | Expand Energy Corporation - Common Stock | Other | 78.8 | 99.3 | unchanged |
 
 ## Required manual checks before an order
 
@@ -274,8 +274,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 ## Critical / high company events
 - [CRITICAL] 8377 ほくほくフィナンシャルグループ | Fri, 29 May 2026 | guidance | ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE5mOXJYY0tyRW8yQUhTZ09US2tkWVM0bEwzUEgteml0SlBUdVZTaU14M3NWZGNUX2FvLTdCb2Z3dHBTVi1WdmlkUVV5ZWZSRVM5SlE?oc=5
 - [CRITICAL] 3635 コーエーテクモホールディングス | Mon, 19 Oct 2026 | guidance | コーエーテクモホールディングス[3635]：業績予想の修正に関するお知らせ 2026年10月19日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE41YlFlN0NMQVhsY2VxRUhGR0hvV2ZGZXBOb0dORDZWTmpoVG5Db0x1dnlNNzQ0SEhhZUp6RzVVZmtTYS1lNlF3TGV6VTdoZXNtaTFzWS1sNWdQMVVnaUQ4el90WDE3UmFvU3c?oc=5
-- [CRITICAL] 3635 コーエーテクモホールディングス | Mon, 19 Oct 2026 | guidance | 10/19発表 決算分析｜【上方修正】コーエーテクモHD 中間の営業益を115億円に、通期は据え置き - ライブドアニュース | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiX0FVX3lxTFAyaDNBbGNQeE9NTmp5anNQb2xuN3JMQkx0Y1BqREdqSGpjOFlpMFdvYTJ2c1ZsZ0l3MHpmb19WVUJVb1FVM3pQZ2Rad2EzYTJEcEFpVXltaHlNcWFYZHFr?oc=5
-- [CRITICAL] 8622 水戸証券 | Tue, 28 Apr 2026 | earnings | 水戸証券[8622]：2026年３月期決算短信〔日本基準〕(非連結) 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTFB2UWpSZ2ZPQk5zd0k2Y0lfMzZuZUx3TTVLT2kxY000UElhaEc2MmViNEc2Zl9SZ2hIYVVHTmtfSTd3Uk9DVmdmM050WlJhcUFpVktoYjk2c1FSM3VmcWV5bklLQXg4OFFVX2c?oc=5
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006252/p15079219_6-k.htm
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-09-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526390696/eqbk-20260910.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-15 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006318/p15075054_6-k.htm
@@ -299,8 +297,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-07 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006740/p15109105_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-07 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006733/p15107743_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-09 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006837/p15110413_6-k.htm
-- [HIGH] DHT DHT Holdings, Inc. | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1331284/000095015726001092/form6-k.htm
 - [HIGH] BUSE First Busey Corporation - Common Stock | 2026-10-13 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/314489/000031448926000063/buse-20261013.htm
+- [HIGH] DHT DHT Holdings, Inc. | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1331284/000095015726001092/form6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006892/p15111556_6-k.htm
 - [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-10-13 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000089512626000057/exe-20261008.htm
 - [HIGH] 3099 三越伊勢丹ホールディングス | 2026-10-14 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z7O4
@@ -313,7 +311,9 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] 4996 クミアイ化学工業 | 2026-10-19 | filing | 訂正臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z8G2
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-10-19 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026066288/stng6k-10192026.htm
 - [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-10-19 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000110465926116739/tm2627775d1_8k.htm
-- [HIGH] 8622 水戸証券 | Mon, 09 Mar 2026 | dividend | 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QRlFKekV1VHlONVFFNmFzTzBKQ1FiajFfb2RmSjJIdE9qZmR4MkJ4RnEtRGhVLU51ZFo0dzRkMGJJNjY3d242azlHN19TLXZ6R1V3?oc=5
+- [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | NEC、システム開発の委託先にサイバー攻撃 顧客3社の情報漏洩 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE5hM1M2Q1pDTmZFY0pKRktaZHp1Um03c3V6bU5vd2dVR3RwVGxRMExBazdIU0FpREFCdGRsNUtqcXp3YWN5dHhHeG9WNFVhdjQxc0k1X0c3aFJ1VlJmS2xzUDEwVE9QVFduRXBPWg?oc=5
+- [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | ふるさとチョイス、情報流出445万件 NECは委託先から漏洩 - 朝日新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZ0FVX3lxTE81T0c2NnJQU1hqdkY1Z3g0OTRlQlg3OXFEenU5MUtiZzBHNjBOaWo2V0piNlJBOWt3Wi1SM0RKUlp6ZHBJUmpjWmZmRGZvZ0RWS3lMQXA1a0V2VmoycEdFZ3AwbU1ZaGM?oc=5
+- [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | ＮＥＣ委託先にサイバー攻撃、顧客企業３社の情報が漏えい…２社では個人情報漏えいを確認 - 読売新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZkFVX3lxTE9kOHVXaVl4NjJ5ekl4b1VfTk50WDRlWUdKZVVhYy15ZVJMZlQyRF9UUm9BdHhoc01qVW1EVVJxUEs1N0dVX3RBQXJkYi1ILVp2blIyajItcmMxVUt1bDJiNnNCaU00Zw?oc=5
 - [HIGH] 8766 東京海上ホールディングス | Wed, 07 Oct 2026 | buyback | 東京海上ホールディングス[8766]：自己株式の取得状況に関するお知らせ 2026年10月7日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1FanduN011eWR1S1pDUmV3WGowYW9FelNDQTVnakRfeHBYRC1UdFhabmlCdmxpNlRpNmE1NlZfSnlqdDlrSEV3ZjRGcjAwbktDdkJtam9SdUNRSW5pU08ybXI2clhGUkUtUVE?oc=5
 - [HIGH] 5032 ANYCOLOR | Wed, 09 Sep 2026 | buyback | 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE9SUEU1ZE41TXRpU2h5VTAyb1F4N3BWRTR5YTFFM0FDR1hJTHZrNWlRVUp3MlRuelBKYlpKNU0zTU15QWxaclYwejV0Y2pNWXkxMXgwVFY4U3RYRFpIRmNZanA3MExrQUF4Slk3eg?oc=5
 
