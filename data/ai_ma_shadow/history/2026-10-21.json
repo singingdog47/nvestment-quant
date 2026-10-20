@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "as_of_date": "2026-10-21",
+  "cohort": "2026-10-19-ai-ma-v1-5m",
+  "mode": "SHADOW_ONLY",
+  "status": "RESEARCH_NOT_VALIDATED",
+  "initial_cash_jpy": 5000000,
+  "nav_jpy": 5000000,
+  "benchmark_nav_jpy": 5000000.0,
+  "positions_count": 0,
+  "completed_trades": 0,
+  "pending_buys": 2,
+  "screened_jp_count": 50,
+  "qualified_count": 0,
+  "rejected_count": 0,
+  "candidates": [],
+  "data_blockers": [
+    "benchmark_price_unavailable",
+    "entry_missing_bar:5351.T",
+    "entry_missing_bar:6505.T",
+    "fresh_jp_screen_unavailable"
+  ],
+  "events": [],
+  "hypothesis": {
+    "H1": "AI-enabled cost/sales improvements improve future margins; unverified until operating data obtained",
+    "H2": "Acquisition/privatization becomes more common among candidates; target probabilities unverified",
+    "H3": "Value+AI/M&A enhanced basket outperforms matched value-only and TOPIX after costs; UNTESTED"
+  },
+  "control_cohorts": [
+    "data/shadow_swing",
+    "data/shadow_swing_v2"
+  ],
+  "critical_limitation": "Current cohort trades value+quality proxy ONLY. Without firm-specific AI, ownership, or takeover evidence, it cannot demonstrate incremental AI/M&A alpha; a matched value-only control and point-in-time historical database are required.",
+  "paper_only": true
+}
