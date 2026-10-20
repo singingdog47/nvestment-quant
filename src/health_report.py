@@ -64,6 +64,8 @@ def summarize(now: datetime, inputs: dict) -> dict:
         blockers = data.get("market_data_blockers", data.get("data_blockers", []))
         if not isinstance(blockers, list):
             blockers = ["invalid_blocker_schema"]
+        if component == "regime" and data.get("data_status") not in (None, "ok"):
+            blockers = blockers + ["regime_data_status_invalid:" + str(data.get("data_status"))]
         component_incidents = []
         for code in sorted(set(str(x) for x in blockers)):
             kind = classify_blocker(code)
