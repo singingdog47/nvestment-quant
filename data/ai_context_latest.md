@@ -6,12 +6,12 @@ Generated quality score: **0.858** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-20T12:44:51+00:00",
-  "generated_at_utc": "2026-10-20T12:44:51+00:00",
-  "date_jst": "2026-10-20",
+  "generated_at": "2026-10-21T00:38:49+00:00",
+  "generated_at_utc": "2026-10-21T00:38:49+00:00",
+  "date_jst": "2026-10-21",
   "data_status": "ok",
   "regime_label": "NEUTRAL",
-  "regime_score": 52.02,
+  "regime_score": 52.9,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,35 +23,36 @@ Generated quality score: **0.858** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": false,
+  "thin_liquidity_flag": true,
   "treasury_volatility_shock_flag": true,
   "sq_execution_caution_flag": false,
   "regime_flags": [
+    "THIN_LIQUIDITY",
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 45.534046752025574,
-    "stress": 72.7899997138977,
+    "trend": 52.82736456053606,
+    "stress": 74.25000040054321,
     "participation": 39.791498209541416,
-    "liquidity": 43.54916931322708,
+    "liquidity": 32.365874444621184,
     "positioning": 56.71738287234125
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 19.100000381469727,
-    "hy_oas": 3.31,
-    "ig_oas": 0.85,
-    "treasury_volatility_proxy": 87.824,
-    "treasury_volatility_percentile_rank": 0.9127,
-    "treasury_volatility_stress_score": 31.55,
-    "treasury_volatility_as_of_date": "2026-10-19",
+    "vix": 17.309999465942383,
+    "hy_oas": 3.29,
+    "ig_oas": 0.87,
+    "treasury_volatility_proxy": 87.542,
+    "treasury_volatility_percentile_rank": 0.9008,
+    "treasury_volatility_stress_score": 32.44,
+    "treasury_volatility_as_of_date": "2026-10-20",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9558,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-10-20T12:44:49.309669+00:00",
     "nfci": -0.499,
-    "volume_ratio20_mean": 0.751404232830677,
+    "volume_ratio20_mean": 0.4718218611155295,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -80,9 +81,9 @@ Generated quality score: **0.858** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-10-20",
+      "as_of_date": "2026-10-21",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 52,
+      "days_to_sq": 51,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -94,7 +95,7 @@ Generated quality score: **0.858** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 64075.421875,
+        "spot": 65301.640625,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -137,8 +138,8 @@ Generated quality score: **0.858** / actionable=True
   "regime_label": "neutral",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
-    0.08,
-    0.12
+    0.15,
+    0.18
   ],
   "max_single_stock_weight": 0.05,
   "lifestyle_bucket_max_weight": 0.05,
@@ -150,7 +151,7 @@ Generated quality score: **0.858** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-20T12:46:03+00:00",
+  "generated_at": "2026-10-21T00:39:57+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -194,10 +195,10 @@ Generated quality score: **0.858** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=6 / tier=primary
+- EDINET: ok / records=2 / tier=primary
 - SEC: ok / records=31 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=60 / tier=secondary
+- NewsRSS: ok / records=59 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -301,18 +302,15 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] DHT DHT Holdings, Inc. | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1331284/000095015726001092/form6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006892/p15111556_6-k.htm
 - [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-10-13 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000089512626000057/exe-20261008.htm
-- [HIGH] 3099 三越伊勢丹ホールディングス | 2026-10-14 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z7O4
-- [HIGH] 8789 FinTech Global Incorporated | 2026-10-14 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z7WM
-- [HIGH] 3678 メディアドゥ | 2026-10-14 | filing | 半期報告書－第28期(2026/03/01－2027/02/28) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z7SU
-- [HIGH] 3678 メディアドゥ | 2026-10-14 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z7T4
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-10-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526421701/eqbk-20261014.htm
 - [HIGH] 6965 浜松ホトニクス | 2026-10-15 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z8FG
 - [HIGH] SFNC Simmons First National Corporation - Common Stock | 2026-10-15 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/90498/000119312526422936/d439916d8k.htm
 - [HIGH] 4996 クミアイ化学工業 | 2026-10-19 | filing | 訂正臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z8G2
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-10-19 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026066288/stng6k-10192026.htm
 - [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-10-19 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000110465926116739/tm2627775d1_8k.htm
-- [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | NEC、システム開発の委託先にサイバー攻撃 顧客3社の情報漏洩 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE5hM1M2Q1pDTmZFY0pKRktaZHp1Um03c3V6bU5vd2dVR3RwVGxRMExBazdIU0FpREFCdGRsNUtqcXp3YWN5dHhHeG9WNFVhdjQxc0k1X0c3aFJ1VlJmS2xzUDEwVE9QVFduRXBPWg?oc=5
+- [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | NEC 委託先へのサイバー攻撃で個人情報漏えい - TBS NEWS DIG | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiV0FVX3lxTFAtUXY2ZVBoZm05SG5IeDhlOGRwRlhCVjdUQlVWOU1lUDRJVXhWd2V2ODJ3d2g4R09XT1p5aHBEU2pEMkZGbUJDNk1BTlBjcGZ5YlBZc0VHTQ?oc=5
 - [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | ふるさとチョイス、情報流出445万件 NECは委託先から漏洩 - 朝日新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZ0FVX3lxTE81T0c2NnJQU1hqdkY1Z3g0OTRlQlg3OXFEenU5MUtiZzBHNjBOaWo2V0piNlJBOWt3Wi1SM0RKUlp6ZHBJUmpjWmZmRGZvZ0RWS3lMQXA1a0V2VmoycEdFZ3AwbU1ZaGM?oc=5
+- [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | NEC、システム開発の委託先にサイバー攻撃 顧客3社の情報漏洩 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE5hM1M2Q1pDTmZFY0pKRktaZHp1Um03c3V6bU5vd2dVR3RwVGxRMExBazdIU0FpREFCdGRsNUtqcXp3YWN5dHhHeG9WNFVhdjQxc0k1X0c3aFJ1VlJmS2xzUDEwVE9QVFduRXBPWg?oc=5
 - [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | ＮＥＣ委託先にサイバー攻撃、顧客企業３社の情報が漏えい…２社では個人情報漏えいを確認 - 読売新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZkFVX3lxTE9kOHVXaVl4NjJ5ekl4b1VfTk50WDRlWUdKZVVhYy15ZVJMZlQyRF9UUm9BdHhoc01qVW1EVVJxUEs1N0dVX3RBQXJkYi1ILVp2blIyajItcmMxVUt1bDJiNnNCaU00Zw?oc=5
 - [HIGH] 8766 東京海上ホールディングス | Wed, 07 Oct 2026 | buyback | 東京海上ホールディングス[8766]：自己株式の取得状況に関するお知らせ 2026年10月7日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1FanduN011eWR1S1pDUmV3WGowYW9FelNDQTVnakRfeHBYRC1UdFhabmlCdmxpNlRpNmE1NlZfSnlqdDlrSEV3ZjRGcjAwbktDdkJtam9SdUNRSW5pU08ybXI2clhGUkUtUVE?oc=5
 - [HIGH] 5032 ANYCOLOR | Wed, 09 Sep 2026 | buyback | 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE9SUEU1ZE41TXRpU2h5VTAyb1F4N3BWRTR5YTFFM0FDR1hJTHZrNWlRVUp3MlRuelBKYlpKNU0zTU15QWxaclYwejV0Y2pNWXkxMXgwVFY4U3RYRFpIRmNZanA3MExrQUF4Slk3eg?oc=5
