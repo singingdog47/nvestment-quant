@@ -1,18 +1,18 @@
 {
   "version": "1.0.0",
-  "generated_at_utc": "2026-10-20T12:46:04+00:00",
-  "as_of_jst": "2026-10-20",
+  "generated_at_utc": "2026-10-21T12:58:51+00:00",
+  "as_of_jst": "2026-10-21",
   "mode": "RESEARCH_ONLY",
   "source_status": {
     "regime_fresh": true,
     "supply_fresh": true,
     "regime": "NEUTRAL",
-    "regime_score": 52.02,
+    "regime_score": 55.84,
     "treasury_volatility_shock": true,
     "supply_coverage": {
-      "free_float_ratio": 0.6981132075471698,
-      "short_interest": 0.2641509433962264,
-      "current_vs_average_volume": 0.7547169811320755
+      "free_float_ratio": 0.7115384615384616,
+      "short_interest": 0.2692307692307692,
+      "current_vs_average_volume": 0.7692307692307693
     },
     "public_watchlist_only": true,
     "private_portfolio_included": false
@@ -52,71 +52,8 @@
       "trade_policy": "Core accumulation and strategic holdings require separate cash-flow and thesis checks; no long-term directional forecast without evidence."
     }
   ],
-  "prospective_hypotheses": [
-    {
-      "id": "0a099f846c155c5b",
-      "market": "US",
-      "symbol": "DHT",
-      "name": "DHT Holdings, Inc.",
-      "benchmark_symbol": "SPY",
-      "horizon": "short",
-      "validation_horizon": "1w",
-      "metric": "total_return_excess_over_benchmark",
-      "threshold": 0.0,
-      "expected_sign": "negative",
-      "probability": 0.55,
-      "probability_label": "uncalibrated_research_prior_not_estimated_accuracy",
-      "issued_at_utc": "2026-10-20T12:46:04+00:00",
-      "as_of_jst": "2026-10-20",
-      "evidence": {
-        "volume_ratio_30d": 1.733137042861013,
-        "context_flags": [
-          "HIGH_FLOAT_TURNOVER",
-          "PRICE_DOWN_ON_VOLUME_EXPANSION",
-          "SHORT_CROWDING",
-          "VOLUME_EXPANSION"
-        ],
-        "data_status": "ok",
-        "confidence": 0.7,
-        "source_retrieved_at": "2026-10-20T12:45:56+00:00",
-        "price_as_of": "2026-10-19T20:00:02+00:00"
-      },
-      "rationale": "Volume expansion and same-direction price movement: continuation hypothesis, not verified net buying/selling.",
-      "falsification": "Relative total return at the existing 1w validation endpoint is >= 0.",
-      "execution": "RESEARCH_ONLY_NO_AUTO_TRADE"
-    },
-    {
-      "id": "96943b5c6e254a33",
-      "market": "JP",
-      "symbol": "3635.T",
-      "name": "KOEI TECMO HOLDINGS CO.,LTD.",
-      "benchmark_symbol": "1306.T",
-      "horizon": "short",
-      "validation_horizon": "1w",
-      "metric": "total_return_excess_over_benchmark",
-      "threshold": 0.0,
-      "expected_sign": "positive",
-      "probability": 0.55,
-      "probability_label": "uncalibrated_research_prior_not_estimated_accuracy",
-      "issued_at_utc": "2026-10-20T12:46:04+00:00",
-      "as_of_jst": "2026-10-20",
-      "evidence": {
-        "volume_ratio_30d": 2.9951605450967613,
-        "context_flags": [
-          "PRICE_UP_ON_VOLUME_EXPANSION",
-          "VOLUME_EXPANSION"
-        ],
-        "data_status": "ok",
-        "confidence": 0.7,
-        "source_retrieved_at": "2026-10-20T12:45:56+00:00",
-        "price_as_of": "2026-10-20T06:30:00+00:00"
-      },
-      "rationale": "Volume expansion and same-direction price movement: continuation hypothesis, not verified net buying/selling.",
-      "falsification": "Relative total return at the existing 1w validation endpoint is <= 0.",
-      "execution": "RESEARCH_ONLY_NO_AUTO_TRADE"
-    }
-  ],
-  "hypothesis_candidates_detected": 2,
+  "prospective_hypotheses": [],
+  "hypothesis_candidates_detected": 0,
   "limits": [
     "Regime confidence describes source coverage, not prediction accuracy.",
     "0.55 is a declared research prior, not a calibrated model probability.",
