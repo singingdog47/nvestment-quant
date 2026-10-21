@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-10-21",
+  "as_of_date": "2026-10-22",
   "status": "ACTIVE",
   "data_fresh": false,
   "screening_fresh": false,
@@ -26,7 +26,7 @@
   },
   "regime": {
     "label": "NEUTRAL",
-    "score": 52.02,
+    "score": 55.84,
     "confidence": 1.0
   },
   "fills_today": [],
