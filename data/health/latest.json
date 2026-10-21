@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-10-20T18:06:14.179866+00:00",
+  "generated_at_utc": "2026-10-21T18:14:43.841100+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
   "incident_signature": "b4d7b53d62871728",
@@ -58,7 +58,7 @@
   "components": {
     "shadow_v2": {
       "status": "DATA_IMPAIRED",
-      "as_of_date": "2026-10-21",
+      "as_of_date": "2026-10-22",
       "blockers": [
         "benchmark_bar_unavailable",
         "regime_stale_or_non_actionable",
@@ -68,7 +68,7 @@
     },
     "ai_ma": {
       "status": "DATA_IMPAIRED",
-      "as_of_date": "2026-10-21",
+      "as_of_date": "2026-10-22",
       "blockers": [
         "benchmark_price_unavailable",
         "entry_missing_bar:5351.T",
@@ -79,7 +79,7 @@
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-10-20",
+      "as_of_date": "2026-10-21",
       "blockers": [],
       "mode": null
     }
