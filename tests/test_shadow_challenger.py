@@ -1,6 +1,7 @@
 import csv
 import json
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 
 import shadow_challenger as c
 
@@ -77,3 +78,11 @@ def test_screen_not_postclose_does_not_generate_signals(tmp_path, monkeypatch):
     p.write_text(p.read_text().replace("2026-10-22T07:45:00Z", "2026-10-22T05:20:00Z"))
     r = c.run(date(2026, 10, 22), bar_source=lambda s, d: None)
     assert r["status"] == "NO_NEW_SIGNALS" and r["pending_buys"] == 0
+
+
+def test_midnight_delayed_workflow_uses_prior_postclose_session():
+    now = datetime(2026, 10, 23, 2, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    screen = [{"data_retrieved_at_utc": "2026-10-22T12:57:00Z"}]
+    assert c.resolve_market_session(now, screen) == date(2026, 10, 22)
+    assert c.resolve_market_session(datetime(2026, 10, 23, 9, 1, tzinfo=ZoneInfo("Asia/Tokyo")), screen) == date(2026, 10, 23)
+    assert c.resolve_market_session(now, [{"data_retrieved_at_utc": "2026-10-21T12:57:00Z"}]) == date(2026, 10, 23)
