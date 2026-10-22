@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-21T12:57:41.926431+00:00
+- Data retrieved (UTC): 2026-10-22T12:59:30.157859+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -28,34 +28,34 @@
 |---|---|---:|
 | JP | Financials | 6 |
 | JP | Other | 14 |
-| US | Financials | 11 |
-| US | Other | 5 |
-| US | Shipping | 4 |
+| US | Financials | 12 |
+| US | Other | 3 |
+| US | Shipping | 5 |
 
 ## Research candidates
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8613.T | Marusan Securities Co.,Ltd. | Financials | 81.7 | 100.0 | unchanged |
-| JP | 2 | 8622.T | Mito Securities Co.,Ltd. | Financials | 81.7 | 99.9 | new_entry |
-| JP | 5 | 3932.T | Akatsuki Inc. | Other | 74.9 | 99.8 | unchanged |
-| JP | 6 | 6750.T | ELECOM CO.,LTD. | Other | 73.0 | 99.7 | unchanged |
-| JP | 7 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.8 | 99.7 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.2 | 99.5 | unchanged |
-| JP | 11 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 70.6 | 99.5 | unchanged |
-| JP | 12 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 70.4 | 99.4 | unchanged |
-| JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.0 | 99.4 | unchanged |
-| JP | 14 | 9757.T | Funai Soken Holdings Incorporated | Other | 69.8 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.4 | 100.0 | unchanged |
+| JP | 1 | 8613.T | Marusan Securities Co.,Ltd. | Financials | 81.9 | 100.0 | unchanged |
+| JP | 2 | 8622.T | Mito Securities Co.,Ltd. | Financials | 80.8 | 99.9 | unchanged |
+| JP | 5 | 3932.T | Akatsuki Inc. | Other | 75.0 | 99.8 | unchanged |
+| JP | 6 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.7 | unchanged |
+| JP | 7 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.6 | 99.7 | unchanged |
+| JP | 9 | 2121.T | MIXI,Inc. | Other | 71.4 | 99.6 | unchanged |
+| JP | 11 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.9 | 99.5 | unchanged |
+| JP | 12 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 70.5 | 99.4 | unchanged |
+| JP | 13 | 545A.T | Toranvia Co.,Ltd. | Other | 70.3 | 99.4 | unchanged |
+| JP | 14 | 9757.T | Funai Soken Holdings Incorporated | Other | 70.2 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.5 | 100.0 | unchanged |
 | US | 2 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.5 | 100.0 | unchanged |
-| US | 4 | BUSE | First Busey Corporation - Common Stock | Other | 81.5 | 99.9 | unchanged |
-| US | 5 | DHT | DHT Holdings, Inc. | Shipping | 81.4 | 99.9 | unchanged |
-| US | 7 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 81.0 | 99.8 | unchanged |
-| US | 11 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 80.4 | 99.7 | unchanged |
-| US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 80.2 | 99.6 | unchanged |
-| US | 15 | WSBC | WesBanco, Inc. - Common Stock | Other | 80.2 | 99.6 | unchanged |
-| US | 20 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.2 | 99.4 | unchanged |
-| US | 25 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 78.7 | 99.3 | unchanged |
+| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.2 | 99.9 | unchanged |
+| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 81.9 | 99.9 | unchanged |
+| US | 7 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.2 | 99.8 | unchanged |
+| US | 8 | BUSE | First Busey Corporation - Common Stock | Other | 81.1 | 99.8 | unchanged |
+| US | 10 | TRMD | TORM plc - Class A Common Stock | Other | 80.7 | 99.7 | unchanged |
+| US | 23 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.1 | 99.3 | unchanged |
+| US | 25 | FRO | Frontline Plc Ordinary Shares | Other | 78.8 | 99.3 | unchanged |
+| US | 27 | HCI | HCI Group, Inc. Common Stock | Other | 78.7 | 99.2 | unchanged |
 
 ## Required manual checks before an order
 
