@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "cohort": "2026-10-22-agility-1m",
+  "mode": "SHADOW_ONLY",
+  "start_date": "2026-10-22",
+  "end_date": "2027-01-22",
+  "initial_cash_jpy": 1000000,
+  "risk": {
+    "max_positions": 5,
+    "max_per_theme": 2,
+    "max_entries_per_session": 2,
+    "max_position_pct": 0.2,
+    "max_gross_invested_pct": 0.8,
+    "uncertain_regime_size_multiplier": 0.5,
+    "partial_fundamental_size_multiplier": 0.5,
+    "stop_loss_pct": 6,
+    "take_profit_pct": 12,
+    "max_holding_sessions": 15
+  },
+  "execution": {
+    "round_lot_shares": 100,
+    "slippage_bps": 15,
+    "max_pending_calendar_days": 4,
+    "max_entry_gap_pct": 3
+  },
+  "selection": {
+    "audit_top_n": 30,
+    "min_total_score": 68,
+    "min_momentum_score": 50,
+    "min_liquidity_score": 45,
+    "min_avg_turnover_jpy": 50000000
+  },
+  "governance": {
+    "broker_connection": false,
+    "real_orders_forbidden": true,
+    "no_lookahead": true,
+    "verified_ohlc_for_fills": true,
+    "no_synthetic_fills": true,
+    "preserve_v1_v2": true
+  }
+}
