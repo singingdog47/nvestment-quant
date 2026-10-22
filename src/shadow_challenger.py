@@ -9,7 +9,8 @@ from __future__ import annotations
 import csv
 import json
 import math
-from datetime import date
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Callable
 
@@ -56,6 +57,32 @@ def new_state(cfg):
     }
 
 
+def resolve_market_session(now: datetime, screen: list[dict]) -> date:
+    """Anchor a delayed after-close workflow to its source trading session.
+
+    GitHub scheduled jobs can start after midnight JST. Before 09:00,
+    accept a post-close source from the previous local date if <18h old.
+    Avoid treating yesterday's fresh post-close screen as stale just because
+    the execution crossed midnight. Never move the market date forward.
+    """
+    local_now = now.astimezone(ZoneInfo("Asia/Tokyo"))
+    today = local_now.date()
+    if local_now.hour >= 9 or not screen:
+        return today
+    stamp = screen[0].get("data_retrieved_at_utc")
+    try:
+        retrieved = datetime.fromisoformat(str(stamp).replace("Z", "+00:00"))
+        if retrieved.tzinfo is None:
+            return today
+        observed = retrieved.astimezone(ZoneInfo("Asia/Tokyo")).date()
+        age = local_now - retrieved.astimezone(ZoneInfo("Asia/Tokyo"))
+        if observed < today and timedelta(0) <= age <= timedelta(hours=18) and after_jp_market_close(stamp, observed):
+            return observed
+    except (ValueError, TypeError):
+        pass
+    return today
+
+
 def candidate_audit(screen, cfg):
     result = []
     for x in screen:
@@ -99,7 +126,7 @@ def valid_bar(bar):
 
 
 def run(as_of=None, bar_source: Callable | None = None):
-    as_of = as_of or today_jst()
+    as_of = as_of or resolve_market_session(datetime.now(ZoneInfo("Asia/Tokyo")), rows(DATA / "screening_latest.csv"))
     cfg = load_json(CONFIG)
     if cfg["mode"] != "SHADOW_ONLY":
         raise ValueError("SHADOW_ONLY required")
