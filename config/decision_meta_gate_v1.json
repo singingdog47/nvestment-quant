@@ -18,7 +18,13 @@
   ],
   "default_fail_safe": {
     "rule": "If no credible incremental edge over the baseline can be identified, do not recommend implementation merely because it is technically feasible or interesting.",
-    "allowed_outputs": ["HOLD", "MONITOR", "DO_NOT_BUILD", "KEEP_CURRENT_PROCESS", "RUN_LOW_COST_TEST"]
+    "allowed_outputs": [
+      "HOLD",
+      "MONITOR",
+      "DO_NOT_BUILD",
+      "KEEP_CURRENT_PROCESS",
+      "RUN_LOW_COST_TEST"
+    ]
   },
   "anti_bias_rules": [
     "Technical feasibility is not evidence of investment edge.",
@@ -27,7 +33,9 @@
     "Do not create an action merely because the system can produce one.",
     "Prefer detection and monitoring automation over execution automation unless speed or consistency is demonstrably part of the edge.",
     "Treat novelty, elegance, and engineering interest as zero financial benefit unless they create measurable utility.",
-    "Explicitly consider that the existing Human + Quant + AI process may already be the stronger baseline."
+    "Explicitly consider that the existing Human + Quant + AI process may already be the stronger baseline.",
+    "Prior assistant opinions, price targets and user preferences are hypotheses to retest, not decision authority.",
+    "Choose the highest estimated forward risk-adjusted utility as of the current observation; explicitly overturn stale earlier positions when warranted."
   ],
   "investment_action_gate": {
     "required_for_buy_or_add": [
@@ -59,7 +67,12 @@
   },
   "learning_log": {
     "enabled": true,
-    "record_when": ["material recommendation", "system architecture change", "new automation", "new strategy"],
+    "record_when": [
+      "material recommendation",
+      "system architecture change",
+      "new automation",
+      "new strategy"
+    ],
     "fields": [
       "initial_hypothesis",
       "baseline",
@@ -72,5 +85,18 @@
       "rule_update_if_needed"
     ]
   },
-  "origin_note": "Added after reviewing the autonomous trading proposal: implementation planning advanced before validating whether full automation added expected return over the existing Human + Quant + AI process."
+  "origin_note": "Added after reviewing the autonomous trading proposal: implementation planning advanced before validating whether full automation added expected return over the existing Human + Quant + AI process.",
+  "current_best_decision": {
+    "enabled": true,
+    "principle": "Optimize current forward risk-adjusted expected utility, not consistency with prior recommendations.",
+    "previous_opinion_role": "audit_trail_only",
+    "required_in_material_reviews": [
+      "current_best_action",
+      "best_alternative",
+      "what_changed_or_earlier_miss",
+      "forward_value_and_risk",
+      "falsifier_and_review_trigger"
+    ],
+    "guardrail": "Do not create trades for activity's sake; capital, household reserve and manual broker order boundaries unchanged."
+  }
 }

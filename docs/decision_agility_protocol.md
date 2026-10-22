@@ -7,6 +7,15 @@ Every material discussion must end with a decision: `ACT_RECOMMENDED`,
 A score is research evidence, not an order. Live brokerage operations are NEVER
 initiated by these scripts.
 
+## Current-best decision / anti-anchoring rule
+- Every material decision is assessed **as of today**, using available evidence, present valuation, portfolio risk, transaction costs, and opportunity cost. Previously recommended prices, ratings, or narratives have **zero authority by themselves**.
+- Earlier positions are hypotheses and test records, never obligations. A current independent recommendation may contradict an earlier recommendation; clearly state **what changed** or **what the earlier reasoning missed**.
+- Do not force consensus with prior ChatGPT conclusions or the user's earlier inclination. Evaluate the strongest alternative including reducing, exiting, replacing, adding, and doing nothing.
+- Reevaluate both sides: do not sell solely because a past target was crossed, and do not hold solely because we previously preferred HOLD. Past trigger breaches are prompts for a **fresh** review, not retroactive trade directives.
+- A failed thesis or dominated position should be identified promptly even without a new model score. A high score may identify a candidate but never displace a superior present-day thesis without risk and valuation comparison.
+- If material evidence has not changed, maintaining a position remains valid. **Flexibility means readiness to revise, not maximizing turnover.**
+- End each actionable review with today’s recommendation, alternatives ranked on forward expected utility, key contrary evidence, and the concrete condition/time at which to revisit.
+
 ## Real portfolio (human decision)
 - Distinguish **previously discussed**, **broker order submitted**, and
   **filled**. Do not infer orders from conversation.
