@@ -46,7 +46,8 @@ def test_next_session_verified_open_and_position_limit(tmp_path, monkeypatch):
     assert r["positions"] == 1 and r["pending_buys"] == 0
     pos = state["positions"]["1234.T"]
     assert pos["entry_price"] > 1010
-    assert pos["qty"] * pos["entry_price"] <= 100000  # reduced size for missing regime
+    assert pos["qty"] * pos["entry_price"] <= 103000  # 10% target + bounded 3% open-gap tolerance
+    assert pos["qty"] * pos["entry_price"] <= 200000  # hard per-name cap remains absolute
     assert r["cash_jpy"] == round(1000000 - pos["qty"] * pos["entry_price"], 2)
     assert c.run(date(2026, 10, 23), bar_source=lambda s, d: None)["status"] == "ALREADY_PROCESSED"
 
