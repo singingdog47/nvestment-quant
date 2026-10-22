@@ -52,7 +52,7 @@ def new_state(cfg):
         "cash_jpy": cash, "initial_cash_jpy": cash, "positions": {},
         "pending_buys": [], "pending_sells": [], "trades": [],
         "peak_nav_jpy": cash, "nav_jpy": cash, "last_run_date": None,
-        "last_screen_date": None,
+        "last_screen_date": None, "benchmark_start_close": None,
     }
 
 
@@ -142,16 +142,18 @@ def run(as_of=None, bar_source: Callable | None = None):
         # Size from current open, never trust the signal price as a fill.
         affordable = min(state["cash_jpy"], risk["max_gross_invested_pct"] * cfg["initial_cash_jpy"] -
                          sum(p["qty"] * p["last_price"] for p in state["positions"].values()))
-        if order["qty"] * fill > affordable or order["symbol"] in state["positions"]:
+        lot = execution["round_lot_shares"]
+        qty = min(order["qty"], int(min(affordable, order["max_notional"]) // (lot * fill)) * lot)
+        if qty < lot or order["symbol"] in state["positions"]:
             events.append({"event": "ENTRY_CANCELLED_CAPACITY", "symbol": order["symbol"]})
             continue
         state["positions"][order["symbol"]] = {
-            "qty": order["qty"], "entry_price": fill, "last_price": fill,
+            "qty": qty, "entry_price": fill, "last_price": fill,
             "entry_date": as_of.isoformat(), "sessions": 0,
             "theme": order["theme"], "peak_close": b["close"],
         }
-        state["cash_jpy"] -= order["qty"] * fill
-        events.append({"event": "BUY", "symbol": order["symbol"], "qty": order["qty"], "price": round(fill, 3)})
+        state["cash_jpy"] -= qty * fill
+        events.append({"event": "BUY", "symbol": order["symbol"], "qty": qty, "price": round(fill, 3)})
     state["pending_buys"] = pending
 
     # Exit at a VERIFIED bar. Intraday stop takes precedence over target if both hit.
@@ -220,7 +222,7 @@ def run(as_of=None, bar_source: Callable | None = None):
             if qty < lot:
                 continue
             state["pending_buys"].append({"symbol": symbol, "signal_date": as_of.isoformat(),
-                                          "qty": qty, "theme": theme, "signal_price": candidate["price"]})
+                                          "qty": qty, "theme": theme, "signal_price": candidate["price"], "max_notional": budget})
             busy.add(symbol)
             themes[theme] = themes.get(theme, 0) + 1
             gross += qty * candidate["price"]
@@ -231,6 +233,11 @@ def run(as_of=None, bar_source: Callable | None = None):
 
     unpriced = [symbol for symbol in state["positions"] if bar(symbol) is None]
     nav = state["cash_jpy"] + sum(p["qty"] * p["last_price"] for p in state["positions"].values())
+    benchmark = bar("1306.T")
+    if benchmark is not None and state.get("benchmark_start_close") is None:
+        state["benchmark_start_close"] = benchmark["close"]
+    benchmark_return = ((benchmark["close"] / state["benchmark_start_close"] - 1) * 100
+                        if benchmark is not None and state.get("benchmark_start_close") else None)
     state["nav_jpy"] = round(nav, 2)
     state["peak_nav_jpy"] = max(state["peak_nav_jpy"], nav)
     state["last_run_date"] = as_of.isoformat()
@@ -243,6 +250,8 @@ def run(as_of=None, bar_source: Callable | None = None):
         "screen_fresh": screen_fresh, "regime_actionable": regime_ok,
         "sizing_multiplier": size_multiplier, "unpriced_symbols": unpriced,
         "candidate_audit": audits[:10], "events": events,
+        "benchmark_return_pct": round(benchmark_return, 3) if benchmark_return is not None else None,
+        "benchmark_comparison_start": "first successfully priced session, not necessarily cohort start",
         "benchmark_note": "TOPIX comparison optional; missing benchmark never blocks paper entries.",
         "caveat": "NAV uses last known price for unpriced positions; do not treat as verified daily return.",
     }
