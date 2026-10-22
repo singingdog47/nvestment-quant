@@ -6,70 +6,75 @@ Generated quality score: **0.864** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-21T12:57:44+00:00",
-  "generated_at_utc": "2026-10-21T12:57:44+00:00",
-  "date_jst": "2026-10-21",
-  "data_status": "ok",
+  "generated_at": "2026-10-22T00:42:16+00:00",
+  "generated_at_utc": "2026-10-22T00:42:16+00:00",
+  "date_jst": "2026-10-22",
+  "data_status": "partial",
   "regime_label": "NEUTRAL",
-  "regime_score": 55.84,
-  "confidence": 1.0,
-  "actionable": true,
+  "regime_score": 52.5,
+  "confidence": 0.591,
+  "actionable": false,
   "actionability": {
     "minimum_confidence": 0.6,
     "critical_market_series_available": 3,
     "critical_market_series_expected": 3,
-    "missing_core_context": [],
-    "reasons": []
+    "missing_core_context": [
+      "HY_OAS",
+      "IG_OAS",
+      "NFCI"
+    ],
+    "reasons": [
+      "confidence_below_threshold",
+      "core_credit_or_financial_conditions_missing"
+    ]
   },
   "overheated_flag": false,
   "stress_flag": false,
   "thin_liquidity_flag": false,
-  "treasury_volatility_shock_flag": true,
+  "treasury_volatility_shock_flag": false,
   "sq_execution_caution_flag": false,
-  "regime_flags": [
-    "TREASURY_VOLATILITY_SHOCK"
-  ],
+  "regime_flags": [],
   "components": {
-    "trend": 51.55745255126031,
-    "stress": 74.36250011444092,
+    "trend": 63.11479447619234,
+    "stress": 56.34999954223633,
     "participation": 41.47031647031647,
-    "liquidity": 52.1338882111256,
+    "liquidity": 36.75114625125982,
     "positioning": 56.71738287234125
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.15999984741211,
-    "hy_oas": 3.29,
-    "ig_oas": 0.87,
-    "treasury_volatility_proxy": 87.542,
-    "treasury_volatility_percentile_rank": 0.9008,
-    "treasury_volatility_stress_score": 32.44,
-    "treasury_volatility_as_of_date": "2026-10-20",
+    "vix": 16.68000030517578,
+    "hy_oas": null,
+    "ig_oas": null,
+    "treasury_volatility_proxy": 87.042,
+    "treasury_volatility_percentile_rank": 0.8968,
+    "treasury_volatility_stress_score": 32.74,
+    "treasury_volatility_as_of_date": "2026-10-21",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9560,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-10-21T12:57:41.926431+00:00",
-    "nfci": -0.496,
-    "volume_ratio20_mean": 0.9665472052781399,
+    "nfci": null,
+    "volume_ratio20_mean": 0.7350229250251964,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
     },
     "component_coverage": {
       "trend": 1.0,
-      "stress": 1.0,
+      "stress": 0.5,
       "participation": 1.0,
-      "liquidity": 1.0,
+      "liquidity": 0.8,
       "positioning": 1.0
     },
     "critical_context_coverage": {
-      "fred_credit_financial_conditions": 1.0,
-      "available": 3,
+      "fred_credit_financial_conditions": 0.0,
+      "available": 0,
       "expected": 3,
-      "multiplier": 1.0
+      "multiplier": 0.7
     },
-    "base_weighted_coverage": 1.0,
+    "base_weighted_coverage": 0.845,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
     "jpx_official_turnover_date": "2026-10-21",
     "jpx_official_turnover_million_jpy": 7621582.0,
@@ -80,9 +85,9 @@ Generated quality score: **0.864** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-10-21",
+      "as_of_date": "2026-10-22",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 51,
+      "days_to_sq": 50,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -94,7 +99,7 @@ Generated quality score: **0.864** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 64621.23828125,
+        "spot": 64586.23828125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +155,7 @@ Generated quality score: **0.864** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-21T12:58:50+00:00",
+  "generated_at": "2026-10-22T00:48:46+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -161,25 +166,25 @@ Generated quality score: **0.864** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.02,
+      "age_hours": 0.12,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.02,
+      "age_hours": 0.12,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.02,
+      "age_hours": 0.12,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.02,
+      "age_hours": 0.12,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -194,10 +199,10 @@ Generated quality score: **0.864** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=2 / tier=primary
-- SEC: ok / records=31 / tier=primary
+- EDINET: ok / records=1 / tier=primary
+- SEC: ok / records=32 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=60 / tier=secondary
+- NewsRSS: ok / records=58 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -274,6 +279,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 ## Critical / high company events
 - [CRITICAL] 8377 ほくほくフィナンシャルグループ | Fri, 29 May 2026 | guidance | ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE5mOXJYY0tyRW8yQUhTZ09US2tkWVM0bEwzUEgteml0SlBUdVZTaU14M3NWZGNUX2FvLTdCb2Z3dHBTVi1WdmlkUVV5ZWZSRVM5SlE?oc=5
 - [CRITICAL] 3635 コーエーテクモホールディングス | Mon, 19 Oct 2026 | guidance | コーエーテクモホールディングス[3635]：業績予想の修正に関するお知らせ 2026年10月19日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE41YlFlN0NMQVhsY2VxRUhGR0hvV2ZGZXBOb0dORDZWTmpoVG5Db0x1dnlNNzQ0SEhhZUp6RzVVZmtTYS1lNlF3TGV6VTdoZXNtaTFzWS1sNWdQMVVnaUQ4el90WDE3UmFvU3c?oc=5
+- [CRITICAL] 8622 水戸証券 | Tue, 28 Apr 2026 | earnings | 水戸証券[8622]：2026年３月期決算短信〔日本基準〕(非連結) 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTFB2UWpSZ2ZPQk5zd0k2Y0lfMzZuZUx3TTVLT2kxY000UElhaEc2MmViNEc2Zl9SZ2hIYVVHTmtfSTd3Uk9DVmdmM050WlJhcUFpVktoYjk2c1FSM3VmcWV5bklLQXg4OFFVX2c?oc=5
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006252/p15079219_6-k.htm
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-09-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526390696/eqbk-20260910.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-15 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006318/p15075054_6-k.htm
@@ -302,19 +308,19 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006892/p15111556_6-k.htm
 - [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-10-13 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000089512626000057/exe-20261008.htm
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-10-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526421701/eqbk-20261014.htm
-- [HIGH] 6965 浜松ホトニクス | 2026-10-15 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z8FG
 - [HIGH] SFNC Simmons First National Corporation - Common Stock | 2026-10-15 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/90498/000119312526422936/d439916d8k.htm
 - [HIGH] 4996 クミアイ化学工業 | 2026-10-19 | filing | 訂正臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z8G2
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-10-19 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026066288/stng6k-10192026.htm
 - [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-10-19 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000110465926116739/tm2627775d1_8k.htm
+- [HIGH] WSBC WesBanco, Inc. - Common Stock | 2026-10-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/203596/000119312526427870/wsbc-20261021.htm
 - [HIGH] 8622 水戸証券 | Mon, 09 Mar 2026 | dividend | 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QRlFKekV1VHlONVFFNmFzTzBKQ1FiajFfb2RmSjJIdE9qZmR4MkJ4RnEtRGhVLU51ZFo0dzRkMGJJNjY3d242azlHN19TLXZ6R1V3?oc=5
+- [HIGH] 6701 NEC | Tue, 20 Oct 2026 | regulatory | NEC 委託先へのサイバー攻撃で個人情報漏えい - TBS NEWS DIG | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiV0FVX3lxTFAtUXY2ZVBoZm05SG5IeDhlOGRwRlhCVjdUQlVWOU1lUDRJVXhWd2V2ODJ3d2g4R09XT1p5aHBEU2pEMkZGbUJDNk1BTlBjcGZ5YlBZc0VHTQ?oc=5
 - [HIGH] 8766 東京海上ホールディングス | Tue, 25 Aug 2026 | dividend | 東京海上、今期配当を実質増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE9wT0xDYXFnWmlOMU5XMTZsR0pNQjRHNkdLVWI0bGRPTWJrMlNHVnBZRWFQSFpsQ0lycFcwdzhuY1NLWGxIQXRFazlsV1lmSjdLZlE?oc=5
 - [HIGH] 5032 ANYCOLOR | Wed, 09 Sep 2026 | buyback | 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE9SUEU1ZE41TXRpU2h5VTAyb1F4N3BWRTR5YTFFM0FDR1hJTHZrNWlRVUp3MlRuelBKYlpKNU0zTU15QWxaclYwejV0Y2pNWXkxMXgwVFY4U3RYRFpIRmNZanA3MExrQUF4Slk3eg?oc=5
 - [HIGH] 8766 東京海上ホールディングス | Wed, 20 May 2026 | dividend | 東京海上HD(8766)、7期連続の「増配」を発表し、配当利回り3.1％に！ 年間配当は7年で3.2倍に増加、2027年3月期は前期比27円増の｢1株あたり245円｣に - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE9Sdko0cVUyckIzOWZqVUxYV3V6MlFsd2FpQk1Fem1FbXlEXzVORTNqb1V0b3dJc2dueEV5eXI1dlVOUWdsYkFDYUsyRnNtTFZ1QVlv?oc=5
 - [HIGH] 6701 NEC | Wed, 21 Oct 2026 | regulatory | 委託事業者における個人情報漏えいについて - 大阪大学 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZEFVX3lxTE9yX29uY2R4V2FsaXJqM2VBdGlVSlFDMFNLQVoyb2g0MmRQYkZfZ2EwTG1hMDA1RENHTmUzbkF1WTFiRnAxdjRwd2otLTlVMVVvMlBsM3dkWUMwOVZGbHI1M2ZCdkk?oc=5
 - [HIGH] 6701 NEC | Wed, 21 Oct 2026 | regulatory | 大阪公立大のシステム障害、NECの再委託先へのサイバー攻撃が原因 [大阪府] [情報漏洩・個人情報流出の最新ニュース] - 朝日新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZ0FVX3lxTE56T2dydkYycXU0QUdWYzJlWklTS05uTVVqS3QwYmhPM0JuMlNNZFVYMnVyOGNzV1E0NS11YjNNcExfb3RiNzNTU0hST1NMaUdqQlR4d2ZHQ2h6bVR4bElwV1FHWFJ1OWc?oc=5
 - [HIGH] 6701 NEC | Wed, 21 Oct 2026 | regulatory | NECの委託先にサイバー攻撃、複数顧客でシステム障害と情報漏洩 - 日経クロステック | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiXEFVX3lxTE1VY1lKSXJFa3lxYWJPYWZCZmthb0pSeE1NUnkwa1lsWDJkRnVJek5SX0dZU1ByeVNpU2l1ZDFCNFp2UUgyX1FsQlp2LXFWcmlpYlV4ZC1aN2Nfa1Nw?oc=5
-- [HIGH] 6701 NEC | Wed, 21 Oct 2026 | regulatory | NEC再委託先の攻撃原因 大阪公立大システム障害 大学関係者の個人情報も漏洩 - 産経ニュース | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMidkFVX3lxTE9hbnNuYlJ6OFRGdk5xcURwQ1c1eHJCR0U4UHBHTXp3dHZJOFpHczIyOHV6amxScXM1dU5DXzF5VU1ZTU4xSmx1djlLRjdXRVF6d0ZMQ3dWcDVKUEQ5bWF1VjhvNFN1Qll6dVNLeHVlX0lJb1ZmTnc?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
