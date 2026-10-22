@@ -9,10 +9,10 @@
     "max_positions": 5,
     "max_per_theme": 2,
     "max_entries_per_session": 2,
-    "max_position_pct": 0.20,
-    "max_gross_invested_pct": 0.80,
-    "uncertain_regime_size_multiplier": 0.50,
-    "partial_fundamental_size_multiplier": 0.50,
+    "max_position_pct": 0.2,
+    "max_gross_invested_pct": 0.8,
+    "uncertain_regime_size_multiplier": 0.5,
+    "partial_fundamental_size_multiplier": 0.5,
     "stop_loss_pct": 6,
     "take_profit_pct": 12,
     "max_holding_sessions": 15
@@ -20,7 +20,8 @@
   "execution": {
     "round_lot_shares": 100,
     "slippage_bps": 15,
-    "max_pending_calendar_days": 4
+    "max_pending_calendar_days": 4,
+    "max_entry_gap_pct": 3
   },
   "selection": {
     "audit_top_n": 30,
