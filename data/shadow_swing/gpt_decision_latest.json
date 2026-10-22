@@ -1,18 +1,20 @@
 {
-  "decision_id": "gpt-shadow-20261019-postclose-1735-hold-002",
-  "decision_date": "2026-10-19",
+  "decision_id": "gpt-shadow-20261022-postclose-1735-hold-001",
+  "decision_date": "2026-10-22",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
   "meta_gate": {
     "passed": false,
-    "baseline": "Cash; no positions or pending orders.",
-    "incremental_edge_source": "None verified; screening is stale.",
-    "assessment": "No actionable BUY or ADD."
+    "baseline": "Cash only; no positions or pending orders.",
+    "incremental_edge_source": "None verified against HOLD.",
+    "assessment": "No positive incremental edge supported by current post-close data."
   },
   "data_quality_caveats": [
-    "Latest screening was retrieved 2026-10-16, not 2026-10-19.",
-    "Latest ledger is 2026-10-16; its execution_integrity is OK, but the historical 2026-10-06 hard-stop exit was delayed to 2026-10-15."
+    "2026-10-22 post-close screening unavailable; latest retrieval 2026-10-21T12:57:41Z.",
+    "Regime NEUTRAL 52.50; confidence 0.591; actionable false. Supply/demand and SQ inputs partial.",
+    "Latest ledger dated 2026-10-22 already processed before 21:35 JST; potential timing/idempotency defect.",
+    "Execution integrity currently OK with zero pending orders; historical 8622.T stop exit delayed 2026-10-06 to 2026-10-15."
   ],
-  "reason": "HOLD; no verified current post-close screening or positive incremental edge."
+  "reason": "HOLD; no current confirmed mispricing thesis or fresh post-close evidence."
 }
