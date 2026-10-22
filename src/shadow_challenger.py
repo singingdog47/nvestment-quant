@@ -143,7 +143,16 @@ def run(as_of=None, bar_source: Callable | None = None):
         affordable = min(state["cash_jpy"], risk["max_gross_invested_pct"] * cfg["initial_cash_jpy"] -
                          sum(p["qty"] * p["last_price"] for p in state["positions"].values()))
         lot = execution["round_lot_shares"]
-        qty = min(order["qty"], int(min(affordable, order["max_notional"]) // (lot * fill)) * lot)
+        gap = abs(b["open"] / order["signal_price"] - 1) * 100
+        if gap > execution["max_entry_gap_pct"]:
+            events.append({"event": "ENTRY_CANCELLED_GAP", "symbol": order["symbol"]})
+            continue
+        # The open may differ slightly from the signal: permit a bounded 3% gap
+        # while retaining the HARD 20% per-name limit and available-cash cap.
+        tolerance = 1 + execution["max_entry_gap_pct"] / 100
+        hard_cap = risk["max_position_pct"] * cfg["initial_cash_jpy"]
+        max_budget = min(affordable, hard_cap, order["max_notional"] * tolerance)
+        qty = min(order["qty"], int(max_budget // (lot * fill)) * lot)
         if qty < lot or order["symbol"] in state["positions"]:
             events.append({"event": "ENTRY_CANCELLED_CAPACITY", "symbol": order["symbol"]})
             continue
