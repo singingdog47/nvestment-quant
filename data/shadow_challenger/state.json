@@ -1,0 +1,32 @@
+{
+  "cohort": "2026-10-22-agility-1m",
+  "mode": "SHADOW_ONLY",
+  "cash_jpy": 1000000.0,
+  "initial_cash_jpy": 1000000.0,
+  "positions": {},
+  "pending_buys": [
+    {
+      "symbol": "3932.T",
+      "signal_date": "2026-10-22",
+      "qty": 100,
+      "theme": "Other",
+      "signal_price": 1279.0,
+      "max_notional": 200000.0
+    },
+    {
+      "symbol": "6750.T",
+      "signal_date": "2026-10-22",
+      "qty": 100,
+      "theme": "Other",
+      "signal_price": 1987.0,
+      "max_notional": 200000.0
+    }
+  ],
+  "pending_sells": [],
+  "trades": [],
+  "peak_nav_jpy": 1000000.0,
+  "nav_jpy": 1000000.0,
+  "last_run_date": "2026-10-22",
+  "last_screen_date": "2026-10-22",
+  "benchmark_start_close": 420.6000061035156
+}

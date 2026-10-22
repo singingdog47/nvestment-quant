@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-22",
+  "mode": "SHADOW_ONLY",
+  "status": "OK",
+  "nav_jpy": 1000000.0,
+  "return_pct": 0.0,
+  "cash_jpy": 1000000.0,
+  "positions": 0,
+  "pending_buys": 2,
+  "trades": 0,
+  "screen_fresh": true,
+  "regime_actionable": true,
+  "sizing_multiplier": 1.0,
+  "unpriced_symbols": [],
+  "candidate_audit": [
+    {
+      "symbol": "8613.T",
+      "score": 81.86517257806354,
+      "momentum": 57.9033134166214,
+      "price": 1170.0,
+      "theme": "Financials",
+      "fundamental_partial": true,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "8622.T",
+      "score": 80.7849485736478,
+      "momentum": 49.75556762629006,
+      "price": 759.0,
+      "theme": "Financials",
+      "fundamental_partial": true,
+      "vetoes": [
+        "weak_momentum"
+      ],
+      "eligible": false
+    },
+    {
+      "symbol": "3932.T",
+      "score": 74.99813991331003,
+      "momentum": 84.88593155893535,
+      "price": 1279.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "6750.T",
+      "score": 73.3972129472063,
+      "momentum": 70.31504617055948,
+      "price": 1987.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "3635.T",
+      "score": 72.62809099330326,
+      "momentum": 60.77539380771319,
+      "price": 1715.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "2121.T",
+      "score": 71.37261090407212,
+      "momentum": 90.02580119500271,
+      "price": 4000.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "5351.T",
+      "score": 70.8732215103295,
+      "momentum": 44.802417164584476,
+      "price": 1972.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [
+        "weak_momentum"
+      ],
+      "eligible": false
+    },
+    {
+      "symbol": "7744.T",
+      "score": 70.5325092491091,
+      "momentum": 71.68658337859858,
+      "price": 2110.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "545A.T",
+      "score": 70.27222687417748,
+      "momentum": 46.92422596414991,
+      "price": 924.0,
+      "theme": "Other",
+      "fundamental_partial": true,
+      "vetoes": [
+        "weak_momentum"
+      ],
+      "eligible": false
+    },
+    {
+      "symbol": "9757.T",
+      "score": 70.2278058714925,
+      "momentum": 72.43346007604563,
+      "price": 1250.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    }
+  ],
+  "events": [
+    {
+      "event": "BUY_SIGNAL",
+      "symbol": "3932.T",
+      "qty": 100
+    },
+    {
+      "event": "BUY_SIGNAL",
+      "symbol": "6750.T",
+      "qty": 100
+    }
+  ],
+  "benchmark_return_pct": 0.0,
+  "benchmark_comparison_start": "first successfully priced session, not necessarily cohort start",
+  "benchmark_note": "TOPIX comparison optional; missing benchmark never blocks paper entries.",
+  "caveat": "NAV uses last known price for unpriced positions; do not treat as verified daily return."
+}
