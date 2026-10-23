@@ -2,6 +2,12 @@ name: AI Shadow Swing v2 Adversarial
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'src/shadow_swing_v2.py'
+      - 'src/shadow_run_readiness.py'
+      - 'tests/test_shadow_run_readiness.py'
   workflow_run:
     workflows:
       - Investment Quant Post-Close Pipeline v2.13
