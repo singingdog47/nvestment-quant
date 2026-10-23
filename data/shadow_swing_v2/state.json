@@ -13,9 +13,5 @@
   "peak_nav_jpy": 5000000,
   "max_drawdown_pct": 0.0,
   "last_run_date": "2026-10-23",
-  "missing_market_data": [
-    "benchmark_bar_unavailable",
-    "regime_stale_or_non_actionable",
-    "screen_outdated_no_new_trades"
-  ]
+  "missing_market_data": []
 }
