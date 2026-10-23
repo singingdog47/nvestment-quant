@@ -2,10 +2,17 @@ name: AI Shadow Swing v1
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Investment Quant Post-Close Pipeline v2.13
+    types: [completed]
+    branches: [main]
   push:
+    branches: [main]
     paths:
       - '.github/workflows/shadow-swing-v1.yml'
       - 'src/shadow_swing.py'
+      - 'src/shadow_run_readiness.py'
       - 'src/run_shadow_swing.py'
       - 'config/shadow_swing_v1.json'
       - 'tests/test_shadow_swing.py'
@@ -21,6 +28,7 @@ concurrency:
 
 jobs:
   shadow-swing:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
