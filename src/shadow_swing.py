@@ -9,6 +9,8 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
+from shadow_run_readiness import before_today_close, safe_flat_replay
+
 import pandas as pd
 import requests
 
@@ -584,8 +586,12 @@ def run(as_of: date | None = None) -> dict[str, Any]:
     OUT.mkdir(parents=True, exist_ok=True)
     state_path = OUT / "state.json"
     state = read_json(state_path, None) or new_state(cfg)
-    if state.get("last_run_date") == as_of.isoformat():
-        return {"status": "IDEMPOTENT_NOOP", **read_json(OUT / "latest.json", {})}
+    if before_today_close(as_of):
+        return {"status": "PRE_CLOSE_DEFERRED", "as_of_date": as_of.isoformat(),
+                "priority": "P0_DATA_INTEGRITY"}
+    prior = read_json(OUT / "latest.json", {})
+    if state.get("last_run_date") == as_of.isoformat() and not safe_flat_replay(as_of, state, prior, "v1"):
+        return {"status": "IDEMPOTENT_NOOP", **prior}
     if as_of.weekday() >= 5:
         return {"status": "NON_TRADING_DAY", "as_of_date": as_of.isoformat()}
 
@@ -595,6 +601,10 @@ def run(as_of: date | None = None) -> dict[str, Any]:
     regime_fresh = str(regime.get("date_jst") or "") == as_of.isoformat()
     screen_fresh = screening_is_postclose(screen, as_of)
     data_fresh = regime_fresh and screen_fresh
+    if as_of == datetime.now(JST).date() and not state.get("positions") and not state.get("pending_orders") and not data_fresh:
+        return {"status": "WAITING_FRESH_INPUTS", "as_of_date": as_of.isoformat(),
+                "priority": "P0_DATA_INTEGRITY", "screening_fresh": screen_fresh,
+                "regime_fresh": regime_fresh}
 
     if state.get("status") == "ACTIVE" and as_of < end:
         ingest_gpt_decision(state, as_of, cfg)
@@ -622,6 +632,7 @@ def run(as_of: date | None = None) -> dict[str, Any]:
         "as_of_date": as_of.isoformat(),
         "status": state["status"],
         "data_fresh": data_fresh,
+        "decision_priority": "P0_DATA_INTEGRITY" if not data_fresh else ("P1_POSITION_RISK" if state.get("positions") else "P2_ENTRY_REVIEW"),
         "screening_fresh": screen_fresh,
         "regime_fresh": regime_fresh,
         "priced_symbols": sorted(priced_symbols),

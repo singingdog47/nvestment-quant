@@ -17,7 +17,8 @@
     "gpt-shadow-20260921-postclose-1735-market-closed-hold-mito",
     "gpt-shadow-20260923-postclose-1735-market-closed-hold-mito",
     "gpt-shadow-20260924-postclose-1735-stale-data-hold-mito",
-    "gpt-shadow-20261015-preclose-restart-audit-hold-001"
+    "gpt-shadow-20261015-preclose-restart-audit-hold-001",
+    "gpt-shadow-20261023-postclose-1735-hold-001"
   ],
   "realized_pnl_jpy": -12081.3,
   "nav_jpy": 987918.7,
