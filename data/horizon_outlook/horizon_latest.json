@@ -1,17 +1,17 @@
 {
   "version": "1.0.0",
-  "generated_at_utc": "2026-10-22T13:01:07+00:00",
-  "as_of_jst": "2026-10-22",
+  "generated_at_utc": "2026-10-23T12:40:02+00:00",
+  "as_of_jst": "2026-10-23",
   "mode": "RESEARCH_ONLY",
   "source_status": {
     "regime_fresh": true,
     "supply_fresh": true,
-    "regime": "CONSTRUCTIVE",
-    "regime_score": 58.28,
-    "treasury_volatility_shock": false,
+    "regime": "NEUTRAL",
+    "regime_score": 53.43,
+    "treasury_volatility_shock": true,
     "supply_coverage": {
       "free_float_ratio": 0.7115384615384616,
-      "short_interest": 0.25,
+      "short_interest": 0.23076923076923078,
       "current_vs_average_volume": 0.7692307692307693
     },
     "public_watchlist_only": true,
@@ -23,7 +23,7 @@
       "sessions": "5-10",
       "label": "1-2 weeks",
       "validation_horizon": "1w",
-      "view": "CONDITIONAL_RISK_ON",
+      "view": "TWO_WAY_WITH_RATES_VOLATILITY_RISK",
       "hypothesis": "Volume-supported directional continuation is plausible for individually flagged watchlist names; cross-market risk can override.",
       "confirmation": "Validate each logged signal against 1306.T or SPY after the 1w horizon; inspect price breadth and volatility jointly.",
       "invalidation": "A contrary relative return at the predetermined endpoint or worsening rates/credit stress.",
@@ -34,7 +34,7 @@
       "sessions": "20-60",
       "label": "1-3 months",
       "validation_horizon": "1m",
-      "view": "CONDITIONAL_CONSTRUCTIVE",
+      "view": "CONDITIONAL_RISK_REVIEW",
       "hypothesis": "Sector and positioning rotation may outlast an index bounce; corporate earnings and revised guidance must corroborate.",
       "confirmation": "Observe relative sector returns and dated positioning/credit data for 20-60 sessions.",
       "invalidation": "Rotation reverses for several weeks or earnings/credit assumptions change materially.",
@@ -52,8 +52,39 @@
       "trade_policy": "Core accumulation and strategic holdings require separate cash-flow and thesis checks; no long-term directional forecast without evidence."
     }
   ],
-  "prospective_hypotheses": [],
-  "hypothesis_candidates_detected": 0,
+  "prospective_hypotheses": [
+    {
+      "id": "be10ac9424ae2ea2",
+      "market": "US",
+      "symbol": "NWFL",
+      "name": "Norwood Financial Corp. - Common Stock",
+      "benchmark_symbol": "SPY",
+      "horizon": "short",
+      "validation_horizon": "1w",
+      "metric": "total_return_excess_over_benchmark",
+      "threshold": 0.0,
+      "expected_sign": "positive",
+      "probability": 0.55,
+      "probability_label": "uncalibrated_research_prior_not_estimated_accuracy",
+      "issued_at_utc": "2026-10-23T12:40:02+00:00",
+      "as_of_jst": "2026-10-23",
+      "evidence": {
+        "volume_ratio_30d": 3.184269377382465,
+        "context_flags": [
+          "PRICE_UP_ON_VOLUME_EXPANSION",
+          "VOLUME_EXPANSION"
+        ],
+        "data_status": "ok",
+        "confidence": 0.7,
+        "source_retrieved_at": "2026-10-23T12:39:54+00:00",
+        "price_as_of": "2026-10-22T20:00:00+00:00"
+      },
+      "rationale": "Volume expansion and same-direction price movement: continuation hypothesis, not verified net buying/selling.",
+      "falsification": "Relative total return at the existing 1w validation endpoint is <= 0.",
+      "execution": "RESEARCH_ONLY_NO_AUTO_TRADE"
+    }
+  ],
+  "hypothesis_candidates_detected": 1,
   "limits": [
     "Regime confidence describes source coverage, not prediction accuracy.",
     "0.55 is a declared research prior, not a calibrated model probability.",
