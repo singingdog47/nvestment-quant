@@ -6,12 +6,12 @@ Generated quality score: **0.864** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-22T12:59:32+00:00",
-  "generated_at_utc": "2026-10-22T12:59:32+00:00",
-  "date_jst": "2026-10-22",
+  "generated_at": "2026-10-23T00:42:00+00:00",
+  "generated_at_utc": "2026-10-23T00:42:00+00:00",
+  "date_jst": "2026-10-23",
   "data_status": "ok",
-  "regime_label": "CONSTRUCTIVE",
-  "regime_score": 58.28,
+  "regime_label": "NEUTRAL",
+  "regime_score": 49.99,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -24,32 +24,34 @@ Generated quality score: **0.864** / actionable=True
   "overheated_flag": false,
   "stress_flag": false,
   "thin_liquidity_flag": false,
-  "treasury_volatility_shock_flag": false,
+  "treasury_volatility_shock_flag": true,
   "sq_execution_caution_flag": false,
-  "regime_flags": [],
+  "regime_flags": [
+    "TREASURY_VOLATILITY_SHOCK"
+  ],
   "components": {
-    "trend": 58.59738845920853,
-    "stress": 73.65999982833863,
+    "trend": 40.22617527071899,
+    "stress": 71.97499948501587,
     "participation": 41.60219399538106,
-    "liquidity": 55.262348998973266,
+    "liquidity": 39.55878638545035,
     "positioning": 56.71738287234125
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 18.010000228881836,
-    "hy_oas": 3.33,
-    "ig_oas": 0.87,
-    "treasury_volatility_proxy": 87.042,
-    "treasury_volatility_percentile_rank": 0.8968,
-    "treasury_volatility_stress_score": 32.74,
-    "treasury_volatility_as_of_date": "2026-10-21",
+    "vix": 19.030000686645508,
+    "hy_oas": 3.27,
+    "ig_oas": 0.88,
+    "treasury_volatility_proxy": 90.419,
+    "treasury_volatility_percentile_rank": 0.9524,
+    "treasury_volatility_stress_score": 28.57,
+    "treasury_volatility_as_of_date": "2026-10-22",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9561,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-10-22T12:59:30.157859+00:00",
     "nfci": -0.496,
-    "volume_ratio20_mean": 1.0447587249743318,
+    "volume_ratio20_mean": 0.6521696596362587,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -78,9 +80,9 @@ Generated quality score: **0.864** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-10-22",
+      "as_of_date": "2026-10-23",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 50,
+      "days_to_sq": 49,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -92,7 +94,7 @@ Generated quality score: **0.864** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 62907.83984375,
+        "spot": 61728.12890625,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -132,7 +134,7 @@ Generated quality score: **0.864** / actionable=True
 
 ## Policy guardrails
 {
-  "regime_label": "constructive",
+  "regime_label": "neutral",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
     0.08,
@@ -148,7 +150,7 @@ Generated quality score: **0.864** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-10-22T13:01:06+00:00",
+  "generated_at": "2026-10-23T00:43:16+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -192,10 +194,10 @@ Generated quality score: **0.864** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=1 / tier=primary
+- EDINET: ok / records=2 / tier=primary
 - SEC: ok / records=31 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=57 / tier=secondary
+- NewsRSS: ok / records=55 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -270,7 +272,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 8377 ほくほくフィナンシャルグループ | Fri, 29 May 2026 | guidance | ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE5mOXJYY0tyRW8yQUhTZ09US2tkWVM0bEwzUEgteml0SlBUdVZTaU14M3NWZGNUX2FvLTdCb2Z3dHBTVi1WdmlkUVV5ZWZSRVM5SlE?oc=5
 - [CRITICAL] 3635 コーエーテクモホールディングス | Mon, 19 Oct 2026 | guidance | コーエーテクモホールディングス[3635]：業績予想の修正に関するお知らせ 2026年10月19日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE41YlFlN0NMQVhsY2VxRUhGR0hvV2ZGZXBOb0dORDZWTmpoVG5Db0x1dnlNNzQ0SEhhZUp6RzVVZmtTYS1lNlF3TGV6VTdoZXNtaTFzWS1sNWdQMVVnaUQ4el90WDE3UmFvU3c?oc=5
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-09-11 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006252/p15079219_6-k.htm
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-09-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526390696/eqbk-20260910.htm
@@ -304,10 +305,10 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-10-19 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026066288/stng6k-10192026.htm
 - [HIGH] EXE Expand Energy Corporation - Common Stock | 2026-10-19 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/895126/000110465926116739/tm2627775d1_8k.htm
 - [HIGH] ACNB ACNB Corporation - Common Stock | 2026-10-22 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/715579/000162828026066787/acnb-20261022.htm
-- [HIGH] 6701 NEC | Thu, 22 Oct 2026 | regulatory | 【大阪大学】約7万8000人の個人情報漏えい 委託先「NEC」が大学に“無断”で情報を協力会社と共有→サイバー攻撃被害 - Yahoo!ニュース | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMif0FVX3lxTE9XYkFoY29WR1NvaW51bnhWelhKamlMN21CNUNQSTY0bUI2enBRc2RUN00zTkpsQmNxVnZBRFJyeDViNDBjS043NHZxREw3M0lxYkdIV216Zmp0bm5SV1lFLTJUNnNRVzJJYnJaVHM4QW0tUFBzblN4VVlJSTNMT1E?oc=5
+- [HIGH] 8630 Sompo Holdings,Inc. | 2026-10-23 | filing | 変更報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z8VM
+- [HIGH] 8622 水戸証券 | Sat, 07 Mar 2026 | dividend | 水戸証券(8622)、4期連続となる「増配」を発表し、配当利回り5.9％に！ 年間配当は4年で3.0倍に増加、2026年3月期は前期比13円増の｢1株あたり43円｣に！ - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1hN2dNanhnWGxoWUxBZ0JIaXpYYjUxU29WY2V4SDVrV05QZGV2OEFSbnFpS1ZyUHllaUJod0EycUgxUFA5ak4zVktwZ3Jjb1M2SjFN?oc=5
 - [HIGH] 6701 NEC | Thu, 22 Oct 2026 | regulatory | 大阪大学、委託先であるNECの個人情報漏えいについて発表、報告されていない協力会社と契約に基づかずファイルを共有 - INTERNET Watch | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMia0FVX3lxTFBfMzlZZ3Y1cmJpU2dDZlZ5aUphWWdsYXRaMS1DTUtBQmtrVXRFUmp2UklzaXlRYmk0WmZ0NVItRXpObjVEYVpueFNBX0ZEZFVmaU5ZTGJBMXNsb0tPSjItQTJ0bS05dDBSQW5z?oc=5
-- [HIGH] 6701 NEC | Thu, 22 Oct 2026 | regulatory | 大阪大、学生など7.8万人の情報漏えい NECが無断で協力会社とデータ共有 - ITmedia | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1tMU9jU1BTY1BJdE5hYkh6R0J4T0xMWHlQTTR3T3VxUUNTM001NlREYklYSTNhM19VbjZGeDU5M0J3OHU2UFFGaUYtMTFyaWFoVS00SFh4aEpZRVdVYWdSbW03ME9lX0dLeFE?oc=5
-- [HIGH] 8766 東京海上ホールディングス | Wed, 07 Oct 2026 | buyback | 東京海上ホールディングス[8766]：自己株式の取得状況に関するお知らせ 2026年10月7日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1FanduN011eWR1S1pDUmV3WGowYW9FelNDQTVnakRfeHBYRC1UdFhabmlCdmxpNlRpNmE1NlZfSnlqdDlrSEV3ZjRGcjAwbktDdkJtam9SdUNRSW5pU08ybXI2clhGUkUtUVE?oc=5
+- [HIGH] 6701 NEC | Wed, 21 Oct 2026 | regulatory | 委託事業者における個人情報漏えいについて - 大阪大学 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiZEFVX3lxTE9yX29uY2R4V2FsaXJqM2VBdGlVSlFDMFNLQVoyb2g0MmRQYkZfZ2EwTG1hMDA1RENHTmUzbkF1WTFiRnAxdjRwd2otLTlVMVVvMlBsM3dkWUMwOVZGbHI1M2ZCdkk?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
