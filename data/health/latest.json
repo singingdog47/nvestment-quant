@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-10-22T18:09:13.852141+00:00",
+  "generated_at_utc": "2026-10-23T17:57:01.775341+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
-  "incident_signature": "b4d7b53d62871728",
+  "incident_signature": "767b6c2060c156e8",
   "incidents": [
     {
       "key": "ai_ma:benchmark_price_unavailable",
@@ -32,43 +32,18 @@
       "severity": "WARNING",
       "kind": "DATA_INCIDENT",
       "message_ja": "検証用データまたは実行条件に問題があります: fresh_jp_screen_unavailable"
-    },
-    {
-      "key": "shadow_v2:benchmark_bar_unavailable",
-      "component": "shadow_v2",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "検証用データまたは実行条件に問題があります: benchmark_bar_unavailable"
-    },
-    {
-      "key": "shadow_v2:regime_stale_or_non_actionable",
-      "component": "shadow_v2",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "検証用データまたは実行条件に問題があります: regime_stale_or_non_actionable"
-    },
-    {
-      "key": "shadow_v2:screen_outdated_no_new_trades",
-      "component": "shadow_v2",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "検証用データまたは実行条件に問題があります: screen_outdated_no_new_trades"
     }
   ],
   "components": {
     "shadow_v2": {
-      "status": "DATA_IMPAIRED",
+      "status": "HEALTHY",
       "as_of_date": "2026-10-23",
-      "blockers": [
-        "benchmark_bar_unavailable",
-        "regime_stale_or_non_actionable",
-        "screen_outdated_no_new_trades"
-      ],
+      "blockers": [],
       "mode": "SHADOW_ONLY"
     },
     "ai_ma": {
       "status": "DATA_IMPAIRED",
-      "as_of_date": "2026-10-23",
+      "as_of_date": "2026-10-24",
       "blockers": [
         "benchmark_price_unavailable",
         "entry_missing_bar:5351.T",
@@ -79,7 +54,7 @@
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-10-22",
+      "as_of_date": "2026-10-23",
       "blockers": [],
       "mode": null
     }
