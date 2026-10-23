@@ -13,6 +13,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from shadow_swing import fetch_bar, today_jst
+from shadow_run_readiness import before_today_close, safe_flat_replay
 
 ROOT = Path("data")
 OUT = ROOT / "shadow_swing_v2"
@@ -48,6 +49,17 @@ def read_csv(path):
 
 def append_csv(path, row, fields):
     path.parent.mkdir(parents=True, exist_ok=True)
+    # A safe same-day data-recovery pass must update, not duplicate, NAV rows.
+    if path.name == "equity_curve.csv" and path.exists():
+        old = read_csv(path)
+        if any(r.get("date") == str(row.get("date")) for r in old):
+            old = [r for r in old if r.get("date") != str(row.get("date"))]
+            old.append({x: row.get(x) for x in fields})
+            with path.open("w", encoding="utf-8", newline="") as fh:
+                writer = csv.DictWriter(fh, fieldnames=fields)
+                writer.writeheader()
+                writer.writerows([{x: r.get(x) for x in fields} for r in old])
+            return
     exists = path.exists()
     with path.open("a", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=fields)
@@ -303,10 +315,25 @@ def run(as_of=None):
     state = read_json(state_path) if state_path.exists() else initial_state(cfg)
     if state.get("cohort") != cfg["cohort"] or state.get("initial_cash_jpy") != cfg["initial_cash_jpy"]:
         raise ValueError("Immutable cohort/initial capital mismatch; refusing to reset history")
-    if state.get("last_run_date") == as_of.isoformat():
+    if before_today_close(as_of):
+        return {"status": "PRE_CLOSE_DEFERRED", "as_of_date": as_of.isoformat(),
+                "priority": "P0_DATA_INTEGRITY"}
+    prior = read_json(OUT / "latest.json", {})
+    if state.get("last_run_date") == as_of.isoformat() and not safe_flat_replay(as_of, state, prior, "v2"):
         return {"status": "ALREADY_PROCESSED", "nav_jpy": state["nav_jpy"]}
     if as_of.weekday() >= 5:
         return {"status": "NON_TRADING_DAY"}
+    # A flat account must not consume today's idempotency slot while the
+    # upstream scanner/regime pipeline is still stale or running.
+    if as_of == datetime.now(JST).date() and not state.get("positions") and not state.get("pending_buys"):
+        screen_head = read_csv(ROOT / "screening_latest.csv")
+        regime_head = read_json(ROOT / "regime" / "market_regime_latest.json", {})
+        fresh_screen = bool(screen_head and after_jp_market_close(screen_head[0].get("data_retrieved_at_utc"), as_of))
+        fresh_regime = regime_head.get("date_jst") == as_of.isoformat() and regime_head.get("actionable", False)
+        if not fresh_screen or not fresh_regime:
+            return {"status": "WAITING_FRESH_INPUTS", "as_of_date": as_of.isoformat(),
+                    "priority": "P0_DATA_INTEGRITY", "screening_fresh": fresh_screen,
+                    "regime_fresh": bool(fresh_regime)}
 
     bars = {}
     def market_bar(symbol):
@@ -477,6 +504,7 @@ def run(as_of=None):
         "cash_jpy": round(state["cash_jpy"], 2), "open_positions": len(holdings),
         "completed_trades": state["completed_trades"], "queued_buys": len(state["pending_buys"]),
         "market_data_blockers": sorted(set(failures)),
+        "decision_priority": "P0_DATA_INTEGRITY" if failures else ("P1_POSITION_RISK" if holdings else "P2_ENTRY_REVIEW"),
         "events": events, "candidate_audit": audits,
         "methodology": "Rule-driven paper test; not a validated alpha model or ChatGPT discretionary fill",
         "comparison": "v1 stays in data/shadow_swing, unmodified and historically comparable"
