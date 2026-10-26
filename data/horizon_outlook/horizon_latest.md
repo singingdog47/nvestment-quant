@@ -1,5 +1,5 @@
 # Multi-horizon research outlook
-Generated (UTC): 2026-10-23T12:40:02+00:00
+Generated (UTC): 2026-10-26T14:19:33+00:00
 Public watchlist only; no private holdings or automatic trades.
 
 ## 短期・中期・長期の仮説と売買方針
@@ -11,7 +11,7 @@ Public watchlist only; no private holdings or automatic trades.
 | long (1-3 years) | FUNDAMENTALS_NOT_ESTABLISHED | Core accumulation and strategic holdings require separate cash-flow and thesis checks; no long-term directional forecast without evidence. |
 
 ## Prospective, testable demand hypotheses
-- [short] NWFL excess vs SPY: positive (> or < 0). p=0.55 (uncalibrated). ID=be10ac9424ae2ea2
+- No eligible fresh signal; do not manufacture a directional forecast.
 
 ## 検証
 - Scored: 0, pending: 1, mean Brier: None

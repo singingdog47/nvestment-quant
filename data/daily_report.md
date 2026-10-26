@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-23T12:38:51.991864+00:00
+- Data retrieved (UTC): 2026-10-26T14:18:22.975028+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -26,8 +26,8 @@
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 6 |
-| JP | Other | 14 |
+| JP | Financials | 7 |
+| JP | Other | 13 |
 | US | Financials | 13 |
 | US | Other | 3 |
 | US | Shipping | 4 |
@@ -36,26 +36,26 @@
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8613.T | Marusan Securities Co.,Ltd. | Financials | 82.3 | 100.0 | unchanged |
-| JP | 2 | 8622.T | Mito Securities Co.,Ltd. | Financials | 80.9 | 99.9 | unchanged |
-| JP | 5 | 3932.T | Akatsuki Inc. | Other | 74.6 | 99.8 | unchanged |
-| JP | 6 | 6750.T | ELECOM CO.,LTD. | Other | 73.7 | 99.7 | unchanged |
-| JP | 8 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.5 | 99.6 | unchanged |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.3 | 99.5 | unchanged |
-| JP | 11 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 70.7 | 99.5 | unchanged |
-| JP | 12 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.6 | 99.4 | unchanged |
-| JP | 13 | 545A.T | Toranvia Co.,Ltd. | Other | 70.5 | 99.4 | unchanged |
-| JP | 14 | 9757.T | Funai Soken Holdings Incorporated | Other | 70.2 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.3 | 100.0 | unchanged |
-| US | 2 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.6 | 100.0 | unchanged |
-| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.5 | 99.9 | unchanged |
-| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 82.2 | 99.9 | unchanged |
-| US | 8 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.8 | 99.8 | unchanged |
-| US | 10 | BUSE | First Busey Corporation - Common Stock | Other | 81.7 | 99.7 | unchanged |
-| US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 81.0 | 99.6 | unchanged |
-| US | 23 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.5 | 99.3 | unchanged |
-| US | 29 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 78.9 | 99.2 | unchanged |
-| US | 30 | FRO | Frontline Plc Ordinary Shares | Other | 78.9 | 99.1 | unchanged |
+| JP | 1 | 8613.T | Marusan Securities Co.,Ltd. | Financials | 81.8 | 100.0 | unchanged |
+| JP | 2 | 8622.T | Mito Securities Co.,Ltd. | Financials | 80.1 | 99.9 | unchanged |
+| JP | 5 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.8 | unchanged |
+| JP | 6 | 3932.T | Akatsuki Inc. | Other | 73.3 | 99.7 | unchanged |
+| JP | 8 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.9 | 99.6 | unchanged |
+| JP | 9 | 545A.T | Toranvia Co.,Ltd. | Other | 71.4 | 99.6 | unchanged |
+| JP | 11 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 71.2 | 99.5 | unchanged |
+| JP | 12 | 2121.T | MIXI,Inc. | Other | 70.8 | 99.4 | unchanged |
+| JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.3 | 99.4 | unchanged |
+| JP | 14 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 70.3 | 99.3 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.6 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.2 | 100.0 | unchanged |
+| US | 3 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.7 | 99.9 | unchanged |
+| US | 5 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.4 | 99.9 | unchanged |
+| US | 6 | DHT | DHT Holdings, Inc. | Shipping | 82.3 | 99.8 | unchanged |
+| US | 11 | BUSE | First Busey Corporation - Common Stock | Other | 81.7 | 99.7 | unchanged |
+| US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 81.4 | 99.6 | unchanged |
+| US | 25 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.5 | 99.3 | unchanged |
+| US | 26 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.2 | 99.2 | unchanged |
+| US | 29 | FRO | Frontline Plc Ordinary Shares | Other | 79.1 | 99.2 | unchanged |
 
 ## Required manual checks before an order
 
