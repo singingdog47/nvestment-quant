@@ -86,3 +86,34 @@ def test_midnight_delayed_workflow_uses_prior_postclose_session():
     assert c.resolve_market_session(now, screen) == date(2026, 10, 22)
     assert c.resolve_market_session(datetime(2026, 10, 23, 9, 1, tzinfo=ZoneInfo("Asia/Tokyo")), screen) == date(2026, 10, 23)
     assert c.resolve_market_session(now, [{"data_retrieved_at_utc": "2026-10-21T12:57:00Z"}]) == date(2026, 10, 23)
+
+
+def test_activity_and_november_target_audit_without_fake_trades(tmp_path, monkeypatch):
+    cfg, data = setup_case(tmp_path, monkeypatch)
+    # Recreate historical cohort close to the user's challenge.
+    state = c.new_state(cfg)
+    state["last_run_date"] = "2026-10-30"
+    state["nav_jpy"] = 980000
+    c.write_json(c.OUT / "state.json", state)
+    nov_bar = {"open": 1000, "high": 1010, "low": 990, "close": 1000}
+    first = c.run(date(2026, 11, 2), bar_source=lambda s, d: nov_bar if s == "1306.T" else None)
+    assert first["activity_goal"]["status"] == "DEADLINE_MISSED"
+    assert first["activity_goal"]["verified_fills_since_start"] == 0
+    assert first["monthly_goal"]["baseline_nav_jpy"] == 980000
+    assert first["monthly_goal"]["return_pct"] == 0
+    assert first["monthly_goal"]["status"] == "BELOW_TARGET_SO_FAR"
+
+
+def test_verified_buy_logged_once_and_counts_for_activity(tmp_path, monkeypatch):
+    setup_case(tmp_path, monkeypatch)
+    c.run(date(2026, 10, 22), bar_source=lambda s, d: None)
+    b = {"open": 1010, "high": 1020, "low": 1005, "close": 1015}
+    r = c.run(date(2026, 10, 26), bar_source=lambda s, d: b if s == "1234.T" else None)
+    # Existing order expiry is four calendar days; 22 -> 26 is still permitted.
+    assert r["activity_goal"]["status"] == "PASSED"
+    assert r["activity_goal"]["verified_fills_since_start"] == 1
+    assert r["activity_goal"]["fills"][0]["side"] == "BUY"
+    assert r["activity_goal"]["fills"][0]["source"] == "verified_session_open"
+    again = c.run(date(2026, 10, 26), bar_source=lambda s, d: b)
+    assert again["status"] == "ALREADY_PROCESSED"
+    assert len(c.load_json(c.OUT / "state.json")["execution_log"]) == 1
