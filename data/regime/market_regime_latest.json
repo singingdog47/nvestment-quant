@@ -1,12 +1,12 @@
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-26T15:08:32+00:00",
-  "generated_at_utc": "2026-10-26T15:08:32+00:00",
+  "generated_at": "2026-10-26T15:29:15+00:00",
+  "generated_at_utc": "2026-10-26T15:29:15+00:00",
   "date_jst": "2026-10-27",
   "data_status": "ok",
   "regime_label": "NEUTRAL",
-  "regime_score": 48.23,
+  "regime_score": 48.33,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -26,15 +26,15 @@
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 40.891692907326885,
-    "stress": 72.52499977111816,
-    "participation": 41.53952843273232,
-    "liquidity": 24.109141475477394,
+    "trend": 40.878461992978,
+    "stress": 72.54750028610229,
+    "participation": 41.58865002311604,
+    "liquidity": 24.73281239172523,
     "positioning": 59.04864260835684
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 17.93000030517578,
+    "vix": 17.899999618530273,
     "hy_oas": 3.38,
     "ig_oas": 0.91,
     "treasury_volatility_proxy": 89.332,
@@ -45,9 +45,9 @@
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9559,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-26T15:08:29.840357+00:00",
+    "breadth_source_as_of_utc": "2026-10-26T15:29:13.199383+00:00",
     "nfci": -0.496,
-    "volume_ratio20_mean": 0.26592853688693485,
+    "volume_ratio20_mean": 0.28152030979313075,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
