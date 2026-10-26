@@ -12,6 +12,8 @@
   "nav_jpy": 5000000,
   "peak_nav_jpy": 5000000,
   "max_drawdown_pct": 0.0,
-  "last_run_date": "2026-10-23",
-  "missing_market_data": []
+  "last_run_date": "2026-10-26",
+  "missing_market_data": [
+    "market_stress_no_new_entries"
+  ]
 }
