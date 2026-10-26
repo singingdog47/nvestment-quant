@@ -1,75 +1,71 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-10-23T12:40:03+00:00
+Generated: 2026-10-26T00:26:03+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 6
-- WATCH: 24
+- WARNING: 2
+- WATCH: 26
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [ANYCOLOR]: 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞
-  - New company event detected for ANYCOLOR.
-- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [東京海上ホールディングス]: 東京海上ホールディングス[8766]：自己株式の取得状況に関するお知らせ 2026年10月7日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for 東京海上ホールディングス.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [WesBanco, Inc. - Common Stock]: SEC 8-K filing
-  - New company event detected for WesBanco, Inc. - Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [WesBanco, Inc. - Common Stock]: SEC 8-K filing
-  - New company event detected for WesBanco, Inc. - Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [ほくほくフィナンシャルグループ]: ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance
-  - New company event detected for ほくほくフィナンシャルグループ.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [信越化学工業]: 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for 信越化学工業.
 - **WARNING** VOLATILITY/TREASURY_VOLATILITY_SHOCK: Treasury yield volatility is unusually high
   - The official-Treasury realized-yield-volatility proxy is at or above its 90th percentile. It is not ICE MOVE.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: 剣持刀也【虚空狂宴】ライブレポート 音楽フェスと虚空教が交差！ 星街すいせい、葛葉、ピーナッツくんが駆けつける - ANYCOLOR MAGAZINE
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: ＡＮＹＣＯＬＯＲ(株)【5032】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for ANYCOLOR.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: 葛葉“Bloody Alexandrite”レポート その歩みこそ王道、現実と魔界の二面性で魅せたアーティストとしての真骨頂 - ANYCOLOR MAGAZINE
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: にじさんじ・伊波ライ 1st ミニアルバム「Hero」をデジタルリリース＆アルバムリリース記念3Dソロライブ「Behavior」が伊波ライYouTubeチャンネルにて開催決定 - PANORA
   - New company event detected for ANYCOLOR.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: 【ゲームエンタメ株概況(10/22)】レーティングに絡んだ変動目立つ 東宝が高くバンナムHDとANYCOLOR安い(gamebiz) - Yahoo!ファイナンス
-  - New company event detected for ANYCOLOR.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: FOOD＆LIFE（3563）FY2026 月次情報 (9月期) - 四季報オンライン
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: (株)ＦＯＯＤ ＆ ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ【3563】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for FOOD & LIFE COMPANIES.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: (株)ＦＯＯＤ ＆ ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ【3563】：決算情報 - Yahoo!ファイナンス
-  - New company event detected for FOOD & LIFE COMPANIES.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIが謝罪「グループ会社の活動に関連して発生」モンゴル自然保護区で大規模火災（2026年10月22日掲載） - 日テレNEWS NNN
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: モンゴル当局が賠償請求検討 ＫＤＤＩ「法令違反ない」―草原火災 - 時事ドットコム
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: モンゴルの自然保護区の8割が被害 KDDI子会社の車両火元、当局が賠償請求検討 - 産経ニュース
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 大規模火災、モンゴル政府が賠償請求検討 KDDI子会社モビコム絡み発生 - 日本経済新聞
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 【モンゴル大規模火災】“東京都の2倍以上”が焼失…KDDIが謝罪 子会社幹部ら自然保護区を訪問中…“車体の下部に大量の草が絡まり発火”現地メディア（日テレNEWS NNN） - Yahoo!ニュース
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: モンゴル草原火災でKDDIが謝罪「多大なご迷惑とご心配おかけした」グループ会社の日本人社長らの車から煙…経緯を公表 - TBS NEWS DIG
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: モンゴルの自然保護区で大規模な草原火災…ＫＤＤＩ子会社の車列から出火か、モンゴル側は補償を求める考え - 読売新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 【経緯まとめ】モンゴルで大規模火災、自然保護区の約8割が焼ける 火元はKDDIグループ会社の幹部ら乗った車か KDDI経緯説明と謝罪​「社員が法令違反行為をしていないと確認」（テレビ朝日系（ANN）） - Yahoo!ニュース
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: VLMでライブカメラ映像から現場状況をスコア化し、災害予兆を早期に発見できるAIを新たに開発 - NEC
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: モンゴルで大規模な草原火災 KDDI現地子会社の車から出火か - 朝日新聞
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、災害予兆を早期発見するAI開発（時事通信） - Yahoo!ニュース
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、災害の兆候をAIで把握 ライブカメラ映像を分析 - 日本経済新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: Astemo vs NEC川崎｜SV.LEAGUE 公式サイト - svleague.jp
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくＦＧ、よさこいチームが14日に活動終了 ソーラン本祭で最終演舞 - ニッキンONLINE
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECよどこへ行く 森田改革の成否 - 日経クロステック
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 日本製鉄、NECなど／新聞からの銘柄材料一覧(フィスコ) - Yahoo!ファイナンス
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくＦＧ - 日本経済新聞
   - New company event detected for ほくほくフィナンシャルグループ.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: マーケット速報 - 佐賀新聞
-  - New company event detected for ほくほくフィナンシャルグループ.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 初期威名1,000の長宗我部元親が新登場！歴史SLGの日キャンペーンや戦国双六イベントも - コーエーテクモゲームス
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: (株)コーエーテクモホールディングス【3635】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for コーエーテクモホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 和服に着替え、愛犬のコーギーに癒される。コーエーテクモホールディングス・鯉沼久史社長の休日の過ごし方 - 現代ビジネス
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 「歴史シミュレーションゲームの日」記念イベント開催！帰参者キャンペーン実施中 - コーエーテクモゲームス
   - New company event detected for コーエーテクモホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 『Wo Long 2: Wings of Ember』α体験版アンケート結果および製品版に向けての改善方針を公開 - コーエーテクモゲームス
-  - New company event detected for コーエーテクモホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: アニメニュースや声優の旬な情報を毎日更新 - アニメイトタイムズ
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: ライフドリンクカンパニー（2585）、2027年3月期は増産+20％、増収+37％、営業増益+22％を目指す - ログミーFinance
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: (株)三越伊勢丹ホールディングス【3099】：株主優待 - Yahoo!ファイナンス
   - New company event detected for 三越伊勢丹ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: 2026.10.20 貨物列車（3099列車）秋田駅発車 秋田駅約2分遅れ - YouTube
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: (株)三越伊勢丹ホールディングス【3099】：ニュース・最新情報 - Yahoo!ファイナンス
   - New company event detected for 三越伊勢丹ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: 株式会社三越伊勢丹ホールディングス 会社説明会【IR広告】 - トウシル
-  - New company event detected for 三越伊勢丹ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 小田急電鉄 4063 (小田急4000形) 車内設備、様子(乗車記録の写真一覧) - レイルラボ
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業、東京エレクトロン…エヌビディア、サムスンが熱視線を送る日本企業の基盤技術 - JBpress
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [水戸証券]: 水戸証券（8622）の株主優待｜国内株式 - SBI証券
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: バフェット銘柄の特性を踏まえた日本株のスクリーニング（2026年4月） 野村證券ストラテジストが解説 - 野村證券
+  - New company event detected for 東京海上ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: マーケット速報 - 山陽新聞
+  - New company event detected for 東京海上ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: 東京海上ホールディングス[8766]の株価・株主優待など。 - 日本経済新聞
+  - New company event detected for 東京海上ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [水戸証券]: 水戸証券 (8622) : 今後の予想・売買予想・AI株価診断 [Mito Securities Co.,] - みんかぶ
   - New company event detected for 水戸証券.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス[6965]の株価・株主優待など。 - 日本経済新聞
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス(株)【6965】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for 浜松ホトニクス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス株式会社さま - 中部電力ミライズ
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 先進半導体パッケージの故障解析、浜松ホトニクスが新装置：7つの解析手法を1台の装置に統合 - EE Times Japan
   - New company event detected for 浜松ホトニクス.
-- **WATCH** COMPANY_EVENT/EVENT_MANAGEMENT [KDDI]: モンゴルの大草原を焼いたKDDI子会社の車両火災､自然保護区の8割が被害か……現場に日本人CEO､損害賠償は必至 - 東洋経済オンライン
-  - New company event detected for KDDI.
 
 ## Governance
 - Alerts are deterministic exception flags, not buy/sell signals.
