@@ -94,6 +94,7 @@ def test_activity_and_november_target_audit_without_fake_trades(tmp_path, monkey
     state = c.new_state(cfg)
     state["last_run_date"] = "2026-10-30"
     state["nav_jpy"] = 980000
+    state["cash_jpy"] = 980000
     c.write_json(c.OUT / "state.json", state)
     nov_bar = {"open": 1000, "high": 1010, "low": 990, "close": 1000}
     first = c.run(date(2026, 11, 2), bar_source=lambda s, d: nov_bar if s == "1306.T" else None)
