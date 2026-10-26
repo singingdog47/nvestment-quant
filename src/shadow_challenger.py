@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Callable
 
 from shadow_swing import today_jst
+from shadow_run_readiness import before_today_close
 from shadow_swing_v2 import verified_daily_bar, after_jp_market_close
 
 DATA = Path("data")
@@ -54,6 +55,7 @@ def new_state(cfg):
         "pending_buys": [], "pending_sells": [], "trades": [],
         "peak_nav_jpy": cash, "nav_jpy": cash, "last_run_date": None,
         "last_screen_date": None, "benchmark_start_close": None,
+        "execution_log": [], "november_baseline_nav_jpy": None,
     }
 
 
@@ -126,6 +128,7 @@ def valid_bar(bar):
 
 
 def run(as_of=None, bar_source: Callable | None = None):
+    explicit_replay = as_of is not None
     as_of = as_of or resolve_market_session(datetime.now(ZoneInfo("Asia/Tokyo")), rows(DATA / "screening_latest.csv"))
     cfg = load_json(CONFIG)
     if cfg["mode"] != "SHADOW_ONLY":
@@ -137,6 +140,15 @@ def run(as_of=None, bar_source: Callable | None = None):
         raise ValueError("Immutable cohort mismatch")
     if state.get("last_run_date") == as_of.isoformat():
         return {"status": "ALREADY_PROCESSED", "nav_jpy": state["nav_jpy"]}
+    if not explicit_replay and before_today_close(as_of):
+        return {"status": "PRE_CLOSE_DEFERRED", "as_of_date": as_of.isoformat(),
+                "priority": "P0_DATA_INTEGRITY"}
+    # Capture the last October NAV BEFORE Nov first-trading-day paper executions.
+    # Missing Oct 30 is an explicit missing baseline, never a manufactured return.
+    november = cfg.get("objectives", {}).get("november_2026", {})
+    if as_of.strftime("%Y-%m") == november.get("month") and state.get("november_baseline_nav_jpy") is None:
+        if state.get("last_run_date") == november.get("baseline_session"):
+            state["november_baseline_nav_jpy"] = float(state["nav_jpy"])
 
     source = bar_source or verified_daily_bar
     cache = {}
@@ -190,6 +202,10 @@ def run(as_of=None, bar_source: Callable | None = None):
         }
         state["cash_jpy"] -= qty * fill
         events.append({"event": "BUY", "symbol": order["symbol"], "qty": qty, "price": round(fill, 3)})
+        state.setdefault("execution_log", []).append(
+            {"date": as_of.isoformat(), "side": "BUY", "symbol": order["symbol"],
+             "qty": qty, "fill_price": round(fill, 4),
+             "source": "verified_session_open", "paper_only": True})
     state["pending_buys"] = pending
 
     # Exit at a VERIFIED bar. Intraday stop takes precedence over target if both hit.
@@ -217,6 +233,10 @@ def run(as_of=None, bar_source: Callable | None = None):
                      "pnl_jpy": round(pnl, 2), "reason": reason}
             state["trades"].append(trade)
             events.append({"event": "SELL", **trade})
+            state.setdefault("execution_log", []).append(
+                {"date": as_of.isoformat(), "side": "SELL", "symbol": symbol,
+                 "qty": pos["qty"], "fill_price": round(exit_price, 4),
+                 "source": "verified_session_ohlc", "paper_only": True})
             del state["positions"][symbol]
             continue
         pos["last_price"] = b["close"]
@@ -277,6 +297,24 @@ def run(as_of=None, bar_source: Callable | None = None):
     state["nav_jpy"] = round(nav, 2)
     state["peak_nav_jpy"] = max(state["peak_nav_jpy"], nav)
     state["last_run_date"] = as_of.isoformat()
+    objectives = cfg.get("objectives", {})
+    activity = objectives.get("three_day_activity", {})
+    since = activity.get("start_date", "2026-10-26")
+    verified = [x for x in state.get("execution_log", [])
+                if x.get("date", "") >= since and x.get("source", "").startswith("verified_")]
+    deadline = activity.get("deadline_jst")
+    deadline_date = deadline[:10] if deadline else ""
+    activity_status = ("PASSED" if len(verified) >= activity.get("min_verified_fills", 1)
+                       else "DEADLINE_MISSED" if deadline_date and as_of.isoformat() >= deadline_date
+                       else "AWAITING_VERIFIED_FILL")
+    month = objectives.get("november_2026", {})
+    baseline = finite(state.get("november_baseline_nav_jpy"))
+    is_november = as_of.strftime("%Y-%m") == month.get("month")
+    november_return = round(100 * (nav / baseline - 1), 3) if is_november and baseline and baseline > 0 and not unpriced else None
+    monthly_status = ("NOT_STARTED" if not is_november else
+                      "BASELINE_OR_PRICES_MISSING" if november_return is None else
+                      "TARGET_REACHED_SO_FAR" if november_return >= month.get("monthly_return_target_pct", 3)
+                      else "BELOW_TARGET_SO_FAR")
     state["last_screen_date"] = as_of.isoformat() if screen_fresh else state.get("last_screen_date")
     result = {
         "date": as_of.isoformat(), "mode": "SHADOW_ONLY", "status": "OK" if screen_fresh else "NO_NEW_SIGNALS",
@@ -286,6 +324,13 @@ def run(as_of=None, bar_source: Callable | None = None):
         "screen_fresh": screen_fresh, "regime_actionable": regime_ok,
         "sizing_multiplier": size_multiplier, "unpriced_symbols": unpriced,
         "candidate_audit": audits[:10], "events": events,
+        "activity_goal": {"start_date": since, "deadline_jst": deadline,
+                          "verified_fills_since_start": len(verified),
+                          "fills": verified[-10:], "status": activity_status},
+        "monthly_goal": {"month": month.get("month"), "return_target_pct": month.get("monthly_return_target_pct"),
+                         "baseline_session": month.get("baseline_session"), "baseline_nav_jpy": baseline,
+                         "return_pct": november_return, "status": monthly_status,
+                         "no_forced_trades": True},
         "benchmark_return_pct": round(benchmark_return, 3) if benchmark_return is not None else None,
         "benchmark_comparison_start": "first successfully priced session, not necessarily cohort start",
         "benchmark_note": "TOPIX comparison optional; missing benchmark never blocks paper entries.",
@@ -301,6 +346,8 @@ def run(as_of=None, bar_source: Callable | None = None):
         f"Fresh screen: {screen_fresh} | Regime actionable: {regime_ok} | "
         f"Sizing multiplier: {size_multiplier}\n\n"
         f"Unpriced: {unpriced}\n\n"
+        f"Activity checkpoint: {activity_status} | post-Oct-26 verified fills: {len(verified)}\n\n"
+        f"Nov target: +{month.get('monthly_return_target_pct')}% | MTD: {november_return} | {monthly_status}\n\n"
         "No actual broker orders. Signals and fills are separate sessions.\n",
         encoding="utf-8")
     return result

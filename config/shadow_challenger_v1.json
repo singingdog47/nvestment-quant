@@ -37,5 +37,24 @@
     "verified_ohlc_for_fills": true,
     "no_synthetic_fills": true,
     "preserve_v1_v2": true
+  },
+  "objectives": {
+    "three_day_activity": {
+      "start_date": "2026-10-26",
+      "deadline_jst": "2026-10-29T11:10:50+09:00",
+      "min_verified_fills": 1,
+      "count_new_fills_only": true,
+      "no_synthetic_or_forced_trades": true
+    },
+    "november_2026": {
+      "month": "2026-11",
+      "monthly_return_target_pct": 3,
+      "baseline_session": "2026-10-30",
+      "assessment_session": "2026-11-30",
+      "return_basis": "nav_change_from_previous_month_end_after_costs",
+      "baseline_required": true,
+      "trade_count_and_drawdown_required": true,
+      "monthly_return_not_guaranteed": true
+    }
   }
 }
