@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-26T15:31:48+00:00
+Generated (UTC): 2026-10-26T16:06:56+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,11 +11,11 @@ Generated (UTC): 2026-10-26T15:31:48+00:00
 
 ## 2. 市場レジーム
 - Regime: **NEUTRAL**
-- Score: 48.33
+- Score: 48.37
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 17.899999618530273
+- VIX: 17.889999389648438
 - Treasury realized-vol proxy (not ICE MOVE): 89.332 bps annualized; percentile=0.9325
 - Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
@@ -42,43 +42,43 @@ Generated (UTC): 2026-10-26T15:31:48+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 4, 'WARNING': 5, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / キヤノン、信越化学工業も…「下落が怖い」人向け"高配当"半導体・AI株7銘柄の実名 - 現代ビジネス
-- [WARNING] COMPANY_EVENT / 水戸証券[8622]：2026年３月期決算短信〔日本基準〕(非連結) 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WARNING] LIQUIDITY / Market liquidity is weak
+- Counts: {'INFO': 0, 'WATCH': 9, 'WARNING': 3, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / コーテクＨＤ、今期経常を21％上方修正、配当も8円増額 - 株探
 - [WARNING] LIQUIDITY / Thin liquidity flag active
 - [WARNING] VOLATILITY / Treasury yield volatility is unusually high
-- [WATCH] COMPANY_EVENT / ほくほくＦＧ、今期経常は10％増で2期連続最高益、40円増配へ - 株探
-- [WATCH] COMPANY_EVENT / 500mlボトルが約50円。低価格でも“増収増益”の成長を続けるライフドリンク カンパニーが重要視する3つの戦略 - ネットショップ担当者フォーラム
-- [WATCH] COMPANY_EVENT / 創業100周年の信越化学工業 上越市と新潟県に計1億円寄付 - 上越妙高タウン情報
+- [WATCH] COMPANY_EVENT / ＦＯＯＤ ＆ ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ（3563）の3か月間の株価はどう動き、高値・安値はどこだった？【2026年5月28日】（LIMO） - Yahoo!ニュース
+- [WATCH] COMPANY_EVENT / FOOD & LIFE COMPANIES､1Q好発進も北京で発生の不安材料 - 四季報オンライン
+- [WATCH] COMPANY_EVENT / モンゴル保護区火災が中国に拡大 KDDI「社員の車両から発煙」謝罪 釣り疑惑は否定（テレビ朝日系（ANN）） - Yahoo!ニュース
+- [WATCH] COMPANY_EVENT / ほくほくフィナンシャルグループとの半導体サプライチェーン強化に関する連携協定の締結について - 西日本新聞me
+- [WATCH] COMPANY_EVENT / Ｌドリンク - 日本経済新聞
 
 ## 5. スクリーニング上位候補
 
 ### 日本株（市場内順位）
 - 1. Marusan Securities Co.,Ltd. 8613.T | market_rank=1.0 | raw=81.82089165646359 | cross_pct=100.0
 - 2. Mito Securities Co.,Ltd. 8622.T | market_rank=2.0 | raw=80.14274102169676 | cross_pct=99.94837377387714
-- 3. ELECOM CO.,LTD. 6750.T | market_rank=5.0 | raw=73.37224254904736 | cross_pct=99.79349509550852
-- 4. Akatsuki Inc. 3932.T | market_rank=6.0 | raw=73.33319827364109 | cross_pct=99.74186886938566
-- 5. KOEI TECMO HOLDINGS CO.,LTD. 3635.T | market_rank=8.0 | raw=71.91551274458453 | cross_pct=99.6386164171399
+- 3. ELECOM CO.,LTD. 6750.T | market_rank=5.0 | raw=73.36984257419337 | cross_pct=99.79349509550852
+- 4. Akatsuki Inc. 3932.T | market_rank=6.0 | raw=73.33100828767772 | cross_pct=99.74186886938566
+- 5. KOEI TECMO HOLDINGS CO.,LTD. 3635.T | market_rank=8.0 | raw=71.91608809927101 | cross_pct=99.6386164171399
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.55578397058096 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.30766258814461 | cross_pct=99.96986136226641
-- 3. Norwood Financial Corp. - Common Stock NWFL | market_rank=3.0 | raw=82.68308722611523 | cross_pct=99.93972272453286
-- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=5.0 | raw=82.37840583722836 | cross_pct=99.87944544906571
-- 5. DHT Holdings, Inc. DHT | market_rank=6.0 | raw=82.28940061498778 | cross_pct=99.84930681133213
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.50649511599623 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.38944136136399 | cross_pct=99.96987044290448
+- 3. Norwood Financial Corp. - Common Stock NWFL | market_rank=3.0 | raw=82.60976362915068 | cross_pct=99.93974088580899
+- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=5.0 | raw=82.39436303379091 | cross_pct=99.87948177161796
+- 5. DHT Holdings, Inc. DHT | market_rank=6.0 | raw=82.30394645533997 | cross_pct=99.84935221452244
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.55578397058096
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.50649511599623
 - 2. [JP] Marusan Securities Co.,Ltd. | cross_pct=100.0 | raw=81.82089165646359
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.96986136226641 | raw=83.30766258814461
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.96987044290448 | raw=83.38944136136399
 - 4. [JP] Mito Securities Co.,Ltd. | cross_pct=99.94837377387714 | raw=80.14274102169676
-- 5. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.93972272453286 | raw=82.68308722611523
-- 6. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.87944544906571 | raw=82.37840583722836
-- 7. [US] DHT Holdings, Inc. | cross_pct=99.84930681133213 | raw=82.28940061498778
-- 8. [JP] ELECOM CO.,LTD. | cross_pct=99.79349509550852 | raw=73.37224254904736
-- 9. [JP] Akatsuki Inc. | cross_pct=99.74186886938566 | raw=73.33319827364109
-- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.66847498493068 | raw=81.61030028935936
+- 5. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.93974088580899 | raw=82.60976362915068
+- 6. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.87948177161796 | raw=82.39436303379091
+- 7. [US] DHT Holdings, Inc. | cross_pct=99.84935221452244 | raw=82.30394645533997
+- 8. [JP] ELECOM CO.,LTD. | cross_pct=99.79349509550852 | raw=73.36984257419337
+- 9. [JP] Akatsuki Inc. | cross_pct=99.74186886938566 | raw=73.33100828767772
+- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.66857487194937 | raw=81.56499245293693
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -108,8 +108,8 @@ Generated (UTC): 2026-10-26T15:31:48+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは64.9点だが確認閾値未達
-- 上位: スタンダード 64.9 / テクノロジー 61.9 / ビットコイン 46.4
+- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは60.8点だが確認閾値未達
+- 上位: スタンダード 60.8 / テクノロジー 58.8 / ビットコイン 46.1
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

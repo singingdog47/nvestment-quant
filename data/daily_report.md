@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-26T15:29:13.199383+00:00
+- Data retrieved (UTC): 2026-10-26T16:04:39.342817+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -46,16 +46,16 @@
 | JP | 12 | 2121.T | MIXI,Inc. | Other | 70.8 | 99.4 | unchanged |
 | JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.3 | 99.4 | unchanged |
 | JP | 14 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 70.3 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.6 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.3 | 100.0 | unchanged |
-| US | 3 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.7 | 99.9 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.5 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.4 | 100.0 | unchanged |
+| US | 3 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.6 | 99.9 | unchanged |
 | US | 5 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.4 | 99.9 | unchanged |
 | US | 6 | DHT | DHT Holdings, Inc. | Shipping | 82.3 | 99.8 | unchanged |
 | US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 81.6 | 99.7 | unchanged |
 | US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 81.4 | 99.6 | unchanged |
-| US | 25 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.4 | 99.3 | unchanged |
-| US | 26 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.2 | 99.2 | unchanged |
-| US | 27 | FRO | Frontline Plc Ordinary Shares | Other | 79.1 | 99.2 | unchanged |
+| US | 24 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.4 | 99.3 | unchanged |
+| US | 26 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.1 | 99.2 | unchanged |
+| US | 28 | FRO | Frontline Plc Ordinary Shares | Other | 79.1 | 99.2 | unchanged |
 
 ## Required manual checks before an order
 

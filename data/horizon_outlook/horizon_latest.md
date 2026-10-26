@@ -1,5 +1,5 @@
 # Multi-horizon research outlook
-Generated (UTC): 2026-10-26T15:30:30+00:00
+Generated (UTC): 2026-10-26T16:05:47+00:00
 Public watchlist only; no private holdings or automatic trades.
 
 ## 短期・中期・長期の仮説と売買方針
