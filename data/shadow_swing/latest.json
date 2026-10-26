@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-10-23",
+  "as_of_date": "2026-10-26",
   "status": "ACTIVE",
   "data_fresh": true,
   "decision_priority": "P2_ENTRY_REVIEW",
@@ -18,8 +18,8 @@
     "nav_jpy": 987918.7,
     "cash_jpy": 987918.7,
     "total_return_pct": -1.208,
-    "benchmark_return_pct": -1.514,
-    "alpha_pct": 0.306,
+    "benchmark_return_pct": -1.017,
+    "alpha_pct": -0.191,
     "realized_pnl_jpy": -12081.3,
     "max_drawdown_pct": -1.248,
     "positions": 0,
@@ -27,7 +27,7 @@
   },
   "regime": {
     "label": "NEUTRAL",
-    "score": 53.43,
+    "score": 47.03,
     "confidence": 1.0
   },
   "fills_today": [],

@@ -18,13 +18,14 @@
     "gpt-shadow-20260923-postclose-1735-market-closed-hold-mito",
     "gpt-shadow-20260924-postclose-1735-stale-data-hold-mito",
     "gpt-shadow-20261015-preclose-restart-audit-hold-001",
-    "gpt-shadow-20261023-postclose-1735-hold-001"
+    "gpt-shadow-20261023-postclose-1735-hold-001",
+    "gpt-shadow-20261026-postclose-1743-hold-001"
   ],
   "realized_pnl_jpy": -12081.3,
   "nav_jpy": 987918.7,
   "peak_nav_jpy": 1000400.0,
   "max_drawdown_pct": -1.247630947620959,
   "benchmark_start_price": 422.70001220703125,
-  "last_run_date": "2026-10-23",
+  "last_run_date": "2026-10-26",
   "status": "ACTIVE"
 }
