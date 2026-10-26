@@ -1,40 +1,42 @@
 {
-  "decision_id": "gpt-shadow-20261023-postclose-1735-hold-001",
-  "decision_date": "2026-10-23",
+  "decision_id": "gpt-shadow-20261026-postclose-1743-hold-001",
+  "decision_date": "2026-10-26",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
   "meta_gate": {
     "passed": false,
-    "baseline": "HOLD ¥987,918.70 cash; no positions or pending orders; no new execution exposure.",
-    "objective": "Improve risk-adjusted virtual return versus the existing cash/Human+Quant+AI baseline after trading costs and operational risk.",
-    "incremental_edge_source": "None verified: no same-session post-close screening or price confirmation and no eight-field falsifiable mispricing thesis.",
-    "incremental_benefit_after_costs": "Unsubstantiated; cannot justify expected return net of 10bp execution slippage and model/data failure risk.",
-    "strongest_counterargument": "Fresh primary disclosures and verified closing prices might reveal a compelling entry missed by cash.",
-    "simpler_alternative": "Maintain cash and monitor next verified post-close screening, primary company evidence and execution integrity.",
+    "objective": "Maximize forward risk-adjusted virtual utility versus cash/Human+Quant+AI baseline net of execution costs, complexity and data failure.",
+    "baseline": "HOLD cash JPY 987,918.70; 0 positions and 0 pending orders in latest persisted ledger as of 2026-10-23. No exposure or transaction costs.",
+    "incremental_edge_source": "No validated current-session incremental mispricing edge. Latest scanner observations are dated 2026-10-23, not 2026-10-26 post-close.",
+    "incremental_benefit_after_costs": "Unverified. A new trade would incur at least configured 10bps simulated slippage and introduce market and execution risk without evidence of positive incremental expected utility.",
+    "strongest_counterargument": "A new verified 2026-10-26 close and primary company disclosure could support a high-conviction mispricing entry missed by holding cash.",
+    "simpler_alternative": "HOLD and monitor current-session post-close screening and verified OHLC; review any newly verified primary disclosure before reconsidering.",
     "current_best_action": "HOLD",
-    "best_alternative": "MONITOR without order",
-    "review_trigger": "Fresh same-session after-close scanner and exchange-price evidence plus all eight mispricing-thesis fields with positive incremental expected utility.",
-    "assessment": "BUY/ADD fail Meta Gate; do-nothing dominates unsupported action."
+    "best_alternative": "MONITOR without placing orders",
+    "what_changed_or_earlier_miss": "The ledger remains last dated 2026-10-23, and 2026-10-26 morning regime/sector context is not equivalent to a post-close screen. Prior 8622.T hard-stop execution was delayed.",
+    "forward_value_and_risk": "Cash avoids incremental slippage and exposure while evidence is stale; opportunity cost is unquantified.",
+    "falsifier_and_review_trigger": "Verified 2026-10-26 post-close scanner and OHLC, primary company evidence, and all eight falsifiable thesis fields showing positive expected utility versus cash.",
+    "assessment": "BUY/ADD fails Meta Gate: eight fields cannot be substantiated with fresh as-of post-close evidence. No holdings to SELL."
   },
   "data_quality_caveats": [
-    "2026-10-23 post-close screening absent: screening_latest.csv retrieved 2026-10-22T12:59:30Z (2026-10-22 21:59 JST); price_date blank and TradingView scanner close lacks exact exchange timestamp.",
-    "2026-10-23 regime NEUTRAL score 49.99 confidence 1.0 actionable true was generated 2026-10-23T00:42:00Z (09:42 JST), before Japan cash-market close; cannot confirm 2026-10-23 closing regime. Treasury yield volatility proxy percentile 0.9524 (as-of 2026-10-22), shock flag true.",
-    "SQ overlay 2026-10-23 inactive; confidence 0.4, data partial and manual inputs missing; no directional inference.",
-    "Supply/demand generated 2026-10-23T00:43:16Z (09:43 JST), partial coverage 37/52 ok, 3 partial, 12 missing; available price timestamps around 09:28 JST, not post-close.",
-    "Company intelligence generated 09:43 JST: primary metrics in 19/39 Japanese targets (16 complete); total fundamental primary coverage 0.365 and secondary evidence mixed. Critical 3635 guidance headline is secondary and unverified.",
-    "Virtual ledger latest as_of 2026-10-23 but data_fresh=false, screening_fresh=false, regime_fresh=false; ledger commit 2026-10-22T17:36:06Z = 2026-10-23 02:36 JST, before the session. This is a scheduling/idempotency integrity concern despite configured 21:35 JST cron."
+    "Latest screening_latest.csv retrieved 2026-10-23T12:38:51.991864Z (21:38:51 JST), 3 calendar days before decision; price_date blank and TradingView scanner close has no exact exchange price timestamp. 2026-10-26 close unconfirmed.",
+    "Regime NEUTRAL 49.69, confidence 1.0, generated 2026-10-26T00:24:58Z (09:24:58 JST), before session close; Treasury volatility shock percentile 0.9325 based on 2026-10-23. Not a fresh close signal.",
+    "SQ overlay 2026-10-26 inactive, confidence 0.4, partial data, manual input missing; execution-only overlay, no directional evidence.",
+    "Supply/demand generated 2026-10-26T00:26:03Z (09:26 JST), partial: 36 ok, 4 partial, 12 missing of 52; not a current-session post-close confirmation.",
+    "Company intelligence generated 2026-10-26 morning; JP primary metrics present in 19/40 target firms (16 with all six). Overall primary fundamental coverage 0.365 and mixed evidence. News/RSS headlines are secondary and unverified for trading."
   ],
   "execution_integrity_audit": {
     "ledger_as_of_date": "2026-10-23",
     "reported_status": "OK",
+    "ledger_fresh_for_decision_date": false,
     "positions": 0,
     "pending_orders": 0,
-    "fills_today": 0,
+    "fills_today_unconfirmed": true,
     "missing_ohlc_orders": 0,
     "overdue_sell_orders": 0,
-    "historical_warning": "8622.T hard_stop SELL signal 2026-10-06 filled 2026-10-15 at 812.187 after delayed processing; latest OK is not retrospective clearance.",
-    "timing_warning": "Ledger processed 2026-10-23 at approximately 02:36 JST before the session; 21:35 JST execution may be idempotent NOOP; no post-close fill inferred."
+    "historical_warning": "8622.T hard_stop SELL signaled 2026-10-06 and recorded FILLED 2026-10-15 at JPY 812.187, 9 calendar days later. Latest OK does not retrospectively clear execution delay.",
+    "timing_warning": "Separate 21:35 JST virtual ledger has not been verified for 2026-10-26; do not infer a fill, duplicate pending orders, or alter state."
   },
-  "reason": "HOLD: as-of 17:35 JST current-session close evidence is unavailable, no validated incremental mispricing edge versus cash, no positions to sell and no pending orders to duplicate."
+  "reason": "HOLD as of 2026-10-26 17:43 JST: current-session after-close price/screen evidence unavailable; no holdings, no pending orders in latest persisted ledger, and no eight-field falsifiable BUY/ADD mispricing edge versus cash."
 }
