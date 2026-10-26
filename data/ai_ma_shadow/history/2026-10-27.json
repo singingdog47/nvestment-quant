@@ -1,0 +1,161 @@
+{
+  "version": "1.0.0",
+  "as_of_date": "2026-10-27",
+  "cohort": "2026-10-19-ai-ma-v1-5m",
+  "mode": "SHADOW_ONLY",
+  "status": "RESEARCH_NOT_VALIDATED",
+  "initial_cash_jpy": 5000000,
+  "nav_jpy": 5000000,
+  "benchmark_nav_jpy": 5000000.0,
+  "positions_count": 0,
+  "completed_trades": 0,
+  "pending_buys": 2,
+  "screened_jp_count": 50,
+  "qualified_count": 7,
+  "rejected_count": 43,
+  "candidates": [
+    {
+      "id": "141b24c72e77b6fce1",
+      "symbol": "5351.T",
+      "name": "SHINAGAWA REFRA CO.,LTD.",
+      "observable": {
+        "market_cap": 91830741264.0,
+        "pe": 3.0706778438710622,
+        "pb": 0.8081460458669066,
+        "roe_pct": 29.2953533842944,
+        "operating_margin_pct": 6.69454267932195,
+        "avg_turnover_jpy": 190723256.6666667
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "781658e7127f1e2c65",
+      "symbol": "3284.T",
+      "name": "Hoosiers Holdings Co.,Ltd.",
+      "observable": {
+        "market_cap": 50017260941.0,
+        "pe": 6.351284023009155,
+        "pb": 0.9986750031382642,
+        "roe_pct": 17.7532830430413,
+        "operating_margin_pct": 10.345284505785,
+        "avg_turnover_jpy": 311068160.0
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "00fef7772e0542c0c9",
+      "symbol": "6741.T",
+      "name": "Nippon Signal Company,Limited",
+      "observable": {
+        "market_cap": 115075744801.0,
+        "pe": 8.596365347834412,
+        "pb": 1.0268468983786285,
+        "roe_pct": 12.5795118773412,
+        "operating_margin_pct": 11.4316301865962,
+        "avg_turnover_jpy": 272904660.0
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "7ab0493da2d88e9340",
+      "symbol": "3932.T",
+      "name": "Akatsuki Inc.",
+      "observable": {
+        "market_cap": 51298764252.0,
+        "pe": 6.844141161678893,
+        "pb": 1.1286940379213142,
+        "roe_pct": 19.189421087165,
+        "operating_margin_pct": 34.3123234155359,
+        "avg_turnover_jpy": 304146901.16166145
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "9cec2b9fc1f4e0085d",
+      "symbol": "5195.T",
+      "name": "Bando Chemical Industries,Ltd.",
+      "observable": {
+        "market_cap": 108579470688.0,
+        "pe": 10.07181005033988,
+        "pb": 1.1420802028800487,
+        "roe_pct": 12.1026118132928,
+        "operating_margin_pct": 8.57698530733653,
+        "avg_turnover_jpy": 197559156.66666666
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "1731e16c042891aa13",
+      "symbol": "8707.T",
+      "name": "IwaiCosmo Holdings,Inc.",
+      "observable": {
+        "market_cap": 94425911636.0,
+        "pe": 7.581995314249528,
+        "pb": 1.1800467532115364,
+        "roe_pct": 16.4625343138916,
+        "operating_margin_pct": 45.5108276869935,
+        "avg_turnover_jpy": 542763200.0
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "02d6efa8dadac9ab9a",
+      "symbol": "3076.T",
+      "name": "Ai Holdings Corporation",
+      "observable": {
+        "market_cap": 149417323704.0,
+        "pe": 13.924176610328795,
+        "pb": 1.4127508059449023,
+        "roe_pct": 10.5090803454317,
+        "operating_margin_pct": 12.6599548362815,
+        "avg_turnover_jpy": 310284000.0
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    }
+  ],
+  "data_blockers": [
+    "benchmark_price_unavailable",
+    "entry_missing_bar:5351.T",
+    "entry_missing_bar:6505.T"
+  ],
+  "events": [],
+  "hypothesis": {
+    "H1": "AI-enabled cost/sales improvements improve future margins; unverified until operating data obtained",
+    "H2": "Acquisition/privatization becomes more common among candidates; target probabilities unverified",
+    "H3": "Value+AI/M&A enhanced basket outperforms matched value-only and TOPIX after costs; UNTESTED"
+  },
+  "control_cohorts": [
+    "data/shadow_swing",
+    "data/shadow_swing_v2"
+  ],
+  "critical_limitation": "Current cohort trades value+quality proxy ONLY. Without firm-specific AI, ownership, or takeover evidence, it cannot demonstrate incremental AI/M&A alpha; a matched value-only control and point-in-time historical database are required.",
+  "paper_only": true
+}
