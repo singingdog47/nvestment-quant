@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-26T14:21:25+00:00
+Generated (UTC): 2026-10-26T15:10:54+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,11 +11,11 @@ Generated (UTC): 2026-10-26T14:21:25+00:00
 
 ## 2. 市場レジーム
 - Regime: **NEUTRAL**
-- Score: 47.03
+- Score: 48.23
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 18.610000610351562
+- VIX: 17.93000030517578
 - Treasury realized-vol proxy (not ICE MOVE): 89.332 bps annualized; percentile=0.9325
 - Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
@@ -42,15 +42,15 @@ Generated (UTC): 2026-10-26T14:21:25+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 18, 'WARNING': 15, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / キヤノン、信越化学工業も…「下落が怖い」人向け"高配当"半導体・AI株7銘柄の実名 - 現代ビジネス
-- [WARNING] COMPANY_EVENT / コーエーテクモホールディングス[3635]：令和９年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WARNING] COMPANY_EVENT / コーエーテクモホールディングス[3635]：令和９年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
+- Counts: {'INFO': 0, 'WATCH': 4, 'WARNING': 4, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- [WARNING] LIQUIDITY / Market liquidity is weak
+- [WARNING] LIQUIDITY / Thin liquidity flag active
+- [WARNING] VOLATILITY / Treasury yield volatility is unusually high
+- [WATCH] COMPANY_EVENT / モンゴルの自然保護区を焼失させたKDDI子会社 地元メディアの反応は（クーリエ・ジャポン） - Yahoo!ニュース
+- [WATCH] COMPANY_EVENT / モンゴルで大規模な草原火災 KDDI現地子会社の車から出火か - 朝日新聞
+- [WATCH] COMPANY_EVENT / 信越化学工業、東京エレクトロン…エヌビディア、サムスンが熱視線を送る日本企業の基盤技術 - JBpress
+- [WATCH] COMPANY_EVENT / 信越化学工業株価が続伸 樹脂製品値上げ - 日本経済新聞
 
 ## 5. スクリーニング上位候補
 
@@ -62,23 +62,23 @@ Generated (UTC): 2026-10-26T14:21:25+00:00
 - 5. KOEI TECMO HOLDINGS CO.,LTD. 3635.T | market_rank=8.0 | raw=71.91551274458453 | cross_pct=99.6386164171399
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.62279634932504 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.24041189536678 | cross_pct=99.9697519661222
-- 3. Norwood Financial Corp. - Common Stock NWFL | market_rank=3.0 | raw=82.67730380680969 | cross_pct=99.9395039322444
-- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=5.0 | raw=82.3775561422564 | cross_pct=99.87900786448881
-- 5. DHT Holdings, Inc. DHT | market_rank=6.0 | raw=82.30742601544513 | cross_pct=99.84875983061102
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.59320943320421 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.27291187151815 | cross_pct=99.96983408748115
+- 3. Norwood Financial Corp. - Common Stock NWFL | market_rank=3.0 | raw=82.7443415599366 | cross_pct=99.93966817496229
+- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=5.0 | raw=82.37477852717666 | cross_pct=99.87933634992459
+- 5. DHT Holdings, Inc. DHT | market_rank=6.0 | raw=82.28374520294172 | cross_pct=99.84917043740573
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.62279634932504
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.59320943320421
 - 2. [JP] Marusan Securities Co.,Ltd. | cross_pct=100.0 | raw=81.82089165646359
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.9697519661222 | raw=83.24041189536678
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.96983408748115 | raw=83.27291187151815
 - 4. [JP] Mito Securities Co.,Ltd. | cross_pct=99.94837377387714 | raw=80.14274102169676
-- 5. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.9395039322444 | raw=82.67730380680969
-- 6. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.87900786448881 | raw=82.3775561422564
-- 7. [US] DHT Holdings, Inc. | cross_pct=99.84875983061102 | raw=82.30742601544513
+- 5. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.93966817496229 | raw=82.7443415599366
+- 6. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.87933634992459 | raw=82.37477852717666
+- 7. [US] DHT Holdings, Inc. | cross_pct=99.84917043740573 | raw=82.28374520294172
 - 8. [JP] ELECOM CO.,LTD. | cross_pct=99.79349509550852 | raw=73.37224254904736
 - 9. [JP] Akatsuki Inc. | cross_pct=99.74186886938566 | raw=73.33319827364109
-- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.69751966122202 | raw=81.6734083523013
+- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.69834087481146 | raw=81.67239863102127
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -108,8 +108,8 @@ Generated (UTC): 2026-10-26T14:21:25+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは60.8点だが確認閾値未達
-- 上位: スタンダード 60.8 / テクノロジー 58.5 / ビットコイン 45.9
+- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは65.0点だが確認閾値未達
+- 上位: スタンダード 65.0 / テクノロジー 61.9 / ビットコイン 46.3
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

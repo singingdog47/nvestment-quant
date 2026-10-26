@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-10-26T14:19:33+00:00
+Generated (UTC): 2026-10-26T15:09:35+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -17,14 +17,14 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 ## Notable contexts
 
 - [JP] FOOD & LIFE COMPANIES: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=96.7%, float turnover=1.1%, volume ratio=1.7214474692628745)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.4%, volume ratio=0.029904148017179572)
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=2.8%, volume ratio=0.1237693167422013)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=0.9%, volume ratio=0.13153585245640997)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.4%, volume ratio=0.05032751167695724)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=2.8%, volume ratio=0.22949732058386021)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=0.9%, volume ratio=0.21170968254809475)
 - [JP] IwaiCosmo Holdings,Inc.: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=81.5%, float turnover=0.7%, volume ratio=1.7862203668951784)
-- [US] Equity Bancshares, Inc. Class A Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=85.9%, float turnover=0.6%, volume ratio=0.10224568578026123)
-- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=97.9%, float turnover=1.1%, volume ratio=0.0686746476931723)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.6%, volume ratio=0.1423533519908538)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.7%, volume ratio=0.14778591399281055)
+- [US] Equity Bancshares, Inc. Class A Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=85.9%, float turnover=0.6%, volume ratio=0.13165641360102942)
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=97.9%, float turnover=1.1%, volume ratio=0.1115240650216845)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.6%, volume ratio=0.2075158790837929)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.7%, volume ratio=0.2909199840234323)
 - [JP] Funai Soken Holdings Incorporated: VOLUME_EXPANSION (float=77.4%, float turnover=0.4%, volume ratio=2.0953089799905635)
 
 ## Governance

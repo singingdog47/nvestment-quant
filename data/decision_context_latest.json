@@ -49,7 +49,7 @@
     }
   ],
   "primary_coverage_audit": {
-    "generated_at_utc": "2026-10-26T14:19:22+00:00",
+    "generated_at_utc": "2026-10-26T15:09:27+00:00",
     "population": "JP Company Intelligence targets; not whole-market screening",
     "target_count": 39,
     "companies_with_any_primary_metric": 19,
@@ -74,10 +74,10 @@
     "note": "A metric is covered only when a verified numeric primary observation exists."
   },
   "quality": {
-    "generated_at": "2026-10-26T14:19:33+00:00",
+    "generated_at": "2026-10-26T15:09:35+00:00",
     "targets": 52,
     "portfolio_targets": 0,
-    "events": 82,
+    "events": 84,
     "primary_source_health": 1.0,
     "configured_primary_sources": 4,
     "optional_primary_sources_unconfigured": [],
@@ -95,12 +95,12 @@
   "market_regime": {
     "version": "1.5.3",
     "engine_version": "1.5.3",
-    "generated_at": "2026-10-26T14:18:25+00:00",
-    "generated_at_utc": "2026-10-26T14:18:25+00:00",
-    "date_jst": "2026-10-26",
+    "generated_at": "2026-10-26T15:08:32+00:00",
+    "generated_at_utc": "2026-10-26T15:08:32+00:00",
+    "date_jst": "2026-10-27",
     "data_status": "ok",
     "regime_label": "NEUTRAL",
-    "regime_score": 47.03,
+    "regime_score": 48.23,
     "confidence": 1.0,
     "actionable": true,
     "actionability": {
@@ -120,15 +120,15 @@
       "TREASURY_VOLATILITY_SHOCK"
     ],
     "components": {
-      "trend": 38.64122738050998,
-      "stress": 72.01499954223632,
-      "participation": 41.46729079981507,
-      "liquidity": 21.601921263171384,
+      "trend": 40.891692907326885,
+      "stress": 72.52499977111816,
+      "participation": 41.53952843273232,
+      "liquidity": 24.109141475477394,
       "positioning": 59.04864260835684
     },
     "evidence": {
       "trend_series": 4,
-      "vix": 18.610000610351562,
+      "vix": 17.93000030517578,
       "hy_oas": 3.38,
       "ig_oas": 0.91,
       "treasury_volatility_proxy": 89.332,
@@ -139,9 +139,9 @@
       "treasury_volatility_is_ice_move": false,
       "breadth_n": 9559,
       "breadth_status": "ok",
-      "breadth_source_as_of_utc": "2026-10-26T14:18:22.975028+00:00",
+      "breadth_source_as_of_utc": "2026-10-26T15:08:29.840357+00:00",
       "nfci": -0.496,
-      "volume_ratio20_mean": 0.20324803157928464,
+      "volume_ratio20_mean": 0.26592853688693485,
       "positioning_sources": {
         "jpx_raw_healthy": 4,
         "cftc_normalized_values": 22
@@ -170,9 +170,9 @@
         "version": "1.0",
         "enabled": true,
         "active": false,
-        "as_of_date": "2026-10-26",
+        "as_of_date": "2026-10-27",
         "next_major_sq_date": "2026-12-11",
-        "days_to_sq": 46,
+        "days_to_sq": 45,
         "event_proximity_score": 0.0,
         "pressure_intensity_score": 0.0,
         "confidence": 0.4,
@@ -184,7 +184,7 @@
         "execution_stance": "NORMAL",
         "directional_bias": "UNDETERMINED",
         "price_structure": {
-          "spot": 62189.6484375,
+          "spot": 62693.16015625,
           "put_wall": null,
           "call_wall": null,
           "magnet_strike": null,
@@ -236,7 +236,7 @@
     "note": "Guardrail only. This file never places orders."
   },
   "system_health": {
-    "generated_at": "2026-10-26T14:19:33+00:00",
+    "generated_at": "2026-10-26T15:09:35+00:00",
     "components": {
       "market_regime": {
         "status": "ok",
@@ -292,7 +292,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "7e294d155e9639bbab4f8b92",
       "raw_excerpt": ""
     },
@@ -310,7 +310,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "01744d8b61c39a7f81f989ed",
       "raw_excerpt": ""
     },
@@ -328,7 +328,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "b6440505aa2d30dfbfcfd49f",
       "raw_excerpt": ""
     },
@@ -346,7 +346,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "95ceece265b575f6754805d0",
       "raw_excerpt": ""
     },
@@ -364,8 +364,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "ac7fc9a92dea8c3f77cdc714",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "4063",
+      "ticker": "4063.T",
+      "name": "信越化学工業",
+      "event_date": "Tue, 28 Apr 2026",
+      "event_type": "earnings",
+      "title": "信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YU0drSkNQX0wta25uTlZNY08xZ0FXWk9pbFJoVFhMeVhocTZuNkpEZ3dMX0xMUDkzYTNUWVNYOTdlMlhLSnRIbGNIQTFfcXJRdW5FSWFFcWN1Y2pfN2JaVTBad3hDdk1neGc?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "critical",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
+      "event_id": "cab10b5ed8b99318ebd7a280",
       "raw_excerpt": ""
     },
     {
@@ -382,7 +400,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "e71d123796ba4807789d0850",
       "raw_excerpt": ""
     },
@@ -400,7 +418,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "6c0510d8b5ca5251dafa78c5",
       "raw_excerpt": ""
     },
@@ -418,7 +436,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "4f2de058b3c176f4ac99ce83",
       "raw_excerpt": ""
     },
@@ -436,7 +454,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "f5c67fe94ddb7e08ae6a2fe9",
       "raw_excerpt": ""
     },
@@ -454,7 +472,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "1f21ce51a019dc8235b2112f",
       "raw_excerpt": ""
     },
@@ -472,7 +490,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "2477a7f913e68a998b852023",
       "raw_excerpt": ""
     },
@@ -490,7 +508,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "1357d9806c5004e769a0d23f",
       "raw_excerpt": ""
     },
@@ -508,7 +526,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "10c4cfbbf3462b0654fa29ec",
       "raw_excerpt": ""
     },
@@ -526,7 +544,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "27409884c8b08f5bcda585e0",
       "raw_excerpt": ""
     },
@@ -544,7 +562,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "dbff4c6eb4aed4151c2a058d",
       "raw_excerpt": ""
     },
@@ -562,7 +580,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "65a81594f0cc545cdb9cdbf9",
       "raw_excerpt": ""
     },
@@ -580,7 +598,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "91b40e7af3ca60ff33cae506",
       "raw_excerpt": ""
     },
@@ -598,7 +616,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "30c4af9554e9a4a09e79fca3",
       "raw_excerpt": ""
     },
@@ -616,7 +634,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "7fe7f057556976d83f1616ef",
       "raw_excerpt": ""
     },
@@ -634,7 +652,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "48ce076ce76d76db5ec97d78",
       "raw_excerpt": ""
     },
@@ -652,7 +670,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "0a8087634e82550166405d73",
       "raw_excerpt": ""
     },
@@ -670,7 +688,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "76cbe1726c6f0fbd335d9bda",
       "raw_excerpt": ""
     },
@@ -688,7 +706,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "6de188c7c34dd0c6cbe0644a",
       "raw_excerpt": ""
     },
@@ -706,7 +724,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "43759b21a597d3a203c0132f",
       "raw_excerpt": ""
     },
@@ -724,7 +742,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "5bde594e3045328d06cf82bb",
       "raw_excerpt": ""
     },
@@ -742,7 +760,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "39b2d957abccaab619de6cc4",
       "raw_excerpt": ""
     },
@@ -760,7 +778,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "29c1e3b84ae6c56d1f2015ff",
       "raw_excerpt": ""
     },
@@ -778,7 +796,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "585299ecb21afbdac17a31ea",
       "raw_excerpt": ""
     },
@@ -796,7 +814,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "124981aff89dfb5e4fa307d7",
       "raw_excerpt": ""
     },
@@ -814,7 +832,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "1bd8798dfbdb444f07639b3d",
       "raw_excerpt": ""
     },
@@ -832,7 +850,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "3fbee677072e4a0611fd1439",
       "raw_excerpt": ""
     },
@@ -850,7 +868,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "648cf957b3c776326490cd67",
       "raw_excerpt": ""
     },
@@ -868,7 +886,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "1f44f733e7db31dcd0e4a971",
       "raw_excerpt": ""
     },
@@ -886,7 +904,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "event_id": "f567c8063bbbf05335fa297e",
       "raw_excerpt": ""
     },
@@ -904,26 +922,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:10+00:00",
+      "fetched_at": "2026-10-26T15:09:15+00:00",
       "event_id": "49820add897cfba84b6de0a7",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "4063",
-      "ticker": "4063.T",
-      "name": "信越化学工業",
-      "event_date": "Tue, 13 Oct 2026",
-      "event_type": "dividend",
-      "title": "キヤノン、信越化学工業も…「下落が怖い」人向け\"高配当\"半導体・AI株7銘柄の実名 - 現代ビジネス",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8wMFVHbTE4ZVctZUI0ZU9QQkNBbXhPTW4zQkpXOERvalhkTHpNR2dNSFQ2Tjc1WHVFbU9kQVkwMm0xRExqV1JoRTUyYWhQNUU?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "high",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
-      "event_id": "71e7b6c02784a63b65ae0eb4",
       "raw_excerpt": ""
     },
     {
@@ -940,7 +940,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "bd8a77fe5591b55c28cfc227",
       "raw_excerpt": ""
     },
@@ -958,7 +958,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "0efae3a2d0efdd62f658ea59",
       "raw_excerpt": ""
     },
@@ -976,8 +976,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "c8277ef5b9da9a55d13ca5ef",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "4063",
+      "ticker": "4063.T",
+      "name": "信越化学工業",
+      "event_date": "Fri, 16 Oct 2026",
+      "event_type": "disclosure",
+      "title": "信越化学工業、東京エレクトロン…エヌビディア、サムスンが熱視線を送る日本企業の基盤技術 - JBpress",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE91Z2RmUWQyWXZsTUUxYXQ2OWhpRGswTzFUeGNNdEhyN09FZFVvckdfU0xxWlE5ejZUWjFIYTZsRFR4V0ZrVEY5ZTRBQk1sc1ZiSkEzZUtn?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
+      "event_id": "e825ddfe6375c11a3c60a902",
       "raw_excerpt": ""
     },
     {
@@ -994,7 +1012,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "baa4854bd2e87d3a02c6824d",
       "raw_excerpt": ""
     },
@@ -1012,7 +1030,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "9038b601c3c06b20d989c9cc",
       "raw_excerpt": ""
     },
@@ -1030,7 +1048,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "a59778d5ddfe03d0bc55567c",
       "raw_excerpt": ""
     },
@@ -1048,7 +1066,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "47a5f9f393333a86318e7dc3",
       "raw_excerpt": ""
     },
@@ -1066,7 +1084,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "933c83496c3a634461c28702",
       "raw_excerpt": ""
     },
@@ -1084,7 +1102,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "5d16e773f2bcb119908e0a3b",
       "raw_excerpt": ""
     },
@@ -1102,7 +1120,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "6cbf2c0fb2238d2aa34938d3",
       "raw_excerpt": ""
     },
@@ -1120,7 +1138,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "51e62d3fa8ecd840f384826b",
       "raw_excerpt": ""
     },
@@ -1138,7 +1156,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "4a7423fe16b0e1039eb47e25",
       "raw_excerpt": ""
     },
@@ -1156,8 +1174,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "c67f7272a7a9f232b37375f8",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "4063",
+      "ticker": "4063.T",
+      "name": "信越化学工業",
+      "event_date": "Mon, 06 Apr 2026",
+      "event_type": "disclosure",
+      "title": "信越化学工業株価が続伸 樹脂製品値上げ - 日本経済新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE53dHNVYnhtTnVZa1V6REJPWVlBaEdlUHlxWmQzNUd2TG1BQWhjeGh3UW9mOG9WcWo2NTQ5S2dYQWVzNGFOU09VRm9aSTRpaE85b0pMQkJLWklqSkhHbE1tR2FCY2JwdVJlamdDXw?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
+      "event_id": "c871cb308b11d3a6677a54bd",
       "raw_excerpt": ""
     },
     {
@@ -1174,7 +1210,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "039ad3aa492ba7212627eb09",
       "raw_excerpt": ""
     },
@@ -1192,7 +1228,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "472867ea5cdadcce67e04d16",
       "raw_excerpt": ""
     },
@@ -1210,7 +1246,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "186436f8de58ea1ec109714b",
       "raw_excerpt": ""
     },
@@ -1228,7 +1264,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "b3df0f446ee1212bdbaf64ab",
       "raw_excerpt": ""
     },
@@ -1239,15 +1275,15 @@
       "name": "KDDI",
       "event_date": "Mon, 26 Oct 2026",
       "event_type": "disclosure",
-      "title": "KDDIがドローンポートの遠隔運航を提案、通学路の見守りや能登の復旧工事で活用 - ドローンジャーナル",
+      "title": "モンゴルの自然保護区を焼失させたKDDI子会社 地元メディアの反応は（クーリエ・ジャポン） - Yahoo!ニュース",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE13VWtEMWtld0k2S19PcnRiOGxncEx5cnE3SGZUZXVlVXJsMWhnY2RpRzZza0I3NU1jZ2R3Tl85aFhlRkRmSzBWR0taZ05WbmJVRVZfZEtWNmRMQU12QXRTYjE1Mm84V2pjQmVZ?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9JVTAyTE55T2piTFM5OFR1WjVyNE5YYnJHOF9BbEhIZlMxYU1RMXdZd2JEVlVra3ZLV0tzTW53Wm9PUjJLUUl1aEwtSE5TQ2VnUXQ2QUE3bmhUT3dmVE9lWnBnX0ZkaUFESE05ZHdkX2xseEZYYjl4M183eldLa0U?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
-      "event_id": "faccaf71504b299bdb31206e",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
+      "event_id": "09d39514b0d28540175cb6c3",
       "raw_excerpt": ""
     },
     {
@@ -1264,7 +1300,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "5a5a8776df1aed5ee096e4cf",
       "raw_excerpt": ""
     },
@@ -1282,7 +1318,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "aba6460ff80dd35c924bab16",
       "raw_excerpt": ""
     },
@@ -1300,7 +1336,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "61fa09ced1e6e763f8af1f21",
       "raw_excerpt": ""
     },
@@ -1318,7 +1354,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "30705337c4271d843ce09e82",
       "raw_excerpt": ""
     },
@@ -1336,7 +1372,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "071d6da06fbf05ea55ecac20",
       "raw_excerpt": ""
     },
@@ -1354,7 +1390,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "720d73ab549e2a40961e5ec1",
       "raw_excerpt": ""
     },
@@ -1372,7 +1408,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "afb7ce1c1bbf16d4a1eaa9fb",
       "raw_excerpt": ""
     },
@@ -1390,7 +1426,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "c34e653521bb422c157c39fa",
       "raw_excerpt": ""
     },
@@ -1408,7 +1444,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "8ee56679f21374264e2514c7",
       "raw_excerpt": ""
     },
@@ -1426,7 +1462,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "b7b605e66573afb607eafe9d",
       "raw_excerpt": ""
     },
@@ -1444,7 +1480,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "ef25aa56b3b208f51609924b",
       "raw_excerpt": ""
     },
@@ -1462,8 +1498,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "9720a24cc98ad1c7d0aca923",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "9433",
+      "ticker": "9433.T",
+      "name": "KDDI",
+      "event_date": "Thu, 22 Oct 2026",
+      "event_type": "disclosure",
+      "title": "モンゴルで大規模な草原火災 KDDI現地子会社の車から出火か - 朝日新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE82OGNIcHZrX2YycEtPT2tKekZ0cHBqSjRtZXZDSVhaejQ1cDVGVEFFMXJjd1Z2WVg1dGJvWk9PZEZMOUp4N0FiYlZWT0MxR3BOcWVFRld2VERhbnB3RTI2WVVEUmtEUHc?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
+      "event_id": "81bd1bb58fe145393ce7792c",
       "raw_excerpt": ""
     },
     {
@@ -1480,7 +1534,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "f083aac4e8868233f3f68819",
       "raw_excerpt": ""
     },
@@ -1498,7 +1552,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "12680ac14b9962376b7fff4d",
       "raw_excerpt": ""
     },
@@ -1516,7 +1570,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "c596145e252bc20a85cffb4e",
       "raw_excerpt": ""
     },
@@ -1534,7 +1588,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "2039fff7cafdadec5fb4bd46",
       "raw_excerpt": ""
     },
@@ -1552,7 +1606,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "892e2f631bbf267f9b305132",
       "raw_excerpt": ""
     },
@@ -1570,7 +1624,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "aa5e2cf67426a8fc66332a1e",
       "raw_excerpt": ""
     },
@@ -1588,26 +1642,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "5d86d4b35368452261c4e331",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "4063",
-      "ticker": "4063.T",
-      "name": "信越化学工業",
-      "event_date": "Tue, 20 Oct 2026",
-      "event_type": "disclosure",
-      "title": "創業100周年の信越化学工業 上越市と新潟県に計1億円寄付 - 上越妙高タウン情報",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBnRV9vckM0emxQSHhGQUxTRm5FbGVKOVZHTXBwRUZEcXk5Q0tINzFyOU02dVRkdkIyc2xLemdPU0J5aXl4QnJueDNvNUhMZmhEVlR6UmFB?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
-      "event_id": "1aa9b27597fcc263f34ce48d",
       "raw_excerpt": ""
     },
     {
@@ -1624,7 +1660,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "d119126bb9dafab0fc25a07e",
       "raw_excerpt": ""
     },
@@ -1642,7 +1678,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "1fa60f0fe912cd0513f9c19f",
       "raw_excerpt": ""
     },
@@ -1660,7 +1696,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "b423c226424b8876ac8b5fe1",
       "raw_excerpt": ""
     },
@@ -1678,7 +1714,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "93b1ab305581f6baa1fb14fb",
       "raw_excerpt": ""
     },
@@ -1696,7 +1732,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "70a1745c1312d111001778f5",
       "raw_excerpt": ""
     },
@@ -1714,7 +1750,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "cb53f9efd8dbce72458727de",
       "raw_excerpt": ""
     },
@@ -1732,7 +1768,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "6264d56f4b1a29da46ea55af",
       "raw_excerpt": ""
     },
@@ -1750,7 +1786,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "event_id": "3eb8dbc2712c4403d9dea54b",
       "raw_excerpt": ""
     }
@@ -1759,7 +1795,7 @@
     {
       "source": "TDnet",
       "status": "ok",
-      "fetched_at": "2026-10-26T14:19:07+00:00",
+      "fetched_at": "2026-10-26T15:09:13+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1767,7 +1803,7 @@
     {
       "source": "EDINET",
       "status": "ok",
-      "fetched_at": "2026-10-26T14:19:10+00:00",
+      "fetched_at": "2026-10-26T15:09:15+00:00",
       "records": 1,
       "error": "",
       "source_tier": "primary"
@@ -1775,7 +1811,7 @@
     {
       "source": "SEC",
       "status": "ok",
-      "fetched_at": "2026-10-26T14:19:14+00:00",
+      "fetched_at": "2026-10-26T15:09:19+00:00",
       "records": 29,
       "error": "",
       "source_tier": "primary"
@@ -1783,7 +1819,7 @@
     {
       "source": "CompanyIR",
       "status": "ok",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
+      "fetched_at": "2026-10-26T15:09:21+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1791,15 +1827,15 @@
     {
       "source": "NewsRSS",
       "status": "ok",
-      "fetched_at": "2026-10-26T14:19:16+00:00",
-      "records": 52,
+      "fetched_at": "2026-10-26T15:09:21+00:00",
+      "records": 54,
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance",
       "status": "ok",
-      "fetched_at": "2026-10-26T14:19:33+00:00",
+      "fetched_at": "2026-10-26T15:09:35+00:00",
       "records": 40,
       "error": "",
       "source_tier": "secondary"
@@ -1807,8 +1843,8 @@
   ],
   "supply_demand_context": {
     "version": "1.0.0",
-    "generated_at_utc": "2026-10-26T14:19:33+00:00",
-    "observed_date_jst": "2026-10-26",
+    "generated_at_utc": "2026-10-26T15:09:35+00:00",
+    "observed_date_jst": "2026-10-27",
     "data_status": "partial",
     "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
     "target_count": 52,
@@ -1847,7 +1883,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9167669770731056,
         "avg_daily_float_turnover_ratio": 0.013529807293084027,
-        "current_volume_ratio_30d": 0.029904148017179572,
+        "current_volume_ratio_30d": 0.05032751167695724,
         "short_percent_float": 0.1173,
         "short_interest_change_ratio": 0.2622616234641022,
         "days_to_cover": 9.73,
@@ -1862,7 +1898,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.8989499978394966,
         "avg_daily_float_turnover_ratio": 0.02838976015338694,
-        "current_volume_ratio_30d": 0.1237693167422013,
+        "current_volume_ratio_30d": 0.22949732058386021,
         "short_percent_float": 0.10569999,
         "short_interest_change_ratio": 0.0887095731602241,
         "days_to_cover": 3.55,
@@ -1877,7 +1913,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9634800052450468,
         "avg_daily_float_turnover_ratio": 0.009486528152160915,
-        "current_volume_ratio_30d": 0.13153585245640997,
+        "current_volume_ratio_30d": 0.21170968254809475,
         "short_percent_float": 0.0622,
         "short_interest_change_ratio": 0.2977849223484257,
         "days_to_cover": 6.32,
@@ -1907,7 +1943,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.8589580473269623,
         "avg_daily_float_turnover_ratio": 0.006414600563034382,
-        "current_volume_ratio_30d": 0.10224568578026123,
+        "current_volume_ratio_30d": 0.13165641360102942,
         "short_percent_float": 0.0334,
         "short_interest_change_ratio": 0.2717247634255846,
         "days_to_cover": 5.58,
@@ -1922,7 +1958,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9787300060292479,
         "avg_daily_float_turnover_ratio": 0.010725034322111386,
-        "current_volume_ratio_30d": 0.0686746476931723,
+        "current_volume_ratio_30d": 0.1115240650216845,
         "short_percent_float": 0.0722,
         "short_interest_change_ratio": 0.284427291551427,
         "days_to_cover": 5.13,
@@ -1937,7 +1973,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.7620010737729285,
         "avg_daily_float_turnover_ratio": 0.025739370773745766,
-        "current_volume_ratio_30d": 0.1423533519908538,
+        "current_volume_ratio_30d": 0.2075158790837929,
         "short_percent_float": 0.0421,
         "short_interest_change_ratio": -0.057465507901471646,
         "days_to_cover": 1.93,
@@ -1952,7 +1988,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.7189700089980606,
         "avg_daily_float_turnover_ratio": 0.017337737040058875,
-        "current_volume_ratio_30d": 0.14778591399281055,
+        "current_volume_ratio_30d": 0.2909199840234323,
         "short_percent_float": 0.0109,
         "short_interest_change_ratio": 0.301118314352222,
         "days_to_cover": 0.55,
