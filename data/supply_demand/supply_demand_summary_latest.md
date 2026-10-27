@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-10-26T16:05:47+00:00
+Generated (UTC): 2026-10-27T01:31:00+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,15 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [JP] FOOD & LIFE COMPANIES: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=96.7%, float turnover=1.1%, volume ratio=1.7214474692628745)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.4%, volume ratio=0.07802156495590253)
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=2.8%, volume ratio=0.348633219510903)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=0.9%, volume ratio=0.29311701733001216)
-- [JP] IwaiCosmo Holdings,Inc.: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=81.5%, float turnover=0.7%, volume ratio=1.7862203668951784)
-- [US] Equity Bancshares, Inc. Class A Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=85.9%, float turnover=0.6%, volume ratio=0.15366378170665068)
-- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=97.9%, float turnover=1.1%, volume ratio=0.15635813530985682)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.6%, volume ratio=0.2868283267176847)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.7%, volume ratio=0.42374916788709893)
-- [US] Simmons First National Corporation - Common Stock: SHORT_INTEREST_RISING (float=98.5%, float turnover=1.1%, volume ratio=0.20373348220605872)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=91.7%, float turnover=1.4%, volume ratio=0.6088271531891493)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=2.8%, volume ratio=0.9698596973089675)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=0.9%, volume ratio=1.3799419683078065)
+- [US] Equity Bancshares, Inc. Class A Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=85.9%, float turnover=0.6%, volume ratio=0.7833900336676597)
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=97.9%, float turnover=1.1%, volume ratio=0.6475288154643876)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.6%, volume ratio=1.2830309885194149)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.7%, volume ratio=1.3927865796831314)
+- [US] Simmons First National Corporation - Common Stock: SHORT_INTEREST_RISING (float=98.5%, float turnover=1.1%, volume ratio=0.8454392591266905)
+- [US] Frontline Plc Ordinary Shares: HIGH_FLOAT_TURNOVER (float=64.2%, float turnover=2.3%, volume ratio=1.2872969482361865)
 
 ## Governance
 
