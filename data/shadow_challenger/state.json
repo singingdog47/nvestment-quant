@@ -7,28 +7,28 @@
     "3932.T": {
       "qty": 100,
       "entry_price": 1275.911,
-      "last_price": 1249.0,
+      "last_price": 1229.0,
       "entry_date": "2026-10-23",
-      "sessions": 1,
+      "sessions": 2,
       "theme": "Other",
       "peak_close": 1249.0
     }
   },
   "pending_buys": [
     {
-      "symbol": "6750.T",
-      "signal_date": "2026-10-23",
-      "qty": 100,
+      "symbol": "8789.T",
+      "signal_date": "2026-10-27",
+      "qty": 600,
       "theme": "Other",
-      "signal_price": 1994.0,
-      "max_notional": 200000.0
+      "signal_price": 153.0,
+      "max_notional": 100000.0
     }
   ],
   "pending_sells": [],
   "trades": [],
   "peak_nav_jpy": 1000000.0,
-  "nav_jpy": 997308.9,
-  "last_run_date": "2026-10-23",
-  "last_screen_date": "2026-10-23",
+  "nav_jpy": 995308.9,
+  "last_run_date": "2026-10-27",
+  "last_screen_date": "2026-10-27",
   "benchmark_start_close": 420.6000061035156
 }
