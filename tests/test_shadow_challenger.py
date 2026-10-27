@@ -118,3 +118,34 @@ def test_verified_buy_logged_once_and_counts_for_activity(tmp_path, monkeypatch)
     again = c.run(date(2026, 10, 26), bar_source=lambda s, d: b)
     assert again["status"] == "ALREADY_PROCESSED"
     assert len(c.load_json(c.OUT / "state.json")["execution_log"]) == 1
+
+
+def test_next_day_0104_jst_screen_is_prior_market_session():
+    ts = "2026-10-26T16:04:39+00:00"  # 2026-10-27 01:04 JST
+    screen = [{"data_retrieved_at_utc": ts}]
+    now = datetime(2026, 10, 27, 4, 53, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert c.resolve_market_session(now, screen) == date(2026, 10, 26)
+    assert c._postclose_source_for_session(ts, date(2026, 10, 26))
+    assert not c._postclose_source_for_session(ts, date(2026, 10, 27))
+    assert c.resolve_market_session(datetime(2026, 10, 27, 9, 1, tzinfo=ZoneInfo("Asia/Tokyo")), screen) == date(2026, 10, 27)
+
+
+def test_after_midnight_screen_can_signal_yesterday_without_fake_fill(tmp_path, monkeypatch):
+    _, data = setup_case(tmp_path, monkeypatch)
+    import csv
+    path = data / "screening_latest.csv"
+    path.write_text(path.read_text().replace("2026-10-22T07:45:00Z", "2026-10-22T16:02:00Z"))
+    observed = c.run(date(2026, 10, 22), bar_source=lambda symbol, day: None)
+    assert observed["screen_fresh"] is True
+    assert observed["pending_buys"] == 1
+    assert observed["positions"] == 0
+    assert observed["events"][0]["event"] == "BUY_SIGNAL"
+
+
+def test_overnight_screen_rejects_wrong_day(tmp_path, monkeypatch):
+    _, data = setup_case(tmp_path, monkeypatch)
+    path = data / "screening_latest.csv"
+    path.write_text(path.read_text().replace("2026-10-22T07:45:00Z", "2026-10-22T01:04:00Z"))
+    r = c.run(date(2026, 10, 22), bar_source=lambda symbol, day: None)
+    assert r["screen_fresh"] is False
+    assert r["pending_buys"] == 0
