@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-27T13:14:35.288257+00:00
+- Data retrieved (UTC): 2026-10-27T15:18:20.427601+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -28,9 +28,9 @@
 |---|---|---:|
 | JP | Financials | 7 |
 | JP | Other | 13 |
-| US | Financials | 13 |
+| US | Financials | 12 |
 | US | Other | 3 |
-| US | Shipping | 4 |
+| US | Shipping | 5 |
 
 ## Research candidates
 
@@ -46,16 +46,16 @@
 | JP | 12 | 2121.T | MIXI,Inc. | Other | 70.9 | 99.4 | unchanged |
 | JP | 13 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 70.4 | 99.4 | unchanged |
 | JP | 14 | 8630.T | Sompo Holdings,Inc. | Other | 69.9 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.7 | 100.0 | unchanged |
-| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.3 | 100.0 | unchanged |
-| US | 3 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.7 | 99.9 | unchanged |
-| US | 5 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.3 | 99.9 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 85.2 | 100.0 | unchanged |
+| US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.1 | 100.0 | unchanged |
+| US | 3 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 83.0 | 99.9 | unchanged |
+| US | 5 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.4 | 99.9 | unchanged |
 | US | 6 | DHT | DHT Holdings, Inc. | Shipping | 82.3 | 99.8 | unchanged |
 | US | 12 | BUSE | First Busey Corporation - Common Stock | Other | 81.5 | 99.7 | unchanged |
-| US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 81.3 | 99.6 | unchanged |
-| US | 25 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.3 | 99.3 | unchanged |
+| US | 13 | TRMD | TORM plc - Class A Common Stock | Other | 81.4 | 99.6 | unchanged |
+| US | 25 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.2 | 99.3 | unchanged |
 | US | 27 | FRO | Frontline Plc Ordinary Shares | Other | 79.1 | 99.2 | unchanged |
-| US | 28 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.0 | 99.2 | unchanged |
+| US | 28 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 78.8 | 99.2 | unchanged |
 
 ## Required manual checks before an order
 

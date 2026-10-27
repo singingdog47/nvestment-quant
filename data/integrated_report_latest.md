@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-27T13:17:08+00:00
+Generated (UTC): 2026-10-27T15:20:55+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,13 +11,13 @@ Generated (UTC): 2026-10-27T13:17:08+00:00
 
 ## 2. 市場レジーム
 - Regime: **NEUTRAL**
-- Score: 52.29
+- Score: 49.53
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 17.75
+- VIX: 17.559999465942383
 - Treasury realized-vol proxy (not ICE MOVE): 88.556 bps annualized; percentile=0.9127
-- Flags: TREASURY_VOLATILITY_SHOCK
+- Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
 ## 3. 個別銘柄の需給コンテキスト
 - Data status: partial
@@ -28,29 +28,29 @@ Generated (UTC): 2026-10-27T13:17:08+00:00
 - [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING
 - [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
 - [US] Equity Bancshares, Inc. Class A Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
+- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING
 - [JP] コーエーテクモホールディングス: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION
 - [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER
 - [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING
-- [US] Simmons First National Corporation - Common Stock: SHORT_INTEREST_RISING
 
 ## 3a. 短中長期の需給仮説（研究用）
 - short / 1-2 weeks: TWO_WAY_WITH_RATES_VOLATILITY_RISK; 仮説=Volume-supported directional continuation is plausible for individually flagged watchlist names; cross-market risk can override.; 反証=A contrary relative return at the predetermined endpoint or worsening rates/credit stress.; 方針=Existing orders unchanged. New purchase only after liquidity, risk and human review.
 - medium / 1-3 months: CONDITIONAL_RISK_REVIEW; 仮説=Sector and positioning rotation may outlast an index bounce; corporate earnings and revised guidance must corroborate.; 反証=Rotation reverses for several weeks or earnings/credit assumptions change materially.; 方針=Review 1-in-1-out replacements, position concentration, and portfolio correlations; no model-driven orders.
 - long / 1-3 years: FUNDAMENTALS_NOT_ESTABLISHED; 仮説=Long-run outcomes depend on earnings power, capital allocation, valuation and structural demand, not weekly order flow.; 反証=Thesis deterioration, adverse cash-flow revisions, or lasting competitive disadvantage.; 方針=Core accumulation and strategic holdings require separate cash-flow and thesis checks; no long-term directional forecast without evidence.
-- [未校正予測] 3635.T 1w relative positive vs 1306.T; p=0.55 (研究上の事前確率)
+- 検証可能な新規需給シグナルなし。欠損を方向予測に変換しません。
 - 事後検証: n=0, Brier=None（未校正）
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 22, 'WARNING': 13, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / ほくほくフィナンシャルグループ[8377]：自己株式の取得状況に関するお知らせ 2026年9月1日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WARNING] COMPANY_EVENT / 東京海上ホールディングス[8766]：自己株式の取得状況に関するお知らせ 2026年10月7日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WARNING] COMPANY_EVENT / 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- Counts: {'INFO': 0, 'WATCH': 12, 'WARNING': 6, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / 水戸証券[8622]：2026年３月期決算短信〔日本基準〕(非連結) 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
 - [WARNING] COMPANY_EVENT / SEC 8-K filing
 - [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
+- [WARNING] COMPANY_EVENT / ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance
+- [WARNING] LIQUIDITY / Thin liquidity flag active
+- [WARNING] VOLATILITY / Treasury yield volatility is unusually high
+- [WATCH] COMPANY_EVENT / 証券各社レーティング（目標株価変更）：SHIFT、ANYCOLORなど4社(フィスコ) - Yahoo!ファイナンス
+- [WATCH] COMPANY_EVENT / ＡＮＹＣＯＬＯＲ－岩井コスモが目標株価引き下げ 再評価されるまで少し時間かかる - TradingView
 
 ## 5. スクリーニング上位候補
 
@@ -62,23 +62,23 @@ Generated (UTC): 2026-10-27T13:17:08+00:00
 - 5. KOEI TECMO HOLDINGS CO.,LTD. 3635.T | market_rank=8.0 | raw=71.86557955874913 | cross_pct=99.63917525773196
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.67813227949274 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.30382102358148 | cross_pct=99.96987951807229
-- 3. Norwood Financial Corp. - Common Stock NWFL | market_rank=3.0 | raw=82.73480176483619 | cross_pct=99.93975903614458
-- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=5.0 | raw=82.34951268292572 | cross_pct=99.87951807228916
-- 5. DHT Holdings, Inc. DHT | market_rank=6.0 | raw=82.28241892849597 | cross_pct=99.84939759036145
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=85.22460171916786 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.14198486125004 | cross_pct=99.96984318455972
+- 3. Norwood Financial Corp. - Common Stock NWFL | market_rank=3.0 | raw=82.95885732804535 | cross_pct=99.93968636911941
+- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=5.0 | raw=82.36079691185653 | cross_pct=99.87937273823884
+- 5. DHT Holdings, Inc. DHT | market_rank=6.0 | raw=82.29561130614766 | cross_pct=99.84921592279855
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.67813227949274
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=85.22460171916786
 - 2. [JP] Marusan Securities Co.,Ltd. | cross_pct=100.0 | raw=81.23972028245915
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.96987951807229 | raw=83.30382102358148
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.96984318455972 | raw=83.14198486125004
 - 4. [JP] Mito Securities Co.,Ltd. | cross_pct=99.94845360824742 | raw=79.91844557413664
-- 5. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.93975903614458 | raw=82.73480176483619
-- 6. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.87951807228916 | raw=82.34951268292572
-- 7. [US] DHT Holdings, Inc. | cross_pct=99.84939759036145 | raw=82.28241892849597
+- 5. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.93968636911941 | raw=82.95885732804535
+- 6. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.87937273823884 | raw=82.36079691185653
+- 7. [US] DHT Holdings, Inc. | cross_pct=99.84921592279855 | raw=82.29561130614766
 - 8. [JP] Akatsuki Inc. | cross_pct=99.79381443298969 | raw=73.76155931212679
 - 9. [JP] ELECOM CO.,LTD. | cross_pct=99.74226804123711 | raw=72.8870580651853
-- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.66867469879517 | raw=81.52850372475795
+- 10. [US] First Busey Corporation - Common Stock | cross_pct=99.66827503015682 | raw=81.45465672796618
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -108,8 +108,8 @@ Generated (UTC): 2026-10-27T13:17:08+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは60.8点だが確認閾値未達
-- 上位: スタンダード 60.8 / テクノロジー 58.7 / ビットコイン 47.9
+- 監視判定: **REVIEW_LEADER** — スタンダードが73.3点、2位との差11.3点。週次レビュー候補
+- 上位: スタンダード 73.3 / テクノロジー 62.1 / ビットコイン 48.2
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
