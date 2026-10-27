@@ -1,9 +1,1420 @@
 {
-  "as_of_date": "2026-10-26",
+  "as_of_date": "2026-10-27",
   "critical_question": "What independent evidence of buying pressure exists, and why not stay in cash?",
-  "candidate_audit": [],
-  "blockers": [
-    "market_stress_no_new_entries"
+  "candidate_audit": [
+    {
+      "symbol": "8613.T",
+      "name": "Marusan Securities Co.,Ltd.",
+      "theme": "Financials",
+      "eligible": false,
+      "vetoes": [
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 1148.0,
+      "ranking_heuristic": 70.27,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.7076293243470672,
+      "observed_daily_return": -0.012897679,
+      "fundamental_score": 81.23972028245915,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "8622.T",
+      "name": "Mito Securities Co.,Ltd.",
+      "theme": "Financials",
+      "eligible": false,
+      "vetoes": [
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 739.0,
+      "ranking_heuristic": 64.95,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.6683147352150253,
+      "observed_daily_return": -0.0093833774,
+      "fundamental_score": 79.91844557413664,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "3932.T",
+      "name": "Akatsuki Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_risk_or_liquidity_score",
+        "unconfirmed_trend"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 1229.0,
+      "ranking_heuristic": 68.37,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.521505927972743,
+      "observed_daily_return": 0.011522634,
+      "fundamental_score": 73.76155931212679,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "6750.T",
+      "name": "ELECOM CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "unconfirmed_trend"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 1979.0,
+      "ranking_heuristic": 69.66,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.9574920297555791,
+      "observed_daily_return": -0.004527163,
+      "fundamental_score": 72.8870580651853,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "3635.T",
+      "name": "KOEI TECMO HOLDINGS CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "unconfirmed_trend"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 1724.5,
+      "ranking_heuristic": 70.59,
+      "demand_mode": null,
+      "observed_volume_ratio": 2.4582808221188355,
+      "observed_daily_return": 0.03418291,
+      "fundamental_score": 71.86557955874913,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "545A.T",
+      "name": "Toranvia Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_turnover",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 933.0,
+      "ranking_heuristic": 63.28,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.9172543412957221,
+      "observed_daily_return": 0.0032258063999999996,
+      "fundamental_score": 71.50730321924937,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "7744.T",
+      "name": "Noritsu Koki Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "no_positive_demand_confirmation"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 2147.0,
+      "ranking_heuristic": 69.86,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.5623711170504099,
+      "observed_daily_return": 0.0075082123,
+      "fundamental_score": 71.3961873864888,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "2121.T",
+      "name": "MIXI,Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "unconfirmed_trend"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 3895.0,
+      "ranking_heuristic": 75.64,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.6131003219236582,
+      "observed_daily_return": -0.0012820514,
+      "fundamental_score": 70.8516425548132,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "5351.T",
+      "name": "SHINAGAWA REFRA CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 1951.0,
+      "ranking_heuristic": 60.33,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.6567609110810937,
+      "observed_daily_return": 0.0,
+      "fundamental_score": 70.43159479315644,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "8630.T",
+      "name": "Sompo Holdings,Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "unconfirmed_trend"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 7155.0,
+      "ranking_heuristic": 70.76,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.7703568501056117,
+      "observed_daily_return": 0.00013978194,
+      "fundamental_score": 69.9313984685175,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "9757.T",
+      "name": "Funai Soken Holdings Incorporated",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "no_positive_demand_confirmation"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 1230.0,
+      "ranking_heuristic": 72.37,
+      "demand_mode": null,
+      "observed_volume_ratio": 1.1045861758567137,
+      "observed_daily_return": -0.016,
+      "fundamental_score": 69.87002383666989,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "8707.T",
+      "name": "IwaiCosmo Holdings,Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_risk_or_liquidity_score",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 3875.0,
+      "ranking_heuristic": 56.87,
+      "demand_mode": null,
+      "observed_volume_ratio": 1.4701645310486011,
+      "observed_daily_return": -0.011479592,
+      "fundamental_score": 69.85348893215259,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "8789.T",
+      "name": "FinTech Global Incorporated",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_risk_or_liquidity_score",
+        "unconfirmed_trend"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 153.0,
+      "ranking_heuristic": 64.17,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.7128149398003832,
+      "observed_daily_return": 0.0065789473,
+      "fundamental_score": 69.72888740730171,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4507.T",
+      "name": "Shionogi & Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "no_positive_demand_confirmation"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 3037.0,
+      "ranking_heuristic": 68.81,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.8425804416075666,
+      "observed_daily_return": -0.0045886594,
+      "fundamental_score": 69.46917706899845,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4503.T",
+      "name": "Astellas Pharma Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_risk_or_liquidity_score"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 2518.0,
+      "ranking_heuristic": 71.35,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.7563559513232045,
+      "observed_daily_return": -0.015829587,
+      "fundamental_score": 69.33066008520917,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "9746.T",
+      "name": "TKC Corporation",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "no_positive_demand_confirmation"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 4385.0,
+      "ranking_heuristic": 72.43,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.9647527283452955,
+      "observed_daily_return": -0.009039548,
+      "fundamental_score": 69.32012563089111,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "8935.T",
+      "name": "FJ NEXT HOLDINGS CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_risk_or_liquidity_score",
+        "unconfirmed_trend"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": 1950.0,
+      "ranking_heuristic": 64.2,
+      "demand_mode": null,
+      "observed_volume_ratio": 0.9589726484322882,
+      "observed_daily_return": -0.016641452,
+      "fundamental_score": 69.23307620996421,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "3989.T",
+      "name": "SHARINGTECHNOLOGY INC.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 74.33,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 68.9688475269205,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "6070.T",
+      "name": "CAREERLINK CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 69.92,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 68.77432327567645,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4516.T",
+      "name": "Nippon Shinyaku Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 62.96,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 68.60993436543498,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "2914.T",
+      "name": "JAPAN TOBACCO INC.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 76.33,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 68.17944693250723,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "3479.T",
+      "name": "TKP Corporation",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 67.99,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 67.88301304538626,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "7172.T",
+      "name": "Japan Investment Adviser Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 64.59,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 67.76050679433071,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "2124.T",
+      "name": "JAC Recruitment Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 70.15,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 67.5243169320199,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "9619.T",
+      "name": "ICHINEN HOLDINGS CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 70.82,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 67.31409286687192,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "5195.T",
+      "name": "Bando Chemical Industries,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_risk_or_liquidity_score",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 66.54,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 67.29576028933032,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4628.T",
+      "name": "SK KAKEN CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 65.12,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.92395461546826,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4432.T",
+      "name": "WingArc1st Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 71.03,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.81153869538065,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "6741.T",
+      "name": "Nippon Signal Company,Limited",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_risk_or_liquidity_score",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 65.09,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.58792781341256,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "2674.T",
+      "name": "HARD OFF CORPORATION Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 62.28,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.54714777956283,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "8473.T",
+      "name": "SBI Holdings,Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_risk_or_liquidity_score",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 54.77,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.53422051279186,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "2153.T",
+      "name": "E・J Holdings Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 64.18,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.45434280352752,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "6630.T",
+      "name": "YA-MAN LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 65.08,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.38979081018884,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "6706.T",
+      "name": "DKK Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 62.28,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.27154403151258,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4595.T",
+      "name": "MIZUHO MEDY CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 64.77,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.0960271908607,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "8739.T",
+      "name": "SPARX Group Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_risk_or_liquidity_score",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 60.25,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.09143342067009,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4293.T",
+      "name": "SEPTENI HOLDINGS CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 61.82,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.07490026901306,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "7033.T",
+      "name": "Management Solutions Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 68.79,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.05774005840486,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "3679.T",
+      "name": "ZIGExN Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 67.74,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 66.02641238567385,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "6191.T",
+      "name": "AirTrip Corp.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_risk_or_liquidity_score",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 65.81,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.9867445717446,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "6036.T",
+      "name": "KeePer Technical Laboratory Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_risk_or_liquidity_score",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 67.18,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.94168284143623,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "5290.T",
+      "name": "Vertex Corporation",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 53.8,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.90743208992235,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "3284.T",
+      "name": "Hoosiers Holdings Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 60.89,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.9046864804018,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4540.T",
+      "name": "TSUMURA & CO.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 63.34,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.80566745848125,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "6418.T",
+      "name": "JAPAN CASH MACHINE CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_risk_or_liquidity_score",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 64.22,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.71334612804297,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "9560.T",
+      "name": "PROGRIT Inc.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 67.6,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.6992731200228,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "3076.T",
+      "name": "Ai Holdings Corporation",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 69.34,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.67710198911708,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4763.T",
+      "name": "CREEK & RIVER Co.,Ltd.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "unconfirmed_trend",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 62.51,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.63076024995064,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "4616.T",
+      "name": "KAWAKAMI PAINT MANUFACTURING CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_risk_or_liquidity_score",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "overextended_one_month_run",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 69.07,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.56936500895718,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    },
+    {
+      "symbol": "9928.T",
+      "name": "MIROKU JYOHO SERVICE CO.,LTD.",
+      "theme": "Other",
+      "eligible": false,
+      "vetoes": [
+        "insufficient_point_in_time_history",
+        "insufficient_turnover",
+        "missing_price_volume_evidence",
+        "supply_snapshot_missing_or_stale",
+        "weak_factor_or_momentum"
+      ],
+      "unknowns": [
+        "short_and_margin_positioning_unverified"
+      ],
+      "signal_price": null,
+      "ranking_heuristic": 69.88,
+      "demand_mode": null,
+      "observed_volume_ratio": null,
+      "observed_daily_return": null,
+      "fundamental_score": 65.48993996001566,
+      "market_may_be_wrong": "Fundamental/trend signal may survive a short-term pullback, not proven",
+      "strongest_bear_case": "Prior rally may be exhausting; volume does not identify informed buying",
+      "why_trade_now": "No demonstrated near-term buying pressure",
+      "do_nothing_baseline": "Hold cash with no execution risk",
+      "alternative": "Use 1306.T broad-market ETF instead of an individual stock",
+      "falsifier": "Intraday -5% stop, +10% target, or 10-session maximum holding time",
+      "data_as_of": "2026-10-27"
+    }
   ],
+  "blockers": [],
   "interpretation": "Missing short/margin data are explicitly unknown; scores never override vetoes."
 }
