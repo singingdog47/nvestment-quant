@@ -1,69 +1,69 @@
 {
-  "generated_at_jst": "2026-10-27T01:06:57+09:00",
+  "generated_at_jst": "2026-10-27T22:17:08+09:00",
   "data_status": "ok",
   "review_day": false,
   "research_status": {
     "status": "WAIT_RESEARCH",
     "leader": null,
     "reason": "首位スタンダードは60.8点だが確認閾値未達",
-    "margin": 2.06
+    "margin": 2.12
   },
   "ranking": [
     {
       "key": "STANDARD",
       "label": "スタンダード",
       "ticker": "SPY",
-      "close": 765.6099853515625,
+      "close": 765.3699951171875,
       "data_date": "2026-10-26",
-      "momentum": 48.49,
-      "macro": 58.43,
-      "trend": 54.96,
-      "risk": 91.42,
+      "momentum": 48.44,
+      "macro": 58.57,
+      "trend": 54.94,
+      "risk": 91.43,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 60.81
+      "total": 60.83
     },
     {
       "key": "TECH",
       "label": "テクノロジー",
       "ticker": "QQQ",
-      "close": 713.14501953125,
+      "close": 712.2000122070312,
       "data_date": "2026-10-26",
-      "momentum": 45.38,
-      "macro": 60.59,
-      "trend": 52.33,
-      "risk": 81.56,
+      "momentum": 45.15,
+      "macro": 60.83,
+      "trend": 52.25,
+      "risk": 81.57,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 58.75
+      "total": 58.71
     },
     {
       "key": "BTC",
       "label": "ビットコイン",
       "ticker": "BTC-USD",
-      "close": 80160.03125,
-      "data_date": "2026-10-26",
-      "momentum": 39.36,
+      "close": 80119.8828125,
+      "data_date": "2026-10-27",
+      "momentum": 44.22,
       "macro": 48.57,
-      "trend": 51.54,
-      "risk": 77.74,
+      "trend": 51.51,
+      "risk": 79.03,
       "cost": 20.82,
       "round_trip_cost_pct": 8.8,
-      "total": 46.08
+      "total": 47.9
     },
     {
       "key": "GOLD",
       "label": "金（ゴールド）",
       "ticker": "GLD",
-      "close": 368.2900085449219,
+      "close": 367.82000732421875,
       "data_date": "2026-10-26",
-      "momentum": 31.42,
-      "macro": 57.11,
+      "momentum": 31.2,
+      "macro": 57.4,
       "trend": 0.0,
-      "risk": 68.9,
+      "risk": 68.88,
       "cost": 91.0,
       "round_trip_cost_pct": 1.0,
-      "total": 41.27
+      "total": 41.26
     }
   ],
   "source_health": [
@@ -71,7 +71,7 @@
       "source": "yfinance:GLD",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-26T16:06:57+00:00",
+      "fetched_at": "2026-10-27T13:17:08+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -79,7 +79,7 @@
       "source": "yfinance:QQQ",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-26T16:06:57+00:00",
+      "fetched_at": "2026-10-27T13:17:08+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -87,7 +87,7 @@
       "source": "yfinance:SPY",
       "status": "ok",
       "records": 251,
-      "fetched_at": "2026-10-26T16:06:57+00:00",
+      "fetched_at": "2026-10-27T13:17:08+00:00",
       "error": "",
       "source_tier": "secondary"
     },
@@ -95,31 +95,31 @@
       "source": "yfinance:BTC-USD",
       "status": "ok",
       "records": 366,
-      "fetched_at": "2026-10-26T16:06:57+00:00",
+      "fetched_at": "2026-10-27T13:17:08+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^TNX",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-26T16:06:57+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-27T13:17:08+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:DX-Y.NYB",
       "status": "ok",
-      "records": 251,
-      "fetched_at": "2026-10-26T16:06:57+00:00",
+      "records": 252,
+      "fetched_at": "2026-10-27T13:17:08+00:00",
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance:^VIX",
       "status": "ok",
-      "records": 253,
-      "fetched_at": "2026-10-26T16:06:57+00:00",
+      "records": 254,
+      "fetched_at": "2026-10-27T13:17:08+00:00",
       "error": "",
       "source_tier": "secondary"
     }
