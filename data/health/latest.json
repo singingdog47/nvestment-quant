@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-10-26T19:31:37.439321+00:00",
+  "generated_at_utc": "2026-10-27T18:56:30.277803+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
   "incident_signature": "f2577a8778230cbe",
@@ -29,16 +29,14 @@
   ],
   "components": {
     "shadow_v2": {
-      "status": "RISK_PAUSE",
-      "as_of_date": "2026-10-26",
-      "blockers": [
-        "market_stress_no_new_entries"
-      ],
+      "status": "HEALTHY",
+      "as_of_date": "2026-10-27",
+      "blockers": [],
       "mode": "SHADOW_ONLY"
     },
     "ai_ma": {
       "status": "DATA_IMPAIRED",
-      "as_of_date": "2026-10-27",
+      "as_of_date": "2026-10-28",
       "blockers": [
         "benchmark_price_unavailable",
         "entry_missing_bar:5351.T",
@@ -48,7 +46,7 @@
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-10-27",
+      "as_of_date": "2026-10-28",
       "blockers": [],
       "mode": null
     }
