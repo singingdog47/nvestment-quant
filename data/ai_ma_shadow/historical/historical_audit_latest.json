@@ -4,8 +4,8 @@
   "status": "INSUFFICIENT_POINT_IN_TIME_AI_MA_EVIDENCE",
   "historical_public_validation": {
     "first_prediction_captured_at": "2026-08-23T14:13:27+00:00",
-    "last_prediction_captured_at": "2026-10-16T12:28:57+00:00",
-    "usable_outcomes_1w": 449,
+    "last_prediction_captured_at": "2026-10-19T16:26:41+00:00",
+    "usable_outcomes_1w": 464,
     "usable_outcomes_1m": 225,
     "is_AI_MA_target_labeled": false,
     "usable_for_market_baseline_only": true
