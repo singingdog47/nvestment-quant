@@ -9,7 +9,7 @@ from __future__ import annotations
 import csv
 import json
 import math
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, time
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Callable
@@ -59,13 +59,33 @@ def new_state(cfg):
     }
 
 
-def resolve_market_session(now: datetime, screen: list[dict]) -> date:
-    """Anchor a delayed after-close workflow to its source trading session.
+def _postclose_source_for_session(timestamp, session: date) -> bool:
+    """Allow a nightly source made shortly after midnight JST to represent the PRIOR cash session.
 
-    GitHub scheduled jobs can start after midnight JST. Before 09:00,
-    accept a post-close source from the previous local date if <18h old.
-    Avoid treating yesterday's fresh post-close screen as stale just because
-    the execution crossed midnight. Never move the market date forward.
+    Generation time is not the price's exchange timestamp. This rule is for
+    scheduling/signaling only; confirmed OHLC is still required for fills.
+    """
+    if after_jp_market_close(timestamp, session):
+        return True
+    try:
+        received = datetime.fromisoformat(str(timestamp).replace("Z", "+00:00"))
+        if received.tzinfo is None:
+            return False
+        received = received.astimezone(ZoneInfo("Asia/Tokyo"))
+        previous_close = datetime.combine(session, time(15, 30), tzinfo=ZoneInfo("Asia/Tokyo"))
+        return (session.weekday() < 5
+                and received.date() == session + timedelta(days=1)
+                and received.hour < 9
+                and timedelta(0) < received - previous_close < timedelta(hours=17, minutes=30))
+    except (ValueError, TypeError):
+        return False
+
+
+def resolve_market_session(now: datetime, screen: list[dict]) -> date:
+    """Anchor a delayed after-close workflow to the last cash-market session.
+
+    Delayed after-midnight output may be timestamped after midnight JST.
+    No post-close decision is allowed to incorporate the current trading day.
     """
     local_now = now.astimezone(ZoneInfo("Asia/Tokyo"))
     today = local_now.date()
@@ -76,10 +96,11 @@ def resolve_market_session(now: datetime, screen: list[dict]) -> date:
         retrieved = datetime.fromisoformat(str(stamp).replace("Z", "+00:00"))
         if retrieved.tzinfo is None:
             return today
-        observed = retrieved.astimezone(ZoneInfo("Asia/Tokyo")).date()
         age = local_now - retrieved.astimezone(ZoneInfo("Asia/Tokyo"))
-        if observed < today and timedelta(0) <= age <= timedelta(hours=18) and after_jp_market_close(stamp, observed):
-            return observed
+        previous_day = today - timedelta(days=1)
+        if (timedelta(0) <= age <= timedelta(hours=18)
+                and _postclose_source_for_session(stamp, previous_day)):
+            return previous_day
     except (ValueError, TypeError):
         pass
     return today
@@ -245,7 +266,7 @@ def run(as_of=None, bar_source: Callable | None = None):
     state["pending_sells"] = [s for s in state["pending_sells"] if s in state["positions"]]
 
     screen = rows(DATA / "screening_latest.csv")
-    screen_fresh = bool(screen and after_jp_market_close(screen[0].get("data_retrieved_at_utc"), as_of))
+    screen_fresh = bool(screen and _postclose_source_for_session(screen[0].get("data_retrieved_at_utc"), as_of))
     audits = candidate_audit(screen, cfg) if screen_fresh else []
     regime = load_json(DATA / "regime" / "market_regime_latest.json", {}) or {}
     regime_ok = regime.get("date_jst") == as_of.isoformat() and regime.get("actionable") is True
