@@ -134,7 +134,7 @@ def test_after_midnight_screen_can_signal_yesterday_without_fake_fill(tmp_path, 
     _, data = setup_case(tmp_path, monkeypatch)
     import csv
     path = data / "screening_latest.csv"
-    path.write_text(path.read_text().replace("2026-10-22T07:45:00Z", "2026-10-23T01:02:00Z"))
+    path.write_text(path.read_text().replace("2026-10-22T07:45:00Z", "2026-10-22T16:02:00Z"))
     observed = c.run(date(2026, 10, 22), bar_source=lambda symbol, day: None)
     assert observed["screen_fresh"] is True
     assert observed["pending_buys"] == 1
