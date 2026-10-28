@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-10-28T15:06:20+00:00
+Generated (UTC): 2026-10-28T15:31:01+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,11 +11,11 @@ Generated (UTC): 2026-10-28T15:06:20+00:00
 
 ## 2. 市場レジーム
 - Regime: **NEUTRAL**
-- Score: 51.41
+- Score: 52.78
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 17.360000610351562
+- VIX: 17.270000457763672
 - Treasury realized-vol proxy (not ICE MOVE): 81.9 bps annualized; percentile=0.8214
 - Flags: THIN_LIQUIDITY
 
@@ -42,15 +42,14 @@ Generated (UTC): 2026-10-28T15:06:20+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 6, 'WARNING': 3, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / 東京海上、今期配当を実質増額修正 - 株探
-- [WARNING] COMPANY_EVENT / 水戸証券[8622]：2026年３月期決算短信〔日本基準〕(非連結) 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- Counts: {'INFO': 0, 'WATCH': 4, 'WARNING': 3, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / ＮＥＣ[6701]：2027年3月期 第2四半期（中間期）決算短信〔IFRS〕（連結） 2026年10月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- [WARNING] COMPANY_EVENT / ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance
 - [WARNING] LIQUIDITY / Thin liquidity flag active
-- [WATCH] COMPANY_EVENT / FOOD＆LIFE（3563）FY2026 月次情報 (9月期) - 四季報オンライン
-- [WATCH] COMPANY_EVENT / 東京海上ホールディングス(株)【8766】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-- [WATCH] COMPANY_EVENT / 東京海上ホールディングス[8766]の株価・株主優待など。 - 日本経済新聞
-- [WATCH] COMPANY_EVENT / 東京海上HD、株主優待を新設！ 3月末に100株を3年以上保有で2027年3月は7500円分、2028年以降も継続保有すると2500円分の電子マネーなどがもらえる！ - ダイヤモンド・オンライン
-- [WATCH] COMPANY_EVENT / 水戸証券株式会社 | 導入事例 | 法人のお客さま | ソフトバンク - ソフトバンク
+- [WATCH] COMPANY_EVENT / (株)ほくほくフィナンシャルグループ【8377】：決算情報 - Yahoo!ファイナンス
+- [WATCH] COMPANY_EVENT / 水戸証券[8622]：健康優良企業「金の認定」の更新について 2026年10月22日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- [WATCH] COMPANY_EVENT / 水戸、非開示だった上期経常は2.2倍増益へ - 株探
+- [WATCH] LIQUIDITY / Market liquidity is soft
 
 ## 5. スクリーニング上位候補
 
@@ -62,23 +61,23 @@ Generated (UTC): 2026-10-28T15:06:20+00:00
 - 5. KOEI TECMO HOLDINGS CO.,LTD. 3635.T | market_rank=9.0 | raw=71.06032324392784 | cross_pct=99.58868894601542
 
 ### 米国株（市場内順位）
-- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.74295893433667 | cross_pct=100.0
-- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.2426756856711 | cross_pct=99.96995192307693
-- 3. Norwood Financial Corp. - Common Stock NWFL | market_rank=3.0 | raw=82.62052591723564 | cross_pct=99.93990384615384
-- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=5.0 | raw=82.20423710083737 | cross_pct=99.8798076923077
-- 5. DHT Holdings, Inc. DHT | market_rank=7.0 | raw=82.12054891617193 | cross_pct=99.81971153846155
+- 1. Carter Bankshares, Inc. - Common Stock CARE | market_rank=1.0 | raw=84.8236206452152 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.20418753656918 | cross_pct=99.9699789852897
+- 3. Norwood Financial Corp. - Common Stock NWFL | market_rank=3.0 | raw=82.67657284754571 | cross_pct=99.93995797057941
+- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=5.0 | raw=82.14841896658665 | cross_pct=99.87991594115881
+- 5. DHT Holdings, Inc. DHT | market_rank=7.0 | raw=82.07900774529546 | cross_pct=99.81987391173823
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.74295893433667
+- 1. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=100.0 | raw=84.8236206452152
 - 2. [JP] Marusan Securities Co.,Ltd. | cross_pct=100.0 | raw=81.02063993331618
-- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.96995192307693 | raw=83.2426756856711
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.9699789852897 | raw=83.20418753656918
 - 4. [JP] Mito Securities Co.,Ltd. | cross_pct=99.94858611825192 | raw=80.21821538842293
-- 5. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.93990384615384 | raw=82.62052591723564
-- 6. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.8798076923077 | raw=82.20423710083737
-- 7. [US] DHT Holdings, Inc. | cross_pct=99.81971153846155 | raw=82.12054891617193
+- 5. [US] Norwood Financial Corp. - Common Stock | cross_pct=99.93995797057941 | raw=82.67657284754571
+- 6. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.87991594115881 | raw=82.14841896658665
+- 7. [US] DHT Holdings, Inc. | cross_pct=99.81987391173823 | raw=82.07900774529546
 - 8. [JP] Akatsuki Inc. | cross_pct=99.79434447300771 | raw=73.30241651611102
 - 9. [JP] ELECOM CO.,LTD. | cross_pct=99.74293059125964 | raw=72.61031965106193
-- 10. [US] TORM plc - Class A Common Stock | cross_pct=99.66947115384616 | raw=81.19186082350438
+- 10. [US] TORM plc - Class A Common Stock | cross_pct=99.66976883818674 | raw=81.19760603115294
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習

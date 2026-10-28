@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-28T15:04:01.911549+00:00
+- Data retrieved (UTC): 2026-10-28T15:28:51.099110+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -46,15 +46,15 @@
 | JP | 12 | 545A.T | Toranvia Co.,Ltd. | Other | 70.6 | 99.4 | unchanged |
 | JP | 13 | 8707.T | IwaiCosmo Holdings,Inc. | Other | 70.2 | 99.4 | unchanged |
 | JP | 14 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 69.7 | 99.3 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.7 | 100.0 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.8 | 100.0 | unchanged |
 | US | 2 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.2 | 100.0 | unchanged |
-| US | 3 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.6 | 99.9 | unchanged |
-| US | 5 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.2 | 99.9 | unchanged |
+| US | 3 | NWFL | Norwood Financial Corp. - Common Stock | Financials | 82.7 | 99.9 | unchanged |
+| US | 5 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.1 | 99.9 | unchanged |
 | US | 7 | DHT | DHT Holdings, Inc. | Shipping | 82.1 | 99.8 | unchanged |
 | US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 81.2 | 99.7 | unchanged |
 | US | 19 | BUSE | First Busey Corporation - Common Stock | Other | 80.1 | 99.5 | unchanged |
 | US | 26 | FRO | Frontline Plc Ordinary Shares | Other | 78.9 | 99.2 | unchanged |
-| US | 27 | SFNC | Simmons First National Corporation - Common Stock | Other | 78.9 | 99.2 | unchanged |
+| US | 27 | SFNC | Simmons First National Corporation - Common Stock | Other | 78.8 | 99.2 | unchanged |
 | US | 28 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 78.7 | 99.2 | unchanged |
 
 ## Required manual checks before an order

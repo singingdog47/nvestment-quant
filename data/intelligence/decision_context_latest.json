@@ -49,7 +49,7 @@
     }
   ],
   "primary_coverage_audit": {
-    "generated_at_utc": "2026-10-28T15:05:00+00:00",
+    "generated_at_utc": "2026-10-28T15:29:49+00:00",
     "population": "JP Company Intelligence targets; not whole-market screening",
     "target_count": 38,
     "companies_with_any_primary_metric": 19,
@@ -74,10 +74,10 @@
     "note": "A metric is covered only when a verified numeric primary observation exists."
   },
   "quality": {
-    "generated_at": "2026-10-28T15:05:08+00:00",
+    "generated_at": "2026-10-28T15:29:57+00:00",
     "targets": 52,
     "portfolio_targets": 0,
-    "events": 88,
+    "events": 90,
     "primary_source_health": 1.0,
     "configured_primary_sources": 4,
     "optional_primary_sources_unconfigured": [],
@@ -95,12 +95,12 @@
   "market_regime": {
     "version": "1.5.3",
     "engine_version": "1.5.3",
-    "generated_at": "2026-10-28T15:04:04+00:00",
-    "generated_at_utc": "2026-10-28T15:04:04+00:00",
+    "generated_at": "2026-10-28T15:28:53+00:00",
+    "generated_at_utc": "2026-10-28T15:28:53+00:00",
     "date_jst": "2026-10-29",
     "data_status": "ok",
     "regime_label": "NEUTRAL",
-    "regime_score": 51.41,
+    "regime_score": 52.78,
     "confidence": 1.0,
     "actionable": true,
     "actionability": {
@@ -119,15 +119,15 @@
       "THIN_LIQUIDITY"
     ],
     "components": {
-      "trend": 47.42865457865243,
-      "stress": 75.99749954223633,
-      "participation": 41.0629693818602,
-      "liquidity": 27.11285897506291,
+      "trend": 51.49072359939665,
+      "stress": 76.06499965667724,
+      "participation": 41.02541883304448,
+      "liquidity": 28.018608137729125,
       "positioning": 59.04864260835684
     },
     "evidence": {
       "trend_series": 4,
-      "vix": 17.360000610351562,
+      "vix": 17.270000457763672,
       "hy_oas": 3.18,
       "ig_oas": 0.88,
       "treasury_volatility_proxy": 81.9,
@@ -138,9 +138,9 @@
       "treasury_volatility_is_ice_move": false,
       "breadth_n": 9557,
       "breadth_status": "ok",
-      "breadth_source_as_of_utc": "2026-10-28T15:04:01.911549+00:00",
+      "breadth_source_as_of_utc": "2026-10-28T15:28:51.099110+00:00",
       "nfci": -0.487,
-      "volume_ratio20_mean": 0.3425964743765727,
+      "volume_ratio20_mean": 0.3652402034432282,
       "positioning_sources": {
         "jpx_raw_healthy": 4,
         "cftc_normalized_values": 22
@@ -235,7 +235,7 @@
     "note": "Guardrail only. This file never places orders."
   },
   "system_health": {
-    "generated_at": "2026-10-28T15:05:08+00:00",
+    "generated_at": "2026-10-28T15:29:57+00:00",
     "components": {
       "market_regime": {
         "status": "ok",
@@ -291,8 +291,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "5a4e6256a070195a6c249cf3",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "8377",
+      "ticker": "8377.T",
+      "name": "ほくほくフィナンシャルグループ",
+      "event_date": "Fri, 29 May 2026",
+      "event_type": "guidance",
+      "title": "ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5mOXJYY0tyRW8yQUhTZ09US2tkWVM0bEwzUEgteml0SlBUdVZTaU14M3NWZGNUX2FvLTdCb2Z3dHBTVi1WdmlkUVV5ZWZSRVM5SlE?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "critical",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
+      "event_id": "7e294d155e9639bbab4f8b92",
       "raw_excerpt": ""
     },
     {
@@ -309,7 +327,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "40b419b34b81c976e54f78cf",
       "raw_excerpt": ""
     },
@@ -327,7 +345,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "b6440505aa2d30dfbfcfd49f",
       "raw_excerpt": ""
     },
@@ -345,7 +363,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "95ceece265b575f6754805d0",
       "raw_excerpt": ""
     },
@@ -363,26 +381,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "5465cc2cace066eac8d51412",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "8622",
-      "ticker": "8622.T",
-      "name": "水戸証券",
-      "event_date": "Tue, 28 Apr 2026",
-      "event_type": "earnings",
-      "title": "水戸証券[8622]：2026年３月期決算短信〔日本基準〕(非連結) 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB2UWpSZ2ZPQk5zd0k2Y0lfMzZuZUx3TTVLT2kxY000UElhaEc2MmViNEc2Zl9SZ2hIYVVHTmtfSTd3Uk9DVmdmM050WlJhcUFpVktoYjk2c1FSM3VmcWV5bklLQXg4OFFVX2c?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "critical",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
-      "event_id": "2bd8217369f99cc82df510ac",
       "raw_excerpt": ""
     },
     {
@@ -399,8 +399,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "13b239a49c023bcfd0abfa3f",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "6701",
+      "ticker": "6701.T",
+      "name": "NEC",
+      "event_date": "Wed, 28 Oct 2026",
+      "event_type": "earnings",
+      "title": "ＮＥＣ[6701]：2027年3月期 第2四半期（中間期）決算短信〔IFRS〕（連結） 2026年10月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rY2JPSjZ4NFJRQ093d2pYVWJhQnZBYUF1cUNkN1cxc2R4UGp0Uk9oOFV0ZkZSUExLT2pPa05YY1lmaFBYN3V1X1AtLXRlSmZiVk5rWHJUZlpsQlZhc25ZTXhMQzZaZmwxcmc?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "critical",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
+      "event_id": "6fbe2f74fa80b2414719e11f",
       "raw_excerpt": ""
     },
     {
@@ -417,7 +435,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "6c0510d8b5ca5251dafa78c5",
       "raw_excerpt": ""
     },
@@ -435,7 +453,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "4f2de058b3c176f4ac99ce83",
       "raw_excerpt": ""
     },
@@ -453,7 +471,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "f5c67fe94ddb7e08ae6a2fe9",
       "raw_excerpt": ""
     },
@@ -471,7 +489,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "1f21ce51a019dc8235b2112f",
       "raw_excerpt": ""
     },
@@ -489,7 +507,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "2477a7f913e68a998b852023",
       "raw_excerpt": ""
     },
@@ -507,7 +525,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "1357d9806c5004e769a0d23f",
       "raw_excerpt": ""
     },
@@ -525,7 +543,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "295e1cdb5f42fbd25840a09e",
       "raw_excerpt": ""
     },
@@ -543,7 +561,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "10c4cfbbf3462b0654fa29ec",
       "raw_excerpt": ""
     },
@@ -561,7 +579,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "27409884c8b08f5bcda585e0",
       "raw_excerpt": ""
     },
@@ -579,7 +597,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "dbff4c6eb4aed4151c2a058d",
       "raw_excerpt": ""
     },
@@ -597,7 +615,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "65a81594f0cc545cdb9cdbf9",
       "raw_excerpt": ""
     },
@@ -615,7 +633,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "91b40e7af3ca60ff33cae506",
       "raw_excerpt": ""
     },
@@ -633,7 +651,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "30c4af9554e9a4a09e79fca3",
       "raw_excerpt": ""
     },
@@ -651,7 +669,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "48ce076ce76d76db5ec97d78",
       "raw_excerpt": ""
     },
@@ -669,7 +687,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "0a8087634e82550166405d73",
       "raw_excerpt": ""
     },
@@ -687,7 +705,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "76cbe1726c6f0fbd335d9bda",
       "raw_excerpt": ""
     },
@@ -705,7 +723,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "6de188c7c34dd0c6cbe0644a",
       "raw_excerpt": ""
     },
@@ -723,7 +741,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "43759b21a597d3a203c0132f",
       "raw_excerpt": ""
     },
@@ -741,7 +759,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "5bde594e3045328d06cf82bb",
       "raw_excerpt": ""
     },
@@ -759,7 +777,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "39b2d957abccaab619de6cc4",
       "raw_excerpt": ""
     },
@@ -777,7 +795,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "29c1e3b84ae6c56d1f2015ff",
       "raw_excerpt": ""
     },
@@ -795,7 +813,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "610cad6573ed744346db201c",
       "raw_excerpt": ""
     },
@@ -813,7 +831,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "585299ecb21afbdac17a31ea",
       "raw_excerpt": ""
     },
@@ -831,7 +849,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "124981aff89dfb5e4fa307d7",
       "raw_excerpt": ""
     },
@@ -849,7 +867,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "3fbee677072e4a0611fd1439",
       "raw_excerpt": ""
     },
@@ -867,7 +885,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "1bd8798dfbdb444f07639b3d",
       "raw_excerpt": ""
     },
@@ -885,7 +903,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "648cf957b3c776326490cd67",
       "raw_excerpt": ""
     },
@@ -903,7 +921,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "1f44f733e7db31dcd0e4a971",
       "raw_excerpt": ""
     },
@@ -921,7 +939,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "f567c8063bbbf05335fa297e",
       "raw_excerpt": ""
     },
@@ -939,7 +957,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "4069a651a79c5351bc700f48",
       "raw_excerpt": ""
     },
@@ -957,7 +975,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "b820a217d63520b85a943ab3",
       "raw_excerpt": ""
     },
@@ -975,7 +993,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "event_id": "c59882f1d99fa8c1acac4651",
       "raw_excerpt": ""
     },
@@ -993,7 +1011,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:47+00:00",
+      "fetched_at": "2026-10-28T15:29:37+00:00",
       "event_id": "65420647062f059c4fb9b9e5",
       "raw_excerpt": ""
     },
@@ -1011,7 +1029,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:47+00:00",
+      "fetched_at": "2026-10-28T15:29:37+00:00",
       "event_id": "7c81ee14122bbd9856978776",
       "raw_excerpt": ""
     },
@@ -1029,7 +1047,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "93c61ebfc7150a8b9b13b7d4",
       "raw_excerpt": ""
     },
@@ -1047,7 +1065,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "bd8a77fe5591b55c28cfc227",
       "raw_excerpt": ""
     },
@@ -1065,7 +1083,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "c8277ef5b9da9a55d13ca5ef",
       "raw_excerpt": ""
     },
@@ -1083,7 +1101,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "e88b73ca684c91ffcbdf93aa",
       "raw_excerpt": ""
     },
@@ -1101,7 +1119,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "bab238728688ccd0253cf776",
       "raw_excerpt": ""
     },
@@ -1119,7 +1137,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "baa4854bd2e87d3a02c6824d",
       "raw_excerpt": ""
     },
@@ -1137,7 +1155,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "933c83496c3a634461c28702",
       "raw_excerpt": ""
     },
@@ -1155,7 +1173,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "c67f7272a7a9f232b37375f8",
       "raw_excerpt": ""
     },
@@ -1173,7 +1191,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "994d5ba42dbf8a424997ebe6",
       "raw_excerpt": ""
     },
@@ -1191,26 +1209,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "76759b27a8b4a40b7db05741",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "8622",
-      "ticker": "8622.T",
-      "name": "水戸証券",
-      "event_date": "Mon, 23 Mar 2026",
-      "event_type": "disclosure",
-      "title": "水戸証券株式会社 | 導入事例 | 法人のお客さま | ソフトバンク - ソフトバンク",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE94blBkeWE2UTI3N3U4QU1qbHJZSGk4ZE1BTzhZVlBoX3dqSDVIUTAteXB1NUxDNTVPTXNiQTlXN0pOTXA2dFIyck1aajcxakR0VUNJX0ZxclpqdFdkbXc?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
-      "event_id": "3c4d446dfed3609bb6de61ae",
       "raw_excerpt": ""
     },
     {
@@ -1227,7 +1227,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "039ad3aa492ba7212627eb09",
       "raw_excerpt": ""
     },
@@ -1245,7 +1245,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "472867ea5cdadcce67e04d16",
       "raw_excerpt": ""
     },
@@ -1263,7 +1263,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "61fa09ced1e6e763f8af1f21",
       "raw_excerpt": ""
     },
@@ -1281,7 +1281,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "720d73ab549e2a40961e5ec1",
       "raw_excerpt": ""
     },
@@ -1299,7 +1299,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "8ee56679f21374264e2514c7",
       "raw_excerpt": ""
     },
@@ -1317,8 +1317,44 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "2039fff7cafdadec5fb4bd46",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "8622",
+      "ticker": "8622.T",
+      "name": "水戸証券",
+      "event_date": "Thu, 22 Oct 2026",
+      "event_type": "disclosure",
+      "title": "水戸証券[8622]：健康優良企業「金の認定」の更新について 2026年10月22日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE42R2t3c3FzZTFuTVB3Y05SNWxhQTd1dGpzS1p1a2J2ZjBSYk8xenR0WnA2M0hhMEI3MkpSdjJKaExCNHBjWmJfcXlkUnpxcUM1VVg2dGJ6eVVGRXYzWEtPUlk4UlJ4R3FocFE?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
+      "event_id": "892e2f631bbf267f9b305132",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "8622",
+      "ticker": "8622.T",
+      "name": "水戸証券",
+      "event_date": "Tue, 20 Oct 2026",
+      "event_type": "disclosure",
+      "title": "水戸、非開示だった上期経常は2.2倍増益へ - 株探",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4wMTEtek9FdG5mLXlYbHZteFZ2WjktX0J4bGxGeU9GY0lTM3MtRTdIME82Ty03T2ZVOWxHTlVnM1pIamZObjh6QUgwZTFYRGx0TUE?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
+      "event_id": "c342c1ad29ac740380688273",
       "raw_excerpt": ""
     },
     {
@@ -1335,7 +1371,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "e4ee52433319e481dd6164bc",
       "raw_excerpt": ""
     },
@@ -1353,7 +1389,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "4a2d17502560344171b67751",
       "raw_excerpt": ""
     },
@@ -1371,7 +1407,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "a487cbddbbe467e000f3242f",
       "raw_excerpt": ""
     },
@@ -1389,7 +1425,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "5fd4507203e8556e485303d6",
       "raw_excerpt": ""
     },
@@ -1407,7 +1443,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "1acfc1704b372337e91206be",
       "raw_excerpt": ""
     },
@@ -1425,7 +1461,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "5d16e773f2bcb119908e0a3b",
       "raw_excerpt": ""
     },
@@ -1443,7 +1479,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "c07e19f2cef9bda1813c50c7",
       "raw_excerpt": ""
     },
@@ -1461,7 +1497,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "79d5489109142211d7c9a9b8",
       "raw_excerpt": ""
     },
@@ -1479,7 +1515,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "120aa06c09c6d49342d0d501",
       "raw_excerpt": ""
     },
@@ -1497,7 +1533,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "ececbdfadf87fd39e3d59f6b",
       "raw_excerpt": ""
     },
@@ -1515,7 +1551,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "1fa60f0fe912cd0513f9c19f",
       "raw_excerpt": ""
     },
@@ -1533,7 +1569,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "b423c226424b8876ac8b5fe1",
       "raw_excerpt": ""
     },
@@ -1551,7 +1587,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "74c29d538e2e50a50f056cfa",
       "raw_excerpt": ""
     },
@@ -1569,7 +1605,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "70a1745c1312d111001778f5",
       "raw_excerpt": ""
     },
@@ -1587,7 +1623,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "75f2612125b236ac29f9ef8e",
       "raw_excerpt": ""
     },
@@ -1605,7 +1641,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "7f6291b271cd8b4ce18444d9",
       "raw_excerpt": ""
     },
@@ -1623,7 +1659,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "fac490c57c69be8f8b866151",
       "raw_excerpt": ""
     },
@@ -1641,7 +1677,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "41deda9d2aa3dde946a1f938",
       "raw_excerpt": ""
     },
@@ -1659,7 +1695,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "5144fd6dcc760ef84b7be63e",
       "raw_excerpt": ""
     },
@@ -1677,7 +1713,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "7d3072f4e06e5ed7bce21854",
       "raw_excerpt": ""
     },
@@ -1695,7 +1731,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "164deec2a3e77837396a83da",
       "raw_excerpt": ""
     },
@@ -1713,7 +1749,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "11e92ade0b03eb8e1d43318d",
       "raw_excerpt": ""
     },
@@ -1731,7 +1767,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "868c49dcb6eae14dc55d1f16",
       "raw_excerpt": ""
     },
@@ -1749,26 +1785,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "2fca7ca21def5504f283b7c7",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "6701",
-      "ticker": "6701.T",
-      "name": "NEC",
-      "event_date": "Wed, 28 Oct 2026",
-      "event_type": "disclosure",
-      "title": "【決算速報】ＮＥＣ---27年3月期2Qは増益、経常利益は23.2％増(フィスコ) - Yahoo!ファイナンス",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNG16bkJLRDNYNFpUQ2VLS0RTZ1g0dXgxTlVETW44U0lYODBEeVpfZVFMRjBkUkdLN0FpNHNMOVN6ZHYwVG4xM2w0bmhUUWFJY2lZd3JaeFFDRmY5QjdnMnpfOUYzSnJBM09LeTZhUHQzX1ZXbDRlTXZnRkNqWmNycGtfRWVPc3c?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
-      "event_id": "6cfbb7ba6071b8ade62591f8",
       "raw_excerpt": ""
     },
     {
@@ -1785,7 +1803,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "12bfdefef9f4bf844f7430df",
       "raw_excerpt": ""
     },
@@ -1803,8 +1821,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "a67f57ca8e0868a2648a6704",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "8377",
+      "ticker": "8377.T",
+      "name": "ほくほくフィナンシャルグループ",
+      "event_date": "Wed, 29 Jul 2026",
+      "event_type": "disclosure",
+      "title": "(株)ほくほくフィナンシャルグループ【8377】：決算情報 - Yahoo!ファイナンス",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9kbHFYZ0pCSmlZcGtJSU5KbWpaN01yNUZTYlZtNXF6OTNnckp6N2x6LXp5emJIUkQ5bDBnMUlJcWxoUTJNemdaS3NXekNwVmFMZnBDdXNxTWxUckhtc080ag?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
+      "event_id": "c4cb24d486bd8cbb2a12ef94",
       "raw_excerpt": ""
     },
     {
@@ -1821,7 +1857,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "cb53f9efd8dbce72458727de",
       "raw_excerpt": ""
     },
@@ -1839,7 +1875,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "6264d56f4b1a29da46ea55af",
       "raw_excerpt": ""
     },
@@ -1857,7 +1893,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "event_id": "3eb8dbc2712c4403d9dea54b",
       "raw_excerpt": ""
     }
@@ -1866,7 +1902,7 @@
     {
       "source": "TDnet",
       "status": "ok",
-      "fetched_at": "2026-10-28T15:04:45+00:00",
+      "fetched_at": "2026-10-28T15:29:34+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1874,7 +1910,7 @@
     {
       "source": "EDINET",
       "status": "ok",
-      "fetched_at": "2026-10-28T15:04:47+00:00",
+      "fetched_at": "2026-10-28T15:29:37+00:00",
       "records": 2,
       "error": "",
       "source_tier": "primary"
@@ -1882,7 +1918,7 @@
     {
       "source": "SEC",
       "status": "ok",
-      "fetched_at": "2026-10-28T15:04:52+00:00",
+      "fetched_at": "2026-10-28T15:29:42+00:00",
       "records": 32,
       "error": "",
       "source_tier": "primary"
@@ -1890,7 +1926,7 @@
     {
       "source": "CompanyIR",
       "status": "ok",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
+      "fetched_at": "2026-10-28T15:29:44+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -1898,15 +1934,15 @@
     {
       "source": "NewsRSS",
       "status": "ok",
-      "fetched_at": "2026-10-28T15:04:54+00:00",
-      "records": 54,
+      "fetched_at": "2026-10-28T15:29:44+00:00",
+      "records": 56,
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance",
       "status": "ok",
-      "fetched_at": "2026-10-28T15:05:08+00:00",
+      "fetched_at": "2026-10-28T15:29:57+00:00",
       "records": 40,
       "error": "",
       "source_tier": "secondary"
@@ -1914,7 +1950,7 @@
   ],
   "supply_demand_context": {
     "version": "1.0.0",
-    "generated_at_utc": "2026-10-28T15:05:08+00:00",
+    "generated_at_utc": "2026-10-28T15:29:57+00:00",
     "observed_date_jst": "2026-10-29",
     "data_status": "partial",
     "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
@@ -1939,7 +1975,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9167669770731056,
         "avg_daily_float_turnover_ratio": 0.013052455868773707,
-        "current_volume_ratio_30d": 0.04325332544438472,
+        "current_volume_ratio_30d": 0.052193332154801375,
         "short_percent_float": 0.1099,
         "short_interest_change_ratio": 0.10759751508991178,
         "days_to_cover": 10.53,
@@ -1954,7 +1990,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.8989499978394966,
         "avg_daily_float_turnover_ratio": 0.02868691892475757,
-        "current_volume_ratio_30d": 0.28053252075537044,
+        "current_volume_ratio_30d": 0.30798083675648635,
         "short_percent_float": 0.1089,
         "short_interest_change_ratio": 0.05085493534306318,
         "days_to_cover": 2.93,
@@ -1969,7 +2005,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9634800052450468,
         "avg_daily_float_turnover_ratio": 0.00945704143446924,
-        "current_volume_ratio_30d": 0.6848344129694557,
+        "current_volume_ratio_30d": 0.7750467163024611,
         "short_percent_float": 0.0622,
         "short_interest_change_ratio": 0.2977849223484257,
         "days_to_cover": 6.32,
@@ -1984,7 +2020,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9364100054141792,
         "avg_daily_float_turnover_ratio": 0.0114268449305443,
-        "current_volume_ratio_30d": 0.09422127128927019,
+        "current_volume_ratio_30d": 0.11276101427865498,
         "short_percent_float": 0.1366,
         "short_interest_change_ratio": 0.01700146901045807,
         "days_to_cover": 7.44,
@@ -1999,7 +2035,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.9163644183710543,
         "avg_daily_float_turnover_ratio": 0.008135761772622225,
-        "current_volume_ratio_30d": 0.1933905607696321,
+        "current_volume_ratio_30d": 0.22984904340647055,
         "short_percent_float": 0.059,
         "short_interest_change_ratio": 0.15184857301232713,
         "days_to_cover": 9.15,
@@ -2029,7 +2065,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.7620010737729285,
         "avg_daily_float_turnover_ratio": 0.025993183174360366,
-        "current_volume_ratio_30d": 0.6882463181219272,
+        "current_volume_ratio_30d": 0.741330486424256,
         "short_percent_float": 0.044299997,
         "short_interest_change_ratio": -0.13621166065687218,
         "days_to_cover": 1.7,
@@ -2044,7 +2080,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.7189799998360308,
         "avg_daily_float_turnover_ratio": 0.018010821589109053,
-        "current_volume_ratio_30d": 0.18614582131826163,
+        "current_volume_ratio_30d": 0.20504953413561972,
         "short_percent_float": 0.0217,
         "short_interest_change_ratio": 1.017435510940373,
         "days_to_cover": 1.08,
@@ -2059,7 +2095,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.7981989075032234,
         "avg_daily_float_turnover_ratio": 0.018243396996740067,
-        "current_volume_ratio_30d": 0.3435276089206486,
+        "current_volume_ratio_30d": 0.41221561354197034,
         "short_percent_float": 0.0107,
         "short_interest_change_ratio": -0.5557700147312046,
         "days_to_cover": 0.26,
@@ -2074,7 +2110,7 @@
         "confidence": 0.7,
         "free_float_ratio": 0.6419799987412794,
         "avg_daily_float_turnover_ratio": 0.023826660336387265,
-        "current_volume_ratio_30d": 0.3869602410130347,
+        "current_volume_ratio_30d": 0.427438108849958,
         "short_percent_float": 0.072,
         "short_interest_change_ratio": -0.05483798348048152,
         "days_to_cover": 2.25,
