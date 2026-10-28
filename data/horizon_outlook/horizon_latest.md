@@ -1,13 +1,13 @@
 # Multi-horizon research outlook
-Generated (UTC): 2026-10-27T15:19:36+00:00
+Generated (UTC): 2026-10-28T14:04:24+00:00
 Public watchlist only; no private holdings or automatic trades.
 
 ## 短期・中期・長期の仮説と売買方針
 
 | 期間 | 市場仮説の状態 | 監視・執行方針 |
 |---|---|---|
-| short (1-2 weeks) | TWO_WAY_WITH_RATES_VOLATILITY_RISK | Existing orders unchanged. New purchase only after liquidity, risk and human review. |
-| medium (1-3 months) | CONDITIONAL_RISK_REVIEW | Review 1-in-1-out replacements, position concentration, and portfolio correlations; no model-driven orders. |
+| short (1-2 weeks) | RANGE_OR_UNDECIDED | Existing orders unchanged. New purchase only after liquidity, risk and human review. |
+| medium (1-3 months) | CONDITIONAL_UNDECIDED | Review 1-in-1-out replacements, position concentration, and portfolio correlations; no model-driven orders. |
 | long (1-3 years) | FUNDAMENTALS_NOT_ESTABLISHED | Core accumulation and strategic holdings require separate cash-flow and thesis checks; no long-term directional forecast without evidence. |
 
 ## Prospective, testable demand hypotheses
