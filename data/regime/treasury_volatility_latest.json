@@ -2,8 +2,8 @@
   "name": "UST_YIELD_VOLATILITY_PROXY",
   "label": "Treasury Volatility Proxy (not ICE MOVE)",
   "method_version": "1.0.0",
-  "generated_at_utc": "2026-10-27T15:19:03+00:00",
-  "as_of_date": "2026-10-26",
+  "generated_at_utc": "2026-10-28T01:25:38+00:00",
+  "as_of_date": "2026-10-27",
   "data_status": "ok",
   "source": "U.S. Department of the Treasury",
   "source_url": "https://home.treasury.gov/treasury-daily-interest-rate-xml-feed",
@@ -11,22 +11,22 @@
   "method": "RMS of annualized 20-observation realized volatility of daily 2Y/5Y/10Y/30Y Treasury yield changes (basis points)",
   "window_observations": 20,
   "percentile_lookback_observations": 252,
-  "curve_realized_vol_20d_bps_ann": 88.556,
+  "curve_realized_vol_20d_bps_ann": 81.9,
   "tenor_realized_vol_20d_bps_ann": {
-    "2Y": 92.172,
-    "5Y": 89.962,
-    "10Y": 89.248,
-    "30Y": 82.551
+    "2Y": 82.067,
+    "5Y": 83.937,
+    "10Y": 84.296,
+    "30Y": 77.101
   },
-  "latest_curve_move_bps_rms": 1.5,
+  "latest_curve_move_bps_rms": 1.581,
   "five_observation_yield_change_bps": {
     "2Y": -9.0,
-    "5Y": -10.0,
-    "10Y": -15.0,
-    "30Y": -17.0
+    "5Y": -12.0,
+    "10Y": -13.0,
+    "30Y": -12.0
   },
-  "percentile_rank": 0.9127,
-  "stress_score": 31.55,
+  "percentile_rank": 0.8214,
+  "stress_score": 38.39,
   "interpretation": "Higher percentile means Treasury yields are moving more violently versus their own recent history; stress_score is calm=100, stressed=0.",
   "limitations": [
     "This is not ICE BofA MOVE and is not option-implied volatility.",
