@@ -1,23 +1,23 @@
 {
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "mode": "SHADOW_ONLY",
   "status": "OK",
-  "nav_jpy": 995308.9,
-  "return_pct": -0.469,
-  "cash_jpy": 872408.9,
+  "nav_jpy": 992027.83,
+  "return_pct": -0.797,
+  "cash_jpy": 900827.83,
   "positions": 1,
   "pending_buys": 1,
-  "trades": 0,
+  "trades": 1,
   "screen_fresh": true,
-  "regime_actionable": false,
-  "sizing_multiplier": 0.5,
+  "regime_actionable": true,
+  "sizing_multiplier": 1.0,
   "unpriced_symbols": [],
   "candidate_audit": [
     {
       "symbol": "8613.T",
-      "score": 81.23972028245915,
-      "momentum": 55.628734383487235,
-      "price": 1148.0,
+      "score": 81.02063993331618,
+      "momentum": 54.094242259641504,
+      "price": 1147.0,
       "theme": "Financials",
       "fundamental_partial": true,
       "vetoes": [],
@@ -25,9 +25,9 @@
     },
     {
       "symbol": "8622.T",
-      "score": 79.91844557413664,
-      "momentum": 47.083785985877235,
-      "price": 739.0,
+      "score": 80.21821538842293,
+      "momentum": 48.98153177620858,
+      "price": 737.0,
       "theme": "Financials",
       "fundamental_partial": true,
       "vetoes": [
@@ -37,9 +37,9 @@
     },
     {
       "symbol": "3932.T",
-      "score": 73.76155931212679,
-      "momentum": 78.61216730038024,
-      "price": 1229.0,
+      "score": 73.30241651611102,
+      "momentum": 75.77403585008148,
+      "price": 1209.0,
       "theme": "Other",
       "fundamental_partial": false,
       "vetoes": [],
@@ -47,9 +47,9 @@
     },
     {
       "symbol": "6750.T",
-      "score": 72.8870580651853,
-      "momentum": 66.01711026615969,
-      "price": 1979.0,
+      "score": 72.61031965106193,
+      "momentum": 62.56110809342748,
+      "price": 1977.0,
       "theme": "Other",
       "fundamental_partial": false,
       "vetoes": [],
@@ -57,29 +57,19 @@
     },
     {
       "symbol": "3635.T",
-      "score": 71.86557955874913,
-      "momentum": 62.547528517110266,
-      "price": 1724.5,
+      "score": 71.06032324392784,
+      "momentum": 58.70450841933732,
+      "price": 1696.5,
       "theme": "Other",
       "fundamental_partial": false,
       "vetoes": [],
       "eligible": true
     },
     {
-      "symbol": "545A.T",
-      "score": 71.50730321924937,
-      "momentum": 52.11841390548615,
-      "price": 933.0,
-      "theme": "Other",
-      "fundamental_partial": true,
-      "vetoes": [],
-      "eligible": true
-    },
-    {
       "symbol": "7744.T",
-      "score": 71.3961873864888,
-      "momentum": 76.78571428571429,
-      "price": 2147.0,
+      "score": 71.06010624307531,
+      "momentum": 74.53829440521456,
+      "price": 2125.0,
       "theme": "Other",
       "fundamental_partial": false,
       "vetoes": [],
@@ -87,19 +77,31 @@
     },
     {
       "symbol": "2121.T",
-      "score": 70.8516425548132,
-      "momentum": 86.72596414991851,
-      "price": 3895.0,
+      "score": 70.83516134505389,
+      "momentum": 85.47664312873438,
+      "price": 3830.0,
       "theme": "Other",
       "fundamental_partial": false,
       "vetoes": [],
       "eligible": true
     },
     {
-      "symbol": "5351.T",
-      "score": 70.43159479315644,
-      "momentum": 40.93563280825638,
-      "price": 1951.0,
+      "symbol": "545A.T",
+      "score": 70.61359273061058,
+      "momentum": 48.27539380771319,
+      "price": 922.0,
+      "theme": "Other",
+      "fundamental_partial": true,
+      "vetoes": [
+        "weak_momentum"
+      ],
+      "eligible": false
+    },
+    {
+      "symbol": "8707.T",
+      "score": 70.21978099876615,
+      "momentum": 45.138511678435634,
+      "price": 3845.0,
       "theme": "Other",
       "fundamental_partial": false,
       "vetoes": [
@@ -108,33 +110,66 @@
       "eligible": false
     },
     {
-      "symbol": "8630.T",
-      "score": 69.9313984685175,
-      "momentum": 77.99429657794677,
-      "price": 7155.0,
+      "symbol": "5351.T",
+      "score": 69.71299716693787,
+      "momentum": 36.454372623574145,
+      "price": 1923.0,
       "theme": "Other",
       "fundamental_partial": false,
-      "vetoes": [],
-      "eligible": true
+      "vetoes": [
+        "weak_momentum"
+      ],
+      "eligible": false
     }
   ],
   "events": [
     {
-      "event": "ENTRY_CANCELLED_CAPACITY",
-      "symbol": "6750.T"
+      "event": "BUY",
+      "symbol": "8789.T",
+      "qty": 600,
+      "price": 152.228
+    },
+    {
+      "event": "SELL",
+      "date": "2026-10-28",
+      "symbol": "3932.T",
+      "qty": 100,
+      "entry": 1275.911,
+      "exit": 1197.557,
+      "pnl_jpy": -7835.37,
+      "reason": "STOP"
     },
     {
       "event": "BUY_SIGNAL",
-      "symbol": "8789.T",
-      "qty": 600
+      "symbol": "3932.T",
+      "qty": 100
     }
   ],
   "activity_goal": {
     "start_date": "2026-10-26",
     "deadline_jst": "2026-10-29T11:10:50+09:00",
-    "verified_fills_since_start": 0,
-    "fills": [],
-    "status": "AWAITING_VERIFIED_FILL"
+    "verified_fills_since_start": 2,
+    "fills": [
+      {
+        "date": "2026-10-28",
+        "side": "BUY",
+        "symbol": "8789.T",
+        "qty": 600,
+        "fill_price": 152.228,
+        "source": "verified_session_open",
+        "paper_only": true
+      },
+      {
+        "date": "2026-10-28",
+        "side": "SELL",
+        "symbol": "3932.T",
+        "qty": 100,
+        "fill_price": 1197.5573,
+        "source": "verified_session_ohlc",
+        "paper_only": true
+      }
+    ],
+    "status": "PASSED"
   },
   "monthly_goal": {
     "month": "2026-11",
@@ -145,7 +180,7 @@
     "status": "NOT_STARTED",
     "no_forced_trades": true
   },
-  "benchmark_return_pct": 0.0,
+  "benchmark_return_pct": -0.143,
   "benchmark_comparison_start": "first successfully priced session, not necessarily cohort start",
   "benchmark_note": "TOPIX comparison optional; missing benchmark never blocks paper entries.",
   "caveat": "NAV uses last known price for unpriced positions; do not treat as verified daily return."
