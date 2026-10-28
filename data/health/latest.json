@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-10-27T18:56:30.277803+00:00",
+  "generated_at_utc": "2026-10-28T19:04:58.882271+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
   "incident_signature": "f2577a8778230cbe",
@@ -36,7 +36,7 @@
     },
     "ai_ma": {
       "status": "DATA_IMPAIRED",
-      "as_of_date": "2026-10-28",
+      "as_of_date": "2026-10-29",
       "blockers": [
         "benchmark_price_unavailable",
         "entry_missing_bar:5351.T",
@@ -46,7 +46,7 @@
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-10-28",
+      "as_of_date": "2026-10-29",
       "blockers": [],
       "mode": null
     }
