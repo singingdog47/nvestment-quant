@@ -2,7 +2,7 @@
 Result: **NO_STATISTICAL_CONCLUSION**; do not treat ordinary value factors as a validated AI/M&A model.
 Standard historical 1w outcomes: 474
 Standard historical 1m outcomes: 225
-Prospective AI/M&A shadow historical snapshots: 8
+Prospective AI/M&A shadow historical snapshots: 9
 Verified corporate events: 0
 
 ## Blocking data gaps

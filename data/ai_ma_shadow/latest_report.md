@@ -1,5 +1,5 @@
 # AI restructuring / M&A shadow research
-Date: 2026-10-28
+Date: 2026-10-29
 Initial virtual capital: ¥5,000,000
 NAV: ¥5,000,000; TOPIX benchmark NAV: 5000000.0
 Qualified: 8 / JP screen: 50
@@ -9,11 +9,11 @@ Current score is a value+quality baseline, not incremental AI/M&A skill.
 Missing: benchmark_price_unavailable, entry_missing_bar:5351.T, entry_missing_bar:6505.T
 
 ## Candidates (NOT BUY RECOMMENDATIONS)
-- 5351.T SHINAGAWA REFRA CO.,LTD.: PER=3.0706778438710622, PBR=0.8081460458669066 (AI and M&A unverified)
-- 6418.T JAPAN CASH MACHINE CO.,LTD.: PER=5.571269392303077, PBR=0.9309264281682846 (AI and M&A unverified)
-- 3284.T Hoosiers Holdings Co.,Ltd.: PER=6.269857304765448, PBR=0.9858714774570043 (AI and M&A unverified)
-- 6741.T Nippon Signal Company,Limited: PER=8.64250794229407, PBR=1.032358690640457 (AI and M&A unverified)
-- 5195.T Bando Chemical Industries,Ltd.: PER=9.914617735127115, PBR=1.1242555784727088 (AI and M&A unverified)
-- 3932.T Akatsuki Inc.: PER=6.923003693583012, PBR=1.141699565930284 (AI and M&A unverified)
-- 8707.T IwaiCosmo Holdings,Inc.: PER=7.494957102733908, PBR=1.166500298136404 (AI and M&A unverified)
-- 3076.T Ai Holdings Corporation: PER=13.924176610328795, PBR=1.4127508059449023 (AI and M&A unverified)
+- 5351.T SHINAGAWA REFRA CO.,LTD.: PER=3.0266086590282177, PBR=0.796547845311154 (AI and M&A unverified)
+- 6505.T TOYO DENKI SEIZO K.K.(TOYO ELECTRIC MFG.CO.,LTD.): PER=7.941020265922509, PBR=0.8602013266425977 (AI and M&A unverified)
+- 6418.T JAPAN CASH MACHINE CO.,LTD.: PER=5.5362849691175, PBR=0.9250807363116549 (AI and M&A unverified)
+- 6741.T Nippon Signal Company,Limited: PER=8.517922937252992, PBR=1.0174768515335204 (AI and M&A unverified)
+- 5195.T Bando Chemical Industries,Ltd.: PER=9.665410406131267, PBR=1.0959970275830238 (AI and M&A unverified)
+- 3932.T Akatsuki Inc.: PER=6.810342933719985, PBR=1.1231202402031844 (AI and M&A unverified)
+- 8707.T IwaiCosmo Holdings,Inc.: PER=7.436931628390162, PBR=1.1574693280863158 (AI and M&A unverified)
+- 4293.T SEPTENI HOLDINGS CO.,LTD.: PER=16.766250226326274, PBR=1.4499730940737847 (AI and M&A unverified)
