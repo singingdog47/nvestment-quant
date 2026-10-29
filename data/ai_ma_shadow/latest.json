@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "as_of_date": "2026-10-29",
+  "as_of_date": "2026-10-30",
   "cohort": "2026-10-19-ai-ma-v1-5m",
   "mode": "SHADOW_ONLY",
   "status": "RESEARCH_NOT_VALIDATED",
@@ -11,158 +11,14 @@
   "completed_trades": 0,
   "pending_buys": 2,
   "screened_jp_count": 50,
-  "qualified_count": 8,
-  "rejected_count": 42,
-  "candidates": [
-    {
-      "id": "65e419572154488511",
-      "symbol": "5351.T",
-      "name": "SHINAGAWA REFRA CO.,LTD.",
-      "observable": {
-        "market_cap": 91830741264.0,
-        "pe": 3.0266086590282177,
-        "pb": 0.796547845311154,
-        "roe_pct": 29.2953533842944,
-        "operating_margin_pct": 6.69454267932195,
-        "avg_turnover_jpy": 186236140.0
-      },
-      "ai_restructuring_evidence": "UNVERIFIED",
-      "ownership_takeover_evidence": "UNVERIFIED",
-      "target_event_probability": null,
-      "vetoes": [],
-      "eligible": true
-    },
-    {
-      "id": "a8dc24f983b7c28d7d",
-      "symbol": "6505.T",
-      "name": "TOYO DENKI SEIZO K.K.(TOYO ELECTRIC MFG.CO.,LTD.)",
-      "observable": {
-        "market_cap": 27000616074.0,
-        "pe": 7.941020265922509,
-        "pb": 0.8602013266425977,
-        "roe_pct": 10.9510179660085,
-        "operating_margin_pct": 8.98416358801798,
-        "avg_turnover_jpy": 266941920.0
-      },
-      "ai_restructuring_evidence": "UNVERIFIED",
-      "ownership_takeover_evidence": "UNVERIFIED",
-      "target_event_probability": null,
-      "vetoes": [],
-      "eligible": true
-    },
-    {
-      "id": "e96e79e54090edb832",
-      "symbol": "6418.T",
-      "name": "JAPAN CASH MACHINE CO.,LTD.",
-      "observable": {
-        "market_cap": 37799584957.0,
-        "pe": 5.5362849691175,
-        "pb": 0.9250807363116549,
-        "roe_pct": 18.3146182447442,
-        "operating_margin_pct": 10.7536825182339,
-        "avg_turnover_jpy": 184139700.0
-      },
-      "ai_restructuring_evidence": "UNVERIFIED",
-      "ownership_takeover_evidence": "UNVERIFIED",
-      "target_event_probability": null,
-      "vetoes": [],
-      "eligible": true
-    },
-    {
-      "id": "7f3db5748e0f11f20c",
-      "symbol": "6741.T",
-      "name": "Nippon Signal Company,Limited",
-      "observable": {
-        "market_cap": 116822151768.0,
-        "pe": 8.517922937252992,
-        "pb": 1.0174768515335204,
-        "roe_pct": 12.5795118773412,
-        "operating_margin_pct": 11.4316301865962,
-        "avg_turnover_jpy": 273300300.0
-      },
-      "ai_restructuring_evidence": "UNVERIFIED",
-      "ownership_takeover_evidence": "UNVERIFIED",
-      "target_event_probability": null,
-      "vetoes": [],
-      "eligible": true
-    },
-    {
-      "id": "88e0ff9ea7f25523ca",
-      "symbol": "5195.T",
-      "name": "Bando Chemical Industries,Ltd.",
-      "observable": {
-        "market_cap": 108747680557.0,
-        "pe": 9.665410406131267,
-        "pb": 1.0959970275830238,
-        "roe_pct": 12.1026118132928,
-        "operating_margin_pct": 8.57698530733653,
-        "avg_turnover_jpy": 199007740.0
-      },
-      "ai_restructuring_evidence": "UNVERIFIED",
-      "ownership_takeover_evidence": "UNVERIFIED",
-      "target_event_probability": null,
-      "vetoes": [],
-      "eligible": true
-    },
-    {
-      "id": "55fd405fe46edf0847",
-      "symbol": "3932.T",
-      "name": "Akatsuki Inc.",
-      "observable": {
-        "market_cap": 50477326874.0,
-        "pe": 6.810342933719985,
-        "pb": 1.1231202402031844,
-        "roe_pct": 19.189421087165,
-        "operating_margin_pct": 34.3123234155359,
-        "avg_turnover_jpy": 297599380.95341736
-      },
-      "ai_restructuring_evidence": "UNVERIFIED",
-      "ownership_takeover_evidence": "UNVERIFIED",
-      "target_event_probability": null,
-      "vetoes": [],
-      "eligible": true
-    },
-    {
-      "id": "fedd03dd497e736083",
-      "symbol": "8707.T",
-      "name": "IwaiCosmo Holdings,Inc.",
-      "observable": {
-        "market_cap": 91020001888.0,
-        "pe": 7.436931628390162,
-        "pb": 1.1574693280863158,
-        "roe_pct": 16.4625343138916,
-        "operating_margin_pct": 45.5108276869935,
-        "avg_turnover_jpy": 553039166.6666667
-      },
-      "ai_restructuring_evidence": "UNVERIFIED",
-      "ownership_takeover_evidence": "UNVERIFIED",
-      "target_event_probability": null,
-      "vetoes": [],
-      "eligible": true
-    },
-    {
-      "id": "e5d9b58985f3e5ba9c",
-      "symbol": "4293.T",
-      "name": "SEPTENI HOLDINGS CO.,LTD.",
-      "observable": {
-        "market_cap": 99174125656.0,
-        "pe": 16.766250226326274,
-        "pb": 1.4499730940737847,
-        "roe_pct": 8.79020025311131,
-        "operating_margin_pct": 16.6410883722017,
-        "avg_turnover_jpy": 163886566.66666707
-      },
-      "ai_restructuring_evidence": "UNVERIFIED",
-      "ownership_takeover_evidence": "UNVERIFIED",
-      "target_event_probability": null,
-      "vetoes": [],
-      "eligible": true
-    }
-  ],
+  "qualified_count": 0,
+  "rejected_count": 0,
+  "candidates": [],
   "data_blockers": [
     "benchmark_price_unavailable",
     "entry_missing_bar:5351.T",
-    "entry_missing_bar:6505.T"
+    "entry_missing_bar:6505.T",
+    "fresh_jp_screen_unavailable"
   ],
   "events": [],
   "hypothesis": {
