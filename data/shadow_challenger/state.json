@@ -1,29 +1,29 @@
 {
   "cohort": "2026-10-22-agility-1m",
   "mode": "SHADOW_ONLY",
-  "cash_jpy": 900827.830549,
+  "cash_jpy": 780046.9305489999,
   "initial_cash_jpy": 1000000.0,
   "positions": {
     "8789.T": {
       "qty": 600,
       "entry_price": 152.228,
-      "last_price": 152.0,
+      "last_price": 151.0,
       "entry_date": "2026-10-28",
-      "sessions": 1,
+      "sessions": 2,
       "theme": "Other",
       "peak_close": 152.0
+    },
+    "3932.T": {
+      "qty": 100,
+      "entry_price": 1207.809,
+      "last_price": 1200.0,
+      "entry_date": "2026-10-29",
+      "sessions": 1,
+      "theme": "Other",
+      "peak_close": 1200.0
     }
   },
-  "pending_buys": [
-    {
-      "symbol": "3932.T",
-      "signal_date": "2026-10-28",
-      "qty": 100,
-      "theme": "Other",
-      "signal_price": 1209.0,
-      "max_notional": 200000.0
-    }
-  ],
+  "pending_buys": [],
   "pending_sells": [],
   "trades": [
     {
@@ -37,9 +37,9 @@
     }
   ],
   "peak_nav_jpy": 1000000.0,
-  "nav_jpy": 992027.83,
-  "last_run_date": "2026-10-28",
-  "last_screen_date": "2026-10-28",
+  "nav_jpy": 990646.93,
+  "last_run_date": "2026-10-29",
+  "last_screen_date": "2026-10-29",
   "benchmark_start_close": 420.6000061035156,
   "execution_log": [
     {
@@ -58,6 +58,15 @@
       "qty": 100,
       "fill_price": 1197.5573,
       "source": "verified_session_ohlc",
+      "paper_only": true
+    },
+    {
+      "date": "2026-10-29",
+      "side": "BUY",
+      "symbol": "3932.T",
+      "qty": 100,
+      "fill_price": 1207.809,
+      "source": "verified_session_open",
       "paper_only": true
     }
   ]
