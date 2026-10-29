@@ -1,17 +1,17 @@
 {
   "version": "1.0.0",
-  "generated_at_utc": "2026-10-28T15:57:57+00:00",
+  "generated_at_utc": "2026-10-29T14:24:32+00:00",
   "as_of_jst": "2026-10-29",
   "mode": "RESEARCH_ONLY",
   "source_status": {
     "regime_fresh": true,
     "supply_fresh": true,
     "regime": "NEUTRAL",
-    "regime_score": 52.94,
+    "regime_score": 53.3,
     "treasury_volatility_shock": false,
     "supply_coverage": {
-      "free_float_ratio": 0.6923076923076923,
-      "short_interest": 0.2692307692307692,
+      "free_float_ratio": 0.7115384615384616,
+      "short_interest": 0.25,
       "current_vs_average_volume": 0.7692307692307693
     },
     "public_watchlist_only": true,

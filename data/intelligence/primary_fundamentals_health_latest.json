@@ -1,6 +1,8 @@
 {
-  "checked": 0,
-  "resolved_document_ids": [],
+  "checked": 1,
+  "resolved_document_ids": [
+    "S100ZALL"
+  ],
   "new_companies": 0,
   "errors": [],
   "primary_companies": 21,

@@ -1,12 +1,12 @@
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-10-29T01:49:57+00:00",
-  "generated_at_utc": "2026-10-29T01:49:57+00:00",
+  "generated_at": "2026-10-29T14:23:29+00:00",
+  "generated_at_utc": "2026-10-29T14:23:29+00:00",
   "date_jst": "2026-10-29",
   "data_status": "ok",
   "regime_label": "NEUTRAL",
-  "regime_score": 56.13,
+  "regime_score": 53.3,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -18,20 +18,22 @@
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": false,
+  "thin_liquidity_flag": true,
   "treasury_volatility_shock_flag": false,
   "sq_execution_caution_flag": false,
-  "regime_flags": [],
+  "regime_flags": [
+    "THIN_LIQUIDITY"
+  ],
   "components": {
-    "trend": 52.92101380331597,
-    "stress": 75.96250011444091,
-    "participation": 41.17273252455228,
-    "liquidity": 47.51934603703138,
+    "trend": 48.39176543449444,
+    "stress": 76.15000011444091,
+    "participation": 43.045764474748644,
+    "liquidity": 34.90092249438477,
     "positioning": 59.04864260835684
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 16.90999984741211,
+    "vix": 16.65999984741211,
     "hy_oas": 3.18,
     "ig_oas": 0.88,
     "treasury_volatility_proxy": 84.03,
@@ -40,11 +42,11 @@
     "treasury_volatility_as_of_date": "2026-10-28",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
-    "breadth_n": 9557,
+    "breadth_n": 9558,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-10-28T15:56:50.542449+00:00",
+    "breadth_source_as_of_utc": "2026-10-29T14:23:26.716187+00:00",
     "nfci": -0.487,
-    "volume_ratio20_mean": 0.8527586509257845,
+    "volume_ratio20_mean": 0.5372980623596192,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -64,8 +66,8 @@
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-10-28",
-    "jpx_official_turnover_million_jpy": 9053760.0,
+    "jpx_official_turnover_date": "2026-10-29",
+    "jpx_official_turnover_million_jpy": 15152265.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
@@ -87,7 +89,7 @@
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 64444.76171875,
+        "spot": 64659.46875,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
