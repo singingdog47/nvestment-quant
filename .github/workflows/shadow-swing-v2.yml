@@ -1,20 +1,8 @@
 name: AI Shadow Swing v2 Adversarial
 
+# Archived paper strategy: manual dispatch only; scheduled and upstream triggers disabled.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'src/shadow_swing_v2.py'
-      - 'src/shadow_run_readiness.py'
-      - 'tests/test_shadow_run_readiness.py'
-  workflow_run:
-    workflows:
-      - Investment Quant Post-Close Pipeline v2.13
-    types: [completed]
-    branches: [main]
-  schedule:
-    - cron: '20 12 * * 1-5' # 21:20 JST, post-close safety fallback
 
 permissions:
   contents: write
