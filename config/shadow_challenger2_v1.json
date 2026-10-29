@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "cohort": "2026-10-29-challenger2-5m-fork",
+  "mode": "SHADOW_ONLY",
+  "start_date": "2026-10-29",
+  "end_date": "2027-01-22",
+  "initial_cash_jpy": 5000000,
+  "risk": {
+    "max_positions": 5,
+    "max_per_theme": 2,
+    "max_entries_per_session": 2,
+    "max_position_pct": 0.075,
+    "max_gross_invested_pct": 0.8,
+    "uncertain_regime_size_multiplier": 0.5,
+    "partial_fundamental_size_multiplier": 0.5,
+    "stop_loss_pct": 6,
+    "take_profit_pct": 12,
+    "max_holding_sessions": 15,
+    "planned_per_trade_loss_budget_pct": 0.005,
+    "requested_hard_position_ceiling_pct": 0.15,
+    "monthly_loss_warning_pct": -3,
+    "monthly_review_pct": -5
+  },
+  "execution": {
+    "round_lot_shares": 100,
+    "slippage_bps": 15,
+    "max_pending_calendar_days": 4,
+    "max_entry_gap_pct": 3
+  },
+  "selection": {
+    "audit_top_n": 30,
+    "min_total_score": 68,
+    "min_momentum_score": 50,
+    "min_liquidity_score": 45,
+    "min_avg_turnover_jpy": 50000000
+  },
+  "governance": {
+    "broker_connection": false,
+    "real_orders_forbidden": true,
+    "no_lookahead": true,
+    "verified_ohlc_for_fills": true,
+    "no_synthetic_fills": true,
+    "preserve_v1_v2": true,
+    "parallel_with_v1_challenger": true,
+    "no_backfilled_fills": true,
+    "preserve_source_ledger": true
+  },
+  "objectives": {
+    "three_day_activity": {
+      "start_date": "2026-10-29",
+      "min_verified_fills": 1,
+      "count_new_fills_only": true,
+      "no_synthetic_or_forced_trades": true
+    },
+    "november_2026": {
+      "month": "2026-11",
+      "monthly_return_target_pct": 3,
+      "baseline_session": "2026-10-30",
+      "assessment_session": "2026-11-30",
+      "return_basis": "nav_change_from_previous_month_end_after_costs",
+      "baseline_required": true,
+      "trade_count_and_drawdown_required": true,
+      "monthly_return_not_guaranteed": true
+    }
+  }
+}
