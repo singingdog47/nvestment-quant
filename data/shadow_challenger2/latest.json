@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-29",
+  "mode": "SHADOW_ONLY",
+  "status": "OK",
+  "nav_jpy": 4998619.1,
+  "return_pct": -0.028,
+  "cash_jpy": 4788019.1,
+  "positions": 2,
+  "pending_buys": 1,
+  "trades": 1,
+  "screen_fresh": true,
+  "regime_actionable": true,
+  "sizing_multiplier": 1.0,
+  "unpriced_symbols": [],
+  "candidate_audit": [
+    {
+      "symbol": "8622.T",
+      "score": 80.02085583104324,
+      "momentum": 49.94566693833198,
+      "price": 750.0,
+      "theme": "Financials",
+      "fundamental_partial": true,
+      "vetoes": [
+        "weak_momentum"
+      ],
+      "eligible": false
+    },
+    {
+      "symbol": "8624.T",
+      "score": 77.5772264469597,
+      "momentum": 53.40939961966856,
+      "price": 1465.0,
+      "theme": "Financials",
+      "fundamental_partial": true,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "545A.T",
+      "score": 74.04209558707976,
+      "momentum": 70.80616680249932,
+      "price": 960.0,
+      "theme": "Other",
+      "fundamental_partial": true,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "6750.T",
+      "score": 73.36976462634544,
+      "momentum": 65.22684053246401,
+      "price": 1953.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "3932.T",
+      "score": 72.7364112352089,
+      "momentum": 72.49049171420809,
+      "price": 1200.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "6036.T",
+      "score": 72.45643285174219,
+      "momentum": 80.2023906547134,
+      "price": 1855.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "2121.T",
+      "score": 71.35138082550371,
+      "momentum": 85.06519967400163,
+      "price": 3755.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "3635.T",
+      "score": 70.95705890769929,
+      "momentum": 53.98668839989133,
+      "price": 1652.5,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "7744.T",
+      "score": 70.77018517277334,
+      "momentum": 72.05243140450965,
+      "price": 2090.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "4516.T",
+      "score": 70.2771449235732,
+      "momentum": 43.2491170877479,
+      "price": 3418.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [
+        "weak_momentum"
+      ],
+      "eligible": false
+    }
+  ],
+  "events": [
+    {
+      "event": "BUY",
+      "symbol": "3932.T",
+      "qty": 100,
+      "price": 1207.809
+    },
+    {
+      "event": "BUY_SIGNAL",
+      "symbol": "8624.T",
+      "qty": 100
+    }
+  ],
+  "activity_goal": {
+    "start_date": "2026-10-29",
+    "deadline_jst": null,
+    "verified_fills_since_start": 1,
+    "fills": [
+      {
+        "date": "2026-10-29",
+        "side": "BUY",
+        "symbol": "3932.T",
+        "qty": 100,
+        "fill_price": 1207.809,
+        "source": "verified_session_open",
+        "paper_only": true
+      }
+    ],
+    "status": "PASSED"
+  },
+  "monthly_goal": {
+    "month": "2026-11",
+    "return_target_pct": 3,
+    "baseline_session": "2026-10-30",
+    "baseline_nav_jpy": null,
+    "return_pct": null,
+    "status": "NOT_STARTED",
+    "no_forced_trades": true
+  },
+  "benchmark_return_pct": 0.0,
+  "benchmark_comparison_start": "first successfully priced session, not necessarily cohort start",
+  "benchmark_note": "TOPIX comparison optional; missing benchmark never blocks paper entries.",
+  "caveat": "NAV uses last known price for unpriced positions; do not treat as verified daily return.",
+  "strategy": "CHALLENGER2",
+  "cohort": "2026-10-29-challenger2-5m-fork",
+  "fork": {
+    "source_cohort": "2026-10-22-agility-1m",
+    "source_snapshot_date": "2026-10-28",
+    "source_state_blob_sha": "b76114004ae11b0ac4ce91cd58737ffab56a5a9a",
+    "source_nav_jpy": 992027.83,
+    "virtual_capital_injection_jpy": 4007972.17,
+    "starting_nav_jpy": 5000000,
+    "funding_is_not_profit": true,
+    "inherited_executions": 2,
+    "inherited_closed_trades": 1
+  },
+  "post_fork_verified_fills": 1,
+  "post_fork_closed_trades": 0,
+  "post_fork_verified_fill_log": [
+    {
+      "date": "2026-10-29",
+      "side": "BUY",
+      "symbol": "3932.T",
+      "qty": 100,
+      "fill_price": 1207.809,
+      "source": "verified_session_open",
+      "paper_only": true
+    }
+  ],
+  "risk_budget": {
+    "max_position_pct": 0.075,
+    "maximum_ordinary_stop_loss_pct_of_starting_nav_estimate": 0.473,
+    "estimated_only_market_gap_risk_unbounded": true,
+    "max_gross_invested_pct": 0.8
+  },
+  "monthly_risk_status": "BASELINE_OR_MONTH_NOT_READY"
+}
