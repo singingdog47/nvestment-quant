@@ -1,0 +1,90 @@
+{
+  "cohort": "2026-10-29-challenger2-5m-fork",
+  "mode": "SHADOW_ONLY",
+  "cash_jpy": 4908800.000549,
+  "initial_cash_jpy": 5000000,
+  "positions": {
+    "8789.T": {
+      "qty": 600,
+      "entry_price": 152.228,
+      "last_price": 152,
+      "entry_date": "2026-10-28",
+      "sessions": 1,
+      "theme": "Other",
+      "peak_close": 152
+    }
+  },
+  "pending_buys": [
+    {
+      "symbol": "3932.T",
+      "signal_date": "2026-10-28",
+      "qty": 100,
+      "theme": "Other",
+      "signal_price": 1209,
+      "max_notional": 200000
+    }
+  ],
+  "pending_sells": [],
+  "trades": [
+    {
+      "date": "2026-10-28",
+      "symbol": "3932.T",
+      "qty": 100,
+      "entry": 1275.911,
+      "exit": 1197.557,
+      "pnl_jpy": -7835.37,
+      "reason": "STOP"
+    }
+  ],
+  "peak_nav_jpy": 5000000,
+  "nav_jpy": 5000000,
+  "last_run_date": "2026-10-28",
+  "last_screen_date": "2026-10-28",
+  "benchmark_start_close": null,
+  "execution_log": [
+    {
+      "date": "2026-10-28",
+      "side": "BUY",
+      "symbol": "8789.T",
+      "qty": 600,
+      "fill_price": 152.228,
+      "source": "verified_session_open",
+      "paper_only": true
+    },
+    {
+      "date": "2026-10-28",
+      "side": "SELL",
+      "symbol": "3932.T",
+      "qty": 100,
+      "fill_price": 1197.5573,
+      "source": "verified_session_ohlc",
+      "paper_only": true
+    }
+  ],
+  "november_baseline_nav_jpy": null,
+  "fork_metadata": {
+    "source_cohort": "2026-10-22-agility-1m",
+    "source_snapshot_date": "2026-10-28",
+    "source_state_blob_sha": "b76114004ae11b0ac4ce91cd58737ffab56a5a9a",
+    "source_nav_jpy": 992027.83,
+    "source_cash_jpy": 900827.830549,
+    "fork_target_nav_jpy": 5000000,
+    "capital_topup_jpy": 4007972.17,
+    "pre_fork_trades": 1,
+    "pre_fork_executions": 2,
+    "pre_fork_pnl_jpy": -7972.17,
+    "note": "Virtual capital addition only. Carried positions, pending orders and old fills are retained, not new fills. Fork P&L starts at 0; source's original loss remains in historical attribution."
+  },
+  "capital_ledger": [
+    {
+      "date": "2026-10-29",
+      "type": "PAPER_CASH_INJECTION",
+      "amount_jpy": 4007972.17,
+      "nav_before_jpy": 992027.83,
+      "nav_after_jpy": 5000000,
+      "source_state_blob_sha": "b76114004ae11b0ac4ce91cd58737ffab56a5a9a",
+      "counts_as_pnl": false,
+      "counts_as_trade": false
+    }
+  ]
+}
