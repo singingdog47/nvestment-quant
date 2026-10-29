@@ -1,0 +1,63 @@
+name: AI Shadow Challenger 2 (5m paper parallel)
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Investment Quant Post-Close Pipeline v2.13
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '25 14 * * 1-5' # 23:25 JST fallback; separate from Challenger v1
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-output-writer
+  cancel-in-progress: false
+
+jobs:
+  challenger2:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install 'yfinance>=0.2.65,<1' pytest
+      - name: Validate original and fork isolation/accounting
+        run: python -m pytest -q tests/test_shadow_challenger.py tests/test_shadow_challenger2.py
+      - name: Run independent paper-only 5m challenger
+        run: python src/shadow_challenger2.py
+      - name: Upload independent audit files
+        uses: actions/upload-artifact@v4
+        with:
+          name: shadow-challenger2-5m
+          path: |
+            data/shadow_challenger2/latest.json
+            data/shadow_challenger2/latest_report.md
+            data/shadow_challenger2/state.json
+          if-no-files-found: error
+          retention-days: 45
+      - name: Persist challenger2 ledger only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/shadow_challenger2
+          if git diff --cached --quiet; then
+            echo "No Challenger2 updates"
+            exit 0
+          fi
+          git commit -m "data: update challenger2 isolated 5m paper ledger"
+          git pull --rebase
+          git push
