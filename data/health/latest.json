@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-10-28T19:04:58.882271+00:00",
+  "generated_at_utc": "2026-10-29T19:11:35.470379+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
-  "incident_signature": "f2577a8778230cbe",
+  "incident_signature": "767b6c2060c156e8",
   "incidents": [
     {
       "key": "ai_ma:benchmark_price_unavailable",
@@ -25,6 +25,13 @@
       "severity": "WARNING",
       "kind": "DATA_INCIDENT",
       "message_ja": "検証用データまたは実行条件に問題があります: entry_missing_bar:6505.T"
+    },
+    {
+      "key": "ai_ma:fresh_jp_screen_unavailable",
+      "component": "ai_ma",
+      "severity": "WARNING",
+      "kind": "DATA_INCIDENT",
+      "message_ja": "検証用データまたは実行条件に問題があります: fresh_jp_screen_unavailable"
     }
   ],
   "components": {
@@ -36,11 +43,12 @@
     },
     "ai_ma": {
       "status": "DATA_IMPAIRED",
-      "as_of_date": "2026-10-29",
+      "as_of_date": "2026-10-30",
       "blockers": [
         "benchmark_price_unavailable",
         "entry_missing_bar:5351.T",
-        "entry_missing_bar:6505.T"
+        "entry_missing_bar:6505.T",
+        "fresh_jp_screen_unavailable"
       ],
       "mode": "SHADOW_ONLY"
     },
