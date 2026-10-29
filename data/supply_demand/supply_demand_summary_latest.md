@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-10-28T15:57:57+00:00
+Generated (UTC): 2026-10-29T01:51:09+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.3%, volume ratio=0.06011234536277739)
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=2.9%, volume ratio=0.337094873447556)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.3%, float turnover=0.9%, volume ratio=0.888961396252595)
-- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING (float=91.6%, float turnover=0.8%, volume ratio=0.2683772309526949)
-- [US] Innoviva, Inc. - Common Stock: SHORT_CROWDING (float=93.6%, float turnover=1.1%, volume ratio=0.13424108909994542)
-- [JP] コーエーテクモホールディングス: VOLUME_EXPANSION (float=37.6%, float turnover=0.9%, volume ratio=1.57886375132622)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.2%, float turnover=2.6%, volume ratio=0.793971085323599)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.8%, volume ratio=0.22457610827021415)
-- [US] TORM plc - Class A Common Stock: SHORT_INTEREST_FALLING (float=79.8%, float turnover=1.8%, volume ratio=0.45667310299824293)
-- [US] Frontline Plc Ordinary Shares: HIGH_FLOAT_TURNOVER (float=64.2%, float turnover=2.4%, volume ratio=0.4537506757861952)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=96.3%, float turnover=1.0%, volume ratio=2.4679650329309593)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=91.7%, float turnover=1.3%, volume ratio=0.49143438971617665)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=2.9%, volume ratio=1.1389530036673814)
+- [US] Hercules Capital, Inc. Common Stock: SHORT_CROWDING (float=91.6%, float turnover=0.8%, volume ratio=0.8189311443175089)
+- [US] Innoviva, Inc. - Common Stock: SHORT_CROWDING (float=93.6%, float turnover=1.1%, volume ratio=0.759941206487542)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=76.2%, float turnover=2.6%, volume ratio=1.5961381234796406)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.8%, volume ratio=0.697984031168698)
+- [US] TORM plc - Class A Common Stock: SHORT_INTEREST_FALLING (float=79.8%, float turnover=1.8%, volume ratio=0.86176750355028)
+- [US] Frontline Plc Ordinary Shares: HIGH_FLOAT_TURNOVER (float=64.2%, float turnover=2.4%, volume ratio=0.8769672288630566)
+- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_INTEREST_RISING (float=99.3%, float turnover=1.4%, volume ratio=1.3331519652795814)
 
 ## Governance
 
