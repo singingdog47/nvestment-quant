@@ -1,5 +1,5 @@
 # AI restructuring / M&A shadow research
-Date: 2026-10-30
+Date: 2026-10-31
 Initial virtual capital: ¥5,000,000
 NAV: ¥5,000,000; TOPIX benchmark NAV: 5000000.0
 Qualified: 0 / JP screen: 50
