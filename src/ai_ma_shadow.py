@@ -71,16 +71,29 @@ def is_postclose_jst_date(timestamp, session):
 
 
 def infer_run_session(local_now, screen_rows):
-    """Use yesterday's completed JPX session only with verified post-close evidence."""
+    """Recover the most recent *unprocessed* cash session from a dated screen.
+
+    GitHub schedules may arrive after midnight, on weekends or on JPX holidays.
+    A delayed run may safely belong to the preceding completed cash session,
+    but ONLY if the screen was captured after that session's close (or before
+    09:00 JST the following day). Never infer an older session across a newer
+    completed trading session, and never use a stale screen as new buy evidence.
+    """
     day = local_now.date()
-    if local_now.hour < 9:
-        previous = day - timedelta(days=1)
-        if is_jpx_session(previous) and any(
+    if is_jpx_session(day) and local_now.hour >= 9:
+        return day
+    for offset in range(1, 8):
+        previous = day - timedelta(days=offset)
+        if not is_jpx_session(previous):
+            continue
+        if any(
             row.get("market") == "JP" and
             is_postclose_jst_date(row.get("data_retrieved_at_utc"), previous)
             for row in screen_rows
         ):
             return previous
+        # A later completed JPX session exists, so never skip over it.
+        break
     return day
 
 
@@ -168,6 +181,10 @@ def run(as_of=None, root=ROOT, cfg_path=CONFIG, price_loader=verified_daily_bar)
         # A late GitHub schedule may run early next day. Require a fresh JPX
         # post-close snapshot and never fabricate a weekend/holiday session.
         day = infer_run_session(local_now, csv_rows(root/"screening_latest.csv"))
+        # A same-day manual/early dispatch must not mark an incomplete session
+        # processed or fill orders from partial daily OHLC.
+        if day == local_now.date() and is_jpx_session(day) and (local_now.hour, local_now.minute) < (15, 30):
+            return {"status": "PRE_CLOSE_DEFERRED", "as_of_date": day.isoformat()}
     if not is_jpx_session(day):
         return {"status": "OUTSIDE_SESSION", "as_of_date": day.isoformat()}
     out=root/"ai_ma_shadow"
