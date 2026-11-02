@@ -149,3 +149,13 @@ def test_overnight_screen_rejects_wrong_day(tmp_path, monkeypatch):
     r = c.run(date(2026, 10, 22), bar_source=lambda symbol, day: None)
     assert r["screen_fresh"] is False
     assert r["pending_buys"] == 0
+
+
+def test_jpx_holiday_does_not_create_paper_session_or_fills(tmp_path, monkeypatch):
+    setup_case(tmp_path, monkeypatch)
+    seen = []
+    result = c.run(date(2026, 11, 3),
+                   bar_source=lambda symbol, day: seen.append((symbol, day)) or None)
+    assert result["status"] == "OUTSIDE_SESSION"
+    assert seen == []
+    assert not (c.OUT / "state.json").exists()
