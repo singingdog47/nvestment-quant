@@ -36,3 +36,20 @@ def test_no_dispatch_on_stale_report_or_future_timestamp():
                                when("2026-11-02", 17))
     assert not should_dispatch(report("2026-11-02T19:00:00+00:00"),
                                when("2026-11-03", 3, 15))
+
+
+def test_workflow_cli_invocation_import_path():
+    import os
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    env = os.environ.copy()
+    env["PYTHONPATH"] = os.pathsep.join(["src", "."])
+    completed = subprocess.run(
+        [sys.executable, "tools/paper_children_dispatch_gate.py"],
+        cwd=Path.cwd(), env=env, capture_output=True, text=True,
+        check=False,
+    )
+    assert completed.returncode == 0, completed.stderr
+    assert "paper-child recovery dispatch=" in completed.stdout

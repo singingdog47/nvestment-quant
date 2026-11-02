@@ -173,7 +173,9 @@ jobs:
       - name: Check JPX session and post-close report evidence
         id: gate
         env:
-          PYTHONPATH: src
+          # Script is invoked by path; both src/ and repository root are
+          # required for jpx_market_calendar and tools.* imports.
+          PYTHONPATH: src:.
         run: python tools/paper_children_dispatch_gate.py
       - name: Dispatch paper-only children after a recovered pipeline
         if: steps.gate.outputs.dispatch == 'true'
