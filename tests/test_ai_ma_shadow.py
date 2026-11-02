@@ -158,7 +158,8 @@ def test_overnight_inference_rejects_preclose_and_market_open(tmp_path):
     market_open = datetime(2026, 11, 3, 9, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
     assert infer_run_session(market_open, [row]) == date(2026, 11, 3)
     holiday_previous = datetime(2026, 11, 4, 2, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
-    assert infer_run_session(holiday_previous, [row]) == date(2026, 11, 4)
+    # Nov 3 is a JPX holiday: Nov 2 remains the latest completed session.
+    assert infer_run_session(holiday_previous, [row]) == date(2026, 11, 2)
 
 
 def test_holiday_evening_can_catch_up_previous_completed_session():
