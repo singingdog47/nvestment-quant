@@ -60,9 +60,28 @@ def is_postclose_jst_date(timestamp, session):
         if stamp.tzinfo is None:
             return False
         local = stamp.astimezone(JST)
-        return local.date() == session and (local.hour, local.minute) >= (15, 30)
+        # A GitHub scheduled post-close job can be delivered after midnight JST.
+        # Before the next market open, JP equities still reflect the previous
+        # completed session; accept the delayed snapshot, never a pre-close one.
+        same_day_close = local.date() == session and (local.hour, local.minute) >= (15, 30)
+        overnight_close = (local.date() == session + timedelta(days=1) and local.hour < 9)
+        return same_day_close or overnight_close
     except (ValueError, TypeError):
         return False
+
+
+def infer_run_session(local_now, screen_rows):
+    """Use yesterday's completed JPX session only with verified post-close evidence."""
+    day = local_now.date()
+    if local_now.hour < 9:
+        previous = day - timedelta(days=1)
+        if is_jpx_session(previous) and any(
+            row.get("market") == "JP" and
+            is_postclose_jst_date(row.get("data_retrieved_at_utc"), previous)
+            for row in screen_rows
+        ):
+            return previous
+    return day
 
 
 def screen_candidates(rows, cfg, session):
@@ -146,15 +165,9 @@ def run(as_of=None, root=ROOT, cfg_path=CONFIG, price_loader=verified_daily_bar)
         day = as_of
     else:
         local_now = datetime.now(JST)
-        day = local_now.date()
-        # A scheduled Friday job delayed until early Saturday may use Friday's
-        # verified post-close screen. Never fabricate a weekend/holiday session.
-        if local_now.hour < 9:
-            previous = day - timedelta(days=1)
-            screen_rows = csv_rows(root/"screening_latest.csv")
-            if (is_jpx_session(previous) and screen_rows and
-                    is_postclose_jst_date(screen_rows[0].get("data_retrieved_at_utc"), previous)):
-                day = previous
+        # A late GitHub schedule may run early next day. Require a fresh JPX
+        # post-close snapshot and never fabricate a weekend/holiday session.
+        day = infer_run_session(local_now, csv_rows(root/"screening_latest.csv"))
     if not is_jpx_session(day):
         return {"status": "OUTSIDE_SESSION", "as_of_date": day.isoformat()}
     out=root/"ai_ma_shadow"
