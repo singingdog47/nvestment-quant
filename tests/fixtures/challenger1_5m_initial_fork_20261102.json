@@ -1,0 +1,109 @@
+{
+  "cohort": "2026-11-04-challenger1-5m-independent-fork",
+  "mode": "SHADOW_ONLY",
+  "cash_jpy": 4783000.000549,
+  "initial_cash_jpy": 5000000,
+  "positions": {
+    "8789.T": {
+      "qty": 600,
+      "entry_price": 152.228,
+      "last_price": 145,
+      "entry_date": "2026-10-28",
+      "sessions": 3,
+      "theme": "Other",
+      "peak_close": 152
+    },
+    "3932.T": {
+      "qty": 100,
+      "entry_price": 1207.809,
+      "last_price": 1300,
+      "entry_date": "2026-10-29",
+      "sessions": 2,
+      "theme": "Other",
+      "peak_close": 1300
+    }
+  },
+  "pending_buys": [
+    {
+      "symbol": "8622.T",
+      "signal_date": "2026-11-02",
+      "qty": 100,
+      "theme": "Financials",
+      "signal_price": 763,
+      "max_notional": 100000
+    }
+  ],
+  "pending_sells": [],
+  "trades": [
+    {
+      "date": "2026-10-28",
+      "symbol": "3932.T",
+      "qty": 100,
+      "entry": 1275.911,
+      "exit": 1197.557,
+      "pnl_jpy": -7835.37,
+      "reason": "STOP"
+    }
+  ],
+  "peak_nav_jpy": 5000000,
+  "nav_jpy": 5000000,
+  "last_run_date": "2026-11-02",
+  "last_screen_date": "2026-11-02",
+  "benchmark_start_close": null,
+  "execution_log": [
+    {
+      "date": "2026-10-28",
+      "side": "BUY",
+      "symbol": "8789.T",
+      "qty": 600,
+      "fill_price": 152.228,
+      "source": "verified_session_open",
+      "paper_only": true
+    },
+    {
+      "date": "2026-10-28",
+      "side": "SELL",
+      "symbol": "3932.T",
+      "qty": 100,
+      "fill_price": 1197.5573,
+      "source": "verified_session_ohlc",
+      "paper_only": true
+    },
+    {
+      "date": "2026-10-29",
+      "side": "BUY",
+      "symbol": "3932.T",
+      "qty": 100,
+      "fill_price": 1207.809,
+      "source": "verified_session_open",
+      "paper_only": true
+    }
+  ],
+  "november_baseline_nav_jpy": 5000000,
+  "fork_metadata": {
+    "source_cohort": "2026-10-22-agility-1m",
+    "source_snapshot_date": "2026-11-02",
+    "source_state_blob_sha": "61848a18816774a03269d93abe81ef59a66202c5",
+    "source_nav_jpy": 997046.93,
+    "source_cash_jpy": 780046.9305489999,
+    "source_benchmark_start_close": 420.6000061035156,
+    "capital_topup_jpy": 4002953.07,
+    "fork_target_nav_jpy": 5000000,
+    "pre_fork_trades": 1,
+    "pre_fork_executions": 3,
+    "pre_fork_pnl_jpy": -2953.07,
+    "note": "Audited Nov2 fork. Capital injection is not profit. Original 1m state and inherited fills are unchanged; new 5m performance starts Nov4."
+  },
+  "capital_ledger": [
+    {
+      "date": "2026-11-04",
+      "type": "PAPER_CASH_INJECTION",
+      "amount_jpy": 4002953.07,
+      "nav_before_jpy": 997046.93,
+      "nav_after_jpy": 5000000,
+      "source_state_blob_sha": "61848a18816774a03269d93abe81ef59a66202c5",
+      "counts_as_pnl": false,
+      "counts_as_trade": false
+    }
+  ]
+}
