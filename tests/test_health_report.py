@@ -120,7 +120,7 @@ class HealthReportTests(unittest.TestCase):
             })
             # Delayed Nov 2 post-close pipeline was actually generated on
             # Nov 3 at 02:28 JST, when Nov 3 is a JPX holiday.
-            path.write_text("# Report\\nGenerated (UTC): 2026-11-02T17:28:40+00:00\\n".replace("\\\\n", "\\n"), encoding="utf-8")
+            path.write_text("# Report" + chr(10) + "Generated (UTC): 2026-11-02T17:28:40+00:00" + chr(10), encoding="utf-8")
             overnight = read_pipeline_report(path)
             self.assertEqual(overnight, {"date": "2026-11-02", "after_close": True})
             inputs = healthy()
@@ -129,7 +129,7 @@ class HealthReportTests(unittest.TestCase):
             self.assertNotIn("pipeline:invalid_generation_time", [x["key"] for x in result["incidents"]])
             self.assertNotIn("pipeline:snapshot_lag", [x["key"] for x in result["incidents"]])
             # Nov 3 holiday cannot be treated as a completed cash session.
-            path.write_text("# Report\\nGenerated (UTC): 2026-11-03T00:10:00+00:00\\n".replace("\\\\n", "\\n"), encoding="utf-8")
+            path.write_text("# Report" + chr(10) + "Generated (UTC): 2026-11-03T00:10:00+00:00" + chr(10), encoding="utf-8")
             self.assertEqual(read_pipeline_report(path), {"date": "2026-11-03", "after_close": False})
             path.write_text("# Report\nGenerated (UTC): unknown\n", encoding="utf-8")
             self.assertIsNone(read_pipeline_report(path))
