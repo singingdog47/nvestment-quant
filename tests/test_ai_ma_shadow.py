@@ -124,7 +124,9 @@ def test_expired_pending_buy_never_fills_after_data_outage(tmp_path):
     feed(tmp_path, [sample("2026-10-19")])
     first = run(date(2026, 10, 19), root=tmp_path, cfg_path=cp, price_loader=prices)
     assert first["pending_buys"] == 1
-    feed(tmp_path, [sample("2026-10-26")])
+    # Simulate an outage: the last screen is still from the signal day.
+    # A fresh screen could legitimately queue a *new* independent order.
+    feed(tmp_path, [sample("2026-10-19")])
     later = run(date(2026, 10, 26), root=tmp_path, cfg_path=cp, price_loader=prices)
     assert later["pending_buys"] == 0
     assert later["positions_count"] == 0
