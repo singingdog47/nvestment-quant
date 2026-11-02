@@ -39,6 +39,9 @@ def run(as_of: date | None = None, bar_source: Callable | None = None):
     target = as_of or engine.resolve_market_session(
         datetime.now(ZoneInfo("Asia/Tokyo")),
         engine.rows(DATA_ROOT / "screening_latest.csv"))
+    if not is_jpx_session(target):
+        return {"status": "OUTSIDE_SESSION", "as_of_date": target.isoformat(),
+                "paper_only": True}
     last_date = date.fromisoformat(state["last_run_date"]) if state.get("last_run_date") else None
     if last_date and target < last_date:
         return {"status": "OUT_OF_ORDER_REPLAY_BLOCKED", "last_processed": last_date.isoformat(),
