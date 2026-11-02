@@ -2,7 +2,7 @@
 import unittest
 from datetime import datetime, timezone
 
-from health_report import classify_blocker, summarize, completed_jpx_sessions
+from health_report import classify_blocker, summarize, completed_jpx_sessions, read_pipeline_report
 
 NOW = datetime(2026, 10, 20, 13, 45, tzinfo=timezone.utc)
 
@@ -88,6 +88,38 @@ class HealthReportTests(unittest.TestCase):
         result = summarize(tuesday_morning, inputs)
         self.assertIn("challenger2:snapshot_lag", [x["key"] for x in result["incidents"]])
         self.assertEqual(result["components"]["challenger2"]["status"], "STALE")
+
+    def test_pipeline_missing_session_after_grace_is_incident(self):
+        inputs = healthy()
+        inputs["pipeline"] = {"date": "2026-10-30", "after_close": True}
+        # Monday Nov 2 is complete after 23:45 JST, Tuesday Nov 3 is closed.
+        now = datetime(2026, 11, 2, 15, 0, tzinfo=timezone.utc)
+        result = summarize(now, inputs)
+        self.assertIn("pipeline:snapshot_lag", [x["key"] for x in result["incidents"]])
+        self.assertEqual(result["components"]["pipeline"]["status"], "STALE")
+
+    def test_pipeline_before_grace_and_holiday_are_not_incidents(self):
+        inputs = healthy()
+        inputs["pipeline"] = {"date": "2026-10-30", "after_close": True}
+        before_grace = datetime(2026, 11, 2, 14, 30, tzinfo=timezone.utc)
+        result = summarize(before_grace, inputs)
+        self.assertNotIn("pipeline:snapshot_lag", [x["key"] for x in result["incidents"]])
+        inputs["pipeline"] = {"date": "2026-11-02", "after_close": True}
+        holiday = datetime(2026, 11, 3, 15, 0, tzinfo=timezone.utc)
+        result = summarize(holiday, inputs)
+        self.assertNotIn("pipeline:snapshot_lag", [x["key"] for x in result["incidents"]])
+
+    def test_pipeline_timestamp_reader(self):
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "report.md"
+            path.write_text("# Report\\nGenerated (UTC): 2026-11-02T14:26:09+00:00\\n", encoding="utf-8")
+            self.assertEqual(read_pipeline_report(path), {
+                "date": "2026-11-02", "after_close": True,
+            })
+            path.write_text("# Report\\nGenerated (UTC): unknown\\n", encoding="utf-8")
+            self.assertIsNone(read_pipeline_report(path))
 
     def test_ai_ma_weekend_snapshot_is_invalid_not_a_valid_trading_day(self):
         inputs = healthy()
