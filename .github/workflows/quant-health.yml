@@ -71,5 +71,18 @@ jobs:
             exit 0
           fi
           git commit -m "data: update quant health snapshot"
-          git pull --rebase
-          git push
+          # Independent output writers may commit simultaneously. Retry only
+          # non-fast-forward races; never force-push or auto-resolve conflicts.
+          for attempt in 1 2 3 4; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "Published output on attempt $attempt"
+              exit 0
+            fi
+            if [[ -d .git/rebase-merge || -d .git/rebase-apply ]]; then
+              echo "Rebase conflict: preserving both ledgers for manual review"
+              exit 1
+            fi
+            sleep $((attempt * 3))
+          done
+          echo "Output push failed after four attempts"
+          exit 1
