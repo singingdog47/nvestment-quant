@@ -1,42 +1,74 @@
 {
-  "decision_id": "gpt-shadow-20261030-postclose-1735-hold-archived-001",
-  "decision_date": "2026-10-30",
-  "decision_time_jst": "17:35",
+  "decision_id": "gpt-shadow-20261102-postclose-1745-hold-archived-001",
+  "decision_date": "2026-11-02",
+  "decision_time_jst": "17:45",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
+  "experiment_status": "V1_ARCHIVED_MANUAL_DISPATCH_ONLY",
   "meta_gate": {
     "passed": false,
-    "objective": "Maximize long-run risk-adjusted paper NAV after slippage, risk, complexity and attention; no real broker activity.",
-    "baseline": "Archived v1: 2026-10-26 saved ledger NAV and cash JPY 987918.70, zero positions and pending orders; HOLD cash, no inferred fills.",
-    "incremental_edge_source": "No validated positive mispricing edge from 2026-10-30 verified post-close prices and primary research.",
-    "incremental_benefit_after_costs": "Unproven against HOLD/cash after 10bps simulated slippage, uncertainty and risk.",
-    "strongest_counterargument": "Unverified 2026-10-30 close or fresh company disclosures could contain an opportunity missed by the stale scan.",
-    "simpler_alternative": "Leave archived v1 cash unchanged; evaluate separately governed Challenger cohorts without modifying their ledgers.",
+    "objective": "Improve long-run risk-adjusted paper NAV after costs, failure risk, complexity and attention; no real broker activity.",
+    "baseline": "Archived v1 paper ledger last processed 2026-10-26: NAV and cash JPY 987918.70, zero positions, zero pending orders. HOLD/cash leaves this paper ledger unchanged.",
+    "incremental_edge_source": "No confirmed current-session security-specific mispricing edge beyond cash; Nov 2 post-close exchange prices and screening not verified.",
+    "incremental_benefit_after_costs": "Not demonstrated after simulated 10 bps slippage, risk, data gaps, maintenance and attention.",
+    "strongest_counterargument": "Fresh verified Nov 2 closes or primary disclosures could reveal a positive opportunity missed by the stale Oct 29 screen.",
+    "simpler_alternative": "Keep archived v1 unchanged and monitor verified close, primary disclosures and independently governed Challenger cohorts.",
     "current_best_action": "HOLD",
-    "best_alternative": "MONITOR fresh verified exchange prices, filings and execution health; no orders.",
-    "what_changed_or_earlier_miss": "V1 workflow remains manual-only; Oct 30 intelligence smoke tests failed and Oct 29 Challenger2 validation failed. Latest available screening/regime remains Oct 29.",
-    "forward_value_and_risk": "Cash avoids unsupported entries and duplicate paper orders; opportunity cost remains unknown.",
-    "falsifier_and_review_trigger": "Fresh confirmed market session and verified OHLC, credible primary research, complete eight-field falsifiable thesis and positive incremental risk-adjusted value versus cash.",
+    "best_alternative": "MONITOR; require a confirmed current-session close and a complete falsifiable eight-field thesis before any paper BUY/ADD.",
+    "what_changed_or_earlier_miss": "Nov 2 morning intelligence completed successfully and regime is actionable at confidence 0.8, but screening remains Oct 29 and market breadth is stale; v1 workflow is still manual-only despite config enabled:true.",
+    "forward_value_and_risk": "HOLD avoids unsupported or duplicate orders. Opportunity cost is unknown; a valid future edge could justify a new decision only after independent verification.",
+    "falsifier_and_review_trigger": "Reassess after verified current-session OHLC, fresh screening, dated primary filings, sound liquidity and a material positive incremental risk-adjusted expected return versus cash.",
     "required_buy_thesis_fields": {
-      "market_implied_view": "not verified for 2026-10-30",
+      "market_implied_view": "not established from current-session verified prices",
       "our_differing_view": "not established",
       "why_market_may_be_wrong": "not established",
       "catalyst_or_repricing_path": "not established",
       "disconfirming_condition": "not established",
       "expected_horizon": "not established",
-      "confidence": "insufficient",
-      "data_quality": "current-session close and security OHLC unverified"
+      "confidence": "insufficient for a security-specific BUY/ADD",
+      "data_quality": "Nov 2 close/OHLC and screening unverified; primary company coverage incomplete"
+    }
+  },
+  "market_context": {
+    "decision_date_jst": "2026-11-02",
+    "market_session_verified_postclose": false,
+    "regime": {
+      "label": "NEUTRAL",
+      "score": 52.72,
+      "confidence": 0.8,
+      "actionable": true,
+      "generated_at_jst": "2026-11-02 10:31:54",
+      "breadth_status": "stale",
+      "participation_component_available": false,
+      "flags": []
+    },
+    "sq": {
+      "active": false,
+      "as_of_date": "2026-11-02",
+      "confidence": 0.4,
+      "data_status": "partial",
+      "manual_oi_missing": true,
+      "directional_bias": "UNDETERMINED"
+    },
+    "supply_demand": {
+      "generated_at_jst": "2026-11-02 10:32:58",
+      "data_status": "partial",
+      "target_count": 52,
+      "ok": 38,
+      "partial": 2,
+      "missing": 12,
+      "source_tier": "secondary context; not trade alpha"
     }
   },
   "data_quality_caveats": [
-    "Screening retrieved 2026-10-29 23:23 JST; no 2026-10-30 post-close scan. Exact exchange close timestamp unverified.",
-    "Regime NEUTRAL 53.30, confidence 1.0, THIN_LIQUIDITY, generated 2026-10-29 23:23 JST; not current-session evidence.",
-    "SQ Oct 29 inactive, confidence 0.4, partial; missing manual OI and no directional inference.",
-    "Supply/demand Oct 29 23:24 JST: 37 OK, 3 partial, 12 missing of 52; not Oct 30 close.",
-    "Primary metrics: 19 of 39 JP targets have any, 16 all six; overall primary fundamental coverage 36.5%; secondary company news requires verification.",
-    "2026-10-30 morning intelligence workflow failed smoke tests (3 failures involving Challenger2 assumptions); Oct 29 Challenger2 validation workflow also failed.",
-    "V1 workflow is archived/manual-dispatch only despite enabled:true in its configuration; no automatic 21:35 ledger is assumed."
+    "Screening retrieved 2026-10-29 23:23:26 JST (2026-10-29T14:23:26.716187+00:00); no verified Nov 2 post-close screening.",
+    "Screening price_basis: TradingView scanner close; exact exchange timestamp unavailable. No future-session data or synthetic OHLC used.",
+    "Regime generated Nov 2 at 10:31:54 JST before cash-market close. Although actionable, breadth source Oct 29 is stale and participation coverage is zero.",
+    "Supply/demand generated Nov 2 at 10:32:58 JST: 38 ok, 2 partial, 12 missing of 52; not a Nov 2 post-close observation.",
+    "SQ overlay Nov 2 inactive, confidence 0.4, partial, manual option OI unavailable; not a directional signal.",
+    "Primary metrics available for 19 of 39 JP intelligence targets (16 have all six); overall primary fundamental coverage 36.5%. New secondary guidance headlines require primary-source confirmation.",
+    "V1 is archived/manual-dispatch only despite enabled:true in config; a new 21:35 automatic v1 ledger run is not assumed."
   ],
   "execution_integrity_audit": {
     "ledger_as_of_date": "2026-10-26",
@@ -46,10 +78,11 @@
     "pending_orders": 0,
     "missing_ohlc_orders": 0,
     "overdue_sell_orders": 0,
+    "delayed_fills_current_report": 0,
     "fills_today_unconfirmed": true,
-    "historical_warning": "8622.T hard-stop SELL signaled 2026-10-06, recorded filled 2026-10-15 at JPY 812.187; 9-calendar-day delay remains a historical execution-quality issue.",
-    "timing_warning": "V1 archived; no Oct 30 ledger update or fills verified. Challenger2 has a separate pending BUY; do not duplicate or conflate it with v1."
+    "historical_warning": "8622.T hard-stop SELL signaled 2026-10-06, recorded FILLED 2026-10-15 at JPY 812.187: nine-calendar-day execution delay remains a historical risk.",
+    "timing_warning": "No Nov 2 v1 ledger update or verified fill. V1 workflow is manual-only. Do not infer a 21:35 run or create duplicate orders.",
+    "separate_cohort_warning": "Challenger2 has a distinct pending BUY for 8624.T (100 shares, signal 2026-10-29) in its Oct 29 state; it is NOT a v1 order and is NOT treated as filled."
   },
-  "experiment_status": "V1_ARCHIVED_NO_NEW_ORDERS",
-  "reason": "HOLD: 2026-10-30 post-close session/OHLC not verified in repository; v1 archived with zero holdings or pending orders, and no complete eight-field incremental mispricing thesis over cash."
+  "reason": "HOLD: archived v1 has no holdings or pending orders, and Nov 2 current-session verified close, fresh screening, and a positive eight-field incremental mispricing thesis versus cash are unavailable. No paper orders or fills created."
 }
