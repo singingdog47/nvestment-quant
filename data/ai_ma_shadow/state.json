@@ -7,28 +7,28 @@
   "positions": {},
   "pending_buys": [
     {
-      "signal_date": "2026-10-19",
-      "symbol": "5351.T",
-      "qty": 200,
-      "signal_price": 1960.0,
-      "id": "0a9ddafa6434df6d8c",
+      "signal_date": "2026-11-02",
+      "symbol": "7942.T",
+      "qty": 100,
+      "signal_price": 3035.0,
+      "id": "afef73683ea0ffffdd",
       "thesis": "value+operating_quality; AI/M&A unverified and not priced into eligibility"
     },
     {
-      "signal_date": "2026-10-19",
-      "symbol": "6505.T",
-      "qty": 100,
-      "signal_price": 3130.0,
-      "id": "6362c3ac21c0cb3f0f",
+      "signal_date": "2026-11-02",
+      "symbol": "5351.T",
+      "qty": 200,
+      "signal_price": 1911.0,
+      "id": "7cac8a3fe044f9ac48",
       "thesis": "value+operating_quality; AI/M&A unverified and not priced into eligibility"
     }
   ],
   "pending_sells": [],
   "completed_trades": [],
-  "last_run_date": "2026-10-31",
+  "last_run_date": "2026-11-02",
   "nav_jpy": 5000000,
   "peak_nav_jpy": 5000000,
   "max_drawdown_pct": 0.0,
   "benchmark_start_close": 427.1000061035156,
-  "baseline_benchmark_nav_jpy": 5000000.0
+  "baseline_benchmark_nav_jpy": 4834933.2
 }

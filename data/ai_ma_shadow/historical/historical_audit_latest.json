@@ -11,7 +11,7 @@
     "usable_for_market_baseline_only": true
   },
   "paper_cohort_snapshots": {
-    "usable_days": 11,
+    "usable_days": 12,
     "summary": [
       {
         "date": "2026-10-19",
@@ -66,6 +66,11 @@
       {
         "date": "2026-10-31",
         "qualified": 0,
+        "count": 50
+      },
+      {
+        "date": "2026-11-02",
+        "qualified": 13,
         "count": 50
       }
     ],
