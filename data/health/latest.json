@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-10-30T18:49:42.081551+00:00",
+  "generated_at_utc": "2026-11-02T15:40:50.065311+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
-  "incident_signature": "767b6c2060c156e8",
+  "incident_signature": "5184adc5ed951796",
   "incidents": [
     {
       "key": "ai_ma:benchmark_price_unavailable",
@@ -32,12 +32,32 @@
       "severity": "WARNING",
       "kind": "DATA_INCIDENT",
       "message_ja": "検証用データまたは実行条件に問題があります: fresh_jp_screen_unavailable"
+    },
+    {
+      "key": "challenger1:snapshot_lag",
+      "component": "challenger1",
+      "severity": "WARNING",
+      "kind": "DATA_INCIDENT",
+      "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。"
+    },
+    {
+      "key": "challenger2:snapshot_lag",
+      "component": "challenger2",
+      "severity": "WARNING",
+      "kind": "DATA_INCIDENT",
+      "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。"
     }
   ],
   "components": {
-    "shadow_v2": {
+    "challenger1": {
       "status": "HEALTHY",
-      "as_of_date": "2026-10-27",
+      "as_of_date": "2026-10-29",
+      "blockers": [],
+      "mode": "SHADOW_ONLY"
+    },
+    "challenger2": {
+      "status": "HEALTHY",
+      "as_of_date": "2026-10-29",
       "blockers": [],
       "mode": "SHADOW_ONLY"
     },
@@ -54,9 +74,15 @@
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-10-29",
+      "as_of_date": "2026-11-02",
       "blockers": [],
       "mode": null
+    },
+    "shadow_v2": {
+      "status": "ARCHIVED",
+      "as_of_date": "2026-10-27",
+      "mode": "SHADOW_ONLY",
+      "blockers": []
     }
   },
   "notification_policy": {
