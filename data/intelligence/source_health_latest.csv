@@ -1,7 +1,7 @@
 ﻿source,status,fetched_at,records,error,source_tier
-TDnet,ok,2026-11-02T01:32:36+00:00,0,,primary
-EDINET,ok,2026-11-02T01:32:38+00:00,6,,primary
-SEC,ok,2026-11-02T01:32:43+00:00,28,,primary
-CompanyIR,ok,2026-11-02T01:32:44+00:00,0,,primary
-NewsRSS,ok,2026-11-02T01:32:44+00:00,47,,secondary
-yfinance,ok,2026-11-02T01:32:58+00:00,40,,secondary
+TDnet,ok,2026-11-02T17:07:26+00:00,0,,primary
+EDINET,ok,2026-11-02T17:07:28+00:00,10,,primary
+SEC,ok,2026-11-02T17:07:33+00:00,27,,primary
+CompanyIR,ok,2026-11-02T17:07:35+00:00,0,,primary
+NewsRSS,ok,2026-11-02T17:07:35+00:00,53,,secondary
+yfinance,ok,2026-11-02T17:07:58+00:00,40,,secondary

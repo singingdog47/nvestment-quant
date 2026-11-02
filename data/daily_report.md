@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-10-29T14:23:26.716187+00:00
+- Data retrieved (UTC): 2026-11-02T17:06:38.899884+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -26,36 +26,36 @@
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 6 |
-| JP | Other | 14 |
+| JP | Financials | 4 |
+| JP | Other | 16 |
 | US | Financials | 12 |
-| US | Other | 2 |
-| US | Shipping | 6 |
+| US | Other | 3 |
+| US | Shipping | 5 |
 
 ## Research candidates
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 8622.T | Mito Securities Co.,Ltd. | Financials | 80.0 | 100.0 | unchanged |
-| JP | 2 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 77.6 | 99.9 | new_entry |
-| JP | 4 | 545A.T | Toranvia Co.,Ltd. | Other | 74.0 | 99.8 | unchanged |
-| JP | 5 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.8 | unchanged |
-| JP | 6 | 3932.T | Akatsuki Inc. | Other | 72.7 | 99.7 | unchanged |
-| JP | 8 | 6036.T | KeePer Technical Laboratory Co.,Ltd. | Other | 72.5 | 99.6 | rank_up |
-| JP | 9 | 2121.T | MIXI,Inc. | Other | 71.4 | 99.6 | unchanged |
-| JP | 10 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.0 | 99.5 | unchanged |
-| JP | 11 | 7744.T | Noritsu Koki Co.,Ltd. | Other | 70.8 | 99.5 | unchanged |
-| JP | 12 | 4516.T | Nippon Shinyaku Co.,Ltd. | Other | 70.3 | 99.4 | unchanged |
-| US | 1 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 84.6 | 100.0 | unchanged |
-| US | 2 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.6 | 100.0 | unchanged |
-| US | 3 | HBNC | Horizon Bancorp, Inc. - Common Stock | Financials | 82.9 | 99.9 | new_entry |
-| US | 6 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 82.4 | 99.8 | unchanged |
-| US | 7 | DHT | DHT Holdings, Inc. | Shipping | 82.3 | 99.8 | unchanged |
-| US | 12 | TRMD | TORM plc - Class A Common Stock | Other | 81.2 | 99.7 | unchanged |
-| US | 21 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.4 | 99.4 | unchanged |
-| US | 24 | FRO | Frontline Plc Ordinary Shares | Other | 78.9 | 99.3 | unchanged |
-| US | 25 | SFNC | Simmons First National Corporation - Common Stock | Other | 78.8 | 99.3 | unchanged |
-| US | 27 | BUSE | First Busey Corporation - Common Stock | Other | 78.6 | 99.2 | unchanged |
+| JP | 1 | 6196.T | Strike Group Co.,Ltd. | Other | 76.0 | 100.0 | rank_up |
+| JP | 2 | 3932.T | Akatsuki Inc. | Other | 74.6 | 99.9 | unchanged |
+| JP | 3 | 545A.T | Toranvia Co.,Ltd. | Other | 74.1 | 99.9 | unchanged |
+| JP | 4 | 6750.T | ELECOM CO.,LTD. | Other | 73.2 | 99.8 | unchanged |
+| JP | 5 | 8622.T | Mito Securities Co.,Ltd. | Financials | 72.2 | 99.8 | unchanged |
+| JP | 6 | 2121.T | MIXI,Inc. | Other | 72.1 | 99.7 | unchanged |
+| JP | 7 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.9 | 99.7 | unchanged |
+| JP | 8 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 71.3 | 99.6 | new_entry |
+| JP | 9 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.0 | 99.6 | unchanged |
+| JP | 10 | 8630.T | Sompo Holdings,Inc. | Other | 71.0 | 99.5 | unchanged |
+| US | 1 | FISI | Financial Institutions, Inc. - Common Stock | Financials | 84.2 | 100.0 | new_entry |
+| US | 2 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.5 | 100.0 | unchanged |
+| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.1 | 99.9 | unchanged |
+| US | 10 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.6 | 99.7 | unchanged |
+| US | 11 | DHT | DHT Holdings, Inc. | Shipping | 81.5 | 99.7 | unchanged |
+| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 80.4 | 99.5 | unchanged |
+| US | 18 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.7 | 99.5 | unchanged |
+| US | 21 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.4 | 99.4 | rank_up |
+| US | 22 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.3 | 99.4 | unchanged |
+| US | 28 | BUSE | First Busey Corporation - Common Stock | Other | 78.7 | 99.2 | unchanged |
 
 ## Required manual checks before an order
 
