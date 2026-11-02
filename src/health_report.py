@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -59,6 +60,29 @@ def completed_jpx_sessions(observed, now: datetime) -> int:
             count += 1
         day += timedelta(days=1)
     return count
+
+
+
+def read_pipeline_report(path: Path):
+    """Read only the post-close report generation timestamp, never infer trades."""
+    try:
+        content = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError):
+        return None
+    match = re.search(r"^Generated \\(UTC\\):\\s*(\\S+)", content, re.MULTILINE)
+    if not match:
+        return None
+    try:
+        generated = datetime.fromisoformat(match.group(1))
+        if generated.tzinfo is None:
+            return None
+        jst = generated.astimezone(ZoneInfo("Asia/Tokyo"))
+    except (ValueError, TypeError, OverflowError):
+        return None
+    return {
+        "date": jst.date().isoformat(),
+        "after_close": (jst.hour, jst.minute) >= (15, 30),
+    }
 
 
 def summarize(now: datetime, inputs: dict) -> dict:
@@ -147,6 +171,47 @@ def summarize(now: datetime, inputs: dict) -> dict:
                 "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。",
             })
 
+    # Optional post-close observer: missing one completed JPX session is material.
+    # Do not treat pre-close, weekends or public holidays as completed sessions.
+    if "pipeline" in inputs:
+        pipeline = inputs["pipeline"]
+        if not isinstance(pipeline, dict) or not pipeline.get("date"):
+            components["pipeline"] = {"status": "UNAVAILABLE", "as_of_date": None}
+            incidents.append({
+                "key": "pipeline:snapshot_missing",
+                "component": "pipeline",
+                "severity": "CRITICAL",
+                "kind": "DATA_INCIDENT",
+                "message_ja": "統合レポートの生成日時を確認できません。",
+            })
+        else:
+            day = pipeline["date"]
+            status = "HEALTHY"
+            try:
+                observed = datetime.strptime(day, "%Y-%m-%d").date()
+                lag = completed_jpx_sessions(observed, now)
+            except (ValueError, TypeError):
+                lag = None
+            if lag is None or not pipeline.get("after_close", False):
+                status = "DATA_IMPAIRED"
+                incidents.append({
+                    "key": "pipeline:invalid_generation_time",
+                    "component": "pipeline",
+                    "severity": "WARNING",
+                    "kind": "DATA_INCIDENT",
+                    "message_ja": "統合レポートの生成日時が不正、または引け前です。",
+                })
+            elif lag >= 1:
+                status = "STALE"
+                incidents.append({
+                    "key": "pipeline:snapshot_lag",
+                    "component": "pipeline",
+                    "severity": "WARNING",
+                    "kind": "DATA_INCIDENT",
+                    "message_ja": "直近の完了営業日について統合レポートが更新されていません。",
+                })
+            components["pipeline"] = {"status": status, "as_of_date": day}
+
     archived = read_json(ROOT / ARCHIVED_V2)
     components["shadow_v2"] = {
         "status": "ARCHIVED",
@@ -183,6 +248,7 @@ def summarize(now: datetime, inputs: dict) -> dict:
 def main():
     now = datetime.now(timezone.utc)
     data = {name: read_json(ROOT / path) for name, path in INPUTS.items()}
+    data["pipeline"] = read_pipeline_report(ROOT / "data/integrated_report_latest.md")
     report = summarize(now, data)
     output = ROOT / "data/health/latest.json"
     output.parent.mkdir(parents=True, exist_ok=True)
