@@ -7,23 +7,32 @@
     "8789.T": {
       "qty": 600,
       "entry_price": 152.228,
-      "last_price": 151.0,
+      "last_price": 145.0,
       "entry_date": "2026-10-28",
-      "sessions": 2,
+      "sessions": 3,
       "theme": "Other",
       "peak_close": 152.0
     },
     "3932.T": {
       "qty": 100,
       "entry_price": 1207.809,
-      "last_price": 1200.0,
+      "last_price": 1300.0,
       "entry_date": "2026-10-29",
-      "sessions": 1,
+      "sessions": 2,
       "theme": "Other",
-      "peak_close": 1200.0
+      "peak_close": 1300.0
     }
   },
-  "pending_buys": [],
+  "pending_buys": [
+    {
+      "symbol": "8622.T",
+      "signal_date": "2026-11-02",
+      "qty": 100,
+      "theme": "Financials",
+      "signal_price": 763.0,
+      "max_notional": 100000.0
+    }
+  ],
   "pending_sells": [],
   "trades": [
     {
@@ -37,9 +46,9 @@
     }
   ],
   "peak_nav_jpy": 1000000.0,
-  "nav_jpy": 990646.93,
-  "last_run_date": "2026-10-29",
-  "last_screen_date": "2026-10-29",
+  "nav_jpy": 997046.93,
+  "last_run_date": "2026-11-02",
+  "last_screen_date": "2026-11-02",
   "benchmark_start_close": 420.6000061035156,
   "execution_log": [
     {
