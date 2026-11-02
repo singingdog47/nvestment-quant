@@ -100,3 +100,32 @@ def test_virtual_money_is_immutable_and_real_money_disabled(tmp_path):
         assert "cohort mismatch" in str(e)
     else:
         assert False, "capital increase must create a new cohort"
+
+def test_holiday_does_not_write_fake_session_or_orders(tmp_path):
+    cp = config(tmp_path)
+    feed(tmp_path, [sample("2026-11-03")])
+    out = run(date(2026, 11, 3), root=tmp_path, cfg_path=cp, price_loader=prices)
+    assert out["status"] == "OUTSIDE_SESSION"
+    assert not (tmp_path / "ai_ma_shadow" / "state.json").exists()
+
+
+def test_preclose_screen_cannot_queue_paper_buys(tmp_path):
+    cp = config(tmp_path)
+    row = sample("2026-10-19")
+    row["data_retrieved_at_utc"] = "2026-10-19T00:30:00+00:00"
+    feed(tmp_path, [row])
+    out = run(date(2026, 10, 19), root=tmp_path, cfg_path=cp, price_loader=prices)
+    assert out["pending_buys"] == 0
+    assert "fresh_jp_screen_unavailable" in out["data_blockers"]
+
+
+def test_expired_pending_buy_never_fills_after_data_outage(tmp_path):
+    cp = config(tmp_path)
+    feed(tmp_path, [sample("2026-10-19")])
+    first = run(date(2026, 10, 19), root=tmp_path, cfg_path=cp, price_loader=prices)
+    assert first["pending_buys"] == 1
+    feed(tmp_path, [sample("2026-10-26")])
+    later = run(date(2026, 10, 26), root=tmp_path, cfg_path=cp, price_loader=prices)
+    assert later["pending_buys"] == 0
+    assert later["positions_count"] == 0
+    assert {"event": "ENTRY_EXPIRED", "symbol": "1000.T"} in later["events"]
