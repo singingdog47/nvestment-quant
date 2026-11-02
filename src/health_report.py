@@ -127,7 +127,18 @@ def summarize(now: datetime, inputs: dict) -> dict:
             observed = datetime.strptime(day, "%Y-%m-%d").date()
         except (ValueError, TypeError):
             continue
+        if component != "regime" and not is_jpx_session(observed):
+            incidents.append({
+                "key": component + ":invalid_session_date",
+                "component": component,
+                "severity": "WARNING",
+                "kind": "DATA_INCIDENT",
+                "message_ja": "仮想運用の日付がJPX休場日です。約定や評価の対象日を確認してください。",
+            })
+            meta["status"] = "DATA_IMPAIRED"
         if completed_jpx_sessions(observed, now) >= 2:
+            if meta["status"] in ("HEALTHY", "RISK_PAUSE"):
+                meta["status"] = "STALE"
             incidents.append({
                 "key": component + ":snapshot_lag",
                 "component": component,

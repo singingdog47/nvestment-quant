@@ -85,7 +85,16 @@ class HealthReportTests(unittest.TestCase):
         self.assertEqual(completed_jpx_sessions(date(2026, 10, 29), tuesday_morning), 2)
         inputs = healthy()
         inputs["challenger2"]["date"] = "2026-10-29"
-        self.assertIn("challenger2:snapshot_lag", [x["key"] for x in summarize(tuesday_morning, inputs)["incidents"]])
+        result = summarize(tuesday_morning, inputs)
+        self.assertIn("challenger2:snapshot_lag", [x["key"] for x in result["incidents"]])
+        self.assertEqual(result["components"]["challenger2"]["status"], "STALE")
+
+    def test_ai_ma_weekend_snapshot_is_invalid_not_a_valid_trading_day(self):
+        inputs = healthy()
+        inputs["ai_ma"]["as_of_date"] = "2026-10-31"
+        result = summarize(datetime(2026, 11, 2, 15, 0, tzinfo=timezone.utc), inputs)
+        self.assertIn("ai_ma:invalid_session_date", [x["key"] for x in result["incidents"]])
+        self.assertEqual(result["components"]["ai_ma"]["status"], "DATA_IMPAIRED")
 
 
 if __name__ == "__main__":
