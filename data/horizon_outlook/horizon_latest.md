@@ -1,5 +1,5 @@
 # Multi-horizon research outlook
-Generated (UTC): 2026-11-02T17:07:58+00:00
+Generated (UTC): 2026-11-02T17:26:39+00:00
 Public watchlist only; no private holdings or automatic trades.
 
 ## 短期・中期・長期の仮説と売買方針
@@ -14,7 +14,7 @@ Public watchlist only; no private holdings or automatic trades.
 - No eligible fresh signal; do not manufacture a directional forecast.
 
 ## 検証
-- Scored: 0, pending: 1, mean Brier: None
+- Scored: 1, pending: 0, mean Brier: 0.20249999999999996
 
 - Regime confidence describes source coverage, not prediction accuracy.
 - 0.55 is a declared research prior, not a calibrated model probability.

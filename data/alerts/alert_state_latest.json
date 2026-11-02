@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-02T17:07:59+00:00",
+  "generated_at": "2026-11-02T17:26:40+00:00",
   "regime_label": "NEUTRAL",
-  "vix": 18.850000381469727,
-  "regime_score": 48.48,
+  "vix": 19.170000076293945,
+  "regime_score": 48.43,
   "quality_score": 0.864,
   "primary_source_health": 1.0
 }

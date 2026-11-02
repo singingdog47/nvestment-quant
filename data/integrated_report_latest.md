@@ -1,9 +1,9 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-11-02T17:10:45+00:00
+Generated (UTC): 2026-11-02T17:28:08+00:00
 
 ## 1. 結論 / 今日の優先アクション
-- **RISK REVIEW BEFORE NEW ACTION**
+- **SELECTIVE REVIEW OF TOP CANDIDATES**
 - Decision gate: `OPEN_FOR_ANALYSIS`
 - Screening / intelligence data actionable: `True`
 - Regime context actionable: `True`
@@ -11,11 +11,11 @@ Generated (UTC): 2026-11-02T17:10:45+00:00
 
 ## 2. 市場レジーム
 - Regime: **NEUTRAL**
-- Score: 48.48
+- Score: 48.43
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 18.850000381469727
+- VIX: 19.170000076293945
 - Treasury realized-vol proxy (not ICE MOVE): 82.863 bps annualized; percentile=0.8214
 - Flags: none
 
@@ -38,19 +38,15 @@ Generated (UTC): 2026-11-02T17:10:45+00:00
 - medium / 1-3 months: CONDITIONAL_UNDECIDED; 仮説=Sector and positioning rotation may outlast an index bounce; corporate earnings and revised guidance must corroborate.; 反証=Rotation reverses for several weeks or earnings/credit assumptions change materially.; 方針=Review 1-in-1-out replacements, position concentration, and portfolio correlations; no model-driven orders.
 - long / 1-3 years: FUNDAMENTALS_NOT_ESTABLISHED; 仮説=Long-run outcomes depend on earnings power, capital allocation, valuation and structural demand, not weekly order flow.; 反証=Thesis deterioration, adverse cash-flow revisions, or lasting competitive disadvantage.; 方針=Core accumulation and strategic holdings require separate cash-flow and thesis checks; no long-term directional forecast without evidence.
 - 検証可能な新規需給シグナルなし。欠損を方向予測に変換しません。
-- 事後検証: n=0, Brier=None（未校正）
+- 事後検証: n=1, Brier=0.20249999999999996（未校正）
 
 ## 4. 例外検知 / アラート
-- Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 18, 'WARNING': 22, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞
-- [WARNING] COMPANY_EVENT / 水戸証券[8622]：自己株式の取得状況に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WARNING] COMPANY_EVENT / 水戸証券－後場プラス転換 100万株・8億円を上限に自社株買い 割合1.68％ - TradingView
-- [WARNING] COMPANY_EVENT / 東京海上、今期配当を実質増額修正 - 株探
-- [WARNING] COMPANY_EVENT / 半期報告書－第32期(2026/04/01－2027/03/31)
-- [WARNING] COMPANY_EVENT / 確認書
-- [WARNING] COMPANY_EVENT / 臨時報告書
-- [WARNING] COMPANY_EVENT / 訂正発行登録書
+- Highest severity: **WATCH**
+- Counts: {'INFO': 0, 'WATCH': 4, 'WARNING': 0, 'CRITICAL': 0}
+- [WATCH] COMPANY_EVENT / 【出演情報】吉俣良 ４５周年Anniversary Concert Supported by KDDI ｜soyokaze - fan.pia.jp
+- [WATCH] COMPANY_EVENT / KDDIと米国Wingが提携、27年にローソン商品などドローン配送へ - ドローンジャーナル
+- [WATCH] COMPANY_EVENT / ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+- [WATCH] COMPANY_EVENT / 東京海上ホールディングス フィジカルAI搭載ロボの保険開始 - ABEMA
 
 ## 5. スクリーニング上位候補
 
@@ -62,23 +58,23 @@ Generated (UTC): 2026-11-02T17:10:45+00:00
 - 5. Mito Securities Co.,Ltd. 8622.T | market_rank=5.0 | raw=72.17359314011276 | cross_pct=99.79623025980642
 
 ### 米国株（市場内順位）
-- 1. Financial Institutions, Inc. - Common Stock FISI | market_rank=1.0 | raw=84.24712685881836 | cross_pct=100.0
-- 2. Carter Bankshares, Inc. - Common Stock CARE | market_rank=2.0 | raw=83.49610344220697 | cross_pct=99.96964177292045
-- 3. Scorpio Tankers Inc. Common Shares STNG | market_rank=3.0 | raw=83.13620028362304 | cross_pct=99.93928354584092
-- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=10.0 | raw=81.60820192422725 | cross_pct=99.72677595628416
-- 5. DHT Holdings, Inc. DHT | market_rank=11.0 | raw=81.53708242148656 | cross_pct=99.69641772920461
+- 1. Financial Institutions, Inc. - Common Stock FISI | market_rank=1.0 | raw=84.24444367769743 | cross_pct=100.0
+- 2. Carter Bankshares, Inc. - Common Stock CARE | market_rank=2.0 | raw=83.46666543751572 | cross_pct=99.96965098634294
+- 3. Scorpio Tankers Inc. Common Shares STNG | market_rank=3.0 | raw=83.08292679470252 | cross_pct=99.9393019726859
+- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=10.0 | raw=81.68213324920953 | cross_pct=99.7268588770865
+- 5. DHT Holdings, Inc. DHT | market_rank=11.0 | raw=81.53174550429598 | cross_pct=99.69650986342944
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Financial Institutions, Inc. - Common Stock | cross_pct=100.0 | raw=84.24712685881836
+- 1. [US] Financial Institutions, Inc. - Common Stock | cross_pct=100.0 | raw=84.24444367769743
 - 2. [JP] Strike Group Co.,Ltd. | cross_pct=100.0 | raw=75.96869090725892
-- 3. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=99.96964177292045 | raw=83.49610344220697
+- 3. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=99.96965098634294 | raw=83.46666543751572
 - 4. [JP] Akatsuki Inc. | cross_pct=99.9490575649516 | raw=74.58789794819229
-- 5. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.93928354584092 | raw=83.13620028362304
+- 5. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.9393019726859 | raw=83.08292679470252
 - 6. [JP] Toranvia Co.,Ltd. | cross_pct=99.8981151299032 | raw=74.07560619785913
 - 7. [JP] ELECOM CO.,LTD. | cross_pct=99.84717269485482 | raw=73.22938807736341
 - 8. [JP] Mito Securities Co.,Ltd. | cross_pct=99.79623025980642 | raw=72.17359314011276
 - 9. [JP] MIXI,Inc. | cross_pct=99.74528782475802 | raw=72.14361343150995
-- 10. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.72677595628416 | raw=81.60820192422725
+- 10. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.7268588770865 | raw=81.68213324920953
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -109,7 +105,7 @@ Generated (UTC): 2026-11-02T17:10:45+00:00
 ## PayPay Swing
 
 - 監視判定: **WAIT_RESEARCH** — 首位スタンダードは59.5点だが確認閾値未達
-- 上位: スタンダード 59.5 / テクノロジー 55.7 / ビットコイン 42.3
+- 上位: スタンダード 59.5 / テクノロジー 55.6 / ビットコイン 42.0
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->

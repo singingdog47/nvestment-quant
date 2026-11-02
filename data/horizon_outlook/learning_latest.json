@@ -1,10 +1,19 @@
 {
   "version": "1.0.0",
-  "graded_n": 0,
-  "pending_n": 1,
-  "accuracy": null,
-  "mean_brier": null,
+  "graded_n": 1,
+  "pending_n": 0,
+  "accuracy": 1.0,
+  "mean_brier": 0.20249999999999996,
   "calibrated": false,
-  "observations": [],
+  "observations": [
+    {
+      "id": "be10ac9424ae2ea2",
+      "symbol": "NWFL",
+      "as_of_jst": "2026-10-23",
+      "outcome_excess": 0.06344433438635155,
+      "correct": true,
+      "brier": 0.20249999999999996
+    }
+  ],
   "interpretation": "Research-prior scoring only. Compare to base rates and baselines before claiming forecasting skill."
 }

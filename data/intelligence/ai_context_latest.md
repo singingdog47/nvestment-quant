@@ -6,12 +6,12 @@ Generated quality score: **0.864** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-02T17:06:41+00:00",
-  "generated_at_utc": "2026-11-02T17:06:41+00:00",
+  "generated_at": "2026-11-02T17:25:25+00:00",
+  "generated_at_utc": "2026-11-02T17:25:25+00:00",
   "date_jst": "2026-11-03",
   "data_status": "ok",
   "regime_label": "NEUTRAL",
-  "regime_score": 48.48,
+  "regime_score": 48.43,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -28,15 +28,15 @@ Generated quality score: **0.864** / actionable=True
   "sq_execution_caution_flag": false,
   "regime_flags": [],
   "components": {
-    "trend": 31.396351572852883,
-    "stress": 73.44499971389772,
-    "participation": 42.38904299583911,
-    "liquidity": 41.4129681140256,
+    "trend": 31.160169518295284,
+    "stress": 73.20499994277955,
+    "participation": 42.29368932038835,
+    "liquidity": 42.07980155990488,
     "positioning": 60.106090833359694
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 18.850000381469727,
+    "vix": 19.170000076293945,
     "hy_oas": 3.44,
     "ig_oas": 0.94,
     "treasury_volatility_proxy": 82.863,
@@ -47,9 +47,9 @@ Generated quality score: **0.864** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9554,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-11-02T17:06:38.899884+00:00",
+    "breadth_source_as_of_utc": "2026-11-02T17:25:23.375774+00:00",
     "nfci": -0.487,
-    "volume_ratio20_mean": 0.7000992028506401,
+    "volume_ratio20_mean": 0.7167700389976219,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -148,7 +148,7 @@ Generated quality score: **0.864** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-11-02T17:07:58+00:00",
+  "generated_at": "2026-11-02T17:26:38+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -201,7 +201,7 @@ Generated quality score: **0.864** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-11-02T17:06:38.899884+00:00
+- Data retrieved (UTC): 2026-11-02T17:25:23.375774+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -237,25 +237,25 @@ Generated quality score: **0.864** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 6196.T | Strike Group Co.,Ltd. | Other | 76.0 | 100.0 | rank_up |
+| JP | 1 | 6196.T | Strike Group Co.,Ltd. | Other | 76.0 | 100.0 | unchanged |
 | JP | 2 | 3932.T | Akatsuki Inc. | Other | 74.6 | 99.9 | unchanged |
 | JP | 3 | 545A.T | Toranvia Co.,Ltd. | Other | 74.1 | 99.9 | unchanged |
 | JP | 4 | 6750.T | ELECOM CO.,LTD. | Other | 73.2 | 99.8 | unchanged |
 | JP | 5 | 8622.T | Mito Securities Co.,Ltd. | Financials | 72.2 | 99.8 | unchanged |
 | JP | 6 | 2121.T | MIXI,Inc. | Other | 72.1 | 99.7 | unchanged |
 | JP | 7 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.9 | 99.7 | unchanged |
-| JP | 8 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 71.3 | 99.6 | new_entry |
+| JP | 8 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 71.3 | 99.6 | unchanged |
 | JP | 9 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.0 | 99.6 | unchanged |
 | JP | 10 | 8630.T | Sompo Holdings,Inc. | Other | 71.0 | 99.5 | unchanged |
-| US | 1 | FISI | Financial Institutions, Inc. - Common Stock | Financials | 84.2 | 100.0 | new_entry |
+| US | 1 | FISI | Financial Institutions, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
 | US | 2 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.5 | 100.0 | unchanged |
 | US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.1 | 99.9 | unchanged |
-| US | 10 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.6 | 99.7 | unchanged |
+| US | 10 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.7 | 99.7 | unchanged |
 | US | 11 | DHT | DHT Holdings, Inc. | Shipping | 81.5 | 99.7 | unchanged |
 | US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 80.4 | 99.5 | unchanged |
-| US | 18 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.7 | 99.5 | unchanged |
-| US | 21 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.4 | 99.4 | rank_up |
-| US | 22 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.3 | 99.4 | unchanged |
+| US | 18 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.8 | 99.5 | unchanged |
+| US | 21 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.5 | 99.4 | unchanged |
+| US | 22 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.4 | 99.4 | unchanged |
 | US | 28 | BUSE | First Busey Corporation - Common Stock | Other | 78.7 | 99.2 | unchanged |
 
 ## Required manual checks before an order
@@ -315,11 +315,10 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-10-29 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000089/care-20261029.htm
 - [HIGH] 6701 NEC | 2026-10-30 | filing | 発行登録書（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZANF
 - [HIGH] 3932 Akatsuki Inc. | 2026-10-30 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZB18
-- [HIGH] 9433 KDDI | Fri, 30 Oct 2026 | regulatory | KDDI顧客情報漏えいか ライフネットへの不正アクセスで - NHKニュース | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiX0FVX3lxTFA4ZTZKa0I5UEhEcjF5SW9nN3dxVUE5am5LT0hLMUhCQWtfMnktNFd1Y1FQVEdubTUtb0xUTUNheERtbjNPLWQ0Qjd2dEMwSWpTUmQxZXo1RVBCSmVybGdr?oc=5
 - [HIGH] 9433 KDDI | Mon, 02 Nov 2026 | regulatory | KDDI、2万2541件の顧客情報漏えいか ライフネット生命への不正アクセスで（アスキー） - Yahoo!ニュース | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMif0FVX3lxTFA0VlAzbG5oVUU2MzhxVjNTTUNMSHRJWTFTc0lUSGdZYWpGNDNta0Z6aGcyNVpDTDh3QWNkd3owbVhPZ1EydzR6Q1FBaXFQd3d4R3lFQldQOHE2V1BDd2JVMl9wWUFSeUgzUE5mSXJGLWEzREQ2VWh0VFM3ekRxVUU?oc=5
 - [HIGH] 8622 水戸証券 | Mon, 02 Nov 2026 | buyback | 水戸証券[8622]：自己株式の取得状況に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMizAFBVV95cUxOS1ZtVGh1ck1GZzl6dHZvczR6SHNzcW9peU1zNXEtX3N3T0RuWjI2ZmdjZ1VVeklBWC0xd0YxaVJWZHMxREo4MlIxX0QtWFNERHF4SzdGR2swRm01QVNhaWdTMkpqRHJUdldYeWVkLU40VG5oNXRiOTI4bWprbzkwQkxPdDZJNUpPbmVtZ2tqSHMxR2Z1LXFaOXFlZTNBQjlUU3FDUjM2OE1waXZ1Wi1WUXM0UHlnSjlUeGc3ZWpfek5vVEVmSUFLdU5KWXE?oc=5
 - [HIGH] 8622 水戸証券 | Thu, 29 Oct 2026 | buyback | 水戸証券－後場プラス転換 100万株・8億円を上限に自社株買い 割合1.68％ - TradingView | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMib0FVX3lxTE1mQTcxUkZHVnN4emI2UWx4VWxvQVpPWmtTalNDX2R2RjNESzhiTWJxbzdmTU40aXZnVG13ZUgta0ZSSUVmT0xOUmEycmlEbjU3WUg1YXJGV0M3MjVwUWZ4M2ZUZzduZGpqYXpGc1p2OA?oc=5
-- [HIGH] 8766 東京海上ホールディングス | Tue, 25 Aug 2026 | dividend | 東京海上、今期配当を実質増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE9wT0xDYXFnWmlOMU5XMTZsR0pNQjRHNkdLVWI0bGRPTWJrMlNHVnBZRWFQSFpsQ0lycFcwdzhuY1NLWGxIQXRFazlsV1lmSjdLZlE?oc=5
+- [HIGH] 5032 ANYCOLOR | Wed, 09 Sep 2026 | buyback | 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE9SUEU1ZE41TXRpU2h5VTAyb1F4N3BWRTR5YTFFM0FDR1hJTHZrNWlRVUp3MlRuelBKYlpKNU0zTU15QWxaclYwejV0Y2pNWXkxMXgwVFY4U3RYRFpIRmNZanA3MExrQUF4Slk3eg?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
