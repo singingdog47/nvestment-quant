@@ -9,7 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from datetime import datetime, timezone, timedelta
+from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -18,6 +18,7 @@ from jpx_market_calendar import is_jpx_session
 ROOT = Path(__file__).resolve().parents[1]
 INPUTS = {
     "challenger1": "data/shadow_challenger/latest.json",
+    "challenger1_5m": "data/shadow_challenger1_5m/latest.json",
     "challenger2": "data/shadow_challenger2/latest.json",
     "ai_ma": "data/ai_ma_shadow/latest.json",
     "regime": "data/regime/market_regime_latest.json",
@@ -98,6 +99,13 @@ def summarize(now: datetime, inputs: dict) -> dict:
     incidents = []
     components = {}
     for component, path in INPUTS.items():
+        # The independently funded 5m fork starts on Nov 4. Do not raise a
+        # missing-snapshot alarm during the Nov 3 JPX holiday or before its
+        # first completed post-close session (23:45 JST grace).
+        if component == "challenger1_5m" and completed_jpx_sessions(date(2026, 11, 2), now) == 0:
+            components[component] = {"status": "NOT_STARTED", "as_of_date": None,
+                                     "blockers": [], "mode": "SHADOW_ONLY"}
+            continue
         data = inputs.get(component)
         if data is None:
             incidents.append({
