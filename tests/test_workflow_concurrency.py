@@ -31,3 +31,13 @@ def test_post_close_paper_writers_have_distinct_concurrency_groups():
         groups.append(match.group(1).strip())
     assert len(groups) == len(set(groups))
     assert "repository-output-writer" not in groups
+
+
+def test_independent_writers_retry_non_fast_forward_without_force_push():
+    for filename in WRITERS:
+        source = (ROOT / ".github" / "workflows" / filename).read_text(encoding="utf-8")
+        assert "for attempt in 1 2 3 4; do" in source, filename
+        assert "git pull --rebase origin main && git push origin HEAD:main" in source, filename
+        assert "git rebase --abort" not in source, filename
+        assert "git push --force" not in source, filename
+        assert "Rebase conflict" in source, filename
