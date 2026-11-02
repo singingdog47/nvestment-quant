@@ -23,4 +23,6 @@ def run(as_of=None, bar_source=None):
 
 
 if __name__ == "__main__":
-    print(json.dumps(run(), ensure_ascii=False, indent=2))
+    result = run()
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    raise SystemExit(fork_engine.cli_exit_code(result))

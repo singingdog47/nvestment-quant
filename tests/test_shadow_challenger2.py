@@ -173,3 +173,12 @@ def test_jpx_holiday_rejected_before_gap_check_or_price_lookup(tmp_path, monkeyp
     assert result == {"status": "OUTSIDE_SESSION", "as_of_date": "2026-11-03", "paper_only": True}
     assert seen == []
     assert (dst / "state.json").read_text(encoding="utf-8") == before
+
+
+def test_cli_returns_failure_for_unprocessed_session_gap_but_not_holiday():
+    assert c2.cli_exit_code({"status": "SESSION_GAP_REQUIRES_AUDIT"}) == 2
+    assert c2.cli_exit_code({"status": "OUT_OF_ORDER_REPLAY_BLOCKED"}) == 2
+    assert c2.cli_exit_code({"status": "OUTSIDE_SESSION"}) == 0
+    assert c2.cli_exit_code({"status": "ALREADY_PROCESSED"}) == 0
+    assert c2.cli_exit_code({"status": "PRE_CLOSE_DEFERRED"}) == 0
+    assert c2.cli_exit_code({"date": "2026-11-04", "nav_jpy": 5000000}) == 0
