@@ -162,3 +162,14 @@ def test_explicit_ordered_session_replay_remains_possible_with_verified_bars(tmp
     assert result["strategy"] == "CHALLENGER2"
     assert result["date"] == "2026-10-30"
     assert result["post_fork_verified_fills"] == 0
+
+
+def test_jpx_holiday_rejected_before_gap_check_or_price_lookup(tmp_path, monkeypatch):
+    _, _, dst = setup_fork(tmp_path, monkeypatch)
+    before = (dst / "state.json").read_text(encoding="utf-8")
+    seen = []
+    result = c2.run(date(2026, 11, 3),
+                    bar_source=lambda symbol, day: seen.append((symbol, day)) or None)
+    assert result == {"status": "OUTSIDE_SESSION", "as_of_date": "2026-11-03", "paper_only": True}
+    assert seen == []
+    assert (dst / "state.json").read_text(encoding="utf-8") == before
