@@ -2,14 +2,15 @@
 import unittest
 from datetime import datetime, timezone
 
-from health_report import classify_blocker, summarize
+from health_report import classify_blocker, summarize, completed_jpx_sessions
 
 NOW = datetime(2026, 10, 20, 13, 45, tzinfo=timezone.utc)
 
 
 def healthy():
     return {
-        "shadow_v2": {"as_of_date": "2026-10-20", "market_data_blockers": []},
+        "challenger1": {"date": "2026-10-20", "mode": "SHADOW_ONLY", "status": "OK", "nav_jpy": 1000000, "screen_fresh": True, "unpriced_symbols": []},
+        "challenger2": {"date": "2026-10-20", "mode": "SHADOW_ONLY", "status": "OK", "nav_jpy": 5000000, "screen_fresh": True, "unpriced_symbols": []},
         "ai_ma": {"as_of_date": "2026-10-20", "data_blockers": []},
         "regime": {"date_jst": "2026-10-20", "data_status": "ok"},
     }
@@ -18,14 +19,14 @@ def healthy():
 class HealthReportTests(unittest.TestCase):
     def test_risk_pause_is_not_incident(self):
         inputs = healthy()
-        inputs["shadow_v2"]["market_data_blockers"] = ["market_stress_no_new_entries"]
+        inputs["challenger1"]["market_data_blockers"] = ["market_stress_no_new_entries"]
         result = summarize(NOW, inputs)
         self.assertEqual(result["overall_status"], "RISK_PAUSE")
         self.assertEqual(result["incidents"], [])
 
     def test_data_failure_separated_from_market_pause(self):
         inputs = healthy()
-        inputs["shadow_v2"]["market_data_blockers"] = [
+        inputs["challenger1"]["market_data_blockers"] = [
             "market_stress_no_new_entries", "benchmark_bar_unavailable",
             "screen_outdated_no_new_trades"]
         result = summarize(NOW, inputs)
@@ -50,16 +51,41 @@ class HealthReportTests(unittest.TestCase):
     def test_unrecognized_blocker_not_silently_ignored(self):
         self.assertEqual(classify_blocker("novel_bad_state"), "UNKNOWN_BLOCKER")
         inputs = healthy()
-        inputs["shadow_v2"]["market_data_blockers"] = ["novel_bad_state"]
+        inputs["challenger1"]["market_data_blockers"] = ["novel_bad_state"]
         result = summarize(NOW, inputs)
         self.assertEqual(result["incidents"][0]["severity"], "CRITICAL")
 
     def test_weekend_does_not_raise_immediate_stale_alert(self):
         inputs = healthy()
-        inputs["shadow_v2"]["as_of_date"] = "2026-10-16"
+        inputs["challenger1"]["date"] = "2026-10-16"
         saturday = datetime(2026, 10, 17, 14, tzinfo=timezone.utc)
         result = summarize(saturday, inputs)
         self.assertFalse(any(x["key"].endswith("snapshot_lag") for x in result["incidents"]))
+
+    def test_active_challenger_date_and_missing_prices_are_monitored(self):
+        inputs = healthy()
+        inputs["challenger2"]["unpriced_symbols"] = ["3932.T"]
+        result = summarize(NOW, inputs)
+        self.assertEqual(result["components"]["challenger2"]["as_of_date"], "2026-10-20")
+        self.assertIn("challenger2:missing_holding_bar:3932.T", [x["key"] for x in result["incidents"]])
+        self.assertEqual(result["components"]["shadow_v2"]["status"], "ARCHIVED")
+
+    def test_jpx_holiday_not_counted_as_completed_session(self):
+        from datetime import date
+        on_holiday = datetime(2026, 11, 3, 15, 0, tzinfo=timezone.utc)
+        self.assertEqual(completed_jpx_sessions(date(2026, 11, 2), on_holiday), 0)
+        inputs = healthy()
+        for key in ("challenger1", "challenger2", "ai_ma", "regime"):
+            inputs[key]["date" if key.startswith("challenger") else "as_of_date" if key == "ai_ma" else "date_jst"] = "2026-11-02"
+        self.assertFalse(any(x["key"].endswith(":snapshot_lag") for x in summarize(on_holiday, inputs)["incidents"]))
+
+    def test_two_completed_sessions_trigger_lag_not_one(self):
+        from datetime import date
+        tuesday_morning = datetime(2026, 11, 3, 1, 0, tzinfo=timezone.utc)
+        self.assertEqual(completed_jpx_sessions(date(2026, 10, 29), tuesday_morning), 2)
+        inputs = healthy()
+        inputs["challenger2"]["date"] = "2026-10-29"
+        self.assertIn("challenger2:snapshot_lag", [x["key"] for x in summarize(tuesday_morning, inputs)["incidents"]])
 
 
 if __name__ == "__main__":
