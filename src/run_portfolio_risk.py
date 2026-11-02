@@ -238,13 +238,29 @@ def _write_shared_investment_state(private_dir: Path, account_inputs: dict, mani
     state = build_investment_state(account_inputs, manifest, policy_payload)
     path = write_investment_state(state, private_dir / "investment_state_latest.json")
     written = False
+    writeback_status = "disabled"
+    http_status = None
     if _truthy_env("INVESTMENT_STATE_DRIVE_WRITEBACK", "true"):
         try:
             upload_or_replace(path, "investment_state_latest.json", "application/json")
             written = True
+            writeback_status = "ok"
         except Exception as exc:
-            print("WARNING: investment state Drive writeback failed: " + type(exc).__name__)
-    return {"state": state, "path": str(path), "drive_writeback": written}
+            # Only emit the HTTP status and exception class. Google API error
+            # messages can contain private file IDs, names or request metadata.
+            writeback_status = "error"
+            raw_status = getattr(getattr(exc, "resp", None), "status", None)
+            try:
+                parsed_status = int(raw_status)
+                http_status = parsed_status if 100 <= parsed_status <= 599 else None
+            except (ValueError, TypeError):
+                pass
+            print("WARNING: investment state Drive writeback failed: "
+                  + type(exc).__name__ + " http_status="
+                  + (str(http_status) if http_status is not None else "unknown"))
+    return {"state": state, "path": str(path), "drive_writeback": written,
+            "drive_writeback_status": writeback_status,
+            "drive_writeback_http_status": http_status}
 
 
 def _maybe_write_back_to_drive(private_dir: Path, out_dir: Path) -> bool:
@@ -472,6 +488,8 @@ def main() -> None:
         "horizon_private_status": horizon_private.get("status"),
         "horizon_private_count": horizon_private.get("holding_count"),
         "investment_state_drive_writeback": shared_state.get("drive_writeback"),
+        "investment_state_drive_writeback_status": shared_state.get("drive_writeback_status"),
+        "investment_state_drive_writeback_http_status": shared_state.get("drive_writeback_http_status"),
         "investment_state_open_orders": (shared_state.get("state") or {}).get("open_orders", {}).get("count"),
         "portfolio_valuation_status": valuation_payload.get("status"),
         "portfolio_valuation_mode": valuation_payload.get("analysis_mode"),
