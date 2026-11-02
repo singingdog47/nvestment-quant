@@ -34,7 +34,7 @@ def latest_completed_session(now: datetime) -> date:
 
 
 def parse_generated(report_text: str) -> datetime | None:
-    match = re.search(r"Generated \\(UTC\\):\\s*([^\\n]+)", report_text)
+    match = re.search(r"Generated \(UTC\):\s*([^\n]+)", report_text)
     if not match:
         return None
     try:
@@ -72,9 +72,9 @@ def main() -> None:
     if output:
         with open(output, "a", encoding="utf-8") as handle:
             for key in ("fresh", "recovery_allowed"):
-                handle.write(f"{key}={str(status[key]).lower()}\\n")
-            handle.write(f"target_session={status['target_session']}\\n")
-            handle.write(f"generated={status['generated']}\\n")
+                handle.write(f"{key}={str(status[key]).lower()}\n")
+            handle.write(f"target_session={status['target_session']}\n")
+            handle.write(f"generated={status['generated']}\n")
 
 
 if __name__ == "__main__":
