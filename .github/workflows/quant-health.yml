@@ -1,6 +1,13 @@
 name: Quant Health Snapshot for ChatGPT
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/health_report.py'
+      - 'src/jpx_market_calendar.py'
+      - 'src/ai_ma_shadow.py'
+      - '.github/workflows/quant-health.yml'
   pull_request:
     paths:
       - 'src/health_report.py'
