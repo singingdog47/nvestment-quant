@@ -1,45 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-02T19:31:08.886393+00:00",
+  "generated_at_utc": "2026-11-02T21:00:26.652059+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
-  "incident_signature": "384c128ce817c702",
+  "incident_signature": "1421ca75e324c248",
   "incidents": [
-    {
-      "key": "ai_ma:benchmark_price_unavailable",
-      "component": "ai_ma",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "検証用データまたは実行条件に問題があります: benchmark_price_unavailable"
-    },
-    {
-      "key": "ai_ma:entry_missing_bar:5351.T",
-      "component": "ai_ma",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "検証用データまたは実行条件に問題があります: entry_missing_bar:5351.T"
-    },
-    {
-      "key": "ai_ma:entry_missing_bar:6505.T",
-      "component": "ai_ma",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "検証用データまたは実行条件に問題があります: entry_missing_bar:6505.T"
-    },
-    {
-      "key": "ai_ma:fresh_jp_screen_unavailable",
-      "component": "ai_ma",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "検証用データまたは実行条件に問題があります: fresh_jp_screen_unavailable"
-    },
-    {
-      "key": "ai_ma:invalid_session_date",
-      "component": "ai_ma",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "仮想運用の日付がJPX休場日です。約定や評価の対象日を確認してください。"
-    },
     {
       "key": "challenger2:snapshot_lag",
       "component": "challenger2",
@@ -62,14 +27,9 @@
       "mode": "SHADOW_ONLY"
     },
     "ai_ma": {
-      "status": "DATA_IMPAIRED",
-      "as_of_date": "2026-10-31",
-      "blockers": [
-        "benchmark_price_unavailable",
-        "entry_missing_bar:5351.T",
-        "entry_missing_bar:6505.T",
-        "fresh_jp_screen_unavailable"
-      ],
+      "status": "HEALTHY",
+      "as_of_date": "2026-11-02",
+      "blockers": [],
       "mode": "SHADOW_ONLY"
     },
     "regime": {
