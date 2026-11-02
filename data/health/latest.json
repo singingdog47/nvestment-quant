@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-02T15:40:50.065311+00:00",
+  "generated_at_utc": "2026-11-02T15:43:17.411139+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
-  "incident_signature": "5184adc5ed951796",
+  "incident_signature": "128b832ae81383e7",
   "incidents": [
     {
       "key": "ai_ma:benchmark_price_unavailable",
@@ -34,6 +34,13 @@
       "message_ja": "検証用データまたは実行条件に問題があります: fresh_jp_screen_unavailable"
     },
     {
+      "key": "ai_ma:invalid_session_date",
+      "component": "ai_ma",
+      "severity": "WARNING",
+      "kind": "DATA_INCIDENT",
+      "message_ja": "仮想運用の日付がJPX休場日です。約定や評価の対象日を確認してください。"
+    },
+    {
       "key": "challenger1:snapshot_lag",
       "component": "challenger1",
       "severity": "WARNING",
@@ -50,13 +57,13 @@
   ],
   "components": {
     "challenger1": {
-      "status": "HEALTHY",
+      "status": "STALE",
       "as_of_date": "2026-10-29",
       "blockers": [],
       "mode": "SHADOW_ONLY"
     },
     "challenger2": {
-      "status": "HEALTHY",
+      "status": "STALE",
       "as_of_date": "2026-10-29",
       "blockers": [],
       "mode": "SHADOW_ONLY"
