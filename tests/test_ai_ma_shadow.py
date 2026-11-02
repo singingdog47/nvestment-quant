@@ -155,7 +155,38 @@ def test_overnight_inference_rejects_preclose_and_market_open(tmp_path):
     assert infer_run_session(overnight, [row]) == date(2026, 11, 3)
     assert not is_postclose_jst_date(row["data_retrieved_at_utc"], date(2026, 11, 2))
     row["data_retrieved_at_utc"] = "2026-11-02T17:06:38+00:00"
-    market_open = datetime(2026, 11, 3, 9, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
-    assert infer_run_session(market_open, [row]) == date(2026, 11, 3)
+    holiday_morning = datetime(2026, 11, 3, 9, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(holiday_morning, [row]) == date(2026, 11, 2)
+    next_market_open = datetime(2026, 11, 4, 9, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(next_market_open, [row]) == date(2026, 11, 4)
     holiday_previous = datetime(2026, 11, 4, 2, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
-    assert infer_run_session(holiday_previous, [row]) == date(2026, 11, 4)
+    # Nov 3 is a JPX holiday: Nov 2 remains the latest completed session.
+    assert infer_run_session(holiday_previous, [row]) == date(2026, 11, 2)
+
+
+def test_holiday_evening_can_catch_up_previous_completed_session():
+    # A Nov 2 screen retrieved after midnight Nov 3 is still Nov 2 evidence.
+    row = sample("2026-11-02")
+    row["data_retrieved_at_utc"] = "2026-11-02T18:14:32+00:00"
+    holiday_evening = datetime(2026, 11, 3, 21, 55, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(holiday_evening, [row]) == date(2026, 11, 2)
+    # Do not infer a holiday session or create new holiday fills.
+    assert is_postclose_jst_date(row["data_retrieved_at_utc"], date(2026, 11, 2))
+
+
+def test_holiday_catchup_does_not_skip_newer_cash_session():
+    row = sample("2026-11-02")
+    row["data_retrieved_at_utc"] = "2026-11-02T18:14:32+00:00"
+    # On Nov 5 (after Nov 4 has completed), Nov 2 is too old to backfill
+    # merely from an old screen.
+    later_holiday_window = datetime(2026, 11, 5, 7, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(later_holiday_window, [row]) == date(2026, 11, 5)
+
+
+def test_weekend_recovery_uses_last_trading_day_only_with_fresh_evidence():
+    row = sample("2026-11-06")
+    row["data_retrieved_at_utc"] = "2026-11-07T00:10:00+00:00"  # Sat 09:10 JST: too late
+    weekend = datetime(2026, 11, 8, 12, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(weekend, [row]) == date(2026, 11, 8)
+    row["data_retrieved_at_utc"] = "2026-11-06T18:10:00+00:00"  # Sat 03:10 JST
+    assert infer_run_session(weekend, [row]) == date(2026, 11, 6)
