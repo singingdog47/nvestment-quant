@@ -64,3 +64,8 @@ def test_missing_fork_never_bootstraps_empty_account(tmp_path, monkeypatch):
     (dest / "state.json").unlink()
     with pytest.raises(RuntimeError, match="audited fork"):
         fork.run(date(2026, 11, 4), bar_source=lambda s, d: None)
+
+
+def test_independent_5m_cli_uses_same_gap_failure_policy():
+    assert fork.fork_engine.cli_exit_code({"status": "SESSION_GAP_REQUIRES_AUDIT"}) == 2
+    assert fork.fork_engine.cli_exit_code({"status": "OUTSIDE_SESSION"}) == 0
