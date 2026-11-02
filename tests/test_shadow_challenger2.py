@@ -134,3 +134,31 @@ def test_risk_budget_is_conservative_and_not_a_gap_guarantee():
         cfg["initial_cash_jpy"] * cfg["risk"]["planned_per_trade_loss_budget_pct"])
     assert cfg["governance"]["no_synthetic_fills"]
     assert cfg["governance"]["real_orders_forbidden"]
+
+
+def test_missing_october_30_session_blocks_november_2_fill_without_mutation(tmp_path, monkeypatch):
+    _, _, dst = setup_fork(tmp_path, monkeypatch)
+    neutral = {"open": 152, "high": 153, "low": 151, "close": 152}
+    c2.run(date(2026, 10, 29),
+           bar_source=lambda s, d: neutral if s == "8789.T" else None)
+    before = (dst / "state.json").read_text(encoding="utf-8")
+    called = []
+    result = c2.run(date(2026, 11, 2),
+                    bar_source=lambda s, d: called.append((s, d)) or None)
+    assert result["status"] == "SESSION_GAP_REQUIRES_AUDIT"
+    assert result["missing_sessions"] == ["2026-10-30"]
+    assert called == []
+    assert (dst / "state.json").read_text(encoding="utf-8") == before
+    assert result["paper_only"] is True
+
+
+def test_explicit_ordered_session_replay_remains_possible_with_verified_bars(tmp_path, monkeypatch):
+    _, _, dst = setup_fork(tmp_path, monkeypatch)
+    neutral = {"open": 152, "high": 153, "low": 151, "close": 152}
+    c2.run(date(2026, 10, 29),
+           bar_source=lambda s, d: neutral if s == "8789.T" else None)
+    result = c2.run(date(2026, 10, 30),
+                    bar_source=lambda s, d: neutral if s == "8789.T" else None)
+    assert result["strategy"] == "CHALLENGER2"
+    assert result["date"] == "2026-10-30"
+    assert result["post_fork_verified_fills"] == 0
