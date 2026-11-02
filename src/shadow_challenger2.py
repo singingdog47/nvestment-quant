@@ -7,7 +7,10 @@ and refuses to silently open an empty account if the fork state is absent.
 from __future__ import annotations
 
 import json
-from datetime import date
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
+
+from jpx_market_calendar import is_jpx_session
 from pathlib import Path
 from typing import Callable
 
@@ -29,6 +32,30 @@ def run(as_of: date | None = None, bar_source: Callable | None = None):
         raise ValueError("Challenger2 cohort/capital mismatch")
     if cfg["initial_cash_jpy"] != 5_000_000:
         raise ValueError("Unexpected Challenger2 capital")
+    # Never process a later session as though a missing earlier session had
+    # completed. That could fill an old next-open order on the wrong date and
+    # silently misstate holding periods or risk exits. Require an explicit,
+    # independently audited replay with verified OHLC for each missing session.
+    target = as_of or engine.resolve_market_session(
+        datetime.now(ZoneInfo("Asia/Tokyo")),
+        engine.rows(DATA_ROOT / "screening_latest.csv"))
+    last_date = date.fromisoformat(state["last_run_date"]) if state.get("last_run_date") else None
+    if last_date and target < last_date:
+        return {"status": "OUT_OF_ORDER_REPLAY_BLOCKED", "last_processed": last_date.isoformat(),
+                "target_session": target.isoformat(), "paper_only": True}
+    if last_date and target > last_date:
+        missing = []
+        probe = last_date + timedelta(days=1)
+        while probe < target:
+            if is_jpx_session(probe):
+                missing.append(probe.isoformat())
+            probe += timedelta(days=1)
+        if missing:
+            return {"status": "SESSION_GAP_REQUIRES_AUDIT",
+                    "last_processed": last_date.isoformat(),
+                    "target_session": target.isoformat(),
+                    "missing_sessions": missing, "paper_only": True}
+
     fork = state["fork_metadata"]
     if fork["source_snapshot_date"] > (as_of.isoformat() if as_of else "9999-12-31"):
         raise ValueError("Cannot replay before the fork snapshot")
