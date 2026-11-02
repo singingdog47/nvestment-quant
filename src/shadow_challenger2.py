@@ -80,7 +80,7 @@ def run(as_of: date | None = None, bar_source: Callable | None = None):
     new_fills = [x for x in current.get("execution_log", [])
                  if x["date"] > snapshot_date and x.get("source", "").startswith("verified_")]
     new_trades = [x for x in current.get("trades", []) if x["date"] > snapshot_date]
-    result["strategy"] = "CHALLENGER2"
+    result["strategy"] = cfg.get("strategy_label", "CHALLENGER2")
     result["cohort"] = cfg["cohort"]
     result["fork"] = {
         "source_cohort": fork["source_cohort"],
@@ -119,7 +119,7 @@ def run(as_of: date | None = None, bar_source: Callable | None = None):
     report_file = OUT_DIR / "latest_report.md"
     report = report_file.read_text(encoding="utf-8")
     report = report.replace("# AI Challenger v1 — SHADOW ONLY",
-                            "# AI Challenger 2 — 5m-yen fork — SHADOW ONLY", 1)
+                            "# " + cfg.get("report_title", "AI Challenger 2 — 5m-yen fork — SHADOW ONLY"), 1)
     report += (
         "\nFork: " + snapshot_date + " (" + fork["source_cohort"] + ")\n"
         + "Virtual cash injection: ¥" + f'{fork["capital_topup_jpy"]:,.2f}'
