@@ -183,6 +183,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh workflow run shadow-challenger-v1.yml --ref main
+          gh workflow run shadow-challenger1-5m.yml --ref main
           gh workflow run shadow-challenger2.yml --ref main
           gh workflow run ai-ma-shadow-v1.yml --ref main
       - name: Suppress child dispatch outside verified post-close session
