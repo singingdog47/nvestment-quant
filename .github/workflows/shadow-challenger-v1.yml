@@ -13,8 +13,12 @@ on:
 permissions:
   contents: write
 
+# Keep this writer isolated from other workflow_run children. A shared
+# concurrency group cancels older pending runs even when cancel-in-progress=false.
+# This workflow commits only its own output directory; git pull --rebase
+# handles unrelated commits from other paper-only writers.
 concurrency:
-  group: repository-output-writer
+  group: shadow-challenger1-writer
   cancel-in-progress: false
 
 jobs:
