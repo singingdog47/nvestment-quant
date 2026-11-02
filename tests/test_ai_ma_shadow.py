@@ -1,9 +1,10 @@
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 import csv
 import json
 
-from ai_ma_shadow import screen_candidates, run
+from ai_ma_shadow import screen_candidates, run, infer_run_session, is_postclose_jst_date
 
 
 def sample(day):
@@ -131,3 +132,30 @@ def test_expired_pending_buy_never_fills_after_data_outage(tmp_path):
     assert later["pending_buys"] == 0
     assert later["positions_count"] == 0
     assert {"event": "ENTRY_EXPIRED", "symbol": "1000.T"} in later["events"]
+
+
+def test_delayed_postclose_snapshot_is_attributed_to_prior_jpx_session(tmp_path):
+    cp = config(tmp_path)
+    row = sample("2026-11-02")
+    # Pipeline scheduled for Nov 2 but actually executed at Nov 3 02:06 JST.
+    row["data_retrieved_at_utc"] = "2026-11-02T17:06:38+00:00"
+    feed(tmp_path, [row])
+    now = datetime(2026, 11, 3, 2, 20, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(now, [row]) == date(2026, 11, 2)
+    assert is_postclose_jst_date(row["data_retrieved_at_utc"], date(2026, 11, 2))
+    result = run(date(2026, 11, 2), root=tmp_path, cfg_path=cp, price_loader=prices)
+    assert result["as_of_date"] == "2026-11-02"
+    assert "fresh_jp_screen_unavailable" not in result["data_blockers"]
+
+
+def test_overnight_inference_rejects_preclose_and_market_open(tmp_path):
+    row = sample("2026-11-02")
+    row["data_retrieved_at_utc"] = "2026-11-02T05:00:00+00:00"  # 14:00 JST
+    overnight = datetime(2026, 11, 3, 2, 20, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(overnight, [row]) == date(2026, 11, 3)
+    assert not is_postclose_jst_date(row["data_retrieved_at_utc"], date(2026, 11, 2))
+    row["data_retrieved_at_utc"] = "2026-11-02T17:06:38+00:00"
+    market_open = datetime(2026, 11, 3, 9, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(market_open, [row]) == date(2026, 11, 3)
+    holiday_previous = datetime(2026, 11, 4, 2, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(holiday_previous, [row]) == date(2026, 11, 4)
