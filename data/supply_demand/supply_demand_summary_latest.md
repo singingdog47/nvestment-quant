@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-11-02T17:26:39+00:00
+Generated (UTC): 2026-11-02T18:15:46+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Financial Institutions, Inc. - Common Stock: SHORT_CROWDING (float=87.8%, float turnover=0.8%, volume ratio=0.254939886979937)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.3%, volume ratio=0.1594840849901305)
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=2.9%, volume ratio=0.5211977564101049)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=95.2%, float turnover=1.0%, volume ratio=0.44101788323486435)
+- [US] Financial Institutions, Inc. - Common Stock: SHORT_CROWDING (float=87.8%, float turnover=0.8%, volume ratio=0.4237721394166951)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.3%, volume ratio=0.23164764070579935)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=2.9%, volume ratio=0.7014965929814331)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=95.2%, float turnover=1.0%, volume ratio=0.5107667344302564)
 - [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.6%, float turnover=1.2%, volume ratio=1.2183220906466614)
 - [JP] Strike Group Co.,Ltd.: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=57.5%, float turnover=1.2%, volume ratio=1.9326286760243345)
 - [JP] Akatsuki Inc.: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=66.2%, float turnover=1.2%, volume ratio=3.4552353831585787)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.7%, float turnover=2.6%, volume ratio=0.4788814966011653)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=76.7%, float turnover=2.6%, volume ratio=0.5702088741976805)
 - [JP] MIXI,Inc.: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=41.0%, float turnover=1.4%, volume ratio=1.6983546278905275)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.8%, volume ratio=0.37949519315865865)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.8%, volume ratio=0.710436484456784)
 
 ## Governance
 

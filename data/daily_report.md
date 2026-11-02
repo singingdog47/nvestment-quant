@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-11-02T17:25:23.375774+00:00
+- Data retrieved (UTC): 2026-11-02T18:14:32.202447+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -29,8 +29,8 @@
 | JP | Financials | 4 |
 | JP | Other | 16 |
 | US | Financials | 12 |
-| US | Other | 3 |
-| US | Shipping | 5 |
+| US | Other | 4 |
+| US | Shipping | 4 |
 
 ## Research candidates
 
@@ -46,15 +46,15 @@
 | JP | 8 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 71.3 | 99.6 | unchanged |
 | JP | 9 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.0 | 99.6 | unchanged |
 | JP | 10 | 8630.T | Sompo Holdings,Inc. | Other | 71.0 | 99.5 | unchanged |
-| US | 1 | FISI | Financial Institutions, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
+| US | 1 | FISI | Financial Institutions, Inc. - Common Stock | Financials | 84.3 | 100.0 | unchanged |
 | US | 2 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.5 | 100.0 | unchanged |
-| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.1 | 99.9 | unchanged |
-| US | 10 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.7 | 99.7 | unchanged |
-| US | 11 | DHT | DHT Holdings, Inc. | Shipping | 81.5 | 99.7 | unchanged |
-| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 80.4 | 99.5 | unchanged |
+| US | 5 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.9 | 99.9 | unchanged |
+| US | 10 | DHT | DHT Holdings, Inc. | Shipping | 81.5 | 99.7 | unchanged |
+| US | 11 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 81.2 | 99.7 | unchanged |
+| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 80.2 | 99.5 | unchanged |
 | US | 18 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.8 | 99.5 | unchanged |
-| US | 21 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.5 | 99.4 | unchanged |
-| US | 22 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.4 | 99.4 | unchanged |
+| US | 20 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 79.5 | 99.4 | unchanged |
+| US | 21 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.4 | 99.4 | unchanged |
 | US | 28 | BUSE | First Busey Corporation - Common Stock | Other | 78.7 | 99.2 | unchanged |
 
 ## Required manual checks before an order

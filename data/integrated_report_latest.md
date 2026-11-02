@@ -1,9 +1,9 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-11-02T17:28:08+00:00
+Generated (UTC): 2026-11-02T18:17:11+00:00
 
 ## 1. 結論 / 今日の優先アクション
-- **SELECTIVE REVIEW OF TOP CANDIDATES**
+- **RISK REVIEW BEFORE NEW ACTION**
 - Decision gate: `OPEN_FOR_ANALYSIS`
 - Screening / intelligence data actionable: `True`
 - Regime context actionable: `True`
@@ -11,11 +11,11 @@ Generated (UTC): 2026-11-02T17:28:08+00:00
 
 ## 2. 市場レジーム
 - Regime: **NEUTRAL**
-- Score: 48.43
+- Score: 48.54
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 19.170000076293945
+- VIX: 19.690000534057617
 - Treasury realized-vol proxy (not ICE MOVE): 82.863 bps annualized; percentile=0.8214
 - Flags: none
 
@@ -41,12 +41,14 @@ Generated (UTC): 2026-11-02T17:28:08+00:00
 - 事後検証: n=1, Brier=0.20249999999999996（未校正）
 
 ## 4. 例外検知 / アラート
-- Highest severity: **WATCH**
-- Counts: {'INFO': 0, 'WATCH': 4, 'WARNING': 0, 'CRITICAL': 0}
-- [WATCH] COMPANY_EVENT / 【出演情報】吉俣良 ４５周年Anniversary Concert Supported by KDDI ｜soyokaze - fan.pia.jp
-- [WATCH] COMPANY_EVENT / KDDIと米国Wingが提携、27年にローソン商品などドローン配送へ - ドローンジャーナル
-- [WATCH] COMPANY_EVENT / ＮＥＣ【6701】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
-- [WATCH] COMPANY_EVENT / 東京海上ホールディングス フィジカルAI搭載ロボの保険開始 - ABEMA
+- Highest severity: **WARNING**
+- Counts: {'INFO': 0, 'WATCH': 3, 'WARNING': 3, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / コーエーテクモホールディングス[3635]：令和９年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- [WARNING] COMPANY_EVENT / SEC 8-K filing
+- [WARNING] COMPANY_EVENT / 浜松ホトニクス---ストップ高、1-3月期増益転換で通期予想を上方修正 - 株探
+- [WATCH] COMPANY_EVENT / お仕事手帖 翻訳業務編 多彩な表現で“生きたニュアンス”を世界へ届ける - ANYCOLOR MAGAZINE
+- [WATCH] COMPANY_EVENT / (株)コーエーテクモホールディングス【3635】：決算情報 - Yahoo!ファイナンス
+- [WATCH] COMPANY_EVENT / 理研と浜松ホトニクスが連携・協力に関する基本協定書を締結 - 理化学研究所
 
 ## 5. スクリーニング上位候補
 
@@ -58,23 +60,23 @@ Generated (UTC): 2026-11-02T17:28:08+00:00
 - 5. Mito Securities Co.,Ltd. 8622.T | market_rank=5.0 | raw=72.17359314011276 | cross_pct=99.79623025980642
 
 ### 米国株（市場内順位）
-- 1. Financial Institutions, Inc. - Common Stock FISI | market_rank=1.0 | raw=84.24444367769743 | cross_pct=100.0
-- 2. Carter Bankshares, Inc. - Common Stock CARE | market_rank=2.0 | raw=83.46666543751572 | cross_pct=99.96965098634294
-- 3. Scorpio Tankers Inc. Common Shares STNG | market_rank=3.0 | raw=83.08292679470252 | cross_pct=99.9393019726859
-- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=10.0 | raw=81.68213324920953 | cross_pct=99.7268588770865
-- 5. DHT Holdings, Inc. DHT | market_rank=11.0 | raw=81.53174550429598 | cross_pct=99.69650986342944
+- 1. Financial Institutions, Inc. - Common Stock FISI | market_rank=1.0 | raw=84.29842718777108 | cross_pct=100.0
+- 2. Carter Bankshares, Inc. - Common Stock CARE | market_rank=2.0 | raw=83.49619831946058 | cross_pct=99.96961409905803
+- 3. Scorpio Tankers Inc. Common Shares STNG | market_rank=5.0 | raw=82.89735099028381 | cross_pct=99.87845639623215
+- 4. DHT Holdings, Inc. DHT | market_rank=10.0 | raw=81.45142864971403 | cross_pct=99.72652689152234
+- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=11.0 | raw=81.21665889967169 | cross_pct=99.69614099058037
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Financial Institutions, Inc. - Common Stock | cross_pct=100.0 | raw=84.24444367769743
+- 1. [US] Financial Institutions, Inc. - Common Stock | cross_pct=100.0 | raw=84.29842718777108
 - 2. [JP] Strike Group Co.,Ltd. | cross_pct=100.0 | raw=75.96869090725892
-- 3. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=99.96965098634294 | raw=83.46666543751572
+- 3. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=99.96961409905803 | raw=83.49619831946058
 - 4. [JP] Akatsuki Inc. | cross_pct=99.9490575649516 | raw=74.58789794819229
-- 5. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.9393019726859 | raw=83.08292679470252
-- 6. [JP] Toranvia Co.,Ltd. | cross_pct=99.8981151299032 | raw=74.07560619785913
+- 5. [JP] Toranvia Co.,Ltd. | cross_pct=99.8981151299032 | raw=74.07560619785913
+- 6. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.87845639623215 | raw=82.89735099028381
 - 7. [JP] ELECOM CO.,LTD. | cross_pct=99.84717269485482 | raw=73.22938807736341
 - 8. [JP] Mito Securities Co.,Ltd. | cross_pct=99.79623025980642 | raw=72.17359314011276
 - 9. [JP] MIXI,Inc. | cross_pct=99.74528782475802 | raw=72.14361343150995
-- 10. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.7268588770865 | raw=81.68213324920953
+- 10. [US] DHT Holdings, Inc. | cross_pct=99.72652689152234 | raw=81.45142864971403
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
@@ -105,7 +107,7 @@ Generated (UTC): 2026-11-02T17:28:08+00:00
 ## PayPay Swing
 
 - 監視判定: **WAIT_RESEARCH** — 首位スタンダードは59.5点だが確認閾値未達
-- 上位: スタンダード 59.5 / テクノロジー 55.6 / ビットコイン 42.0
+- 上位: スタンダード 59.5 / テクノロジー 55.6 / ビットコイン 42.1
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
