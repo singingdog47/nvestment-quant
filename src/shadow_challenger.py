@@ -17,6 +17,7 @@ from typing import Callable
 from shadow_swing import today_jst
 from shadow_run_readiness import before_today_close
 from shadow_swing_v2 import verified_daily_bar, after_jp_market_close
+from jpx_market_calendar import is_jpx_session
 
 DATA = Path("data")
 OUT = DATA / "shadow_challenger"
@@ -154,7 +155,7 @@ def run(as_of=None, bar_source: Callable | None = None):
     cfg = load_json(CONFIG)
     if cfg["mode"] != "SHADOW_ONLY":
         raise ValueError("SHADOW_ONLY required")
-    if as_of < date.fromisoformat(cfg["start_date"]) or as_of.weekday() >= 5:
+    if as_of < date.fromisoformat(cfg["start_date"]) or not is_jpx_session(as_of):
         return {"status": "OUTSIDE_SESSION"}
     state = load_json(OUT / "state.json") or new_state(cfg)
     if state["cohort"] != cfg["cohort"] or state["initial_cash_jpy"] != cfg["initial_cash_jpy"]:
