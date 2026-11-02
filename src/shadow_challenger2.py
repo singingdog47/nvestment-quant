@@ -132,5 +132,19 @@ def run(as_of: date | None = None, bar_source: Callable | None = None):
     return result
 
 
+def cli_exit_code(result: dict) -> int:
+    """A session gap is an operational failure, not a successful no-op.
+
+    The runner itself has already failed closed without mutating the ledger.
+    Nonzero exit lets Actions and monitoring distinguish a blocked paper book
+    from a successful session; holidays and idempotent reruns remain no-ops.
+    """
+    return 2 if result.get("status") in {
+        "SESSION_GAP_REQUIRES_AUDIT", "OUT_OF_ORDER_REPLAY_BLOCKED"
+    } else 0
+
+
 if __name__ == "__main__":
-    print(json.dumps(run(), ensure_ascii=False, indent=2))
+    result = run()
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    raise SystemExit(cli_exit_code(result))
