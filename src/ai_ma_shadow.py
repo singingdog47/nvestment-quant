@@ -14,6 +14,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from shadow_swing_v2 import verified_daily_bar, number
+from jpx_market_calendar import is_jpx_session
 
 JST = ZoneInfo("Asia/Tokyo")
 ROOT = Path("data")
@@ -52,6 +53,18 @@ def is_same_jst_date(timestamp, session):
         return False
 
 
+def is_postclose_jst_date(timestamp, session):
+    """Signals require a dated post-close screen; morning data cannot generate buys."""
+    try:
+        stamp = datetime.fromisoformat(str(timestamp).replace("Z", "+00:00"))
+        if stamp.tzinfo is None:
+            return False
+        local = stamp.astimezone(JST)
+        return local.date() == session and (local.hour, local.minute) >= (15, 30)
+    except (ValueError, TypeError):
+        return False
+
+
 def screen_candidates(rows, cfg, session):
     """Select low valuation + underlying operating viability, NOT 'likely TOB'."""
     accepted, rejected = [], []
@@ -76,7 +89,7 @@ def screen_candidates(rows, cfg, session):
             "investment_thesis": "Undervalued operating company; improvement and M&A are UNPROVEN optionality.",
         }
         fail = []
-        if not is_same_jst_date(r.get("data_retrieved_at_utc"), session):
+        if not is_postclose_jst_date(r.get("data_retrieved_at_utc"), session):
             fail.append("stale_or_undated_screen")
         if str(r.get("eligible", "")).lower() != "true":
             fail.append("not_screening_eligible")
@@ -128,8 +141,22 @@ def run(as_of=None, root=ROOT, cfg_path=CONFIG, price_loader=verified_daily_bar)
     cfg=load(Path(cfg_path),{})
     if cfg.get("mode") != "SHADOW_ONLY" or not cfg.get("governance",{}).get("real_orders_forbidden"):
         raise ValueError("paper-only governance required")
-    day=as_of or datetime.now(JST).date()
     root=Path(root)
+    if as_of is not None:
+        day = as_of
+    else:
+        local_now = datetime.now(JST)
+        day = local_now.date()
+        # A scheduled Friday job delayed until early Saturday may use Friday's
+        # verified post-close screen. Never fabricate a weekend/holiday session.
+        if local_now.hour < 9:
+            previous = day - timedelta(days=1)
+            screen_rows = csv_rows(root/"screening_latest.csv")
+            if (is_jpx_session(previous) and screen_rows and
+                    is_postclose_jst_date(screen_rows[0].get("data_retrieved_at_utc"), previous)):
+                day = previous
+    if not is_jpx_session(day):
+        return {"status": "OUTSIDE_SESSION", "as_of_date": day.isoformat()}
     out=root/"ai_ma_shadow"
     state_path=out/"state.json"
     state=load(state_path,None) or new_state(cfg)
@@ -186,6 +213,12 @@ def run(as_of=None, root=ROOT, cfg_path=CONFIG, price_loader=verified_daily_bar)
         if order["signal_date"] >= day.isoformat():
             continue
         symbol=order["symbol"]
+        # Missing OHLC must not keep a buy order alive indefinitely.
+        age = (day - date.fromisoformat(order["signal_date"])).days
+        if age > cfg["execution"].get("max_pending_calendar_days", 4):
+            events.append({"event": "ENTRY_EXPIRED", "symbol": symbol})
+            state["pending_buys"].remove(order)
+            continue
         bar=price_loader(symbol,day)
         if bar is None:
             missing.append("entry_missing_bar:"+symbol)
@@ -213,7 +246,7 @@ def run(as_of=None, root=ROOT, cfg_path=CONFIG, price_loader=verified_daily_bar)
 
     # Signal-only: public screen after 15:30 JST, no lookahead, no broker info.
     screen=csv_rows(root/"screening_latest.csv")
-    if not screen or not is_same_jst_date(screen[0].get("data_retrieved_at_utc"),day):
+    if not screen or not is_postclose_jst_date(screen[0].get("data_retrieved_at_utc"),day):
         accepted,rejected=[],[]
         missing.append("fresh_jp_screen_unavailable")
     else:
