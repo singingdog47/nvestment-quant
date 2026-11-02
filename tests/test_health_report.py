@@ -114,11 +114,11 @@ class HealthReportTests(unittest.TestCase):
         from tempfile import TemporaryDirectory
         with TemporaryDirectory() as directory:
             path = Path(directory) / "report.md"
-            path.write_text("# Report\\nGenerated (UTC): 2026-11-02T14:26:09+00:00\\n", encoding="utf-8")
+            path.write_text("# Report\nGenerated (UTC): 2026-11-02T14:26:09+00:00\n", encoding="utf-8")
             self.assertEqual(read_pipeline_report(path), {
                 "date": "2026-11-02", "after_close": True,
             })
-            path.write_text("# Report\\nGenerated (UTC): unknown\\n", encoding="utf-8")
+            path.write_text("# Report\nGenerated (UTC): unknown\n", encoding="utf-8")
             self.assertIsNone(read_pipeline_report(path))
 
     def test_ai_ma_weekend_snapshot_is_invalid_not_a_valid_trading_day(self):
