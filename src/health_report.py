@@ -12,6 +12,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from jpx_market_calendar import is_jpx_session
+
 ROOT = Path(__file__).resolve().parents[1]
 INPUTS = {
     "challenger1": "data/shadow_challenger/latest.json",
@@ -20,19 +22,6 @@ INPUTS = {
     "regime": "data/regime/market_regime_latest.json",
 }
 ARCHIVED_V2 = "data/shadow_swing_v2/latest.json"
-# JPX non-trading weekdays; extend annually from the official exchange calendar.
-JPX_CLOSED_WEEKDAYS = frozenset({
-    "2026-01-01", "2026-01-02", "2026-01-12", "2026-02-11",
-    "2026-02-23", "2026-03-20", "2026-04-29", "2026-05-04",
-    "2026-05-05", "2026-05-06", "2026-07-20", "2026-08-11",
-    "2026-09-21", "2026-09-22", "2026-09-23", "2026-10-12",
-    "2026-11-03", "2026-11-23", "2026-12-31",
-    "2027-01-01", "2027-01-11", "2027-02-11", "2027-02-23",
-    "2027-03-22", "2027-04-29", "2027-05-03", "2027-05-04",
-    "2027-05-05", "2027-07-19", "2027-08-11", "2027-09-20",
-    "2027-09-23", "2027-10-11", "2027-11-03", "2027-11-23",
-    "2027-12-31",
-})
 DATA_CODES = (
     "missing", "unavailable", "stale", "outdated", "invalid",
     "fetch", "error", "failed", "timeout", "benchmark", "no_bar",
@@ -66,7 +55,7 @@ def completed_jpx_sessions(observed, now: datetime) -> int:
     count = 0
     day = observed + timedelta(days=1)
     while day <= last:
-        if day.weekday() < 5 and day.isoformat() not in JPX_CLOSED_WEEKDAYS:
+        if is_jpx_session(day):
             count += 1
         day += timedelta(days=1)
     return count
