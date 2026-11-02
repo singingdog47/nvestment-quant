@@ -7,6 +7,10 @@ on:
       - 'tests/test_health_report.py'
       - '.github/workflows/quant-health.yml'
   workflow_dispatch:
+  workflow_run:
+    workflows: [Investment Intelligence v1.6]
+    types: [completed]
+    branches: [main]
   schedule:
     - cron: '40 13 * * 1-5' # 22:40 JST, after both paper cohorts
 
@@ -19,6 +23,7 @@ concurrency:
 
 jobs:
   health:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
