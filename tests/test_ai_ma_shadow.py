@@ -155,8 +155,10 @@ def test_overnight_inference_rejects_preclose_and_market_open(tmp_path):
     assert infer_run_session(overnight, [row]) == date(2026, 11, 3)
     assert not is_postclose_jst_date(row["data_retrieved_at_utc"], date(2026, 11, 2))
     row["data_retrieved_at_utc"] = "2026-11-02T17:06:38+00:00"
-    market_open = datetime(2026, 11, 3, 9, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
-    assert infer_run_session(market_open, [row]) == date(2026, 11, 3)
+    holiday_morning = datetime(2026, 11, 3, 9, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(holiday_morning, [row]) == date(2026, 11, 2)
+    next_market_open = datetime(2026, 11, 4, 9, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
+    assert infer_run_session(next_market_open, [row]) == date(2026, 11, 4)
     holiday_previous = datetime(2026, 11, 4, 2, 0, tzinfo=ZoneInfo("Asia/Tokyo"))
     # Nov 3 is a JPX holiday: Nov 2 remains the latest completed session.
     assert infer_run_session(holiday_previous, [row]) == date(2026, 11, 2)
