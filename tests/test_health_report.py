@@ -134,6 +134,21 @@ class HealthReportTests(unittest.TestCase):
             path.write_text("# Report\nGenerated (UTC): unknown\n", encoding="utf-8")
             self.assertIsNone(read_pipeline_report(path))
 
+    def test_independent_5m_fork_activation_grace(self):
+        inputs = healthy()
+        before = datetime(2026, 11, 3, 16, 0, tzinfo=timezone.utc)
+        result = summarize(before, inputs)
+        self.assertEqual(result["components"]["challenger1_5m"]["status"], "NOT_STARTED")
+        self.assertNotIn("challenger1_5m:snapshot_missing", [x["key"] for x in result["incidents"]])
+        after = datetime(2026, 11, 4, 15, 0, tzinfo=timezone.utc)
+        result = summarize(after, inputs)
+        self.assertIn("challenger1_5m:snapshot_missing", [x["key"] for x in result["incidents"]])
+        inputs["challenger1_5m"] = {"date": "2026-11-04", "mode": "SHADOW_ONLY",
+                                   "nav_jpy": 5000000, "screen_fresh": True,
+                                   "unpriced_symbols": []}
+        result = summarize(after, inputs)
+        self.assertEqual(result["components"]["challenger1_5m"]["status"], "HEALTHY")
+
     def test_ai_ma_weekend_snapshot_is_invalid_not_a_valid_trading_day(self):
         inputs = healthy()
         inputs["ai_ma"]["as_of_date"] = "2026-10-31"

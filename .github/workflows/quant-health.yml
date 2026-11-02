@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'src/health_report.py'
+      - 'src/shadow_challenger1_5m.py'
       - 'src/jpx_market_calendar.py'
       - 'src/ai_ma_shadow.py'
       - '.github/workflows/quant-health.yml'
