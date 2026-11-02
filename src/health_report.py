@@ -9,7 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -79,9 +79,17 @@ def read_pipeline_report(path: Path):
         jst = generated.astimezone(ZoneInfo("Asia/Tokyo"))
     except (ValueError, TypeError, OverflowError):
         return None
+    session = jst.date()
+    after_close = (jst.hour, jst.minute) >= (15, 30)
+    # A scheduled JPX post-close pipeline may be delivered after midnight.
+    # Before 09:00 JST, its latest completed session is yesterday only when
+    # yesterday was an actual JPX trading day. Never attribute to a holiday.
+    if jst.hour < 9 and is_jpx_session(session - timedelta(days=1)):
+        session -= timedelta(days=1)
+        after_close = True
     return {
-        "date": jst.date().isoformat(),
-        "after_close": (jst.hour, jst.minute) >= (15, 30),
+        "date": session.isoformat(),
+        "after_close": after_close,
     }
 
 
