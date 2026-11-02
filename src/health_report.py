@@ -69,7 +69,7 @@ def read_pipeline_report(path: Path):
         content = path.read_text(encoding="utf-8")
     except (OSError, UnicodeError):
         return None
-    match = re.search(r"^Generated \\(UTC\\):\\s*(\\S+)", content, re.MULTILINE)
+    match = re.search(r"^Generated \(UTC\):\s*(\S+)", content, re.MULTILINE)
     if not match:
         return None
     try:
