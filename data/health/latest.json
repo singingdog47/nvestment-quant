@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-02T17:29:44.584102+00:00",
+  "generated_at_utc": "2026-11-02T17:31:26.107561+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
-  "incident_signature": "ac0ec8bed60d50fd",
+  "incident_signature": "384c128ce817c702",
   "incidents": [
     {
       "key": "ai_ma:benchmark_price_unavailable",
@@ -46,13 +46,6 @@
       "severity": "WARNING",
       "kind": "DATA_INCIDENT",
       "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。"
-    },
-    {
-      "key": "pipeline:invalid_generation_time",
-      "component": "pipeline",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "統合レポートの生成日時が不正、または引け前です。"
     }
   ],
   "components": {
@@ -86,8 +79,8 @@
       "mode": null
     },
     "pipeline": {
-      "status": "DATA_IMPAIRED",
-      "as_of_date": "2026-11-03"
+      "status": "HEALTHY",
+      "as_of_date": "2026-11-02"
     },
     "shadow_v2": {
       "status": "ARCHIVED",
