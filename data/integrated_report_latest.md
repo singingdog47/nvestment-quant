@@ -1,6 +1,6 @@
 # Investment Quant Daily Integrated Report v2.13
 
-Generated (UTC): 2026-11-02T18:17:11+00:00
+Generated (UTC): 2026-11-03T15:15:16+00:00
 
 ## 1. 結論 / 今日の優先アクション
 - **RISK REVIEW BEFORE NEW ACTION**
@@ -11,13 +11,13 @@ Generated (UTC): 2026-11-02T18:17:11+00:00
 
 ## 2. 市場レジーム
 - Regime: **NEUTRAL**
-- Score: 48.54
+- Score: 46.64
 - Confidence: 1.0
 - Data status: ok
 - Actionability reasons: none
-- VIX: 19.690000534057617
-- Treasury realized-vol proxy (not ICE MOVE): 82.863 bps annualized; percentile=0.8214
-- Flags: none
+- VIX: 20.829999923706055
+- Treasury realized-vol proxy (not ICE MOVE): 80.713 bps annualized; percentile=0.7937
+- Flags: THIN_LIQUIDITY
 
 ## 3. 個別銘柄の需給コンテキスト
 - Data status: partial
@@ -30,8 +30,8 @@ Generated (UTC): 2026-11-02T18:17:11+00:00
 - [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING
 - [JP] コーエーテクモホールディングス: TIGHT_FLOAT
 - [JP] Strike Group Co.,Ltd.: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION
-- [JP] Akatsuki Inc.: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION
 - [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER
+- [JP] Akatsuki Inc.: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION
 
 ## 3a. 短中長期の需給仮説（研究用）
 - short / 1-2 weeks: RANGE_OR_UNDECIDED; 仮説=Volume-supported directional continuation is plausible for individually flagged watchlist names; cross-market risk can override.; 反証=A contrary relative return at the predetermined endpoint or worsening rates/credit stress.; 方針=Existing orders unchanged. New purchase only after liquidity, risk and human review.
@@ -42,45 +42,47 @@ Generated (UTC): 2026-11-02T18:17:11+00:00
 
 ## 4. 例外検知 / アラート
 - Highest severity: **WARNING**
-- Counts: {'INFO': 0, 'WATCH': 3, 'WARNING': 3, 'CRITICAL': 0}
-- [WARNING] COMPANY_EVENT / コーエーテクモホールディングス[3635]：令和９年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-- [WARNING] COMPANY_EVENT / SEC 8-K filing
-- [WARNING] COMPANY_EVENT / 浜松ホトニクス---ストップ高、1-3月期増益転換で通期予想を上方修正 - 株探
+- Counts: {'INFO': 0, 'WATCH': 14, 'WARNING': 5, 'CRITICAL': 0}
+- [WARNING] COMPANY_EVENT / 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- [WARNING] COMPANY_EVENT / ◎〔決算〕ほくほくＦＧ、連結純利益４２０億円に上方修正 - 時事通信ニュース
+- [WARNING] COMPANY_EVENT / ほくほくフィナンシャルグループ[8377]：業績予想および配当予想の修正に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- [WARNING] COMPANY_EVENT / KDDI、2万2541件の顧客情報漏えいか ライフネット生命への不正アクセスで（アスキー） - Yahoo!ニュース
+- [WARNING] LIQUIDITY / Thin liquidity flag active
+- [WATCH] COMPANY_EVENT / ＡＮＹＣＯＬＯＲ、「にじさんじ」が韓国の大型イベントに出展 - https://kabu-ir.com/
 - [WATCH] COMPANY_EVENT / お仕事手帖 翻訳業務編 多彩な表現で“生きたニュアンス”を世界へ届ける - ANYCOLOR MAGAZINE
-- [WATCH] COMPANY_EVENT / (株)コーエーテクモホールディングス【3635】：決算情報 - Yahoo!ファイナンス
-- [WATCH] COMPANY_EVENT / 理研と浜松ホトニクスが連携・協力に関する基本協定書を締結 - 理化学研究所
+- [WATCH] COMPANY_EVENT / 国内初、850MHz帯Wi-Fi HaLowを活用したロボットトラクターの無線遠隔監視・制御の実証に成功 ～自動運転の運用範囲拡大による農作業の自動化・省力化を推進 - NECネッツエスアイ
 
 ## 5. スクリーニング上位候補
 
 ### 日本株（市場内順位）
-- 1. Strike Group Co.,Ltd. 6196.T | market_rank=1.0 | raw=75.96869090725892 | cross_pct=100.0
-- 2. Akatsuki Inc. 3932.T | market_rank=2.0 | raw=74.58789794819229 | cross_pct=99.9490575649516
-- 3. Toranvia Co.,Ltd. 545A.T | market_rank=3.0 | raw=74.07560619785913 | cross_pct=99.8981151299032
-- 4. ELECOM CO.,LTD. 6750.T | market_rank=4.0 | raw=73.22938807736341 | cross_pct=99.84717269485482
-- 5. Mito Securities Co.,Ltd. 8622.T | market_rank=5.0 | raw=72.17359314011276 | cross_pct=99.79623025980642
+- 1. Strike Group Co.,Ltd. 6196.T | market_rank=1.0 | raw=74.97650749000053 | cross_pct=100.0
+- 2. Akatsuki Inc. 3932.T | market_rank=2.0 | raw=74.22550621714534 | cross_pct=99.9490575649516
+- 3. Toranvia Co.,Ltd. 545A.T | market_rank=3.0 | raw=73.90367306956388 | cross_pct=99.8981151299032
+- 4. ELECOM CO.,LTD. 6750.T | market_rank=4.0 | raw=73.304371833606 | cross_pct=99.84717269485482
+- 5. Mito Securities Co.,Ltd. 8622.T | market_rank=5.0 | raw=72.15144650467884 | cross_pct=99.79623025980642
 
 ### 米国株（市場内順位）
-- 1. Financial Institutions, Inc. - Common Stock FISI | market_rank=1.0 | raw=84.29842718777108 | cross_pct=100.0
-- 2. Carter Bankshares, Inc. - Common Stock CARE | market_rank=2.0 | raw=83.49619831946058 | cross_pct=99.96961409905803
-- 3. Scorpio Tankers Inc. Common Shares STNG | market_rank=5.0 | raw=82.89735099028381 | cross_pct=99.87845639623215
-- 4. DHT Holdings, Inc. DHT | market_rank=10.0 | raw=81.45142864971403 | cross_pct=99.72652689152234
-- 5. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=11.0 | raw=81.21665889967169 | cross_pct=99.69614099058037
+- 1. Financial Institutions, Inc. - Common Stock FISI | market_rank=1.0 | raw=84.20573396109813 | cross_pct=100.0
+- 2. Scorpio Tankers Inc. Common Shares STNG | market_rank=2.0 | raw=83.28349342098119 | cross_pct=99.96949359365466
+- 3. Carter Bankshares, Inc. - Common Stock CARE | market_rank=3.0 | raw=83.23779775257876 | cross_pct=99.93898718730934
+- 4. Tsakos Energy Navigation Ltd Common Shares TEN | market_rank=10.0 | raw=81.71512196684077 | cross_pct=99.72544234289201
+- 5. DHT Holdings, Inc. DHT | market_rank=11.0 | raw=81.69608740877507 | cross_pct=99.69493593654668
 
 ### 市場横断リサーチ候補（市場内パーセンタイル比較）
-- 1. [US] Financial Institutions, Inc. - Common Stock | cross_pct=100.0 | raw=84.29842718777108
-- 2. [JP] Strike Group Co.,Ltd. | cross_pct=100.0 | raw=75.96869090725892
-- 3. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=99.96961409905803 | raw=83.49619831946058
-- 4. [JP] Akatsuki Inc. | cross_pct=99.9490575649516 | raw=74.58789794819229
-- 5. [JP] Toranvia Co.,Ltd. | cross_pct=99.8981151299032 | raw=74.07560619785913
-- 6. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.87845639623215 | raw=82.89735099028381
-- 7. [JP] ELECOM CO.,LTD. | cross_pct=99.84717269485482 | raw=73.22938807736341
-- 8. [JP] Mito Securities Co.,Ltd. | cross_pct=99.79623025980642 | raw=72.17359314011276
-- 9. [JP] MIXI,Inc. | cross_pct=99.74528782475802 | raw=72.14361343150995
-- 10. [US] DHT Holdings, Inc. | cross_pct=99.72652689152234 | raw=81.45142864971403
+- 1. [US] Financial Institutions, Inc. - Common Stock | cross_pct=100.0 | raw=84.20573396109813
+- 2. [JP] Strike Group Co.,Ltd. | cross_pct=100.0 | raw=74.97650749000053
+- 3. [US] Scorpio Tankers Inc. Common Shares | cross_pct=99.96949359365466 | raw=83.28349342098119
+- 4. [JP] Akatsuki Inc. | cross_pct=99.9490575649516 | raw=74.22550621714534
+- 5. [US] Carter Bankshares, Inc. - Common Stock | cross_pct=99.93898718730934 | raw=83.23779775257876
+- 6. [JP] Toranvia Co.,Ltd. | cross_pct=99.8981151299032 | raw=73.90367306956388
+- 7. [JP] ELECOM CO.,LTD. | cross_pct=99.84717269485482 | raw=73.304371833606
+- 8. [JP] Mito Securities Co.,Ltd. | cross_pct=99.79623025980642 | raw=72.15144650467884
+- 9. [JP] KOEI TECMO HOLDINGS CO.,LTD. | cross_pct=99.74528782475802 | raw=71.80923670127234
+- 10. [US] Tsakos Energy Navigation Ltd Common Shares | cross_pct=99.72544234289201 | raw=81.71512196684077
 - 注: cross_pct は各市場内での相対順位。日米の絶対的な割安度・事業品質が同一尺度という意味ではありません。
 
 ## 6. 過去判断の検証 / 学習
-- Matured observations: 839
+- Matured observations: 869
 - Eligible for model-change review: True
 - [WATCH] action / REVIEW|1m: Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] action / REVIEW|1w: Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
@@ -106,8 +108,8 @@ Generated (UTC): 2026-11-02T18:17:11+00:00
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは59.5点だが確認閾値未達
-- 上位: スタンダード 59.5 / テクノロジー 55.6 / ビットコイン 42.1
+- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは55.3点だが確認閾値未達
+- 上位: スタンダード 55.3 / テクノロジー 49.0 / ビットコイン 40.7
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
