@@ -1,88 +1,97 @@
 {
-  "decision_id": "gpt-shadow-20261102-postclose-1745-hold-archived-001",
-  "decision_date": "2026-11-02",
-  "decision_time_jst": "17:45",
+  "decision_id": "gpt-shadow-20261103-1735-jp-market-holiday-hold-001",
+  "decision_date": "2026-11-03",
+  "decision_time_jst": "17:35",
   "mode": "SHADOW_ONLY",
   "portfolio_instruction": "HOLD",
   "actions": [],
   "experiment_status": "V1_ARCHIVED_MANUAL_DISPATCH_ONLY",
+  "market_session": {
+    "date_jst": "2026-11-03",
+    "japan_cash_market_open": false,
+    "reason": "Culture Day (文化の日), Japan national holiday; no JPX cash equity session",
+    "postclose_session_verified": false,
+    "as_of_last_trading_session": "2026-11-02"
+  },
   "meta_gate": {
     "passed": false,
-    "objective": "Improve long-run risk-adjusted paper NAV after costs, failure risk, complexity and attention; no real broker activity.",
-    "baseline": "Archived v1 paper ledger last processed 2026-10-26: NAV and cash JPY 987918.70, zero positions, zero pending orders. HOLD/cash leaves this paper ledger unchanged.",
-    "incremental_edge_source": "No confirmed current-session security-specific mispricing edge beyond cash; Nov 2 post-close exchange prices and screening not verified.",
-    "incremental_benefit_after_costs": "Not demonstrated after simulated 10 bps slippage, risk, data gaps, maintenance and attention.",
-    "strongest_counterargument": "Fresh verified Nov 2 closes or primary disclosures could reveal a positive opportunity missed by the stale Oct 29 screen.",
-    "simpler_alternative": "Keep archived v1 unchanged and monitor verified close, primary disclosures and independently governed Challenger cohorts.",
     "current_best_action": "HOLD",
-    "best_alternative": "MONITOR; require a confirmed current-session close and a complete falsifiable eight-field thesis before any paper BUY/ADD.",
-    "what_changed_or_earlier_miss": "Nov 2 morning intelligence completed successfully and regime is actionable at confidence 0.8, but screening remains Oct 29 and market breadth is stale; v1 workflow is still manual-only despite config enabled:true.",
-    "forward_value_and_risk": "HOLD avoids unsupported or duplicate orders. Opportunity cost is unknown; a valid future edge could justify a new decision only after independent verification.",
-    "falsifier_and_review_trigger": "Reassess after verified current-session OHLC, fresh screening, dated primary filings, sound liquidity and a material positive incremental risk-adjusted expected return versus cash.",
+    "best_alternative": "MONITOR",
+    "objective": "Maximize forward risk-adjusted paper wealth after execution cost, governance and attention; never submit real broker orders.",
+    "baseline": "Archived v1 paper ledger last processed 2026-10-26; 100% cash, JPY 987918.70 NAV, no holdings or pending orders.",
+    "incremental_edge_source": "None established. JP cash market closed Nov 3; no current-session executable close or verified OHLC.",
+    "incremental_benefit_after_costs": "No positive incremental expected utility versus cash demonstrated after 10 bps simulated slippage, taxes, execution uncertainty and monitoring burden.",
+    "strongest_counterargument": "Nov 2 corporate disclosures and fresh screening could reveal an opportunity for the next open session, but require verified pricing and complete company-level evidence.",
+    "simpler_alternative": "Retain cash and review next confirmed JPX trading session; do not revive archived v1 or place activity-driven orders.",
+    "what_changed_or_earlier_miss": "Nov 3 is a Japanese market holiday. Nov 3 morning system outputs describe previous session or secondary data; not a Nov 3 closing session. v1 workflow is manual-dispatch only.",
+    "forward_value_and_risk": "Cash avoids unverified entry and duplicate order risk; opportunity cost cannot be quantified without a falsifiable candidate thesis.",
+    "falsifier_and_review_trigger": "Next open JPX session with verified current-session OHLC, dated primary disclosure, liquidity, and a complete positive incremental mispricing thesis.",
     "required_buy_thesis_fields": {
-      "market_implied_view": "not established from current-session verified prices",
+      "market_implied_view": "not established for a Nov 3 session",
       "our_differing_view": "not established",
       "why_market_may_be_wrong": "not established",
       "catalyst_or_repricing_path": "not established",
       "disconfirming_condition": "not established",
       "expected_horizon": "not established",
-      "confidence": "insufficient for a security-specific BUY/ADD",
-      "data_quality": "Nov 2 close/OHLC and screening unverified; primary company coverage incomplete"
+      "confidence": "insufficient",
+      "data_quality": "No Nov 3 cash market session; scanner prices lack verified exchange close timestamps."
     }
   },
   "market_context": {
-    "decision_date_jst": "2026-11-02",
-    "market_session_verified_postclose": false,
     "regime": {
+      "date_jst": "2026-11-03",
+      "generated_at_utc": "2026-11-03T03:29:13+00:00",
       "label": "NEUTRAL",
-      "score": 52.72,
-      "confidence": 0.8,
+      "score": 50.03,
+      "confidence": 1,
       "actionable": true,
-      "generated_at_jst": "2026-11-02 10:31:54",
-      "breadth_status": "stale",
-      "participation_component_available": false,
-      "flags": []
+      "note": "Context only, not an open JPX session or trade signal."
+    },
+    "screening": {
+      "retrieved_at_utc": "2026-11-02T18:14:32.202447+00:00",
+      "retrieved_at_jst": "2026-11-03 03:14:32",
+      "exact_exchange_close_timestamp_verified": false,
+      "price_missing": 901,
+      "universe": 9554,
+      "warning": "Overnight retrieval on JP holiday; cannot certify JP Nov 3 session or fills."
     },
     "sq": {
       "active": false,
-      "as_of_date": "2026-11-02",
       "confidence": 0.4,
       "data_status": "partial",
-      "manual_oi_missing": true,
+      "manual_option_oi_missing": true,
       "directional_bias": "UNDETERMINED"
     },
     "supply_demand": {
-      "generated_at_jst": "2026-11-02 10:32:58",
-      "data_status": "partial",
+      "generated_at_utc": "2026-11-03T03:30:30+00:00",
+      "status": "partial",
       "target_count": 52,
       "ok": 38,
       "partial": 2,
       "missing": 12,
-      "source_tier": "secondary context; not trade alpha"
+      "warning": "Secondary market context only; no independent Nov 3 JP cash session."
+    },
+    "company_research": {
+      "jp_targets": 40,
+      "with_any_primary_metric": 19,
+      "with_all_six_primary_metrics": 16,
+      "overall_primary_fundamental_coverage": 0.365,
+      "warning": "Secondary guidance headlines require dated primary source confirmation."
     }
   },
-  "data_quality_caveats": [
-    "Screening retrieved 2026-10-29 23:23:26 JST (2026-10-29T14:23:26.716187+00:00); no verified Nov 2 post-close screening.",
-    "Screening price_basis: TradingView scanner close; exact exchange timestamp unavailable. No future-session data or synthetic OHLC used.",
-    "Regime generated Nov 2 at 10:31:54 JST before cash-market close. Although actionable, breadth source Oct 29 is stale and participation coverage is zero.",
-    "Supply/demand generated Nov 2 at 10:32:58 JST: 38 ok, 2 partial, 12 missing of 52; not a Nov 2 post-close observation.",
-    "SQ overlay Nov 2 inactive, confidence 0.4, partial, manual option OI unavailable; not a directional signal.",
-    "Primary metrics available for 19 of 39 JP intelligence targets (16 have all six); overall primary fundamental coverage 36.5%. New secondary guidance headlines require primary-source confirmation.",
-    "V1 is archived/manual-dispatch only despite enabled:true in config; a new 21:35 automatic v1 ledger run is not assumed."
-  ],
   "execution_integrity_audit": {
     "ledger_as_of_date": "2026-10-26",
-    "reported_status": "OK",
     "ledger_fresh_for_decision_date": false,
+    "reported_status": "OK",
     "positions": 0,
     "pending_orders": 0,
     "missing_ohlc_orders": 0,
     "overdue_sell_orders": 0,
     "delayed_fills_current_report": 0,
-    "fills_today_unconfirmed": true,
-    "historical_warning": "8622.T hard-stop SELL signaled 2026-10-06, recorded FILLED 2026-10-15 at JPY 812.187: nine-calendar-day execution delay remains a historical risk.",
-    "timing_warning": "No Nov 2 v1 ledger update or verified fill. V1 workflow is manual-only. Do not infer a 21:35 run or create duplicate orders.",
-    "separate_cohort_warning": "Challenger2 has a distinct pending BUY for 8624.T (100 shares, signal 2026-10-29) in its Oct 29 state; it is NOT a v1 order and is NOT treated as filled."
+    "warning": "Reported OK applies only to Oct 26 saved ledger, not a fresh Nov 3 execution audit.",
+    "historical_hard_stop_warning": "8622.T hard-stop SELL signal 2026-10-06, paper fill 2026-10-15 at JPY 812.187; 9 calendar-day delay, not cured by old OK flag.",
+    "workflow_warning": "V1 workflow archived/manual-only despite config enabled:true. No automatic Nov 3 or 21:35 v1 execution assumed.",
+    "separate_cohort_warning": "Challenger2 last saved 2026-10-29 includes pending BUY 8624.T 100 shares; separate paper cohort, never assume filled or duplicate."
   },
-  "reason": "HOLD: archived v1 has no holdings or pending orders, and Nov 2 current-session verified close, fresh screening, and a positive eight-field incremental mispricing thesis versus cash are unavailable. No paper orders or fills created."
+  "reason": "HOLD: Nov 3 Culture Day market closure; no current JPX session, verified OHLC, or eight-field incremental mispricing edge. Archived v1 remains 100% cash; no orders or synthetic fills."
 }
