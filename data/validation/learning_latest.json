@@ -1,9 +1,9 @@
 {
   "change_gate": {
     "basis": "benchmark_relative_observations",
-    "benchmark_relative_observations": 869,
+    "benchmark_relative_observations": 879,
     "eligible_for_model_change_review": true,
-    "matured_observations": 869,
+    "matured_observations": 879,
     "minimum_required": 60,
     "rule": "Even when eligible, factor weights must not change automatically; require explicit human review, robustness checks, and a version bump."
   },
@@ -20,7 +20,7 @@
       "dimension": "action",
       "message": "Benchmark-relative performance is historically weak; review assumptions before increasing its influence.",
       "metric": "excess_return",
-      "n": 507,
+      "n": 517,
       "segment": "REVIEW|1w",
       "severity": "WATCH"
     },
@@ -36,7 +36,7 @@
       "dimension": "regime",
       "message": "Benchmark-relative performance is historically weak; review assumptions before increasing its influence.",
       "metric": "excess_return",
-      "n": 80,
+      "n": 90,
       "segment": "NEUTRAL|1w",
       "severity": "WATCH"
     },
@@ -52,7 +52,7 @@
       "dimension": "rank_bucket",
       "message": "Benchmark-relative performance is historically weak; review assumptions before increasing its influence.",
       "metric": "excess_return",
-      "n": 106,
+      "n": 108,
       "segment": "top1|1w",
       "severity": "WATCH"
     },
@@ -76,19 +76,19 @@
       "dimension": "rank_bucket",
       "message": "Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.",
       "metric": "excess_return",
-      "n": 204,
+      "n": 208,
       "segment": "top3|1w",
       "severity": "INFO"
     }
   ],
-  "generated_at": "2026-11-03T15:13:55+00:00",
+  "generated_at": "2026-11-04T15:29:24+00:00",
   "known_limits": [
     "Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.",
     "Pre-v2.1 outcome rows may have blank benchmark fields and are excluded from benchmark-relative findings until new relative observations mature.",
     "Small samples can create false patterns; segment findings are suppressed below the minimum benchmark-relative sample threshold.",
     "The engine proposes review targets only and never changes weights or places orders automatically."
   ],
-  "rows": 869,
+  "rows": 879,
   "segments": {
     "action": {
       "REVIEW|1m": {
@@ -105,15 +105,15 @@
       },
       "REVIEW|1w": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 507,
-        "mean_excess_return": -0.0029762487656973427,
-        "mean_max_down": -0.02413027094869341,
-        "mean_return": -0.0018658672262583166,
-        "median_excess_return": -0.005542442115606616,
-        "median_return": -0.0029634557161956065,
-        "n": 507,
-        "outperform_rate": 0.4339250493096647,
-        "win_rate": 0.4516765285996055
+        "benchmark_n": 517,
+        "mean_excess_return": -0.003420218625803933,
+        "mean_max_down": -0.024583923032550366,
+        "mean_return": -0.0024796941517545193,
+        "median_excess_return": -0.006700732388962072,
+        "median_return": -0.004582951484812359,
+        "n": 517,
+        "outperform_rate": 0.42940038684719534,
+        "win_rate": 0.44680851063829785
       },
       "WAIT_DATA_QUALITY|1m": {
         "benchmark_coverage": 1.0,
@@ -155,15 +155,15 @@
       },
       "1w": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 519,
-        "mean_excess_return": -0.002450721696464403,
-        "mean_max_down": -0.023650857896613545,
-        "mean_return": -0.0008869274930581032,
-        "median_excess_return": -0.00464261922941922,
+        "benchmark_n": 529,
+        "mean_excess_return": -0.0028945547557601243,
+        "mean_max_down": -0.024103281824543306,
+        "mean_return": -0.0015053356552765132,
+        "median_excess_return": -0.004661812920476405,
         "median_return": -0.002348048637334621,
-        "n": 519,
-        "outperform_rate": 0.44701348747591524,
-        "win_rate": 0.464354527938343
+        "n": 529,
+        "outperform_rate": 0.44234404536862004,
+        "win_rate": 0.45935727788279773
       }
     },
     "model_version": {
@@ -181,15 +181,15 @@
       },
       "1.7.0|1w": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 519,
-        "mean_excess_return": -0.002450721696464403,
-        "mean_max_down": -0.023650857896613545,
-        "mean_return": -0.0008869274930581032,
-        "median_excess_return": -0.00464261922941922,
+        "benchmark_n": 529,
+        "mean_excess_return": -0.0028945547557601243,
+        "mean_max_down": -0.024103281824543306,
+        "mean_return": -0.0015053356552765132,
+        "median_excess_return": -0.004661812920476405,
         "median_return": -0.002348048637334621,
-        "n": 519,
-        "outperform_rate": 0.44701348747591524,
-        "win_rate": 0.464354527938343
+        "n": 529,
+        "outperform_rate": 0.44234404536862004,
+        "win_rate": 0.45935727788279773
       }
     },
     "rank_bucket": {
@@ -207,15 +207,15 @@
       },
       "top10|1w": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 209,
-        "mean_excess_return": -0.0006559374990390048,
-        "mean_max_down": -0.02423771441076948,
-        "mean_return": 0.0009596509028268285,
-        "median_excess_return": -0.0012552409336658021,
-        "median_return": -0.0032017075773745907,
-        "n": 209,
-        "outperform_rate": 0.47368421052631576,
-        "win_rate": 0.4258373205741627
+        "benchmark_n": 213,
+        "mean_excess_return": -0.0018328046287484968,
+        "mean_max_down": -0.02511566894419574,
+        "mean_return": -0.0003914935895402043,
+        "median_excess_return": -0.002214741508442919,
+        "median_return": -0.005044569133349497,
+        "n": 213,
+        "outperform_rate": 0.4647887323943662,
+        "win_rate": 0.41784037558685444
       },
       "top1|1m": {
         "benchmark_coverage": 1.0,
@@ -231,15 +231,15 @@
       },
       "top1|1w": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 106,
-        "mean_excess_return": -0.01754860178884468,
-        "mean_max_down": -0.026720160984530297,
-        "mean_return": -0.016108809019810454,
-        "median_excess_return": -0.016796425309496765,
-        "median_return": -0.01703644978547708,
-        "n": 106,
-        "outperform_rate": 0.16037735849056603,
-        "win_rate": 0.2830188679245283
+        "benchmark_n": 108,
+        "mean_excess_return": -0.017706842160424178,
+        "mean_max_down": -0.027254829692429667,
+        "mean_return": -0.01643554282683813,
+        "median_excess_return": -0.016994760449664803,
+        "median_return": -0.01783358333163787,
+        "n": 108,
+        "outperform_rate": 0.1574074074074074,
+        "win_rate": 0.2777777777777778
       },
       "top3|1m": {
         "benchmark_coverage": 1.0,
@@ -255,15 +255,15 @@
       },
       "top3|1w": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 204,
-        "mean_excess_return": 0.0035554812080963874,
-        "mean_max_down": -0.021454783686918607,
-        "mean_return": 0.005130643865254635,
+        "benchmark_n": 208,
+        "mean_excess_return": 0.0037091676608275743,
+        "mean_max_down": -0.021430177852342847,
+        "mean_return": 0.005106270183794741,
         "median_excess_return": 0.004823891199201791,
         "median_return": 0.009106885453073477,
-        "n": 204,
-        "outperform_rate": 0.5686274509803921,
-        "win_rate": 0.5980392156862745
+        "n": 208,
+        "outperform_rate": 0.5673076923076923,
+        "win_rate": 0.5961538461538461
       }
     },
     "regime": {
@@ -305,15 +305,15 @@
       },
       "NEUTRAL|1w": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 80,
-        "mean_excess_return": -0.011715077204988347,
-        "mean_max_down": -0.029950150090264638,
-        "mean_return": -0.015946494244142205,
-        "median_excess_return": -0.011230588956122056,
-        "median_return": -0.017796586358627797,
-        "n": 80,
-        "outperform_rate": 0.25,
-        "win_rate": 0.225
+        "benchmark_n": 90,
+        "mean_excess_return": -0.013294456463679426,
+        "mean_max_down": -0.03190947604513501,
+        "mean_return": -0.017908074803061072,
+        "median_excess_return": -0.012641617580677333,
+        "median_return": -0.01964133219470543,
+        "n": 90,
+        "outperform_rate": 0.24444444444444444,
+        "win_rate": 0.2222222222222222
       },
       "RISK_ON|1m": {
         "benchmark_coverage": 1.0,
