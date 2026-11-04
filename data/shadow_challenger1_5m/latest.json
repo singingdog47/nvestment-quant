@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-04",
+  "mode": "SHADOW_ONLY",
+  "status": "OK",
+  "nav_jpy": 4994112.46,
+  "return_pct": -0.118,
+  "cash_jpy": 4791712.46,
+  "positions": 2,
+  "pending_buys": 2,
+  "trades": 2,
+  "screen_fresh": true,
+  "regime_actionable": false,
+  "sizing_multiplier": 0.5,
+  "unpriced_symbols": [],
+  "candidate_audit": [
+    {
+      "symbol": "6196.T",
+      "score": 74.69807732244485,
+      "momentum": 94.40369464819342,
+      "price": 1747.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "545A.T",
+      "score": 74.30595330113545,
+      "momentum": 71.04726976365119,
+      "price": 923.0,
+      "theme": "Other",
+      "fundamental_partial": true,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "6750.T",
+      "score": 73.2982928920055,
+      "momentum": 63.51534908992122,
+      "price": 1910.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "3932.T",
+      "score": 72.9074511259042,
+      "momentum": 80.77967943493616,
+      "price": 1255.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "8622.T",
+      "score": 72.90391064578496,
+      "momentum": 58.44199945666938,
+      "price": 769.0,
+      "theme": "Financials",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "3635.T",
+      "score": 71.99577852932696,
+      "momentum": 69.7636511817441,
+      "price": 1740.5,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "2121.T",
+      "score": 71.96536210933438,
+      "momentum": 91.45612605270307,
+      "price": 3945.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "8704.T",
+      "score": 71.68155251682512,
+      "momentum": 53.219233903830485,
+      "price": 1247.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "symbol": "5351.T",
+      "score": 71.63196071622065,
+      "momentum": 48.675631621841895,
+      "price": 1907.0,
+      "theme": "Other",
+      "fundamental_partial": false,
+      "vetoes": [
+        "weak_momentum"
+      ],
+      "eligible": false
+    },
+    {
+      "symbol": "8624.T",
+      "score": 71.44162705735897,
+      "momentum": 52.35330073349633,
+      "price": 1380.0,
+      "theme": "Financials",
+      "fundamental_partial": false,
+      "vetoes": [],
+      "eligible": true
+    }
+  ],
+  "events": [
+    {
+      "event": "BUY",
+      "symbol": "8622.T",
+      "qty": 100,
+      "price": 770.154
+    },
+    {
+      "event": "SELL",
+      "date": "2026-11-04",
+      "symbol": "8789.T",
+      "qty": 600,
+      "entry": 152.228,
+      "exit": 142.88,
+      "pnl_jpy": -5608.99,
+      "reason": "STOP"
+    },
+    {
+      "event": "BUY_SIGNAL",
+      "symbol": "6196.T",
+      "qty": 100
+    },
+    {
+      "event": "BUY_SIGNAL",
+      "symbol": "8624.T",
+      "qty": 100
+    }
+  ],
+  "activity_goal": {
+    "start_date": "2026-11-04",
+    "deadline_jst": null,
+    "verified_fills_since_start": 2,
+    "fills": [
+      {
+        "date": "2026-11-04",
+        "side": "BUY",
+        "symbol": "8622.T",
+        "qty": 100,
+        "fill_price": 770.1535,
+        "source": "verified_session_open",
+        "paper_only": true
+      },
+      {
+        "date": "2026-11-04",
+        "side": "SELL",
+        "symbol": "8789.T",
+        "qty": 600,
+        "fill_price": 142.8797,
+        "source": "verified_session_ohlc",
+        "paper_only": true
+      }
+    ],
+    "status": "PASSED"
+  },
+  "monthly_goal": {
+    "month": "2026-11",
+    "return_target_pct": 3,
+    "baseline_session": "2026-11-02",
+    "baseline_nav_jpy": 5000000.0,
+    "return_pct": -0.118,
+    "status": "BELOW_TARGET_SO_FAR",
+    "no_forced_trades": true
+  },
+  "benchmark_return_pct": 0.0,
+  "benchmark_comparison_start": "first successfully priced session, not necessarily cohort start",
+  "benchmark_note": "TOPIX comparison optional; missing benchmark never blocks paper entries.",
+  "caveat": "NAV uses last known price for unpriced positions; do not treat as verified daily return.",
+  "strategy": "CHALLENGER1_5M",
+  "cohort": "2026-11-04-challenger1-5m-independent-fork",
+  "fork": {
+    "source_cohort": "2026-10-22-agility-1m",
+    "source_snapshot_date": "2026-11-02",
+    "source_state_blob_sha": "61848a18816774a03269d93abe81ef59a66202c5",
+    "source_nav_jpy": 997046.93,
+    "virtual_capital_injection_jpy": 4002953.07,
+    "starting_nav_jpy": 5000000,
+    "funding_is_not_profit": true,
+    "inherited_executions": 3,
+    "inherited_closed_trades": 1
+  },
+  "post_fork_verified_fills": 2,
+  "post_fork_closed_trades": 1,
+  "post_fork_verified_fill_log": [
+    {
+      "date": "2026-11-04",
+      "side": "BUY",
+      "symbol": "8622.T",
+      "qty": 100,
+      "fill_price": 770.1535,
+      "source": "verified_session_open",
+      "paper_only": true
+    },
+    {
+      "date": "2026-11-04",
+      "side": "SELL",
+      "symbol": "8789.T",
+      "qty": 600,
+      "fill_price": 142.8797,
+      "source": "verified_session_ohlc",
+      "paper_only": true
+    }
+  ],
+  "risk_budget": {
+    "max_position_pct": 0.075,
+    "maximum_ordinary_stop_loss_pct_of_starting_nav_estimate": 0.473,
+    "estimated_only_market_gap_risk_unbounded": true,
+    "max_gross_invested_pct": 0.8
+  },
+  "monthly_risk_status": "NORMAL"
+}
