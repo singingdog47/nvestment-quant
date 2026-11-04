@@ -1,0 +1,320 @@
+{
+  "version": "1.0.0",
+  "as_of_date": "2026-11-04",
+  "cohort": "2026-10-19-ai-ma-v1-5m",
+  "mode": "SHADOW_ONLY",
+  "status": "RESEARCH_NOT_VALIDATED",
+  "initial_cash_jpy": 5000000,
+  "nav_jpy": 4992664.7,
+  "benchmark_nav_jpy": 4846640.06,
+  "positions_count": 2,
+  "completed_trades": 0,
+  "pending_buys": 2,
+  "screened_jp_count": 50,
+  "qualified_count": 15,
+  "rejected_count": 35,
+  "candidates": [
+    {
+      "id": "3d31f52542b8e2badf",
+      "symbol": "7942.T",
+      "name": "JSP Corporation",
+      "observable": {
+        "market_cap": 74667501984.0,
+        "pe": 7.786700521438654,
+        "pb": 0.683068114355583,
+        "roe_pct": 9.40196589917495,
+        "operating_margin_pct": 8.03458992698647,
+        "avg_turnover_jpy": 179977416.66666666
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "ac71567b1fc03e80e4",
+      "symbol": "5351.T",
+      "name": "SHINAGAWA REFRA CO.,LTD.",
+      "observable": {
+        "market_cap": 89947999260.0,
+        "pe": 3.0014262676894496,
+        "pb": 0.7899203021364382,
+        "roe_pct": 29.2953533842944,
+        "operating_margin_pct": 6.69454267932195,
+        "avg_turnover_jpy": 195683626.66666666
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "847823d7ff7de463de",
+      "symbol": "6505.T",
+      "name": "TOYO DENKI SEIZO K.K.(TOYO ELECTRIC MFG.CO.,LTD.)",
+      "observable": {
+        "market_cap": 26312189770.0,
+        "pe": 7.965100179127799,
+        "pb": 0.8628097538460289,
+        "roe_pct": 10.9510179660085,
+        "operating_margin_pct": 8.98416358801798,
+        "avg_turnover_jpy": 285653073.3333333
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "d3f37e1a6ff21240a5",
+      "symbol": "8877.T",
+      "name": "ESLEAD CORPORATION",
+      "observable": {
+        "market_cap": 77149672508.0,
+        "pe": 5.943522273944074,
+        "pb": 0.8813641713749243,
+        "roe_pct": 15.6673653051791,
+        "operating_margin_pct": 15.8080810944189,
+        "avg_turnover_jpy": 208016666.6666667
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "d958a255e91aca6650",
+      "symbol": "3284.T",
+      "name": "Hoosiers Holdings Co.,Ltd.",
+      "observable": {
+        "market_cap": 49249629311.0,
+        "pe": 6.229143945643594,
+        "pb": 0.9794697146163744,
+        "roe_pct": 17.7532830430413,
+        "operating_margin_pct": 10.345284505785,
+        "avg_turnover_jpy": 290161440.0
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "696da2e5ccddf82d8d",
+      "symbol": "6809.T",
+      "name": "TOA CORPORATION",
+      "observable": {
+        "market_cap": 57803420181.0,
+        "pe": 13.411071064732411,
+        "pb": 0.9804475197834971,
+        "roe_pct": 7.38804768803917,
+        "operating_margin_pct": 9.25919402564464,
+        "avg_turnover_jpy": 150654350.0
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "48cf40daa2d2d15a9c",
+      "symbol": "8622.T",
+      "name": "Mito Securities Co.,Ltd.",
+      "observable": {
+        "market_cap": 44906134712.0,
+        "pe": 11.35098911544945,
+        "pb": 1.0329696926289205,
+        "roe_pct": 9.62117366513594,
+        "operating_margin_pct": 27.7019280875456,
+        "avg_turnover_jpy": 261311326.6666667
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "a80c5e20ba288fb8d8",
+      "symbol": "5195.T",
+      "name": "Bando Chemical Industries,Ltd.",
+      "observable": {
+        "market_cap": 101851075912.0,
+        "pe": 9.251342844107397,
+        "pb": 1.0490443584124698,
+        "roe_pct": 12.1026118132928,
+        "operating_margin_pct": 8.57698530733653,
+        "avg_turnover_jpy": 190369613.3333333
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "9386bd2d334a03b450",
+      "symbol": "8707.T",
+      "name": "IwaiCosmo Holdings,Inc.",
+      "observable": {
+        "market_cap": 87379201813.0,
+        "pe": 7.030753307983937,
+        "pb": 1.0942525377356978,
+        "roe_pct": 16.4625343138916,
+        "operating_margin_pct": 45.5108276869935,
+        "avg_turnover_jpy": 557693816.6666667
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "167ebf7f49124bb84f",
+      "symbol": "8892.T",
+      "name": "ES-CON JAPAN Ltd.",
+      "observable": {
+        "market_cap": 100344793350.0,
+        "pe": 6.643937736812067,
+        "pb": 1.1419621556766675,
+        "roe_pct": 18.5855804262267,
+        "operating_margin_pct": 20.1911406803032,
+        "avg_turnover_jpy": 205103803.33333334
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "980239031b292c8bd2",
+      "symbol": "3932.T",
+      "name": "Akatsuki Inc.",
+      "observable": {
+        "market_cap": 53393429565.0,
+        "pe": 7.069462681404947,
+        "pb": 1.165852689375514,
+        "roe_pct": 19.189421087165,
+        "operating_margin_pct": 34.3123234155359,
+        "avg_turnover_jpy": 378303017.1853581
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "be90a803cf5410d4d2",
+      "symbol": "8704.T",
+      "name": "TRADERS HOLDINGS CO.,LTD.",
+      "observable": {
+        "market_cap": 36375419891.0,
+        "pe": 4.9231230839990605,
+        "pb": 1.392380043332832,
+        "roe_pct": 32.4243003152164,
+        "operating_margin_pct": 57.319972826087,
+        "avg_turnover_jpy": 174247466.66666916
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "b0307898417dbe47d1",
+      "symbol": "8624.T",
+      "name": "Ichiyoshi Securities Co.,Ltd.",
+      "observable": {
+        "market_cap": 44592888882.0,
+        "pe": 7.70471941980113,
+        "pb": 1.3953916019408037,
+        "roe_pct": 19.2193290018113,
+        "operating_margin_pct": 29.5953592654543,
+        "avg_turnover_jpy": 311139400.0
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "b041b106fb0856c58c",
+      "symbol": "3479.T",
+      "name": "TKP Corporation",
+      "observable": {
+        "market_cap": 83074698486.0,
+        "pe": 5.74696137842671,
+        "pb": 1.444725133197248,
+        "roe_pct": 29.6681318432977,
+        "operating_margin_pct": 8.77246716768015,
+        "avg_turnover_jpy": 155389640.0
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    },
+    {
+      "id": "3ff41bcdd1ecc16765",
+      "symbol": "4293.T",
+      "name": "SEPTENI HOLDINGS CO.,LTD.",
+      "observable": {
+        "market_cap": 96448409729.0,
+        "pe": 16.766250226326274,
+        "pb": 1.4499730940737847,
+        "roe_pct": 8.79020025311131,
+        "operating_margin_pct": 16.6410883722017,
+        "avg_turnover_jpy": 161955856.66666707
+      },
+      "ai_restructuring_evidence": "UNVERIFIED",
+      "ownership_takeover_evidence": "UNVERIFIED",
+      "target_event_probability": null,
+      "vetoes": [],
+      "eligible": true
+    }
+  ],
+  "data_blockers": [],
+  "events": [
+    {
+      "event": "VIRTUAL_BUY",
+      "symbol": "7942.T",
+      "qty": 100
+    },
+    {
+      "event": "VIRTUAL_BUY",
+      "symbol": "5351.T",
+      "qty": 200
+    },
+    {
+      "event": "VIRTUAL_BUY_QUEUED_NEXT_OPEN",
+      "symbol": "6505.T"
+    },
+    {
+      "event": "VIRTUAL_BUY_QUEUED_NEXT_OPEN",
+      "symbol": "8877.T"
+    }
+  ],
+  "hypothesis": {
+    "H1": "AI-enabled cost/sales improvements improve future margins; unverified until operating data obtained",
+    "H2": "Acquisition/privatization becomes more common among candidates; target probabilities unverified",
+    "H3": "Value+AI/M&A enhanced basket outperforms matched value-only and TOPIX after costs; UNTESTED"
+  },
+  "control_cohorts": [
+    "data/shadow_swing",
+    "data/shadow_swing_v2"
+  ],
+  "critical_limitation": "Current cohort trades value+quality proxy ONLY. Without firm-specific AI, ownership, or takeover evidence, it cannot demonstrate incremental AI/M&A alpha; a matched value-only control and point-in-time historical database are required.",
+  "paper_only": true
+}
