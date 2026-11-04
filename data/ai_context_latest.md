@@ -6,12 +6,12 @@ Generated quality score: **0.864** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-03T15:12:25+00:00",
-  "generated_at_utc": "2026-11-03T15:12:25+00:00",
+  "generated_at": "2026-11-04T02:21:48+00:00",
+  "generated_at_utc": "2026-11-04T02:21:48+00:00",
   "date_jst": "2026-11-04",
   "data_status": "ok",
   "regime_label": "NEUTRAL",
-  "regime_score": 46.64,
+  "regime_score": 43.36,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,35 +23,33 @@ Generated quality score: **0.864** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": true,
+  "thin_liquidity_flag": false,
   "treasury_volatility_shock_flag": false,
   "sq_execution_caution_flag": false,
-  "regime_flags": [
-    "THIN_LIQUIDITY"
-  ],
+  "regime_flags": [],
   "components": {
-    "trend": 30.078761655878605,
-    "stress": 72.48250005722046,
+    "trend": 14.88654704321845,
+    "stress": 72.29250005722045,
     "participation": 41.26199560642849,
-    "liquidity": 34.91394804755207,
+    "liquidity": 43.74503693526948,
     "positioning": 60.106090833359694
   },
   "evidence": {
     "trend_series": 4,
     "vix": 20.829999923706055,
-    "hy_oas": 3.44,
+    "hy_oas": 3.43,
     "ig_oas": 0.94,
-    "treasury_volatility_proxy": 80.713,
-    "treasury_volatility_percentile_rank": 0.7937,
-    "treasury_volatility_stress_score": 40.48,
-    "treasury_volatility_as_of_date": "2026-11-02",
+    "treasury_volatility_proxy": 81.856,
+    "treasury_volatility_percentile_rank": 0.8056,
+    "treasury_volatility_stress_score": 39.58,
+    "treasury_volatility_as_of_date": "2026-11-03",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9550,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-11-03T15:12:22.548189+00:00",
     "nfci": -0.487,
-    "volume_ratio20_mean": 0.5376237011888018,
+    "volume_ratio20_mean": 0.7584009233817368,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -94,7 +92,7 @@ Generated quality score: **0.864** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 63081.859375,
+        "spot": 61271.62890625,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -137,8 +135,8 @@ Generated quality score: **0.864** / actionable=True
   "regime_label": "neutral",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
-    0.15,
-    0.18
+    0.08,
+    0.12
   ],
   "max_single_stock_weight": 0.05,
   "lifestyle_bucket_max_weight": 0.05,
@@ -150,7 +148,7 @@ Generated quality score: **0.864** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-11-03T15:13:37+00:00",
+  "generated_at": "2026-11-04T02:22:56+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -161,25 +159,25 @@ Generated quality score: **0.864** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -194,10 +192,10 @@ Generated quality score: **0.864** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=6 / tier=primary
-- SEC: ok / records=27 / tier=primary
+- EDINET: ok / records=4 / tier=primary
+- SEC: ok / records=31 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=55 / tier=secondary
+- NewsRSS: ok / records=53 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -272,12 +270,12 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
+- [CRITICAL] 6965 浜松ホトニクス | Fri, 15 May 2026 | guidance | 浜松ホトニクス---ストップ高、1-3月期増益転換で通期予想を上方修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiYEFVX3lxTE9XTHM1aVlfSFZ6NzBMUFN1ZEZCZWNpd3lYRUFDdkdrU3M4d1gxRGN4aFk5eml1dTAwMnpxOFhsVzNsN2wzOTN1QlQ5dURqNHZEZDJxSkhlQ0UwcTZ0M2tIaw?oc=5
 - [CRITICAL] 8377 ほくほくフィナンシャルグループ | Mon, 02 Nov 2026 | guidance | ほくほくＦＧ、今期経常を22％上方修正・最高益予想を上乗せ、配当も22円増額 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE1WWl9KXzNGeXlTUE9oNWpseDZoRzNiZ0dZdm82MU1zUmpJMW44eldBR0Uyek5ud21IdUNkTERpSTFRd051MDhSVXFEY0JHRHNyclE?oc=5
+- [CRITICAL] 8377 ほくほくフィナンシャルグループ | Mon, 02 Nov 2026 | guidance | ほくほくフィナンシャルグループ[8377]：業績予想および配当予想の修正に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTFBieHh0eEw2R2tvV0ozUC1KNDctemZMdjM5Xy1IX0RTZklGLUpCN2I2dXNtWnEyX0FpWTkwYU9oWXpTNG5VOEFubGdmREI0ZnhOaEFJWVpmZHRyMFE1SU8wTWhOM1RrQmRaekE?oc=5
 - [CRITICAL] 8377 ほくほくフィナンシャルグループ | Mon, 02 Nov 2026 | guidance | 〔決算〕ほくほくFG、連結純利益420億円に上方修正＝26年9月中間(時事通信) - Yahoo!ファイナンス | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMihwFBVV95cUxPREFvVGlDaXpsVFUwU2VyVVdmbElPcDlaXy1ZUzlaTVFCbld5SGRselZQd21GR0ROc1o4SWJwM2hmSldIMnk1dVQ4RjZwclBIRXJ3LTRNWTlnYXNjbW5tcFQ5emJaSDFHMEJmcDN1V2czaDN1U0E5UDFVSkF4bFl6Y1VNWU53ckE?oc=5
 - [CRITICAL] 8377 ほくほくフィナンシャルグループ | Mon, 02 Nov 2026 | guidance | ◎〔決算〕ほくほくＦＧ、連結純利益４２０億円に上方修正 - 時事通信ニュース | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiVEFVX3lxTE1DM2JsWXN1OXh0b25wTDJwYmtWY0tBbFFfUzVOeEJ2VGZpVmZONDRKdmNJSGJYcXVUY0JRMklmQzVDQVljcDA2V0doUVVEeWdQajNsQQ?oc=5
-- [CRITICAL] 8377 ほくほくフィナンシャルグループ | Mon, 02 Nov 2026 | guidance | ほくほくフィナンシャルグループ[8377]：業績予想および配当予想の修正に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMizAFBVV95cUxNMXItdWJBT0h6cnF6enRjdDdfOU91XzdCUTFOeGRuZEo5WnQ5WGgyT25ZcGdYNTZQNlRtSU9pcWttY3VFNWt5OXJGdk0xazhqR3ctQ096QXprUmFTMEp4cXZIbTFaa1RfbG1LT3NMLXlwbDRHLTJyOEw5OExCLWRpUTUtUFNqOVJuZ3A1bEhHbEZ4TWRyaWdfNm9CMFFoRExjMnNZaHpEb3hidVc5dV96M2VIaHpwdFpGWW0xUlhUUGpabGk0VEQzTnlKb18?oc=5
 - [CRITICAL] 3635 コーエーテクモホールディングス | Mon, 26 Oct 2026 | guidance | コーエーテクモホールディングス[3635]：業績予想及び配当予想の修正に関するお知らせ 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9IdklGSEFRZnFvTkNReG5vRkZlVG91V2ItS2dWQXluQXVsZjRLeUMwVGFiV3F4V2dFcTNvaHRlZzBTTlViVFFvT09PV2g3NVJMZHloUks2cVlZc2kwQkJ5QkIwRFBrcndDZlE?oc=5
-- [CRITICAL] 6701 NEC | Thu, 29 Oct 2026 | guidance | NEC株価一時10%安 27年3月通期を上方修正、材料出尽くし - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTFBvSVM2UmNMT3NlV0RsNU1qWC1HaUFxVnkteEQ1UlBReWE4Q3V6bnVNcHRiX2VxZ0p3WlIzN3V6NDhqNW1TNzhHR3VhQmtTN0VjUU93QXZyX3BycWNtc1A5b0I4Tno5eTlpOVB3cw?oc=5
 - [CRITICAL] 4063 信越化学工業 | Tue, 27 Oct 2026 | earnings | 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1KcDR4STR3TU1xeG02UW10bGtTVjVjQ2Qzbmw3ZkFIQWhadTdhRFI4aTFHYXR0bVlyYmFmc0R0SXgySE01WGNyenJPT0hVNTIxZGtDcVJaSmF3UzViVDNuZkdNTmJCUWQ0dkE?oc=5
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526396754/d73132d8k.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-09-22 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526397284/d244618d8k.htm
@@ -302,8 +300,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-10-19 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026066288/stng6k-10192026.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-10-27 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526432747/ck0002017206-20261026.htm
 - [HIGH] BUSE First Busey Corporation - Common Stock | 2026-10-27 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/314489/000031448926000066/buse-20261027.htm
-- [HIGH] 8630 Sompo Holdings,Inc. | 2026-10-28 | filing | 訂正報告書（大量保有報告書・変更報告書） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z9QB
-- [HIGH] 5706 三井金属 | 2026-10-28 | filing | 発行登録書（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100Z9F3
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-10-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026067899/stng6k-q32026epr.htm
 - [HIGH] 6701 NEC | 2026-10-29 | filing | 半期報告書－第189期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZALL
 - [HIGH] 6701 NEC | 2026-10-29 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZALS
@@ -312,12 +308,14 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-10-29 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000089/care-20261029.htm
 - [HIGH] 6701 NEC | 2026-10-30 | filing | 発行登録書（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZANF
 - [HIGH] 3932 Akatsuki Inc. | 2026-10-30 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZB18
-- [HIGH] 9433 KDDI | Fri, 30 Oct 2026 | regulatory | KDDI、顧客情報2万人分漏洩か ライフネット生命への不正アクセスで - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE9IQ3NfMzlqTzloTC1ZMjN3Y05sdVRHTWpIMjlmSkVNa2tQUzN2SkE5eFBkaWlsNlBNd3JOamRNMEpuM01BY0x3bk9mY21DaDlmdGtjZFRQMWRDTWJLZm5KX0lfSWkxbThmenhhUQ?oc=5
+- [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-11-03 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000094/care-20261103.htm
+- [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-03 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426007363/p15146295_6-k.htm
+- [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-11-03 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926122146/ltc-20260930x10q.htm
+- [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-11-03 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926122029/ltc-20261103x8k.htm
 - [HIGH] 9433 KDDI | Fri, 30 Oct 2026 | regulatory | KDDI顧客情報漏えいか ライフネットへの不正アクセスで - NHKニュース | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiX0FVX3lxTFA4ZTZKa0I5UEhEcjF5SW9nN3dxVUE5am5LT0hLMUhCQWtfMnktNFd1Y1FQVEdubTUtb0xUTUNheERtbjNPLWQ0Qjd2dEMwSWpTUmQxZXo1RVBCSmVybGdr?oc=5
 - [HIGH] 9433 KDDI | Mon, 02 Nov 2026 | regulatory | KDDI、2万2541件の顧客情報漏えいか ライフネット生命への不正アクセスで（アスキー） - Yahoo!ニュース | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMif0FVX3lxTFA0VlAzbG5oVUU2MzhxVjNTTUNMSHRJWTFTc0lUSGdZYWpGNDNta0Z6aGcyNVpDTDh3QWNkd3owbVhPZ1EydzR6Q1FBaXFQd3d4R3lFQldQOHE2V1BDd2JVMl9wWUFSeUgzUE5mSXJGLWEzREQ2VWh0VFM3ekRxVUU?oc=5
 - [HIGH] 8622 水戸証券 | Mon, 02 Nov 2026 | buyback | 水戸証券[8622]：自己株式の取得状況に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMizAFBVV95cUxOS1ZtVGh1ck1GZzl6dHZvczR6SHNzcW9peU1zNXEtX3N3T0RuWjI2ZmdjZ1VVeklBWC0xd0YxaVJWZHMxREo4MlIxX0QtWFNERHF4SzdGR2swRm01QVNhaWdTMkpqRHJUdldYeWVkLU40VG5oNXRiOTI4bWprbzkwQkxPdDZJNUpPbmVtZ2tqSHMxR2Z1LXFaOXFlZTNBQjlUU3FDUjM2OE1waXZ1Wi1WUXM0UHlnSjlUeGc3ZWpfek5vVEVmSUFLdU5KWXE?oc=5
 - [HIGH] 8622 水戸証券 | Thu, 29 Oct 2026 | buyback | 水戸証券－後場プラス転換 100万株・8億円を上限に自社株買い 割合1.68％ - TradingView | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMib0FVX3lxTE1mQTcxUkZHVnN4emI2UWx4VWxvQVpPWmtTalNDX2R2RjNESzhiTWJxbzdmTU40aXZnVG13ZUgta0ZSSUVmT0xOUmEycmlEbjU3WUg1YXJGV0M3MjVwUWZ4M2ZUZzduZGpqYXpGc1p2OA?oc=5
-- [HIGH] 8766 東京海上ホールディングス | Tue, 25 Aug 2026 | dividend | 東京海上、今期配当を実質増額修正 - 株探 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiUkFVX3lxTE9wT0xDYXFnWmlOMU5XMTZsR0pNQjRHNkdLVWI0bGRPTWJrMlNHVnBZRWFQSFpsQ0lycFcwdzhuY1NLWGxIQXRFazlsV1lmSjdLZlE?oc=5
 - [HIGH] 5032 ANYCOLOR | Wed, 09 Sep 2026 | buyback | 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMibEFVX3lxTE9SUEU1ZE41TXRpU2h5VTAyb1F4N3BWRTR5YTFFM0FDR1hJTHZrNWlRVUp3MlRuelBKYlpKNU0zTU15QWxaclYwejV0Y2pNWXkxMXgwVFY4U3RYRFpIRmNZanA3MExrQUF4Slk3eg?oc=5
 
 ## Mandatory AI rules
