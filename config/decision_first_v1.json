@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "purpose": "trade_decisions_not_market_labels",
+  "execution": "HUMAN_ONLY",
+  "privacy": "Never commit actual holdings, quantities, cost basis, order IDs, bank balances, or broker files to this public repository.",
+  "freshness_minutes": {
+    "market": 180,
+    "quote": 30,
+    "order": 120
+  },
+  "high_any": [
+    {
+      "key": "nikkei_future_pct",
+      "lte": -3
+    },
+    {
+      "key": "topix_future_pct",
+      "lte": -2.5
+    },
+    {
+      "key": "nasdaq_future_pct",
+      "lte": -2.5
+    },
+    {
+      "key": "vix",
+      "gte": 25
+    }
+  ],
+  "critical_any": [
+    {
+      "key": "nikkei_future_pct",
+      "lte": -5
+    },
+    {
+      "key": "topix_future_pct",
+      "lte": -4
+    },
+    {
+      "key": "nasdaq_future_pct",
+      "lte": -5
+    },
+    {
+      "key": "vix",
+      "gte": 35
+    }
+  ],
+  "rule_priority": [
+    "CANCEL_BUY",
+    "SELL_PRECOMMITTED",
+    "VERIFY_ORDER",
+    "KEEP_WITH_DEADLINE",
+    "NO_NEW_BUY"
+  ],
+  "max_position_reviews": 3,
+  "decision_recheck_minutes": 30,
+  "states": [
+    "CRITICAL",
+    "HIGH",
+    "NORMAL_NO_SIGNAL",
+    "UNVERIFIED"
+  ],
+  "warnings": [
+    "A market-risk alert is not an automatic command to sell all positions.",
+    "Never issue a broker order or fabricate order status or prices.",
+    "If market observations are stale, classify UNVERIFIED, not NORMAL.",
+    "Include an execution deadline for every HOLD/KEEP recommendation.",
+    "This module is deterministic and does not fetch prices. The scheduled ChatGPT task must obtain fresh sourced market data and private PF state."
+  ]
+}
