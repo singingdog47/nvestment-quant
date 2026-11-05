@@ -7,7 +7,7 @@
 4. No auto execution: no actual broker orders, no credentials, no sensitive portfolio files in public GitHub.
 ## Input contract
 ```json
-{"now":"2026-11-06T00:05:00Z","market":{"nikkei_future_pct":{"value":-5.8,"as_of":"2026-11-05T22:00:00Z"}},"orders":[{"ticker":"1476","side":"BUY","status":"OPEN","quantity":30,"limit_price":1720,"as_of":"2026-11-05T23:50:00Z"}],"positions":[{"ticker":"EXAMPLE","shares":100,"exit_on_critical":true,"latest_price":6976,"quote_as_of":"2026-11-05T06:30:00Z"}]}
+{"now":"2026-11-06T00:05:00Z","market":{"nikkei_future_pct":{"value":-5.8,"as_of":"2026-11-05T22:00:00Z"}},"orders":[{"ticker":"EXAMPLE-ETF","side":"BUY","status":"OPEN","quantity":10,"limit_price":1234,"as_of":"2026-11-05T23:50:00Z"}],"positions":[{"ticker":"EXAMPLE-STOCK","shares":10,"exit_on_critical":true,"latest_price":1200,"quote_as_of":"2026-11-05T06:30:00Z"}]}
 ```
 The example is illustrative only. Live private details must NOT be committed.
 Run: `node scripts/decision_first.mjs /secure/path/snapshot.json`. Test: `node --test tests/decision_first.test.mjs`.
