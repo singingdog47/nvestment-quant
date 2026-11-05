@@ -98,7 +98,7 @@ def decide(feeds: dict, now: datetime | None = None) -> dict:
         level = "DEFENSIVE"
     elif caution:
         level = "CAUTION"
-    elif evidence:
+    elif "NIKKEI_FUT" in evidence and ("NASDAQ" in evidence or "SP500" in evidence):
         level = "NORMAL"
     else:
         level = "UNVERIFIED"
