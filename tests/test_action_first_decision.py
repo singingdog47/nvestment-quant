@@ -24,7 +24,9 @@ class TestActionFirst(unittest.TestCase):
     def test_no_sources_does_not_mean_safe(self):
         self.assertEqual(decide({"NIKKEI_FUT": {"status": "UNVERIFIED"}}, NOW)["risk_level"], "UNVERIFIED")
     def test_normal_is_not_buy(self):
-        self.assertEqual(decide({"SP500": quote(0.8)}, NOW)["market_decision"], "NO_FORCED_TRADE")
+        self.assertEqual(decide({"NIKKEI_FUT": quote(-0.1), "SP500": quote(0.8)}, NOW)["market_decision"], "NO_FORCED_TRADE")
+    def test_missing_futures_does_not_mean_normal(self):
+        self.assertEqual(decide({"SP500": quote(0.8)}, NOW)["risk_level"], "UNVERIFIED")
     def test_never_trades_or_exposes_private_holdings(self):
         x = decide({"NIKKEI_FUT": quote(-5.8)}, NOW)
         self.assertEqual(x["execution"], "ADVISORY_ONLY")
