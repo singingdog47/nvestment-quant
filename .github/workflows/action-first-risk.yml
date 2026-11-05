@@ -1,0 +1,42 @@
+name: Action First Risk Watch (advisory/public only)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron is UTC; data is checked for freshness at run-time.
+    - cron: '25 22 * * 0-4'       # 07:25 JST Mon-Fri (UTC previous day)
+    - cron: '25 0,3,5,12 * * 1-5' # 09:25,12:25,14:25,21:25 JST Mon-Fri
+    - cron: '25 15 * * 0-4'       # 00:25 JST Mon-Fri
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-output-writer
+  cancel-in-progress: false
+
+jobs:
+  risk-watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Risk engine unit tests (stdlib only)
+        run: python -m unittest discover -s tests -p 'test_action_first_decision.py' -q
+      - name: Public market risk triage
+        run: python src/action_first_watch.py
+      - name: Commit public output (never private holdings)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/action_first/latest.json data/action_first/latest.md
+          if git diff --cached --quiet; then
+            echo "No risk-watch output changes."
+            exit 0
+          fi
+          git commit -m "data: action-first risk check"
+          git pull --rebase
+          git push
