@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-05T02:30:28.634569+00:00",
+  "generated_at_utc": "2026-11-05T20:48:58.295400+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
   "incident_signature": "1421ca75e324c248",
@@ -16,13 +16,13 @@
   "components": {
     "challenger1": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-04",
+      "as_of_date": "2026-11-05",
       "blockers": [],
       "mode": "SHADOW_ONLY"
     },
     "challenger1_5m": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-04",
+      "as_of_date": "2026-11-05",
       "blockers": [],
       "mode": "SHADOW_ONLY"
     },
@@ -34,19 +34,19 @@
     },
     "ai_ma": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-04",
+      "as_of_date": "2026-11-05",
       "blockers": [],
       "mode": "SHADOW_ONLY"
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-05",
+      "as_of_date": "2026-11-06",
       "blockers": [],
       "mode": null
     },
     "pipeline": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-04"
+      "as_of_date": "2026-11-05"
     },
     "shadow_v2": {
       "status": "ARCHIVED",
