@@ -1,0 +1,19 @@
+name: Decision First - unit tests
+on:
+  push:
+    paths:
+      - 'config/decision_first_v1.json'
+      - 'scripts/decision_first.mjs'
+      - 'tests/decision_first.test.mjs'
+      - '.github/workflows/decision-first-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test decision policy (no dependencies, network, or broker access)
+        run: node --test tests/decision_first.test.mjs
