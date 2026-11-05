@@ -1,43 +1,43 @@
 {
   "cohort": "2026-11-04-challenger1-5m-independent-fork",
   "mode": "SHADOW_ONLY",
-  "cash_jpy": 4791712.457661,
+  "cash_jpy": 4750319.8537490005,
   "initial_cash_jpy": 5000000,
   "positions": {
-    "3932.T": {
-      "qty": 100,
-      "entry_price": 1207.809,
-      "last_price": 1255.0,
-      "entry_date": "2026-10-29",
-      "sessions": 3,
-      "theme": "Other",
-      "peak_close": 1300
-    },
     "8622.T": {
       "qty": 100,
       "entry_price": 770.1535,
-      "last_price": 769.0,
+      "last_price": 796.0,
       "entry_date": "2026-11-04",
-      "sessions": 1,
+      "sessions": 2,
       "theme": "Financials",
-      "peak_close": 769.0
+      "peak_close": 796.0
+    },
+    "6196.T": {
+      "qty": 100,
+      "entry_price": 1764.643,
+      "last_price": 1826.0,
+      "entry_date": "2026-11-05",
+      "sessions": 1,
+      "theme": "Other",
+      "peak_close": 1826.0
     }
   },
   "pending_buys": [
     {
-      "symbol": "6196.T",
-      "signal_date": "2026-11-04",
+      "symbol": "545A.T",
+      "signal_date": "2026-11-05",
       "qty": 100,
       "theme": "Other",
-      "signal_price": 1747.0,
-      "max_notional": 187500.0
+      "signal_price": 937.0,
+      "max_notional": 93750.0
     },
     {
-      "symbol": "8624.T",
-      "signal_date": "2026-11-04",
-      "qty": 100,
+      "symbol": "4765.T",
+      "signal_date": "2026-11-05",
+      "qty": 200,
       "theme": "Financials",
-      "signal_price": 1380.0,
+      "signal_price": 641.0,
       "max_notional": 187500.0
     }
   ],
@@ -60,12 +60,21 @@
       "exit": 142.88,
       "pnl_jpy": -5608.99,
       "reason": "STOP"
+    },
+    {
+      "date": "2026-11-05",
+      "symbol": "3932.T",
+      "qty": 100,
+      "entry": 1207.809,
+      "exit": 1350.717,
+      "pnl_jpy": 14290.8,
+      "reason": "TARGET"
     }
   ],
-  "peak_nav_jpy": 5000000,
-  "nav_jpy": 4994112.46,
-  "last_run_date": "2026-11-04",
-  "last_screen_date": "2026-11-04",
+  "peak_nav_jpy": 5012519.8537490005,
+  "nav_jpy": 5012519.85,
+  "last_run_date": "2026-11-05",
+  "last_screen_date": "2026-11-05",
   "benchmark_start_close": 414.0,
   "execution_log": [
     {
@@ -110,6 +119,24 @@
       "symbol": "8789.T",
       "qty": 600,
       "fill_price": 142.8797,
+      "source": "verified_session_ohlc",
+      "paper_only": true
+    },
+    {
+      "date": "2026-11-05",
+      "side": "BUY",
+      "symbol": "6196.T",
+      "qty": 100,
+      "fill_price": 1764.643,
+      "source": "verified_session_open",
+      "paper_only": true
+    },
+    {
+      "date": "2026-11-05",
+      "side": "SELL",
+      "symbol": "3932.T",
+      "qty": 100,
+      "fill_price": 1350.717,
       "source": "verified_session_ohlc",
       "paper_only": true
     }
