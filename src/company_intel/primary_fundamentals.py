@@ -106,6 +106,40 @@ def extract_csv_zip(content: bytes) -> dict:
     return {key: value for key, value in candidates.items() if pd.notna(value)}
 
 
+def inspect_unresolved_tags(content: bytes) -> dict:
+    """Diagnostic tag/context inventory only; never treats tags as verified facts."""
+    inventory = {}
+    with zipfile.ZipFile(io.BytesIO(content)) as archive:
+        members = [n for n in archive.namelist()
+                   if "XBRL_TO_CSV/" in n.upper() and n.lower().endswith(".csv")]
+        for name in members[:100]:
+            if archive.getinfo(name).file_size > 20_000_000:
+                continue
+            rows = _csv_rows(archive.read(name))
+            header = next(rows, [])
+            element_i = _field_index(header, "要素ID", "elementid")
+            context_i = _field_index(header, "コンテキストID", "contextid")
+            unit_i = _field_index(header, "ユニットID", "単位ID", "unitid")
+            if None in (element_i, context_i, unit_i):
+                continue
+            for row in rows:
+                if max(element_i, context_i, unit_i) >= len(row):
+                    continue
+                unit = row[unit_i].strip().lower()
+                if unit not in ("jpy", "iso4217:jpy"):
+                    continue
+                tag = row[element_i].strip().split(":")[-1]
+                if not any(word in tag.lower() for word in (
+                    "revenue", "sales", "operating", "profit", "asset", "liabil", "cashflow"
+                )):
+                    continue
+                context = row[context_i].strip()
+                if "CurrentYear" not in context:
+                    continue
+                inventory.setdefault(context, set()).add(tag)
+    return {context: sorted(tags)[:120] for context, tags in inventory.items()}
+
+
 def document_id(event) -> str | None:
     if getattr(event, "source", None) != "EDINET":
         return None
@@ -141,6 +175,7 @@ def collect_primary_fundamentals(events, previous_path: str | Path, *, session=N
     errors = []
     seen = set()
     resolved = []
+    unresolved_tags = {}
     for _, docid, e in eligible:
         if docid in seen or len(seen) >= max_documents:
             continue
@@ -158,6 +193,7 @@ def collect_primary_fundamentals(events, previous_path: str | Path, *, session=N
             facts = extract_csv_zip(response.content)
             resolved.append(docid)
             if not facts:
+                unresolved_tags[docid] = inspect_unresolved_tags(response.content)
                 continue
             added.append({
                 "code": str(e.code), "ticker": str(e.ticker),
@@ -177,7 +213,7 @@ def collect_primary_fundamentals(events, previous_path: str | Path, *, session=N
         all_rows = all_rows.drop_duplicates("code", keep="first").reset_index(drop=True)
     return all_rows, {"checked": len(seen), "resolved_document_ids": resolved,
                       "new_companies": len(fresh), "errors": errors,
-                      "primary_companies": len(all_rows), "status": "partial" if errors else "ok"}
+                      "primary_companies": len(all_rows), "unresolved_tags": unresolved_tags, "status": "partial" if errors else "ok"}
 
 
 def write_primary_fundamentals(frame: pd.DataFrame, output: str | Path) -> None:
