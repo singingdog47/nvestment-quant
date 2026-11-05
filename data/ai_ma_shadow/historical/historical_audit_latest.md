@@ -1,8 +1,8 @@
 # AI/M&A historical audit — point-in-time evidence
 Result: **NO_STATISTICAL_CONCLUSION**; do not treat ordinary value factors as a validated AI/M&A model.
-Standard historical 1w outcomes: 529
-Standard historical 1m outcomes: 350
-Prospective AI/M&A shadow historical snapshots: 13
+Standard historical 1w outcomes: 549
+Standard historical 1m outcomes: 375
+Prospective AI/M&A shadow historical snapshots: 14
 Verified corporate events: 0
 
 ## Blocking data gaps
