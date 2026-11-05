@@ -1,35 +1,34 @@
 {
   "cohort": "2026-10-22-agility-1m",
   "mode": "SHADOW_ONLY",
-  "cash_jpy": 788759.387661,
+  "cash_jpy": 923831.083749,
   "initial_cash_jpy": 1000000.0,
   "positions": {
-    "3932.T": {
-      "qty": 100,
-      "entry_price": 1207.809,
-      "last_price": 1255.0,
-      "entry_date": "2026-10-29",
-      "sessions": 3,
-      "theme": "Other",
-      "peak_close": 1300.0
-    },
     "8622.T": {
       "qty": 100,
       "entry_price": 770.1535,
-      "last_price": 769.0,
+      "last_price": 796.0,
       "entry_date": "2026-11-04",
-      "sessions": 1,
+      "sessions": 2,
       "theme": "Financials",
-      "peak_close": 769.0
+      "peak_close": 796.0
     }
   },
   "pending_buys": [
     {
+      "symbol": "4765.T",
+      "signal_date": "2026-11-05",
+      "qty": 100,
+      "theme": "Financials",
+      "signal_price": 641.0,
+      "max_notional": 100000.0
+    },
+    {
       "symbol": "8789.T",
-      "signal_date": "2026-11-04",
-      "qty": 700,
+      "signal_date": "2026-11-05",
+      "qty": 600,
       "theme": "Other",
-      "signal_price": 142.0,
+      "signal_price": 147.0,
       "max_notional": 100000.0
     }
   ],
@@ -52,12 +51,21 @@
       "exit": 142.88,
       "pnl_jpy": -5608.99,
       "reason": "STOP"
+    },
+    {
+      "date": "2026-11-05",
+      "symbol": "3932.T",
+      "qty": 100,
+      "entry": 1207.809,
+      "exit": 1350.717,
+      "pnl_jpy": 14290.8,
+      "reason": "TARGET"
     }
   ],
-  "peak_nav_jpy": 1000000.0,
-  "nav_jpy": 991159.39,
-  "last_run_date": "2026-11-04",
-  "last_screen_date": "2026-11-04",
+  "peak_nav_jpy": 1003431.083749,
+  "nav_jpy": 1003431.08,
+  "last_run_date": "2026-11-05",
+  "last_screen_date": "2026-11-05",
   "benchmark_start_close": 420.6000061035156,
   "execution_log": [
     {
@@ -102,6 +110,15 @@
       "symbol": "8789.T",
       "qty": 600,
       "fill_price": 142.8797,
+      "source": "verified_session_ohlc",
+      "paper_only": true
+    },
+    {
+      "date": "2026-11-05",
+      "side": "SELL",
+      "symbol": "3932.T",
+      "qty": 100,
+      "fill_price": 1350.717,
       "source": "verified_session_ohlc",
       "paper_only": true
     }
