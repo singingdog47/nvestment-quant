@@ -342,3 +342,24 @@ def test_unknown_timestamp_provenance_fails_closed():
     assert verdict["decision_safe"] is False
     assert "PORTFOLIO_TIMESTAMP_UNVERIFIED" in verdict["portfolio_reasons"]
     assert all(v["status"] == "UNVERIFIED" for v in verdict["inputs"].values())
+
+
+def test_buying_power_pdf_uses_explicit_footer_year(tmp_path, monkeypatch):
+    import pypdf
+    from src.private_account_import import parse_buying_power_pdf
+
+    class Page:
+        def extract_text(self):
+            return ("現物買付可能額 2,863,480 円\n"
+                    "買付可能額（本日） 11/06 22:46\n"
+                    "https://example.invalid/ 2026/11/06 22:46\n")
+
+    class Reader:
+        def __init__(self, path):
+            self.pages = [Page()]
+
+    monkeypatch.setattr(pypdf, "PdfReader", Reader)
+    parsed = parse_buying_power_pdf(tmp_path / "buying.pdf")
+    assert parsed["cash_buying_power_jpy"] == 2863480
+    assert parsed["source_as_of"] == "2026-11-06T22:46:00+09:00"
+    assert parsed["source_as_of_method"] == "pdf_footer_explicit_year"
