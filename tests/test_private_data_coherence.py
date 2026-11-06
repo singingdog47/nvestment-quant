@@ -214,3 +214,21 @@ def test_orders_pdf_real_layout_wrapped_headers_and_footer(tmp_path, monkeypatch
     assert result["items"][0]["order_id"] == "5391"
     assert result["items"][0]["code"] == "9104"
     assert result["source_as_of"] == "2026-11-06T22:45:00+09:00"
+
+
+def test_account_summary_prefers_export_time_over_later_upload(tmp_path):
+    from src.run_portfolio_risk import _build_latest_account_inputs
+
+    csv_text = ("資産合計,20000000,0,0\\n"
+                "保有商品の評価額合計,18000000\\n")
+    old = tmp_path / "old.csv"
+    new = tmp_path / "new.csv"
+    old.write_text(csv_text, encoding="utf-8")
+    new.write_text(csv_text.replace("20000000", "19000000"), encoding="utf-8")
+    result = _build_latest_account_inputs(tmp_path, [
+        (old, {"name": "assetbalance(all)_20261106_155900.csv", "modifiedTime": "2026-11-06T14:00:00Z"}),
+        (new, {"name": "assetbalance(all)_20261106_225114.csv", "modifiedTime": "2026-11-06T13:00:00Z"}),
+    ])
+    summary = result["inputs"]["account_summary"]
+    assert summary["source_file"] == "assetbalance(all)_20261106_225114.csv"
+    assert summary["total_assets_jpy"] == 19000000
