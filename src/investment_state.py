@@ -100,6 +100,8 @@ def build_investment_state(
             "count": len(open_orders) if orders_verified else None,
             "items": open_orders,
             "source_status": "VERIFIED" if orders_verified else "UNVERIFIED",
+            "scope": "domestic_cash_equities_only" if orders_verified else "unverified",
+            "account_wide_complete": False,
         },
         "market_regime": {
             "label": regime.get("regime_label"),
