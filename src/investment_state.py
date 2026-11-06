@@ -6,6 +6,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from private_data_coherence import classify_private_inputs
+
 
 SCHEMA_VERSION = "1.0"
 
@@ -48,6 +50,7 @@ def build_investment_state(
     decision_context_path: str | Path = "data/decision_context_latest.json",
     watchlist_path: str | Path = "config/watchlist_master.csv",
 ) -> dict:
+    coherence = classify_private_inputs(portfolio_manifest, account_inputs)
     inputs = account_inputs.get("inputs") or {}
     account = inputs.get("account_summary") or {}
     buying = inputs.get("buying_power") or {}
@@ -62,8 +65,13 @@ def build_investment_state(
             open_orders.append(item)
 
     cash = buying.get("cash_buying_power_jpy")
-    if cash is None:
+    if cash is None and coherence["inputs"]["account_summary"]["status"] == "VERIFIED":
         cash = account.get("cash_deposit_jpy")
+    if coherence["inputs"]["buying_power"]["status"] != "VERIFIED":
+        cash = account.get("cash_deposit_jpy") if coherence["inputs"]["account_summary"]["status"] == "VERIFIED" else None
+
+    if coherence["inputs"]["orders"]["status"] != "VERIFIED":
+        open_orders = []
 
     state = {
         "schema_version": SCHEMA_VERSION,
@@ -83,7 +91,7 @@ def build_investment_state(
         "open_orders": {
             "count": len(open_orders),
             "items": open_orders,
-            "source_status": inputs.get("orders", {}).get("data_status", "missing") if inputs.get("orders") else "missing",
+            "source_status": coherence["inputs"]["orders"]["status"],
         },
         "market_regime": {
             "label": regime.get("regime_label"),
@@ -100,6 +108,7 @@ def build_investment_state(
         },
         "quality": {
             "account_input_status": account_inputs.get("status"),
+            "data_coherence": coherence,
             "missing_input_types": account_inputs.get("missing_input_types") or [],
             "stale_input_types": account_inputs.get("stale_input_types") or [],
             "rule": "Shared state is context only; it never places, changes, or cancels orders.",
