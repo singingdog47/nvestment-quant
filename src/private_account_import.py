@@ -174,7 +174,7 @@ def parse_orders_pdf(path: str | Path) -> dict:
     text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
     if "注文照会" not in text or "注文一覧" not in text:
         raise ValueError("Not a Rakuten order inquiry PDF")
-    count_match = re.search(r"(\\d+)件中\\d+～\\d+件表示", text)
+    count_match = re.search(r"(\d+)件中\d+～\d+件表示", text)
     if not count_match:
         raise ValueError("Order count or pagination not recognized")
     total = int(count_match.group(1))
@@ -184,9 +184,9 @@ def parse_orders_pdf(path: str | Path) -> dict:
         # PDFs may wrap a single order over multiple lines. We only accept
         # records whose order ID, status and security code are all present.
         rows = re.findall(
-            r"(?m)^\\s*(\\d{3,})\\s+(約定|取消済|失効|執行中|待機中|受付済|未約定|一部約定)\\s+"
-            r"(\\d{2}/\\d{2}\\s+\\d{2}:\\d{2}:\\d{2})\\s+([^\\n]+)\\n"
-            r"\\s*(\\d{4})\\s+",
+            r"(?m)^\s*(\d{3,})\s+(約定|取消済|失効|執行中|待機中|受付済|未約定|一部約定)\s+"
+            r"(\d{2}/\d{2}\s+\d{2}:\d{2}:\d{2})\s+([^\n]+)\n"
+            r"\s*(\d{4})\s+",
             text,
         )
         if len(rows) != total:
@@ -197,7 +197,7 @@ def parse_orders_pdf(path: str | Path) -> dict:
             for oid, status, ordered_at, name, code in rows
         ]
     # Require a full year from the printed PDF footer, not the upload time.
-    stamps = re.findall(r"20\\d{2}/\\d{2}/\\d{2}\\s+\\d{2}:\\d{2}", text)
+    stamps = re.findall(r"20\d{2}/\d{2}/\d{2}\s+\d{2}:\d{2}", text)
     if not stamps:
         raise ValueError("Order PDF lacks explicit-year observation timestamp")
     observed = datetime.strptime(stamps[-1], "%Y/%m/%d %H:%M").replace(tzinfo=JST)
