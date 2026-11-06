@@ -1,14 +1,8 @@
 name: AI Shadow Challenger v1 (paper only)
 
+# Frozen at user request on 2026-11-06; no automatic or manual execution.
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - Investment Quant Post-Close Pipeline v2.13
-    types: [completed]
-    branches: [main]
-  schedule:
-    - cron: '15 14 * * 1-5' # 23:15 JST fallback when post-close pipeline is delayed
 
 permissions:
   contents: write
