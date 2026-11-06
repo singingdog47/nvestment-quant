@@ -147,7 +147,7 @@ def test_orders_pdf_parses_filled_order_and_explicit_year(tmp_path, monkeypatch)
 
     class Page:
         def extract_text(self):
-            return ("国内株式取引 注文照会 注文一覧\n"
+            return ("国内株式取引 注文照会 注文一覧 注文状況 すべての注文 注文種類 現物のみ\n"
                     "1件中1～1件表示\n"
                     "5391 約定 11/06 10:11:30 商船三井\n"
                     "9104 東証(SOR)\n"
@@ -172,7 +172,7 @@ def test_orders_pdf_rejects_incomplete_order_rows(tmp_path, monkeypatch):
 
     class Page:
         def extract_text(self):
-            return "注文照会 注文一覧\n1件中1～1件表示\n2026/11/06 22:45"
+            return "注文照会 注文一覧 注文状況 すべての注文 注文種類 現物のみ\n1件中1～1件表示\n2026/11/06 22:45"
 
     class Reader:
         def __init__(self, path):
@@ -197,7 +197,7 @@ def test_orders_pdf_real_layout_wrapped_headers_and_footer(tmp_path, monkeypatch
     class Reader:
         def __init__(self, path):
             self.pages = [
-                Page("注文照会\n注文一覧\n11/06 22:45\n1件中1～1件表示\n"
+                Page("注文照会\n注文一覧\n注文状況 すべての注文\n注文種類 現物のみ\n11/06 22:45\n1件中1～1件表示\n"
                      "注文\n番号\n(ｱﾙｺﾞ)\n状況 注文日時\n"
                      "5391 約定 11/06 10:11:30 商船三井\n"
                      "9104 東証(SOR)\n現物 売付\n100 成行 657,820\n"
@@ -291,7 +291,7 @@ def test_orders_pdf_rejects_partial_pagination(tmp_path, monkeypatch):
 
     class Page:
         def extract_text(self):
-            return ("注文照会 注文一覧\n2件中1～1件表示\n"
+            return ("注文照会 注文一覧 注文状況 すべての注文 注文種類 現物のみ\n2件中1～1件表示\n"
                     "5391 約定 11/06 10:11:30 商船三井\n"
                     "9104 東証(SOR)\n2026/11/06 22:45\n")
 
