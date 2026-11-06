@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-06T02:30:11.129528+00:00",
+  "generated_at_utc": "2026-11-06T20:04:16.881916+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
   "incident_signature": "1421ca75e324c248",
@@ -40,13 +40,13 @@
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-07",
       "blockers": [],
       "mode": null
     },
     "pipeline": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-05"
+      "as_of_date": "2026-11-06"
     },
     "shadow_v2": {
       "status": "ARCHIVED",
