@@ -65,8 +65,10 @@ def test_yearless_pdf_date_requires_verification():
 def test_shared_state_withholds_stale_cash_and_unknown_order_count(tmp_path):
     from src.investment_state import build_investment_state
 
-    manifest = dict(PF)
-    stale = inputs()
+    from datetime import timedelta
+    current = datetime.now(timezone.utc)
+    manifest = {"source_as_of": current.isoformat(), "source_as_of_method": "filename_embedded_export_time"}
+    stale = inputs(as_of=current.isoformat())
     stale["inputs"]["account_summary"].update({
         "cash_deposit_jpy": 300000, "total_assets_jpy": 2000000
     })
@@ -74,7 +76,7 @@ def test_shared_state_withholds_stale_cash_and_unknown_order_count(tmp_path):
         "cash_buying_power_jpy": 1000000, "data_status": "stale"
     })
     stale["inputs"]["orders"].update({
-        "source_as_of": "2026-11-04T15:00:00+09:00",
+        "source_as_of": (current - timedelta(days=2)).isoformat(),
         "items": [{"status": "執行中", "code": "1234"}]
     })
     state = build_investment_state(
