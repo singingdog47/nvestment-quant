@@ -174,10 +174,13 @@ def parse_orders_pdf(path: str | Path) -> dict:
     text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
     if "注文照会" not in text or "注文一覧" not in text:
         raise ValueError("Not a Rakuten order inquiry PDF")
-    count_match = re.search(r"(\d+)件中\d+～\d+件表示", text)
+    count_match = re.search(r"(\d+)件中(\d+)～(\d+)件表示", text)
     if not count_match:
         raise ValueError("Order count or pagination not recognized")
-    total = int(count_match.group(1))
+    total, first, last = map(int, count_match.groups())
+    # A filtered or partial page must never be mistaken for all account orders.
+    if total > 0 and (first != 1 or last != total):
+        raise ValueError("Order PDF pagination incomplete")
     if total == 0:
         items = []
     else:
