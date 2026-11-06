@@ -181,7 +181,7 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
             selected[kind] = {
                 "source_file": meta.get("name"), "source_modified_time": meta.get("modifiedTime"),
                 "source_as_of": as_of, "source_as_of_method": method, "age_days": age_days,
-                "data_status": "stale" if age_days is not None and age_days > max_age_days else "ok", **parsed,
+                **parsed, "data_status": "stale" if age_days is not None and age_days > max_age_days else "ok",
             }
     missing = [x for x in ("account_summary", "orders", "buying_power") if x not in selected]
     stale = [kind for kind, item in selected.items() if item.get("data_status") == "stale"]
