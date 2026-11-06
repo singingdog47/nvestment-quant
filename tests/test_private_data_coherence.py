@@ -232,3 +232,25 @@ def test_account_summary_prefers_export_time_over_later_upload(tmp_path):
     summary = result["inputs"]["account_summary"]
     assert summary["source_file"] == "assetbalance(all)_20261106_225114.csv"
     assert summary["total_assets_jpy"] == 19000000
+
+
+def test_account_summary_compares_offsets_as_instants(tmp_path, monkeypatch):
+    from src import run_portfolio_risk as runner
+
+    def fake_summary(raw):
+        return {"total_assets_jpy": float(raw.decode()), "invested_assets_jpy": 100.0}
+
+    monkeypatch.setattr(runner, "parse_account_summary_bytes", fake_summary)
+    a = tmp_path / "a.csv"
+    b = tmp_path / "b.csv"
+    a.write_bytes(b"1")
+    b.write_bytes(b"2")
+    monkeypatch.setattr(runner, "source_as_of", lambda name, modified: (
+        "2026-11-06T22:00:00+09:00" if name == "a.csv" else "2026-11-06T14:00:00+00:00",
+        "filename_embedded_export_time",
+    ))
+    result = runner._build_latest_account_inputs(tmp_path, [
+        (a, {"name": "a.csv"}), (b, {"name": "b.csv"}),
+    ])
+    assert result["inputs"]["account_summary"]["total_assets_jpy"] == 2.0
+    assert result["selection_policy"] == "verified_brokerage_observation_time_then_fallback"
