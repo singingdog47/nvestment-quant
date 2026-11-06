@@ -69,8 +69,11 @@ def build_investment_state(
         cash = account.get("cash_deposit_jpy")
     if coherence["inputs"]["buying_power"]["status"] != "VERIFIED":
         cash = account.get("cash_deposit_jpy") if coherence["inputs"]["account_summary"]["status"] == "VERIFIED" else None
+    if coherence["portfolio_reasons"]:
+        cash = None
 
-    if coherence["inputs"]["orders"]["status"] != "VERIFIED":
+    orders_verified = coherence["inputs"]["orders"]["status"] == "VERIFIED" and not coherence["portfolio_reasons"]
+    if not orders_verified:
         open_orders = []
 
     state = {
@@ -89,9 +92,9 @@ def build_investment_state(
             "absolute_defense_cash_jpy": (decision.get("policy_guardrails") or {}).get("absolute_defense_cash_jpy"),
         },
         "open_orders": {
-            "count": len(open_orders),
+            "count": len(open_orders) if orders_verified else None,
             "items": open_orders,
-            "source_status": coherence["inputs"]["orders"]["status"],
+            "source_status": "VERIFIED" if orders_verified else "UNVERIFIED",
         },
         "market_regime": {
             "label": regime.get("regime_label"),
