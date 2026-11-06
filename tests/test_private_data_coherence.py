@@ -323,3 +323,22 @@ def test_orders_pdf_rejects_filtered_status(tmp_path, monkeypatch):
     monkeypatch.setattr(pypdf, "PdfReader", Reader)
     with pytest.raises(ValueError, match="status filter"):
         parse_orders_pdf(tmp_path / "orders.pdf")
+
+
+def test_unknown_timestamp_provenance_fails_closed():
+    from datetime import datetime, timezone
+    from src.private_data_coherence import classify_private_inputs
+
+    timestamp = "2026-11-06T22:00:00+09:00"
+    now = datetime(2026, 11, 6, 14, 0, tzinfo=timezone.utc)
+    inputs = {"inputs": {
+        kind: {"source_as_of": timestamp,
+               "source_as_of_method": "unrecognized_source"}
+        for kind in ("account_summary", "orders", "buying_power")
+    }}
+    manifest = {"source_as_of": timestamp,
+                "source_as_of_method": "unrecognized_source"}
+    verdict = classify_private_inputs(manifest, inputs, now=now)
+    assert verdict["decision_safe"] is False
+    assert "PORTFOLIO_TIMESTAMP_UNVERIFIED" in verdict["portfolio_reasons"]
+    assert all(v["status"] == "UNVERIFIED" for v in verdict["inputs"].values())
