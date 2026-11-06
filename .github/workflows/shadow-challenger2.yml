@@ -1,14 +1,8 @@
 name: AI Shadow Challenger 2 (5m paper parallel)
 
+# Frozen at user request on 2026-11-06; no automatic or manual execution.
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - Investment Quant Post-Close Pipeline v2.13
-    types: [completed]
-    branches: [main]
-  schedule:
-    - cron: '25 14 * * 1-5' # 23:25 JST fallback; separate from Challenger v1
 
 permissions:
   contents: write
