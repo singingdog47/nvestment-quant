@@ -1,14 +1,8 @@
 name: AI / M&A Restructuring Shadow Research v1
 
+# Frozen at user request on 2026-11-06; no automatic or manual execution.
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - Investment Quant Post-Close Pipeline v2.13
-    types: [completed]
-    branches: [main]
-  schedule:
-    - cron: '55 12 * * 1-5' # 21:55 JST fallback
 
 permissions:
   contents: write
