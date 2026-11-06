@@ -256,3 +256,29 @@ def test_account_summary_compares_offsets_as_instants(tmp_path, monkeypatch):
     ])
     assert result["inputs"]["account_summary"]["total_assets_jpy"] == 2.0
     assert result["selection_policy"] == "verified_brokerage_observation_time_then_fallback"
+
+
+def test_shared_state_hides_unverified_account_values(tmp_path):
+    from src.investment_state import build_investment_state
+
+    account_inputs = {"status": "partial", "inputs": {
+        "account_summary": {
+            "total_assets_jpy": 99999999,
+            "invested_assets_jpy": 88888888,
+            "daily_change_jpy": -12345,
+            "daily_change_pct": -1.2,
+            "source_as_of": "2026-11-01T10:00:00+09:00",
+            "source_as_of_method": "filename_embedded_export_time",
+        }
+    }}
+    manifest = {"source_as_of": "2026-11-06T22:51:14+09:00",
+                "source_as_of_method": "filename_embedded_export_time"}
+    state = build_investment_state(
+        account_inputs, manifest, {},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv",
+    )
+    assert all(value is None for value in state["portfolio"].values())
+    assert state["capital"]["deployable_cash_jpy"] is None
+    assert state["open_orders"]["count"] is None
+    assert state["quality"]["data_coherence"]["decision_safe"] is False
