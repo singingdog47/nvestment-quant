@@ -194,13 +194,23 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
             if previous is None or (trustworthy and not previous_trustworthy):
                 selected[kind] = candidate
             elif trustworthy == previous_trustworthy:
-                if (as_of or "") > (previous.get("source_as_of") or ""):
+                # ISO strings with different offsets cannot be sorted lexically.
+                def observed_utc(item):
+                    try:
+                        dt = datetime.fromisoformat(str(item.get("source_as_of") or "").replace("Z", "+00:00"))
+                        return dt.astimezone(timezone.utc) if dt.tzinfo else None
+                    except ValueError:
+                        return None
+
+                current_time = observed_utc(candidate)
+                previous_time = observed_utc(previous)
+                if current_time is not None and (previous_time is None or current_time > previous_time):
                     selected[kind] = candidate
     missing = [x for x in ("account_summary", "orders", "buying_power") if x not in selected]
     stale = [kind for kind, item in selected.items() if item.get("data_status") == "stale"]
     snapshot = {
         "status": "ok" if not missing and not stale else "partial",
-        "selection_policy": "newest_parseable_file_by_drive_modified_time",
+        "selection_policy": "verified_brokerage_observation_time_then_fallback",
         "inputs": selected,
         "missing_input_types": missing,
         "stale_input_types": stale,
