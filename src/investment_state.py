@@ -64,13 +64,15 @@ def build_investment_state(
         if any(token in status for token in ("執行中", "待機中", "受付済", "未約定")):
             open_orders.append(item)
 
-    cash = buying.get("cash_buying_power_jpy")
-    if cash is None and coherence["inputs"]["account_summary"]["status"] == "VERIFIED":
-        cash = account.get("cash_deposit_jpy")
-    if coherence["inputs"]["buying_power"]["status"] != "VERIFIED":
-        cash = account.get("cash_deposit_jpy") if coherence["inputs"]["account_summary"]["status"] == "VERIFIED" else None
-    if coherence["portfolio_reasons"]:
-        cash = None
+    # Brokerage buying power and account cash balance are different concepts.
+    # Never promote a cash balance to executable buying power when its source
+    # is missing, stale, or not independently verified.
+    cash = (
+        buying.get("cash_buying_power_jpy")
+        if coherence["inputs"]["buying_power"]["status"] == "VERIFIED"
+        and not coherence["portfolio_reasons"]
+        else None
+    )
 
     orders_verified = coherence["inputs"]["orders"]["status"] == "VERIFIED" and not coherence["portfolio_reasons"]
     if not orders_verified:
