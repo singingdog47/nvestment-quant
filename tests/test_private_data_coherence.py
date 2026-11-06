@@ -363,3 +363,22 @@ def test_buying_power_pdf_uses_explicit_footer_year(tmp_path, monkeypatch):
     assert parsed["cash_buying_power_jpy"] == 2863480
     assert parsed["source_as_of"] == "2026-11-06T22:46:00+09:00"
     assert parsed["source_as_of_method"] == "pdf_footer_explicit_year"
+
+
+def test_buying_power_pdf_rejects_conflicting_footer_dates(tmp_path, monkeypatch):
+    import pypdf
+    import pytest
+    from src.private_account_import import parse_buying_power_pdf
+
+    class Page:
+        def extract_text(self):
+            return ("現物買付可能額 2,863,480 円\n"
+                    "2026/11/06 22:46\n2026/11/05 22:46\n")
+
+    class Reader:
+        def __init__(self, path):
+            self.pages = [Page()]
+
+    monkeypatch.setattr(pypdf, "PdfReader", Reader)
+    with pytest.raises(ValueError, match="Conflicting PDF footer timestamps"):
+        parse_buying_power_pdf(tmp_path / "buying.pdf")
