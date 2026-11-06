@@ -1,14 +1,8 @@
 name: AI Shadow Challenger 1 5m (independent paper fork)
 
+# Frozen at user request on 2026-11-06; no automatic or manual execution.
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - Investment Quant Post-Close Pipeline v2.13
-    types: [completed]
-    branches: [main]
-  schedule:
-    - cron: '35 14 * * 1-5' # 23:35 JST fallback; 11/3 JPX holiday is guarded in runner
 
 permissions:
   contents: write
