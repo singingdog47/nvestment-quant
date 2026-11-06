@@ -84,7 +84,7 @@ def test_shared_state_withholds_stale_cash_and_unknown_order_count(tmp_path):
         decision_context_path=tmp_path / "missing_decision.json",
         watchlist_path=tmp_path / "missing_watchlist.csv",
     )
-    assert state["capital"]["deployable_cash_jpy"] == 300000
+    assert state["capital"]["deployable_cash_jpy"] is None
     assert state["open_orders"]["count"] is None
     assert state["open_orders"]["source_status"] == "UNVERIFIED"
     assert state["quality"]["data_coherence"]["decision_safe"] is False
@@ -103,3 +103,19 @@ def test_shared_state_withholds_capital_if_pf_time_unverified(tmp_path):
     )
     assert state["capital"]["deployable_cash_jpy"] is None
     assert state["open_orders"]["count"] is None
+
+
+def test_verified_account_cash_cannot_replace_missing_buying_power(tmp_path):
+    from src.investment_state import build_investment_state
+
+    current = datetime.now(timezone.utc)
+    manifest = {"source_as_of": current.isoformat(), "source_as_of_method": "filename_embedded_export_time"}
+    values = inputs(as_of=current.isoformat())
+    values["inputs"]["account_summary"]["cash_deposit_jpy"] = 967191
+    values["inputs"]["buying_power"]["cash_buying_power_jpy"] = None
+    state = build_investment_state(
+        values, manifest, {},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv",
+    )
+    assert state["capital"]["deployable_cash_jpy"] is None
