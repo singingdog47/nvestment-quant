@@ -147,11 +147,11 @@ def test_orders_pdf_parses_filled_order_and_explicit_year(tmp_path, monkeypatch)
 
     class Page:
         def extract_text(self):
-            return ("国内株式取引 注文照会 注文一覧\\n"
-                    "1件中1～1件表示\\n"
-                    "5391 約定 11/06 10:11:30 商船三井\\n"
-                    "9104 東証(SOR)\\n"
-                    "2026/11/06 22:45\\n")
+            return ("国内株式取引 注文照会 注文一覧\n"
+                    "1件中1～1件表示\n"
+                    "5391 約定 11/06 10:11:30 商船三井\n"
+                    "9104 東証(SOR)\n"
+                    "2026/11/06 22:45\n")
 
     class Reader:
         def __init__(self, path):
@@ -172,7 +172,7 @@ def test_orders_pdf_rejects_incomplete_order_rows(tmp_path, monkeypatch):
 
     class Page:
         def extract_text(self):
-            return "注文照会 注文一覧\\n1件中1～1件表示\\n2026/11/06 22:45"
+            return "注文照会 注文一覧\n1件中1～1件表示\n2026/11/06 22:45"
 
     class Reader:
         def __init__(self, path):
