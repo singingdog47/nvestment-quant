@@ -181,3 +181,36 @@ def test_orders_pdf_rejects_incomplete_order_rows(tmp_path, monkeypatch):
     monkeypatch.setattr(pypdf, "PdfReader", Reader)
     with pytest.raises(ValueError, match="incomplete"):
         parse_orders_pdf(tmp_path / "orders.pdf")
+
+
+def test_orders_pdf_real_layout_wrapped_headers_and_footer(tmp_path, monkeypatch):
+    """Synthetic values, layout modeled on the Rakuten two-page inquiry PDF."""
+    import pypdf
+    from src.private_account_import import parse_orders_pdf
+
+    class Page:
+        def __init__(self, value):
+            self.value = value
+        def extract_text(self):
+            return self.value
+
+    class Reader:
+        def __init__(self, path):
+            self.pages = [
+                Page("注文照会\\n注文一覧\\n11/06 22:45\\n1件中1～1件表示\\n"
+                     "注文\\n番号\\n(ｱﾙｺﾞ)\\n状況 注文日時\\n"
+                     "5391 約定 11/06 10:11:30 商船三井\\n"
+                     "9104 東証(SOR)\\n現物 売付\\n100 成行 657,820\\n"
+                     "市場執行済 本日中 特定 100 6,578.2 0\\n"
+                     "詳細 2026/11/06 通常注文 - 6,516.0\\n"
+                     "2026/11/06 22:45\\n1 / 2 ページ"),
+                Page("国内株式取引 注文照会・訂正・取消\\n2026/11/06 22:45\\n2 / 2 ページ"),
+            ]
+
+    monkeypatch.setattr(pypdf, "PdfReader", Reader)
+    result = parse_orders_pdf(tmp_path / "orders.pdf")
+    assert result["orders_count"] == 1
+    assert result["open_orders_count"] == 0
+    assert result["items"][0]["order_id"] == "5391"
+    assert result["items"][0]["code"] == "9104"
+    assert result["source_as_of"] == "2026-11-06T22:45:00+09:00"
