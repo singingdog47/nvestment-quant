@@ -16,6 +16,7 @@ from private_account_import import (
     parse_account_summary_bytes,
     parse_buying_power_pdf,
     parse_orders_bytes,
+    parse_orders_pdf,
     source_as_of,
 )
 from private_drive import (
@@ -155,7 +156,7 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
     errors: list[dict] = []
     parsers = (
         ("account_summary", lambda p: parse_account_summary_bytes(p.read_bytes())),
-        ("orders", lambda p: parse_orders_bytes(p.read_bytes())),
+        ("orders", lambda p: parse_orders_pdf(p) if p.suffix.lower() == ".pdf" else parse_orders_bytes(p.read_bytes())),
         ("buying_power", parse_buying_power_pdf),
     )
     for path, meta in candidates:
@@ -170,6 +171,8 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
             as_of, method = source_as_of(meta.get("name"), meta.get("modifiedTime"))
             if kind == "buying_power" and parsed.get("source_as_of"):
                 as_of, method = parsed["source_as_of"], "pdf_embedded_timestamp_inferred_year"
+            elif kind == "orders" and parsed.get("source_as_of_method") == "pdf_footer_explicit_year":
+                as_of, method = parsed["source_as_of"], parsed["source_as_of_method"]
             age_days = None
             if as_of and len(str(as_of)) > 10:
                 try:
