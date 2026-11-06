@@ -169,7 +169,7 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
                 continue
             as_of, method = source_as_of(meta.get("name"), meta.get("modifiedTime"))
             if kind == "buying_power" and parsed.get("source_as_of"):
-                as_of, method = parsed["source_as_of"], "pdf_embedded_timestamp"
+                as_of, method = parsed["source_as_of"], "pdf_embedded_timestamp_inferred_year"
             age_days = None
             if as_of and len(str(as_of)) > 10:
                 try:
