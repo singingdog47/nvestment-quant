@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   research-paper:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: ${{ false }} # Frozen; do not execute even on manual dispatch
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
