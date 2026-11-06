@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-11-06T02:29:54+00:00
+Generated (UTC): 2026-11-06T15:06:41+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=89.9%, float turnover=3.0%, volume ratio=1.8567397289466177)
-- [US] Financial Institutions, Inc. - Common Stock: SHORT_CROWDING (float=87.8%, float turnover=0.8%, volume ratio=0.8564948858868621)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.2%, volume ratio=0.9368258622019906)
-- [US] TORM plc - Class A Common Stock: SHORT_INTEREST_FALLING|VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=80.0%, float turnover=1.9%, volume ratio=1.5333764371855059)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=95.2%, float turnover=1.0%, volume ratio=1.3962502010642346)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.4%, float turnover=0.9%, volume ratio=0.9761045060912961)
-- [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.6%, float turnover=1.2%, volume ratio=0.5870632799711254)
-- [US] LTC Properties, Inc. Common Stock: VOLUME_EXPANSION (float=97.9%, float turnover=1.1%, volume ratio=2.3641616406100985)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.4%, float turnover=2.6%, volume ratio=0.9922908606830967)
-- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_INTEREST_RISING (float=99.3%, float turnover=1.5%, volume ratio=0.9061711425496324)
+- [JP] 信越化学工業: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=100.0%, float turnover=0.4%, volume ratio=1.5761219177306105)
+- [JP] KDDI: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=80.9%, float turnover=0.3%, volume ratio=1.7090277795023125)
+- [JP] NEC: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=95.1%, float turnover=0.5%, volume ratio=1.524865671390561)
+- [JP] 浜松ホトニクス: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=97.1%, float turnover=0.8%, volume ratio=2.3616938208702503)
+- [JP] ライフドリンク カンパニー: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=73.1%, float turnover=1.7%, volume ratio=1.6506683553192556)
+- [JP] FOOD & LIFE COMPANIES: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=96.7%, float turnover=1.2%, volume ratio=3.4099194943912474)
+- [US] Financial Institutions, Inc. - Common Stock: SHORT_CROWDING (float=87.8%, float turnover=0.8%, volume ratio=0.0505465103905383)
+- [JP] Strike Group Co.,Ltd.: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=57.5%, float turnover=1.4%, volume ratio=2.1221032671622506)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.2%, volume ratio=0.02548568959082248)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=3.1%, volume ratio=0.2468660593369056)
 
 ## Governance
 

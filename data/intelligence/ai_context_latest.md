@@ -1,17 +1,17 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.847** / actionable=True
+Generated quality score: **0.838** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-06T02:28:50+00:00",
-  "generated_at_utc": "2026-11-06T02:28:50+00:00",
-  "date_jst": "2026-11-06",
+  "generated_at": "2026-11-06T15:05:39+00:00",
+  "generated_at_utc": "2026-11-06T15:05:39+00:00",
+  "date_jst": "2026-11-07",
   "data_status": "ok",
-  "regime_label": "NEUTRAL",
-  "regime_score": 43.81,
+  "regime_label": "DEFENSIVE",
+  "regime_score": 39.99,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,33 +23,35 @@ Generated quality score: **0.847** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": false,
+  "thin_liquidity_flag": true,
   "treasury_volatility_shock_flag": false,
   "sq_execution_caution_flag": false,
-  "regime_flags": [],
+  "regime_flags": [
+    "THIN_LIQUIDITY"
+  ],
   "components": {
-    "trend": 6.3219618762668786,
-    "stress": 66.53499977111817,
-    "participation": 42.26190476190476,
-    "liquidity": 72.08053244143119,
+    "trend": 14.329012778078585,
+    "stress": 69.2774993133545,
+    "participation": 36.01548059149723,
+    "liquidity": 34.39061567991211,
     "positioning": 60.106090833359694
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 28.18000030517578,
+    "vix": 24.290000915527344,
     "hy_oas": 3.32,
-    "ig_oas": 0.91,
+    "ig_oas": 0.93,
     "treasury_volatility_proxy": 85.159,
     "treasury_volatility_percentile_rank": 0.8532,
     "treasury_volatility_stress_score": 36.01,
     "treasury_volatility_as_of_date": "2026-11-05",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
-    "breadth_n": 9541,
+    "breadth_n": 9540,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-11-05T15:29:51.899012+00:00",
+    "breadth_source_as_of_utc": "2026-11-06T15:05:36.552022+00:00",
     "nfci": -0.459,
-    "volume_ratio20_mean": 1.4852018094724209,
+    "volume_ratio20_mean": 0.5294403919978029,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -69,8 +71,8 @@ Generated quality score: **0.847** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-11-05",
-    "jpx_official_turnover_million_jpy": 12709314.0,
+    "jpx_official_turnover_date": "2026-11-06",
+    "jpx_official_turnover_million_jpy": 13722985.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
@@ -78,9 +80,9 @@ Generated quality score: **0.847** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-11-06",
+      "as_of_date": "2026-11-07",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 35,
+      "days_to_sq": 34,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -92,7 +94,7 @@ Generated quality score: **0.847** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 57633.96875,
+        "spot": 61077.8984375,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -132,11 +134,11 @@ Generated quality score: **0.847** / actionable=True
 
 ## Policy guardrails
 {
-  "regime_label": "neutral",
+  "regime_label": "defensive",
   "absolute_defense_cash_jpy": 500000,
   "cash_target_range": [
-    0.08,
-    0.12
+    0.15,
+    0.18
   ],
   "max_single_stock_weight": 0.05,
   "lifestyle_bucket_max_weight": 0.05,
@@ -148,7 +150,7 @@ Generated quality score: **0.847** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-11-06T02:29:53+00:00",
+  "generated_at": "2026-11-06T15:06:40+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -192,7 +194,7 @@ Generated quality score: **0.847** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=6 / tier=primary
+- EDINET: ok / records=12 / tier=primary
 - SEC: ok / records=38 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
 - NewsRSS: ok / records=56 / tier=secondary
@@ -201,7 +203,7 @@ Generated quality score: **0.847** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-11-05T15:29:51.899012+00:00
+- Data retrieved (UTC): 2026-11-06T15:05:36.552022+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -227,8 +229,8 @@ Generated quality score: **0.847** / actionable=True
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 4 |
-| JP | Other | 16 |
+| JP | Financials | 5 |
+| JP | Other | 15 |
 | US | Financials | 12 |
 | US | Other | 4 |
 | US | Shipping | 4 |
@@ -237,26 +239,26 @@ Generated quality score: **0.847** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 545A.T | Toranvia Co.,Ltd. | Other | 74.6 | 100.0 | unchanged |
-| JP | 2 | 3932.T | Akatsuki Inc. | Other | 73.9 | 99.9 | unchanged |
-| JP | 3 | 6196.T | Strike Group Co.,Ltd. | Other | 73.5 | 99.9 | unchanged |
-| JP | 4 | 6750.T | ELECOM CO.,LTD. | Other | 73.2 | 99.8 | unchanged |
-| JP | 5 | 8622.T | Mito Securities Co.,Ltd. | Financials | 72.9 | 99.8 | unchanged |
-| JP | 6 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 72.0 | 99.7 | unchanged |
-| JP | 7 | 4516.T | Nippon Shinyaku Co.,Ltd. | Other | 71.7 | 99.7 | unchanged |
-| JP | 8 | 4765.T | SBI Global Asset Management Co.,Ltd. | Financials | 71.7 | 99.6 | new_entry |
-| JP | 9 | 5351.T | SHINAGAWA REFRA CO.,LTD. | Other | 71.6 | 99.6 | unchanged |
-| JP | 11 | 2121.T | MIXI,Inc. | Other | 71.6 | 99.5 | unchanged |
-| US | 1 | LTC | LTC Properties, Inc. Common Stock | Other | 85.3 | 100.0 | rank_up |
-| US | 2 | FISI | Financial Institutions, Inc. - Common Stock | Financials | 84.9 | 100.0 | unchanged |
-| US | 3 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 99.9 | unchanged |
-| US | 5 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 83.1 | 99.9 | unchanged |
-| US | 6 | TRMD | TORM plc - Class A Common Stock | Other | 82.7 | 99.8 | unchanged |
-| US | 12 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.4 | 99.7 | unchanged |
-| US | 14 | DHT | DHT Holdings, Inc. | Shipping | 81.0 | 99.6 | unchanged |
-| US | 16 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 80.6 | 99.5 | unchanged |
-| US | 21 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.6 | 99.4 | unchanged |
-| US | 23 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.3 | 99.3 | unchanged |
+| JP | 1 | 545A.T | Toranvia Co.,Ltd. | Other | 75.2 | 100.0 | unchanged |
+| JP | 2 | 6196.T | Strike Group Co.,Ltd. | Other | 73.5 | 99.9 | unchanged |
+| JP | 3 | 3932.T | Akatsuki Inc. | Other | 73.3 | 99.9 | unchanged |
+| JP | 4 | 8622.T | Mito Securities Co.,Ltd. | Financials | 73.1 | 99.8 | unchanged |
+| JP | 5 | 6750.T | ELECOM CO.,LTD. | Other | 73.0 | 99.8 | unchanged |
+| JP | 6 | 3635.T | KOEI TECMO HOLDINGS CO.,LTD. | Other | 71.9 | 99.7 | unchanged |
+| JP | 7 | 4765.T | SBI Global Asset Management Co.,Ltd. | Financials | 71.7 | 99.7 | unchanged |
+| JP | 8 | 2121.T | MIXI,Inc. | Other | 71.7 | 99.6 | unchanged |
+| JP | 10 | 4516.T | Nippon Shinyaku Co.,Ltd. | Other | 71.6 | 99.5 | unchanged |
+| JP | 11 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 71.1 | 99.5 | unchanged |
+| US | 1 | LTC | LTC Properties, Inc. Common Stock | Other | 85.3 | 100.0 | unchanged |
+| US | 2 | FISI | Financial Institutions, Inc. - Common Stock | Financials | 84.6 | 100.0 | unchanged |
+| US | 3 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 83.9 | 99.9 | unchanged |
+| US | 5 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.7 | 99.9 | unchanged |
+| US | 9 | TRMD | TORM plc - Class A Common Stock | Other | 82.2 | 99.8 | unchanged |
+| US | 12 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.3 | 99.7 | unchanged |
+| US | 14 | DHT | DHT Holdings, Inc. | Shipping | 80.8 | 99.6 | unchanged |
+| US | 16 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 80.5 | 99.5 | unchanged |
+| US | 21 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.5 | 99.4 | unchanged |
+| US | 24 | SFNC | Simmons First National Corporation - Common Stock | Other | 79.1 | 99.3 | unchanged |
 
 ## Required manual checks before an order
 
