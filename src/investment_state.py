@@ -78,16 +78,19 @@ def build_investment_state(
     if not orders_verified:
         open_orders = []
 
+    account_verified = (coherence["inputs"]["account_summary"]["status"] == "VERIFIED"
+                        and not coherence["portfolio_reasons"])
+
     state = {
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "privacy": "private",
         "source_as_of": portfolio_manifest.get("source_as_of"),
         "portfolio": {
-            "total_assets_jpy": account.get("total_assets_jpy"),
-            "invested_assets_jpy": account.get("invested_assets_jpy"),
-            "daily_change_jpy": account.get("daily_change_jpy"),
-            "daily_change_pct": account.get("daily_change_pct"),
+            "total_assets_jpy": account.get("total_assets_jpy") if account_verified else None,
+            "invested_assets_jpy": account.get("invested_assets_jpy") if account_verified else None,
+            "daily_change_jpy": account.get("daily_change_jpy") if account_verified else None,
+            "daily_change_pct": account.get("daily_change_pct") if account_verified else None,
         },
         "capital": {
             "deployable_cash_jpy": cash,
