@@ -1,79 +1,57 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-11-05T15:31:14+00:00
+Generated: 2026-11-06T02:29:54+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 12
-- WATCH: 21
+- WARNING: 10
+- WATCH: 12
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [WesBanco, Inc. - Common Stock]: SEC 10-Q filing
-  - New company event detected for WesBanco, Inc. - Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [信越化学工業]: 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for 信越化学工業.
-- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [水戸証券]: 水戸証券[8622]：2026年３月期決算短信〔日本基準〕(非連結) 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for 水戸証券.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [SBI Global Asset Management Co.,Ltd.]: 半期報告書－第30期(2026/04/01－2027/03/31)
-  - New company event detected for SBI Global Asset Management Co.,Ltd..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [SBI Global Asset Management Co.,Ltd.]: 確認書
-  - New company event detected for SBI Global Asset Management Co.,Ltd..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Sompo Holdings,Inc.]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
-  - New company event detected for Sompo Holdings,Inc..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [WesBanco, Inc. - Common Stock]: SEC 8-K filing
-  - New company event detected for WesBanco, Inc. - Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [WesBanco, Inc. - Common Stock]: SEC 8-K filing
-  - New company event detected for WesBanco, Inc. - Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [WesBanco, Inc. - Common Stock]: SEC 8-K filing
-  - New company event detected for WesBanco, Inc. - Common Stock.
-- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [ほくほくフィナンシャルグループ]: ほくほくフィナンシャルグループ[8377]：業績予想および配当予想の修正に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for ほくほくフィナンシャルグループ.
-- **WARNING** COMPANY_EVENT/EVENT_REGULATORY [KDDI]: 「au自転車サポート」の業務委託先に不正アクセス 利用者情報漏えいか（TBS NEWS DIG Powered by JNN） - Yahoo!ニュース
-  - New company event detected for KDDI.
-- **WARNING** COMPANY_EVENT/EVENT_REGULATORY [KDDI]: KDDI、自転車サービスで顧客情報漏洩か 委託先に不正アクセス - 日本経済新聞
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: ＡＮＹＣＯＬＯＲ、「にじさんじ」が韓国の大型イベントに出展 - https://kabu-ir.com/
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [ANYCOLOR]: 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞
   - New company event detected for ANYCOLOR.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: (株)ＦＯＯＤ ＆ ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ【3563】：決算情報 - Yahoo!ファイナンス
-  - New company event detected for FOOD & LIFE COMPANIES.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 「傷は勲章やと思ってる」10年以上使い続ける農家が語る、TORQUEの魅力 - Spark Journal by KDDI
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、AIのトークンコスト最適化ソフトを発売 - ZDNET Japan
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、機密情報を保護しつつAI利用 最適なモデル選択でコストも削減 - 日本経済新聞
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 【バレー】NECレッドロケッツ川崎のエナジー娘、髙橋美鈴が躍動する「前で出る以上は点数を取る役割を果たしたい」 SV女子 - Yahoo!ニュース
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 買い切りOffice付きで13万円台！ Core i7搭載の国内生産ノート、NEC「LAVIE N15 Slim」 - ASCII.jp
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: 「こどもまんなか社会」の実現へ ほくほくフィナンシャルグループが道と連携協定（STVニュース北海道） - Yahoo!ニュース
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [東京海上ホールディングス]: 東京海上ホールディングス[8766]：自己株式の取得状況に関するお知らせ 2026年11月6日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for 東京海上ホールディングス.
+- **WARNING** COMPANY_EVENT/EVENT_DIVIDEND [東京海上ホールディングス]: 東京海上HD(8766)、7期連続の「増配」を発表し、配当利回り3.1％に！ 年間配当は7年で3.2倍に増加、2027年3月期は前期比27円増の｢1株あたり245円｣に - ダイヤモンド・オンライン
+  - New company event detected for 東京海上ホールディングス.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Carter Bankshares, Inc. - Common Stock]: SEC 10-Q filing
+  - New company event detected for Carter Bankshares, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [First Busey Corporation - Common Stock]: SEC 10-Q filing
+  - New company event detected for First Busey Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ZERIA PHARMACEUTICAL CO.,LTD.]: 半期報告書－第73期(2026/04/01－2027/03/31)
+  - New company event detected for ZERIA PHARMACEUTICAL CO.,LTD..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ZERIA PHARMACEUTICAL CO.,LTD.]: 確認書
+  - New company event detected for ZERIA PHARMACEUTICAL CO.,LTD..
+- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [ほくほくフィナンシャルグループ]: ほくほくFG（8377）、グループ設立来の最高益を達成 中期経営計画を上方修正、最終年度に純利益650億円を目指す - ログミーFinance
   - New company event detected for ほくほくフィナンシャルグループ.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 『DEAD OR ALIVE 6 Last Round』 DLC第18弾「みなと”Weekend Mission”セット」配信開始！ - コーエーテクモゲームス
-  - New company event detected for コーエーテクモホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: ライフドリンクカンパニー株価ストップ高 営業益の高進捗評価 - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_REGULATORY [KDDI]: 「au自転車サポート」で顧客情報漏えいの可能性、委託先に不正アクセス（ケータイ Watch） - Yahoo!ニュース
+  - New company event detected for KDDI.
+- **WARNING** COMPANY_EVENT/EVENT_REGULATORY [KDDI]: KDDI「au自転車サポート」で顧客情報漏えいの可能性 委託先 プレステージ・コアソリューションに不正アクセス、対象件数は調査中|セキュリティニュースのセキュリティ対策Lab - 合同会社ロケットボーイズ
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: 全国初のシロアマダイ陸上養殖化へ F&LC、山口県、安藤建設などによるコンソーシアムを設立、共同研究を開始 - PR TIMES
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: ＦＯＯＤ ＆ ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ（Ｆ＆ＬＣ）【3563】｜開示情報｜株探（かぶたん） - 株探
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ドコモ社長、5G基地局がKDDIやソフトバンクより少ない理由を説明 - CNET Japan
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ギークプラス 日通NECロジが棚搬送型ロボ導入 | ロジスティクス | ニュース - Daily Cargo電子版
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 異形の「防衛企業」NECが磨くデュアルユース 勝ち筋はセキュリティー - 日経クロステック Active
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 【バレー】NEC川崎・シルビア・チネロ・ヌワカロール「セットの終盤で自分たちで決めて終わらせるところで決めきれなかった」 SV女子会見（バレーボールマガジン） - Yahoo!ニュース
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくフィナンシャルグループが株式10分割 優待制度も見直し - 日本経済新聞
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: (株)ほくほくフィナンシャルグループ【8377】：決算情報 - Yahoo!ファイナンス
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: Ｌドリンク - 日本経済新聞
   - New company event detected for ライフドリンク カンパニー.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: (株)ライフドリンクカンパニー【2585】：決算情報 - Yahoo!ファイナンス
-  - New company event detected for ライフドリンク カンパニー.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: 三越伊勢丹ホールディングス[3099]：第18回定時株主総会招集ご通知および株主総会資料 2026年5月25日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for 三越伊勢丹ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: 銀座に世界各国のクリスマスアイテムが集う「GINZA クリスマスマーケット 2026」11月11日(水)から銀座三越で開催。 - PR TIMES
-  - New company event detected for 三越伊勢丹ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業、東京エレクトロン…エヌビディア、サムスンが熱視線を送る日本企業の基盤技術 - JBpress
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業、上越市と新潟県に各5000万円寄付 創立100周年で、企業版ふるさと納税活用 - 47NEWS
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: 東京海上ホールディングス[8766]：第24回定時株主総会招集ご通知 2026年5月22日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for 東京海上ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: 東京海上 - 日本経済新聞
-  - New company event detected for 東京海上ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス(株)【6965】：決算情報 - Yahoo!ファイナンス
-  - New company event detected for 浜松ホトニクス.
-- **WATCH** LIQUIDITY/LIQUIDITY_SOFT: Market liquidity is soft
-  - Liquidity component fell below 40/100.
-- **WATCH** VOLATILITY/VIX_JUMP: VIX rose quickly
-  - VIX rose at least 25% from the previous stored observation.
+- **WATCH** COMPANY_EVENT/EVENT_MANAGEMENT [KDDI]: KDDIアイレット、社内のAI活用事例113件を無料公開 営業・人事など50件、プロンプトや時短の工夫も紹介 - Ledge.ai
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_MANAGEMENT [水戸証券]: 水戸証券[8622]：人事異動のお知らせ 2026年10月13日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for 水戸証券.
 - **WATCH** VOLATILITY/VIX_WATCH: VIX requires monitoring
   - VIX exceeded the watch threshold.
 
