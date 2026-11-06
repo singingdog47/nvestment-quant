@@ -174,6 +174,12 @@ def parse_orders_pdf(path: str | Path) -> dict:
     text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
     if "注文照会" not in text or "注文一覧" not in text:
         raise ValueError("Not a Rakuten order inquiry PDF")
+    # Scope is explicit: this PDF covers domestic cash equity orders only.
+    # Reject a narrowed status filter; never infer account-wide order absence.
+    if not re.search(r"注文状況\s*すべての注文", text):
+        raise ValueError("Order PDF status filter is not all orders")
+    if not re.search(r"注文種類\s*現物のみ", text):
+        raise ValueError("Order PDF trade type is not domestic cash only")
     count_match = re.search(r"(\d+)件中(\d+)～(\d+)件表示", text)
     if not count_match:
         raise ValueError("Order count or pagination not recognized")
