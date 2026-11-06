@@ -166,5 +166,52 @@ def parse_buying_power_pdf(path: str | Path) -> dict:
     return {"status": "ok", "source_as_of": timestamp, **values}
 
 
+
+def parse_orders_pdf(path: str | Path) -> dict:
+    """Parse Rakuten domestic cash-order inquiry PDF; fail closed on ambiguity."""
+    from pypdf import PdfReader
+
+    text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+    if "注文照会" not in text or "注文一覧" not in text:
+        raise ValueError("Not a Rakuten order inquiry PDF")
+    count_match = re.search(r"(\\d+)件中\\d+～\\d+件表示", text)
+    if not count_match:
+        raise ValueError("Order count or pagination not recognized")
+    total = int(count_match.group(1))
+    if total == 0:
+        items = []
+    else:
+        # PDFs may wrap a single order over multiple lines. We only accept
+        # records whose order ID, status and security code are all present.
+        rows = re.findall(
+            r"(?m)^\\s*(\\d{3,})\\s+(約定|取消済|失効|執行中|待機中|受付済|未約定|一部約定)\\s+"
+            r"(\\d{2}/\\d{2}\\s+\\d{2}:\\d{2}:\\d{2})\\s+([^\\n]+)\\n"
+            r"\\s*(\\d{4})\\s+",
+            text,
+        )
+        if len(rows) != total:
+            raise ValueError("Order PDF rows incomplete or ambiguous")
+        items = [
+            {"order_id": oid, "status": status, "ordered_at": ordered_at,
+             "name": name.strip(), "code": code}
+            for oid, status, ordered_at, name, code in rows
+        ]
+    # Require a full year from the printed PDF footer, not the upload time.
+    stamps = re.findall(r"20\\d{2}/\\d{2}/\\d{2}\\s+\\d{2}:\\d{2}", text)
+    if not stamps:
+        raise ValueError("Order PDF lacks explicit-year observation timestamp")
+    observed = datetime.strptime(stamps[-1], "%Y/%m/%d %H:%M").replace(tzinfo=JST)
+    return {
+        "status": "ok", "source_as_of": observed.isoformat(),
+        "source_as_of_method": "pdf_footer_explicit_year",
+        "orders_count": total,
+        "open_orders_count": sum(
+            any(t in item["status"] for t in ("執行中", "待機中", "受付済", "未約定", "一部約定"))
+            for item in items
+        ),
+        "items": items,
+    }
+
+
 def source_as_of(name: str | None, modified_time: str | None) -> tuple[str | None, str]:
     return _timestamp_from_name(name, modified_time)
