@@ -168,7 +168,7 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
                 continue
             as_of, method = source_as_of(meta.get("name"), meta.get("modifiedTime"))
             if kind == "buying_power" and parsed.get("source_as_of"):
-                as_of, method = parsed["source_as_of"], "pdf_embedded_timestamp_inferred_year"
+                as_of, method = parsed["source_as_of"], parsed.get("source_as_of_method", "pdf_embedded_timestamp_inferred_year")
             elif kind == "orders" and parsed.get("source_as_of_method") == "pdf_footer_explicit_year":
                 as_of, method = parsed["source_as_of"], parsed["source_as_of_method"]
             age_days = None
