@@ -154,41 +154,8 @@ jobs:
           git pull --rebase
           git push
 
-  dispatch-paper-children-after-recovery:
-    # A pipeline dispatched by the watchdog's GITHUB_TOKEN may not emit
-    # downstream workflow_run events. Explicit workflow_dispatch is allowed.
-    # The child writers are idempotent, isolated, and SHADOW_ONLY.
-    needs: post-close
-    if: ${{ needs.post-close.result == 'success' && github.event_name == 'workflow_dispatch' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      actions: write
-    steps:
-      - name: Checkout completed report from main
-        uses: actions/checkout@v4
-        with:
-          ref: main
-      - name: Check JPX session and post-close report evidence
-        id: gate
-        env:
-          # Script is invoked by path; both src/ and repository root are
-          # required for jpx_market_calendar and tools.* imports.
-          PYTHONPATH: src:.
-        run: python tools/paper_children_dispatch_gate.py
-      - name: Dispatch paper-only children after a recovered pipeline
-        if: steps.gate.outputs.dispatch == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh workflow run shadow-challenger-v1.yml --ref main
-          gh workflow run shadow-challenger1-5m.yml --ref main
-          gh workflow run shadow-challenger2.yml --ref main
-          gh workflow run ai-ma-shadow-v1.yml --ref main
-      - name: Suppress child dispatch outside verified post-close session
-        if: steps.gate.outputs.dispatch != 'true'
-        run: echo "No verified completed JPX session; no paper-child dispatch."
+  # Paper-child dispatch frozen 2026-11-06 at user request.
+  # Main market screening/reporting and fallback remain unchanged.
 
   fallback-public-report:
     needs: post-close
