@@ -1,17 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-06T06:59:24.428932+00:00",
+  "generated_at_utc": "2026-11-06T19:31:36.214902+00:00",
   "risk_level": "CRITICAL",
   "market_decision": "RISK_REDUCTION_REVIEW",
   "risk_drivers": [
     "日経円建て先物(CME)が-5%以下",
-    "NASDAQが-5%以下",
-    "S&P500が-4%以下",
     "日経円建て先物とNASDAQが同時に-3%以下",
     "日経円建て先物(CME)が-3%以下",
     "NASDAQが-3%以下",
-    "S&P500が-2.5%以下",
-    "VIXが25以上",
     "日経円建て先物(CME)が-1.5%以下",
     "NASDAQが-2%以下",
     "S&P500が-1.5%以下",
@@ -29,44 +25,44 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-06T06:48:54+00:00",
-      "age_minutes": 10.5,
-      "price": 57535.0,
+      "as_of_utc": "2026-11-06T19:21:32+00:00",
+      "age_minutes": 10.1,
+      "price": 58215.0,
       "previous_close": 62700.0,
-      "change_pct": -8.238
+      "change_pct": -7.153
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-05T22:15:59+00:00",
-      "age_minutes": 523.4,
-      "price": 24314.998,
-      "previous_close": 26184.72,
-      "change_pct": -7.141
+      "as_of_utc": "2026-11-06T19:31:35+00:00",
+      "age_minutes": 0.0,
+      "price": 24655.703,
+      "previous_close": 25437.0,
+      "change_pct": -3.071
     },
     "SP500": {
       "name": "SP500",
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-05T21:34:08+00:00",
-      "age_minutes": 565.3,
-      "price": 7353.73,
-      "previous_close": 7720.39,
-      "change_pct": -4.749
+      "as_of_utc": "2026-11-06T19:31:34+00:00",
+      "age_minutes": 0.0,
+      "price": 7401.85,
+      "previous_close": 7580.07,
+      "change_pct": -2.351
     },
     "VIX": {
       "name": "VIX",
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-05T21:15:01+00:00",
-      "age_minutes": 584.4,
-      "price": 28.18,
-      "previous_close": 19.42,
-      "change_pct": 45.108
+      "as_of_utc": "2026-11-06T19:16:31+00:00",
+      "age_minutes": 15.1,
+      "price": 24.61,
+      "previous_close": 21.15,
+      "change_pct": 16.359
     }
   },
   "recommended_actions": [
