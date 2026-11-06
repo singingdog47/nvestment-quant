@@ -398,3 +398,21 @@ def test_weekend_rakuten_account_summary_rows():
     assert result["invested_assets_jpy"] == 18134621
     assert result["daily_change_jpy"] == -1851576
     assert result["daily_change_pct"] == -8.61
+
+
+def test_friday_snapshot_cannot_authorize_monday_trading():
+    friday = {"source_as_of": "2026-11-06T22:51:14+09:00",
+              "source_as_of_method": "filename_embedded_export_time"}
+    account = {"inputs": {
+        "account_summary": {"source_as_of": "2026-11-06T22:51:14+09:00",
+                            "source_as_of_method": "filename_embedded_export_time"},
+        "orders": {"source_as_of": "2026-11-06T22:45:00+09:00",
+                   "source_as_of_method": "pdf_footer_explicit_year"},
+        "buying_power": {"source_as_of": "2026-11-06T22:46:00+09:00",
+                         "source_as_of_method": "pdf_footer_explicit_year"},
+    }}
+    monday = datetime.fromisoformat("2026-11-09T09:00:00+09:00")
+    result = classify_private_inputs(friday, account, now=monday)
+    assert result["decision_safe"] is False
+    assert "PORTFOLIO_STALE_OR_FUTURE" in result["portfolio_reasons"]
+    assert result["inputs"]["buying_power"]["status"] == "UNVERIFIED"
