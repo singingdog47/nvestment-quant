@@ -34,7 +34,7 @@ def classify_private_inputs(
     pf_method = str(portfolio_manifest.get("source_as_of_method") or "")
     pf_time = _parse_timestamp(portfolio_manifest.get("source_as_of"))
     reasons: list[str] = []
-    if pf_time is None or pf_method in {"missing", "drive_modified_time_fallback", "write_time_fallback"}:
+    if pf_time is None or pf_method not in {"filename_embedded_export_time", "pdf_footer_explicit_year"}:
         reasons.append("PORTFOLIO_TIMESTAMP_UNVERIFIED")
     elif (now - pf_time).total_seconds() > max_age_hours * 3600 or pf_time > now:
         reasons.append("PORTFOLIO_STALE_OR_FUTURE")
@@ -48,10 +48,8 @@ def classify_private_inputs(
         method = str(item.get("source_as_of_method") or "")
         observed = _parse_timestamp(item.get("source_as_of"))
         issues: list[str] = []
-        if observed is None or method in {"missing", "drive_modified_time_fallback", "write_time_fallback"}:
+        if observed is None or method not in {"filename_embedded_export_time", "pdf_footer_explicit_year"}:
             issues.append("TIMESTAMP_UNVERIFIED")
-        elif method in {"filename_embedded_export_date", "pdf_embedded_timestamp_inferred_year"}:
-            issues.append("DATE_ONLY_TIMESTAMP")
         if item.get("data_status") == "stale":
             issues.append("SOURCE_MARKED_STALE")
         if observed is not None:
