@@ -139,3 +139,45 @@ def test_pdf_inferred_year_provenance_is_not_overwritten(tmp_path, monkeypatch):
         {"source_as_of": "2026-11-06T22:51:14+09:00", "source_as_of_method": "filename_embedded_export_time"},
         result, now=datetime(2026, 11, 6, 14, 0, tzinfo=timezone.utc),
     )["inputs"]["buying_power"]["status"] == "UNVERIFIED"
+
+
+def test_orders_pdf_parses_filled_order_and_explicit_year(tmp_path, monkeypatch):
+    import pypdf
+    from src.private_account_import import parse_orders_pdf
+
+    class Page:
+        def extract_text(self):
+            return ("国内株式取引 注文照会 注文一覧\\n"
+                    "1件中1～1件表示\\n"
+                    "5391 約定 11/06 10:11:30 商船三井\\n"
+                    "9104 東証(SOR)\\n"
+                    "2026/11/06 22:45\\n")
+
+    class Reader:
+        def __init__(self, path):
+            self.pages = [Page()]
+
+    monkeypatch.setattr(pypdf, "PdfReader", Reader)
+    result = parse_orders_pdf(tmp_path / "orders.pdf")
+    assert result["orders_count"] == 1
+    assert result["open_orders_count"] == 0
+    assert result["items"][0]["code"] == "9104"
+    assert result["source_as_of_method"] == "pdf_footer_explicit_year"
+
+
+def test_orders_pdf_rejects_incomplete_order_rows(tmp_path, monkeypatch):
+    import pypdf
+    import pytest
+    from src.private_account_import import parse_orders_pdf
+
+    class Page:
+        def extract_text(self):
+            return "注文照会 注文一覧\\n1件中1～1件表示\\n2026/11/06 22:45"
+
+    class Reader:
+        def __init__(self, path):
+            self.pages = [Page()]
+
+    monkeypatch.setattr(pypdf, "PdfReader", Reader)
+    with pytest.raises(ValueError, match="incomplete"):
+        parse_orders_pdf(tmp_path / "orders.pdf")
