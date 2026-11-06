@@ -119,3 +119,23 @@ def test_verified_account_cash_cannot_replace_missing_buying_power(tmp_path):
         watchlist_path=tmp_path / "missing.csv",
     )
     assert state["capital"]["deployable_cash_jpy"] is None
+
+
+def test_pdf_inferred_year_provenance_is_not_overwritten(tmp_path, monkeypatch):
+    from src import run_portfolio_risk as runner
+
+    pdf = tmp_path / "buying_power.pdf"
+    pdf.write_bytes(b"synthetic")
+    monkeypatch.setattr(runner, "parse_buying_power_pdf", lambda p: {
+        "status": "ok", "source_as_of": "2026-11-06T22:46:00+09:00",
+        "cash_buying_power_jpy": 2863480,
+    })
+    result = runner._build_latest_account_inputs(
+        tmp_path, [(pdf, {"name": "buying_power.pdf", "modifiedTime": "2026-11-06T13:46:50Z"})]
+    )
+    item = result["inputs"]["buying_power"]
+    assert item["source_as_of_method"] == "pdf_embedded_timestamp_inferred_year"
+    assert classify_private_inputs(
+        {"source_as_of": "2026-11-06T22:51:14+09:00", "source_as_of_method": "filename_embedded_export_time"},
+        result, now=datetime(2026, 11, 6, 14, 0, tzinfo=timezone.utc),
+    )["inputs"]["buying_power"]["status"] == "UNVERIFIED"
