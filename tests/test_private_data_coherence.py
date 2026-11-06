@@ -60,3 +60,44 @@ def test_yearless_pdf_date_requires_verification():
     x = inputs(method="pdf_embedded_timestamp_inferred_year")
     # The year is inferred and cannot be considered brokerage-verified.
     assert classify_private_inputs(PF, x, now=NOW)["inputs"]["buying_power"]["status"] == "UNVERIFIED"
+
+
+def test_shared_state_withholds_stale_cash_and_unknown_order_count(tmp_path):
+    from src.investment_state import build_investment_state
+
+    manifest = dict(PF)
+    stale = inputs()
+    stale["inputs"]["account_summary"].update({
+        "cash_deposit_jpy": 300000, "total_assets_jpy": 2000000
+    })
+    stale["inputs"]["buying_power"].update({
+        "cash_buying_power_jpy": 1000000, "data_status": "stale"
+    })
+    stale["inputs"]["orders"].update({
+        "source_as_of": "2026-11-04T15:00:00+09:00",
+        "items": [{"status": "執行中", "code": "1234"}]
+    })
+    state = build_investment_state(
+        stale, manifest, {"status": "ok"},
+        decision_context_path=tmp_path / "missing_decision.json",
+        watchlist_path=tmp_path / "missing_watchlist.csv",
+    )
+    assert state["capital"]["deployable_cash_jpy"] == 300000
+    assert state["open_orders"]["count"] is None
+    assert state["open_orders"]["source_status"] == "UNVERIFIED"
+    assert state["quality"]["data_coherence"]["decision_safe"] is False
+
+
+def test_shared_state_withholds_capital_if_pf_time_unverified(tmp_path):
+    from src.investment_state import build_investment_state
+
+    manifest = {"source_as_of": None, "source_as_of_method": "missing"}
+    values = inputs()
+    values["inputs"]["buying_power"]["cash_buying_power_jpy"] = 1000000
+    state = build_investment_state(
+        values, manifest, {},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv",
+    )
+    assert state["capital"]["deployable_cash_jpy"] is None
+    assert state["open_orders"]["count"] is None
