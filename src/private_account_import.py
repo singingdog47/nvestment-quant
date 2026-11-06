@@ -163,7 +163,13 @@ def parse_buying_power_pdf(path: str | Path) -> dict:
         timestamp = datetime.strptime(
             f"{now.year}/{match.group(1)} {match.group(2)}", "%Y/%m/%d %H:%M"
         ).replace(tzinfo=JST).isoformat()
-    return {"status": "ok", "source_as_of": timestamp, **values}
+    footer = re.findall(r"(20[0-9]{2}/[0-9]{2}/[0-9]{2}) +([0-9]{2}:[0-9]{2})", text)
+    if footer:
+        if len(set(footer)) != 1:
+            raise ValueError("Conflicting PDF footer timestamps")
+        date_part, time_part = footer[0]
+        timestamp = datetime.strptime(date_part + " " + time_part, "%Y/%m/%d %H:%M").replace(tzinfo=JST).isoformat()
+    return {"status": "ok", "source_as_of": timestamp, "source_as_of_method": "pdf_footer_explicit_year" if footer else "pdf_embedded_timestamp_inferred_year", **values}
 
 
 
