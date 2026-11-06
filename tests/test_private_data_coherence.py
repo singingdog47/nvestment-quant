@@ -382,3 +382,19 @@ def test_buying_power_pdf_rejects_conflicting_footer_dates(tmp_path, monkeypatch
     monkeypatch.setattr(pypdf, "PdfReader", Reader)
     with pytest.raises(ValueError, match="Conflicting PDF footer timestamps"):
         parse_buying_power_pdf(tmp_path / "buying.pdf")
+
+
+def test_weekend_rakuten_account_summary_rows():
+    from src.private_account_import import parse_account_summary_bytes
+
+    # Minimal anonymized fixture retaining the November 6 export's row format.
+    raw = (
+        '"資産合計","19,643,918","-1,851,576","-8.61"\n'
+        '"保有商品の評価額合計","18,134,621","-1,665,951","-8.41"\n'
+        '"楽天銀行普通預金残高","2,164,211"\n'
+    ).encode("utf-8")
+    result = parse_account_summary_bytes(raw)
+    assert result["total_assets_jpy"] == 19643918
+    assert result["invested_assets_jpy"] == 18134621
+    assert result["daily_change_jpy"] == -1851576
+    assert result["daily_change_pct"] == -8.61
