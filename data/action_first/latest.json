@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-11-06T06:59:24.428932+00:00",
+  "risk_level": "CRITICAL",
+  "market_decision": "RISK_REDUCTION_REVIEW",
+  "risk_drivers": [
+    "日経円建て先物(CME)が-5%以下",
+    "NASDAQが-5%以下",
+    "S&P500が-4%以下",
+    "日経円建て先物とNASDAQが同時に-3%以下",
+    "日経円建て先物(CME)が-3%以下",
+    "NASDAQが-3%以下",
+    "S&P500が-2.5%以下",
+    "VIXが25以上",
+    "日経円建て先物(CME)が-1.5%以下",
+    "NASDAQが-2%以下",
+    "S&P500が-1.5%以下",
+    "VIXが20以上"
+  ],
+  "verified_feeds": [
+    "NIKKEI_FUT",
+    "NASDAQ",
+    "SP500",
+    "VIX"
+  ],
+  "feeds": {
+    "NIKKEI_FUT": {
+      "name": "NIKKEI_FUT",
+      "ticker": "NIY=F",
+      "source": "Yahoo Finance chart (unofficial, secondary)",
+      "status": "OK",
+      "as_of_utc": "2026-11-06T06:48:54+00:00",
+      "age_minutes": 10.5,
+      "price": 57535.0,
+      "previous_close": 62700.0,
+      "change_pct": -8.238
+    },
+    "NASDAQ": {
+      "name": "NASDAQ",
+      "ticker": "^IXIC",
+      "source": "Yahoo Finance chart (unofficial, secondary)",
+      "status": "OK",
+      "as_of_utc": "2026-11-05T22:15:59+00:00",
+      "age_minutes": 523.4,
+      "price": 24314.998,
+      "previous_close": 26184.72,
+      "change_pct": -7.141
+    },
+    "SP500": {
+      "name": "SP500",
+      "ticker": "^GSPC",
+      "source": "Yahoo Finance chart (unofficial, secondary)",
+      "status": "OK",
+      "as_of_utc": "2026-11-05T21:34:08+00:00",
+      "age_minutes": 565.3,
+      "price": 7353.73,
+      "previous_close": 7720.39,
+      "change_pct": -4.749
+    },
+    "VIX": {
+      "name": "VIX",
+      "ticker": "^VIX",
+      "source": "Yahoo Finance chart (unofficial, secondary)",
+      "status": "OK",
+      "as_of_utc": "2026-11-05T21:15:01+00:00",
+      "age_minutes": 584.4,
+      "price": 28.18,
+      "previous_close": 19.42,
+      "change_pct": 45.108
+    }
+  },
+  "recommended_actions": [
+    "新規買い停止",
+    "既存買い指値の取消を優先審査",
+    "下落に弱い保有銘柄の利益確定・縮小を寄り前に審査",
+    "防衛資金維持"
+  ],
+  "execution": "ADVISORY_ONLY",
+  "private_portfolio_used": false,
+  "limitations": [
+    "No executable orders; private holdings/order status must be checked.",
+    "NIY=F is a CME proxy, not JPX Osaka futures.",
+    "Unofficial secondary quotes may be delayed.",
+    "Automated schedules can be delayed; no realtime delivery guarantee."
+  ]
+}
