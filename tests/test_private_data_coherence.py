@@ -282,3 +282,23 @@ def test_shared_state_hides_unverified_account_values(tmp_path):
     assert state["capital"]["deployable_cash_jpy"] is None
     assert state["open_orders"]["count"] is None
     assert state["quality"]["data_coherence"]["decision_safe"] is False
+
+
+def test_orders_pdf_rejects_partial_pagination(tmp_path, monkeypatch):
+    import pypdf
+    import pytest
+    from src.private_account_import import parse_orders_pdf
+
+    class Page:
+        def extract_text(self):
+            return ("注文照会 注文一覧\\n2件中1～1件表示\\n"
+                    "5391 約定 11/06 10:11:30 商船三井\\n"
+                    "9104 東証(SOR)\\n2026/11/06 22:45\\n")
+
+    class Reader:
+        def __init__(self, path):
+            self.pages = [Page()]
+
+    monkeypatch.setattr(pypdf, "PdfReader", Reader)
+    with pytest.raises(ValueError, match="pagination incomplete"):
+        parse_orders_pdf(tmp_path / "orders.pdf")
