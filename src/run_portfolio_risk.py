@@ -161,8 +161,6 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
     )
     for path, meta in candidates:
         for kind, parser in parsers:
-            if kind in selected:
-                continue
             try:
                 parsed = parser(path)
             except Exception as exc:
@@ -181,12 +179,23 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
                 except ValueError:
                     pass
             max_age_days = float(os.getenv("PRIVATE_INPUT_MAX_AGE_DAYS", "7"))
-            selected[kind] = {
+            candidate = {
                 "source_file": meta.get("name"), "source_modified_time": meta.get("modifiedTime"),
                 **parsed,
                 "source_as_of": as_of, "source_as_of_method": method, "age_days": age_days,
                 "data_status": "stale" if age_days is not None and age_days > max_age_days else "ok",
             }
+            # Select by brokerage observation time, never Drive upload order.
+            # A fallback upload timestamp cannot displace a verified export.
+            trustworthy = method in {"filename_embedded_export_time", "pdf_footer_explicit_year"}
+            previous = selected.get(kind)
+            previous_method = (previous or {}).get("source_as_of_method")
+            previous_trustworthy = previous_method in {"filename_embedded_export_time", "pdf_footer_explicit_year"}
+            if previous is None or (trustworthy and not previous_trustworthy):
+                selected[kind] = candidate
+            elif trustworthy == previous_trustworthy:
+                if (as_of or "") > (previous.get("source_as_of") or ""):
+                    selected[kind] = candidate
     missing = [x for x in ("account_summary", "orders", "buying_power") if x not in selected]
     stale = [kind for kind, item in selected.items() if item.get("data_status") == "stale"]
     snapshot = {
