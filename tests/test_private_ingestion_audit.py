@@ -34,3 +34,32 @@ def test_stale_cash_cannot_satisfy_current_coverage(tmp_path):
     audit = audit_private_snapshot(p, now="2099-01-04T10:00:00+09:00")
     assert "cash_and_settlement" in audit["missing_fresh_scopes"]
     assert audit["stale_or_future_keys"] == ["cash:balance"]
+
+
+def test_fresh_scope_without_content_digest_is_incomplete(tmp_path):
+    p = tmp_path / "facts.jsonl"
+    append_verified_fact(p, key="bank:balance", value=100,
+                         scope="cash_and_settlement",
+                         observed_at="2099-01-02T09:00:00+09:00",
+                         evidence_ref="private:filename-only.csv")
+    audit = audit_private_snapshot(
+        p, now="2099-01-02T10:00:00+09:00",
+        required_scopes=("cash_and_settlement",))
+    assert audit["missing_fresh_scopes"] == []
+    assert audit["scopes_without_content_digest"] == ["cash_and_settlement"]
+    assert "private_source_digest_unverified" in audit["execution_blockers"]
+    assert audit["status"] == "INCOMPLETE"
+
+
+def test_digest_backed_history_still_cannot_authorize_trading(tmp_path):
+    p = tmp_path / "facts.jsonl"
+    append_verified_fact(p, key="bank:balance", value=100,
+                         scope="cash_and_settlement",
+                         observed_at="2099-01-02T09:00:00+09:00",
+                         evidence_ref="private:sha256:" + "a" * 64)
+    audit = audit_private_snapshot(
+        p, now="2099-01-02T10:00:00+09:00",
+        required_scopes=("cash_and_settlement",))
+    assert audit["status"] == "HISTORICAL_COVERAGE_ONLY"
+    assert audit["scopes_without_content_digest"] == []
+    assert audit["execution_ready"] is False
