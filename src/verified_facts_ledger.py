@@ -120,3 +120,23 @@ def read_verified_facts(path: str | Path) -> dict[str, dict]:
             raise FactConflict("Ledger supersedes a nonexistent fact")
         current[row["key"]] = row
     return current
+
+
+def read_verified_history(path: str | Path, *, key: str | None = None) -> list[dict]:
+    """Return immutable observation history, after validating the full ledger.
+
+    Filtering happens only after whole-ledger validation, so a damaged unrelated
+    asset cannot be silently skipped.
+    """
+    p = Path(path)
+    read_verified_facts(p)
+    if not p.exists():
+        return []
+    history = []
+    for line in p.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        row = json.loads(line)
+        if key is None or row["key"] == key:
+            history.append(row)
+    return history
