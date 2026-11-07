@@ -103,7 +103,9 @@ def build_investment_state(
             "daily_change_pct": account.get("daily_change_pct") if account_verified else None,
         },
         "capital": {
-            "deployable_cash_jpy": cash,
+            "deployable_cash_jpy": None,  # buying power is not unrestricted deployable cash
+            "brokerage_cash_buying_power_jpy": cash,
+            "buying_power_is_deployable_cash": False,
             "absolute_defense_cash_jpy": (decision.get("policy_guardrails") or {}).get("absolute_defense_cash_jpy"),
         },
         "open_orders": {
