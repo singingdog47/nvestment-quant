@@ -16,6 +16,7 @@ def test_private_history_integrates_without_execution_authorization(tmp_path):
     )
     import_newer_verified_snapshot(
         {**base, "observed_at": "2099-01-02T10:00:00+09:00",
+         "evidence_ref": "private:synthetic-export-day-two",
          "facts": [{"key": "bank:balance", "value": 120, "scope": "bank"}]}, str(ledger)
     )
     state = build_investment_state(
