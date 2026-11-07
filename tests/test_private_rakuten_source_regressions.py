@@ -26,10 +26,12 @@ def test_yearless_pdf_footer_does_not_gain_current_year(tmp_path):
     class FakePage:
         def extract_text(self):
             return "現物買付可能額 2,000 円\n11/06 22:46"
-    class FakeReader:
-        def __init__(self, path):
-            self.pages = [FakePage()]
-    with patch("pypdf.PdfReader", FakeReader):
+    class FakeDocument:
+        def __enter__(self):
+            return [FakePage()]
+        def __exit__(self, *args):
+            return False
+    with patch("fitz.open", return_value=FakeDocument()):
         result = parse_buying_power_pdf(p)
     assert result["cash_buying_power_jpy"] == 2000
     assert result["source_as_of"] is None
