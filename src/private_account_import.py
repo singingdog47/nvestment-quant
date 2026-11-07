@@ -190,7 +190,7 @@ def parse_buying_power_pdf(path: str | Path) -> dict:
     # A footer without an explicit year cannot establish an observation year.
     # Do not infer it from the runtime clock: historical PDFs may be replayed.
     timestamp = None
-    match = re.search(r"(20\\d{2})[/-](\\d{2})[/-](\\d{2})\\s+(\\d{2}:\\d{2})", text)
+    match = re.search(r"(20\d{2})[/-](\d{2})[/-](\d{2})\s+(\d{2}:\d{2})", text)
     if match:
         timestamp = datetime.strptime(
             f"{match.group(1)}/{match.group(2)}/{match.group(3)} {match.group(4)}",
