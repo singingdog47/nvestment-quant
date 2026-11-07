@@ -109,7 +109,8 @@ def build_investment_state(
     advisory["recommendations_allowed"] = True
     advisory["recommendations_are_hypothetical"] = True
 
-    account_for_state = account if source_status["account_summary"] != "conflict" else {}
+    # Unverified or conflicted summaries must not leak into authoritative portfolio fields.
+    account_for_state = account if source_status["account_summary"] == "verified" else {}
     state = {
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -147,6 +148,10 @@ def build_investment_state(
         },
         "private_asset_state": asset_state,
         "advisory_continuity": advisory,
+        "advisory_source_values": {
+            "account_summary": account if source_status["account_summary"] == "stale" else None,
+            "label": "historical_unverified_not_for_execution",
+        },
         "execution_ready": False,
         "execution_blockers": ["account_wide_order_coverage_not_verified",
                                "deployable_cash_not_verified",
