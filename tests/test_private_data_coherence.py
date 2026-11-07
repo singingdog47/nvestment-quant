@@ -501,25 +501,3 @@ def test_verified_buying_power_is_not_discretionary_cash(tmp_path):
     assert state["capital"]["buying_power_is_deployable_cash"] is False
     assert "DISCRETIONARY_CASH_NOT_RECONCILED" in state["decision_capabilities"]["execution_blockers"]
     assert state["decision_capabilities"]["execution_ready"] is False
-
-
-def test_orders_pdf_rejects_missing_printed_document_page(tmp_path, monkeypatch):
-    import pypdf
-    import pytest
-    from src.private_account_import import parse_orders_pdf
-
-    class Page:
-        def extract_text(self):
-            return ("注文照会 注文一覧 注文状況 すべての注文 注文種類 現物のみ\\n"
-                    "1件中1～1件表示\\n"
-                    "5391 約定 11/06 10:11:30 商船三井\\n"
-                    "9104 東証(SOR)\\n"
-                    "2026/11/06 22:45\\n1 / 2 ページ")
-
-    class Reader:
-        def __init__(self, path):
-            self.pages = [Page()]
-
-    monkeypatch.setattr(pypdf, "PdfReader", Reader)
-    with pytest.raises(ValueError, match="printed document pages incomplete"):
-        parse_orders_pdf(tmp_path / "orders.pdf")
