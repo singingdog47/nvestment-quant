@@ -36,3 +36,35 @@ def test_duplicates_do_not_raise_confidence():
                     duplicate_scopes=["account_summary"])
     assert result["analysis_mode"] == "CONDITIONAL_FORECAST"
     assert result["confidence_tier"] == "MEDIUM"
+
+
+def test_available_sources_missing_pdf_keeps_forecast():
+    from src.advisory_continuity import assess_available_sources
+    result = assess_available_sources({
+        "account_summary": "verified",
+        "buying_power": "verified",
+        "orders_domestic_cash": "missing",
+        "orders_mutual_funds": "duplicate_verified",
+        "orders_foreign": "stale",
+    })
+    assert result["analysis_allowed"]
+    assert result["analysis_mode"] == "CONDITIONAL_FORECAST"
+    assert result["verified_source_count"] == 3
+    assert result["execution_ready"] is False
+    assert result["forecast_is_conditional"] is True
+
+
+def test_available_sources_conflict_isolated():
+    from src.advisory_continuity import assess_available_sources
+    result = assess_available_sources({
+        "account_summary": "verified", "buying_power": "conflict",
+    })
+    assert result["analysis_mode"] == "PARTIAL_WITH_CONFLICTS"
+    assert "buying_power" not in result["verified_scopes"]
+
+
+def test_available_sources_unknown_status_rejected():
+    import pytest
+    from src.advisory_continuity import assess_available_sources
+    with pytest.raises(ValueError, match="Unknown source"):
+        assess_available_sources({"account_summary": "probably_verified"})
