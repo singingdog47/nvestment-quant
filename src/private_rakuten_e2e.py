@@ -38,6 +38,13 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
     sources = [csv_path, buying_pdf, domestic_pdf, fund_pdf]
     if any(not p.is_file() or p.is_symlink() for p in sources):
         raise ValueError("Missing or symlinked source")
+    # A reused path could falsely count one document as multiple independent
+    # sources. Distinct paths alone are insufficient: reject identical bytes.
+    if len({p.resolve() for p in sources}) != len(sources):
+        raise ValueError("Source paths must be distinct")
+    source_hashes = [_digest(p) for p in sources]
+    if len(set(source_hashes)) != len(source_hashes):
+        raise ValueError("Duplicate source content across required documents")
     stamp, method = source_as_of(csv_path.name, None)
     if method != "filename_embedded_export_time" or stamp is None:
         raise ValueError("CSV requires an explicit export timestamp")
@@ -78,7 +85,7 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
                          if len(row) > 1 and row[0] == "楽天銀行普通預金残高"), None)
         if not bank or bank_csv is None or int(bank.group(1).replace(",", "")) != bank_csv:
             raise ValueError("Rakuten bank balance CSV/PDF mismatch")
-    digests = [_digest(p) for p in sources]
+    digests = source_hashes
     # Source hashes are provenance labels, not independent broker signatures.
     facts = [
         {"key": "rakuten_historical:account_summary",
