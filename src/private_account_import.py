@@ -6,7 +6,10 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from portfolio_import import decode_rakuten_bytes
+try:
+    from .portfolio_import import decode_rakuten_bytes
+except ImportError:  # Legacy top-level test imports
+    from portfolio_import import decode_rakuten_bytes
 
 
 JST = timezone(timedelta(hours=9))
@@ -61,6 +64,7 @@ def parse_account_summary_bytes(raw: bytes) -> dict:
         "預り金": "cash_deposit_jpy",
         "外貨預り金": "foreign_cash_jpy",
         "信用保証金": "margin_collateral_jpy",
+        "国内株式信用保証金": "margin_collateral_jpy",
         "FX証拠金純資産": "fx_margin_net_assets_jpy",
     }
     values: dict[str, float] = {}
@@ -88,6 +92,30 @@ def parse_account_summary_bytes(raw: bytes) -> dict:
         "daily_change_jpy": daily_change_jpy,
         "daily_change_pct": daily_change_pct,
     }
+
+
+
+def reconcile_account_components(parsed: dict) -> dict:
+    """Reconcile historical balances; never infer executable cash."""
+    required = ("total_assets_jpy", "invested_assets_jpy",
+                "deposits_total_jpy", "cash_deposit_jpy",
+                "foreign_cash_jpy", "margin_collateral_jpy",
+                "fx_margin_net_assets_jpy")
+    missing = [key for key in required if key not in parsed]
+    if missing:
+        return {"status": "INCOMPLETE", "missing": missing,
+                "deployable_cash_jpy": None, "execution_ready": False}
+    asset_residual = parsed["total_assets_jpy"] - (
+        parsed["invested_assets_jpy"] + parsed["deposits_total_jpy"]
+        + parsed["fx_margin_net_assets_jpy"])
+    deposit_residual = parsed["deposits_total_jpy"] - (
+        parsed["cash_deposit_jpy"] + parsed["foreign_cash_jpy"]
+        + parsed["margin_collateral_jpy"])
+    return {"status": "RECONCILED_HISTORICAL"
+            if asset_residual == 0 and deposit_residual == 0 else "MISMATCH",
+            "asset_residual_jpy": asset_residual,
+            "deposit_residual_jpy": deposit_residual,
+            "deployable_cash_jpy": None, "execution_ready": False}
 
 
 def parse_orders_bytes(raw: bytes) -> dict:
@@ -139,9 +167,15 @@ def parse_orders_bytes(raw: bytes) -> dict:
 
 def parse_buying_power_pdf(path: str | Path) -> dict:
     """Extract Rakuten cash buying power from a text-bearing PDF."""
-    from pypdf import PdfReader
-
-    text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+    # Rakuten PDFs can contain CMaps that pypdf decodes as mojibake.
+    # Prefer PyMuPDF Japanese extraction, retaining pypdf fallback.
+    try:
+        import fitz
+        with fitz.open(str(path)) as doc:
+            text = "\n".join(page.get_text() for page in doc)
+    except ImportError:
+        from pypdf import PdfReader
+        text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
     patterns = {
         "cash_buying_power_jpy": r"現物買付可能額[^\d]{0,80}([\d,]+)\s*円",
         "fund_buying_power_jpy": r"投資信託買付可能額[^\d]{0,80}([\d,]+)\s*円",
@@ -156,14 +190,18 @@ def parse_buying_power_pdf(path: str | Path) -> dict:
             values[key] = value
     if "cash_buying_power_jpy" not in values:
         raise ValueError("Cash buying power not found in Rakuten PDF")
+    # A footer without an explicit year cannot establish an observation year.
+    # Do not infer it from the runtime clock: historical PDFs may be replayed.
     timestamp = None
-    match = re.search(r"(\d{2}/\d{2})\s+(\d{2}:\d{2})", text)
+    match = re.search(r"(20\d{2})[/-](\d{2})[/-](\d{2})\s+(\d{2}:\d{2})", text)
     if match:
-        now = datetime.now(JST)
         timestamp = datetime.strptime(
-            f"{now.year}/{match.group(1)} {match.group(2)}", "%Y/%m/%d %H:%M"
+            f"{match.group(1)}/{match.group(2)}/{match.group(3)} {match.group(4)}",
+            "%Y/%m/%d %H:%M",
         ).replace(tzinfo=JST).isoformat()
-    return {"status": "ok", "source_as_of": timestamp, **values}
+    return {"status": "ok", "source_as_of": timestamp,
+            "source_as_of_method": "pdf_footer_explicit_year" if timestamp else "missing",
+            **values}
 
 
 def source_as_of(name: str | None, modified_time: str | None) -> tuple[str | None, str]:

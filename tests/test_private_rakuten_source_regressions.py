@@ -1,0 +1,54 @@
+"""Synthetic regressions derived from the 2026-11-06 Rakuten source layout.
+
+No private account data is stored in the public repository.
+"""
+from private_account_import import parse_account_summary_bytes
+
+
+def test_domestic_margin_collateral_label_is_recognized():
+    raw = ('資産合計,"2,000"\n保有商品の評価額合計,"1,000"\n'
+           '国内株式信用保証金,700\n預り金,300\n').encode("cp932")
+    result = parse_account_summary_bytes(raw)
+    assert result["margin_collateral_jpy"] == 700
+    assert result["cash_deposit_jpy"] == 300
+
+
+def test_yearless_pdf_footer_does_not_gain_current_year(tmp_path):
+    from private_account_import import parse_buying_power_pdf
+    from pypdf import PdfWriter
+    from unittest.mock import patch
+    p = tmp_path / "yearless.pdf"
+    # Mock extracted PDF text while retaining a valid minimal PDF container.
+    writer = PdfWriter()
+    writer.add_blank_page(width=200, height=200)
+    with p.open("wb") as fp:
+        writer.write(fp)
+    class FakePage:
+        def get_text(self):
+            return "現物買付可能額 2,000 円\n11/06 22:46"
+    class FakeDocument:
+        def __enter__(self):
+            return [FakePage()]
+        def __exit__(self, *args):
+            return False
+    with patch("fitz.open", return_value=FakeDocument()):
+        result = parse_buying_power_pdf(p)
+    assert result["cash_buying_power_jpy"] == 2000
+    assert result["source_as_of"] is None
+    assert result["source_as_of_method"] == "missing"
+
+def test_explicit_year_pdf_footer_is_parsed(tmp_path):
+    from private_account_import import parse_buying_power_pdf
+    from unittest.mock import patch
+    class Page:
+        def get_text(self):
+            return "現物買付可能額 1,500 円\\n2026/11/06 22:46"
+    class Doc:
+        def __enter__(self):
+            return [Page()]
+        def __exit__(self, *args):
+            return False
+    with patch("fitz.open", return_value=Doc()):
+        result = parse_buying_power_pdf(tmp_path / "synthetic.pdf")
+    assert result["source_as_of"] == "2026-11-06T22:46:00+09:00"
+    assert result["source_as_of_method"] == "pdf_footer_explicit_year"

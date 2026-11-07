@@ -56,16 +56,19 @@ def test_buying_power_pdf_extracts_cash_and_embedded_timestamp(monkeypatch):
 '''
 
     class Page:
-        def extract_text(self):
+        def get_text(self):
             return text
 
-    class Reader:
-        def __init__(self, _):
-            self.pages = [Page()]
+    class Document:
+        def __enter__(self):
+            return [Page()]
+        def __exit__(self, *args):
+            return False
 
-    monkeypatch.setattr("pypdf.PdfReader", Reader)
+    monkeypatch.setattr("fitz.open", lambda _: Document())
     result = parse_buying_power_pdf("unused.pdf")
     assert result["cash_buying_power_jpy"] == 1_500_000
     assert result["fund_buying_power_jpy"] == 1_500_000
     assert result["margin_capacity_jpy"] == 9_000_000
-    assert result["source_as_of"].endswith("08-27T20:22:00+09:00")
+    assert result["source_as_of"] is None
+    assert result["source_as_of_method"] == "missing"
