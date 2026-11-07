@@ -86,6 +86,11 @@ def build_investment_state(
     analysis_allowed = bool(portfolio_manifest.get("source_as_of"))
     recommendation_allowed = analysis_allowed
     execution_ready = False  # order scope is domestic-only; never assert account-wide readiness
+    execution_blockers = ["ACCOUNT_WIDE_ORDERS_NOT_VERIFIED"]
+    if not coherence["decision_safe"]:
+        execution_blockers.append("BROKERAGE_INPUTS_NOT_CURRENT_OR_COMPLETE")
+    if cash is None:
+        execution_blockers.append("BUYING_POWER_UNVERIFIED")
     state = {
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -125,7 +130,7 @@ def build_investment_state(
             "analysis_allowed": analysis_allowed,
             "recommendation_allowed": recommendation_allowed,
             "execution_ready": execution_ready,
-            "execution_blockers": ["ACCOUNT_WIDE_ORDERS_NOT_VERIFIED"] if not coherence["decision_safe"] else ["ACCOUNT_WIDE_ORDERS_NOT_VERIFIED"],
+            "execution_blockers": execution_blockers,
             "principle": "Best available evidence for decisions; fresh complete data for execution.",
         },
         "quality": {
