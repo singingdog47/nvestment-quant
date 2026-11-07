@@ -5,7 +5,7 @@ without fresh source coverage and independent execution gates.
 """
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 from verified_facts_ledger import read_verified_facts
@@ -34,7 +34,7 @@ def read_asset_state(ledger_path: str | Path, *, now: str,
     stale_keys = sorted(key for key, row in records.items() if not row["fresh"])
     # This read model never authorizes an order: order coverage, settlement and
     # genuinely deployable cash require independent, current verification.
-    return {"status": "PARTIAL" if missing or stale_keys else "VERIFIED_HISTORY",
+    return {"status": "PARTIAL" if not records or missing or stale_keys else "VERIFIED_HISTORY",
             "facts": records, "missing_fresh_scopes": missing,
             "stale_or_future_keys": stale_keys, "execution_ready": False,
             "execution_blockers": [
