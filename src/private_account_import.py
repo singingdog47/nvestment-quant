@@ -140,9 +140,15 @@ def parse_orders_bytes(raw: bytes) -> dict:
 
 def parse_buying_power_pdf(path: str | Path) -> dict:
     """Extract Rakuten cash buying power from a text-bearing PDF."""
-    from pypdf import PdfReader
-
-    text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+    # Rakuten PDFs can contain CMaps that pypdf decodes as mojibake.
+    # Prefer PyMuPDF Japanese extraction, retaining pypdf fallback.
+    try:
+        import fitz
+        with fitz.open(str(path)) as doc:
+            text = "\n".join(page.get_text() for page in doc)
+    except ImportError:
+        from pypdf import PdfReader
+        text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
     patterns = {
         "cash_buying_power_jpy": r"現物買付可能額[^\d]{0,80}([\d,]+)\s*円",
         "fund_buying_power_jpy": r"投資信託買付可能額[^\d]{0,80}([\d,]+)\s*円",
