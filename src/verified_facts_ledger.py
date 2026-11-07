@@ -16,9 +16,31 @@ def _canonical(value: object) -> str:
 
 
 def append_verified_facts(path: str | Path, facts: list[dict]) -> list[dict]:
+    """Serialize writers using an adjacent private lock file on POSIX hosts."""
+    import fcntl
+    import os
+
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    lock_path = p.with_name(p.name + ".lock")
+    fd = os.open(lock_path, os.O_CREAT | os.O_RDWR, 0o600)
+    try:
+        os.fchmod(fd, 0o600)
+        with os.fdopen(fd, "r+b") as lock_file:
+            fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
+            try:
+                return _append_verified_facts_locked(p, facts)
+            finally:
+                fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
+    except BaseException:
+        # fdopen owns the descriptor after successful entry.
+        raise
+
+
+def _append_verified_facts_locked(path: str | Path, facts: list[dict]) -> list[dict]:
     """Validate a batch against the complete ledger, then atomically replace file.
 
-    Concurrent writers must be serialized by the caller; no cross-process lock.
+    Caller holds an exclusive advisory file lock throughout read/validate/write.
     """
     import os
     import tempfile
