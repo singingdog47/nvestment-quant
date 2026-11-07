@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from private_data_coherence import classify_private_inputs
-from private_account_facts_adapter import import_account_facts
+from private_account_facts_adapter import _import_account_facts_with_verdict
 
 
 def import_account_facts_rechecked(
@@ -28,5 +28,5 @@ def import_account_facts_rechecked(
     )
     if verdict["status"] != "VERIFIED" or verdict["decision_safe"] is not True:
         raise ValueError("Freshly recomputed source coherence is not VERIFIED")
-    result = import_account_facts(account_inputs, str(ledger_path), coherence=verdict)
+    result = _import_account_facts_with_verdict(account_inputs, str(ledger_path), coherence=verdict)
     return {**result, "coherence_recomputed": True, "execution_ready": False}
