@@ -91,6 +91,7 @@ def build_investment_state(
         execution_blockers.append("BROKERAGE_INPUTS_NOT_CURRENT_OR_COMPLETE")
     if cash is None:
         execution_blockers.append("BUYING_POWER_UNVERIFIED")
+    execution_blockers.append("DISCRETIONARY_CASH_NOT_RECONCILED")
     state = {
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
