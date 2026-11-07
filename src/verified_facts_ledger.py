@@ -66,6 +66,8 @@ def _append_verified_facts_locked(path: str | Path, facts: list[dict], *, auto_s
         if old:
             old_stamp = datetime.fromisoformat(old["observed_at"].replace("Z", "+00:00"))
             if auto_supersede:
+                if evidence_ref == old["evidence_ref"]:
+                    raise FactConflict("New observation requires distinct source evidence")
                 if stamp <= old_stamp:
                     raise FactConflict("Automatic supersession requires strictly newer observation")
                 if scope != old["scope"]:
