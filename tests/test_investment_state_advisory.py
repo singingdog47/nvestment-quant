@@ -5,6 +5,7 @@ def test_partial_inputs_produce_conditional_advisory_without_execution(tmp_path)
     state = build_investment_state(
         account_inputs={"status": "PARTIAL", "inputs": {
             "account_summary": {
+                "data_status": "verified",
                 "source_as_of": "2026-11-06T22:51:14+09:00",
                 "source_as_of_method": "filename_embedded_export_time",
                 "total_assets_jpy": 19643918,
@@ -79,4 +80,25 @@ def test_conflicted_account_numbers_not_exposed(tmp_path):
     assert state["portfolio"]["invested_assets_jpy"] is None
     assert "account_summary" in state["advisory_continuity"]["conflicting_scopes_excluded"]
     assert state["advisory_continuity"]["analysis_allowed"] is True
+    assert state["execution_ready"] is False
+
+
+def test_timestamp_alone_does_not_verify_financial_facts(tmp_path):
+    state = build_investment_state(
+        account_inputs={"status": "PARTIAL", "inputs": {
+            "account_summary": {
+                "source_as_of": "2026-11-06T22:51:14+09:00",
+                "source_as_of_method": "filename_embedded_export_time",
+                "total_assets_jpy": 19643918,
+            },
+        }},
+        portfolio_manifest={},
+        policy_payload={},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv",
+    )
+    advisory = state["advisory_continuity"]
+    assert advisory["analysis_mode"] == "SCENARIO_ONLY"
+    assert "account_summary" in advisory["dated_but_unreconciled_scopes"]
+    assert advisory["verified_source_count"] == 0
     assert state["execution_ready"] is False
