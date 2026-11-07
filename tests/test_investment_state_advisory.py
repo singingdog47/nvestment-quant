@@ -44,3 +44,18 @@ def test_conflicting_inputs_excluded_from_advisory(tmp_path):
     assert state["advisory_continuity"]["analysis_mode"] == "PARTIAL_WITH_CONFLICTS"
     assert "buying_power" in state["advisory_continuity"]["conflicting_scopes_excluded"]
     assert state["execution_ready"] is False
+
+
+def test_stale_account_values_are_scenario_only(tmp_path):
+    state = build_investment_state(
+        account_inputs={"status": "PARTIAL", "inputs": {
+            "account_summary": {"data_status": "stale", "total_assets_jpy": 12345},
+        }},
+        portfolio_manifest={}, policy_payload={},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv",
+    )
+    assert state["portfolio"]["total_assets_jpy"] is None
+    assert state["advisory_source_values"]["account_summary"]["total_assets_jpy"] == 12345
+    assert state["advisory_continuity"]["analysis_mode"] == "SCENARIO_ONLY"
+    assert state["execution_ready"] is False
