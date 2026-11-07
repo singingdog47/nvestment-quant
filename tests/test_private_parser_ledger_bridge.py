@@ -29,7 +29,7 @@ def test_parsed_csv_to_private_ledger_requires_independent_coherence(tmp_path):
         manifest, payload, now=datetime.fromisoformat("2099-01-01T11:00:00+09:00"))
     assert coherence["status"] == "VERIFIED"
     path = tmp_path / "private.jsonl"
-    imported = import_account_facts(payload, str(path), coherence=coherence)
+    imported = import_account_facts(payload, str(path), portfolio_manifest=manifest, now=datetime.fromisoformat("2099-01-01T11:00:00+09:00"))
     assert imported["status"] == "ok"
     facts = read_verified_facts(path)
     assert facts["account_summary:total_assets_jpy"]["value"] == 1000000
@@ -49,7 +49,7 @@ def test_stale_csv_to_ledger_is_rejected(tmp_path):
     assert verdict["decision_safe"] is False
     path = tmp_path / "private.jsonl"
     try:
-        import_account_facts(payload, str(path), coherence=verdict)
+        import_account_facts(payload, str(path), portfolio_manifest={"source_as_of": at, "source_as_of_method": "filename_embedded_export_time"}, now=datetime.fromisoformat("2099-01-05T11:00:00+09:00"))
     except ValueError:
         pass
     else:
@@ -59,7 +59,7 @@ def test_stale_csv_to_ledger_is_rejected(tmp_path):
 
 def test_invalid_account_values_cannot_be_persisted(tmp_path):
     import math
-    from private_account_facts_adapter import import_account_facts
+    from private_account_facts_adapter import _import_account_facts_with_verdict as import_account_facts
     at = "2099-01-01T10:00:00+09:00"
     for bad in (float("nan"), float("inf"), -1, True, "100"):
         account = {"status": "ok", "source_as_of": at,
