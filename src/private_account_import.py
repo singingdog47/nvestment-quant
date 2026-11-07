@@ -137,11 +137,25 @@ def parse_orders_bytes(raw: bytes) -> dict:
     }
 
 
+def _pdf_text(path: str | Path) -> str:
+    """Prefer readable Japanese text; reject a PDF that cannot be decoded."""
+    text = _pdf_text(path)
+    if any(marker in text for marker in ("現物買付可能額", "注文一覧")):
+        return text
+    # Browser-printed Rakuten PDFs can contain fonts whose ToUnicode mapping
+    # pypdf cannot decode. PyMuPDF correctly reads these real exports.
+    import fitz
+
+    with fitz.open(str(path)) as pdf:
+        text = "\n".join(page.get_text() for page in pdf)
+    if not any(marker in text for marker in ("現物買付可能額", "注文一覧")):
+        raise ValueError("Rakuten PDF Japanese text could not be decoded")
+    return text
+
+
 def parse_buying_power_pdf(path: str | Path) -> dict:
     """Extract Rakuten cash buying power from a text-bearing PDF."""
-    from pypdf import PdfReader
-
-    text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+    text = _pdf_text(path)
     patterns = {
         "cash_buying_power_jpy": r"現物買付可能額[^\d]{0,80}([\d,]+)\s*円",
         "fund_buying_power_jpy": r"投資信託買付可能額[^\d]{0,80}([\d,]+)\s*円",
@@ -175,9 +189,7 @@ def parse_buying_power_pdf(path: str | Path) -> dict:
 
 def parse_orders_pdf(path: str | Path) -> dict:
     """Parse Rakuten domestic cash-order inquiry PDF; fail closed on ambiguity."""
-    from pypdf import PdfReader
-
-    text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+    text = _pdf_text(path)
     if "注文照会" not in text or "注文一覧" not in text:
         raise ValueError("Not a Rakuten order inquiry PDF")
     # Scope is explicit: this PDF covers domestic cash equity orders only.
