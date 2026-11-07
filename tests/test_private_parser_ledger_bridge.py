@@ -86,7 +86,7 @@ def test_invalid_account_values_cannot_be_persisted(tmp_path):
 
 
 def test_account_total_below_invested_is_rejected(tmp_path):
-    from private_account_facts_adapter import import_account_facts
+    from private_account_facts_adapter import _import_account_facts_with_verdict as import_account_facts
     import pytest
     at = "2099-01-01T10:00:00+09:00"
     payload = {"status": "ok", "inputs": {
