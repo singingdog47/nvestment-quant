@@ -139,6 +139,7 @@ def parse_orders_bytes(raw: bytes) -> dict:
 
 def _pdf_text(path: str | Path) -> str:
     """Prefer readable Japanese text; reject a PDF that cannot be decoded."""
+    from pypdf import PdfReader
     text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
     if any(marker in text for marker in ("現物買付可能額", "注文一覧")):
         return text
