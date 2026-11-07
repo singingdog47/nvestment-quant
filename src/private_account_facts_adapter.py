@@ -9,36 +9,34 @@ from import_verified_snapshot import import_verified_snapshot
 
 
 def import_account_facts(account_inputs: dict, ledger_path: str) -> dict:
+    """Conservative bridge: requires explicit upstream coherence verification."""
+    if account_inputs.get("status") != "ok" or account_inputs.get("missing_input_types") or account_inputs.get("stale_input_types"):
+        raise ValueError("Incomplete or stale account inputs")
+    if account_inputs.get("coherence_verified") is not True:
+        raise ValueError("Explicit upstream coherence verification required")
     inputs = account_inputs.get("inputs") or {}
-    facts = []
-    for kind, scope, keys in (
-        ("account_summary", "account_summary", ("total_assets_jpy", "invested_assets_jpy",
+    results = []
+    for kind, keys in (
+        ("account_summary", ("total_assets_jpy", "invested_assets_jpy",
             "deposits_total_jpy", "cash_deposit_jpy", "margin_collateral_jpy")),
-        ("buying_power", "buying_power", ("cash_buying_power_jpy",)),
+        ("buying_power", ("cash_buying_power_jpy",)),
     ):
         data = inputs.get(kind) or {}
         if data.get("data_status") != "ok" or data.get("source_as_of_method") not in (
             "filename_embedded_export_time", "pdf_footer_explicit_year"):
-            continue
-        for key in keys:
-            if data.get(key) is not None:
-                facts.append({"key": f"{scope}:{key}", "value": data[key], "scope": scope})
-    if not facts:
-        raise ValueError("No verified account values available")
-    # Snapshot-wide timestamp and evidence are not interchangeable across files.
-    # Require a common verified observation time and retain every source reference.
-    sources = [inputs[k] for k in ("account_summary", "buying_power") if
-               any(f["scope"] == k for f in facts)]
-    times = {s.get("source_as_of") for s in sources}
-    if len(times) != 1 or None in times:
-        raise ValueError("Mixed observation timestamps require per-source import")
-    refs = [s.get("source_file") for s in sources]
-    if any(not ref for ref in refs):
-        raise ValueError("Missing evidence source file")
-    return import_verified_snapshot({
-        "verification_status": "verified", "observed_at": next(iter(times)),
-        "evidence_ref": "private:" + "|".join(refs),
-        "quality": {"source_verified": True, "coherence_verified": True,
-                    "source_scope": "account_summary"},
-        "facts": facts,
-    }, ledger_path)
+            raise ValueError("Unverified source: " + kind)
+        if not data.get("source_file") or not data.get("source_as_of"):
+            raise ValueError("Missing source evidence: " + kind)
+        facts = [{"key": f"{kind}:{key}", "value": data[key], "scope": kind}
+                 for key in keys if data.get(key) is not None]
+        if not facts:
+            raise ValueError("Missing source values: " + kind)
+        results.append(import_verified_snapshot({
+            "verification_status": "verified",
+            "observed_at": data["source_as_of"],
+            "evidence_ref": "private:" + data["source_file"],
+            "quality": {"source_verified": True, "coherence_verified": True,
+                        "source_scope": kind},
+            "facts": facts,
+        }, ledger_path))
+    return {"status": "ok", "source_imports": results}
