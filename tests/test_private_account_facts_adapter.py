@@ -1,5 +1,5 @@
 import pytest
-from private_account_facts_adapter import import_account_facts
+from private_account_facts_adapter import _import_account_facts_with_verdict as import_account_facts
 from verified_facts_ledger import read_verified_facts
 
 
