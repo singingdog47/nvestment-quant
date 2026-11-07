@@ -26,6 +26,8 @@ def append_verified_facts(path: str | Path, facts: list[dict]) -> list[dict]:
     if not facts:
         raise ValueError("Empty fact batch")
     p = Path(path)
+    if len({item["key"] for item in facts}) != len(facts):
+        raise FactConflict("Duplicate fact keys within a batch")
     current = read_verified_facts(p)
     rows = []
     now = datetime.now(timezone.utc).isoformat()
