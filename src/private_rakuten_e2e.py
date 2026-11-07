@@ -96,7 +96,7 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
         ("domestic", domestic_text, digests[2], "orders_domestic_cash_document"),
         ("fund", fund_text, digests[3], "orders_mutual_funds_document"),
     ]:
-        dates = re.findall(r"20\\d{2}/\\d{2}/\\d{2}\\s+\\d{2}:\\d{2}", content)
+        dates = re.findall(r"20\d{2}/\d{2}/\d{2}\s+\d{2}:\d{2}", content)
         if not dates:
             raise ValueError(f"{label} PDF has no explicit timestamp")
         doc_time = datetime.strptime(dates[-1], "%Y/%m/%d %H:%M")
