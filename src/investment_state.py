@@ -61,7 +61,7 @@ def build_investment_state(
     open_orders = []
     for item in orders.get("items") or []:
         status = str(item.get("status") or "")
-        if any(token in status for token in ("執行中", "待機中", "受付済", "未約定")):
+        if any(token in status for token in ("執行中", "待機中", "受付済", "未約定", "一部約定", "一部出来")):
             open_orders.append(item)
 
     # Brokerage buying power and account cash balance are different concepts.
