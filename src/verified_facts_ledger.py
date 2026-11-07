@@ -61,9 +61,9 @@ def append_verified_facts(path: str | Path, facts: list[dict]) -> list[dict]:
         return [current[item["key"]] for item in facts]
     p.parent.mkdir(parents=True, exist_ok=True)
     existing = p.read_bytes() if p.exists() else b""
-    if existing and not existing.endswith(b"\\n"):
+    if existing and not existing.endswith(b"\n"):
         raise FactConflict("Ledger has incomplete trailing record")
-    data = existing + "".join(_canonical(row) + "\\n" for row in rows).encode("utf-8")
+    data = existing + "".join(_canonical(row) + "\n" for row in rows).encode("utf-8")
     temp_name = None
     try:
         with tempfile.NamedTemporaryFile(dir=p.parent, prefix=".facts-", delete=False) as tmp:
