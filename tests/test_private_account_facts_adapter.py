@@ -40,3 +40,36 @@ def test_unverified_coherence_is_rejected(tmp_path):
     verdict["decision_safe"] = False
     with pytest.raises(ValueError, match="coherence"):
         import_account_facts(inputs, str(tmp_path / "facts.jsonl"), coherence=verdict)
+
+
+def test_invalid_second_source_never_writes_first_source(tmp_path):
+    path = tmp_path / "facts.jsonl"
+    inputs = _inputs()
+    verdict = _coherence(inputs)
+    inputs["inputs"]["buying_power"]["source_file"] = ""
+    with pytest.raises(ValueError, match="evidence"):
+        import_account_facts(inputs, str(path), coherence=verdict)
+    assert not path.exists()
+
+
+def test_conflicting_second_source_rolls_back_first_source(tmp_path):
+    from verified_facts_ledger import append_verified_fact, FactConflict
+    path = tmp_path / "facts.jsonl"
+    append_verified_fact(path, key="buying_power:cash_buying_power_jpy",
+                         value=99, scope="buying_power",
+                         observed_at="2098-12-31T10:00:00+09:00",
+                         evidence_ref="private:synthetic")
+    original = path.read_bytes()
+    inputs = _inputs()
+    with pytest.raises(FactConflict):
+        import_account_facts(inputs, str(path), coherence=_coherence(inputs))
+    assert path.read_bytes() == original
+
+
+def test_account_source_provenance_is_preserved(tmp_path):
+    path = tmp_path / "facts.jsonl"
+    inputs = _inputs()
+    import_account_facts(inputs, str(path), coherence=_coherence(inputs))
+    facts = read_verified_facts(path)
+    assert facts["account_summary:total_assets_jpy"]["evidence_ref"] == "private:holdings.csv"
+    assert facts["buying_power:cash_buying_power_jpy"]["evidence_ref"] == "private:buying-power.pdf"
