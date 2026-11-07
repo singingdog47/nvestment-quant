@@ -229,7 +229,7 @@ def parse_orders_pdf(path: str | Path) -> dict:
              "name": name.strip(), "code": code}
             for oid, status, ordered_at, name, code in rows
         ]
-    # Require a full year from the printed PDF footer, not the upload time.
+    # The printed document may have more pages than the supplied PDF file.\n    # Reject incomplete print exports instead of asserting all orders were observed.\n    printed_pages = re.findall(r"(?m)(\\d+)\\s*/\\s*(\\d+)\\s*ページ", text)\n    if printed_pages:\n        seen = {int(page) for page, _ in printed_pages}\n        totals = {int(total_pages) for _, total_pages in printed_pages}\n        if len(totals) != 1 or seen != set(range(1, next(iter(totals)) + 1)):\n            raise ValueError("Order PDF printed document pages incomplete")\n    # Require a full year from the printed PDF footer, not the upload time.
     stamps = re.findall(r"20\d{2}/\d{2}/\d{2}\s+\d{2}:\d{2}", text)
     if not stamps:
         raise ValueError("Order PDF lacks explicit-year observation timestamp")
