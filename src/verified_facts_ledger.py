@@ -15,7 +15,7 @@ def _canonical(value: object) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
-def append_verified_facts(path: str | Path, facts: list[dict]) -> list[dict]:
+def append_verified_facts(path: str | Path, facts: list[dict], *, auto_supersede: bool = False) -> list[dict]:
     """Serialize writers using an adjacent private lock file on POSIX hosts."""
     import fcntl
     import os
@@ -29,7 +29,7 @@ def append_verified_facts(path: str | Path, facts: list[dict]) -> list[dict]:
         with os.fdopen(fd, "r+b") as lock_file:
             fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
             try:
-                return _append_verified_facts_locked(p, facts)
+                return _append_verified_facts_locked(p, facts, auto_supersede=auto_supersede)
             finally:
                 fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
     except BaseException:
@@ -37,7 +37,7 @@ def append_verified_facts(path: str | Path, facts: list[dict]) -> list[dict]:
         raise
 
 
-def _append_verified_facts_locked(path: str | Path, facts: list[dict]) -> list[dict]:
+def _append_verified_facts_locked(path: str | Path, facts: list[dict], *, auto_supersede: bool = False) -> list[dict]:
     """Validate a batch against the complete ledger, then atomically replace file.
 
     Caller holds an exclusive advisory file lock throughout read/validate/write.
@@ -65,6 +65,14 @@ def _append_verified_facts_locked(path: str | Path, facts: list[dict]) -> list[d
         old = current.get(key)
         if old:
             old_stamp = datetime.fromisoformat(old["observed_at"].replace("Z", "+00:00"))
+            if auto_supersede:
+                if stamp <= old_stamp:
+                    raise FactConflict("Automatic supersession requires strictly newer observation")
+                if scope != old["scope"]:
+                    raise FactConflict("Scope changed; manual reconciliation required")
+                if supersedes is not None and supersedes != old["fact_id"]:
+                    raise FactConflict("Incorrect explicit supersession")
+                supersedes = old["fact_id"]
             if stamp < old_stamp:
                 raise FactConflict("Cannot supersede with an older observation")
             if _canonical(old["value"]) != _canonical(value):
