@@ -33,8 +33,9 @@ def import_verified_snapshot(snapshot: dict, ledger_path: str | Path) -> dict:
         raise ValueError("Upstream source verification required")
     if quality.get("coherence_verified") is not True:
         raise ValueError("Upstream source coherence verification required")
-    if quality.get("source_scope") not in ("domestic_cash_equities", "fund_orders", "account_summary", "buying_power"):
-        raise ValueError("Explicit supported source scope required")
+    source_scope = quality.get("source_scope")
+    if not isinstance(source_scope, str) or not source_scope.strip():
+        raise ValueError("Explicit source scope required")
     facts = snapshot["facts"]
     keys = [fact.get("key") for fact in facts]
     if any(not isinstance(k, str) or not k.strip() for k in keys) or len(keys) != len(set(keys)):
