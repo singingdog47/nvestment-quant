@@ -17,8 +17,8 @@ def test_historical_private_ledger_roundtrip(tmp_path, monkeypatch):
         "cash_buying_power_jpy": 1800})
     monkeypatch.setattr(mod, "_pdf_text", lambda p:
         "楽天銀行普通預金残高 1,234" if p == pdfs[0]
-        else "注文一覧 2099/01/02 12:00" if p == pdfs[1]
-        else "購入・売却履歴 2099/01/02 12:00")
+        else "注文一覧\n2099/01/02 12:00\n1 / 1 ページ" if p == pdfs[1]
+        else "購入・売却履歴\n2099/01/02 12:00\n1 / 1 ページ")
     ledger = tmp_path / "private" / "facts.jsonl"
     result = mod.verify_historical_files(csv, *pdfs, ledger)
     assert result["status"] == "HISTORICAL_PARTIAL_COVERAGE"
@@ -58,8 +58,8 @@ def test_readback_rejects_changed_evidence_even_if_values_match(tmp_path, monkey
         "cash_buying_power_jpy": 1800})
     monkeypatch.setattr(mod, "_pdf_text", lambda p:
         "楽天銀行普通預金残高 1,234" if p == pdfs[0]
-        else "注文一覧 2099/01/02 12:00" if p == pdfs[1]
-        else "購入・売却履歴 2099/01/02 12:00")
+        else "注文一覧\n2099/01/02 12:00\n1 / 1 ページ" if p == pdfs[1]
+        else "購入・売却履歴\n2099/01/02 12:00\n1 / 1 ページ")
     real_read = mod.read_verified_facts
     calls = [0]
 
