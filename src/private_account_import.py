@@ -84,6 +84,8 @@ def parse_account_summary_bytes(raw: bytes) -> dict:
             daily_change_pct = _num(row[3] if len(row) > 3 else None)
     if "total_assets_jpy" not in values or "invested_assets_jpy" not in values:
         raise ValueError("Rakuten account summary rows not found")
+    if values["total_assets_jpy"] < values["invested_assets_jpy"]:
+        raise ValueError("Rakuten account totals inconsistent")
     return {
         "status": "ok",
         "source_encoding": encoding,
