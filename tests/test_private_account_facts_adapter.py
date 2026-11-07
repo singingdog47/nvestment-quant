@@ -10,7 +10,7 @@ def _inputs():
                     "source_as_of": "2026-11-06T22:51:00+09:00",
                     "source_as_of_method": "filename_embedded_export_time",
                     "total_assets_jpy": 20000000, "invested_assets_jpy": 18000000},
-                "buying_power": {"data_status": "ok", "source_file": "buying-power.pdf",
+                "buying_power": {"status": "ok", "source_file": "buying-power.pdf",
                     "source_as_of": "2026-11-06T22:46:00+09:00",
                     "source_as_of_method": "pdf_footer_explicit_year",
                     "cash_buying_power_jpy": 2800000}}}
