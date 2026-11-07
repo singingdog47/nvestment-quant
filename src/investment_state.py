@@ -47,6 +47,8 @@ def build_investment_state(
     *,
     decision_context_path: str | Path = "data/decision_context_latest.json",
     watchlist_path: str | Path = "config/watchlist_master.csv",
+    verified_ledger_path: str | Path | None = None,
+    now: str | None = None,
     private_ledger_path: str | Path | None = None,
     now: str | None = None,
     required_asset_scopes: tuple[str, ...] = (),
@@ -125,6 +127,17 @@ def build_investment_state(
             "rule": "Shared state is context only; it never places, changes, or cancels orders.",
         },
     }
+    if verified_ledger_path is not None:
+        from private_asset_state_reader import read_asset_state
+        observation_time = now or datetime.now(timezone.utc).isoformat()
+        verified_history = read_asset_state(verified_ledger_path, now=observation_time)
+        # The ledger is private; preserve source provenance and freshness for
+        # analysis, but never promote historical balances into executable cash.
+        state["verified_asset_history"] = verified_history
+        state["execution_ready"] = False
+        state["execution_blockers"] = sorted(set(
+            state["execution_blockers"] + verified_history["execution_blockers"]
+        ))
     return state
 
 
