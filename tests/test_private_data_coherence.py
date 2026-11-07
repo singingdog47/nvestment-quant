@@ -485,3 +485,18 @@ def test_order_csv_partial_fill_is_open():
     parsed = parse_orders_bytes(raw)
     assert parsed["orders_count"] == 1
     assert parsed["open_orders_count"] == 1
+
+
+def test_verified_buying_power_is_not_discretionary_cash(tmp_path):
+    from src.investment_state import build_investment_state
+    stamp = datetime.now(timezone.utc).isoformat()
+    manifest = {"source_as_of": stamp, "source_as_of_method": "filename_embedded_export_time"}
+    values = inputs(as_of=stamp)
+    values["inputs"]["buying_power"]["cash_buying_power_jpy"] = 2863480
+    state = build_investment_state(values, manifest, {},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv")
+    assert state["capital"]["brokerage_cash_buying_power_jpy"] == 2863480
+    assert state["capital"]["deployable_cash_jpy"] is None
+    assert state["capital"]["buying_power_is_deployable_cash"] is False
+    assert state["decision_capabilities"]["execution_ready"] is False
