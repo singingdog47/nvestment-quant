@@ -416,3 +416,19 @@ def test_friday_snapshot_cannot_authorize_monday_trading():
     assert result["decision_safe"] is False
     assert "PORTFOLIO_STALE_OR_FUTURE" in result["portfolio_reasons"]
     assert result["inputs"]["buying_power"]["status"] == "UNVERIFIED"
+
+
+def test_actual_rakuten_margin_and_bank_label_variants():
+    from src.private_account_import import parse_account_summary_bytes
+
+    raw = ("資産合計,19,643,918\n").encode("utf-8")
+    # Use quoted amounts, as in the brokerage CSV export.
+    raw = ('資産合計,"19,643,918"\n'
+           '保有商品の評価額合計,"18,134,621"\n'
+           '国内株式信用保証金,"886,593"\n'
+           'FX証拠金（純資産）,"171,991"\n'
+           '楽天銀行普通預金残高,"2,164,211"\n').encode("utf-8")
+    parsed = parse_account_summary_bytes(raw)
+    assert parsed["margin_collateral_jpy"] == 886593
+    assert parsed["fx_margin_net_assets_jpy"] == 171991
+    assert parsed["rakuten_bank_balance_jpy"] == 2164211
