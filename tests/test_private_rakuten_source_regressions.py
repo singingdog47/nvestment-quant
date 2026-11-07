@@ -36,3 +36,19 @@ def test_yearless_pdf_footer_does_not_gain_current_year(tmp_path):
     assert result["cash_buying_power_jpy"] == 2000
     assert result["source_as_of"] is None
     assert result["source_as_of_method"] == "missing"
+
+def test_explicit_year_pdf_footer_is_parsed(tmp_path):
+    from private_account_import import parse_buying_power_pdf
+    from unittest.mock import patch
+    class Page:
+        def get_text(self):
+            return "現物買付可能額 1,500 円\\n2026/11/06 22:46"
+    class Doc:
+        def __enter__(self):
+            return [Page()]
+        def __exit__(self, *args):
+            return False
+    with patch("fitz.open", return_value=Doc()):
+        result = parse_buying_power_pdf(tmp_path / "synthetic.pdf")
+    assert result["source_as_of"] == "2026-11-06T22:46:00+09:00"
+    assert result["source_as_of_method"] == "pdf_footer_explicit_year"
