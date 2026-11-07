@@ -49,6 +49,6 @@ def import_account_facts(account_inputs: dict, ledger_path: str, *, coherence: d
                                  "source_as_of": data["source_as_of"],
                                  "facts_count": len(facts)})
     # A failure in any source cannot leave a partially imported account state.
-    imported = append_verified_facts(ledger_path, batch)
+    imported = append_verified_facts(ledger_path, batch, auto_supersede=True)
     return {"status": "ok", "facts_imported": len(imported),
             "source_imports": source_summaries}
