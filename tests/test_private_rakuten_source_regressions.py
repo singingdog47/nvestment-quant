@@ -24,7 +24,7 @@ def test_yearless_pdf_footer_does_not_gain_current_year(tmp_path):
     with p.open("wb") as fp:
         writer.write(fp)
     class FakePage:
-        def extract_text(self):
+        def get_text(self):
             return "現物買付可能額 2,000 円\n11/06 22:46"
     class FakeDocument:
         def __enter__(self):
