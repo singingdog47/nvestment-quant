@@ -61,9 +61,9 @@ def build_investment_state(
         if any(token in status for token in ("執行中", "待機中", "受付済", "未約定")):
             open_orders.append(item)
 
-    cash = buying.get("cash_buying_power_jpy")
-    if cash is None:
-        cash = account.get("cash_deposit_jpy")
+    # Neither buying power nor deposit balance proves freely deployable cash.
+    # Buying power can include linked bank balances or unsettled proceeds.
+    cash = None
 
     state = {
         "schema_version": SCHEMA_VERSION,
@@ -98,6 +98,10 @@ def build_investment_state(
             "status": policy_payload.get("status"),
             "decision_gate": (decision.get("policy_guardrails") or {}).get("decision_gate"),
         },
+        "execution_ready": False,
+        "execution_blockers": ["account_wide_order_coverage_not_verified",
+                               "deployable_cash_not_verified",
+                               "live_execution_authorization_not_verified"],
         "quality": {
             "account_input_status": account_inputs.get("status"),
             "missing_input_types": account_inputs.get("missing_input_types") or [],
