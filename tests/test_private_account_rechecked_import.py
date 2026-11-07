@@ -54,3 +54,35 @@ def test_mismatched_orders_timestamp_cannot_be_masked(tmp_path):
             now=datetime.fromisoformat("2099-01-03T11:00:00+09:00"),
             max_age_hours=100)
     assert not p.exists()
+
+
+def test_sources_on_opposite_sides_of_portfolio_cannot_exceed_skew(tmp_path):
+    from private_data_coherence import classify_private_inputs
+    at = "2099-01-02T12:00:00+09:00"
+    manifest = {"source_as_of": at, "source_as_of_method": "filename_embedded_export_time"}
+    payload = fixture_inputs(at)
+    payload["inputs"]["account_summary"]["source_as_of"] = "2099-01-01T13:00:00+09:00"
+    payload["inputs"]["orders"]["source_as_of"] = "2099-01-03T11:00:00+09:00"
+    now = datetime.fromisoformat("2099-01-03T12:00:00+09:00")
+    verdict = classify_private_inputs(manifest, payload, now=now, max_age_hours=72,
+                                      max_skew_hours=24)
+    assert "ACCOUNT_SOURCES_TIME_MISMATCH" in verdict["portfolio_reasons"]
+    assert verdict["decision_safe"] is False
+    p = tmp_path / "private.jsonl"
+    with pytest.raises(ValueError, match="Freshly recomputed"):
+        import_account_facts_rechecked(manifest, payload, p, now=now,
+                                       max_age_hours=72, max_skew_hours=24)
+    assert not p.exists()
+
+
+def test_source_time_span_at_boundary_is_accepted_by_coherence():
+    from private_data_coherence import classify_private_inputs
+    at = "2099-01-02T12:00:00+09:00"
+    manifest = {"source_as_of": at, "source_as_of_method": "filename_embedded_export_time"}
+    payload = fixture_inputs(at)
+    payload["inputs"]["account_summary"]["source_as_of"] = "2099-01-02T00:00:00+09:00"
+    payload["inputs"]["orders"]["source_as_of"] = "2099-01-03T00:00:00+09:00"
+    verdict = classify_private_inputs(
+        manifest, payload, now=datetime.fromisoformat("2099-01-03T01:00:00+09:00"),
+        max_age_hours=48, max_skew_hours=24)
+    assert verdict["status"] == "VERIFIED"
