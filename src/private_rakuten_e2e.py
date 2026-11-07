@@ -92,7 +92,16 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
     # Write only after all checks pass; no real order identifiers in public CI.
     if ledger_path.resolve() in [p.resolve() for p in sources]:
         raise ValueError("Ledger path must differ from source")
-    append_verified_facts(ledger_path, facts, auto_supersede=True)
+    existing = read_verified_facts(ledger_path)
+    pending = []
+    for fact in facts:
+        old = existing.get(fact["key"])
+        if old and all(old.get(k) == fact[k] for k in
+                       ("key", "value", "observed_at", "scope", "evidence_ref")):
+            continue  # Exact historical replay is idempotent.
+        pending.append(fact)
+    if pending:
+        append_verified_facts(ledger_path, pending, auto_supersede=True)
     actual = read_verified_facts(ledger_path)
     if any(actual.get(f["key"], {}).get("value") != f["value"] for f in facts):
         raise ValueError("Private ledger read-back mismatch")
