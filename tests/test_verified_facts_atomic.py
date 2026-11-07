@@ -21,7 +21,7 @@ def test_batch_commit_and_reload(tmp_path):
     p = tmp_path / "facts.jsonl"
     append_verified_facts(p, [_fact("bank", 100), _fact("fx", -20)])
     assert set(read_verified_facts(p)) == {"bank", "fx"}
-    assert p.read_bytes().endswith(b"\\n")
+    assert p.read_bytes().endswith(b"\n")
 
 
 def test_duplicate_keys_within_batch_rejected(tmp_path):
