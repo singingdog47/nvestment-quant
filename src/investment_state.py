@@ -97,7 +97,7 @@ def build_investment_state(
             source_status[kind] = "conflict"
         elif item.get("source_as_of") and item.get("source_as_of_method") in (
                 "filename_embedded_export_time", "pdf_footer_explicit_year"):
-            source_status[kind] = "verified"
+            source_status[kind] = "verified"  # Dated source, not reconciled content.
         else:
             source_status[kind] = "missing"
     advisory = assess_available_sources(source_status)
@@ -105,19 +105,21 @@ def build_investment_state(
     advisory["source_verification_limit"] = (
         "Source timestamps checked; numerical reconciliation and coverage "
         "must be assessed separately.")
+    advisory["source_dating_only"] = True
     advisory["recommendations_allowed"] = True
     advisory["recommendations_are_hypothetical"] = True
 
+    account_for_state = account if source_status["account_summary"] != "conflict" else {}
     state = {
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "privacy": "private",
         "source_as_of": portfolio_manifest.get("source_as_of"),
         "portfolio": {
-            "total_assets_jpy": account.get("total_assets_jpy"),
-            "invested_assets_jpy": account.get("invested_assets_jpy"),
-            "daily_change_jpy": account.get("daily_change_jpy"),
-            "daily_change_pct": account.get("daily_change_pct"),
+            "total_assets_jpy": account_for_state.get("total_assets_jpy"),
+            "invested_assets_jpy": account_for_state.get("invested_assets_jpy"),
+            "daily_change_jpy": account_for_state.get("daily_change_jpy"),
+            "daily_change_pct": account_for_state.get("daily_change_pct"),
         },
         "capital": {
             "deployable_cash_jpy": cash,
