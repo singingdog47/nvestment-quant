@@ -47,6 +47,9 @@ def build_investment_state(
     *,
     decision_context_path: str | Path = "data/decision_context_latest.json",
     watchlist_path: str | Path = "config/watchlist_master.csv",
+    private_ledger_path: str | Path | None = None,
+    now: str | None = None,
+    required_asset_scopes: tuple[str, ...] = (),
 ) -> dict:
     inputs = account_inputs.get("inputs") or {}
     account = inputs.get("account_summary") or {}
@@ -64,6 +67,16 @@ def build_investment_state(
     # Neither buying power nor deposit balance proves freely deployable cash.
     # Buying power can include linked bank balances or unsettled proceeds.
     cash = None
+
+    # The ledger is a private historical context source, never an execution permit.
+    asset_state = None
+    if private_ledger_path is not None:
+        from private_asset_state_reader import read_asset_state
+        asset_state = read_asset_state(
+            private_ledger_path,
+            now=now or datetime.now(timezone.utc).isoformat(),
+            required_scopes=required_asset_scopes,
+        )
 
     state = {
         "schema_version": SCHEMA_VERSION,
@@ -100,6 +113,7 @@ def build_investment_state(
             "status": policy_payload.get("status"),
             "decision_gate": (decision.get("policy_guardrails") or {}).get("decision_gate"),
         },
+        "private_asset_state": asset_state,
         "execution_ready": False,
         "execution_blockers": ["account_wide_order_coverage_not_verified",
                                "deployable_cash_not_verified",
