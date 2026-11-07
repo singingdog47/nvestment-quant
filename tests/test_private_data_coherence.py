@@ -476,3 +476,12 @@ def test_partially_filled_order_not_silently_treated_as_closed(tmp_path):
     assert state["open_orders"]["count"] == 1
     assert state["open_orders"]["account_wide_complete"] is False
     assert state["decision_capabilities"]["execution_ready"] is False
+
+
+def test_order_csv_partial_fill_is_open():
+    from src.private_account_import import parse_orders_bytes
+    raw = ("注文番号,銘柄コード,銘柄名,状況,売買,注文数量,約定数量,注文単価\\n"
+           "12345,1234,テスト銘柄,一部約定,買,100,30,500\\n").encode("utf-8")
+    parsed = parse_orders_bytes(raw)
+    assert parsed["orders_count"] == 1
+    assert parsed["open_orders_count"] == 1
