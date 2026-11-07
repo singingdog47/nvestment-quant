@@ -6,7 +6,10 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from portfolio_import import decode_rakuten_bytes
+try:
+    from .portfolio_import import decode_rakuten_bytes
+except ImportError:  # Legacy top-level test imports
+    from portfolio_import import decode_rakuten_bytes
 
 
 JST = timezone(timedelta(hours=9))
