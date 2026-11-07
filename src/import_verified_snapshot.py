@@ -10,7 +10,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from verified_facts_ledger import append_verified_fact, read_verified_facts, FactConflict
+from verified_facts_ledger import append_verified_facts, read_verified_facts, FactConflict
 
 
 def import_verified_snapshot(snapshot: dict, ledger_path: str | Path) -> dict:
@@ -52,12 +52,12 @@ def import_verified_snapshot(snapshot: dict, ledger_path: str | Path) -> dict:
         if existing and existing["value"] != fact["value"]:
             if fact.get("supersedes") != existing["fact_id"]:
                 raise FactConflict("Conflicting fact requires explicit supersession")
-    imported = []
-    for fact in facts:
-        imported.append(append_verified_fact(
-            ledger_path, key=fact["key"], value=fact["value"],
-            scope=fact["scope"], observed_at=observed_at,
-            evidence_ref=evidence_ref, supersedes=fact.get("supersedes")))
+    imported = append_verified_facts(ledger_path, [
+        {"key": fact["key"], "value": fact["value"],
+         "scope": fact["scope"], "observed_at": observed_at,
+         "evidence_ref": evidence_ref, "supersedes": fact.get("supersedes")}
+        for fact in facts
+    ])
     return {"status": "ok", "facts_imported": len(imported),
             "ledger_path": str(ledger_path), "source_as_of": observed_at}
 
