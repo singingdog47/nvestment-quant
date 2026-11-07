@@ -16,6 +16,7 @@ from private_account_import import (
     parse_account_summary_bytes,
     parse_buying_power_pdf,
     parse_orders_bytes,
+    parse_orders_pdf,
     source_as_of,
 )
 from private_drive import (
@@ -155,13 +156,11 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
     errors: list[dict] = []
     parsers = (
         ("account_summary", lambda p: parse_account_summary_bytes(p.read_bytes())),
-        ("orders", lambda p: parse_orders_bytes(p.read_bytes())),
+        ("orders", lambda p: parse_orders_pdf(p) if p.suffix.lower() == ".pdf" else parse_orders_bytes(p.read_bytes())),
         ("buying_power", parse_buying_power_pdf),
     )
     for path, meta in candidates:
         for kind, parser in parsers:
-            if kind in selected:
-                continue
             try:
                 parsed = parser(path)
             except Exception as exc:
@@ -169,7 +168,9 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
                 continue
             as_of, method = source_as_of(meta.get("name"), meta.get("modifiedTime"))
             if kind == "buying_power" and parsed.get("source_as_of"):
-                as_of, method = parsed["source_as_of"], "pdf_embedded_timestamp"
+                as_of, method = parsed["source_as_of"], parsed.get("source_as_of_method", "pdf_embedded_timestamp_inferred_year")
+            elif kind == "orders" and parsed.get("source_as_of_method") == "pdf_footer_explicit_year":
+                as_of, method = parsed["source_as_of"], parsed["source_as_of_method"]
             age_days = None
             if as_of and len(str(as_of)) > 10:
                 try:
@@ -178,16 +179,38 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
                 except ValueError:
                     pass
             max_age_days = float(os.getenv("PRIVATE_INPUT_MAX_AGE_DAYS", "7"))
-            selected[kind] = {
+            candidate = {
                 "source_file": meta.get("name"), "source_modified_time": meta.get("modifiedTime"),
+                **parsed,
                 "source_as_of": as_of, "source_as_of_method": method, "age_days": age_days,
-                "data_status": "stale" if age_days is not None and age_days > max_age_days else "ok", **parsed,
+                "data_status": "stale" if age_days is not None and age_days > max_age_days else "ok",
             }
+            # Select by brokerage observation time, never Drive upload order.
+            # A fallback upload timestamp cannot displace a verified export.
+            trustworthy = method in {"filename_embedded_export_time", "pdf_footer_explicit_year"}
+            previous = selected.get(kind)
+            previous_method = (previous or {}).get("source_as_of_method")
+            previous_trustworthy = previous_method in {"filename_embedded_export_time", "pdf_footer_explicit_year"}
+            if previous is None or (trustworthy and not previous_trustworthy):
+                selected[kind] = candidate
+            elif trustworthy == previous_trustworthy:
+                # ISO strings with different offsets cannot be sorted lexically.
+                def observed_utc(item):
+                    try:
+                        dt = datetime.fromisoformat(str(item.get("source_as_of") or "").replace("Z", "+00:00"))
+                        return dt.astimezone(timezone.utc) if dt.tzinfo else None
+                    except ValueError:
+                        return None
+
+                current_time = observed_utc(candidate)
+                previous_time = observed_utc(previous)
+                if current_time is not None and (previous_time is None or current_time > previous_time):
+                    selected[kind] = candidate
     missing = [x for x in ("account_summary", "orders", "buying_power") if x not in selected]
     stale = [kind for kind, item in selected.items() if item.get("data_status") == "stale"]
     snapshot = {
         "status": "ok" if not missing and not stale else "partial",
-        "selection_policy": "newest_parseable_file_by_drive_modified_time",
+        "selection_policy": "verified_brokerage_observation_time_then_fallback",
         "inputs": selected,
         "missing_input_types": missing,
         "stale_input_types": stale,

@@ -1,0 +1,28 @@
+name: Private data coherence regression (isolated)
+
+on:
+  push:
+    branches:
+      - audit/private-data-coherence-20261106
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-private-coherence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install minimal dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pandas pytest pypdf
+      - name: Run isolated synthetic regression suite
+        env:
+          PYTHONPATH: src
+        run: python -m pytest -q tests/test_private_data_coherence.py tests/test_private_account_import.py

@@ -188,7 +188,7 @@ def build_private_matrix(
         long = "UNASSESSED_FUNDAMENTALS"
         action, reasons = _classify_policy(short, medium, long, weight, account)
         if not source_fresh:
-            action = "WAIT_FRESH_PRIVATE_SNAPSHOT"
+            reasons.append("portfolio_snapshot_historical_revalidate_before_execution")
         items.append({
             "symbol": symbol, "name": str(item.get("name") or ""),
             "asset_type": str(item.get("asset_type") or ""),
@@ -208,7 +208,7 @@ def build_private_matrix(
     precedence = {
         "REVIEW_CONCENTRATION": 0, "HOLD_REVIEW_DOWNSIDE": 1,
         "HOLD_REVIEW_THESIS": 2, "WATCH_ADDITION_ONLY": 3,
-        "HOLD_RESEARCH": 4, "WAIT_FRESH_PRIVATE_SNAPSHOT": 5,
+        "HOLD_RESEARCH": 4,
     }
     items.sort(key=lambda x: (precedence.get(x["research_action"], 9), -x["market_value_jpy"], x["name"]))
     return {
@@ -222,6 +222,9 @@ def build_private_matrix(
                       "1_in_1_out_review": "required_for_any_satellite_replacement",
                       "sell_tax_cost": "not_calculated_without_price_and_tax_confirmation"},
         "holding_count": len(items), "holdings": items,
+        "decision_mode": "best_available_evidence_research",
+        "recommendations_continue": True,
+        "execution_requires_fresh_brokerage_confirmation": True,
         "privacy": "PRIVATE_EPHEMERAL_NOT_PUBLIC_REPOSITORY",
         "limits": [
             "Short volume-price flags are observations, not identified institutional net flow.",

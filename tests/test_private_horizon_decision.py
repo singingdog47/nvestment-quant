@@ -39,3 +39,16 @@ def test_staleness_and_policy_blockers():
     assert "OPEN_ORDERS_NEED_RECONCILIATION" in result["execution"]["blocking_conditions"]
     assert "EXISTING_DECISION_GATE_BLOCK" in result["execution"]["blocking_conditions"]
     assert result["execution"]["authorized"] is False
+
+
+def test_historical_snapshot_keeps_research_priorities_but_not_execution():
+    holdings, params = make_args()
+    params["source_as_of"] = "2026-10-15T17:19:00+09:00"
+    result = build_private_matrix(holdings, **params, now=NOW)
+    actions = {item["symbol"]: item for item in result["holdings"] if item["symbol"]}
+    assert actions["6701.T"]["research_action"] == "WATCH_ADDITION_ONLY"
+    assert actions["5803.T"]["research_action"] == "HOLD_REVIEW_DOWNSIDE"
+    assert all(not item["trade_authorized"] for item in result["holdings"])
+    assert result["execution"]["authorized"] is False
+    assert result["recommendations_continue"] is True
+    assert "STALE_PRIVATE_PORTFOLIO" in result["execution"]["blocking_conditions"]

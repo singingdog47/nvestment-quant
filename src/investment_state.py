@@ -6,6 +6,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from private_data_coherence import classify_private_inputs
+
 
 SCHEMA_VERSION = "1.0"
 
@@ -48,6 +50,7 @@ def build_investment_state(
     decision_context_path: str | Path = "data/decision_context_latest.json",
     watchlist_path: str | Path = "config/watchlist_master.csv",
 ) -> dict:
+    coherence = classify_private_inputs(portfolio_manifest, account_inputs)
     inputs = account_inputs.get("inputs") or {}
     account = inputs.get("account_summary") or {}
     buying = inputs.get("buying_power") or {}
@@ -58,32 +61,60 @@ def build_investment_state(
     open_orders = []
     for item in orders.get("items") or []:
         status = str(item.get("status") or "")
-        if any(token in status for token in ("執行中", "待機中", "受付済", "未約定")):
+        if any(token in status for token in ("執行中", "待機中", "受付済", "未約定", "一部約定", "一部出来")):
             open_orders.append(item)
 
-    cash = buying.get("cash_buying_power_jpy")
-    if cash is None:
-        cash = account.get("cash_deposit_jpy")
+    # Brokerage buying power and account cash balance are different concepts.
+    # Never promote a cash balance to executable buying power when its source
+    # is missing, stale, or not independently verified.
+    cash = (
+        buying.get("cash_buying_power_jpy")
+        if coherence["inputs"]["buying_power"]["status"] == "VERIFIED"
+        and not coherence["portfolio_reasons"]
+        else None
+    )
 
+    orders_verified = coherence["inputs"]["orders"]["status"] == "VERIFIED" and not coherence["portfolio_reasons"]
+    if not orders_verified:
+        open_orders = []
+
+    account_verified = (coherence["inputs"]["account_summary"]["status"] == "VERIFIED"
+                        and not coherence["portfolio_reasons"])
+
+    # Analysis and recommendations may proceed with dated evidence. Only executable
+    # quantities require fresh, complete brokerage state.
+    analysis_allowed = bool(portfolio_manifest.get("source_as_of"))
+    recommendation_allowed = analysis_allowed
+    execution_ready = False  # order scope is domestic-only; never assert account-wide readiness
+    execution_blockers = ["ACCOUNT_WIDE_ORDERS_NOT_VERIFIED"]
+    if not coherence["decision_safe"]:
+        execution_blockers.append("BROKERAGE_INPUTS_NOT_CURRENT_OR_COMPLETE")
+    if cash is None:
+        execution_blockers.append("BUYING_POWER_UNVERIFIED")
+    execution_blockers.append("DISCRETIONARY_CASH_NOT_RECONCILED")
     state = {
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "privacy": "private",
         "source_as_of": portfolio_manifest.get("source_as_of"),
         "portfolio": {
-            "total_assets_jpy": account.get("total_assets_jpy"),
-            "invested_assets_jpy": account.get("invested_assets_jpy"),
-            "daily_change_jpy": account.get("daily_change_jpy"),
-            "daily_change_pct": account.get("daily_change_pct"),
+            "total_assets_jpy": account.get("total_assets_jpy") if account_verified else None,
+            "invested_assets_jpy": account.get("invested_assets_jpy") if account_verified else None,
+            "daily_change_jpy": account.get("daily_change_jpy") if account_verified else None,
+            "daily_change_pct": account.get("daily_change_pct") if account_verified else None,
         },
         "capital": {
-            "deployable_cash_jpy": cash,
+            "deployable_cash_jpy": None,  # buying power is not unrestricted deployable cash
+            "brokerage_cash_buying_power_jpy": cash,
+            "buying_power_is_deployable_cash": False,
             "absolute_defense_cash_jpy": (decision.get("policy_guardrails") or {}).get("absolute_defense_cash_jpy"),
         },
         "open_orders": {
-            "count": len(open_orders),
+            "count": len(open_orders) if orders_verified else None,
             "items": open_orders,
-            "source_status": inputs.get("orders", {}).get("data_status", "missing") if inputs.get("orders") else "missing",
+            "source_status": "VERIFIED" if orders_verified else "UNVERIFIED",
+            "scope": "domestic_cash_equities_only" if orders_verified else "unverified",
+            "account_wide_complete": False,
         },
         "market_regime": {
             "label": regime.get("regime_label"),
@@ -98,8 +129,16 @@ def build_investment_state(
             "status": policy_payload.get("status"),
             "decision_gate": (decision.get("policy_guardrails") or {}).get("decision_gate"),
         },
+        "decision_capabilities": {
+            "analysis_allowed": analysis_allowed,
+            "recommendation_allowed": recommendation_allowed,
+            "execution_ready": execution_ready,
+            "execution_blockers": execution_blockers,
+            "principle": "Best available evidence for decisions; fresh complete data for execution.",
+        },
         "quality": {
             "account_input_status": account_inputs.get("status"),
+            "data_coherence": coherence,
             "missing_input_types": account_inputs.get("missing_input_types") or [],
             "stale_input_types": account_inputs.get("stale_input_types") or [],
             "rule": "Shared state is context only; it never places, changes, or cancels orders.",
