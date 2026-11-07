@@ -61,6 +61,7 @@ def parse_account_summary_bytes(raw: bytes) -> dict:
         "預り金": "cash_deposit_jpy",
         "外貨預り金": "foreign_cash_jpy",
         "信用保証金": "margin_collateral_jpy",
+        "国内株式信用保証金": "margin_collateral_jpy",
         "FX証拠金純資産": "fx_margin_net_assets_jpy",
     }
     values: dict[str, float] = {}
@@ -156,14 +157,18 @@ def parse_buying_power_pdf(path: str | Path) -> dict:
             values[key] = value
     if "cash_buying_power_jpy" not in values:
         raise ValueError("Cash buying power not found in Rakuten PDF")
+    # A footer without an explicit year cannot establish an observation year.
+    # Do not infer it from the runtime clock: historical PDFs may be replayed.
     timestamp = None
-    match = re.search(r"(\d{2}/\d{2})\s+(\d{2}:\d{2})", text)
+    match = re.search(r"(20\\d{2})[/-](\\d{2})[/-](\\d{2})\\s+(\\d{2}:\\d{2})", text)
     if match:
-        now = datetime.now(JST)
         timestamp = datetime.strptime(
-            f"{now.year}/{match.group(1)} {match.group(2)}", "%Y/%m/%d %H:%M"
+            f"{match.group(1)}/{match.group(2)}/{match.group(3)} {match.group(4)}",
+            "%Y/%m/%d %H:%M",
         ).replace(tzinfo=JST).isoformat()
-    return {"status": "ok", "source_as_of": timestamp, **values}
+    return {"status": "ok", "source_as_of": timestamp,
+            "source_as_of_method": "pdf_footer_explicit_year" if timestamp else "missing",
+            **values}
 
 
 def source_as_of(name: str | None, modified_time: str | None) -> tuple[str | None, str]:
