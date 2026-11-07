@@ -81,6 +81,11 @@ def build_investment_state(
     account_verified = (coherence["inputs"]["account_summary"]["status"] == "VERIFIED"
                         and not coherence["portfolio_reasons"])
 
+    # Analysis and recommendations may proceed with dated evidence. Only executable
+    # quantities require fresh, complete brokerage state.
+    analysis_allowed = bool(portfolio_manifest.get("source_as_of"))
+    recommendation_allowed = analysis_allowed
+    execution_ready = False  # order scope is domestic-only; never assert account-wide readiness
     state = {
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -115,6 +120,13 @@ def build_investment_state(
         "policy": {
             "status": policy_payload.get("status"),
             "decision_gate": (decision.get("policy_guardrails") or {}).get("decision_gate"),
+        },
+        "decision_capabilities": {
+            "analysis_allowed": analysis_allowed,
+            "recommendation_allowed": recommendation_allowed,
+            "execution_ready": execution_ready,
+            "execution_blockers": ["ACCOUNT_WIDE_ORDERS_NOT_VERIFIED"] if not coherence["decision_safe"] else ["ACCOUNT_WIDE_ORDERS_NOT_VERIFIED"],
+            "principle": "Best available evidence for decisions; fresh complete data for execution.",
         },
         "quality": {
             "account_input_status": account_inputs.get("status"),
