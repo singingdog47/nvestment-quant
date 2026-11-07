@@ -18,6 +18,7 @@ from src.private_account_import import (parse_account_summary_bytes,
                                         reconcile_account_components,
                                         source_as_of)
 from src.verified_facts_ledger import append_verified_facts, read_verified_facts
+from src.advisory_continuity import classify_advisory_continuity
 
 
 def _digest(path: Path) -> str:
@@ -125,7 +126,13 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
     actual = read_verified_facts(ledger_path)
     if any(actual.get(f["key"], {}).get("value") != f["value"] for f in facts):
         raise ValueError("Private ledger read-back mismatch")
-    return {"status": "HISTORICAL_PARTIAL_COVERAGE",
+    advisory = classify_advisory_continuity(
+        verified_scopes=["account_summary", "buying_power",
+                         "orders_domestic_cash_document", "orders_mutual_funds_document"],
+        missing_scopes=["orders_foreign_equities", "cash_and_settlement",
+                        "account_wide_order_coverage"],
+        conflicting_scopes=[], stale_scopes=[])
+    return {"advisory": advisory, "status": "HISTORICAL_PARTIAL_COVERAGE",
             "source_count": 4, "ledger_facts_verified": len(facts),
             "account_reconciliation": balance["status"],
             "bank_balance_crosschecked": True,
