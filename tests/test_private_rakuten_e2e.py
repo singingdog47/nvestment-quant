@@ -22,13 +22,13 @@ def test_historical_private_ledger_roundtrip(tmp_path, monkeypatch):
     ledger = tmp_path / "private" / "facts.jsonl"
     result = mod.verify_historical_files(csv, *pdfs, ledger)
     assert result["status"] == "HISTORICAL_PARTIAL_COVERAGE"
-    assert result["ledger_facts_verified"] == 2
+    assert result["ledger_facts_verified"] == 4
     assert result["execution_ready"] is False
     assert result["deployable_cash_jpy"] is None
     assert ledger.exists()
     assert ledger.stat().st_mode & 0o777 == 0o600
     # Same immutable historical observation can be reverified idempotently.
-    assert mod.verify_historical_files(csv, *pdfs, ledger)["ledger_facts_verified"] == 2
+    assert mod.verify_historical_files(csv, *pdfs, ledger)["ledger_facts_verified"] == 4
 
 
 def test_missing_pdf_rejects_without_ledger(tmp_path):
