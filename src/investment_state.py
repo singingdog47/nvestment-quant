@@ -69,12 +69,16 @@ def build_investment_state(
     # Buying power can include linked bank balances or unsettled proceeds.
     cash = None
 
-    # The ledger is a private historical context source, never an execution permit.
+    # One source of truth: never silently merge conflicting private ledgers.
+    if (private_ledger_path is not None and verified_ledger_path is not None
+            and Path(private_ledger_path) != Path(verified_ledger_path)):
+        raise ValueError("Conflicting private ledger paths")
+    selected_ledger = private_ledger_path if private_ledger_path is not None else verified_ledger_path
     asset_state = None
-    if private_ledger_path is not None:
+    if selected_ledger is not None:
         from private_asset_state_reader import read_asset_state
         asset_state = read_asset_state(
-            private_ledger_path,
+            selected_ledger,
             now=now or datetime.now(timezone.utc).isoformat(),
             required_scopes=required_asset_scopes,
         )
@@ -126,16 +130,10 @@ def build_investment_state(
             "rule": "Shared state is context only; it never places, changes, or cancels orders.",
         },
     }
-    if verified_ledger_path is not None:
-        from private_asset_state_reader import read_asset_state
-        observation_time = now or datetime.now(timezone.utc).isoformat()
-        verified_history = read_asset_state(verified_ledger_path, now=observation_time)
-        # The ledger is private; preserve source provenance and freshness for
-        # analysis, but never promote historical balances into executable cash.
-        state["verified_asset_history"] = verified_history
-        state["execution_ready"] = False
+    if asset_state is not None:
+        state["verified_asset_history"] = asset_state
         state["execution_blockers"] = sorted(set(
-            state["execution_blockers"] + verified_history["execution_blockers"]
+            state["execution_blockers"] + asset_state["execution_blockers"]
         ))
     return state
 
