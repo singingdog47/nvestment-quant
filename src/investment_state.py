@@ -97,7 +97,9 @@ def build_investment_state(
             source_status[kind] = "conflict"
         elif item.get("source_as_of") and item.get("source_as_of_method") in (
                 "filename_embedded_export_time", "pdf_footer_explicit_year"):
-            source_status[kind] = "verified"  # Dated source, not reconciled content.
+            source_status[kind] = ("verified" if str(item.get("data_status") or "").lower()
+                                   in ("verified", "reconciled", "ok_verified")
+                                   else "dated_unreconciled")
         else:
             source_status[kind] = "missing"
     advisory = assess_available_sources(source_status)
