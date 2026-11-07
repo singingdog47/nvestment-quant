@@ -44,3 +44,30 @@ def classify_advisory_continuity(*, verified_scopes: list[str],
         "execution_ready": False,
         "trade_execution_authorized": False,
     }
+
+
+def assess_available_sources(source_status: dict[str, str]) -> dict:
+    """Determine advisory coverage without demanding a complete four-file batch.
+
+    Input statuses: verified, missing, stale, conflict, duplicate_verified.
+    Unknown statuses are rejected rather than assumed verified.
+    """
+    allowed = {"verified", "missing", "stale", "conflict", "duplicate_verified"}
+    unknown = {v for v in source_status.values() if v not in allowed}
+    if unknown:
+        raise ValueError(f"Unknown source statuses: {sorted(unknown)}")
+    groups = {name: [] for name in allowed}
+    for scope, status in source_status.items():
+        groups[status].append(scope)
+    result = classify_advisory_continuity(
+        verified_scopes=groups["verified"] + groups["duplicate_verified"],
+        missing_scopes=groups["missing"],
+        conflicting_scopes=groups["conflict"],
+        stale_scopes=groups["stale"],
+        duplicate_scopes=groups["duplicate_verified"],
+    )
+    result["source_status"] = dict(source_status)
+    result["source_count"] = len(source_status)
+    result["verified_source_count"] = len(groups["verified"]) + len(groups["duplicate_verified"])
+    result["forecast_is_conditional"] = result["analysis_mode"] != "EVIDENCE_BASED_FORECAST"
+    return result
