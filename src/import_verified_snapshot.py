@@ -25,6 +25,16 @@ def import_verified_snapshot(snapshot: dict, ledger_path: str | Path) -> dict:
     timestamp = datetime.fromisoformat(str(observed_at).replace("Z", "+00:00"))
     if timestamp.tzinfo is None:
         raise ValueError("Observation timestamp requires timezone")
+    # Caller-provided "verified" is insufficient for execution-sensitive facts.
+    # Reconciliation status must be independently supplied by the upstream
+    # brokerage parser; this importer cannot infer completeness itself.
+    quality = snapshot.get("quality") or {}
+    if quality.get("source_verified") is not True:
+        raise ValueError("Upstream source verification required")
+    if quality.get("coherence_verified") is not True:
+        raise ValueError("Upstream source coherence verification required")
+    if quality.get("source_scope") not in ("domestic_cash_equities", "fund_orders", "account_summary", "buying_power"):
+        raise ValueError("Explicit supported source scope required")
     facts = snapshot["facts"]
     keys = [fact.get("key") for fact in facts]
     if any(not isinstance(k, str) or not k.strip() for k in keys) or len(keys) != len(set(keys)):
