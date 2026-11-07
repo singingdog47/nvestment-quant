@@ -8,7 +8,10 @@ from __future__ import annotations
 from datetime import datetime
 from pathlib import Path
 
-from verified_facts_ledger import read_verified_facts
+try:
+    from .verified_facts_ledger import read_verified_facts
+except ImportError:  # Legacy top-level callers
+    from verified_facts_ledger import read_verified_facts
 
 
 def read_asset_state(ledger_path: str | Path, *, now: str,
