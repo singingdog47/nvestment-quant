@@ -91,6 +91,30 @@ def parse_account_summary_bytes(raw: bytes) -> dict:
     }
 
 
+
+def reconcile_account_components(parsed: dict) -> dict:
+    """Reconcile historical balances; never infer executable cash."""
+    required = ("total_assets_jpy", "invested_assets_jpy",
+                "deposits_total_jpy", "cash_deposit_jpy",
+                "foreign_cash_jpy", "margin_collateral_jpy",
+                "fx_margin_net_assets_jpy")
+    missing = [key for key in required if key not in parsed]
+    if missing:
+        return {"status": "INCOMPLETE", "missing": missing,
+                "deployable_cash_jpy": None, "execution_ready": False}
+    asset_residual = parsed["total_assets_jpy"] - (
+        parsed["invested_assets_jpy"] + parsed["deposits_total_jpy"]
+        + parsed["fx_margin_net_assets_jpy"])
+    deposit_residual = parsed["deposits_total_jpy"] - (
+        parsed["cash_deposit_jpy"] + parsed["foreign_cash_jpy"]
+        + parsed["margin_collateral_jpy"])
+    return {"status": "RECONCILED_HISTORICAL"
+            if asset_residual == 0 and deposit_residual == 0 else "MISMATCH",
+            "asset_residual_jpy": asset_residual,
+            "deposit_residual_jpy": deposit_residual,
+            "deployable_cash_jpy": None, "execution_ready": False}
+
+
 def parse_orders_bytes(raw: bytes) -> dict:
     """Parse only order-state metadata; this function never places orders."""
     text, encoding = decode_rakuten_bytes(raw)
