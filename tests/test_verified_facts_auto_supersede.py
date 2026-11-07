@@ -25,3 +25,14 @@ def test_scope_change_rejected(tmp_path):
     append_verified_facts(p, [fact("bank:balance", 100, 1)])
     with pytest.raises(FactConflict, match="Scope changed"):
         append_verified_facts(p, [fact("bank:balance", 110, 2, "all_accounts")], auto_supersede=True)
+
+
+def test_reused_evidence_cannot_claim_newer_observation(tmp_path):
+    p = tmp_path / "facts.jsonl"
+    append_verified_facts(p, [fact("bank:balance", 100, 1)])
+    original = p.read_bytes()
+    altered = fact("bank:balance", 120, 2)
+    altered["evidence_ref"] = "private:synthetic-1"
+    with pytest.raises(FactConflict, match="distinct source evidence"):
+        append_verified_facts(p, [altered], auto_supersede=True)
+    assert p.read_bytes() == original
