@@ -208,7 +208,7 @@ def build_private_matrix(
     precedence = {
         "REVIEW_CONCENTRATION": 0, "HOLD_REVIEW_DOWNSIDE": 1,
         "HOLD_REVIEW_THESIS": 2, "WATCH_ADDITION_ONLY": 3,
-        "HOLD_RESEARCH": 4, "WAIT_FRESH_PRIVATE_SNAPSHOT": 5,
+        "HOLD_RESEARCH": 4,
     }
     items.sort(key=lambda x: (precedence.get(x["research_action"], 9), -x["market_value_jpy"], x["name"]))
     return {
