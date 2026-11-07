@@ -460,3 +460,19 @@ def test_unknown_portfolio_timestamp_cannot_be_treated_as_evidence(tmp_path):
     )
     assert state["decision_capabilities"]["analysis_allowed"] is False
     assert state["decision_capabilities"]["execution_ready"] is False
+
+
+def test_partially_filled_order_not_silently_treated_as_closed(tmp_path):
+    from src.investment_state import build_investment_state
+    from datetime import datetime, timezone
+    stamp = datetime.now(timezone.utc).isoformat()
+    manifest = {"source_as_of": stamp, "source_as_of_method": "filename_embedded_export_time"}
+    inputs = {"inputs": {"orders": {"source_as_of": stamp,
+        "source_as_of_method": "pdf_footer_explicit_year", "data_status": "ok",
+        "items": [{"order_id": "123", "status": "一部約定", "code": "1234"}]}}}
+    state = build_investment_state(inputs, manifest, {},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv")
+    assert state["open_orders"]["count"] == 1
+    assert state["open_orders"]["account_wide_complete"] is False
+    assert state["decision_capabilities"]["execution_ready"] is False
