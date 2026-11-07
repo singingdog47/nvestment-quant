@@ -5,6 +5,9 @@ No raw brokerage values are written to the public repository.
 """
 from __future__ import annotations
 
+import math
+from numbers import Real
+
 from verified_facts_ledger import append_verified_facts
 
 
@@ -34,8 +37,21 @@ def import_account_facts(account_inputs: dict, ledger_path: str, *, coherence: d
         if (verdicts[kind].get("source_as_of") != data["source_as_of"] or
                 verdicts[kind].get("source_as_of_method") != data["source_as_of_method"]):
             raise ValueError("Coherence verdict does not match source: " + kind)
-        facts = [{"key": f"{kind}:{key}", "value": data[key], "scope": kind}
-                 for key in keys if data.get(key) is not None]
+        facts = []
+        for key in keys:
+            value = data.get(key)
+            if value is None:
+                continue
+            if isinstance(value, bool) or not isinstance(value, Real) or not math.isfinite(value):
+                raise ValueError("Invalid numeric account value: " + kind + ":" + key)
+            if value < 0:
+                raise ValueError("Negative account value requires manual reconciliation: " + kind + ":" + key)
+            facts.append({"key": f"{kind}:{key}", "value": value, "scope": kind})
+        if kind == "account_summary":
+            total = data.get("total_assets_jpy")
+            invested = data.get("invested_assets_jpy")
+            if total is None or invested is None or total < invested:
+                raise ValueError("Account total and invested assets inconsistent")
         if not facts:
             raise ValueError("Missing source values: " + kind)
         evidence = data.get("source_file") or account_inputs.get("source_file")
