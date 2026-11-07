@@ -1,14 +1,13 @@
-"""Prepare explicit supersession links for a new verified asset snapshot.
+"""Import newer verified observations with lock-protected supersession.
 
-Only verified upstream observations are accepted. The importer remains the
-final validator; this helper never authorizes trading.
+The same exclusive lock covers reading the prior record and writing its
+successor. This is a historical-data importer, never a trade authorization.
 """
 from __future__ import annotations
 
 from datetime import datetime
 
-from import_verified_snapshot import import_verified_snapshot
-from verified_facts_ledger import FactConflict, read_verified_facts
+from verified_facts_ledger import append_verified_facts
 
 
 def import_newer_verified_snapshot(snapshot: dict, ledger_path: str) -> dict:
@@ -17,30 +16,32 @@ def import_newer_verified_snapshot(snapshot: dict, ledger_path: str) -> dict:
     quality = snapshot.get("quality") or {}
     if quality.get("source_verified") is not True or quality.get("coherence_verified") is not True:
         raise ValueError("Upstream source and coherence verification required")
-    if not isinstance(snapshot.get("evidence_ref"), str) or not snapshot["evidence_ref"].strip():
+    evidence = snapshot.get("evidence_ref")
+    scope = quality.get("source_scope")
+    if not isinstance(evidence, str) or not evidence.strip():
         raise ValueError("Concrete evidence reference required")
-    timestamp = datetime.fromisoformat(str(snapshot.get("observed_at", "")).replace("Z", "+00:00"))
+    if not isinstance(scope, str) or not scope.strip():
+        raise ValueError("Explicit source scope required")
+    observed_at = snapshot.get("observed_at")
+    if not isinstance(observed_at, str):
+        raise ValueError("Observation timestamp required")
+    timestamp = datetime.fromisoformat(observed_at.replace("Z", "+00:00"))
     if timestamp.tzinfo is None:
         raise ValueError("Timezone required")
-    current = read_verified_facts(ledger_path)
-    prepared = []
-    for fact in snapshot.get("facts") or []:
-        if not isinstance(fact, dict) or not isinstance(fact.get("key"), str):
-            raise ValueError("Invalid fact")
-        old = current.get(fact["key"])
-        new_fact = dict(fact)
-        if old is not None:
-            previous = datetime.fromisoformat(old["observed_at"].replace("Z", "+00:00"))
-            if timestamp <= previous:
-                raise FactConflict("Automatic supersession requires strictly newer observation")
-            if old["scope"] != fact.get("scope"):
-                raise FactConflict("Scope changed; manual reconciliation required")
-            supplied = fact.get("supersedes")
-            if supplied is not None and supplied != old["fact_id"]:
-                raise FactConflict("Conflicting explicit supersession")
-            new_fact["supersedes"] = old["fact_id"]
-        elif fact.get("supersedes") is not None:
-            raise FactConflict("Cannot supersede a nonexistent fact")
-        prepared.append(new_fact)
-    payload = {**snapshot, "facts": prepared}
-    return import_verified_snapshot(payload, ledger_path)
+    facts = snapshot.get("facts")
+    if not isinstance(facts, list) or not facts:
+        raise ValueError("Nonempty facts required")
+    keys = [item.get("key") if isinstance(item, dict) else None for item in facts]
+    if any(not isinstance(key, str) or not key.strip() for key in keys) or len(set(keys)) != len(keys):
+        raise ValueError("Fact keys must be nonempty and unique")
+    batch = []
+    for fact in facts:
+        if "value" not in fact or not isinstance(fact.get("scope"), str) or not fact["scope"].strip():
+            raise ValueError("Fact value and scope required")
+        batch.append({"key": fact["key"], "value": fact["value"],
+                      "scope": fact["scope"], "observed_at": observed_at,
+                      "evidence_ref": evidence,
+                      "supersedes": fact.get("supersedes")})
+    imported = append_verified_facts(ledger_path, batch, auto_supersede=True)
+    return {"status": "ok", "facts_imported": len(imported),
+            "ledger_path": str(ledger_path), "source_as_of": observed_at}
