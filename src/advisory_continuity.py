@@ -52,7 +52,7 @@ def assess_available_sources(source_status: dict[str, str]) -> dict:
     Input statuses: verified, missing, stale, conflict, duplicate_verified.
     Unknown statuses are rejected rather than assumed verified.
     """
-    allowed = {"verified", "missing", "stale", "conflict", "duplicate_verified"}
+    allowed = {"verified", "missing", "stale", "conflict", "duplicate_verified", "dated_unreconciled"}
     unknown = {v for v in source_status.values() if v not in allowed}
     if unknown:
         raise ValueError(f"Unknown source statuses: {sorted(unknown)}")
@@ -61,11 +61,12 @@ def assess_available_sources(source_status: dict[str, str]) -> dict:
         groups[status].append(scope)
     result = classify_advisory_continuity(
         verified_scopes=groups["verified"] + groups["duplicate_verified"],
-        missing_scopes=groups["missing"],
+        missing_scopes=groups["missing"] + groups["dated_unreconciled"],
         conflicting_scopes=groups["conflict"],
         stale_scopes=groups["stale"],
         duplicate_scopes=groups["duplicate_verified"],
     )
+    result["dated_but_unreconciled_scopes"] = sorted(groups["dated_unreconciled"])
     result["source_status"] = dict(source_status)
     result["source_count"] = len(source_status)
     result["verified_source_count"] = len(groups["verified"]) + len(groups["duplicate_verified"])
