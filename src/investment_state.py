@@ -83,6 +83,31 @@ def build_investment_state(
             required_scopes=required_asset_scopes,
         )
 
+    # Advisory forecasts remain available even when private inputs are partial.
+    # This does NOT relax the separate execution blockers.
+    from src.advisory_continuity import assess_available_sources
+    source_status = {}
+    for kind in ("account_summary", "buying_power", "orders"):
+        item = inputs.get(kind) or {}
+        if not item:
+            source_status[kind] = "missing"
+        elif str(item.get("data_status") or "").lower() in ("stale", "expired"):
+            source_status[kind] = "stale"
+        elif str(item.get("data_status") or "").lower() in ("conflict", "mismatch"):
+            source_status[kind] = "conflict"
+        elif item.get("source_as_of") and item.get("source_as_of_method") in (
+                "filename_embedded_export_time", "pdf_footer_explicit_year"):
+            source_status[kind] = "verified"
+        else:
+            source_status[kind] = "missing"
+    advisory = assess_available_sources(source_status)
+    # Timestamp evidence establishes only source dating, not correctness.
+    advisory["source_verification_limit"] = (
+        "Source timestamps checked; numerical reconciliation and coverage "
+        "must be assessed separately.")
+    advisory["recommendations_allowed"] = True
+    advisory["recommendations_are_hypothetical"] = True
+
     state = {
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -119,6 +144,7 @@ def build_investment_state(
             "decision_gate": (decision.get("policy_guardrails") or {}).get("decision_gate"),
         },
         "private_asset_state": asset_state,
+        "advisory_continuity": advisory,
         "execution_ready": False,
         "execution_blockers": ["account_wide_order_coverage_not_verified",
                                "deployable_cash_not_verified",
