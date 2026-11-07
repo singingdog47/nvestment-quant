@@ -59,3 +59,24 @@ def test_stale_account_values_are_scenario_only(tmp_path):
     assert state["advisory_source_values"]["account_summary"]["total_assets_jpy"] == 12345
     assert state["advisory_continuity"]["analysis_mode"] == "SCENARIO_ONLY"
     assert state["execution_ready"] is False
+
+
+def test_conflicted_account_numbers_not_exposed(tmp_path):
+    state = build_investment_state(
+        account_inputs={"status": "PARTIAL", "inputs": {
+            "account_summary": {
+                "data_status": "conflict",
+                "total_assets_jpy": 999999999,
+                "invested_assets_jpy": 999999999,
+            },
+        }},
+        portfolio_manifest={},
+        policy_payload={},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv",
+    )
+    assert state["portfolio"]["total_assets_jpy"] is None
+    assert state["portfolio"]["invested_assets_jpy"] is None
+    assert "account_summary" in state["advisory_continuity"]["conflicting_scopes_excluded"]
+    assert state["advisory_continuity"]["analysis_allowed"] is True
+    assert state["execution_ready"] is False
