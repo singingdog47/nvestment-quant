@@ -103,9 +103,20 @@ def read_verified_facts(path: str | Path) -> dict[str, dict]:
         digest = hashlib.sha256(_canonical({k: v for k, v in row.items() if k not in ("fact_id", "recorded_at_utc")}).encode()).hexdigest()
         if row.get("fact_id") != digest:
             raise FactConflict("Ledger integrity check failed")
+        stamp = datetime.fromisoformat(row["observed_at"].replace("Z", "+00:00"))
+        if stamp.tzinfo is None:
+            raise FactConflict("Ledger contains naive observation timestamp")
         old = current.get(row["key"])
-        if old and _canonical(old["value"]) != _canonical(row["value"]):
-            if row.get("supersedes") != old["fact_id"]:
-                raise FactConflict("Ledger contains unapproved fact replacement")
+        if old:
+            previous_stamp = datetime.fromisoformat(old["observed_at"].replace("Z", "+00:00"))
+            if stamp < previous_stamp:
+                raise FactConflict("Ledger contains out-of-order observation")
+            if _canonical(old["value"]) != _canonical(row["value"]):
+                if row.get("supersedes") != old["fact_id"]:
+                    raise FactConflict("Ledger contains unapproved fact replacement")
+            elif row.get("supersedes") is not None and row["supersedes"] != old["fact_id"]:
+                raise FactConflict("Ledger contains invalid supersedes reference")
+        elif row.get("supersedes") is not None:
+            raise FactConflict("Ledger supersedes a nonexistent fact")
         current[row["key"]] = row
     return current
