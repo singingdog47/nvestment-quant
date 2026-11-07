@@ -432,3 +432,31 @@ def test_actual_rakuten_margin_and_bank_label_variants():
     assert parsed["margin_collateral_jpy"] == 886593
     assert parsed["fx_margin_net_assets_jpy"] == 171991
     assert parsed["rakuten_bank_balance_jpy"] == 2164211
+
+
+def test_stale_evidence_allows_analysis_but_never_execution(tmp_path):
+    from src.investment_state import build_investment_state
+    manifest = {"source_as_of": "2026-11-06T22:51:14+09:00",
+                "source_as_of_method": "filename_embedded_export_time"}
+    state = build_investment_state(
+        {"inputs": {}}, manifest, {},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv",
+    )
+    capabilities = state["decision_capabilities"]
+    assert capabilities["analysis_allowed"] is True
+    assert capabilities["recommendation_allowed"] is True
+    assert capabilities["execution_ready"] is False
+    assert "ACCOUNT_WIDE_ORDERS_NOT_VERIFIED" in capabilities["execution_blockers"]
+    assert state["capital"]["deployable_cash_jpy"] is None
+
+
+def test_unknown_portfolio_timestamp_cannot_be_treated_as_evidence(tmp_path):
+    from src.investment_state import build_investment_state
+    state = build_investment_state(
+        {"inputs": {}}, {}, {},
+        decision_context_path=tmp_path / "missing.json",
+        watchlist_path=tmp_path / "missing.csv",
+    )
+    assert state["decision_capabilities"]["analysis_allowed"] is False
+    assert state["decision_capabilities"]["execution_ready"] is False
