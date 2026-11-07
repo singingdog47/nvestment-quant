@@ -5,7 +5,7 @@ No raw brokerage values are written to the public repository.
 """
 from __future__ import annotations
 
-from import_verified_snapshot import import_verified_snapshot
+from verified_facts_ledger import append_verified_facts
 
 
 def import_account_facts(account_inputs: dict, ledger_path: str, *, coherence: dict) -> dict:
@@ -18,7 +18,8 @@ def import_account_facts(account_inputs: dict, ledger_path: str, *, coherence: d
     if any((verdicts.get(k) or {}).get("status") != "VERIFIED" for k in ("account_summary", "buying_power", "orders")):
         raise ValueError("Missing verified per-source coherence verdict")
     inputs = account_inputs.get("inputs") or {}
-    results = []
+    batch = []
+    source_summaries = []
     for kind, keys in (
         ("account_summary", ("total_assets_jpy", "invested_assets_jpy",
             "deposits_total_jpy", "cash_deposit_jpy", "margin_collateral_jpy")),
@@ -37,12 +38,17 @@ def import_account_facts(account_inputs: dict, ledger_path: str, *, coherence: d
                  for key in keys if data.get(key) is not None]
         if not facts:
             raise ValueError("Missing source values: " + kind)
-        results.append(import_verified_snapshot({
-            "verification_status": "verified",
-            "observed_at": data["source_as_of"],
-            "evidence_ref": "private:" + str(data.get("source_file") or account_inputs.get("source_file") or kind),
-            "quality": {"source_verified": True, "coherence_verified": True,
-                        "source_scope": kind},
-            "facts": facts,
-        }, ledger_path))
-    return {"status": "ok", "source_imports": results}
+        evidence = data.get("source_file") or account_inputs.get("source_file")
+        if not isinstance(evidence, str) or not evidence.strip():
+            raise ValueError("Missing concrete source evidence: " + kind)
+        batch.extend({
+            **fact, "observed_at": data["source_as_of"],
+            "evidence_ref": "private:" + evidence,
+        } for fact in facts)
+        source_summaries.append({"source_scope": kind,
+                                 "source_as_of": data["source_as_of"],
+                                 "facts_count": len(facts)})
+    # A failure in any source cannot leave a partially imported account state.
+    imported = append_verified_facts(ledger_path, batch)
+    return {"status": "ok", "facts_imported": len(imported),
+            "source_imports": source_summaries}
