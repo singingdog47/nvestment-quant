@@ -97,3 +97,29 @@ def test_duplicate_document_bytes_rejected_before_parsing(tmp_path):
     with pytest.raises(ValueError, match="Duplicate source content"):
         mod.verify_historical_files(csv, *pdfs, ledger)
     assert not ledger.exists()
+
+
+def test_order_transaction_timestamp_is_not_export_footer(tmp_path, monkeypatch):
+    csv = tmp_path / "assetbalance(all)_20990102_120000.csv"
+    csv.write_bytes(('資産合計,2000\n保有商品の評価額合計,1000\n'
+                     '預り金合計,800\n預り金,300\n外貨預り金,100\n'
+                     '国内株式信用保証金,400\nFX証拠金（純資産）,200\n'
+                     '楽天銀行普通預金残高,1234\n').encode("cp932"))
+    pdfs = [tmp_path / f"{name}.pdf" for name in ("buying", "domestic", "fund")]
+    for pdf in pdfs:
+        pdf.write_bytes(("synthetic " + pdf.stem).encode())
+    monkeypatch.setattr(mod, "parse_buying_power_pdf", lambda path: {
+        "status": "ok", "source_as_of": "2099-01-02T12:00:00+09:00",
+        "cash_buying_power_jpy": 1800})
+    def pdf_text(path):
+        if path == pdfs[0]:
+            return "楽天銀行普通預金残高 1,234"
+        heading = "注文一覧" if path == pdfs[1] else "購入・売却履歴"
+        # Transaction date appears near top, footer has no export timestamp.
+        return heading + "\n2099/01/02 12:00\n" + "\n".join(
+            ["注文の詳細"] * 12 + ["ページ末尾"])
+    monkeypatch.setattr(mod, "_pdf_text", pdf_text)
+    ledger = tmp_path / "facts.jsonl"
+    with pytest.raises(ValueError, match="footer timestamp"):
+        mod.verify_historical_files(csv, *pdfs, ledger)
+    assert not ledger.exists()
