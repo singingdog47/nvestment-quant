@@ -131,7 +131,7 @@ def parse_orders_bytes(raw: bytes) -> dict:
         })
     if not items:
         raise ValueError("No Rakuten order rows found")
-    open_tokens = ("執行中", "待機中", "受付済", "未約定")
+    open_tokens = ("執行中", "待機中", "受付済", "未約定", "一部約定", "一部出来")
     return {
         "status": "ok",
         "source_encoding": encoding,
