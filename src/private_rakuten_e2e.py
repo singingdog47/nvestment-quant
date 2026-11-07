@@ -124,7 +124,11 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
     if pending:
         append_verified_facts(ledger_path, pending, auto_supersede=True)
     actual = read_verified_facts(ledger_path)
-    if any(actual.get(f["key"], {}).get("value") != f["value"] for f in facts):
+    # Read-back must establish provenance and observation identity, not just
+    # coincidentally matching numeric values.
+    fields = ("value", "observed_at", "scope", "evidence_ref")
+    if any(any(actual.get(f["key"], {}).get(field) != f[field]
+               for field in fields) for f in facts):
         raise ValueError("Private ledger read-back mismatch")
     advisory = classify_advisory_continuity(
         verified_scopes=["account_summary", "buying_power",
