@@ -499,4 +499,5 @@ def test_verified_buying_power_is_not_discretionary_cash(tmp_path):
     assert state["capital"]["brokerage_cash_buying_power_jpy"] == 2863480
     assert state["capital"]["deployable_cash_jpy"] is None
     assert state["capital"]["buying_power_is_deployable_cash"] is False
+    assert "DISCRETIONARY_CASH_NOT_RECONCILED" in state["decision_capabilities"]["execution_blockers"]
     assert state["decision_capabilities"]["execution_ready"] is False
