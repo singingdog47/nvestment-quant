@@ -89,6 +89,26 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
          "observed_at": buying["source_as_of"], "scope": "buying_power",
          "evidence_ref": "private:sha256:" + digests[1]},
     ]
+    # Record both order PDFs as *document evidence only*, never as proof
+    # of complete orders or parsed fills. Each has its own dated footer.
+    for label, content, digest, scope in [
+        ("domestic", domestic_text, digests[2], "orders_domestic_cash_document"),
+        ("fund", fund_text, digests[3], "orders_mutual_funds_document"),
+    ]:
+        dates = re.findall(r"20\\d{2}/\\d{2}/\\d{2}\\s+\\d{2}:\\d{2}", content)
+        if not dates:
+            raise ValueError(f"{label} PDF has no explicit timestamp")
+        doc_time = datetime.strptime(dates[-1], "%Y/%m/%d %H:%M")
+        doc_time = doc_time.replace(tzinfo=datetime.fromisoformat(stamp).tzinfo)
+        if abs((datetime.fromisoformat(stamp) - doc_time).total_seconds()) > 3600:
+            raise ValueError(f"{label} order PDF timestamp skew > 1h")
+        facts.append({
+            "key": "rakuten_historical:" + scope,
+            "value": {"document_present": True, "order_rows_verified": False,
+                      "account_wide_coverage_verified": False},
+            "observed_at": doc_time.isoformat(), "scope": scope,
+            "evidence_ref": "private:sha256:" + digest,
+        })
     # Write only after all checks pass; no real order identifiers in public CI.
     if ledger_path.resolve() in [p.resolve() for p in sources]:
         raise ValueError("Ledger path must differ from source")
