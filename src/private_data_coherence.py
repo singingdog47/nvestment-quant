@@ -64,6 +64,18 @@ def classify_private_inputs(
             "source_as_of_method": method,
         }
 
+    # Comparing each source only to the portfolio can admit a 2x-skew
+    # between two sources on opposite sides of the portfolio timestamp.
+    # Require the whole observation window to fit the declared skew.
+    source_times = [
+        _parse_timestamp((account_inputs.get("inputs") or {}).get(kind, {}).get("source_as_of"))
+        for kind in ("account_summary", "orders", "buying_power")
+    ]
+    if all(t is not None for t in source_times):
+        span = (max(source_times) - min(source_times)).total_seconds()
+        if span > max_skew_hours * 3600:
+            reasons.append("ACCOUNT_SOURCES_TIME_MISMATCH")
+
     overall = "UNVERIFIED" if reasons else (
         "VERIFIED" if all(x["status"] == "VERIFIED" for x in verdicts.values()) else "PARTIAL"
     )
