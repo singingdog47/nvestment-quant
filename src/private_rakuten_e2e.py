@@ -106,8 +106,8 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
         # Only a trailing print/footer timestamp can date a document.
         # Transaction timestamps in the order table are NOT export times.
         lines = [line.strip() for line in content.splitlines() if line.strip()]
-        footer = "\\n".join(lines[-8:])
-        dates = re.findall(r"20\\d{2}/\\d{2}/\\d{2}\\s+\\d{2}:\\d{2}", footer)
+        footer = "\n".join(lines[-8:])
+        dates = re.findall(r"20\d{2}/\d{2}/\d{2}\s+\d{2}:\d{2}", footer)
         if not dates:
             raise ValueError(f"{label} PDF lacks explicit footer timestamp")
         doc_time = datetime.strptime(dates[-1], "%Y/%m/%d %H:%M")
