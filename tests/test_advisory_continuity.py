@@ -68,3 +68,14 @@ def test_available_sources_unknown_status_rejected():
     from src.advisory_continuity import assess_available_sources
     with pytest.raises(ValueError, match="Unknown source"):
         assess_available_sources({"account_summary": "probably_verified"})
+
+
+def test_conflict_without_verified_source_is_explicit():
+    from src.advisory_continuity import classify_advisory_continuity
+    result = classify_advisory_continuity(
+        verified_scopes=[], missing_scopes=["orders"],
+        conflicting_scopes=["account_summary"], stale_scopes=[])
+    assert result["analysis_mode"] == "PARTIAL_WITH_CONFLICTS"
+    assert result["confidence_tier"] == "LOW"
+    assert result["analysis_allowed"] is True
+    assert result["execution_ready"] is False
