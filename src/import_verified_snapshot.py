@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime
 from pathlib import Path
 
 from verified_facts_ledger import append_verified_fact, read_verified_facts, FactConflict
@@ -21,6 +22,9 @@ def import_verified_snapshot(snapshot: dict, ledger_path: str | Path) -> dict:
         raise ValueError("Snapshot must contain verified facts")
     if not observed_at or not evidence_ref:
         raise ValueError("Snapshot observation time and evidence reference required")
+    timestamp = datetime.fromisoformat(str(observed_at).replace("Z", "+00:00"))
+    if timestamp.tzinfo is None:
+        raise ValueError("Observation timestamp requires timezone")
     facts = snapshot["facts"]
     keys = [fact.get("key") for fact in facts]
     if any(not isinstance(k, str) or not k.strip() for k in keys) or len(keys) != len(set(keys)):
@@ -32,6 +36,8 @@ def import_verified_snapshot(snapshot: dict, ledger_path: str | Path) -> dict:
         if "value" not in fact or not fact.get("scope"):
             raise ValueError("Fact value and scope are required")
         existing = current.get(key)
+        if existing and timestamp < datetime.fromisoformat(existing["observed_at"].replace("Z", "+00:00")):
+            raise FactConflict("Snapshot observation older than verified fact")
         if existing and existing["value"] != fact["value"]:
             if fact.get("supersedes") != existing["fact_id"]:
                 raise FactConflict("Conflicting fact requires explicit supersession")
