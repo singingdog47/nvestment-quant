@@ -17,7 +17,7 @@ def _snapshot(at, value, *, scope="bank", evidence="private:synthetic"):
 def test_daily_verified_update_links_history(tmp_path):
     p = tmp_path / "facts.jsonl"
     import_newer_verified_snapshot(_snapshot("2099-01-01T10:00:00+09:00", 100), str(p))
-    import_newer_verified_snapshot(_snapshot("2099-01-02T10:00:00+09:00", 120), str(p))
+    import_newer_verified_snapshot(_snapshot("2099-01-02T10:00:00+09:00", 120, evidence="private:synthetic-day-two"), str(p))
     history = read_verified_history(p, key="bank:balance")
     assert [row["value"] for row in history] == [100, 120]
     assert history[1]["supersedes"] == history[0]["fact_id"]
