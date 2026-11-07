@@ -11,7 +11,7 @@ from numbers import Real
 from verified_facts_ledger import append_verified_facts
 
 
-def import_account_facts(account_inputs: dict, ledger_path: str, *, coherence: dict) -> dict:
+def _import_account_facts_with_verdict(account_inputs: dict, ledger_path: str, *, coherence: dict) -> dict:
     """Conservative bridge: requires explicit upstream coherence verification."""
     if account_inputs.get("status") != "ok" or account_inputs.get("missing_input_types") or account_inputs.get("stale_input_types"):
         raise ValueError("Incomplete or stale account inputs")
@@ -68,3 +68,18 @@ def import_account_facts(account_inputs: dict, ledger_path: str, *, coherence: d
     imported = append_verified_facts(ledger_path, batch, auto_supersede=True)
     return {"status": "ok", "facts_imported": len(imported),
             "source_imports": source_summaries}
+
+
+def import_account_facts(account_inputs: dict, ledger_path: str, *, coherence: dict | None = None,
+                         portfolio_manifest: dict | None = None, now=None) -> dict:
+    """Public entrypoint: require current portfolio evidence and recompute coherence.
+
+    Legacy coherence-only calls fail closed rather than trusting a cached label.
+    """
+    if portfolio_manifest is None:
+        raise ValueError("Portfolio manifest required to recompute coherence")
+    from private_data_coherence import classify_private_inputs
+    verdict = classify_private_inputs(portfolio_manifest, account_inputs, now=now)
+    if verdict.get("status") != "VERIFIED" or verdict.get("decision_safe") is not True:
+        raise ValueError("Freshly recomputed source coherence is not VERIFIED")
+    return _import_account_facts_with_verdict(account_inputs, ledger_path, coherence=verdict)
