@@ -55,3 +55,55 @@ def test_stale_csv_to_ledger_is_rejected(tmp_path):
     else:
         raise AssertionError("Stale brokerage input was accepted")
     assert not path.exists()
+
+
+def test_invalid_account_values_cannot_be_persisted(tmp_path):
+    import math
+    from private_account_facts_adapter import import_account_facts
+    at = "2099-01-01T10:00:00+09:00"
+    for bad in (float("nan"), float("inf"), -1, True, "100"):
+        account = {"status": "ok", "source_as_of": at,
+                   "source_as_of_method": "filename_embedded_export_time",
+                   "source_file": "synthetic.csv",
+                   "total_assets_jpy": bad, "invested_assets_jpy": 80}
+        buying = {"status": "ok", "source_as_of": at,
+                  "source_as_of_method": "pdf_footer_explicit_year",
+                  "source_file": "synthetic.pdf",
+                  "cash_buying_power_jpy": 20}
+        payload = {"status": "ok", "inputs": {
+            "account_summary": account, "buying_power": buying}}
+        verdict = {"status": "VERIFIED", "decision_safe": True, "inputs": {
+            kind: {"status": "VERIFIED", "source_as_of": at,
+                   "source_as_of_method": method}
+            for kind, method in (("account_summary", "filename_embedded_export_time"),
+                                 ("buying_power", "pdf_footer_explicit_year"),
+                                 ("orders", "pdf_footer_explicit_year"))}}
+        p = tmp_path / ("ledger-" + str(type(bad).__name__) + "-" + str(bad).replace(".", "_"))
+        import pytest
+        with pytest.raises(ValueError):
+            import_account_facts(payload, str(p), coherence=verdict)
+        assert not p.exists()
+
+
+def test_account_total_below_invested_is_rejected(tmp_path):
+    from private_account_facts_adapter import import_account_facts
+    import pytest
+    at = "2099-01-01T10:00:00+09:00"
+    payload = {"status": "ok", "inputs": {
+        "account_summary": {"status": "ok", "source_as_of": at,
+            "source_as_of_method": "filename_embedded_export_time",
+            "source_file": "synthetic.csv",
+            "total_assets_jpy": 10, "invested_assets_jpy": 20},
+        "buying_power": {"status": "ok", "source_as_of": at,
+            "source_as_of_method": "pdf_footer_explicit_year",
+            "source_file": "synthetic.pdf", "cash_buying_power_jpy": 30}}}
+    verdict = {"status": "VERIFIED", "decision_safe": True, "inputs": {
+        "account_summary": {"status": "VERIFIED", "source_as_of": at,
+            "source_as_of_method": "filename_embedded_export_time"},
+        "buying_power": {"status": "VERIFIED", "source_as_of": at,
+            "source_as_of_method": "pdf_footer_explicit_year"},
+        "orders": {"status": "VERIFIED"}}}
+    p = tmp_path / "ledger.jsonl"
+    with pytest.raises(ValueError, match="inconsistent"):
+        import_account_facts(payload, str(p), coherence=verdict)
+    assert not p.exists()
