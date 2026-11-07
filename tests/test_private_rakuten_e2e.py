@@ -11,7 +11,7 @@ def test_historical_private_ledger_roundtrip(tmp_path, monkeypatch):
                      '楽天銀行普通預金残高,1234\n').encode("cp932"))
     pdfs = [tmp_path / f"{x}.pdf" for x in ("buying", "domestic", "fund")]
     for p in pdfs:
-        p.write_bytes(b"synthetic PDF bytes for monkeypatched extraction")
+        p.write_bytes(("synthetic PDF " + p.stem).encode())
     monkeypatch.setattr(mod, "parse_buying_power_pdf", lambda path: {
         "status": "ok", "source_as_of": "2099-01-02T12:00:00+09:00",
         "cash_buying_power_jpy": 1800})
@@ -52,7 +52,7 @@ def test_readback_rejects_changed_evidence_even_if_values_match(tmp_path, monkey
                      '楽天銀行普通預金残高,1234\n').encode("cp932"))
     pdfs = [tmp_path / f"{x}.pdf" for x in ("buying", "domestic", "fund")]
     for p in pdfs:
-        p.write_bytes(b"synthetic")
+        p.write_bytes(("synthetic " + p.stem).encode())
     monkeypatch.setattr(mod, "parse_buying_power_pdf", lambda path: {
         "status": "ok", "source_as_of": "2099-01-02T12:00:00+09:00",
         "cash_buying_power_jpy": 1800})
@@ -74,3 +74,26 @@ def test_readback_rejects_changed_evidence_even_if_values_match(tmp_path, monkey
     monkeypatch.setattr(mod, "read_verified_facts", forged_read)
     with pytest.raises(ValueError, match="read-back mismatch"):
         mod.verify_historical_files(csv, *pdfs, tmp_path / "facts.jsonl")
+
+
+def test_same_source_path_rejected_before_parsing(tmp_path):
+    csv = tmp_path / "assetbalance(all)_20990102_120000.csv"
+    csv.write_bytes(b"csv")
+    pdf = tmp_path / "one.pdf"
+    pdf.write_bytes(b"pdf")
+    ledger = tmp_path / "facts.jsonl"
+    with pytest.raises(ValueError, match="Source paths must be distinct"):
+        mod.verify_historical_files(csv, pdf, pdf, pdf, ledger)
+    assert not ledger.exists()
+
+
+def test_duplicate_document_bytes_rejected_before_parsing(tmp_path):
+    csv = tmp_path / "assetbalance(all)_20990102_120000.csv"
+    csv.write_bytes(b"csv")
+    pdfs = [tmp_path / f"{n}.pdf" for n in ("buying", "domestic", "fund")]
+    for pdf in pdfs:
+        pdf.write_bytes(b"identical source bytes")
+    ledger = tmp_path / "facts.jsonl"
+    with pytest.raises(ValueError, match="Duplicate source content"):
+        mod.verify_historical_files(csv, *pdfs, ledger)
+    assert not ledger.exists()
