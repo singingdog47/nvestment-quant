@@ -17,11 +17,11 @@ def classify_advisory_continuity(*, verified_scopes: list[str],
     conflicting = sorted(set(conflicting_scopes))
     stale = sorted(set(stale_scopes))
     duplicate = sorted(set(duplicate_scopes or []))
-    if not verified:
-        mode = "SCENARIO_ONLY"
-        confidence = "LOW"
-    elif conflicting:
+    if conflicting:
         mode = "PARTIAL_WITH_CONFLICTS"
+        confidence = "LOW"
+    elif not verified:
+        mode = "SCENARIO_ONLY"
         confidence = "LOW"
     elif missing or stale:
         mode = "CONDITIONAL_FORECAST"
