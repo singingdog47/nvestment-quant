@@ -48,7 +48,6 @@ def build_investment_state(
     decision_context_path: str | Path = "data/decision_context_latest.json",
     watchlist_path: str | Path = "config/watchlist_master.csv",
     verified_ledger_path: str | Path | None = None,
-    now: str | None = None,
     private_ledger_path: str | Path | None = None,
     now: str | None = None,
     required_asset_scopes: tuple[str, ...] = (),
