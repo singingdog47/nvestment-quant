@@ -52,12 +52,12 @@ def test_invalid_second_source_never_writes_first_source(tmp_path):
     assert not path.exists()
 
 
-def test_conflicting_second_source_rolls_back_first_source(tmp_path):
+def test_older_second_source_rolls_back_first_source(tmp_path):
     from verified_facts_ledger import append_verified_fact, FactConflict
     path = tmp_path / "facts.jsonl"
     append_verified_fact(path, key="buying_power:cash_buying_power_jpy",
                          value=99, scope="buying_power",
-                         observed_at="2098-12-31T10:00:00+09:00",
+                         observed_at="2099-01-02T10:00:00+09:00",
                          evidence_ref="private:synthetic")
     original = path.read_bytes()
     inputs = _inputs()
