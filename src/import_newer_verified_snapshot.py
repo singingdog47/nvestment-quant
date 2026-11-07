@@ -9,9 +9,10 @@ from datetime import datetime
 from pathlib import Path
 
 from verified_facts_ledger import append_verified_facts
+from private_source_provenance import verified_source_evidence
 
 
-def import_newer_verified_snapshot(snapshot: dict, ledger_path: str | Path) -> dict:
+def import_newer_verified_snapshot(snapshot: dict, ledger_path: str | Path, *, source_file: str | Path | None = None) -> dict:
     if snapshot.get("verification_status") != "verified":
         raise ValueError("Unverified snapshot cannot be automatically superseded")
     quality = snapshot.get("quality") or {}
@@ -23,6 +24,16 @@ def import_newer_verified_snapshot(snapshot: dict, ledger_path: str | Path) -> d
     evidence = snapshot.get("evidence_ref")
     if not isinstance(evidence, str) or not evidence.strip():
         raise ValueError("Concrete evidence reference required")
+    if source_file is not None:
+        expected = snapshot.get("source_sha256")
+        if expected is not None and not isinstance(expected, str):
+            raise ValueError("Invalid source digest")
+        computed = verified_source_evidence(source_file, expected_sha256=expected)
+        if evidence.startswith("private:sha256:") and evidence != computed:
+            raise ValueError("Source evidence does not match file content")
+        evidence = computed
+    elif snapshot.get("source_sha256") is not None or evidence.startswith("private:sha256:"):
+        raise ValueError("Source file required to verify claimed SHA-256")
     observed_at = snapshot.get("observed_at")
     if not isinstance(observed_at, str):
         raise ValueError("Observation timestamp required")
