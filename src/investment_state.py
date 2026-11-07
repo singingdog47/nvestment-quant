@@ -84,6 +84,8 @@ def build_investment_state(
             "count": len(open_orders),
             "items": open_orders,
             "source_status": inputs.get("orders", {}).get("data_status", "missing") if inputs.get("orders") else "missing",
+            "coverage": "domestic_cash_equity_only",
+            "account_wide_coverage_verified": False,
         },
         "market_regime": {
             "label": regime.get("regime_label"),
