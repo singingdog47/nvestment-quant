@@ -116,8 +116,8 @@ def test_order_transaction_timestamp_is_not_export_footer(tmp_path, monkeypatch)
             return "楽天銀行普通預金残高 1,234"
         heading = "注文一覧" if path == pdfs[1] else "購入・売却履歴"
         # Transaction date appears near top, footer has no export timestamp.
-        return heading + "\n2099/01/02 12:00\n" + "\n".join(
-            ["注文の詳細"] * 12 + ["ページ末尾"])
+        return heading + "\n" + "\n".join(
+            ["注文の詳細"] * 12 + ["2099/01/02 12:00", "ページ末尾"])
     monkeypatch.setattr(mod, "_pdf_text", pdf_text)
     ledger = tmp_path / "facts.jsonl"
     with pytest.raises(ValueError, match="footer timestamp"):
