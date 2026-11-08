@@ -153,6 +153,10 @@ def build_private_matrix(
     gate = str((investment_state.get("policy") or {}).get("decision_gate") or "")
     order_state = investment_state.get("open_orders") or {}
     open_orders = order_state.get("count")
+    ledger_audit = investment_state.get("private_ledger_audit")
+    ledger_incomplete = (
+        ledger_audit is not None and ledger_audit.get("status") != "HISTORICAL_COVERAGE_ONLY"
+    )
     # Buying power is NOT deployable cash: the bank sweep and scheduled
     # external family payments must be reconciled first.
     capital_state = "UNVERIFIED_HOUSEHOLD_CASH_FLOWS"
@@ -168,6 +172,8 @@ def build_private_matrix(
         blocks.append("OPEN_ORDER_STATUS_UNVERIFIED")
     if open_orders is not None and open_orders > 0:
         blocks.append("OPEN_ORDERS_NEED_RECONCILIATION")
+    if ledger_incomplete:
+        blocks.append("PRIVATE_LEDGER_COVERAGE_INCOMPLETE")
     # This report is never authorized to recommend immediate buys even with
     # an apparently healthy policy flag; cash-flow validation is external.
     blocks = sorted(set(blocks))
@@ -215,7 +221,7 @@ def build_private_matrix(
     return {
         "version": VERSION, "generated_at_utc": now.isoformat(timespec="seconds"),
         "as_of_jst": day, "source_as_of": source_as_of,
-        "status": "research_only" if source_fresh and outlook_fresh else "partial_data",
+        "status": "research_only" if source_fresh and outlook_fresh and not ledger_incomplete else "partial_data",
         "execution": {"authorized": False, "orders_created": 0,
                       "existing_policy_gate": gate,
                       "blocking_conditions": blocks,

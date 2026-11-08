@@ -27,6 +27,7 @@ from private_drive import (
     file_sha256,
     upload_or_replace,
 )
+from private_ingestion_audit import audit_private_snapshot
 from portfolio_risk import main as run_risk
 from investment_state import build_investment_state, write_investment_state
 from private_horizon_decision import write_private_matrix
@@ -234,8 +235,23 @@ def _write_valuation_and_monthly(
     return valuation, monthly
 
 
-def _write_shared_investment_state(private_dir: Path, account_inputs: dict, manifest: dict, policy_payload: dict) -> dict:
+def _write_shared_investment_state(
+    private_dir: Path, account_inputs: dict, manifest: dict, policy_payload: dict,
+    *, now: datetime | None = None,
+) -> dict:
     state = build_investment_state(account_inputs, manifest, policy_payload)
+    ledger_path = os.getenv("PRIVATE_VERIFIED_FACTS_LEDGER_PATH", "").strip()
+    if ledger_path:
+        audit = audit_private_snapshot(
+            ledger_path, now=(now or datetime.now(timezone.utc)).isoformat(),
+        )
+        # Carry only coverage into the decision state and its Drive writeback.
+        # The ledger's individual observations stay in the local ledger.
+        state["private_ledger_audit"] = {
+            "status": audit["status"],
+            "missing_fresh_scopes": audit["missing_fresh_scopes"],
+            "scopes_without_content_digest": audit["scopes_without_content_digest"],
+        }
     path = write_investment_state(state, private_dir / "investment_state_latest.json")
     written = False
     writeback_status = "disabled"
