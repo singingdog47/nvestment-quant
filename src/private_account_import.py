@@ -228,3 +228,33 @@ def parse_buying_power_pdf(path: str | Path) -> dict:
 
 def source_as_of(name: str | None, modified_time: str | None) -> tuple[str | None, str]:
     return _timestamp_from_name(name, modified_time)
+
+
+def parse_orders_document(path: str | Path) -> dict:
+    """Date an order PDF without asserting complete rows or account coverage."""
+    import fitz
+    with fitz.open(str(path)) as doc:
+        text = "\n".join(page.get_text() for page in doc)
+        pages = len(doc)
+    if "注文一覧" in text:
+        scope = "orders_domestic_cash_document"
+    elif "購入・売却履歴" in text:
+        scope = "orders_mutual_funds_document"
+    else:
+        raise ValueError("Not a recognized order document")
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    match = re.search(r"(20\d{2}/\d{2}/\d{2}\s+\d{2}:\d{2})\s+\d+\s*/\s*(\d+)\s*ページ\s*$", "\n".join(lines[-8:]))
+    if not match:
+        raise ValueError("Order document requires a dated print footer")
+    stamp = datetime.strptime(match.group(1), "%Y/%m/%d %H:%M").replace(tzinfo=JST)
+    return {"status": "partial", "source_as_of": stamp.isoformat(),
+            "source_as_of_method": "pdf_footer_explicit_year", "scope": scope,
+            "document_verified": True, "pdf_pages": pages,
+            "printed_page_count": int(match.group(2)), "orders_count": None,
+            "items": None, "order_rows_verified": False,
+            "account_wide_coverage_verified": False}
+
+
+def parse_orders_file(path: str | Path) -> dict:
+    p = Path(path)
+    return parse_orders_document(p) if p.read_bytes()[:5] == b"%PDF-" else parse_orders_bytes(p.read_bytes())

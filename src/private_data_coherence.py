@@ -48,6 +48,10 @@ def classify_private_inputs(
         method = str(item.get("source_as_of_method") or "")
         observed = _parse_timestamp(item.get("source_as_of"))
         issues: list[str] = []
+        if item.get("status") not in (None, "ok"):
+            issues.append("SOURCE_CONTENT_PARTIAL")
+        if kind == "orders" and item.get("order_rows_verified") is False:
+            issues.append("ORDER_ROWS_UNVERIFIED")
         if observed is None or method not in {"filename_embedded_export_time", "pdf_footer_explicit_year"}:
             issues.append("TIMESTAMP_UNVERIFIED")
         if item.get("data_status") == "stale":
