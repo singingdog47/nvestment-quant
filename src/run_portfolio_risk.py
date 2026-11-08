@@ -16,6 +16,7 @@ from private_account_import import (
     parse_account_summary_bytes,
     parse_buying_power_pdf,
     parse_orders_bytes,
+    parse_orders_file,
     source_as_of,
 )
 from private_drive import (
@@ -27,6 +28,7 @@ from private_drive import (
     file_sha256,
     upload_or_replace,
 )
+from private_ingestion_audit import audit_private_snapshot
 from portfolio_risk import main as run_risk
 from investment_state import build_investment_state, write_investment_state
 from private_horizon_decision import write_private_matrix
@@ -155,7 +157,7 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
     errors: list[dict] = []
     parsers = (
         ("account_summary", lambda p: parse_account_summary_bytes(p.read_bytes())),
-        ("orders", lambda p: parse_orders_bytes(p.read_bytes())),
+        ("orders", parse_orders_file),
         ("buying_power", parse_buying_power_pdf),
     )
     for path, meta in candidates:
@@ -168,8 +170,8 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
                 errors.append({"name": meta.get("name"), "kind": kind, "error": f"{type(exc).__name__}:{exc}"})
                 continue
             as_of, method = source_as_of(meta.get("name"), meta.get("modifiedTime"))
-            if kind == "buying_power" and parsed.get("source_as_of"):
-                as_of, method = parsed["source_as_of"], "pdf_embedded_timestamp"
+            if parsed.get("source_as_of"):
+                as_of, method = parsed["source_as_of"], parsed.get("source_as_of_method", "missing")
             age_days = None
             if as_of and len(str(as_of)) > 10:
                 try:
@@ -185,12 +187,14 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
             }
     missing = [x for x in ("account_summary", "orders", "buying_power") if x not in selected]
     stale = [kind for kind, item in selected.items() if item.get("data_status") == "stale"]
+    partial = [kind for kind, item in selected.items() if item.get("status") != "ok"]
     snapshot = {
-        "status": "ok" if not missing and not stale else "partial",
+        "status": "ok" if not missing and not stale and not partial else "partial",
         "selection_policy": "newest_parseable_file_by_drive_modified_time",
         "inputs": selected,
         "missing_input_types": missing,
         "stale_input_types": stale,
+        "partial_input_types": partial,
         "parse_errors_count": len(errors),
     }
     (private_dir / "account_inputs_latest.json").write_text(
@@ -234,8 +238,25 @@ def _write_valuation_and_monthly(
     return valuation, monthly
 
 
-def _write_shared_investment_state(private_dir: Path, account_inputs: dict, manifest: dict, policy_payload: dict) -> dict:
+def _write_shared_investment_state(
+    private_dir: Path, account_inputs: dict, manifest: dict, policy_payload: dict,
+    *, now: datetime | None = None,
+) -> dict:
+    from private_data_coherence import classify_private_inputs
     state = build_investment_state(account_inputs, manifest, policy_payload)
+    state["source_coherence"] = classify_private_inputs(manifest, account_inputs, now=now)
+    ledger_path = os.getenv("PRIVATE_VERIFIED_FACTS_LEDGER_PATH", "").strip()
+    if ledger_path:
+        audit = audit_private_snapshot(
+            ledger_path, now=(now or datetime.now(timezone.utc)).isoformat(),
+        )
+        # Carry only coverage into the decision state and its Drive writeback.
+        # The ledger's individual observations stay in the local ledger.
+        state["private_ledger_audit"] = {
+            "status": audit["status"],
+            "missing_fresh_scopes": audit["missing_fresh_scopes"],
+            "scopes_without_content_digest": audit["scopes_without_content_digest"],
+        }
     path = write_investment_state(state, private_dir / "investment_state_latest.json")
     written = False
     writeback_status = "disabled"
@@ -462,6 +483,9 @@ def main() -> None:
         local_portfolio, candidates, out_dir, cutoff_date=_target_date()
     )
     private_alerts_written = _write_private_alerts(out_dir)
+    from src.private_runtime_readiness import prepare_ledger
+    ledger_result = prepare_ledger(candidates, manifest, account_inputs, private_dir)
+    os.environ["PRIVATE_VERIFIED_FACTS_LEDGER_PATH"] = ledger_result["ledger_path"]
     shared_state = _write_shared_investment_state(private_dir, account_inputs, manifest, policy_payload)
     horizon_private = write_private_matrix(
         local_portfolio, source_as_of=manifest.get('source_as_of'),

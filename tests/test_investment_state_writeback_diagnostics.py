@@ -2,7 +2,13 @@
 
 No Google credentials, network calls, or actual brokerage operations are used.
 """
+from datetime import datetime
+import json
+
+import pandas as pd
 import run_portfolio_risk as risk
+from private_horizon_decision import build_private_matrix
+from verified_facts_ledger import append_verified_fact
 
 
 class _FakeHttpError(Exception):
@@ -66,3 +72,31 @@ def test_non_http_exception_does_not_leak_details(tmp_path, monkeypatch, capsys)
     assert result["drive_writeback_status"] == "error"
     assert result["drive_writeback_http_status"] is None
     assert "http_status=unknown" in capsys.readouterr().out
+
+
+def test_configured_ledger_passes_only_coverage_to_decisions(tmp_path, monkeypatch):
+    observed = "2026-11-06T22:45:00+09:00"
+    now = datetime.fromisoformat("2026-11-06T23:00:00+09:00")
+    ledger = tmp_path / "facts.jsonl"
+    append_verified_fact(
+        ledger, key="private-order-id", value="private-order-details",
+        scope="orders_domestic_cash_document", observed_at=observed,
+        evidence_ref="private:sha256:" + "a" * 64,
+    )
+    monkeypatch.setenv("PRIVATE_VERIFIED_FACTS_LEDGER_PATH", str(ledger))
+    monkeypatch.setenv("INVESTMENT_STATE_DRIVE_WRITEBACK", "false")
+
+    shared = risk._write_shared_investment_state(tmp_path, {}, {}, {}, now=now)
+    state = shared["state"]
+    audit = state["private_ledger_audit"]
+    assert audit["status"] == "INCOMPLETE"
+    assert "orders_domestic_cash" in audit["missing_fresh_scopes"]
+    assert "private-order" not in json.dumps(state)
+
+    matrix = build_private_matrix(
+        pd.DataFrame(), outlook={"as_of_jst": "2026-11-06"},
+        supply_rows=[], screening_rows=[], policy={"policy": {"actionable": True}},
+        investment_state=state, source_as_of=observed, now=now,
+    )
+    assert matrix["status"] == "partial_data"
+    assert "PRIVATE_LEDGER_COVERAGE_INCOMPLETE" in matrix["execution"]["blocking_conditions"]

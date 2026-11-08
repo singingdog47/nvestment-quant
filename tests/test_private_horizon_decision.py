@@ -26,6 +26,7 @@ def test_matrix_is_research_only():
     assert rows["5803.T"]["research_action"] == "HOLD_REVIEW_DOWNSIDE"
     assert result["execution"]["authorized"] is False
     assert result["execution"]["orders_created"] == 0
+    assert "OPEN_ORDER_STATUS_UNVERIFIED" in result["execution"]["blocking_conditions"]
     assert all(x["horizons"]["long_1_3y"]["signal"]=="UNASSESSED_FUNDAMENTALS" for x in result["holdings"])
 
 def test_staleness_and_policy_blockers():
@@ -39,3 +40,14 @@ def test_staleness_and_policy_blockers():
     assert "OPEN_ORDERS_NEED_RECONCILIATION" in result["execution"]["blocking_conditions"]
     assert "EXISTING_DECISION_GATE_BLOCK" in result["execution"]["blocking_conditions"]
     assert result["execution"]["authorized"] is False
+
+
+def test_known_open_rows_still_require_reconciliation_when_total_is_unknown():
+    holdings, params = make_args()
+    params["investment_state"]["open_orders"] = {
+        "count": None, "items": [{"status": "出来有"}],
+    }
+    result = build_private_matrix(holdings, **params, now=NOW)
+    blocks = result["execution"]["blocking_conditions"]
+    assert "OPEN_ORDER_STATUS_UNVERIFIED" in blocks
+    assert "OPEN_ORDERS_NEED_RECONCILIATION" in blocks

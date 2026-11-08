@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 GENERATED_PRIVATE_OUTPUT_NAMES = {
+    "private_readiness_latest.json",
     "decision_journal.jsonl",
     "decision_monitor_latest.json",
     "decision_monitor_latest.md",

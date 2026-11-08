@@ -24,7 +24,9 @@ def test_build_investment_state_keeps_private_execution_context(tmp_path):
     }
     state = build_investment_state(account_inputs, {"source_as_of": "2026-10-02T12:50:52+09:00"}, {},
                                    decision_context_path=tmp_path / "missing.json", watchlist_path=watch)
-    assert state["capital"]["deployable_cash_jpy"] == 2464342
+    assert state["capital"]["deployable_cash_jpy"] is None
+    assert state["execution_ready"] is False
+    assert state["open_orders"]["account_wide_coverage_verified"] is False
     assert state["open_orders"]["count"] == 1
     assert state["open_orders"]["items"][0]["code"] == "2585"
     assert state["watchlist"]["active_count"] == 1

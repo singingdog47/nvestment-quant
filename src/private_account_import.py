@@ -6,7 +6,10 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from portfolio_import import decode_rakuten_bytes
+try:
+    from .portfolio_import import decode_rakuten_bytes
+except ImportError:  # Legacy top-level test imports
+    from portfolio_import import decode_rakuten_bytes
 
 
 JST = timezone(timedelta(hours=9))
@@ -61,6 +64,7 @@ def parse_account_summary_bytes(raw: bytes) -> dict:
         "預り金": "cash_deposit_jpy",
         "外貨預り金": "foreign_cash_jpy",
         "信用保証金": "margin_collateral_jpy",
+        "国内株式信用保証金": "margin_collateral_jpy",
         "FX証拠金純資産": "fx_margin_net_assets_jpy",
     }
     values: dict[str, float] = {}
@@ -88,6 +92,52 @@ def parse_account_summary_bytes(raw: bytes) -> dict:
         "daily_change_jpy": daily_change_jpy,
         "daily_change_pct": daily_change_pct,
     }
+
+
+
+def reconcile_account_components(parsed: dict) -> dict:
+    """Reconcile historical balances; never infer executable cash."""
+    required = ("total_assets_jpy", "invested_assets_jpy",
+                "deposits_total_jpy", "cash_deposit_jpy",
+                "foreign_cash_jpy", "margin_collateral_jpy",
+                "fx_margin_net_assets_jpy")
+    missing = [key for key in required if key not in parsed]
+    if missing:
+        return {"status": "INCOMPLETE", "missing": missing,
+                "deployable_cash_jpy": None, "execution_ready": False}
+    asset_residual = parsed["total_assets_jpy"] - (
+        parsed["invested_assets_jpy"] + parsed["deposits_total_jpy"]
+        + parsed["fx_margin_net_assets_jpy"])
+    deposit_residual = parsed["deposits_total_jpy"] - (
+        parsed["cash_deposit_jpy"] + parsed["foreign_cash_jpy"]
+        + parsed["margin_collateral_jpy"])
+    return {"status": "RECONCILED_HISTORICAL"
+            if asset_residual == 0 and deposit_residual == 0 else "MISMATCH",
+            "asset_residual_jpy": asset_residual,
+            "deposit_residual_jpy": deposit_residual,
+            "deployable_cash_jpy": None, "execution_ready": False}
+
+
+def summarize_open_orders(items: list[dict]) -> tuple[list[dict], int | None]:
+    """Count open domestic cash orders only when every row can be classified."""
+    open_statuses = {
+        "執行待", "執行待ち", "執行中", "待機中", "受付済", "受付済み",
+        "未約定", "出来有", "一部約定", "取消中", "訂正中", "市場執行中",
+    }
+    closed_statuses = {
+        "約定", "約定済", "約定済み", "全部約定", "取消済", "取消済み",
+        "取消済出来有", "取消済出来無", "出来ず", "出来ず出来有", "出来ず出来無", "失効",
+    }
+    open_items = []
+    count_known = True
+    for item in items:
+        status = item.get("status") if isinstance(item, dict) else None
+        label = _norm(status) if isinstance(status, str) else ""
+        if label in open_statuses:
+            open_items.append(item)
+        elif label not in closed_statuses:
+            count_known = False
+    return open_items, len(open_items) if count_known else None
 
 
 def parse_orders_bytes(raw: bytes) -> dict:
@@ -126,12 +176,12 @@ def parse_orders_bytes(raw: bytes) -> dict:
         })
     if not items:
         raise ValueError("No Rakuten order rows found")
-    open_tokens = ("執行中", "待機中", "受付済", "未約定")
+    _, open_count = summarize_open_orders(items)
     return {
         "status": "ok",
         "source_encoding": encoding,
         "orders_count": len(items),
-        "open_orders_count": sum(any(t in x["status"] for t in open_tokens) for x in items),
+        "open_orders_count": open_count,
         "filled_orders_count": sum((x.get("filled_quantity") or 0) > 0 for x in items),
         "items": items,
     }
@@ -139,9 +189,15 @@ def parse_orders_bytes(raw: bytes) -> dict:
 
 def parse_buying_power_pdf(path: str | Path) -> dict:
     """Extract Rakuten cash buying power from a text-bearing PDF."""
-    from pypdf import PdfReader
-
-    text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+    # Rakuten PDFs can contain CMaps that pypdf decodes as mojibake.
+    # Prefer PyMuPDF Japanese extraction, retaining pypdf fallback.
+    try:
+        import fitz
+        with fitz.open(str(path)) as doc:
+            text = "\n".join(page.get_text() for page in doc)
+    except ImportError:
+        from pypdf import PdfReader
+        text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
     patterns = {
         "cash_buying_power_jpy": r"現物買付可能額[^\d]{0,80}([\d,]+)\s*円",
         "fund_buying_power_jpy": r"投資信託買付可能額[^\d]{0,80}([\d,]+)\s*円",
@@ -156,15 +212,49 @@ def parse_buying_power_pdf(path: str | Path) -> dict:
             values[key] = value
     if "cash_buying_power_jpy" not in values:
         raise ValueError("Cash buying power not found in Rakuten PDF")
+    # A footer without an explicit year cannot establish an observation year.
+    # Do not infer it from the runtime clock: historical PDFs may be replayed.
     timestamp = None
-    match = re.search(r"(\d{2}/\d{2})\s+(\d{2}:\d{2})", text)
+    match = re.search(r"(20\d{2})[/-](\d{2})[/-](\d{2})\s+(\d{2}:\d{2})", text)
     if match:
-        now = datetime.now(JST)
         timestamp = datetime.strptime(
-            f"{now.year}/{match.group(1)} {match.group(2)}", "%Y/%m/%d %H:%M"
+            f"{match.group(1)}/{match.group(2)}/{match.group(3)} {match.group(4)}",
+            "%Y/%m/%d %H:%M",
         ).replace(tzinfo=JST).isoformat()
-    return {"status": "ok", "source_as_of": timestamp, **values}
+    return {"status": "ok", "source_as_of": timestamp,
+            "source_as_of_method": "pdf_footer_explicit_year" if timestamp else "missing",
+            **values}
 
 
 def source_as_of(name: str | None, modified_time: str | None) -> tuple[str | None, str]:
     return _timestamp_from_name(name, modified_time)
+
+
+def parse_orders_document(path: str | Path) -> dict:
+    """Date an order PDF without asserting complete rows or account coverage."""
+    import fitz
+    with fitz.open(str(path)) as doc:
+        text = "\n".join(page.get_text() for page in doc)
+        pages = len(doc)
+    if "注文一覧" in text:
+        scope = "orders_domestic_cash_document"
+    elif "購入・売却履歴" in text:
+        scope = "orders_mutual_funds_document"
+    else:
+        raise ValueError("Not a recognized order document")
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    match = re.search(r"(20\d{2}/\d{2}/\d{2}\s+\d{2}:\d{2})\s+\d+\s*/\s*(\d+)\s*ページ\s*$", "\n".join(lines[-8:]))
+    if not match:
+        raise ValueError("Order document requires a dated print footer")
+    stamp = datetime.strptime(match.group(1), "%Y/%m/%d %H:%M").replace(tzinfo=JST)
+    return {"status": "partial", "source_as_of": stamp.isoformat(),
+            "source_as_of_method": "pdf_footer_explicit_year", "scope": scope,
+            "document_verified": True, "pdf_pages": pages,
+            "printed_page_count": int(match.group(2)), "orders_count": None,
+            "items": None, "order_rows_verified": False,
+            "account_wide_coverage_verified": False}
+
+
+def parse_orders_file(path: str | Path) -> dict:
+    p = Path(path)
+    return parse_orders_document(p) if p.read_bytes()[:5] == b"%PDF-" else parse_orders_bytes(p.read_bytes())
