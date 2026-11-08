@@ -151,7 +151,8 @@ def build_private_matrix(
     policy_info = policy.get("policy") or {}
     blocks = list(policy_info.get("blocks") or [])
     gate = str((investment_state.get("policy") or {}).get("decision_gate") or "")
-    open_orders = (investment_state.get("open_orders") or {}).get("count")
+    order_state = investment_state.get("open_orders") or {}
+    open_orders = order_state.get("count")
     # Buying power is NOT deployable cash: the bank sweep and scheduled
     # external family payments must be reconciled first.
     capital_state = "UNVERIFIED_HOUSEHOLD_CASH_FLOWS"
@@ -163,9 +164,9 @@ def build_private_matrix(
         blocks.append("PORTFOLIO_POLICY_NOT_ACTIONABLE")
     if gate.startswith("BLOCK"):
         blocks.append("EXISTING_DECISION_GATE_BLOCK")
-    if open_orders is None:
+    if open_orders is None or order_state.get("account_wide_coverage_verified") is not True:
         blocks.append("OPEN_ORDER_STATUS_UNVERIFIED")
-    elif open_orders > 0:
+    if open_orders is not None and open_orders > 0:
         blocks.append("OPEN_ORDERS_NEED_RECONCILIATION")
     # This report is never authorized to recommend immediate buys even with
     # an apparently healthy policy flag; cash-flow validation is external.

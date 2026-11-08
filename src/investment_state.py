@@ -59,11 +59,19 @@ def build_investment_state(
     decision = _read_json(decision_context_path)
     regime = decision.get("market_regime") or {}
 
+    order_items = orders.get("items")
+    order_source_status = orders.get("data_status", "missing")
+    order_rows_available = (
+        order_source_status in {"ok", "verified", "reconciled", "ok_verified"}
+        and isinstance(order_items, list)
+        and all(isinstance(item, dict) and isinstance(item.get("status"), str)
+                and item["status"].strip() for item in order_items)
+    )
     open_orders = []
-    for item in orders.get("items") or []:
-        status = str(item.get("status") or "")
-        if any(token in status for token in ("執行中", "待機中", "受付済", "未約定")):
-            open_orders.append(item)
+    if order_rows_available:
+        for item in order_items:
+            if any(token in item["status"] for token in ("執行中", "待機中", "受付済", "未約定")):
+                open_orders.append(item)
 
     # Neither buying power nor deposit balance proves freely deployable cash.
     # Buying power can include linked bank balances or unsettled proceeds.
@@ -129,9 +137,9 @@ def build_investment_state(
             "absolute_defense_cash_jpy": (decision.get("policy_guardrails") or {}).get("absolute_defense_cash_jpy"),
         },
         "open_orders": {
-            "count": len(open_orders),
+            "count": len(open_orders) if order_rows_available else None,
             "items": open_orders,
-            "source_status": inputs.get("orders", {}).get("data_status", "missing") if inputs.get("orders") else "missing",
+            "source_status": order_source_status,
             "coverage": "domestic_cash_equity_only",
             "account_wide_coverage_verified": False,
         },
