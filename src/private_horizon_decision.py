@@ -170,7 +170,7 @@ def build_private_matrix(
         blocks.append("EXISTING_DECISION_GATE_BLOCK")
     if open_orders is None or order_state.get("account_wide_coverage_verified") is not True:
         blocks.append("OPEN_ORDER_STATUS_UNVERIFIED")
-    if open_orders is not None and open_orders > 0:
+    if (open_orders is not None and open_orders > 0) or order_state.get("items"):
         blocks.append("OPEN_ORDERS_NEED_RECONCILIATION")
     if ledger_incomplete:
         blocks.append("PRIVATE_LEDGER_COVERAGE_INCOMPLETE")

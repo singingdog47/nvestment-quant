@@ -40,3 +40,14 @@ def test_staleness_and_policy_blockers():
     assert "OPEN_ORDERS_NEED_RECONCILIATION" in result["execution"]["blocking_conditions"]
     assert "EXISTING_DECISION_GATE_BLOCK" in result["execution"]["blocking_conditions"]
     assert result["execution"]["authorized"] is False
+
+
+def test_known_open_rows_still_require_reconciliation_when_total_is_unknown():
+    holdings, params = make_args()
+    params["investment_state"]["open_orders"] = {
+        "count": None, "items": [{"status": "出来有"}],
+    }
+    result = build_private_matrix(holdings, **params, now=NOW)
+    blocks = result["execution"]["blocking_conditions"]
+    assert "OPEN_ORDER_STATUS_UNVERIFIED" in blocks
+    assert "OPEN_ORDERS_NEED_RECONCILIATION" in blocks

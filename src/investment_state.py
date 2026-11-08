@@ -6,6 +6,11 @@ from pathlib import Path
 
 import pandas as pd
 
+try:
+    from .private_account_import import summarize_open_orders
+except ImportError:  # Legacy top-level callers
+    from private_account_import import summarize_open_orders
+
 
 SCHEMA_VERSION = "1.0"
 
@@ -64,14 +69,10 @@ def build_investment_state(
     order_rows_available = (
         order_source_status in {"ok", "verified", "reconciled", "ok_verified"}
         and isinstance(order_items, list)
-        and all(isinstance(item, dict) and isinstance(item.get("status"), str)
-                and item["status"].strip() for item in order_items)
     )
-    open_orders = []
+    open_orders, open_order_count = [], None
     if order_rows_available:
-        for item in order_items:
-            if any(token in item["status"] for token in ("執行中", "待機中", "受付済", "未約定")):
-                open_orders.append(item)
+        open_orders, open_order_count = summarize_open_orders(order_items)
 
     # Neither buying power nor deposit balance proves freely deployable cash.
     # Buying power can include linked bank balances or unsettled proceeds.
@@ -137,7 +138,7 @@ def build_investment_state(
             "absolute_defense_cash_jpy": (decision.get("policy_guardrails") or {}).get("absolute_defense_cash_jpy"),
         },
         "open_orders": {
-            "count": len(open_orders) if order_rows_available else None,
+            "count": open_order_count,
             "items": open_orders,
             "source_status": order_source_status,
             "coverage": "domestic_cash_equity_only",

@@ -118,6 +118,28 @@ def reconcile_account_components(parsed: dict) -> dict:
             "deployable_cash_jpy": None, "execution_ready": False}
 
 
+def summarize_open_orders(items: list[dict]) -> tuple[list[dict], int | None]:
+    """Count open domestic cash orders only when every row can be classified."""
+    open_statuses = {
+        "執行待", "執行待ち", "執行中", "待機中", "受付済", "受付済み",
+        "未約定", "出来有", "一部約定", "取消中", "訂正中", "市場執行中",
+    }
+    closed_statuses = {
+        "約定", "約定済", "約定済み", "全部約定", "取消済", "取消済み",
+        "取消済出来有", "取消済出来無", "出来ず", "出来ず出来有", "出来ず出来無", "失効",
+    }
+    open_items = []
+    count_known = True
+    for item in items:
+        status = item.get("status") if isinstance(item, dict) else None
+        label = _norm(status) if isinstance(status, str) else ""
+        if label in open_statuses:
+            open_items.append(item)
+        elif label not in closed_statuses:
+            count_known = False
+    return open_items, len(open_items) if count_known else None
+
+
 def parse_orders_bytes(raw: bytes) -> dict:
     """Parse only order-state metadata; this function never places orders."""
     text, encoding = decode_rakuten_bytes(raw)
@@ -154,12 +176,12 @@ def parse_orders_bytes(raw: bytes) -> dict:
         })
     if not items:
         raise ValueError("No Rakuten order rows found")
-    open_tokens = ("執行中", "待機中", "受付済", "未約定")
+    _, open_count = summarize_open_orders(items)
     return {
         "status": "ok",
         "source_encoding": encoding,
         "orders_count": len(items),
-        "open_orders_count": sum(any(t in x["status"] for t in open_tokens) for x in items),
+        "open_orders_count": open_count,
         "filled_orders_count": sum((x.get("filled_quantity") or 0) > 0 for x in items),
         "items": items,
     }
