@@ -107,10 +107,15 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
         # Transaction timestamps in the order table are NOT export times.
         lines = [line.strip() for line in content.splitlines() if line.strip()]
         footer = "\n".join(lines[-8:])
-        dates = re.findall(r"20\d{2}/\d{2}/\d{2}\s+\d{2}:\d{2}", footer)
-        if not dates:
-            raise ValueError(f"{label} PDF lacks explicit footer timestamp")
-        doc_time = datetime.strptime(dates[-1], "%Y/%m/%d %H:%M")
+        # Printed Rakuten PDFs end with a dated browser-print footer followed
+        # by a page counter. An order-table date is not acceptable evidence.
+        footer_match = re.search(
+            r"(20\d{2}/\d{2}/\d{2}\s+\d{2}:\d{2})\s+\d+\s*/\s*\d+\s*ページ\s*$",
+            footer,
+        )
+        if not footer_match:
+            raise ValueError(f"{label} PDF lacks dated print footer/page counter")
+        doc_time = datetime.strptime(footer_match.group(1), "%Y/%m/%d %H:%M")
         doc_time = doc_time.replace(tzinfo=datetime.fromisoformat(stamp).tzinfo)
         if abs((datetime.fromisoformat(stamp) - doc_time).total_seconds()) > 3600:
             raise ValueError(f"{label} order PDF timestamp skew > 1h")
