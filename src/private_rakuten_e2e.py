@@ -114,7 +114,7 @@ def verify_historical_files(csv_path: Path, buying_pdf: Path, domestic_pdf: Path
             footer,
         )
         if not footer_match:
-            raise ValueError(f"{label} PDF lacks dated print footer/page counter")
+            raise ValueError(f"{label} PDF lacks explicit footer timestamp/page counter")
         doc_time = datetime.strptime(footer_match.group(1), "%Y/%m/%d %H:%M")
         doc_time = doc_time.replace(tzinfo=datetime.fromisoformat(stamp).tzinfo)
         if abs((datetime.fromisoformat(stamp) - doc_time).total_seconds()) > 3600:
