@@ -12,6 +12,9 @@ from pathlib import Path
 from typing import Any
 
 GENERATED_PRIVATE_OUTPUT_NAMES = {
+    "decision_journal.jsonl",
+    "decision_monitor_latest.json",
+    "decision_monitor_latest.md",
     "portfolio_latest.csv",
     "portfolio_import_latest.json",
     "portfolio_risk_latest.json",
@@ -155,13 +158,15 @@ def _download_id(file_id: str, destination: str | Path) -> Path:
     return p
 
 
-def download_named(name: str, destination: str | Path) -> Path:
+def download_named(name: str, destination: str | Path, *, require_unique: bool = False) -> Path:
     service = _service(); folder = _folder_id(); safe = _escape_drive_query(name)
     q = f"'{folder}' in parents and name='{safe}' and trashed=false"
     files = service.files().list(q=q, spaces="drive", fields="files(id,name,modifiedTime)",
                                  orderBy="modifiedTime desc", pageSize=10).execute().get("files", [])
     if not files:
         raise FileNotFoundError(f"Google Drive file not found: {name}")
+    if require_unique and len(files) != 1:
+        raise ValueError("ambiguous private source name")
     return _download_id(files[0]["id"], destination)
 
 

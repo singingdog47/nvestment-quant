@@ -69,11 +69,14 @@ def replay(events: list[dict], as_of: datetime) -> list[dict]:
                 text_field(event, field)
             if event["recommendation"] not in {"HOLD", "TRIM", "EXIT", "BUY", "WAIT"}:
                 raise ValueError("invalid recommendation")
-            if event.get("basis") not in {"CLOSE", "INTRADAY"}:
+            if event.get("basis") not in {"CLOSE", "INTRADAY", "TIME"}:
                 raise ValueError("explicit price basis required")
-            if event.get("comparator") not in {"AT_OR_BELOW", "AT_OR_ABOVE"}:
-                raise ValueError("invalid comparator")
-            positive(event.get("threshold"))
+            if event["basis"] != "TIME":
+                if event.get("comparator") not in {"AT_OR_BELOW", "AT_OR_ABOVE"}:
+                    raise ValueError("invalid comparator")
+                positive(event.get("threshold"))
+            elif event.get("threshold") is not None or event.get("comparator") is not None:
+                raise ValueError("TIME plans cannot have price conditions")
             due = instant(text_field(event, "review_by"))
             if due <= recorded:
                 raise ValueError("review deadline must be in the future")
@@ -107,6 +110,8 @@ def replay(events: list[dict], as_of: datetime) -> list[dict]:
                 state.update(due=due, trigger=None, last_review=event_id,
                              recommendation=recommendation)
             else:
+                if plan["basis"] == "TIME":
+                    raise ValueError("TIME plans accept explicit REVIEW events, not prices")
                 text_field(event, "evidence")
                 observed = instant(text_field(event, "observed_at"))
                 if not instant(plan["recorded_at"]) <= observed <= recorded:
@@ -139,14 +144,14 @@ def replay(events: list[dict], as_of: datetime) -> list[dict]:
                   "OVERDUE_REQUIRES_REVIEW" if overdue else
                   "ACTION_RECOMMENDED" if state["recommendation"] in {"TRIM", "EXIT", "BUY"} else
                   "WAITING_FOR_EVIDENCE" if state["recommendation"] == "WAIT" else
-                  "NO_OBSERVATION" if state["observed"] is None else "WATCHING")
+                  "NO_OBSERVATION" if state["observed"] is None and state["plan"]["basis"] != "TIME" else "WATCHING")
         results.append({"symbol": symbol, "plan_id": state["plan"]["id"],
                         "status": status, "overdue": overdue,
                         "decision_required": status != "WATCHING",
                         "trigger_id": state["trigger"], "last_review": state["last_review"],
                         "recommendation": state["recommendation"],
                         "basis": state["plan"]["basis"],
-                        "threshold": state["plan"]["threshold"],
+                        "threshold": state["plan"].get("threshold"),
                         "falsifier": state["plan"]["falsifier"],
                         "review_by": state["due"].isoformat(),
                         "last_observed_at": state["observed"].isoformat() if state["observed"] else None})

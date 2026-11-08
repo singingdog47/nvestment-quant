@@ -25,7 +25,7 @@ became available to the reviewer, not an earlier inferred signal date.
 
 | Event | Required content |
 | --- | --- |
-| PLAN | recommendation, rationale, falsifier, evidence, basis (CLOSE/INTRADAY), comparator (AT_OR_BELOW/AT_OR_ABOVE), positive threshold, review_by |
+| PLAN | recommendation, rationale, falsifier, evidence, basis (CLOSE/INTRADAY/TIME), comparator (AT_OR_BELOW/AT_OR_ABOVE), positive threshold (price plans only), review_by |
 | Replacement PLAN | all PLAN fields, supersedes (active plan ID), change_reason |
 | OBSERVATION | plan_id, observed_at, evidence, close for CLOSE or low/high for INTRADAY (according to comparator) |
 | REVIEW | plan_id, recommendation, reason, evidence, review_by; resolves (outstanding trigger event ID) when triggered |
@@ -78,10 +78,40 @@ exercise historical as-of views, invalid/future prices, failed appends, and the
 real append/audit CLI. Fixtures are synthetic; they do not assert that historical
 personal advice was a mechanically binding trading rule.
 
-This is an opt-in private CLI/API adapter. Existing scheduled pipelines do not
-currently produce these events. A private caller must append every PLAN,
-OBSERVATION and REVIEW and consume the audit output; this PR does not claim
-that conversational advice is automatically captured. Confirm that integration
-with a real private event producer before describing continuous monitoring as
-operational. Return, tax, slippage and early-sale opportunity-cost evaluation
-remain separate from process-consistency tests.
+The existing Action First Risk Watch workflow now has an independent private
+monitor job. It reads `decision_journal.jsonl` from the configured private Drive
+folder and writes `decision_monitor_latest.json` and `.md` there. It never
+modifies the source journal or commits/uploads private Actions artifacts. Public
+stdout contains only status and writeback success/failure. Source absence,
+ambiguity or corruption cannot reuse an old successful report. The workflow
+requires existing GDRIVE_SERVICE_ACCOUNT_JSON and GDRIVE_FOLDER_ID secrets;
+without them its private job reports failure while public risk checks continue.
+
+TIME plans monitor a deadline without inventing a numeric price trigger. They
+must omit threshold/comparator and accept REVIEW rather than price OBSERVATION
+entries. The monitor flags deadlines within four hours and overdue plans.
+TRACKING refers only to registered advice, not complete PF monitoring or market
+safety. Missing price observations remain unknown. Producers must supply new
+verified observations; this module does not fetch market prices.
+
+The designated advice producer (the private monitoring task) must download the
+latest journal, append validated events, re-read the remote source to detect a
+changed hash before replacing it, and verify readback. GitHub only reads this
+journal, avoiding a second automatic writer. Do not write from parallel task
+runs. The Drive connector does not offer a compare-and-swap content update;
+this is a single-writer protocol, not a transactional multi-writer guarantee.
+New advice is not recorded merely by appearing in chat: saving and readback must
+succeed. On failure report recording unavailable, retain the original journal,
+and do not claim that the new advice is monitored. Historical imports use the
+current recorded_at and preserve the original advice time in source metadata.
+
+Monitor CLI, also usable with a local copy and explicit replay time:
+
+```sh
+python -m src.private_decision_monitor --writeback
+python -m src.private_decision_monitor --journal /private/decisions.jsonl --as-of 2026-11-09T10:50:00+09:00
+```
+
+Return, tax, slippage and early-sale opportunity-cost evaluation remain separate
+from process-consistency tests. Scheduled deployment and the first recorded
+scheduled run are separate evidence; do not claim the latter from CI alone.
