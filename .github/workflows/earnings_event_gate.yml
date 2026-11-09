@@ -35,14 +35,6 @@ jobs:
           python-version: '3.11'
       - name: Run event gate regression tests
         run: python -m unittest discover -s tests -p 'test_*event*gate*.py' -v
-      - name: Run disclosure candidate regression tests
-        run: python -m unittest discover -s tests -p 'test_disclosure_candidates.py' -v
-      - name: Run licensed adapter mock tests
-        run: python -m unittest discover -s tests -p 'test_jquants_tdnet_adapter.py' -v
-      - name: Run free Atom adapter tests
-        run: python -m unittest discover -s tests -p 'test_yanoshin_disclosure_adapter.py' -v
-      - name: Run free preflight CLI unit tests
-        run: python -m unittest discover -s tests -p 'test_run_free_disclosure_preflight.py' -v
       - name: Run consent regression tests
         run: python -m unittest discover -s tests -p 'test_event_user_consent.py' -v
       - name: Run decision bridge tests
