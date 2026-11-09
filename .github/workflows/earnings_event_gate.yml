@@ -7,11 +7,13 @@ on:
       - 'src/disclosure_candidates.py'
       - 'src/jquants_tdnet_adapter.py'
       - 'src/yanoshin_disclosure_adapter.py'
+      - 'src/run_free_disclosure_preflight.py'
       - 'tests/test_earnings_event_gate.py'
       - 'tests/test_portfolio_event_preflight.py'
       - 'tests/test_disclosure_candidates.py'
       - 'tests/test_jquants_tdnet_adapter.py'
       - 'tests/test_yanoshin_disclosure_adapter.py'
+      - 'tests/test_run_free_disclosure_preflight.py'
       - '.github/workflows/earnings_event_gate.yml'
   workflow_dispatch:
 jobs:
@@ -32,5 +34,7 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_jquants_tdnet_adapter.py' -v
       - name: Run free Atom adapter tests
         run: python -m unittest discover -s tests -p 'test_yanoshin_disclosure_adapter.py' -v
+      - name: Run free preflight CLI unit tests
+        run: python -m unittest discover -s tests -p 'test_run_free_disclosure_preflight.py' -v
       - name: Run portfolio preflight regression tests
         run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
