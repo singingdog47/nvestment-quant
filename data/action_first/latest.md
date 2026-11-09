@@ -1,6 +1,6 @@
 # 売買判断優先・市場急変チェック
 
-生成（UTC）：2026-11-09T01:48:51.790781+00:00
+生成（UTC）：2026-11-09T06:51:34.595665+00:00
 **危機判定：CRITICAL**
 **判断：RISK_REDUCTION_REVIEW**
 
@@ -10,7 +10,7 @@
 - 日経円建て先物(CME)が-1.5%以下
 
 ## データ基準時刻・品質
-- NIKKEI_FUT: OK / -7.151% / 2026-11-09T01:38:46+00:00 / 
+- NIKKEI_FUT: OK / -6.558% / 2026-11-09T06:40:53+00:00 / 
 - NASDAQ: UNVERIFIED / N/A% / 2026-11-06T22:15:59+00:00 / stale or future timestamp; excluded from decisions
 - SP500: UNVERIFIED / N/A% / 2026-11-06T21:37:09+00:00 / stale or future timestamp; excluded from decisions
 - VIX: UNVERIFIED / N/A% / 2026-11-06T21:15:01+00:00 / stale or future timestamp; excluded from decisions
