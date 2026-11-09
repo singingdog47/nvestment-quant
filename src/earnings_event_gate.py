@@ -34,7 +34,7 @@ def assess_event_gate(symbol, as_of_utc, event_checked_at_utc=None,
                     "decision_gate": "BLOCK_CAUSAL_CLAIMS_AND_NEW_TRADES",
                     "reason": "No-event claim lacks primary source or coverage window"}
         start = datetime.fromisoformat(coverage_start_utc.replace("Z", "+00:00"))
-        if start.tzinfo is None or start > now or now - start > timedelta(days=7):
+        if start.tzinfo is None or start > now or now - start < timedelta(days=7):
             return {"symbol": symbol, "state": "EVENT_UNVERIFIED",
                     "decision_gate": "BLOCK_CAUSAL_CLAIMS_AND_NEW_TRADES",
                     "reason": "No-event coverage window invalid or too short"}
