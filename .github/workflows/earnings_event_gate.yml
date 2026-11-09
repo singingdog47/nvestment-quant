@@ -21,4 +21,4 @@ jobs:
       - name: Run event gate regression tests
         run: python -m unittest discover -s tests -p 'test_*event*gate*.py' -v
       - name: Run portfolio preflight regression tests
-        run: python -m unittest tests.test_portfolio_event_preflight -v
+        run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
