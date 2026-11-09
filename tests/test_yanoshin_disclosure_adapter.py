@@ -2,11 +2,11 @@ import io
 import unittest
 from src.yanoshin_disclosure_adapter import fetch_candidate_atom
 
-XML=b'''<?xml version="1.0" encoding="utf-8"?>
+XML='''<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 <entry><title>2027年3月期 第2四半期決算短信</title>
 <published>2026-11-06T15:30:00+09:00</published>
-<link href="https://example.com/issuer/earnings.pdf"/></entry></feed>'''
+<link href="https://example.com/issuer/earnings.pdf"/></entry></feed>'''.encode('utf-8')
 
 class FakeResponse(io.BytesIO):
     def __enter__(self): return self
