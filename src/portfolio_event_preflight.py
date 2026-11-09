@@ -26,6 +26,10 @@ def evaluate_portfolio_events(symbols, manifest, as_of_utc):
         ))
     blocked = [x for x in out if x["decision_gate"].startswith("BLOCK")]
     return {"as_of_utc": as_of_utc, "total": len(out),
+            "approval_required": bool(blocked),
+            "approval_question_ja": ("決算・適時開示が未確認の銘柄があります。未確認のまま暫定的な売買判断を続けてよいですか？" if blocked else None),
+            "approval_scope": "THIS_REVIEW_ONLY",
+            "approval_status": "PENDING" if blocked else "NOT_NEEDED",
             "verified": len(out)-len(blocked), "blocked": len(blocked),
             "ready_for_further_review": not blocked, "positions": out}
 
