@@ -39,6 +39,12 @@ def main():
         symbols=[r["symbol"].strip() for r in csv.DictReader(f) if r.get("symbol","").strip()]
     with open(a.manifest,encoding="utf-8") as f:
         manifest=json.load(f)
+    if isinstance(manifest, dict):
+        if (manifest.get("primary_verified") is not False
+                or manifest.get("all_symbols_unverified") is not True
+                or not isinstance(manifest.get("manifest"), list)):
+            p.error("Unsupported manifest wrapper; primary verification cannot be inferred")
+        manifest=manifest["manifest"]
     consent=None
     if a.consent:
         with open(a.consent,encoding="utf-8") as f:
