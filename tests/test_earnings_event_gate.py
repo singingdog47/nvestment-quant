@@ -21,5 +21,20 @@ class EarningsEventGateTests(unittest.TestCase):
         r = assess_event_gate("6701", NOW, "2026-11-10T00:00:00Z", "NO_EVENT_CONFIRMED")
         self.assertEqual(r["state"], "EVENT_UNVERIFIED")
 
+    def test_no_event_without_primary_evidence_blocked(self):
+        r = assess_event_gate("6701", NOW, NOW, "NO_EVENT_CONFIRMED")
+        self.assertEqual(r["state"], "EVENT_UNVERIFIED")
+
+    def test_no_event_with_primary_evidence_can_proceed(self):
+        r = assess_event_gate("6701", NOW, NOW, "NO_EVENT_CONFIRMED",
+            source_url="https://www.jpx.co.jp/", source_kind="JPX_TDNET",
+            coverage_start_utc="2026-11-03T00:15:00Z")
+        self.assertEqual(r["state"], "NO_EVENT_CONFIRMED")
+
+    def test_event_review_without_primary_evidence_blocked(self):
+        r = assess_event_gate("8136", NOW, NOW, "EVENT_FOUND",
+            "2026-11-06T06:30:00Z", True)
+        self.assertEqual(r["state"], "EVENT_REVIEW_REQUIRED")
+
 if __name__ == "__main__":
     unittest.main()
