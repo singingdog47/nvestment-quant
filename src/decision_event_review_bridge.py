@@ -10,8 +10,20 @@ from pathlib import Path
 from .portfolio_event_preflight import evaluate_portfolio_events
 from .event_user_consent import apply_user_consent
 
+def normalize_manifest_input(manifest):
+    """Accept unverified candidate wrapper without elevating its trust level."""
+    if not isinstance(manifest, dict):
+        return manifest
+    if (manifest.get("primary_verified") is not False
+            or manifest.get("all_symbols_unverified") is not True
+            or not isinstance(manifest.get("manifest"), list)):
+        raise ValueError("Unsupported manifest wrapper")
+    return [{**record, "status":"UNKNOWN", "reviewed":False,
+             "source_kind":None, "source_url":None}
+            for record in manifest["manifest"]]
+
 def prepare_decision_review(symbols, manifest, as_of_utc, consent=None):
-    preflight=evaluate_portfolio_events(symbols,manifest,as_of_utc)
+    preflight=evaluate_portfolio_events(symbols,normalize_manifest_input(manifest),as_of_utc)
     gate=apply_user_consent(preflight,consent)
     return {
         "review_as_of_utc":as_of_utc,
@@ -39,14 +51,6 @@ def main():
         symbols=[r["symbol"].strip() for r in csv.DictReader(f) if r.get("symbol","").strip()]
     with open(a.manifest,encoding="utf-8") as f:
         manifest=json.load(f)
-    if isinstance(manifest, dict):
-        if (manifest.get("primary_verified") is not False
-                or manifest.get("all_symbols_unverified") is not True
-                or not isinstance(manifest.get("manifest"), list)):
-            p.error("Unsupported manifest wrapper; primary verification cannot be inferred")
-        manifest=[{**record, "status":"UNKNOWN", "reviewed":False,
-                   "source_kind":None, "source_url":None}
-                  for record in manifest["manifest"]]
     consent=None
     if a.consent:
         with open(a.consent,encoding="utf-8") as f:
