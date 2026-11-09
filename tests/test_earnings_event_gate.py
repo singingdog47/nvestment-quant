@@ -36,5 +36,16 @@ class EarningsEventGateTests(unittest.TestCase):
             "2026-11-06T06:30:00Z", True)
         self.assertEqual(r["state"], "EVENT_REVIEW_REQUIRED")
 
+    def test_malformed_coverage_date_fails_closed(self):
+        r = assess_event_gate("6701", NOW, NOW, "NO_EVENT_CONFIRMED",
+            source_url="https://www.jpx.co.jp/", source_kind="JPX_TDNET",
+            coverage_start_utc="invalid")
+        self.assertEqual(r["state"], "EVENT_UNVERIFIED")
+
+    def test_malformed_publication_date_fails_closed(self):
+        r = assess_event_gate("8136", NOW, NOW, "EVENT_FOUND", "invalid",
+            True, source_url="https://www.jpx.co.jp/", source_kind="JPX_TDNET")
+        self.assertEqual(r["state"], "EVENT_UNVERIFIED")
+
 if __name__ == "__main__":
     unittest.main()
