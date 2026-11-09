@@ -51,6 +51,10 @@ def assess_sources(candidates, private_dir: Path, *, now=None):
     local, manifest = _build_latest_portfolio(private_dir, candidates)
     matching = [(p, m) for p, m in candidates if m.get("name") == manifest["source_file"]]
     inputs = _build_latest_account_inputs(private_dir, matching + [x for x in candidates if x not in matching])
+    from src.csv_advisory import build_csv_advisory
+    advisory = build_csv_advisory(inputs, candidates, now=now)
+    (private_dir / "csv_advisory_latest.json").write_text(
+        json.dumps(advisory, ensure_ascii=False, indent=2), encoding="utf-8")
     verified = prepare_ledger(candidates, manifest, inputs, private_dir)
     os.environ["PRIVATE_VERIFIED_FACTS_LEDGER_PATH"] = verified["ledger_path"]
     # Dedicated report publisher below owns writeback; avoid double writers.
@@ -67,6 +71,11 @@ def assess_sources(candidates, private_dir: Path, *, now=None):
     matrix = write_private_matrix(local, source_as_of=manifest.get("source_as_of"),
         policy_payload=policy, investment_state=shared["state"], output_dir=private_dir)
     return {"runtime_status": "PASSED", "as_of": now.isoformat(),
+            "csv_advisory": advisory,
+            "analysis_ready": advisory["analysis_ready"],
+            "capital_planning_ready": advisory["capital_planning_ready"],
+            "execution_ready": False,
+            "order_document_scopes": sorted(inputs.get("order_documents", {})),
             "source_as_of": manifest.get("source_as_of"),
             "holdings_rows": manifest.get("rows_kept"),
             "source_verification": {k:v for k,v in verified.items() if k != "ledger_path"},
@@ -98,7 +107,10 @@ def main():
         readback = download_named(path.name, private_dir / "readback.json", require_unique=True)
         if readback.read_bytes() != path.read_bytes():
             raise ValueError("readiness report readback mismatch")
-        public = {"runtime_status": "PASSED", "writeback": "SUCCESS", "data_ready": report["data_ready"]}
+        public = {"runtime_status": "PASSED", "writeback": "SUCCESS", "data_ready": report["data_ready"],
+                  "analysis_ready": report["analysis_ready"],
+                  "capital_planning_ready": report["capital_planning_ready"],
+                  "execution_ready": False}
         public["decision_monitor"] = run_monitor(private_dir / "monitor", writeback=True)
         if public["decision_monitor"]["writeback"] != "SUCCESS" or public["decision_monitor"]["status"] in {"MISSING_JOURNAL", "UNAVAILABLE_OR_INVALID"}:
             public["runtime_status"] = "FAILED"
