@@ -41,3 +41,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_decision_event_review_bridge.py' -v
       - name: Run portfolio preflight regression tests
         run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
+      - name: Run synthetic private CLI end-to-end smoke tests
+        run: python -m unittest discover -s tests -p 'test_event_review_cli_e2e.py' -v
