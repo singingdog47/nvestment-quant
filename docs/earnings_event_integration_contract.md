@@ -20,3 +20,6 @@
 
 ## 統合判定
 専用CIとPR CIが成功、無料候補取得の実通信が成功、私有データを漏洩させないE2E、明示的同意のUI接続、実際の決算発表の照合が揃うまではマージしない。
+
+## 2026-11-09 実通信監査
+GitHub Actions run 42542230275 の実通信プローブは `FREE_FEED_UNAVAILABLE RuntimeError Unexpected feed format; fail closed` を記録。HTTP応答をAtomとして解釈できなかった。実通信成功とは認めない。従来の `continue-on-error: true` によりCIが緑になったことは誤解を招くため撤去した。無料候補フィードの代替を検証し、一次ソース照合を実装するまで本番統合不可。
