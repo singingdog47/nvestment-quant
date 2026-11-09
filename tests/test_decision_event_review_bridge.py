@@ -24,4 +24,15 @@ class BridgeTests(unittest.TestCase):
             {"approved":True,"review_fingerprint":review_fingerprint(pf)})
         self.assertEqual(r["analysis_mode"],"AWAITING_USER_CONFIRMATION")
 
+    def test_unverified_free_feed_cannot_self_certify(self):
+        wrapper={"primary_verified":False,"all_symbols_unverified":True,
+                 "manifest":[{"symbol":"8136","status":"NO_EVENT_CONFIRMED",
+                              "reviewed":True,"checked_at_utc":NOW,
+                              "source_kind":"JPX_TDNET",
+                              "source_url":"https://www.jpx.co.jp/",
+                              "coverage_start_utc":"2026-10-30T00:00:00Z"}]}
+        r=prepare_decision_review(["8136"],wrapper,NOW)
+        self.assertEqual(r["analysis_mode"],"AWAITING_USER_CONFIRMATION")
+        self.assertFalse(r["may_finalize_trade_recommendations"])
+
 if __name__=="__main__":unittest.main()
