@@ -4,8 +4,10 @@ on:
     paths:
       - 'src/earnings_event_gate.py'
       - 'src/portfolio_event_preflight.py'
+      - 'src/disclosure_candidates.py'
       - 'tests/test_earnings_event_gate.py'
       - 'tests/test_portfolio_event_preflight.py'
+      - 'tests/test_disclosure_candidates.py'
       - '.github/workflows/earnings_event_gate.yml'
   workflow_dispatch:
 jobs:
@@ -20,5 +22,7 @@ jobs:
           python-version: '3.11'
       - name: Run event gate regression tests
         run: python -m unittest discover -s tests -p 'test_*event*gate*.py' -v
+      - name: Run disclosure candidate regression tests
+        run: python -m unittest discover -s tests -p 'test_disclosure_candidates.py' -v
       - name: Run portfolio preflight regression tests
         run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
