@@ -26,5 +26,17 @@ class PortfolioEventPreflightTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             evaluate_portfolio_events(["8136","8136"], [], "2026-11-09T00:15:00Z")
 
+    def test_duplicate_manifest_is_rejected(self):
+        with self.assertRaises(ValueError):
+            evaluate_portfolio_events(["8136"], [
+                {"symbol":"8136","status":"UNKNOWN"},
+                {"symbol":"8136","status":"NO_EVENT_CONFIRMED"}
+            ], "2026-11-09T00:00:00Z")
+
+    def test_candidate_wrapper_cannot_be_treated_as_verified_manifest(self):
+        with self.assertRaises(ValueError):
+            evaluate_portfolio_events(["8136"], {"manifest":[{"symbol":"8136","status":"UNKNOWN"}]},
+                                      "2026-11-09T00:00:00Z")
+
 if __name__ == "__main__":
     unittest.main()
