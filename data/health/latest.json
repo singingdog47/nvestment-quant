@@ -1,27 +1,55 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-06T20:04:16.881916+00:00",
+  "generated_at_utc": "2026-11-09T23:08:01.551130+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
-  "incident_signature": "1421ca75e324c248",
+  "incident_signature": "1bad6bb557710bc6",
   "incidents": [
+    {
+      "key": "ai_ma:snapshot_lag",
+      "component": "ai_ma",
+      "severity": "WARNING",
+      "kind": "DATA_INCIDENT",
+      "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。"
+    },
+    {
+      "key": "challenger1:snapshot_lag",
+      "component": "challenger1",
+      "severity": "WARNING",
+      "kind": "DATA_INCIDENT",
+      "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。"
+    },
+    {
+      "key": "challenger1_5m:snapshot_lag",
+      "component": "challenger1_5m",
+      "severity": "WARNING",
+      "kind": "DATA_INCIDENT",
+      "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。"
+    },
     {
       "key": "challenger2:snapshot_lag",
       "component": "challenger2",
       "severity": "WARNING",
       "kind": "DATA_INCIDENT",
       "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。"
+    },
+    {
+      "key": "pipeline:snapshot_lag",
+      "component": "pipeline",
+      "severity": "WARNING",
+      "kind": "DATA_INCIDENT",
+      "message_ja": "直近の完了営業日について統合レポートが更新されていません。"
     }
   ],
   "components": {
     "challenger1": {
-      "status": "HEALTHY",
+      "status": "STALE",
       "as_of_date": "2026-11-05",
       "blockers": [],
       "mode": "SHADOW_ONLY"
     },
     "challenger1_5m": {
-      "status": "HEALTHY",
+      "status": "STALE",
       "as_of_date": "2026-11-05",
       "blockers": [],
       "mode": "SHADOW_ONLY"
@@ -33,7 +61,7 @@
       "mode": "SHADOW_ONLY"
     },
     "ai_ma": {
-      "status": "HEALTHY",
+      "status": "STALE",
       "as_of_date": "2026-11-05",
       "blockers": [],
       "mode": "SHADOW_ONLY"
@@ -45,7 +73,7 @@
       "mode": null
     },
     "pipeline": {
-      "status": "HEALTHY",
+      "status": "STALE",
       "as_of_date": "2026-11-06"
     },
     "shadow_v2": {
