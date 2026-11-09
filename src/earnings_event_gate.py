@@ -13,6 +13,8 @@ def assess_event_gate(symbol, as_of_utc, event_checked_at_utc=None,
     if not symbol:
         raise ValueError("symbol required")
     now = datetime.fromisoformat(as_of_utc.replace("Z", "+00:00"))
+    if max_age_hours <= 0:
+        raise ValueError("max_age_hours must be positive")
     if now.tzinfo is None:
         raise ValueError("as_of_utc must include timezone")
     allowed = {"UNKNOWN", "NO_EVENT_CONFIRMED", "EVENT_FOUND"}
