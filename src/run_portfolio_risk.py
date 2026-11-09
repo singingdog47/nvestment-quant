@@ -154,6 +154,7 @@ def _collect_monthly_snapshots(candidates: list[tuple[Path, dict]], cutoff_date:
 
 def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path, dict]]) -> dict:
     selected: dict[str, dict] = {}
+    order_documents: dict[str, dict] = {}
     errors: list[dict] = []
     parsers = (
         ("account_summary", lambda p: parse_account_summary_bytes(p.read_bytes())),
@@ -162,7 +163,7 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
     )
     for path, meta in candidates:
         for kind, parser in parsers:
-            if kind in selected:
+            if kind in selected and kind != "orders":
                 continue
             try:
                 parsed = parser(path)
@@ -180,11 +181,30 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
                 except ValueError:
                     pass
             max_age_days = float(os.getenv("PRIVATE_INPUT_MAX_AGE_DAYS", "7"))
-            selected[kind] = {
+            item = {
                 "source_file": meta.get("name"), "source_modified_time": meta.get("modifiedTime"),
                 "source_as_of": as_of, "source_as_of_method": method, "age_days": age_days,
                 "data_status": "stale" if age_days is not None and age_days > max_age_days else "ok", **parsed,
             }
+            if kind == "orders":
+                scope = parsed.get("scope") or "legacy_orders"
+                previous = order_documents.get(scope)
+                if previous is None or str(item.get("source_as_of") or "") > str(previous.get("source_as_of") or ""):
+                    order_documents[scope] = item
+                # Keep the legacy field for consumers, but never discard the
+                # independent domestic/fund document evidence.
+                selected.setdefault(kind, item)
+            else:
+                selected[kind] = item
+    if len(order_documents) > 1:
+        newest = max(order_documents.values(), key=lambda x: str(x.get("source_as_of") or ""))
+        selected["orders"] = {
+            **newest, "scope": "multiple_order_documents",
+            "source_files": [x.get("source_file") for x in order_documents.values()],
+            "status": "partial", "items": None, "orders_count": None,
+            "account_wide_coverage_verified": False,
+            "document_scopes": sorted(order_documents),
+        }
     missing = [x for x in ("account_summary", "orders", "buying_power") if x not in selected]
     stale = [kind for kind, item in selected.items() if item.get("data_status") == "stale"]
     partial = [kind for kind, item in selected.items() if item.get("status") != "ok"]
@@ -192,11 +212,14 @@ def _build_latest_account_inputs(private_dir: Path, candidates: list[tuple[Path,
         "status": "ok" if not missing and not stale and not partial else "partial",
         "selection_policy": "newest_parseable_file_by_drive_modified_time",
         "inputs": selected,
+        "order_documents": order_documents,
         "missing_input_types": missing,
         "stale_input_types": stale,
         "partial_input_types": partial,
         "parse_errors_count": len(errors),
     }
+    from src.csv_advisory import build_csv_advisory
+    snapshot["csv_advisory"] = build_csv_advisory(snapshot, candidates)
     (private_dir / "account_inputs_latest.json").write_text(
         json.dumps(snapshot, ensure_ascii=False, indent=2), encoding="utf-8"
     )

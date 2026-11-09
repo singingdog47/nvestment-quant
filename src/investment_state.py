@@ -126,6 +126,7 @@ def build_investment_state(
         "schema_version": SCHEMA_VERSION,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "privacy": "private",
+        "csv_advisory": account_inputs.get("csv_advisory", {}),
         "source_as_of": portfolio_manifest.get("source_as_of"),
         "portfolio": {
             "total_assets_jpy": account_for_state.get("total_assets_jpy"),
