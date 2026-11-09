@@ -1,15 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-09T06:51:34.595665+00:00",
-  "risk_level": "CRITICAL",
+  "generated_at_utc": "2026-11-09T22:30:22.507639+00:00",
+  "risk_level": "DEFENSIVE",
   "market_decision": "RISK_REDUCTION_REVIEW",
   "risk_drivers": [
-    "日経円建て先物(CME)が-5%以下",
     "日経円建て先物(CME)が-3%以下",
     "日経円建て先物(CME)が-1.5%以下"
   ],
   "verified_feeds": [
-    "NIKKEI_FUT"
+    "NIKKEI_FUT",
+    "NASDAQ",
+    "SP500",
+    "VIX"
   ],
   "feeds": {
     "NIKKEI_FUT": {
@@ -17,45 +19,50 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-09T06:40:53+00:00",
-      "age_minutes": 10.7,
-      "price": 58920.0,
+      "as_of_utc": "2026-11-09T21:59:55+00:00",
+      "age_minutes": 30.5,
+      "price": 60970.0,
       "previous_close": 63055.0,
-      "change_pct": -6.558
+      "change_pct": -3.307
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
-      "status": "UNVERIFIED",
-      "as_of_utc": "2026-11-06T22:15:59+00:00",
-      "age_minutes": 3395.6,
-      "reason": "stale or future timestamp; excluded from decisions"
+      "status": "OK",
+      "as_of_utc": "2026-11-09T22:15:59+00:00",
+      "age_minutes": 14.4,
+      "price": 25253.139,
+      "previous_close": 25164.31,
+      "change_pct": 0.353
     },
     "SP500": {
       "name": "SP500",
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
-      "status": "UNVERIFIED",
-      "as_of_utc": "2026-11-06T21:37:09+00:00",
-      "age_minutes": 3434.4,
-      "reason": "stale or future timestamp; excluded from decisions"
+      "status": "OK",
+      "as_of_utc": "2026-11-09T22:12:50+00:00",
+      "age_minutes": 17.5,
+      "price": 7549.94,
+      "previous_close": 7541.4,
+      "change_pct": 0.113
     },
     "VIX": {
       "name": "VIX",
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
-      "status": "UNVERIFIED",
-      "as_of_utc": "2026-11-06T21:15:01+00:00",
-      "age_minutes": 3456.6,
-      "reason": "stale or future timestamp; excluded from decisions"
+      "status": "OK",
+      "as_of_utc": "2026-11-09T21:15:01+00:00",
+      "age_minutes": 75.4,
+      "price": 19.92,
+      "previous_close": 20.83,
+      "change_pct": -4.369
     }
   },
   "recommended_actions": [
-    "新規買い停止",
-    "既存買い指値の取消を優先審査",
-    "下落に弱い保有銘柄の利益確定・縮小を寄り前に審査",
-    "防衛資金維持"
+    "新規買い原則停止",
+    "未約定買い注文を再評価",
+    "保有銘柄の撤退条件と売却数量を決定"
   ],
   "execution": "ADVISORY_ONLY",
   "private_portfolio_used": false,
