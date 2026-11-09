@@ -50,7 +50,6 @@ jobs:
       - name: Run portfolio preflight regression tests
         run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
       - name: Check free public disclosure endpoint reachability (non-gating)
-        if: github.event_name == 'push'
         continue-on-error: true
         timeout-minutes: 1
         run: |
