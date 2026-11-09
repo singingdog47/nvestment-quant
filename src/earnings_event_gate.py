@@ -22,8 +22,11 @@ def assess_event_gate(symbol, as_of_utc, event_checked_at_utc=None,
         raise ValueError("invalid event_status")
     checked = None
     if event_checked_at_utc:
-        checked = datetime.fromisoformat(event_checked_at_utc.replace("Z", "+00:00"))
-        if checked.tzinfo is None or checked > now or now - checked > timedelta(hours=max_age_hours):
+        try:
+            checked = datetime.fromisoformat(event_checked_at_utc.replace("Z", "+00:00"))
+        except (ValueError, AttributeError):
+            checked = None
+        if checked is None or checked.tzinfo is None or checked > now or now - checked > timedelta(hours=max_age_hours):
             checked = None
     if checked is None or event_status == "UNKNOWN":
         return {"symbol": symbol, "state": "EVENT_UNVERIFIED",
