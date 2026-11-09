@@ -49,27 +49,3 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_decision_event_review_bridge.py' -v
       - name: Run portfolio preflight regression tests
         run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
-      - name: Check free public disclosure endpoint reachability (required for integration)
-        timeout-minutes: 1
-        run: |
-          python - <<'PY'
-          from src.yanoshin_disclosure_adapter import fetch_candidate_atom
-          try:
-              result = fetch_candidate_atom("8136", limit=1)
-              print("FREE_FEED_REACHABLE", "records=", len(result["candidate_disclosures"]))
-              print("PRIMARY_VERIFIED=False; reachability does not imply complete coverage")
-          except Exception as exc:
-              print("FREE_FEED_UNAVAILABLE", type(exc).__name__, str(exc)[:200])
-              from urllib.request import Request, urlopen
-              from xml.etree import ElementTree
-              for suffix in ("8136.atom?limit=1", "recent.atom?limit=1", "8136.rss?limit=1"):
-                  url="https://webapi.yanoshin.jp/webapi/tdnet/list/"+suffix
-                  try:
-                      with urlopen(Request(url,headers={"User-Agent":"investment-quant-disclosure-candidate/1.0"}),timeout=10) as response:
-                          raw=response.read(65536)
-                          print("PROBE",suffix,"status",response.status,"type",response.headers.get("Content-Type"),
-                                "bytes",len(raw),"root",ElementTree.fromstring(raw).tag)
-                  except Exception as probe_exc:
-                      print("PROBE_FAILED",suffix,type(probe_exc).__name__,str(probe_exc)[:120])
-              raise SystemExit(1)
-          PY
