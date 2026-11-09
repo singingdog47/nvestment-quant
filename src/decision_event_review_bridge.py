@@ -44,7 +44,9 @@ def main():
                 or manifest.get("all_symbols_unverified") is not True
                 or not isinstance(manifest.get("manifest"), list)):
             p.error("Unsupported manifest wrapper; primary verification cannot be inferred")
-        manifest=manifest["manifest"]
+        manifest=[{**record, "status":"UNKNOWN", "reviewed":False,
+                   "source_kind":None, "source_url":None}
+                  for record in manifest["manifest"]]
     consent=None
     if a.consent:
         with open(a.consent,encoding="utf-8") as f:
