@@ -5,6 +5,7 @@ on:
       - 'src/earnings_event_gate.py'
       - 'src/portfolio_event_preflight.py'
       - 'src/event_user_consent.py'
+      - 'src/decision_event_review_bridge.py'
       - 'src/disclosure_candidates.py'
       - 'src/jquants_tdnet_adapter.py'
       - 'src/yanoshin_disclosure_adapter.py'
@@ -12,6 +13,7 @@ on:
       - 'tests/test_earnings_event_gate.py'
       - 'tests/test_portfolio_event_preflight.py'
       - 'tests/test_event_user_consent.py'
+      - 'tests/test_decision_event_review_bridge.py'
       - 'tests/test_disclosure_candidates.py'
       - 'tests/test_jquants_tdnet_adapter.py'
       - 'tests/test_yanoshin_disclosure_adapter.py'
@@ -40,5 +42,7 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_run_free_disclosure_preflight.py' -v
       - name: Run consent regression tests
         run: python -m unittest discover -s tests -p 'test_event_user_consent.py' -v
+      - name: Run decision bridge tests
+        run: python -m unittest discover -s tests -p 'test_decision_event_review_bridge.py' -v
       - name: Run portfolio preflight regression tests
         run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
