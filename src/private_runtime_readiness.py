@@ -51,7 +51,7 @@ def write_private_event_review(local_portfolio, private_dir: Path, *, now):
     with open(local_portfolio, encoding="utf-8-sig", newline="") as handle:
         codes = [str(row.get("code", "")).strip()
                  for row in csv.DictReader(handle)]
-    symbols = list(dict.fromkeys(code for code in codes if re.fullmatch(r"\\d{4}", code)))
+    symbols = list(dict.fromkeys(code for code in codes if re.fullmatch(r"\d{4}", code)))
     # Never infer that a missing manifest means no events.
     manifest_path = private_dir / "event_disclosures_verified.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else []
@@ -59,7 +59,7 @@ def write_private_event_review(local_portfolio, private_dir: Path, *, now):
     consent = json.loads(consent_path.read_text(encoding="utf-8")) if consent_path.exists() else None
     result = prepare_decision_review(symbols, manifest, now.isoformat(), consent)
     output = private_dir / "event_review_latest.json"
-    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     output.chmod(0o600)
     return {"analysis_mode": result["analysis_mode"],
             "total": result["event_preflight"]["total"],
