@@ -11,7 +11,7 @@ from urllib.request import Request, urlopen
 API = "https://api.jquants.com/v2/td/list"
 
 def fetch_tdnet_list(code, start, end, api_key=None, opener=urlopen):
-    key = api_key or os.environ.get("JQUANTS_API_KEY")
+    key = os.environ.get("JQUANTS_API_KEY") if api_key is None else api_key
     if not key:
         raise RuntimeError("J-Quants API key missing; no disclosure coverage can be asserted")
     if not (str(code).isdigit() and len(str(code)) in (4, 5)):
