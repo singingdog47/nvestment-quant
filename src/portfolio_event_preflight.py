@@ -21,6 +21,8 @@ def evaluate_portfolio_events(symbols, manifest, as_of_utc):
             event_status=rec.get("status", "UNKNOWN"),
             event_published_at_utc=rec.get("published_at_utc"),
             event_reviewed=rec.get("reviewed", False),
+            source_url=rec.get("source_url"), source_kind=rec.get("source_kind"),
+            coverage_start_utc=rec.get("coverage_start_utc"),
         ))
     blocked = [x for x in out if x["decision_gate"].startswith("BLOCK")]
     return {"as_of_utc": as_of_utc, "total": len(out),
