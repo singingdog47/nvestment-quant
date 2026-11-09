@@ -9,11 +9,11 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 
-from src.private_rakuten_e2e import verify_historical_files
 
 
 def prepare_ledger(candidates, manifest, account_inputs, private_dir):
     from src.private_account_import import parse_orders_document
+    from src.private_rakuten_e2e import verify_historical_files
     ledger = Path(private_dir) / "verified_facts.jsonl"
     # Source selection is anchored to the holdings export, not upload time.
     source_name = manifest.get("source_file")
