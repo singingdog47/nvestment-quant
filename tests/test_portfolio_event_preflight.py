@@ -11,6 +11,8 @@ class PortfolioEventPreflightTests(unittest.TestCase):
         ], "2026-11-09T00:15:00Z")
         self.assertEqual(r["blocked"], 1)
         self.assertFalse(r["ready_for_further_review"])
+        self.assertTrue(r["approval_required"])
+        self.assertEqual(r["approval_status"], "PENDING")
         self.assertEqual(r["positions"][1]["state"], "EVENT_UNVERIFIED")
     def test_all_reviewed_allows_further_review_only(self):
         r = evaluate_portfolio_events(["8136"], [
