@@ -28,7 +28,7 @@ class EarningsEventGateTests(unittest.TestCase):
     def test_no_event_with_primary_evidence_can_proceed(self):
         r = assess_event_gate("6701", NOW, NOW, "NO_EVENT_CONFIRMED",
             source_url="https://www.jpx.co.jp/", source_kind="JPX_TDNET",
-            coverage_start_utc="2026-11-03T00:15:00Z")
+            coverage_start_utc="2026-11-01T00:15:00Z")
         self.assertEqual(r["state"], "NO_EVENT_CONFIRMED")
 
     def test_event_review_without_primary_evidence_blocked(self):
