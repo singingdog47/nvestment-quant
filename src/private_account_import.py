@@ -62,6 +62,7 @@ def parse_account_summary_bytes(raw: bytes) -> dict:
         "保有商品の評価額合計": "invested_assets_jpy",
         "預り金合計": "deposits_total_jpy",
         "預り金": "cash_deposit_jpy",
+        "楽天銀行普通預金残高": "rakuten_bank_jpy",
         "外貨預り金": "foreign_cash_jpy",
         "信用保証金": "margin_collateral_jpy",
         "国内株式信用保証金": "margin_collateral_jpy",
