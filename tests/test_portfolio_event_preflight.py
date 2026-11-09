@@ -6,7 +6,8 @@ class PortfolioEventPreflightTests(unittest.TestCase):
         r = evaluate_portfolio_events(["8136", "6701"], [
             {"symbol":"8136", "status":"EVENT_FOUND",
              "checked_at_utc":"2026-11-09T00:15:00Z",
-             "published_at_utc":"2026-11-06T06:30:00Z", "reviewed":True}
+             "published_at_utc":"2026-11-06T06:30:00Z", "reviewed":True,
+             "source_url":"https://www.jpx.co.jp/", "source_kind":"JPX_TDNET"}
         ], "2026-11-09T00:15:00Z")
         self.assertEqual(r["blocked"], 1)
         self.assertFalse(r["ready_for_further_review"])
@@ -15,7 +16,8 @@ class PortfolioEventPreflightTests(unittest.TestCase):
         r = evaluate_portfolio_events(["8136"], [
             {"symbol":"8136", "status":"EVENT_FOUND",
              "checked_at_utc":"2026-11-09T00:15:00Z",
-             "published_at_utc":"2026-11-06T06:30:00Z", "reviewed":True}
+             "published_at_utc":"2026-11-06T06:30:00Z", "reviewed":True,
+             "source_url":"https://www.jpx.co.jp/", "source_kind":"JPX_TDNET"}
         ], "2026-11-09T00:15:00Z")
         self.assertTrue(r["ready_for_further_review"])
     def test_duplicate_symbols_rejected(self):
