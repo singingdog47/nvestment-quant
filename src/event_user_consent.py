@@ -7,8 +7,7 @@ import json
 
 def review_fingerprint(preflight):
     payload = {"as_of_utc": preflight["as_of_utc"],
-               "positions": [(p["symbol"], p["state"], p["decision_gate"])
-                             for p in preflight["positions"]]}
+               "positions": preflight["positions"]}
     return sha256(json.dumps(payload, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
 def apply_user_consent(preflight, consent=None):
