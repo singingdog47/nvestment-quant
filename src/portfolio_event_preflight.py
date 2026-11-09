@@ -11,6 +11,11 @@ from .earnings_event_gate import assess_event_gate
 def evaluate_portfolio_events(symbols, manifest, as_of_utc):
     if len(symbols) != len(set(symbols)):
         raise ValueError("duplicate symbols")
+    if not isinstance(manifest, list):
+        raise ValueError("manifest must be a JSON array of per-symbol records")
+    manifest_symbols = [str(x["symbol"]) for x in manifest]
+    if len(manifest_symbols) != len(set(manifest_symbols)):
+        raise ValueError("duplicate manifest symbols; cannot select authoritative record")
     records = {str(x["symbol"]): x for x in manifest}
     out = []
     for symbol in symbols:
