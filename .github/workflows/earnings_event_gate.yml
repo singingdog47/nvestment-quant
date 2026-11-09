@@ -49,3 +49,18 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_decision_event_review_bridge.py' -v
       - name: Run portfolio preflight regression tests
         run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
+      - name: Check free public disclosure endpoint reachability (non-gating)
+        if: github.event_name == 'push'
+        continue-on-error: true
+        timeout-minutes: 1
+        run: |
+          python - <<'PY'
+          from src.yanoshin_disclosure_adapter import fetch_candidate_atom
+          try:
+              result = fetch_candidate_atom("8136", limit=1)
+              print("FREE_FEED_REACHABLE", "records=", len(result["candidate_disclosures"]))
+              print("PRIMARY_VERIFIED=False; reachability does not imply complete coverage")
+          except Exception as exc:
+              print("FREE_FEED_UNAVAILABLE", type(exc).__name__, str(exc)[:200])
+              raise SystemExit(1)
+          PY
