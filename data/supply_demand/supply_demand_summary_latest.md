@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-11-06T15:06:41+00:00
+Generated (UTC): 2026-11-10T04:09:26+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [JP] 信越化学工業: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=100.0%, float turnover=0.4%, volume ratio=1.5761219177306105)
-- [JP] KDDI: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=80.9%, float turnover=0.3%, volume ratio=1.7090277795023125)
-- [JP] NEC: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=95.1%, float turnover=0.5%, volume ratio=1.524865671390561)
-- [JP] 浜松ホトニクス: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=97.1%, float turnover=0.8%, volume ratio=2.3616938208702503)
-- [JP] ライフドリンク カンパニー: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=73.1%, float turnover=1.7%, volume ratio=1.6506683553192556)
-- [JP] FOOD & LIFE COMPANIES: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=96.7%, float turnover=1.2%, volume ratio=3.4099194943912474)
-- [US] Financial Institutions, Inc. - Common Stock: SHORT_CROWDING (float=87.8%, float turnover=0.8%, volume ratio=0.0505465103905383)
-- [JP] Strike Group Co.,Ltd.: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=57.5%, float turnover=1.4%, volume ratio=2.1221032671622506)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.2%, volume ratio=0.02548568959082248)
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=3.1%, volume ratio=0.2468660593369056)
+- [US] Financial Institutions, Inc. - Common Stock: SHORT_CROWDING (float=87.8%, float turnover=0.8%, volume ratio=0.9280233048411208)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.2%, volume ratio=1.1817868119698587)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING|VOLUME_EXPANSION (float=89.9%, float turnover=3.1%, volume ratio=1.517450600977872)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.8%, float turnover=1.0%, volume ratio=1.0503075710493655)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.5%, float turnover=0.9%, volume ratio=0.6329738699596726)
+- [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.7%, float turnover=1.2%, volume ratio=0.3819549423265444)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.4%, float turnover=2.6%, volume ratio=0.8348829931296303)
+- [US] TORM plc - Class A Common Stock: HIGH_FLOAT_TURNOVER|SHORT_INTEREST_FALLING (float=80.1%, float turnover=2.0%, volume ratio=1.038816661810697)
+- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_INTEREST_RISING (float=99.3%, float turnover=1.5%, volume ratio=0.670580949870242)
+- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.9%, volume ratio=0.9035671005304572)
 
 ## Governance
 

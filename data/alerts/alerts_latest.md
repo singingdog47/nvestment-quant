@@ -1,75 +1,107 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-11-06T15:06:41+00:00
+Generated: 2026-11-10T04:09:27+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 8
-- WATCH: 22
+- WARNING: 20
+- WATCH: 26
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [KDDI]: ＫＤＤＩ[9433]：自己株式の取得状況に関するお知らせ 2026年11月6日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for KDDI.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Astellas Pharma Inc.]: 半期報告書－第22期(2026/04/01－2026/09/30)
-  - New company event detected for Astellas Pharma Inc..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Astellas Pharma Inc.]: 確認書
-  - New company event detected for Astellas Pharma Inc..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [KDDI]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
-  - New company event detected for KDDI.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [MIXI,Inc.]: 半期報告書－第28期(2026/04/01－2027/03/31)
-  - New company event detected for MIXI,Inc..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [MIXI,Inc.]: 確認書
-  - New company event detected for MIXI,Inc..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [信越化学工業]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
-  - New company event detected for 信越化学工業.
-- **WARNING** LIQUIDITY/THIN_LIQUIDITY: Thin liquidity flag active
-  - Market Regime Engine reports thin_liquidity_flag=true.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: ANYCOLORデザイン部座談会 ライバーの「デビュー」と「新衣装」を支える妥協なきチームワーク - ANYCOLOR MAGAZINE
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [ANYCOLOR]: 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞
   - New company event detected for ANYCOLOR.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: にじさんじから「PARALLEL CASE: 2434『CASE 02：ソフィア・ヴァレンタインの記録』」が2026年11月6日(金)20時より「調査可能」に。グッズも販売開始 | ANYCOLOR株式会社のプレスリリース - PR TIMES
-  - New company event detected for ANYCOLOR.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: ＦＯＯＤ＆ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ[3563]：中期経営計画「F&LC MTP 27-29－うまいすしを世界へ－」 2026年11月6日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for FOOD & LIFE COMPANIES.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: 【決算速報】Ｆ＆ＬＣ---26年9月期は増益、経常利益は45.3％増(フィスコ) - Yahoo!ファイナンス
-  - New company event detected for FOOD & LIFE COMPANIES.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: ＦＯＯＤ＆ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ[3563]：2026年9月期 通期 決算説明資料 2026年11月6日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for FOOD & LIFE COMPANIES.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: ショップチャンネル 11月10日（火）～13日（金）は4ジャンルを日替わりで特集する「オールスター4DAYS」を放送 - Infoseek
-  - New company event detected for FOOD & LIFE COMPANIES.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ＫＤＤＩ、上期最終が1％増益で着地・7-9月期は16％減益 - 株探
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 〔決算〕KDDI、9月中間は増収増益（時事通信） - Yahoo!ニュース
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ＫＤＤＩ[9433]：2027年3月期 第2四半期決算説明会資料 2026年11月6日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 〔決算〕KDDI、9月中間は増収増益＝モバイルとDCがけん引(時事通信) - Yahoo!ファイナンス
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 【発言】 ハセット国家経済会議（NEC）委員長 「トランプ大統領はデータセンターを望まない地域の方針を尊重」(フィスコ) - Yahoo!ファイナンス
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＦＲＢ、政策判断にあたりインフレ注視の見通し＝ハセットＮＥＣ委員長 - Reuters
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NEC、大阪市と介護予防などの推進で連携 - 日本経済新聞
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 米ＮＥＣ委員長 Ｉバブルは実際に懸念すべき問題 - 株探
-  - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: 「こどもまんなか社会」の実現へ ほくほくフィナンシャルグループが道と連携協定（STVニュース北海道） - Yahoo!ニュース
-  - New company event detected for ほくほくフィナンシャルグループ.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: 子どもと子育て世帯を支援 ほくほくフィナンシャルグループと道が連携協定（テレビ北海道） - Yahoo!ニュース
-  - New company event detected for ほくほくフィナンシャルグループ.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: ライフドリンクカンパニー株価ストップ高 営業益の高進捗評価 - 日本経済新聞
-  - New company event detected for ライフドリンク カンパニー.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: 東京海上子会社、口座情報など漏えいか（時事通信） - Yahoo!ニュース
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [東京海上ホールディングス]: 東京海上ホールディングス[8766]：自己株式の取得状況に関するお知らせ 2026年10月7日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
   - New company event detected for 東京海上ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [水戸証券]: 水戸証券株式会社 | 導入事例 | 法人のお客さま | ソフトバンク - ソフトバンク
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Equity Bancshares, Inc. Class A Common Stock]: SEC 10-Q filing
+  - New company event detected for Equity Bancshares, Inc. Class A Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [Financial Institutions, Inc. - Common Stock]: SEC 10-Q filing
+  - New company event detected for Financial Institutions, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [ほくほくフィナンシャルグループ]: ほくほくフィナンシャルグループ[8377]：2027年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結） 2026年11月9日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [信越化学工業]: 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for 信越化学工業.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [水戸証券]: 水戸証券[8622]：2026年３月期決算短信〔日本基準〕(非連結) 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
   - New company event detected for 水戸証券.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [DHT Holdings, Inc.]: SEC 6-K filing
+  - New company event detected for DHT Holdings, Inc..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [First Busey Corporation - Common Stock]: SEC 8-K filing
+  - New company event detected for First Busey Corporation - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [KDDI]: 訂正発行登録書
+  - New company event detected for KDDI.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Shionogi & Co.,Ltd.]: 発行登録書（株券､社債券等）
+  - New company event detected for Shionogi & Co.,Ltd..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [TORM plc - Class A Common Stock]: SEC 6-K filing
+  - New company event detected for TORM plc - Class A Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [コーエーテクモホールディングス]: 半期報告書－第18期(2026/04/01－2027/03/31)
+  - New company event detected for コーエーテクモホールディングス.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [コーエーテクモホールディングス]: 確認書
+  - New company event detected for コーエーテクモホールディングス.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [味の素]: 半期報告書－第149期(2026/04/01－2027/03/31)
+  - New company event detected for 味の素.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [味の素]: 確認書
+  - New company event detected for 味の素.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [味の素]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
+  - New company event detected for 味の素.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [水戸証券]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
+  - New company event detected for 水戸証券.
+- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [ほくほくフィナンシャルグループ]: ほくほくフィナンシャルグループ[8377]：第6次中期経営計画における経営指標目標の上方修正に関するお知らせ 2026年11月9日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [コーエーテクモホールディングス]: コーエーテクモホールディングス[3635]：業績予想及び配当予想の修正に関するお知らせ 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for コーエーテクモホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: ＡＮＹＣＯＬＯＲ(株)【5032】：株主優待 - Yahoo!ファイナンス
+  - New company event detected for ANYCOLOR.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: にじさんじから「Dolly Patchwork」グッズが登場！2026年11月10日(火)18時から販売開始！ - PR TIMES
+  - New company event detected for ANYCOLOR.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: 「にじさんじ バディボイス」「にじさんじ よしよし全肯定ボイス」、「ボイスビジュアルカード」2026年11月13日(金)12時より販売決定！ - ANYCOLOR株式会社
+  - New company event detected for ANYCOLOR.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: (株)ＦＯＯＤ ＆ ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ【3563】：決算情報 - Yahoo!ファイナンス
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: ＦＯＯＤ＆ＬＩＦＥ ＣＯＭＰＡＮＩＥＳ[3563]：特定子会社の異動（株式譲渡）に関するお知らせ 2026年8月7日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: FOOD＆LIFE（3563）FY2026 月次情報 (8月期) - 四季報オンライン
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: newmoとKDDI、自動運転タクシーで資本業務提携 2028年に堺市で商用化目指す - 月刊「事業構想」オンライン
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDI×LAC presents Security Fes 2026 | イベント・セミナー | LAC WATCH - 株式会社ラック
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 量子技術で電波干渉を抑える最適な設定を算出、商用基地局へ適用 - KDDI ニュースルーム
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ギークプラス／KDDIの東西物流センターに棚搬送ロボット、出荷処理時間43％短縮 - 物流ニュースのLNEWS
+  - New company event detected for KDDI.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NTT、NEC株を全て売却（時事通信） - Yahoo!ニュース
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NTT 保有するNEC全株売却を発表 - Yahoo!ニュース
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＴＴ、保有するＮＥＣ全株売却へ 業務提携は継続 - Reuters
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NTT、NEC株4.9%分を全て売却 20年からの資本提携を解消 - 日本経済新聞
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 【超図解】NECの「世界初AI」が凄い…人の心を読み“自ら道を譲るロボ”を作れる理由 連載：デジタル産業構造論｜Seizo Trend - ビジネス+IT
+  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: 〔決算〕ほくほくFG、連結純利益39．2％増＝26年9月中間(時事通信) - Yahoo!ファイナンス
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくＦＧ、上期経常が43％増益で着地・7-9月期も28％増益 - 株探
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくＦＧ - 日本経済新聞
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 『信長の野望 出陣』「天下争覇 第7期」開催＆「第20回 上田城紅葉まつり」コラボ開催予定！ - コーエーテクモゲームス
+  - New company event detected for コーエーテクモホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: 田中　将雄が株式会社ライフドリンクカンパニー＜2585＞株式の変更報告書を提出 - ｄメニューニュース
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
+  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業株価が続伸 樹脂製品値上げ - 日本経済新聞
+  - New company event detected for 信越化学工業.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: 東京海上ホールディングス[8766]の株価・株主優待など。 - 日本経済新聞
+  - New company event detected for 東京海上ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 理研と浜松ホトニクスが連携・協力に関する基本協定書を締結 - 理化学研究所
+  - New company event detected for 浜松ホトニクス.
 - **WATCH** LIQUIDITY/LIQUIDITY_SOFT: Market liquidity is soft
   - Liquidity component fell below 40/100.
 - **WATCH** REGIME/REGIME_CHANGE: Market regime changed
-  - Market regime changed from NEUTRAL to DEFENSIVE.
-- **WATCH** VOLATILITY/VIX_WATCH: VIX requires monitoring
-  - VIX exceeded the watch threshold.
+  - Market regime changed from DEFENSIVE to NEUTRAL.
 
 ## Governance
 - Alerts are deterministic exception flags, not buy/sell signals.
