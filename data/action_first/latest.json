@@ -1,12 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-10T04:14:19.144892+00:00",
-  "risk_level": "DEFENSIVE",
-  "market_decision": "RISK_REDUCTION_REVIEW",
-  "risk_drivers": [
-    "日経円建て先物(CME)が-3%以下",
-    "日経円建て先物(CME)が-1.5%以下"
-  ],
+  "generated_at_utc": "2026-11-10T07:29:37.365316+00:00",
+  "risk_level": "NORMAL",
+  "market_decision": "NO_FORCED_TRADE",
+  "risk_drivers": [],
   "verified_feeds": [
     "NIKKEI_FUT",
     "NASDAQ",
@@ -19,11 +16,11 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-10T04:03:45+00:00",
-      "age_minutes": 10.6,
-      "price": 60195.0,
-      "previous_close": 63055.0,
-      "change_pct": -4.536
+      "as_of_utc": "2026-11-10T07:19:33+00:00",
+      "age_minutes": 10.1,
+      "price": 60310.0,
+      "previous_close": 57165.0,
+      "change_pct": 5.502
     },
     "NASDAQ": {
       "name": "NASDAQ",
@@ -31,7 +28,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-09T22:15:59+00:00",
-      "age_minutes": 358.3,
+      "age_minutes": 553.6,
       "price": 25253.139,
       "previous_close": 25164.31,
       "change_pct": 0.353
@@ -41,8 +38,8 @@
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-09T21:00:00+00:00",
-      "age_minutes": 434.3,
+      "as_of_utc": "2026-11-09T22:12:50+00:00",
+      "age_minutes": 556.8,
       "price": 7549.94,
       "previous_close": 7541.4,
       "change_pct": 0.113
@@ -53,16 +50,14 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-09T21:15:01+00:00",
-      "age_minutes": 419.3,
+      "age_minutes": 614.6,
       "price": 19.92,
       "previous_close": 20.83,
       "change_pct": -4.369
     }
   },
   "recommended_actions": [
-    "新規買い原則停止",
-    "未約定買い注文を再評価",
-    "保有銘柄の撤退条件と売却数量を決定"
+    "新規注文はPF・最新株価・会社情報の別検証を条件に判断"
   ],
   "execution": "ADVISORY_ONLY",
   "private_portfolio_used": false,
