@@ -1,23 +1,23 @@
 # Market Regime v1.5
 
 - Label: **NEUTRAL**
-- Score: **43.05**
-- Confidence: **1.0**
+- Score: **42.51**
+- Confidence: **0.8**
 - Actionable: **True**
 - Data status: **ok**
-- Flags: none
+- Flags: TREASURY_VOLATILITY_SHOCK
 
 ## Components
-- trend: 19.828681363809842
-- stress: 71.83249994277955
-- participation: 36.01548059149723
-- liquidity: 37.934458926556175
+- trend: 15.163466685777262
+- stress: 70.2525006866455
+- participation: None
+- liquidity: 37.64863016870117
 - positioning: 62.462051551193944
 
 ## SQ execution overlay
 - Active: **False**
 - Next major SQ: **2026-12-11**
-- Days to SQ: **31**
+- Days to SQ: **30**
 - Execution caution: **0.0/15.0**
 - Confidence: **0.4**
 - Data status: **partial**
@@ -28,20 +28,20 @@
 ## Evidence
 {
   "trend_series": 4,
-  "vix": 19.920000076293945,
-  "hy_oas": 3.42,
-  "ig_oas": 0.93,
-  "treasury_volatility_proxy": 86.458,
-  "treasury_volatility_percentile_rank": 0.873,
-  "treasury_volatility_stress_score": 34.52,
-  "treasury_volatility_as_of_date": "2026-11-09",
+  "vix": 19.459999084472656,
+  "hy_oas": 3.34,
+  "ig_oas": 0.91,
+  "treasury_volatility_proxy": 100.311,
+  "treasury_volatility_percentile_rank": 1.0,
+  "treasury_volatility_stress_score": 25.0,
+  "treasury_volatility_as_of_date": "2026-11-10",
   "treasury_volatility_status": "ok",
   "treasury_volatility_is_ice_move": false,
   "breadth_n": 9540,
-  "breadth_status": "ok",
+  "breadth_status": "stale",
   "breadth_source_as_of_utc": "2026-11-06T15:05:36.552022+00:00",
   "nfci": -0.459,
-  "volume_ratio20_mean": 0.6180364731639043,
+  "volume_ratio20_mean": 0.6108907542175291,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22
@@ -49,7 +49,7 @@
   "component_coverage": {
     "trend": 1.0,
     "stress": 1.0,
-    "participation": 1.0,
+    "participation": 0.0,
     "liquidity": 1.0,
     "positioning": 1.0
   },
@@ -59,10 +59,10 @@
     "expected": 3,
     "multiplier": 1.0
   },
-  "base_weighted_coverage": 1.0,
+  "base_weighted_coverage": 0.8,
   "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-  "jpx_official_turnover_date": "2026-11-09",
-  "jpx_official_turnover_million_jpy": 9698328.0,
+  "jpx_official_turnover_date": "2026-11-10",
+  "jpx_official_turnover_million_jpy": 9884344.0,
   "jpx_official_turnover_status": "ok"
 }
 

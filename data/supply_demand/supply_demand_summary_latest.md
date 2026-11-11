@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-11-10T04:09:26+00:00
+Generated (UTC): 2026-11-11T01:58:14+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [US] Financial Institutions, Inc. - Common Stock: SHORT_CROWDING (float=87.8%, float turnover=0.8%, volume ratio=0.9280233048411208)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.2%, volume ratio=1.1817868119698587)
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING|VOLUME_EXPANSION (float=89.9%, float turnover=3.1%, volume ratio=1.517450600977872)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.8%, float turnover=1.0%, volume ratio=1.0503075710493655)
-- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.5%, float turnover=0.9%, volume ratio=0.6329738699596726)
-- [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.7%, float turnover=1.2%, volume ratio=0.3819549423265444)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.4%, float turnover=2.6%, volume ratio=0.8348829931296303)
-- [US] TORM plc - Class A Common Stock: HIGH_FLOAT_TURNOVER|SHORT_INTEREST_FALLING (float=80.1%, float turnover=2.0%, volume ratio=1.038816661810697)
-- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_INTEREST_RISING (float=99.3%, float turnover=1.5%, volume ratio=0.670580949870242)
-- [US] Tsakos Energy Navigation Ltd Common Shares: SHORT_INTEREST_RISING (float=71.9%, float turnover=1.9%, volume ratio=0.9035671005304572)
+- [JP] ほくほくフィナンシャルグループ: TIGHT_FLOAT|HIGH_FLOAT_TURNOVER|TIGHT_FLOAT_HIGH_TURNOVER (float=9.4%, float turnover=4.3%, volume ratio=0.33642215197654524)
+- [US] Financial Institutions, Inc. - Common Stock: SHORT_CROWDING (float=87.8%, float turnover=0.8%, volume ratio=1.0312792643424062)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.2%, volume ratio=0.511468295956556)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING|VOLUME_EXPANSION (float=89.9%, float turnover=3.2%, volume ratio=1.7764377096662198)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING|SHORT_INTEREST_RISING (float=96.8%, float turnover=1.0%, volume ratio=0.7548479202081931)
+- [US] WesBanco, Inc. - Common Stock: SHORT_CROWDING (float=96.5%, float turnover=0.9%, volume ratio=0.49535006434699147)
+- [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.7%, float turnover=1.2%, volume ratio=0.25420512890851815)
+- [JP] 浜松ホトニクス: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=97.1%, float turnover=0.8%, volume ratio=1.5717095707816051)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.4%, float turnover=2.6%, volume ratio=0.6161587755154216)
+- [US] TORM plc - Class A Common Stock: HIGH_FLOAT_TURNOVER|SHORT_INTEREST_FALLING (float=80.1%, float turnover=2.0%, volume ratio=0.7095305786230593)
 
 ## Governance
 
