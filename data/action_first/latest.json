@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-11T19:43:17.166512+00:00",
+  "generated_at_utc": "2026-11-11T22:05:33.120958+00:00",
   "risk_level": "NORMAL",
   "market_decision": "NO_FORCED_TRADE",
   "risk_drivers": [],
@@ -16,44 +16,44 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-11T19:32:53+00:00",
-      "age_minutes": 10.4,
-      "price": 62150.0,
+      "as_of_utc": "2026-11-11T21:55:15+00:00",
+      "age_minutes": 10.3,
+      "price": 61970.0,
       "previous_close": 58145.0,
-      "change_pct": 6.888
+      "change_pct": 6.578
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-11T19:43:13+00:00",
+      "as_of_utc": "2026-11-11T22:05:29+00:00",
       "age_minutes": 0.1,
-      "price": 25534.82,
+      "price": 25466.19,
       "previous_close": 25736.51,
-      "change_pct": -0.784
+      "change_pct": -1.05
     },
     "SP500": {
       "name": "SP500",
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-11T19:43:16+00:00",
-      "age_minutes": 0.0,
-      "price": 7627.41,
+      "as_of_utc": "2026-11-11T21:42:03+00:00",
+      "age_minutes": 23.5,
+      "price": 7619.38,
       "previous_close": 7688.62,
-      "change_pct": -0.796
+      "change_pct": -0.901
     },
     "VIX": {
       "name": "VIX",
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-11T19:28:01+00:00",
-      "age_minutes": 15.3,
-      "price": 17.58,
+      "as_of_utc": "2026-11-11T21:15:01+00:00",
+      "age_minutes": 50.5,
+      "price": 17.49,
       "previous_close": 28.18,
-      "change_pct": -37.615
+      "change_pct": -37.935
     }
   },
   "recommended_actions": [
