@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-11T06:45:01.963298+00:00",
+  "generated_at_utc": "2026-11-11T19:43:17.166512+00:00",
   "risk_level": "NORMAL",
   "market_decision": "NO_FORCED_TRADE",
   "risk_drivers": [],
@@ -16,44 +16,44 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-11T06:34:57+00:00",
-      "age_minutes": 10.1,
-      "price": 61410.0,
+      "as_of_utc": "2026-11-11T19:32:53+00:00",
+      "age_minutes": 10.4,
+      "price": 62150.0,
       "previous_close": 58145.0,
-      "change_pct": 5.615
+      "change_pct": 6.888
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-10T22:15:59+00:00",
-      "age_minutes": 509.0,
-      "price": 25065.875,
-      "previous_close": 25372.01,
-      "change_pct": -1.207
+      "as_of_utc": "2026-11-11T19:43:13+00:00",
+      "age_minutes": 0.1,
+      "price": 25534.82,
+      "previous_close": 25736.51,
+      "change_pct": -0.784
     },
     "SP500": {
       "name": "SP500",
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-10T22:00:31+00:00",
-      "age_minutes": 524.5,
-      "price": 7520.93,
-      "previous_close": 7568.92,
-      "change_pct": -0.634
+      "as_of_utc": "2026-11-11T19:43:16+00:00",
+      "age_minutes": 0.0,
+      "price": 7627.41,
+      "previous_close": 7688.62,
+      "change_pct": -0.796
     },
     "VIX": {
       "name": "VIX",
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-10T21:15:01+00:00",
-      "age_minutes": 570.0,
-      "price": 19.46,
-      "previous_close": 16.61,
-      "change_pct": 17.158
+      "as_of_utc": "2026-11-11T19:28:01+00:00",
+      "age_minutes": 15.3,
+      "price": 17.58,
+      "previous_close": 28.18,
+      "change_pct": -37.615
     }
   },
   "recommended_actions": [
