@@ -1,13 +1,14 @@
 {
-  "checked": 7,
+  "checked": 8,
   "resolved_document_ids": [
+    "S100ZEGF",
+    "S100ZEA5",
     "S100ZDAA",
     "S100ZCG7",
     "S100ZCGI",
     "S100ZCEK",
     "S100ZC0H",
-    "S100ZA8P",
-    "S100ZC3X"
+    "S100ZA8P"
   ],
   "new_companies": 0,
   "errors": [],
