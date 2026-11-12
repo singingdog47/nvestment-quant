@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-12T07:24:30.974334+00:00",
+  "generated_at_utc": "2026-11-12T20:06:39.673474+00:00",
   "risk_level": "NORMAL",
   "market_decision": "NO_FORCED_TRADE",
   "risk_drivers": [],
@@ -16,44 +16,44 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-12T07:14:29+00:00",
-      "age_minutes": 10.0,
-      "price": 60840.0,
+      "as_of_utc": "2026-11-12T19:56:35+00:00",
+      "age_minutes": 10.1,
+      "price": 61285.0,
       "previous_close": 60940.0,
-      "change_pct": -0.164
+      "change_pct": 0.566
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-11T22:15:59+00:00",
-      "age_minutes": 548.5,
-      "price": 25466.19,
-      "previous_close": 25736.51,
-      "change_pct": -1.05
+      "as_of_utc": "2026-11-12T20:06:37+00:00",
+      "age_minutes": 0.0,
+      "price": 25339.277,
+      "previous_close": 24315.0,
+      "change_pct": 4.213
     },
     "SP500": {
       "name": "SP500",
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-11T21:42:03+00:00",
-      "age_minutes": 582.5,
-      "price": 7619.38,
-      "previous_close": 7688.62,
-      "change_pct": -0.901
+      "as_of_utc": "2026-11-12T20:06:39+00:00",
+      "age_minutes": 0.0,
+      "price": 7595.78,
+      "previous_close": 7353.73,
+      "change_pct": 3.292
     },
     "VIX": {
       "name": "VIX",
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-11T21:15:01+00:00",
-      "age_minutes": 609.5,
-      "price": 17.49,
-      "previous_close": 28.18,
-      "change_pct": -37.935
+      "as_of_utc": "2026-11-12T19:51:31+00:00",
+      "age_minutes": 15.1,
+      "price": 18.6,
+      "previous_close": 25.64,
+      "change_pct": -27.457
     }
   },
   "recommended_actions": [
