@@ -1,0 +1,47 @@
+name: Earnings event gate tests
+on:
+  push:
+    branches:
+      - 'fix/earnings-event-gate-20261109'
+  pull_request:
+    paths:
+      - 'src/earnings_event_gate.py'
+      - 'src/portfolio_event_preflight.py'
+      - 'src/event_user_consent.py'
+      - 'src/decision_event_review_bridge.py'
+      - 'src/disclosure_candidates.py'
+      - 'src/jquants_tdnet_adapter.py'
+      - 'src/yanoshin_disclosure_adapter.py'
+      - 'src/run_free_disclosure_preflight.py'
+      - 'tests/test_earnings_event_gate.py'
+      - 'tests/test_portfolio_event_preflight.py'
+      - 'tests/test_event_user_consent.py'
+      - 'tests/test_decision_event_review_bridge.py'
+      - 'tests/test_disclosure_candidates.py'
+      - 'tests/test_jquants_tdnet_adapter.py'
+      - 'tests/test_yanoshin_disclosure_adapter.py'
+      - 'tests/test_run_free_disclosure_preflight.py'
+      - '.github/workflows/earnings_event_gate.yml'
+  workflow_dispatch:
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run event gate regression tests
+        run: python -m unittest discover -s tests -p 'test_*event*gate*.py' -v
+      - name: Run consent regression tests
+        run: python -m unittest discover -s tests -p 'test_event_user_consent.py' -v
+      - name: Run decision bridge tests
+        run: python -m unittest discover -s tests -p 'test_decision_event_review_bridge.py' -v
+      - name: Run portfolio preflight regression tests
+        run: python -m unittest discover -s tests -p 'test_portfolio_event_preflight.py' -v
+      - name: Run synthetic private CLI end-to-end smoke tests
+        run: python -m unittest discover -s tests -p 'test_event_review_cli_e2e.py' -v
+      - name: Test private runtime readiness integration
+        run: python -m unittest discover -s tests -p 'test_private_readiness_event_integration.py' -v
