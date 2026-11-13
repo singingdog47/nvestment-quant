@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-13T02:40:02.874229+00:00",
+  "generated_at_utc": "2026-11-13T20:38:20.588691+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
-  "incident_signature": "1bad6bb557710bc6",
+  "incident_signature": "2ae1d1f42e9c27e9",
   "incidents": [
     {
       "key": "ai_ma:snapshot_lag",
@@ -32,13 +32,6 @@
       "severity": "WARNING",
       "kind": "DATA_INCIDENT",
       "message_ja": "最新結果がJPXの完了した2営業日以上更新されていません。実行履歴を確認してください。"
-    },
-    {
-      "key": "pipeline:snapshot_lag",
-      "component": "pipeline",
-      "severity": "WARNING",
-      "kind": "DATA_INCIDENT",
-      "message_ja": "直近の完了営業日について統合レポートが更新されていません。"
     }
   ],
   "components": {
@@ -68,13 +61,13 @@
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-13",
+      "as_of_date": "2026-11-14",
       "blockers": [],
       "mode": null
     },
     "pipeline": {
-      "status": "STALE",
-      "as_of_date": "2026-11-06"
+      "status": "HEALTHY",
+      "as_of_date": "2026-11-13"
     },
     "shadow_v2": {
       "status": "ARCHIVED",
