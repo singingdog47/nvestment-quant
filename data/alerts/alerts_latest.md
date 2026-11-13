@@ -1,76 +1,108 @@
 # Exception Alerts v1.9.1
 
-Generated: 2026-11-12T03:03:30+00:00
+Generated: 2026-11-13T02:39:47+00:00
 Highest severity: **WARNING**
 
 ## Counts
 - CRITICAL: 0
-- WARNING: 11
-- WATCH: 21
+- WARNING: 28
+- WATCH: 20
 - INFO: 0
 
 ## Alerts
-- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [NEC]: ＮＥＣ[6701]：自己株式取得及び自己株式の公開買付けに関するお知らせ 2026年11月9日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for NEC.
-- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [ライフドリンク カンパニー]: ライフドリンクカンパニー[2585]：取締役等に対する譲渡制限付株式としての自己株式処分の払込完了に関するお知らせ 2026年7月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [ANYCOLOR]: 決算:ANYCOLOR、最大70億円の自社株買い 5〜7月税引き利益11%減 - 日本経済新聞
+  - New company event detected for ANYCOLOR.
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [信越化学工業]: 信越化学工業[4063]：自己株式の公開買付けに関するお知らせ 2026年5月20日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for 信越化学工業.
+- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [水戸証券]: 水戸証券[8622]：自己株式の取得状況に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for 水戸証券.
+- **WARNING** COMPANY_EVENT/EVENT_EARNINGS [信越化学工業]: 信越化学工業[4063]：2027年３月期 第１四半期決算短信〔日本基準〕（連結） 2026年7月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for 信越化学工業.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Akatsuki Inc.]: 半期報告書－第17期(2026/04/01－2027/03/31)
+  - New company event detected for Akatsuki Inc..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Akatsuki Inc.]: 確認書
+  - New company event detected for Akatsuki Inc..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [Carter Bankshares, Inc. - Common Stock]: SEC 8-K filing
+  - New company event detected for Carter Bankshares, Inc. - Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ELECOM CO.,LTD.]: 半期報告書－第42期(2026/04/01－2027/03/31)
+  - New company event detected for ELECOM CO.,LTD..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ELECOM CO.,LTD.]: 確認書
+  - New company event detected for ELECOM CO.,LTD..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [TORM plc - Class A Common Stock]: SEC 6-K filing
+  - New company event detected for TORM plc - Class A Common Stock.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [TRADERS HOLDINGS CO.,LTD.]: 半期報告書－第28期(2026/04/01－2027/03/31)
+  - New company event detected for TRADERS HOLDINGS CO.,LTD..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [TRADERS HOLDINGS CO.,LTD.]: 確認書
+  - New company event detected for TRADERS HOLDINGS CO.,LTD..
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ライフドリンク カンパニー]: 半期報告書－第55期(2026/04/01－2027/03/31)
   - New company event detected for ライフドリンク カンパニー.
-- **WARNING** COMPANY_EVENT/EVENT_BUYBACK [東京海上ホールディングス]: 東京海上ホールディングス[8766]：自己株式の取得状況に関するお知らせ 2026年10月7日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ライフドリンク カンパニー]: 確認書
+  - New company event detected for ライフドリンク カンパニー.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ワークマン]: 半期報告書－第46期(2026/04/01－2027/03/31)
+  - New company event detected for ワークマン.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [ワークマン]: 確認書
+  - New company event detected for ワークマン.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [三井金属]: 半期報告書－第102期(2026/04/01－2027/03/31)
+  - New company event detected for 三井金属.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [三井金属]: 確認書
+  - New company event detected for 三井金属.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [信越化学工業]: 半期報告書－第150期(2026/04/01－2027/03/31)
+  - New company event detected for 信越化学工業.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [信越化学工業]: 確認書
+  - New company event detected for 信越化学工業.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [信越化学工業]: 訂正有価証券届出書（参照方式）
+  - New company event detected for 信越化学工業.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [太陽誘電]: 半期報告書－第86期(2026/04/01－2027/03/31)
+  - New company event detected for 太陽誘電.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [太陽誘電]: 確認書
+  - New company event detected for 太陽誘電.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [東京海上ホールディングス]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
   - New company event detected for 東京海上ホールディングス.
-- **WARNING** COMPANY_EVENT/EVENT_FILING [SHINAGAWA REFRA CO.,LTD.]: 半期報告書－第193期(2026/04/01－2027/03/31)
-  - New company event detected for SHINAGAWA REFRA CO.,LTD..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [SHINAGAWA REFRA CO.,LTD.]: 確認書
-  - New company event detected for SHINAGAWA REFRA CO.,LTD..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Shionogi & Co.,Ltd.]: 半期報告書－第162期(2026/04/01－2027/03/31)
-  - New company event detected for Shionogi & Co.,Ltd..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [Shionogi & Co.,Ltd.]: 確認書
-  - New company event detected for Shionogi & Co.,Ltd..
-- **WARNING** COMPANY_EVENT/EVENT_FILING [三越伊勢丹ホールディングス]: 自己株券買付状況報告書（法２４条の６第１項に基づくもの）
-  - New company event detected for 三越伊勢丹ホールディングス.
-- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [コーエーテクモホールディングス]: コーエーテクモホールディングス[3635]：業績予想及び配当予想の修正に関するお知らせ 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
-  - New company event detected for コーエーテクモホールディングス.
-- **WARNING** LIQUIDITY/THIN_LIQUIDITY: Thin liquidity flag active
-  - Market Regime Engine reports thin_liquidity_flag=true.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [水戸証券]: 半期報告書－第82期(2026/04/01－2027/03/31)
+  - New company event detected for 水戸証券.
+- **WARNING** COMPANY_EVENT/EVENT_FILING [水戸証券]: 確認書
+  - New company event detected for 水戸証券.
+- **WARNING** COMPANY_EVENT/EVENT_GUIDANCE [ほくほくフィナンシャルグループ]: ほくほくフィナンシャルグループ[8377]：第6次中期経営計画における経営指標目標の上方修正に関するお知らせ 2026年11月9日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for ほくほくフィナンシャルグループ.
 - **WARNING** VOLATILITY/TREASURY_VOLATILITY_SHOCK: Treasury yield volatility is unusually high
   - The official-Treasury realized-yield-volatility proxy is at or above its 90th percentile. It is not ICE MOVE.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: ANYCOLORデザイン部 初期メンバー座談会 「ライバーのため」を突き詰めたデザインが、業界の文化になるまで - ANYCOLOR MAGAZINE
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: ＡＮＹＣＯＬＯＲ(株)【5032】：決算説明会書き起こし - Yahoo!ファイナンス
   - New company event detected for ANYCOLOR.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ANYCOLOR]: “なんでも屋”で“駆け込み寺”なグラフィックデザインチーム座談会 「にじたうん」「にじ甲」デザインの源泉に迫る - ANYCOLOR MAGAZINE
-  - New company event detected for ANYCOLOR.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 【決算速報】ＫＤＤＩ、上期最終が1％増益で着地・7-9月期は16％減益(株探ニュース) - Yahoo!ファイナンス
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [FOOD & LIFE COMPANIES]: ショップチャンネル 11月15日（日）～17日（火）は、毎日18時から2時間、30周年特別番組「あの頃も今も輝く！30周年タイムトラベルアワー」を放送 - Infoseek
+  - New company event detected for FOOD & LIFE COMPANIES.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ドコモ“つながりにくい”通信を招いた「3つの要因」とは？5G基地局数でKDDI・ソフトバンクに大きな後れ、NTT完全子会社化後の経営判断に何があったのか - ダイヤモンド・オンライン
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 光電融合「CPO」が普及期に、サーバー向け続々 KDDIはブロードコムと - 日経クロステック
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: ispaceとKDDI、月通信ネットワークの構築に向けて連携 - INTERNET Watch
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 人月ビジネスに「AIの隕石」。KDDIアイレット髙木社長が語るSIerが稼ぎ方を変えにくい理由 - Business Insider Japan
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: KDDIら、城崎温泉で自動運転バス実証 レベル4運行を見据え課題検証 - LIGARE（リガーレ）
   - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 通信業界初、水道水を用いたアンテナ「Liqutenna」がモバイル端末との接続に成功 - www.mitsubishielectric.co.jp
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [KDDI]: 水道水がアンテナに--三菱電機とKDDI、端末との接続試験に成功 その用途とは - CNET Japan
-  - New company event detected for KDDI.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NTT、NEC株を全て売却（時事通信） - Yahoo!ニュース
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: ＮＴＴ、保有するＮＥＣ全株売却へ 業務提携は継続 - Reuters
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NTT 保有するNEC全株売却を発表 - Yahoo!ニュース
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NECがデータカタログ1435個を1年で整備 AIによる意思決定支援への挑戦 - ITmedia
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 髪の毛1本分の技術が世界の通信を支える AI時代のNEC海底ケーブルの進化: NEC Stories - NEC
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: 株主・投資家（IR）情報 : 株主・投資家情報 - NEC
   - New company event detected for NEC.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [NEC]: NTT「電電ファミリー」に幕 NEC株売却、利益1900億円でAI投資重点 - 日本経済新聞
-  - New company event detected for NEC.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: 株式会社ほくほくフィナンシャルグループと北海道との「こどもまんなか」の推進に係る連携と協力に関する協定 - 北海道のホームページ
+  - New company event detected for ほくほくフィナンシャルグループ.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: (株)ほくほくフィナンシャルグループ【8377】：決算情報 - Yahoo!ファイナンス
+  - New company event detected for ほくほくフィナンシャルグループ.
 - **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ほくほくフィナンシャルグループ]: ほくほくＦＧ - 日本経済新聞
   - New company event detected for ほくほくフィナンシャルグループ.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: 2026.11.10 貨物列車（3099列車）秋田駅発車 - YouTube
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [コーエーテクモホールディングス]: 長期イベント「龍気連響」第三期開幕！新LR武将「龐統」「徐盛」が登場する11月アップデートを実施 - コーエーテクモゲームス
+  - New company event detected for コーエーテクモホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: Ｌドリンク - 日本経済新聞
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: 【決算速報】ライフドリンクＣ---27年3月期2Qは増益、経常利益は3％増(フィスコ) - Yahoo!ファイナンス
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [ライフドリンク カンパニー]: 「安さのその先へ」──ライフドリンク カンパニーの成長を支える「脱付加価値戦略」とは - ECのミカタ
+  - New company event detected for ライフドリンク カンパニー.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [三越伊勢丹ホールディングス]: 2026.11.12 貨物列車（3099列車）秋田駅発車 - YouTube
   - New company event detected for 三越伊勢丹ホールディングス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 【アナリスト予想】信越化学工業、27年3月期経常予想。対前週0.7%下降。(アイフィス株予報) - Yahoo!ファイナンス
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：今の株価の理由は？値動きの背景をAIが解説 - Yahoo!ファイナンス
   - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(株)【4063】：決算情報 - Yahoo!ファイナンス
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業(4063) シリコンウエハーの引き合いが足元で急増 - QUICK Money World
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [信越化学工業]: 信越化学工業株式会社に、「Loglass AI IR」を提供開始 - PR TIMES
-  - New company event detected for 信越化学工業.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [水戸証券]: 水戸証券(株)【8622】：決算情報 - Yahoo!ファイナンス
-  - New company event detected for 水戸証券.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜ホトが3連騰､前期上振れ着地･今期増益予想を好感 - 四季報オンライン
-  - New company event detected for 浜松ホトニクス.
-- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス---大幅続伸、今期ガイダンスは市場コンセンサスを大きく上回る(フィスコ) - Yahoo!ファイナンス
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [東京海上ホールディングス]: 東京海上ホールディングス[8766]：第24回定時株主総会招集ご通知 2026年6月11日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
+  - New company event detected for 東京海上ホールディングス.
+- **WATCH** COMPANY_EVENT/EVENT_DISCLOSURE [浜松ホトニクス]: 浜松ホトニクス(株)【6965】：決算情報 - Yahoo!ファイナンス
   - New company event detected for 浜松ホトニクス.
 - **WATCH** LIQUIDITY/LIQUIDITY_SOFT: Market liquidity is soft
   - Liquidity component fell below 40/100.
