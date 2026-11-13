@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-12T21:04:06.880405+00:00",
+  "generated_at_utc": "2026-11-13T02:40:02.874229+00:00",
   "mode": "OBSERVATION_ONLY",
   "overall_status": "ACTION_REQUIRED",
   "incident_signature": "1bad6bb557710bc6",
@@ -68,7 +68,7 @@
     },
     "regime": {
       "status": "HEALTHY",
-      "as_of_date": "2026-11-12",
+      "as_of_date": "2026-11-13",
       "blockers": [],
       "mode": null
     },
