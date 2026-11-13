@@ -16,6 +16,8 @@ GENERATED_PRIVATE_OUTPUT_NAMES = {
     "decision_journal.jsonl",
     "decision_monitor_latest.json",
     "decision_monitor_latest.md",
+    "private_trade_ledger.jsonl",
+    "private_trade_review_latest.json",
     "portfolio_latest.csv",
     "portfolio_import_latest.json",
     "portfolio_risk_latest.json",

@@ -66,7 +66,7 @@ jobs:
 
       - name: Run private portfolio risk analysis
         if: steps.private_config.outputs.configured == 'true'
-        run: python src/run_portfolio_risk.py
+        run: PYTHONPATH=src:. python -m src.run_portfolio_risk
 
       # Privacy rule: Drive is input-only by default. Portfolio inputs/results
       # stay only in the ephemeral runner workspace. Never upload them as Actions
