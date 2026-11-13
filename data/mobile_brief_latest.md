@@ -4,21 +4,21 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**DEFENSIVE**、総合スコアは40.0です。
+市場レジームは**DEFENSIVE**、総合スコアは41.0です。
 市場レジームは前回のNEUTRALからDEFENSIVEへ変わりました。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：-3.8ポイント
-- トレンド：+8.0ポイント
-- 市場参加の広がり：-6.2ポイント
-- 流動性：-37.7ポイント
-- JINUSHI Co.,Ltd.の順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
+- 総合スコア：-6.6ポイント
+- トレンド：-11.6ポイント
+- 市場参加の広がり：算出不能ポイント
+- 流動性：-10.3ポイント
+- SandRidge Energy, Inc. Common Stock、JINUSHI Co.,Ltd.、SHIMOJIMA Co.,Ltd.の順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
-日本はFinancialsが5銘柄。米国はFinancialsが12銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
-米国債金利の実現ボラproxyは85パーセンタイルで、ICE MOVEとは別の公式米財務省データによる参考値です。
+日本はFinancialsが5銘柄。米国はFinancialsが11銘柄、Shippingが5銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+米国債金利の実現ボラは年率109.8bp、過去観測の上位0%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## SQ・短期需給
@@ -28,20 +28,20 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 個別銘柄の需給
 
-監視対象の浮動株比率カバレッジは73.1%、空売り需給は23.1%、当日出来高比較は76.9%です。 例外観測は信越化学工業（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、KDDI（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、NEC（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、浜松ホトニクス（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
+監視対象の浮動株比率カバレッジは75.0%、空売り需給は23.1%、当日出来高比較は76.9%です。 例外観測はNEC（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、ライフドリンク カンパニー（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、ほくほくフィナンシャルグループ（TIGHT_FLOAT|HIGH_FLOAT_TURNOVER|TIGHT_FLOAT_HIGH_TURNOVER）、LTC Properties, Inc. Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
 浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。
 
 ## 今日の注意点
 
-- **WARNING** ＫＤＤＩ[9433]：自己株式の取得状況に関するお知らせ 2026年11月6日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
-- **WARNING** 半期報告書－第22期(2026/04/01－2026/09/30) — 売買指示ではなく確認対象です。
-- **WARNING** 確認書 — 売買指示ではなく確認対象です。
-- **WARNING** 自己株券買付状況報告書（法２４条の６第１項に基づくもの） — 売買指示ではなく確認対象です。
+- **WARNING** ＫＤＤＩ[9433]：自己株式の取得状況及び取得終了に関するお知らせ 2026年11月13日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** 信越化学工業[4063]：自己株式取得に係る事項の決定に関するお知らせ 2026年11月13日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン — 売買指示ではなく確認対象です。
+- **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Toranvia Co.,Ltd.、Strike Group Co.,Ltd.、Akatsuki Inc.、Mito Securities Co.,Ltd.
-- 米国：LTC Properties, Inc. Common Stock、Financial Institutions, Inc. - Common Stock、Carter Bankshares, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares
+- 日本：Strike Group Co.,Ltd.、Mito Securities Co.,Ltd.、TSUTSUMI JEWELRY CO.,LTD.、TRADERS HOLDINGS CO.,LTD.
+- 米国：LTC Properties, Inc. Common Stock、Carter Bankshares, Inc. - Common Stock、Horizon Bancorp, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
 
@@ -57,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは50.7点だが確認閾値未達
-- 上位: スタンダード 50.7 / 金（ゴールド） 41.1 / ビットコイン 37.9
+- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは51.2点だが確認閾値未達
+- 上位: スタンダード 51.2 / テクノロジー 36.2 / 金（ゴールド） 33.5
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は83.8%。9540銘柄中5246銘柄を採点し、価格欠損率は9.3%です。
+データ品質は83.8%。9533銘柄中5243銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-11-06T15:07:54+00:00
+生成時刻（UTC）：2026-11-13T15:29:12+00:00

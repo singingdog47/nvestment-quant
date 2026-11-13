@@ -1,25 +1,26 @@
 # Investment Quant Validation Learning v2.1
 
-Generated: 2026-11-06T15:06:44+00:00
+Generated: 2026-11-13T15:27:56+00:00
 
 This is a diagnostic learning layer. It does not automatically change factor weights or issue orders.
 
 ## Model-change gate
-- Matured absolute-return observations: 929
-- Benchmark-relative observations: 929
+- Matured absolute-return observations: 1059
+- Benchmark-relative observations: 1059
 - Minimum benchmark-relative observations for review: 60
 - Eligible for human model-change review: True
 
 ## Findings
-- [WATCH] action / REVIEW|1w (n=542): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] action / REVIEW|1m (n=420): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] action / REVIEW|1w (n=597): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] regime / CONSTRUCTIVE|1m (n=420): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] regime / NEUTRAL|1m (n=20): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] regime / NEUTRAL|1w (n=115): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] rank_bucket / top1|1m (n=75): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] rank_bucket / top1|1w (n=113): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [INFO] rank_bucket / top10|1m (n=150): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
-- [WATCH] rank_bucket / top10|1w (n=223): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] rank_bucket / top3|1m (n=150): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [INFO] rank_bucket / top3|1w (n=218): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
+- [WATCH] regime / NEUTRAL|1w (n=170): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top1|1m (n=90): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top1|1w (n=124): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [INFO] rank_bucket / top10|1m (n=180): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
+- [WATCH] rank_bucket / top3|1m (n=180): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [INFO] rank_bucket / top3|1w (n=238): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## Known limits
 - Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.
