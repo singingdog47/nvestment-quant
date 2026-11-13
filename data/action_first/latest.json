@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-12T21:52:38.902635+00:00",
+  "generated_at_utc": "2026-11-13T02:44:19.269678+00:00",
   "risk_level": "NORMAL",
   "market_decision": "NO_FORCED_TRADE",
   "risk_drivers": [],
@@ -16,19 +16,19 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-12T21:36:14+00:00",
-      "age_minutes": 16.4,
-      "price": 61315.0,
+      "as_of_utc": "2026-11-13T02:34:00+00:00",
+      "age_minutes": 10.3,
+      "price": 61950.0,
       "previous_close": 60940.0,
-      "change_pct": 0.615
+      "change_pct": 1.657
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-12T21:52:36+00:00",
-      "age_minutes": 0.0,
+      "as_of_utc": "2026-11-12T22:15:59+00:00",
+      "age_minutes": 268.3,
       "price": 25366.094,
       "previous_close": 24315.0,
       "change_pct": 4.323
@@ -38,8 +38,8 @@
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-12T21:20:01+00:00",
-      "age_minutes": 32.6,
+      "as_of_utc": "2026-11-12T21:58:23+00:00",
+      "age_minutes": 285.9,
       "price": 7592.4,
       "previous_close": 7353.73,
       "change_pct": 3.246
@@ -50,7 +50,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-12T21:15:01+00:00",
-      "age_minutes": 37.6,
+      "age_minutes": 329.3,
       "price": 18.7,
       "previous_close": 25.64,
       "change_pct": -27.067
