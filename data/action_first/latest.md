@@ -1,19 +1,20 @@
 # 売買判断優先・市場急変チェック
 
-生成（UTC）：2026-11-13T19:51:43.671434+00:00
-**危機判定：NORMAL**
-**判断：NO_FORCED_TRADE**
+生成（UTC）：2026-11-15T20:27:32.294563+00:00
+**危機判定：UNVERIFIED**
+**判断：VERIFY_DATA**
 
 ## 急変要因
 - 確認済み急変トリガーなし。未取得データは安全の証拠ではない
 
 ## データ基準時刻・品質
-- NIKKEI_FUT: OK / 0.074% / 2026-11-13T19:41:35+00:00 / 
-- NASDAQ: OK / 2.109% / 2026-11-13T19:51:40+00:00 / 
-- SP500: OK / 2.314% / 2026-11-13T19:51:43+00:00 / 
-- VIX: OK / -4.568% / 2026-11-13T19:36:31+00:00 / 
+- NIKKEI_FUT: UNVERIFIED / N/A% / 2026-11-13T21:59:56+00:00 / stale or future timestamp; excluded from decisions
+- NASDAQ: UNVERIFIED / N/A% / 2026-11-13T22:15:59+00:00 / stale or future timestamp; excluded from decisions
+- SP500: UNVERIFIED / N/A% / 2026-11-13T21:43:19+00:00 / stale or future timestamp; excluded from decisions
+- VIX: UNVERIFIED / N/A% / 2026-11-13T21:15:01+00:00 / stale or future timestamp; excluded from decisions
 
 ## 売買判断まとめ
-- 新規注文はPF・最新株価・会社情報の別検証を条件に判断
+- データ未確認。安全と断定しない
+- 板・取引所の先物・信頼できる現在値で照合
 
 **個別銘柄・数量・成行/指値は非公開PF、注文履歴、最新板を照合して決定。自動売買なし。**
