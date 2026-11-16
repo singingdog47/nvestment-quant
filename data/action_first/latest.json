@@ -1,9 +1,12 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-16T02:18:08.251946+00:00",
-  "risk_level": "UNVERIFIED",
-  "market_decision": "VERIFY_DATA",
-  "risk_drivers": [],
+  "generated_at_utc": "2026-11-16T06:47:21.038609+00:00",
+  "risk_level": "DEFENSIVE",
+  "market_decision": "RISK_REDUCTION_REVIEW",
+  "risk_drivers": [
+    "日経円建て先物(CME)が-3%以下",
+    "日経円建て先物(CME)が-1.5%以下"
+  ],
   "verified_feeds": [
     "NIKKEI_FUT"
   ],
@@ -13,11 +16,11 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-16T02:08:03+00:00",
+      "as_of_utc": "2026-11-16T06:37:14+00:00",
       "age_minutes": 10.1,
-      "price": 60375.0,
-      "previous_close": 59910.0,
-      "change_pct": 0.776
+      "price": 59795.0,
+      "previous_close": 61885.0,
+      "change_pct": -3.377
     },
     "NASDAQ": {
       "name": "NASDAQ",
@@ -25,7 +28,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-13T22:15:59+00:00",
-      "age_minutes": 3122.2,
+      "age_minutes": 3391.4,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "SP500": {
@@ -34,7 +37,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-13T21:43:19+00:00",
-      "age_minutes": 3154.8,
+      "age_minutes": 3424.0,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "VIX": {
@@ -43,13 +46,14 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-13T21:15:01+00:00",
-      "age_minutes": 3183.1,
+      "age_minutes": 3452.3,
       "reason": "stale or future timestamp; excluded from decisions"
     }
   },
   "recommended_actions": [
-    "データ未確認。安全と断定しない",
-    "板・取引所の先物・信頼できる現在値で照合"
+    "新規買い原則停止",
+    "未約定買い注文を再評価",
+    "保有銘柄の撤退条件と売却数量を決定"
   ],
   "execution": "ADVISORY_ONLY",
   "private_portfolio_used": false,
