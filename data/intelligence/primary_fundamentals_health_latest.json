@@ -1,6 +1,8 @@
 {
   "checked": 12,
   "resolved_document_ids": [
+    "S100ZH7K",
+    "S100ZG3X",
     "S100ZHHS",
     "S100ZHB5",
     "S100ZHAQ",
@@ -10,9 +12,7 @@
     "S100ZGC7",
     "S100ZG1Y",
     "S100ZF1E",
-    "S100ZF1C",
-    "S100ZE2F",
-    "S100ZEGF"
+    "S100ZF1C"
   ],
   "new_companies": 0,
   "errors": [],

@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-11-13T15:27:06+00:00
+Generated (UTC): 2026-11-16T02:14:26+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -16,16 +16,16 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 
 ## Notable contexts
 
-- [JP] NEC: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=95.1%, float turnover=0.5%, volume ratio=1.7499367520898104)
-- [JP] ライフドリンク カンパニー: VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION (float=73.1%, float turnover=1.7%, volume ratio=2.5530346577526077)
-- [JP] ほくほくフィナンシャルグループ: TIGHT_FLOAT|HIGH_FLOAT_TURNOVER|TIGHT_FLOAT_HIGH_TURNOVER (float=9.4%, float turnover=4.3%, volume ratio=0.5564762196919016)
-- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING (float=98.0%, float turnover=1.1%, volume ratio=0.03583033953058443)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=95.8%, float turnover=1.1%, volume ratio=0.04990343495654573)
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=3.2%, volume ratio=0.2236507966912878)
-- [US] First Busey Corporation - Common Stock: SHORT_CROWDING (float=96.7%, float turnover=1.0%, volume ratio=0.06294444909227809)
-- [US] National Health Investors, Inc. Common Stock: SHORT_CROWDING (float=97.6%, float turnover=0.7%, volume ratio=0.10746150130822955)
-- [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.7%, float turnover=1.2%, volume ratio=1.2897778102349697)
-- [JP] 三越伊勢丹ホールディングス: VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION (float=92.1%, float turnover=0.6%, volume ratio=1.5747964358180673)
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING (float=98.0%, float turnover=1.1%, volume ratio=0.7761510033777071)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=97.2%, float turnover=1.1%, volume ratio=0.5505197231073509)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.9%, float turnover=3.2%, volume ratio=0.8160330754675384)
+- [US] First Busey Corporation - Common Stock: SHORT_CROWDING (float=96.7%, float turnover=1.0%, volume ratio=1.014030873398721)
+- [US] National Health Investors, Inc. Common Stock: SHORT_CROWDING (float=97.6%, float turnover=0.7%, volume ratio=1.4519333180339058)
+- [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.7%, float turnover=1.2%, volume ratio=0.5579588225482446)
+- [JP] TSUTSUMI JEWELRY CO.,LTD.: TIGHT_FLOAT (float=21.2%, float turnover=0.5%, volume ratio=0.14795424799408183)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.4%, float turnover=2.6%, volume ratio=0.5148841773129845)
+- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_INTEREST_RISING (float=99.3%, float turnover=1.6%, volume ratio=0.717776224945701)
+- [US] TORM plc - Class A Common Stock: HIGH_FLOAT_TURNOVER|SHORT_INTEREST_FALLING (float=80.0%, float turnover=2.1%, volume ratio=0.6075650159936167)
 
 ## Governance
 
