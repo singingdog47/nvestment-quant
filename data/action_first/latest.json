@@ -1,19 +1,23 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-15T20:27:32.294563+00:00",
+  "generated_at_utc": "2026-11-16T02:18:08.251946+00:00",
   "risk_level": "UNVERIFIED",
   "market_decision": "VERIFY_DATA",
   "risk_drivers": [],
-  "verified_feeds": [],
+  "verified_feeds": [
+    "NIKKEI_FUT"
+  ],
   "feeds": {
     "NIKKEI_FUT": {
       "name": "NIKKEI_FUT",
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
-      "status": "UNVERIFIED",
-      "as_of_utc": "2026-11-13T21:59:56+00:00",
-      "age_minutes": 2787.6,
-      "reason": "stale or future timestamp; excluded from decisions"
+      "status": "OK",
+      "as_of_utc": "2026-11-16T02:08:03+00:00",
+      "age_minutes": 10.1,
+      "price": 60375.0,
+      "previous_close": 59910.0,
+      "change_pct": 0.776
     },
     "NASDAQ": {
       "name": "NASDAQ",
@@ -21,7 +25,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-13T22:15:59+00:00",
-      "age_minutes": 2771.6,
+      "age_minutes": 3122.2,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "SP500": {
@@ -30,7 +34,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-13T21:43:19+00:00",
-      "age_minutes": 2804.2,
+      "age_minutes": 3154.8,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "VIX": {
@@ -39,7 +43,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-13T21:15:01+00:00",
-      "age_minutes": 2832.5,
+      "age_minutes": 3183.1,
       "reason": "stale or future timestamp; excluded from decisions"
     }
   },

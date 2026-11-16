@@ -1,6 +1,6 @@
 # 売買判断優先・市場急変チェック
 
-生成（UTC）：2026-11-15T20:27:32.294563+00:00
+生成（UTC）：2026-11-16T02:18:08.251946+00:00
 **危機判定：UNVERIFIED**
 **判断：VERIFY_DATA**
 
@@ -8,7 +8,7 @@
 - 確認済み急変トリガーなし。未取得データは安全の証拠ではない
 
 ## データ基準時刻・品質
-- NIKKEI_FUT: UNVERIFIED / N/A% / 2026-11-13T21:59:56+00:00 / stale or future timestamp; excluded from decisions
+- NIKKEI_FUT: OK / 0.776% / 2026-11-16T02:08:03+00:00 / 
 - NASDAQ: UNVERIFIED / N/A% / 2026-11-13T22:15:59+00:00 / stale or future timestamp; excluded from decisions
 - SP500: UNVERIFIED / N/A% / 2026-11-13T21:43:19+00:00 / stale or future timestamp; excluded from decisions
 - VIX: UNVERIFIED / N/A% / 2026-11-13T21:15:01+00:00 / stale or future timestamp; excluded from decisions
