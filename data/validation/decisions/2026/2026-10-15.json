@@ -79,6 +79,94 @@
   "market_regime": "CONSTRUCTIVE",
   "model_version": "1.7.0",
   "outcomes": {
+    "1m": {
+      "average_benchmark_return": -0.02440220066157602,
+      "average_excess_return": 0.0005717016443574918,
+      "average_return": -0.023830499017218527,
+      "benchmark_coverage_n": 6,
+      "evaluated_at": "2026-11-16T17:05:27+00:00",
+      "n": 6,
+      "symbols": [
+        {
+          "benchmark_return": -0.02446108336062891,
+          "benchmark_symbol": "SPY",
+          "end_price": 28.969999313354492,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": -0.013230731266679174,
+          "max_down": -0.05726575919345811,
+          "max_up": 0.022178114367676693,
+          "rank": 1.0,
+          "return": -0.037691814627308085,
+          "start_price": 30.104700088500977,
+          "symbol": "CARE"
+        },
+        {
+          "benchmark_return": -0.024389112655584633,
+          "benchmark_symbol": "SPY",
+          "end_price": 103.07009887695312,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": -0.03852478061848552,
+          "max_down": -0.1411037089235062,
+          "max_up": 0.034184945988338766,
+          "rank": 2.0,
+          "return": -0.06291389327407015,
+          "start_price": 109.98999786376953,
+          "symbol": "INSW"
+        },
+        {
+          "benchmark_return": -0.024389112655584633,
+          "benchmark_symbol": "SPY",
+          "end_price": 82.81999969482422,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": 0.05043191059967733,
+          "max_down": -0.022467701350132097,
+          "max_up": 0.16721922627665742,
+          "rank": 3.0,
+          "return": 0.0260427979440927,
+          "start_price": 80.71788024902344,
+          "symbol": "STNG"
+        },
+        {
+          "benchmark_return": -0.024389112655584633,
+          "benchmark_symbol": "SPY",
+          "end_price": 35.83000183105469,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": 0.09075826319739666,
+          "max_down": -0.0020833243453309835,
+          "max_up": 0.10654767838195056,
+          "rank": 5.0,
+          "return": 0.06636915054181203,
+          "start_price": 33.599998474121094,
+          "symbol": "NWFL"
+        },
+        {
+          "benchmark_return": -0.024395669986488677,
+          "benchmark_symbol": "SPY",
+          "end_price": 46.7400016784668,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": -0.06235694041277251,
+          "max_down": -0.1383353221734681,
+          "max_up": 0.07835088506491616,
+          "rank": 6.0,
+          "return": -0.08675261039926119,
+          "start_price": 51.18000030517578,
+          "symbol": "TEN"
+        },
+        {
+          "benchmark_return": -0.024389112655584633,
+          "benchmark_symbol": "SPY",
+          "end_price": 36.3650016784668,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": -0.023647511632991836,
+          "max_down": -0.10209427874311916,
+          "max_up": 0.12683239029425186,
+          "rank": 7.0,
+          "return": -0.04803662428857647,
+          "start_price": 38.20000076293945,
+          "symbol": "TRMD"
+        }
+      ]
+    },
     "1w": {
       "average_benchmark_return": -0.028244645835451165,
       "average_excess_return": -0.02548470642680073,

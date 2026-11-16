@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-11-13T15:25:50.869251+00:00
+- Data retrieved (UTC): 2026-11-16T17:04:14.132798+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -26,8 +26,8 @@
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 5 |
-| JP | Other | 15 |
+| JP | Financials | 6 |
+| JP | Other | 14 |
 | US | Financials | 11 |
 | US | Other | 4 |
 | US | Shipping | 5 |
@@ -36,26 +36,26 @@
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 6196.T | Strike Group Co.,Ltd. | Other | 75.6 | 100.0 | unchanged |
-| JP | 2 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.5 | 100.0 | unchanged |
-| JP | 3 | 7937.T | TSUTSUMI JEWELRY CO.,LTD. | Other | 73.8 | 99.9 | new_entry |
-| JP | 4 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 72.7 | 99.9 | unchanged |
-| JP | 5 | 2121.T | MIXI,Inc. | Other | 72.3 | 99.8 | unchanged |
-| JP | 6 | 6750.T | ELECOM CO.,LTD. | Other | 72.2 | 99.8 | unchanged |
-| JP | 7 | 3252.T | JINUSHI Co.,Ltd. | Other | 72.1 | 99.7 | rank_up |
-| JP | 8 | 4765.T | SBI Global Asset Management Co.,Ltd. | Financials | 71.6 | 99.7 | unchanged |
-| JP | 11 | 3932.T | Akatsuki Inc. | Other | 71.3 | 99.5 | unchanged |
-| JP | 12 | 8892.T | ES-CON JAPAN Ltd. | Other | 71.2 | 99.5 | unchanged |
-| US | 1 | LTC | LTC Properties, Inc. Common Stock | Other | 84.4 | 100.0 | unchanged |
-| US | 2 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
-| US | 3 | HBNC | Horizon Bancorp, Inc. - Common Stock | Financials | 83.2 | 99.9 | new_entry |
-| US | 5 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 81.7 | 99.9 | unchanged |
-| US | 6 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.6 | 99.8 | unchanged |
+| JP | 1 | 545A.T | Toranvia Co.,Ltd. | Other | 77.1 | 100.0 | rank_up |
+| JP | 2 | 6196.T | Strike Group Co.,Ltd. | Other | 76.1 | 100.0 | unchanged |
+| JP | 3 | 4595.T | MIZUHO MEDY CO.,LTD. | Other | 74.9 | 99.9 | new_entry |
+| JP | 4 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.3 | 99.9 | unchanged |
+| JP | 5 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.8 | unchanged |
+| JP | 6 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 72.6 | 99.8 | unchanged |
+| JP | 7 | 3252.T | JINUSHI Co.,Ltd. | Other | 72.2 | 99.7 | unchanged |
+| JP | 8 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 71.8 | 99.7 | new_entry |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.8 | 99.6 | unchanged |
+| JP | 13 | 8630.T | Sompo Holdings,Inc. | Other | 71.1 | 99.4 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
+| US | 2 | LTC | LTC Properties, Inc. Common Stock | Other | 83.4 | 100.0 | unchanged |
+| US | 3 | HBNC | Horizon Bancorp, Inc. - Common Stock | Financials | 82.9 | 99.9 | unchanged |
+| US | 4 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.4 | 99.9 | unchanged |
+| US | 5 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.8 | 99.9 | unchanged |
 | US | 11 | DHT | DHT Holdings, Inc. | Shipping | 80.7 | 99.7 | unchanged |
 | US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.7 | 99.5 | unchanged |
-| US | 18 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.4 | 99.5 | unchanged |
-| US | 22 | SFNC | Simmons First National Corporation - Common Stock | Other | 78.7 | 99.4 | unchanged |
-| US | 24 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 78.5 | 99.3 | unchanged |
+| US | 19 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.2 | 99.4 | unchanged |
+| US | 23 | SFNC | Simmons First National Corporation - Common Stock | Other | 78.7 | 99.3 | unchanged |
+| US | 24 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 78.4 | 99.3 | unchanged |
 
 ## Required manual checks before an order
 

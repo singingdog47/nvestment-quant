@@ -78,7 +78,70 @@
   },
   "market_regime": "DEFENSIVE",
   "model_version": "1.7.0",
-  "outcomes": {},
+  "outcomes": {
+    "1w": {
+      "average_benchmark_return": -0.010774668622217876,
+      "average_excess_return": 0.006297058304151032,
+      "average_return": -0.004477610318066844,
+      "benchmark_coverage_n": 4,
+      "evaluated_at": "2026-11-16T17:05:27+00:00",
+      "n": 4,
+      "symbols": [
+        {
+          "benchmark_return": -0.010774668622217876,
+          "benchmark_symbol": "SPY",
+          "end_price": 43.0099983215332,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": -0.033022602181515426,
+          "max_down": -0.0437972708037333,
+          "max_up": 0.0,
+          "rank": 1.0,
+          "return": -0.0437972708037333,
+          "start_price": 44.97999954223633,
+          "symbol": "LTC"
+        },
+        {
+          "benchmark_return": -0.010774668622217876,
+          "benchmark_symbol": "SPY",
+          "end_price": 39.84000015258789,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": 0.0013266065490712409,
+          "max_down": -0.009448062073146635,
+          "max_up": 0.0,
+          "rank": 2.0,
+          "return": -0.009448062073146635,
+          "start_price": 40.220001220703125,
+          "symbol": "FISI"
+        },
+        {
+          "benchmark_return": -0.010774668622217876,
+          "benchmark_symbol": "SPY",
+          "end_price": 28.969999313354492,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": -0.0035159092959931026,
+          "max_down": -0.014290577918210978,
+          "max_up": 0.003062271332322286,
+          "rank": 3.0,
+          "return": -0.014290577918210978,
+          "start_price": 29.389999389648438,
+          "symbol": "CARE"
+        },
+        {
+          "benchmark_return": -0.010774668622217876,
+          "benchmark_symbol": "SPY",
+          "end_price": 82.81999969482422,
+          "evaluated_price_date": "2026-11-16",
+          "excess_return": 0.060400138145041415,
+          "max_down": 0.0,
+          "max_up": 0.05228690864925656,
+          "rank": 5.0,
+          "return": 0.04962546952282354,
+          "start_price": 78.90433502197266,
+          "symbol": "STNG"
+        }
+      ]
+    }
+  },
   "policy_guardrails": {
     "absolute_defense_cash_jpy": 500000,
     "cash_target_range": [

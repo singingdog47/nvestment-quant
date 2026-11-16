@@ -1,4 +1,4 @@
 ﻿dataset,page_url,download_url,rows,columns,numeric_values,data_status,validation_error,fetched_at
-investor_type,https://www.jpx.co.jp/english/markets/statistics-equities/investor-type/index.html,https://www.jpx.co.jp/english/markets/statistics-equities/investor-type/vk0khi000002u47h-att/stock_1_w_20261102_20261106.xlsx,13,59,449,ok,,2026-11-16T02:12:31+00:00
-short_selling,https://www.jpx.co.jp/markets/statistics-equities/short-selling/index.html,https://www.jpx.co.jp/markets/statistics-equities/short-selling/t13vrt000002l0wp-att/261113-m.pdf,1,10,9,ok,,2026-11-16T02:12:31+00:00
-margin,https://www.jpx.co.jp/english/markets/statistics-equities/margin/index.html,https://www.jpx.co.jp/english/markets/statistics-equities/margin/tvdivq0000001r92-att/20261112_mtdaily.xlsx,376,23,5280,ok,,2026-11-16T02:12:31+00:00
+investor_type,https://www.jpx.co.jp/english/markets/statistics-equities/investor-type/index.html,https://www.jpx.co.jp/english/markets/statistics-equities/investor-type/vk0khi000002u47h-att/stock_1_w_20261102_20261106.xlsx,13,59,449,ok,,2026-11-16T17:04:55+00:00
+short_selling,https://www.jpx.co.jp/markets/statistics-equities/short-selling/index.html,https://www.jpx.co.jp/markets/statistics-equities/short-selling/t13vrt000002puy8-att/261116-m.pdf,1,10,9,ok,,2026-11-16T17:04:55+00:00
+margin,https://www.jpx.co.jp/english/markets/statistics-equities/margin/index.html,https://www.jpx.co.jp/english/markets/statistics-equities/margin/tvdivq0000001r92-att/20261113_mtdaily.xlsx,379,23,5314,ok,,2026-11-16T17:04:55+00:00
