@@ -1,18 +1,21 @@
 # 売買判断優先・市場急変チェック
 
-生成（UTC）：2026-11-16T06:47:21.038609+00:00
+生成（UTC）：2026-11-16T22:18:47.963916+00:00
 **危機判定：DEFENSIVE**
 **判断：RISK_REDUCTION_REVIEW**
 
 ## 急変要因
 - 日経円建て先物(CME)が-3%以下
 - 日経円建て先物(CME)が-1.5%以下
+- NASDAQが-2%以下
+- S&P500が-1.5%以下
+- VIXが20以上
 
 ## データ基準時刻・品質
-- NIKKEI_FUT: OK / -3.377% / 2026-11-16T06:37:14+00:00 / 
-- NASDAQ: UNVERIFIED / N/A% / 2026-11-13T22:15:59+00:00 / stale or future timestamp; excluded from decisions
-- SP500: UNVERIFIED / N/A% / 2026-11-13T21:43:19+00:00 / stale or future timestamp; excluded from decisions
-- VIX: UNVERIFIED / N/A% / 2026-11-13T21:15:01+00:00 / stale or future timestamp; excluded from decisions
+- NIKKEI_FUT: OK / -4.589% / 2026-11-16T21:59:59+00:00 / 
+- NASDAQ: OK / -2.944% / 2026-11-16T22:15:59+00:00 / 
+- SP500: OK / -1.766% / 2026-11-16T21:20:01+00:00 / 
+- VIX: OK / 17.729% / 2026-11-16T21:15:01+00:00 / 
 
 ## 売買判断まとめ
 - 新規買い原則停止
