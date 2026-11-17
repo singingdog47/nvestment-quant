@@ -1,10 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-17T21:04:27.172677+00:00",
+  "generated_at_utc": "2026-11-17T23:01:50.663302+00:00",
   "risk_level": "DEFENSIVE",
   "market_decision": "RISK_REDUCTION_REVIEW",
   "risk_drivers": [
-    "日経円建て先物(CME)が-3%以下",
     "VIXが25以上",
     "日経円建て先物(CME)が-1.5%以下",
     "NASDAQが-2%以下",
@@ -23,19 +22,19 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-17T20:54:22+00:00",
-      "age_minutes": 10.1,
-      "price": 58670.0,
+      "as_of_utc": "2026-11-17T21:59:57+00:00",
+      "age_minutes": 61.9,
+      "price": 59375.0,
       "previous_close": 61198.0,
-      "change_pct": -4.131
+      "change_pct": -2.979
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-17T21:04:23+00:00",
-      "age_minutes": 0.1,
+      "as_of_utc": "2026-11-17T22:15:59+00:00",
+      "age_minutes": 45.9,
       "price": 24328.383,
       "previous_close": 25065.87,
       "change_pct": -2.942
@@ -45,8 +44,8 @@
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-17T21:04:26+00:00",
-      "age_minutes": 0.0,
+      "as_of_utc": "2026-11-17T21:42:12+00:00",
+      "age_minutes": 79.6,
       "price": 7340.53,
       "previous_close": 7520.93,
       "change_pct": -2.399
@@ -56,11 +55,11 @@
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-17T20:49:16+00:00",
-      "age_minutes": 15.2,
-      "price": 26.0,
+      "as_of_utc": "2026-11-17T21:15:01+00:00",
+      "age_minutes": 106.8,
+      "price": 25.46,
       "previous_close": 17.49,
-      "change_pct": 48.656
+      "change_pct": 45.569
     }
   },
   "recommended_actions": [
