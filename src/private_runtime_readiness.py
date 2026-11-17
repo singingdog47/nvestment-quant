@@ -9,11 +9,11 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 
-from src.private_account_import import parse_orders_document
-from src.private_rakuten_e2e import verify_historical_files
 
 
 def prepare_ledger(candidates, manifest, account_inputs, private_dir):
+    from src.private_account_import import parse_orders_document
+    from src.private_rakuten_e2e import verify_historical_files
     ledger = Path(private_dir) / "verified_facts.jsonl"
     # Source selection is anchored to the holdings export, not upload time.
     source_name = manifest.get("source_file")
@@ -42,6 +42,32 @@ def prepare_ledger(candidates, manifest, account_inputs, private_dir):
         return {"status": "SOURCE_VERIFICATION_FAILED", "ledger_path": str(ledger)}
 
 
+def write_private_event_review(local_portfolio, private_dir: Path, *, now):
+    """Fail closed on unknown disclosures; private file only, no network or public artifacts."""
+    import csv
+    import re
+    from src.decision_event_review_bridge import prepare_decision_review
+
+    with open(local_portfolio, encoding="utf-8-sig", newline="") as handle:
+        codes = [str(row.get("code", "")).strip()
+                 for row in csv.DictReader(handle)]
+    symbols = list(dict.fromkeys(code for code in codes if re.fullmatch(r"\d{4}", code)))
+    # Never infer that a missing manifest means no events.
+    manifest_path = private_dir / "event_disclosures_verified.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else []
+    consent_path = private_dir / "event_review_consent.json"
+    consent = json.loads(consent_path.read_text(encoding="utf-8")) if consent_path.exists() else None
+    result = prepare_decision_review(symbols, manifest, now.isoformat(), consent)
+    output = private_dir / "event_review_latest.json"
+    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    output.chmod(0o600)
+    return {"analysis_mode": result["analysis_mode"],
+            "total": result["event_preflight"]["total"],
+            "unverified": result["event_preflight"]["blocked"],
+            "private_report": str(output),
+            "may_execute_orders": False}
+
+
 def assess_sources(candidates, private_dir: Path, *, now=None):
     from src.run_portfolio_risk import _build_latest_portfolio, _build_latest_account_inputs, _write_shared_investment_state
     from src.portfolio_policy_report import write_policy_report
@@ -68,6 +94,7 @@ def assess_sources(candidates, private_dir: Path, *, now=None):
             os.environ.pop("INVESTMENT_STATE_DRIVE_WRITEBACK", None)
         else:
             os.environ["INVESTMENT_STATE_DRIVE_WRITEBACK"] = previous
+    event_review = write_private_event_review(local, private_dir, now=now)
     matrix = write_private_matrix(local, source_as_of=manifest.get("source_as_of"),
         policy_payload=policy, investment_state=shared["state"], output_dir=private_dir)
     return {"runtime_status": "PASSED", "as_of": now.isoformat(),
@@ -83,6 +110,7 @@ def assess_sources(candidates, private_dir: Path, *, now=None):
             "ledger_coverage": shared["state"].get("private_ledger_audit"),
             "open_order_count": shared["state"]["open_orders"]["count"],
             "decision_report": matrix,
+            "event_review": event_review,
             "data_ready": (verified.get("account_wide_orders_verified") is True
                            and verified.get("settlement_verified") is True
                            and shared["state"]["source_coherence"]["decision_safe"] is True),
