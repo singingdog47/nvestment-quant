@@ -1,6 +1,6 @@
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-11-16T17:04:14.132798+00:00
+- Data retrieved (UTC): 2026-11-17T16:55:08.807964+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -36,26 +36,26 @@
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 545A.T | Toranvia Co.,Ltd. | Other | 77.1 | 100.0 | rank_up |
-| JP | 2 | 6196.T | Strike Group Co.,Ltd. | Other | 76.1 | 100.0 | unchanged |
-| JP | 3 | 4595.T | MIZUHO MEDY CO.,LTD. | Other | 74.9 | 99.9 | new_entry |
-| JP | 4 | 8622.T | Mito Securities Co.,Ltd. | Financials | 74.3 | 99.9 | unchanged |
-| JP | 5 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.8 | unchanged |
-| JP | 6 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 72.6 | 99.8 | unchanged |
-| JP | 7 | 3252.T | JINUSHI Co.,Ltd. | Other | 72.2 | 99.7 | unchanged |
-| JP | 8 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 71.8 | 99.7 | new_entry |
-| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.8 | 99.6 | unchanged |
-| JP | 13 | 8630.T | Sompo Holdings,Inc. | Other | 71.1 | 99.4 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
+| JP | 1 | 545A.T | Toranvia Co.,Ltd. | Other | 76.8 | 100.0 | unchanged |
+| JP | 2 | 6196.T | Strike Group Co.,Ltd. | Other | 75.9 | 100.0 | unchanged |
+| JP | 3 | 4595.T | MIZUHO MEDY CO.,LTD. | Other | 74.8 | 99.9 | unchanged |
+| JP | 4 | 6750.T | ELECOM CO.,LTD. | Other | 73.6 | 99.9 | unchanged |
+| JP | 5 | 8622.T | Mito Securities Co.,Ltd. | Financials | 73.6 | 99.8 | unchanged |
+| JP | 6 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 72.4 | 99.8 | unchanged |
+| JP | 7 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 72.0 | 99.7 | unchanged |
+| JP | 8 | 3252.T | JINUSHI Co.,Ltd. | Other | 71.9 | 99.7 | unchanged |
+| JP | 9 | 2121.T | MIXI,Inc. | Other | 71.7 | 99.6 | unchanged |
+| JP | 12 | 8892.T | ES-CON JAPAN Ltd. | Other | 71.0 | 99.5 | unchanged |
+| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.1 | 100.0 | unchanged |
 | US | 2 | LTC | LTC Properties, Inc. Common Stock | Other | 83.4 | 100.0 | unchanged |
-| US | 3 | HBNC | Horizon Bancorp, Inc. - Common Stock | Financials | 82.9 | 99.9 | unchanged |
+| US | 3 | HBNC | Horizon Bancorp, Inc. - Common Stock | Financials | 82.7 | 99.9 | unchanged |
 | US | 4 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.4 | 99.9 | unchanged |
-| US | 5 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.8 | 99.9 | unchanged |
-| US | 11 | DHT | DHT Holdings, Inc. | Shipping | 80.7 | 99.7 | unchanged |
-| US | 16 | TRMD | TORM plc - Class A Common Stock | Other | 79.7 | 99.5 | unchanged |
-| US | 19 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.2 | 99.4 | unchanged |
-| US | 23 | SFNC | Simmons First National Corporation - Common Stock | Other | 78.7 | 99.3 | unchanged |
-| US | 24 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 78.4 | 99.3 | unchanged |
+| US | 5 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.9 | 99.9 | unchanged |
+| US | 10 | DHT | DHT Holdings, Inc. | Shipping | 80.8 | 99.7 | unchanged |
+| US | 17 | EQBK | Equity Bancshares, Inc. Class A Common Stock | Other | 79.3 | 99.5 | unchanged |
+| US | 19 | TRMD | TORM plc - Class A Common Stock | Other | 79.1 | 99.4 | unchanged |
+| US | 22 | SFNC | Simmons First National Corporation - Common Stock | Other | 78.7 | 99.3 | unchanged |
+| US | 26 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 78.2 | 99.2 | unchanged |
 
 ## Required manual checks before an order
 

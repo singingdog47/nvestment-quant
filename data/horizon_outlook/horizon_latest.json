@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generated_at_utc": "2026-11-16T17:05:27+00:00",
-  "as_of_jst": "2026-11-17",
+  "generated_at_utc": "2026-11-17T16:56:14+00:00",
+  "as_of_jst": "2026-11-18",
   "mode": "RESEARCH_ONLY",
   "source_status": {
     "regime_fresh": true,
     "supply_fresh": true,
     "regime": "DEFENSIVE",
-    "regime_score": 40.35,
+    "regime_score": 37.01,
     "treasury_volatility_shock": true,
     "supply_coverage": {
       "free_float_ratio": 0.7115384615384616,
