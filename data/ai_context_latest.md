@@ -6,12 +6,12 @@ Generated quality score: **0.838** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-16T17:04:16+00:00",
-  "generated_at_utc": "2026-11-16T17:04:16+00:00",
+  "generated_at": "2026-11-17T04:31:17+00:00",
+  "generated_at_utc": "2026-11-17T04:31:17+00:00",
   "date_jst": "2026-11-17",
   "data_status": "ok",
   "regime_label": "DEFENSIVE",
-  "regime_score": 40.35,
+  "regime_score": 39.73,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,36 +23,35 @@ Generated quality score: **0.838** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": true,
+  "thin_liquidity_flag": false,
   "treasury_volatility_shock_flag": true,
   "sq_execution_caution_flag": false,
   "regime_flags": [
-    "THIN_LIQUIDITY",
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 16.58849225633584,
-    "stress": 69.61250011444092,
+    "trend": 7.884411870557155,
+    "stress": 68.30000011444092,
     "participation": 40.19840351689033,
-    "liquidity": 24.586900736885564,
-    "positioning": 62.462051551193944
+    "liquidity": 38.363824816023964,
+    "positioning": 65.00238697484912
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 21.15999984741211,
+    "vix": 22.90999984741211,
     "hy_oas": 3.23,
     "ig_oas": 0.89,
-    "treasury_volatility_proxy": 106.528,
+    "treasury_volatility_proxy": 107.315,
     "treasury_volatility_percentile_rank": 0.996,
     "treasury_volatility_stress_score": 25.3,
-    "treasury_volatility_as_of_date": "2026-11-13",
+    "treasury_volatility_as_of_date": "2026-11-16",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9529,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-11-16T17:04:14.132798+00:00",
     "nfci": -0.462,
-    "volume_ratio20_mean": 0.2838225184221391,
+    "volume_ratio20_mean": 0.6282456204005991,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -95,7 +94,7 @@ Generated quality score: **0.838** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 61142.3515625,
+        "spot": 58770.8203125,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -151,7 +150,7 @@ Generated quality score: **0.838** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-11-16T17:05:26+00:00",
+  "generated_at": "2026-11-17T04:32:20+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -195,10 +194,10 @@ Generated quality score: **0.838** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=48 / tier=primary
+- EDINET: ok / records=42 / tier=primary
 - SEC: ok / records=38 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=56 / tier=secondary
+- NewsRSS: ok / records=34 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -314,15 +313,15 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] BUSE First Busey Corporation - Common Stock | 2026-11-06 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/314489/000031448926000072/buse-20261106.htm
 - [HIGH] MSIF MSC Income Fund, Inc. Common Stock | 2026-11-06 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1535778/000153577826000109/msif-20260930.htm
 - [HIGH] DHT DHT Holdings, Inc. | 2026-11-09 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1331284/000114036126042813/ef20080524_6k.htm
-- [HIGH] 2802 味の素 | 2026-11-10 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZDBT
-- [HIGH] 3635 コーエーテクモホールディングス | 2026-11-10 | filing | 半期報告書－第18期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZCG7
-- [HIGH] 3635 コーエーテクモホールディングス | 2026-11-10 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZCGA
-- [HIGH] 4507 Shionogi & Co.,Ltd. | 2026-11-10 | filing | 発行登録書（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZDPD
-- [HIGH] 9433 KDDI | 2026-11-10 | filing | 半期報告書－第43期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZDAA
-- [HIGH] 9433 KDDI | 2026-11-10 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZDB0
 - [HIGH] 5351 SHINAGAWA REFRA CO.,LTD. | 2026-11-11 | filing | 半期報告書－第193期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZEA5
 - [HIGH] 5351 SHINAGAWA REFRA CO.,LTD. | 2026-11-11 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZEE6
 - [HIGH] 4507 Shionogi & Co.,Ltd. | 2026-11-11 | filing | 半期報告書－第162期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZEGF
+- [HIGH] 4507 Shionogi & Co.,Ltd. | 2026-11-11 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZEGI
+- [HIGH] 3099 三越伊勢丹ホールディングス | 2026-11-12 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZFLZ
+- [HIGH] 8766 東京海上ホールディングス | 2026-11-12 | filing | 自己株券買付状況報告書（法２４条の６第１項に基づくもの） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZFMJ
+- [HIGH] 7564 ワークマン | 2026-11-12 | filing | 半期報告書－第46期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZF1C
+- [HIGH] 7564 ワークマン | 2026-11-12 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZF1T
+- [HIGH] 8704 TRADERS HOLDINGS CO.,LTD. | 2026-11-12 | filing | 半期報告書－第28期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZGC7
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
