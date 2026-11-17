@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-17T08:07:08.934787+00:00",
+  "generated_at_utc": "2026-11-17T21:04:27.172677+00:00",
   "risk_level": "DEFENSIVE",
   "market_decision": "RISK_REDUCTION_REVIEW",
   "risk_drivers": [
     "日経円建て先物(CME)が-3%以下",
+    "VIXが25以上",
     "日経円建て先物(CME)が-1.5%以下",
     "NASDAQが-2%以下",
     "S&P500が-1.5%以下",
@@ -22,44 +23,44 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-17T07:57:00+00:00",
+      "as_of_utc": "2026-11-17T20:54:22+00:00",
       "age_minutes": 10.1,
-      "price": 59115.0,
+      "price": 58670.0,
       "previous_close": 61198.0,
-      "change_pct": -3.404
+      "change_pct": -4.131
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-16T22:15:59+00:00",
-      "age_minutes": 591.2,
-      "price": 24509.758,
-      "previous_close": 25253.14,
-      "change_pct": -2.944
+      "as_of_utc": "2026-11-17T21:04:23+00:00",
+      "age_minutes": 0.1,
+      "price": 24328.383,
+      "previous_close": 25065.87,
+      "change_pct": -2.942
     },
     "SP500": {
       "name": "SP500",
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-16T22:22:10+00:00",
-      "age_minutes": 585.0,
-      "price": 7416.59,
-      "previous_close": 7549.94,
-      "change_pct": -1.766
+      "as_of_utc": "2026-11-17T21:04:26+00:00",
+      "age_minutes": 0.0,
+      "price": 7340.53,
+      "previous_close": 7520.93,
+      "change_pct": -2.399
     },
     "VIX": {
       "name": "VIX",
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-16T21:15:01+00:00",
-      "age_minutes": 652.1,
-      "price": 22.91,
+      "as_of_utc": "2026-11-17T20:49:16+00:00",
+      "age_minutes": 15.2,
+      "price": 26.0,
       "previous_close": 17.49,
-      "change_pct": 30.989
+      "change_pct": 48.656
     }
   },
   "recommended_actions": [
