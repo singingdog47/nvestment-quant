@@ -62,7 +62,7 @@
     }
   ],
   "primary_coverage_audit": {
-    "generated_at_utc": "2026-11-18T03:44:27+00:00",
+    "generated_at_utc": "2026-11-18T16:30:05+00:00",
     "population": "JP Company Intelligence targets; not whole-market screening",
     "target_count": 40,
     "companies_with_any_primary_metric": 16,
@@ -87,7 +87,7 @@
     "note": "A metric is covered only when a verified numeric primary observation exists."
   },
   "quality": {
-    "generated_at": "2026-11-18T03:44:34+00:00",
+    "generated_at": "2026-11-18T16:30:13+00:00",
     "targets": 52,
     "portfolio_targets": 0,
     "events": 132,
@@ -108,12 +108,12 @@
   "market_regime": {
     "version": "1.5.3",
     "engine_version": "1.5.3",
-    "generated_at": "2026-11-18T03:43:29+00:00",
-    "generated_at_utc": "2026-11-18T03:43:29+00:00",
-    "date_jst": "2026-11-18",
+    "generated_at": "2026-11-18T16:29:09+00:00",
+    "generated_at_utc": "2026-11-18T16:29:09+00:00",
+    "date_jst": "2026-11-19",
     "data_status": "ok",
     "regime_label": "DEFENSIVE",
-    "regime_score": 37.46,
+    "regime_score": 36.05,
     "confidence": 1.0,
     "actionable": true,
     "actionability": {
@@ -132,28 +132,28 @@
       "TREASURY_VOLATILITY_SHOCK"
     ],
     "components": {
-      "trend": 1.984136065411251,
-      "stress": 66.0625006866455,
-      "participation": 37.41898148148148,
-      "liquidity": 42.43524853696855,
+      "trend": 0.18654427072649504,
+      "stress": 65.93250034332274,
+      "participation": 37.10358796296296,
+      "liquidity": 37.2527505215862,
       "positioning": 65.00238697484912
     },
     "evidence": {
       "trend_series": 4,
-      "vix": 25.459999084472656,
-      "hy_oas": 3.34,
-      "ig_oas": 0.9,
+      "vix": 24.979999542236328,
+      "hy_oas": 3.43,
+      "ig_oas": 0.92,
       "treasury_volatility_proxy": 106.229,
       "treasury_volatility_percentile_rank": 0.9881,
       "treasury_volatility_stress_score": 25.89,
       "treasury_volatility_as_of_date": "2026-11-17",
       "treasury_volatility_status": "ok",
       "treasury_volatility_is_ice_move": false,
-      "breadth_n": 9528,
+      "breadth_n": 9527,
       "breadth_status": "ok",
-      "breadth_source_as_of_utc": "2026-11-17T16:55:08.807964+00:00",
-      "nfci": -0.462,
-      "volume_ratio20_mean": 0.7300312134242137,
+      "breadth_source_as_of_utc": "2026-11-18T16:29:07.327511+00:00",
+      "nfci": -0.478,
+      "volume_ratio20_mean": 0.5976687630396549,
       "positioning_sources": {
         "jpx_raw_healthy": 4,
         "cftc_normalized_values": 22
@@ -173,8 +173,8 @@
       },
       "base_weighted_coverage": 1.0,
       "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-      "jpx_official_turnover_date": "2026-11-17",
-      "jpx_official_turnover_million_jpy": 8588695.0,
+      "jpx_official_turnover_date": "2026-11-18",
+      "jpx_official_turnover_million_jpy": 8747024.0,
       "jpx_official_turnover_status": "ok"
     },
     "execution_overlay": {
@@ -182,9 +182,9 @@
         "version": "1.0",
         "enabled": true,
         "active": false,
-        "as_of_date": "2026-11-18",
+        "as_of_date": "2026-11-19",
         "next_major_sq_date": "2026-12-11",
-        "days_to_sq": 23,
+        "days_to_sq": 22,
         "event_proximity_score": 0.0,
         "pressure_intensity_score": 0.0,
         "confidence": 0.4,
@@ -196,7 +196,7 @@
         "execution_stance": "NORMAL",
         "directional_bias": "UNDETERMINED",
         "price_structure": {
-          "spot": 58696.5390625,
+          "spot": 58860.4296875,
           "put_wall": null,
           "call_wall": null,
           "magnet_strike": null,
@@ -248,7 +248,7 @@
     "note": "Guardrail only. This file never places orders."
   },
   "system_health": {
-    "generated_at": "2026-11-18T03:44:34+00:00",
+    "generated_at": "2026-11-18T16:30:13+00:00",
     "components": {
       "market_regime": {
         "status": "ok",
@@ -259,25 +259,25 @@
       "v1_3_screening": {
         "status": "ok",
         "path": "data/screening_latest.csv",
-        "age_hours": 0.03,
+        "age_hours": 0.02,
         "stale_limit_hours": 36
       },
       "v1_3_screening_full": {
         "status": "ok",
         "path": "data/screening_full.csv.gz",
-        "age_hours": 0.03,
+        "age_hours": 0.02,
         "stale_limit_hours": 36
       },
       "v1_3_quality": {
         "status": "ok",
         "path": "data/quality_report.json",
-        "age_hours": 0.03,
+        "age_hours": 0.02,
         "stale_limit_hours": 36
       },
       "v1_3_daily_report": {
         "status": "ok",
         "path": "data/daily_report.md",
-        "age_hours": 0.03,
+        "age_hours": 0.02,
         "stale_limit_hours": 36
       },
       "fundamentals": {
@@ -304,8 +304,26 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "critical",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "98f2f34467a2f63eb37b6a12",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "4063",
+      "ticker": "4063.T",
+      "name": "信越化学工業",
+      "event_date": "Fri, 24 Jul 2026",
+      "event_type": "earnings",
+      "title": "信越化学工業[4063]：2027年３月期 第１四半期決算短信〔日本基準〕（連結） 2026年7月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE04eUN0Wk9UOTF4cmQ3Q3NfbXZGZ1pKN1pqQVhEdUVHNld1ZFJTUlk0Rm51UjVMUTlzdHFrYVJGakJiY2Z1WXgyTXJGankxVm1PV01UejJqN2s1dlNBVU03aTF5aVNMOEw0d2c?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "critical",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "66c1154c24d09e4c33518e8c",
       "raw_excerpt": ""
     },
     {
@@ -322,7 +340,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "95ceece265b575f6754805d0",
       "raw_excerpt": ""
     },
@@ -340,7 +358,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "b6440505aa2d30dfbfcfd49f",
       "raw_excerpt": ""
     },
@@ -358,7 +376,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "638f3664219b6cb04b44c3db",
       "raw_excerpt": ""
     },
@@ -376,8 +394,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "critical",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "5465cc2cace066eac8d51412",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "4063",
+      "ticker": "4063.T",
+      "name": "信越化学工業",
+      "event_date": "Tue, 28 Apr 2026",
+      "event_type": "earnings",
+      "title": "信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YU0drSkNQX0wta25uTlZNY08xZ0FXWk9pbFJoVFhMeVhocTZuNkpEZ3dMX0xMUDkzYTNUWVNYOTdlMlhLSnRIbGNIQTFfcXJRdW5FSWFFcWN1Y2pfN2JaVTBad3hDdk1neGc?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "critical",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "cab10b5ed8b99318ebd7a280",
       "raw_excerpt": ""
     },
     {
@@ -394,7 +430,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "6de188c7c34dd0c6cbe0644a",
       "raw_excerpt": ""
     },
@@ -412,7 +448,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "76cbe1726c6f0fbd335d9bda",
       "raw_excerpt": ""
     },
@@ -430,7 +466,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "43759b21a597d3a203c0132f",
       "raw_excerpt": ""
     },
@@ -448,7 +484,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "5bde594e3045328d06cf82bb",
       "raw_excerpt": ""
     },
@@ -466,7 +502,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "39b2d957abccaab619de6cc4",
       "raw_excerpt": ""
     },
@@ -484,26 +520,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "29c1e3b84ae6c56d1f2015ff",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "MSIF",
-      "ticker": "MSIF",
-      "name": "MSC Income Fund, Inc. Common Stock",
-      "event_date": "2026-10-08",
-      "event_type": "filing",
-      "title": "SEC 8-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1535778/000153577826000096/msif-20261008.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
-      "event_id": "3b1d0ad75bde423be7a2e519",
       "raw_excerpt": ""
     },
     {
@@ -520,7 +538,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "585299ecb21afbdac17a31ea",
       "raw_excerpt": ""
     },
@@ -538,7 +556,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "124981aff89dfb5e4fa307d7",
       "raw_excerpt": ""
     },
@@ -556,7 +574,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "3fbee677072e4a0611fd1439",
       "raw_excerpt": ""
     },
@@ -574,7 +592,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "1bd8798dfbdb444f07639b3d",
       "raw_excerpt": ""
     },
@@ -592,7 +610,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "648cf957b3c776326490cd67",
       "raw_excerpt": ""
     },
@@ -610,7 +628,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "1f44f733e7db31dcd0e4a971",
       "raw_excerpt": ""
     },
@@ -628,7 +646,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "f567c8063bbbf05335fa297e",
       "raw_excerpt": ""
     },
@@ -646,8 +664,26 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "3707f15604c5e9fe50619e90",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "WSBC",
+      "ticker": "WSBC",
+      "name": "WesBanco, Inc. - Common Stock",
+      "event_date": "2026-10-21",
+      "event_type": "filing",
+      "title": "SEC 8-K filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/203596/000119312526427870/wsbc-20261021.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
+      "event_id": "e06b268929e473cfb9e1c4a8",
       "raw_excerpt": ""
     },
     {
@@ -664,7 +700,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "c59882f1d99fa8c1acac4651",
       "raw_excerpt": ""
     },
@@ -682,7 +718,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "b820a217d63520b85a943ab3",
       "raw_excerpt": ""
     },
@@ -700,7 +736,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "fc03d5ea6e587c8f0f2d5a97",
       "raw_excerpt": ""
     },
@@ -718,7 +754,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "e8f40b255372164651081867",
       "raw_excerpt": ""
     },
@@ -736,8 +772,26 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "b8828ecd7003fd1c969cb3f9",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "WSBC",
+      "ticker": "WSBC",
+      "name": "WesBanco, Inc. - Common Stock",
+      "event_date": "2026-10-29",
+      "event_type": "earnings",
+      "title": "SEC 10-Q filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/203596/000119312526437801/wsbc-20260930.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
+      "event_id": "18bbc479fcd068fdf2df6f3e",
       "raw_excerpt": ""
     },
     {
@@ -754,7 +808,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "c3a7f43eae997513274554a9",
       "raw_excerpt": ""
     },
@@ -772,7 +826,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "bd3cda115961ca7c6b7fd1e2",
       "raw_excerpt": ""
     },
@@ -790,7 +844,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "841358a3af2c1d5898a1ebe4",
       "raw_excerpt": ""
     },
@@ -808,7 +862,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "aef034106248c6cd6dbb3378",
       "raw_excerpt": ""
     },
@@ -826,7 +880,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "c19b856712ea3094ee83513c",
       "raw_excerpt": ""
     },
@@ -844,8 +898,26 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "967c5f01ddec0af50154efcf",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "US",
+      "code": "WSBC",
+      "ticker": "WSBC",
+      "name": "WesBanco, Inc. - Common Stock",
+      "event_date": "2026-11-04",
+      "event_type": "filing",
+      "title": "SEC 8-K filing",
+      "summary": "",
+      "source": "SEC EDGAR",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/203596/000119312526447256/wsbc-20261104.htm",
+      "source_tier": "primary",
+      "data_status": "ok",
+      "priority": "high",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
+      "event_id": "efd87be54a31762cd5805103",
       "raw_excerpt": ""
     },
     {
@@ -862,7 +934,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "8e5afa1747f23aa149298966",
       "raw_excerpt": ""
     },
@@ -880,44 +952,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "b4142f07019ccdb54997e608",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "MSIF",
-      "ticker": "MSIF",
-      "name": "MSC Income Fund, Inc. Common Stock",
-      "event_date": "2026-11-05",
-      "event_type": "filing",
-      "title": "SEC 8-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1535778/000153577826000104/msif-20261105.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
-      "event_id": "c9406501d61cd6849c1b7c6e",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "MSIF",
-      "ticker": "MSIF",
-      "name": "MSC Income Fund, Inc. Common Stock",
-      "event_date": "2026-11-05",
-      "event_type": "filing",
-      "title": "SEC 8-K filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1535778/000153577826000101/msif-20261105.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
-      "event_id": "542aab041d097fd6ffda49a4",
       "raw_excerpt": ""
     },
     {
@@ -934,7 +970,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "33dde5095d01b25b51143fea",
       "raw_excerpt": ""
     },
@@ -952,7 +988,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "19a33b23a756743ad434f4b5",
       "raw_excerpt": ""
     },
@@ -970,7 +1006,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "c390ca19d1a8ba415c8ae469",
       "raw_excerpt": ""
     },
@@ -988,26 +1024,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "eb0462306c5813bdaaf5e9f0",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "US",
-      "code": "MSIF",
-      "ticker": "MSIF",
-      "name": "MSC Income Fund, Inc. Common Stock",
-      "event_date": "2026-11-06",
-      "event_type": "earnings",
-      "title": "SEC 10-Q filing",
-      "summary": "",
-      "source": "SEC EDGAR",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1535778/000153577826000109/msif-20260930.htm",
-      "source_tier": "primary",
-      "data_status": "ok",
-      "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
-      "event_id": "95cb6d20b00ce796953cdf80",
       "raw_excerpt": ""
     },
     {
@@ -1024,7 +1042,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "2c6594705cf77c0f0069487c",
       "raw_excerpt": ""
     },
@@ -1042,7 +1060,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "f46afa8bdc8eda5369d6d0ef",
       "raw_excerpt": ""
     },
@@ -1060,7 +1078,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "4b752f19c7cab2d04c788d01",
       "raw_excerpt": ""
     },
@@ -1078,7 +1096,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "64de158c45f779a548a3c078",
       "raw_excerpt": ""
     },
@@ -1096,7 +1114,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "af729d1832cdfde0144b3825",
       "raw_excerpt": ""
     },
@@ -1114,7 +1132,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "0ea561a11aed1f2aac987e05",
       "raw_excerpt": ""
     },
@@ -1132,7 +1150,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "52939c640d109481e9550d56",
       "raw_excerpt": ""
     },
@@ -1150,7 +1168,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "1fbf68927d9435c645fea091",
       "raw_excerpt": ""
     },
@@ -1168,7 +1186,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "121493a37558455f21579bbd",
       "raw_excerpt": ""
     },
@@ -1186,7 +1204,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "838b441d1dd331a568d06935",
       "raw_excerpt": ""
     },
@@ -1204,7 +1222,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "5f580663849d9952f8fe0c98",
       "raw_excerpt": ""
     },
@@ -1222,7 +1240,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "6c0e8fd058fc5ca1300e85ce",
       "raw_excerpt": ""
     },
@@ -1240,7 +1258,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "d39042d9fc96cc32ce85537b",
       "raw_excerpt": ""
     },
@@ -1258,7 +1276,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "1a05eb9352dc65626a736299",
       "raw_excerpt": ""
     },
@@ -1276,7 +1294,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
+      "fetched_at": "2026-11-18T16:29:56+00:00",
       "event_id": "2294b902b3a8d8e5c64c21ea",
       "raw_excerpt": ""
     },
@@ -1294,7 +1312,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "d1c06e0482ac31cfcefd6490",
       "raw_excerpt": ""
     },
@@ -1312,7 +1330,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "581468b35adef96fa4a8f0a1",
       "raw_excerpt": ""
     },
@@ -1330,7 +1348,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "4e8b59e99b2d9a801684ecac",
       "raw_excerpt": ""
     },
@@ -1348,7 +1366,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "58b78782a35ca3effcaf87d3",
       "raw_excerpt": ""
     },
@@ -1366,7 +1384,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "cc2cf1d3d4818e0528e6e61d",
       "raw_excerpt": ""
     },
@@ -1384,7 +1402,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "2ee63cb0fc8215508f2cd9ad",
       "raw_excerpt": ""
     },
@@ -1402,7 +1420,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "28e1610c10c7b5beb36771c6",
       "raw_excerpt": ""
     },
@@ -1420,7 +1438,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "c6a6d28949c4ad0581f69d16",
       "raw_excerpt": ""
     },
@@ -1438,7 +1456,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "6ac795db04122c5aefbf3335",
       "raw_excerpt": ""
     },
@@ -1456,7 +1474,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "ba72785e52a01d38a77e8909",
       "raw_excerpt": ""
     },
@@ -1474,7 +1492,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "d8319c34a504c396c025cb8d",
       "raw_excerpt": ""
     },
@@ -1492,7 +1510,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "766c9c5b3a33fd52cb1a8a2d",
       "raw_excerpt": ""
     },
@@ -1510,7 +1528,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "a1f5146ec3ae87ffd3aed0af",
       "raw_excerpt": ""
     },
@@ -1528,7 +1546,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "0816968c6403b3fd8bdf988b",
       "raw_excerpt": ""
     },
@@ -1546,7 +1564,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "a58114e7088d0bf9b794383f",
       "raw_excerpt": ""
     },
@@ -1564,7 +1582,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "39f762caae03b9f70dcca4ac",
       "raw_excerpt": ""
     },
@@ -1582,7 +1600,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "167baf4cd804e7317c689971",
       "raw_excerpt": ""
     },
@@ -1600,7 +1618,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "f3a9c168d29de70eae910917",
       "raw_excerpt": ""
     },
@@ -1618,7 +1636,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "4eaf1e2a06e0a84e112a8b21",
       "raw_excerpt": ""
     },
@@ -1636,7 +1654,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "7f45af0006edcb1116d3b2e0",
       "raw_excerpt": ""
     },
@@ -1654,7 +1672,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "67aa156be9d3cffdd999493f",
       "raw_excerpt": ""
     },
@@ -1672,7 +1690,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "b36755b34f2d727bca5fadb9",
       "raw_excerpt": ""
     },
@@ -1690,7 +1708,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "30b06c7ac8538c75337b89d8",
       "raw_excerpt": ""
     },
@@ -1708,7 +1726,7 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "aa6b1f7c0d7529ca2cb3dc73",
       "raw_excerpt": ""
     },
@@ -1726,26 +1744,8 @@
       "source_tier": "primary",
       "data_status": "ok",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "event_id": "95253388e70b0ebc6d3bb9c6",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "4063",
-      "ticker": "4063.T",
-      "name": "信越化学工業",
-      "event_date": "Fri, 13 Nov 2026",
-      "event_type": "buyback",
-      "title": "信越化学工業[4063]：自己株式取得に係る事項の決定に関するお知らせ 2026年11月13日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE43dmtOZ3Nydzh1QVRXOGtpSHNHa2ZGVFAxUmtGTkRyU3psY25mRE8tTXA4dG9aMm1JQWVSWGFMdU1TYkI4S3Y5YXBNMDluZ2ZHbDNnWVVTbUVqb3Y2LWdiMmdNU05XTjVuN2c?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "high",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "event_id": "9c6c6b57a7388d02bcc6b771",
       "raw_excerpt": ""
     },
     {
@@ -1762,7 +1762,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "664d5271b229b6d54bb30bf2",
       "raw_excerpt": ""
     },
@@ -1780,7 +1780,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "40e584737a26ef264c5aa3d0",
       "raw_excerpt": ""
     },
@@ -1798,7 +1798,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "high",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "bd8a77fe5591b55c28cfc227",
       "raw_excerpt": ""
     },
@@ -1816,7 +1816,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "87566ed896e7faf4b26385ab",
       "raw_excerpt": ""
     },
@@ -1834,62 +1834,8 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "e88b73ca684c91ffcbdf93aa",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "4063",
-      "ticker": "4063.T",
-      "name": "信越化学工業",
-      "event_date": "Fri, 13 Nov 2026",
-      "event_type": "disclosure",
-      "title": "信越化学工業[4063]：半期報告書－第150期(2026/04/01－2027/03/31) (有価証券報告書) ：日経会社情報DIGITAL - 日本経済新聞",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5XNWstN1I3YUxMSEVVbFhCQS1RMXdoMnBfV3pvWjBOck4tTzU2Zng2am8zTXJ2SVBOVmJFYkh0RlFnTWY5NkxGVkk4dXhUY2ZQSnh6SF92MEl1SU80YUNHOVBKaHZwMnlQUjZxaQ?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "event_id": "cfef99e8cadca04bcb78e383",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "6701",
-      "ticker": "6701.T",
-      "name": "NEC",
-      "event_date": "Fri, 13 Nov 2026",
-      "event_type": "disclosure",
-      "title": "IT／ネットワーク統合ソリューション「UNIVERGE」特集 : 企業情報 - NEC",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1xX3Vld1N5Qkxyckg5OXRKNm81eHFLNjRzd2U3YjJWeTJUTTZSV0RpNzBMbjQ1cUR6MkJTdzRrengzR09jeER5aDhGalphblpidTg4UTBwVjhqMUxRUnRnaWdKSVVseGdwYTZNbHY2S0FRS3ZLb19obENodw?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "event_id": "126133d33a022f562d908d16",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "6701",
-      "ticker": "6701.T",
-      "name": "NEC",
-      "event_date": "Fri, 13 Nov 2026",
-      "event_type": "disclosure",
-      "title": "地上デジタル放送特集 : 企業情報 - NEC",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9nbnk2eEJxa2FNS2JrcGktSEpHOWhRVDVHRFJab1gzU0xuT2VjM1pObjA4bkhYbmV1R0ZtMy05ZG9zSlpKU18waGlCblViVkJNUTBweUJvNFJiQTFOMUU2SjJCRWlJVXVVN2RlTXh6cE1FNmh1a053VFVSTQ?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "event_id": "de903c7f1240b407742b2cc6",
       "raw_excerpt": ""
     },
     {
@@ -1899,33 +1845,33 @@
       "name": "三越伊勢丹ホールディングス",
       "event_date": "Fri, 13 Nov 2026",
       "event_type": "disclosure",
-      "title": "三越伊勢丹ホールディングス FY2026 Q2 決算説明会 - BigGo ファイナンス",
+      "title": "(株)三越伊勢丹ホールディングス【3099】：決算情報 - Yahoo!ファイナンス",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1tZERxMnNLT3NGMkdFQUZQLURhMWg3QkdMeWVzVnk3LXNwVW1NSXpMX25OTHUwR2Q2ZzZ1ZElucTVsb0hQNnJsWkJWMm5nV0pLWlZmeVBLdnFjQW1xWGlBTUFqN2RydFYzaEE1UU5yRG9McFc3cmJOOWZ0cTg?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1JNzZzNnhaenZPQTZxdXFlZU1pZ0Q1RGJFTWN1RzFxSUhvbklma2xfTlh0eERoYms0RXlackVsc29zQVVKNTFxVU1NSEc1Q3FYcFY1NzFYZDNSZEtoMHBNSA?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "event_id": "578e380189fd472d2a80664c",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "294d4ca1a2cf74328df4e93b",
       "raw_excerpt": ""
     },
     {
       "market": "JP",
-      "code": "8622",
-      "ticker": "8622.T",
-      "name": "水戸証券",
+      "code": "3099",
+      "ticker": "3099.T",
+      "name": "三越伊勢丹ホールディングス",
       "event_date": "Fri, 13 Nov 2026",
       "event_type": "disclosure",
-      "title": "水戸証券[8622]：確認書 (有価証券報告書) ：日経会社情報DIGITAL - 日本経済新聞",
+      "title": "三越伊勢丹グループが初のホテル開発構想 自社オフィス5棟を活用、2032年開業へ - Fashionsnap.com",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE01Y0R0Tl9SSjhDZDJBdnk2TlprRUh2SzgtS0s3ZmNRRzlmaHJsS3FTUl9KSFotSnRVOWFMSi1SMjJEZnlDSHY4djQzU1BjNmh2YTJpQjZSVVRrTHJUMnh0SlFCZnQ2Wk9QLWdPVg?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBLSkFIZEdqQ1pZc2hrQkpSSXJpa0dDSkJYQ1hzNGR1eGx2bVVGdmV3THBVd2t0cFdGNTBhV2dNSklMdmdTbVI1VWpPWFBKbFJ4bjc3VFNRNWF0aXIxVFd2T2tjR1F3M2FDaFo3ODEzOXQzc1ZjTUNkQjlB?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "event_id": "e02dfe7255f61769a03f9acd",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "e1dcbf7e7dff79cb461d53d5",
       "raw_excerpt": ""
     },
     {
@@ -1942,8 +1888,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "baa4854bd2e87d3a02c6824d",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "6965",
+      "ticker": "6965.T",
+      "name": "浜松ホトニクス",
+      "event_date": "Fri, 27 Mar 2026",
+      "event_type": "disclosure",
+      "title": "理研と浜松ホトニクスが連携・協力に関する基本協定書を締結 - 理化学研究所",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBCZ2gzVkRWbkljWUhFN292X3VWWlJQaUk0blM4VlJpSDU3QjZXamY2eFFVMzBDeWEwaVNhTzNDbkxsTTdmSzRPMXcwdXhXRVloWkpneXphVGg4X1ptX011N2hSdkQwZw?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "882fa30a93e4f87d21533e6e",
       "raw_excerpt": ""
     },
     {
@@ -1960,7 +1924,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "20950705cc989663d2c6047a",
       "raw_excerpt": ""
     },
@@ -1978,7 +1942,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "68a53796b934ba69e1f40ac0",
       "raw_excerpt": ""
     },
@@ -1996,8 +1960,26 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "c4cb24d486bd8cbb2a12ef94",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "3635",
+      "ticker": "3635.T",
+      "name": "コーエーテクモホールディングス",
+      "event_date": "Mon, 16 Nov 2026",
+      "event_type": "disclosure",
+      "title": "祝9周年♥煌めく「映画祭」でお祝い♪アニバーサリーコーデガチャが最大100連無料！ - コーエーテクモゲームス",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5QSmJBUHZfMFZEWVUydDVLWEhnOGNzaVBkaHUwdW9hUVFkNy1mdzhEaFFIbEMxS2NYcGZic200MjRwS2tfM2JBUWIySXF6alVUTkZaMg?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "881332dc05132a0e6b6bd4f3",
       "raw_excerpt": ""
     },
     {
@@ -2014,7 +1996,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "b9fb03ebcbfca2a1b596ce47",
       "raw_excerpt": ""
     },
@@ -2032,8 +2014,44 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "f124e43f9619267320490416",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "8622",
+      "ticker": "8622.T",
+      "name": "水戸証券",
+      "event_date": "Mon, 23 Mar 2026",
+      "event_type": "disclosure",
+      "title": "水戸証券株式会社 | 導入事例 | 法人のお客さま | ソフトバンク - ソフトバンク",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE94blBkeWE2UTI3N3U4QU1qbHJZSGk4ZE1BTzhZVlBoX3dqSDVIUTAteXB1NUxDNTVPTXNiQTlXN0pOTXA2dFIyck1aajcxakR0VUNJX0ZxclpqdFdkbXc?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "3c4d446dfed3609bb6de61ae",
+      "raw_excerpt": ""
+    },
+    {
+      "market": "JP",
+      "code": "3099",
+      "ticker": "3099.T",
+      "name": "三越伊勢丹ホールディングス",
+      "event_date": "Mon, 25 May 2026",
+      "event_type": "disclosure",
+      "title": "三越伊勢丹ホールディングス[3099]：第18回定時株主総会招集ご通知および株主総会資料 2026年5月25日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞",
+      "summary": "Secondary news detection only; verify with primary source before acting.",
+      "source": "Google News RSS",
+      "source_url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBLbTFoSkVHTkp1dlJ3VDl5TDFtbHVybFdIeTZMc0RBZm9ZWVoybmNtTVVJcDY1Z3JJQnZSemVIbDk2S2dSaTNaa3F2QkhsNlExSTE2WV94TXNQazdZUzNwQnBGc1dCOWJvLUE?oc=5",
+      "source_tier": "secondary",
+      "data_status": "unverified",
+      "priority": "normal",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "039ad3aa492ba7212627eb09",
       "raw_excerpt": ""
     },
     {
@@ -2050,7 +2068,7 @@
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "event_id": "472867ea5cdadcce67e04d16",
       "raw_excerpt": ""
     },
@@ -2061,33 +2079,15 @@
       "name": "NEC",
       "event_date": "Sat, 14 Nov 2026",
       "event_type": "disclosure",
-      "title": "Vol.58 No.5（2005年9月） – ユビキタス環境を活用し，企業競争力を向上させる「UNIVERGE」特集 - NEC",
+      "title": "APN実現に向けたNECの取り組み ～APN製品（WXシリーズ）の特⻑～ : 企業情報 - NEC",
       "summary": "Secondary news detection only; verify with primary source before acting.",
       "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5NekxkbUJybUIzMFowTEg1Nng0TjBJNVJpM0pNS2FScFA1UkZ4alE0ampvOGp4eXhiUGt0OUxiR1pCY2ZPdjYxV3AxTVRCU0VLckxUTzVNSmp1V21tZ1FpREV2RkJfN0dlRENaNlp2X1pkNzFKa3J5XzQ1NA?oc=5",
+      "source_url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQaE1QZzBsZ1NDd2pQZC1aUmViWmQ4azg0Mnl2T2dlNFJxTXBtUUpNVEg0aEhybk1nNnRvb0lIR2pWZkdfLVhiX25XdUtkLTctYkVPZFMwYmlPbVRpeEVMN2hkZ3JoZGtzYVpEdVNGLVpzWDF4b3dNc1o0ZDVlZngzMkh2aw?oc=5",
       "source_tier": "secondary",
       "data_status": "unverified",
       "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "event_id": "af855c7acc2cf0fdd2af633c",
-      "raw_excerpt": ""
-    },
-    {
-      "market": "JP",
-      "code": "3099",
-      "ticker": "3099.T",
-      "name": "三越伊勢丹ホールディングス",
-      "event_date": "Sat, 14 Nov 2026",
-      "event_type": "disclosure",
-      "title": "三越伊勢丹ホールディングス ホテル事業へ参入 「伊勢丹新宿本店」近くの新宿五丁目にアールデコ様式の外観のホテルを建設！ - 東京・大阪 都心上空ヘリコプター遊覧飛行",
-      "summary": "Secondary news detection only; verify with primary source before acting.",
-      "source": "Google News RSS",
-      "source_url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9lMDJzWDBKMkJ6a2ZTNE9QQVJaUVZHRGdvSUtRZWx6UmgzZ2Ntb1dYTEdlaTcwQzB4clhkN0J0bzA2eE9xRXk3U1A4dmVvZ01zRG1RbmdmcHpYcUhDa2FUQTFEeTc4c3VSVEpLeVQxU0ZjVEJCTFNOWVc1bTFOUQ?oc=5",
-      "source_tier": "secondary",
-      "data_status": "unverified",
-      "priority": "normal",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "event_id": "aadfd6ee03b894ce2f083281",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "event_id": "6f7d39dbf653b593c039f360",
       "raw_excerpt": ""
     }
   ],
@@ -2095,7 +2095,7 @@
     {
       "source": "TDnet",
       "status": "ok",
-      "fetched_at": "2026-11-18T03:44:11+00:00",
+      "fetched_at": "2026-11-18T16:29:49+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -2103,7 +2103,7 @@
     {
       "source": "EDINET",
       "status": "ok",
-      "fetched_at": "2026-11-18T03:44:13+00:00",
+      "fetched_at": "2026-11-18T16:29:51+00:00",
       "records": 38,
       "error": "",
       "source_tier": "primary"
@@ -2111,15 +2111,15 @@
     {
       "source": "SEC",
       "status": "ok",
-      "fetched_at": "2026-11-18T03:44:19+00:00",
-      "records": 38,
+      "fetched_at": "2026-11-18T16:29:56+00:00",
+      "records": 37,
       "error": "",
       "source_tier": "primary"
     },
     {
       "source": "CompanyIR",
       "status": "ok",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
+      "fetched_at": "2026-11-18T16:29:57+00:00",
       "records": 0,
       "error": "",
       "source_tier": "primary"
@@ -2127,15 +2127,15 @@
     {
       "source": "NewsRSS",
       "status": "ok",
-      "fetched_at": "2026-11-18T03:44:20+00:00",
-      "records": 56,
+      "fetched_at": "2026-11-18T16:29:57+00:00",
+      "records": 57,
       "error": "",
       "source_tier": "secondary"
     },
     {
       "source": "yfinance",
       "status": "ok",
-      "fetched_at": "2026-11-18T03:44:34+00:00",
+      "fetched_at": "2026-11-18T16:30:13+00:00",
       "records": 40,
       "error": "",
       "source_tier": "secondary"
@@ -2143,22 +2143,37 @@
   ],
   "supply_demand_context": {
     "version": "1.0.0",
-    "generated_at_utc": "2026-11-18T03:44:35+00:00",
-    "observed_date_jst": "2026-11-18",
+    "generated_at_utc": "2026-11-18T16:30:13+00:00",
+    "observed_date_jst": "2026-11-19",
     "data_status": "partial",
     "target_scope": "public watchlist plus screening leaders; private portfolio excluded",
     "target_count": 52,
     "status_counts": {
-      "ok": 37,
-      "partial": 3,
+      "ok": 39,
+      "partial": 1,
       "missing": 12
     },
     "coverage": {
-      "free_float_ratio": 0.7115384615384616,
+      "free_float_ratio": 0.75,
       "short_interest": 0.23076923076923078,
       "current_vs_average_volume": 0.7692307692307693
     },
     "notable_contexts": [
+      {
+        "market": "JP",
+        "code": "2585",
+        "ticker": "2585.T",
+        "name": "ライフドリンク カンパニー",
+        "data_status": "ok",
+        "confidence": 0.7,
+        "free_float_ratio": 0.730709994541764,
+        "avg_daily_float_turnover_ratio": 0.017204824149272914,
+        "current_volume_ratio_30d": 1.7556329301040268,
+        "short_percent_float": null,
+        "short_interest_change_ratio": null,
+        "days_to_cover": null,
+        "context_flags": "VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION"
+      },
       {
         "market": "US",
         "code": "CARE",
@@ -2167,8 +2182,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.9723200041510982,
-        "avg_daily_float_turnover_ratio": 0.010512893995952993,
-        "current_volume_ratio_30d": 0.6534269022513537,
+        "avg_daily_float_turnover_ratio": 0.01039146317954562,
+        "current_volume_ratio_30d": 0.1534719031272806,
         "short_percent_float": 0.1116,
         "short_interest_change_ratio": -0.09308143830014548,
         "days_to_cover": 14.52,
@@ -2182,8 +2197,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.9795899993644965,
-        "avg_daily_float_turnover_ratio": 0.011465261648616852,
-        "current_volume_ratio_30d": 0.998334661695476,
+        "avg_daily_float_turnover_ratio": 0.01140959789532878,
+        "current_volume_ratio_30d": 0.19422042261706676,
         "short_percent_float": 0.0722,
         "short_interest_change_ratio": 0.05106559688324608,
         "days_to_cover": 5.61,
@@ -2197,12 +2212,27 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.8989499978394966,
-        "avg_daily_float_turnover_ratio": 0.032180167892256584,
-        "current_volume_ratio_30d": 0.7807413404123809,
+        "avg_daily_float_turnover_ratio": 0.032279324305205866,
+        "current_volume_ratio_30d": 0.2811396784501864,
         "short_percent_float": 0.1173,
         "short_interest_change_ratio": 0.1088149263958833,
         "days_to_cover": 3.1,
         "context_flags": "HIGH_FLOAT_TURNOVER|SHORT_CROWDING"
+      },
+      {
+        "market": "JP",
+        "code": "3932",
+        "ticker": "3932.T",
+        "name": "Akatsuki Inc.",
+        "data_status": "ok",
+        "confidence": 0.7,
+        "free_float_ratio": 0.23043558949687712,
+        "avg_daily_float_turnover_ratio": 0.03926826544252463,
+        "current_volume_ratio_30d": 0.7399742218330665,
+        "short_percent_float": null,
+        "short_interest_change_ratio": null,
+        "days_to_cover": null,
+        "context_flags": "TIGHT_FLOAT|HIGH_FLOAT_TURNOVER|TIGHT_FLOAT_HIGH_TURNOVER"
       },
       {
         "market": "US",
@@ -2212,11 +2242,26 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.9672599990505486,
-        "avg_daily_float_turnover_ratio": 0.009893370102974058,
-        "current_volume_ratio_30d": 1.086805596244865,
+        "avg_daily_float_turnover_ratio": 0.00994196002898907,
+        "current_volume_ratio_30d": 0.2980096840190363,
         "short_percent_float": 0.0617,
         "short_interest_change_ratio": -0.024519454968737864,
         "days_to_cover": 5.83,
+        "context_flags": "SHORT_CROWDING"
+      },
+      {
+        "market": "US",
+        "code": "WSBC",
+        "ticker": "WSBC",
+        "name": "WesBanco, Inc. - Common Stock",
+        "data_status": "ok",
+        "confidence": 0.7,
+        "free_float_ratio": 0.9646000051653836,
+        "avg_daily_float_turnover_ratio": 0.008810067960326375,
+        "current_volume_ratio_30d": 0.11987740590903519,
+        "short_percent_float": 0.0753,
+        "short_interest_change_ratio": 0.09964432261731115,
+        "days_to_cover": 9.28,
         "context_flags": "SHORT_CROWDING"
       },
       {
@@ -2227,27 +2272,12 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.2765400003891844,
-        "avg_daily_float_turnover_ratio": 0.012051149094151484,
-        "current_volume_ratio_30d": 0.4440302795254101,
+        "avg_daily_float_turnover_ratio": 0.012097703231149221,
+        "current_volume_ratio_30d": 1.038284157178872,
         "short_percent_float": null,
         "short_interest_change_ratio": null,
         "days_to_cover": null,
         "context_flags": "TIGHT_FLOAT"
-      },
-      {
-        "market": "US",
-        "code": "STNG",
-        "ticker": "STNG",
-        "name": "Scorpio Tankers Inc. Common Shares",
-        "data_status": "ok",
-        "confidence": 0.7,
-        "free_float_ratio": 0.7738882967434016,
-        "avg_daily_float_turnover_ratio": 0.0254252254497136,
-        "current_volume_ratio_30d": 0.4902859780984277,
-        "short_percent_float": 0.0375,
-        "short_interest_change_ratio": -0.09085725444643311,
-        "days_to_cover": 1.4,
-        "context_flags": "HIGH_FLOAT_TURNOVER"
       },
       {
         "market": "JP",
@@ -2257,8 +2287,8 @@
         "data_status": "ok",
         "confidence": 0.7,
         "free_float_ratio": 0.6926299764025272,
-        "avg_daily_float_turnover_ratio": 0.0058513683763102686,
-        "current_volume_ratio_30d": 2.1152575743837514,
+        "avg_daily_float_turnover_ratio": 0.005823324616524323,
+        "current_volume_ratio_30d": 2.577084770470253,
         "short_percent_float": null,
         "short_interest_change_ratio": null,
         "days_to_cover": null,
@@ -2266,48 +2296,18 @@
       },
       {
         "market": "US",
-        "code": "MRP",
-        "ticker": "MRP",
-        "name": "Millrose Properties, Inc. Class A Common Stock",
+        "code": "STNG",
+        "ticker": "STNG",
+        "name": "Scorpio Tankers Inc. Common Shares",
         "data_status": "ok",
         "confidence": 0.7,
-        "free_float_ratio": 0.9927145255408554,
-        "avg_daily_float_turnover_ratio": 0.015538544849086105,
-        "current_volume_ratio_30d": 0.5327985755485134,
-        "short_percent_float": 0.0805,
-        "short_interest_change_ratio": 0.2754974508692045,
-        "days_to_cover": 2.81,
-        "context_flags": "SHORT_INTEREST_RISING"
-      },
-      {
-        "market": "US",
-        "code": "TRMD",
-        "ticker": "TRMD",
-        "name": "TORM plc - Class A Common Stock",
-        "data_status": "ok",
-        "confidence": 0.7,
-        "free_float_ratio": 0.8001621427798268,
-        "avg_daily_float_turnover_ratio": 0.020857454987887398,
-        "current_volume_ratio_30d": 0.5581586684066104,
-        "short_percent_float": 0.0183,
-        "short_interest_change_ratio": -0.24815297087223043,
-        "days_to_cover": 0.57,
-        "context_flags": "HIGH_FLOAT_TURNOVER|SHORT_INTEREST_FALLING"
-      },
-      {
-        "market": "US",
-        "code": "SFNC",
-        "ticker": "SFNC",
-        "name": "Simmons First National Corporation - Common Stock",
-        "data_status": "ok",
-        "confidence": 0.7,
-        "free_float_ratio": 0.986189997263738,
-        "avg_daily_float_turnover_ratio": 0.010927924294863034,
-        "current_volume_ratio_30d": 0.8430670577872262,
-        "short_percent_float": 0.0754,
-        "short_interest_change_ratio": 0.28549610499287437,
-        "days_to_cover": 4.28,
-        "context_flags": "SHORT_INTEREST_RISING"
+        "free_float_ratio": 0.7738882967434016,
+        "avg_daily_float_turnover_ratio": 0.025369772947046274,
+        "current_volume_ratio_30d": 0.2872782569676422,
+        "short_percent_float": 0.0375,
+        "short_interest_change_ratio": -0.09085725444643311,
+        "days_to_cover": 1.4,
+        "context_flags": "HIGH_FLOAT_TURNOVER"
       }
     ],
     "thresholds": {

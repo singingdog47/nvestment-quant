@@ -4,21 +4,21 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**DEFENSIVE**、総合スコアは37.0です。
+市場レジームは**DEFENSIVE**、総合スコアは36.0です。
 地合いの分類は変わっていませんが、流動性が前回より低下しています。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：-2.7ポイント
-- トレンド：-0.7ポイント
-- 市場参加の広がり：-2.8ポイント
-- 流動性：-7.7ポイント
-- 上位候補に大きな順位上昇はなく、新しい強いトレンドが出たというより、既存の選好が続いています。
+- 総合スコア：-1.4ポイント
+- トレンド：-1.8ポイント
+- 市場参加の広がり：-0.3ポイント
+- 流動性：-5.2ポイント
+- Lincoln National Corporation Common Stockの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
-日本はFinancialsが6銘柄。米国はFinancialsが11銘柄、Shippingが5銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
-米国債金利の実現ボラは年率107.3bp、過去観測の上位0%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
+日本はFinancialsが6銘柄。米国はFinancialsが12銘柄、Shippingが5銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
+米国債金利の実現ボラは年率106.2bp、過去観測の上位1%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## SQ・短期需給
@@ -28,19 +28,19 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 個別銘柄の需給
 
-監視対象の浮動株比率カバレッジは71.2%、空売り需給は23.1%、当日出来高比較は76.9%です。 例外観測はCarter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、LTC Properties, Inc. Common Stock（SHORT_CROWDING）、DHT Holdings, Inc.（HIGH_FLOAT_TURNOVER|SHORT_CROWDING）、First Busey Corporation - Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
+監視対象の浮動株比率カバレッジは75.0%、空売り需給は23.1%、当日出来高比較は76.9%です。 例外観測はライフドリンク カンパニー（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、Carter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、LTC Properties, Inc. Common Stock（SHORT_CROWDING）、DHT Holdings, Inc.（HIGH_FLOAT_TURNOVER|SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
 浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。
 
 ## 今日の注意点
 
-- **WARNING** 信越化学、自社株買いを500億円上積み 27年3月期の還元総額3000億円へ - BigGo ファイナンス — 売買指示ではなく確認対象です。
-- **WARNING** 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
-- **WARNING** Thin liquidity flag active — 売買指示ではなく確認対象です。
-- **WARNING** Treasury yield volatility is unusually high — 売買指示ではなく確認対象です。
+- **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
+- **WARNING** 信越化学工業[4063]：2027年３月期 第１四半期決算短信〔日本基準〕（連結） 2026年7月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** SEC 8-K filing — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：Toranvia Co.,Ltd.、Strike Group Co.,Ltd.、MIZUHO MEDY CO.,LTD.、ELECOM CO.,LTD.
+- 日本：Strike Group Co.,Ltd.、MIZUHO MEDY CO.,LTD.、Mito Securities Co.,Ltd.、ELECOM CO.,LTD.
 - 米国：Carter Bankshares, Inc. - Common Stock、LTC Properties, Inc. Common Stock、Horizon Bancorp, Inc. - Common Stock、Scorpio Tankers Inc. Common Shares
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
@@ -57,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは36.7点だが確認閾値未達
-- 上位: スタンダード 36.7 / 金（ゴールド） 34.8 / テクノロジー 32.2
+- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは38.2点だが確認閾値未達
+- 上位: スタンダード 38.2 / テクノロジー 33.8 / 金（ゴールド） 31.6
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は83.8%。9528銘柄中5228銘柄を採点し、価格欠損率は9.3%です。
+データ品質は83.8%。9527銘柄中5229銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-11-17T16:57:18+00:00
+生成時刻（UTC）：2026-11-18T16:31:31+00:00
