@@ -1,9 +1,9 @@
 {
   "change_gate": {
     "basis": "benchmark_relative_observations",
-    "benchmark_relative_observations": 1080,
+    "benchmark_relative_observations": 1095,
     "eligible_for_model_change_review": true,
-    "matured_observations": 1080,
+    "matured_observations": 1095,
     "minimum_required": 60,
     "rule": "Even when eligible, factor weights must not change automatically; require explicit human review, robustness checks, and a version bump."
   },
@@ -12,7 +12,7 @@
       "dimension": "action",
       "message": "Benchmark-relative performance is historically weak; review assumptions before increasing its influence.",
       "metric": "excess_return",
-      "n": 437,
+      "n": 452,
       "segment": "REVIEW|1m",
       "severity": "WATCH"
     },
@@ -36,7 +36,7 @@
       "dimension": "regime",
       "message": "Benchmark-relative performance is historically weak; review assumptions before increasing its influence.",
       "metric": "excess_return",
-      "n": 20,
+      "n": 35,
       "segment": "NEUTRAL|1m",
       "severity": "WATCH"
     },
@@ -52,7 +52,7 @@
       "dimension": "rank_bucket",
       "message": "Benchmark-relative performance is historically weak; review assumptions before increasing its influence.",
       "metric": "excess_return",
-      "n": 93,
+      "n": 96,
       "segment": "top1|1m",
       "severity": "WATCH"
     },
@@ -66,17 +66,9 @@
     },
     {
       "dimension": "rank_bucket",
-      "message": "Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.",
-      "metric": "excess_return",
-      "n": 188,
-      "segment": "top10|1m",
-      "severity": "INFO"
-    },
-    {
-      "dimension": "rank_bucket",
       "message": "Benchmark-relative performance is historically weak; review assumptions before increasing its influence.",
       "metric": "excess_return",
-      "n": 186,
+      "n": 189,
       "segment": "top3|1m",
       "severity": "WATCH"
     },
@@ -89,27 +81,27 @@
       "severity": "INFO"
     }
   ],
-  "generated_at": "2026-11-18T16:30:18+00:00",
+  "generated_at": "2026-11-19T16:37:03+00:00",
   "known_limits": [
     "Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.",
     "Pre-v2.1 outcome rows may have blank benchmark fields and are excluded from benchmark-relative findings until new relative observations mature.",
     "Small samples can create false patterns; segment findings are suppressed below the minimum benchmark-relative sample threshold.",
     "The engine proposes review targets only and never changes weights or places orders automatically."
   ],
-  "rows": 1080,
+  "rows": 1095,
   "segments": {
     "action": {
       "REVIEW|1m": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 437,
-        "mean_excess_return": -0.0088963523493689,
-        "mean_max_down": -0.07210797479080581,
-        "mean_return": -0.01985658543524817,
-        "median_excess_return": -0.012231410963910339,
-        "median_return": -0.02481248165428873,
-        "n": 437,
-        "outperform_rate": 0.4233409610983982,
-        "win_rate": 0.33867276887871856
+        "benchmark_n": 452,
+        "mean_excess_return": -0.00846826046787332,
+        "mean_max_down": -0.07166247216950562,
+        "mean_return": -0.020723046291060407,
+        "median_excess_return": -0.012211901284968296,
+        "median_return": -0.02682035653830933,
+        "n": 452,
+        "outperform_rate": 0.4269911504424779,
+        "win_rate": 0.334070796460177
       },
       "REVIEW|1w": {
         "benchmark_coverage": 1.0,
@@ -151,15 +143,15 @@
     "horizon": {
       "1m": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 467,
-        "mean_excess_return": -0.00948887317229157,
-        "mean_max_down": -0.07117057765954178,
-        "mean_return": -0.01942360954952321,
-        "median_excess_return": -0.012231410963910339,
-        "median_return": -0.022287341804721028,
-        "n": 467,
-        "outperform_rate": 0.4282655246252677,
-        "win_rate": 0.3490364025695932
+        "benchmark_n": 482,
+        "mean_excess_return": -0.00906898656901389,
+        "mean_max_down": -0.07078197552705479,
+        "mean_return": -0.020249615659716162,
+        "median_excess_return": -0.012211901284968296,
+        "median_return": -0.022933607187431593,
+        "n": 482,
+        "outperform_rate": 0.4315352697095436,
+        "win_rate": 0.34439834024896265
       },
       "1w": {
         "benchmark_coverage": 1.0,
@@ -177,15 +169,15 @@
     "model_version": {
       "1.7.0|1m": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 467,
-        "mean_excess_return": -0.00948887317229157,
-        "mean_max_down": -0.07117057765954178,
-        "mean_return": -0.01942360954952321,
-        "median_excess_return": -0.012231410963910339,
-        "median_return": -0.022287341804721028,
-        "n": 467,
-        "outperform_rate": 0.4282655246252677,
-        "win_rate": 0.3490364025695932
+        "benchmark_n": 482,
+        "mean_excess_return": -0.00906898656901389,
+        "mean_max_down": -0.07078197552705479,
+        "mean_return": -0.020249615659716162,
+        "median_excess_return": -0.012211901284968296,
+        "median_return": -0.022933607187431593,
+        "n": 482,
+        "outperform_rate": 0.4315352697095436,
+        "win_rate": 0.34439834024896265
       },
       "1.7.0|1w": {
         "benchmark_coverage": 1.0,
@@ -203,15 +195,15 @@
     "rank_bucket": {
       "top10|1m": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 188,
-        "mean_excess_return": 0.025947890856192188,
-        "mean_max_down": -0.04814033589569776,
-        "mean_return": 0.016087771392499315,
-        "median_excess_return": 0.010864923305981822,
-        "median_return": 0.0006822344862136287,
-        "n": 188,
-        "outperform_rate": 0.5585106382978723,
-        "win_rate": 0.5053191489361702
+        "benchmark_n": 197,
+        "mean_excess_return": 0.024119638936151135,
+        "mean_max_down": -0.04945721312957837,
+        "mean_return": 0.012427781196105452,
+        "median_excess_return": 0.008920509975831048,
+        "median_return": -0.0026804316237504233,
+        "n": 197,
+        "outperform_rate": 0.5431472081218274,
+        "win_rate": 0.48223350253807107
       },
       "top10|1w": {
         "benchmark_coverage": 1.0,
@@ -227,15 +219,15 @@
       },
       "top1|1m": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 93,
-        "mean_excess_return": -0.04414268895744733,
-        "mean_max_down": -0.07026171544412158,
-        "mean_return": -0.05412668205291406,
-        "median_excess_return": -0.02997682632670462,
-        "median_return": -0.03547429653013334,
-        "n": 93,
-        "outperform_rate": 0.22580645161290322,
-        "win_rate": 0.06451612903225806
+        "benchmark_n": 96,
+        "mean_excess_return": -0.042671532833360865,
+        "mean_max_down": -0.06982630860133594,
+        "mean_return": -0.05390531413885727,
+        "median_excess_return": -0.0291047301246109,
+        "median_return": -0.03638117128770901,
+        "n": 96,
+        "outperform_rate": 0.25,
+        "win_rate": 0.0625
       },
       "top1|1w": {
         "benchmark_coverage": 1.0,
@@ -251,15 +243,15 @@
       },
       "top3|1m": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 186,
-        "mean_excess_return": -0.027979769781622008,
-        "mean_max_down": -0.0949028875393093,
-        "mean_return": -0.037965297045678505,
-        "median_excess_return": -0.02694591745267505,
+        "benchmark_n": 189,
+        "mean_excess_return": -0.02659446161208373,
+        "mean_max_down": -0.09349479149092708,
+        "mean_return": -0.03721522479516226,
+        "median_excess_return": -0.0246939919424215,
         "median_return": -0.03931036948966382,
-        "n": 186,
-        "outperform_rate": 0.3978494623655914,
-        "win_rate": 0.3333333333333333
+        "n": 189,
+        "outperform_rate": 0.4074074074074074,
+        "win_rate": 0.3439153439153439
       },
       "top3|1w": {
         "benchmark_coverage": 1.0,
@@ -313,15 +305,15 @@
       },
       "NEUTRAL|1m": {
         "benchmark_coverage": 1.0,
-        "benchmark_n": 20,
-        "mean_excess_return": -0.03965106795474775,
-        "mean_max_down": -0.07930884010842024,
-        "mean_return": -0.02752042577649711,
-        "median_excess_return": -0.04848343035042191,
-        "median_return": -0.03509187133131253,
-        "n": 20,
-        "outperform_rate": 0.2,
-        "win_rate": 0.25
+        "benchmark_n": 35,
+        "mean_excess_return": -0.020941974682842465,
+        "mean_max_down": -0.07046940683436571,
+        "mean_return": -0.03542564582530842,
+        "median_excess_return": -0.01989468897833968,
+        "median_return": -0.04704290880309692,
+        "n": 35,
+        "outperform_rate": 0.34285714285714286,
+        "win_rate": 0.22857142857142856
       },
       "NEUTRAL|1w": {
         "benchmark_coverage": 1.0,

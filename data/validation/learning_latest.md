@@ -1,25 +1,24 @@
 # Investment Quant Validation Learning v2.1
 
-Generated: 2026-11-18T16:30:18+00:00
+Generated: 2026-11-19T16:37:03+00:00
 
 This is a diagnostic learning layer. It does not automatically change factor weights or issue orders.
 
 ## Model-change gate
-- Matured absolute-return observations: 1080
-- Benchmark-relative observations: 1080
+- Matured absolute-return observations: 1095
+- Benchmark-relative observations: 1095
 - Minimum benchmark-relative observations for review: 60
 - Eligible for human model-change review: True
 
 ## Findings
-- [WATCH] action / REVIEW|1m (n=437): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] action / REVIEW|1m (n=452): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] action / REVIEW|1w (n=601): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] regime / CONSTRUCTIVE|1m (n=437): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] regime / NEUTRAL|1m (n=20): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] regime / NEUTRAL|1m (n=35): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] regime / NEUTRAL|1w (n=170): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] rank_bucket / top1|1m (n=93): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top1|1m (n=96): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] rank_bucket / top1|1w (n=125): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [INFO] rank_bucket / top10|1m (n=188): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
-- [WATCH] rank_bucket / top3|1m (n=186): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top3|1m (n=189): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [INFO] rank_bucket / top3|1w (n=240): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## Known limits
