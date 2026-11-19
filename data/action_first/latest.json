@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-19T20:48:18.871669+00:00",
+  "generated_at_utc": "2026-11-19T22:41:58.473377+00:00",
   "risk_level": "CRITICAL",
   "market_decision": "RISK_REDUCTION_REVIEW",
   "risk_drivers": [
@@ -26,44 +26,44 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-19T20:38:15+00:00",
-      "age_minutes": 10.1,
-      "price": 58035.0,
+      "as_of_utc": "2026-11-19T21:59:59+00:00",
+      "age_minutes": 42.0,
+      "price": 57835.0,
       "previous_close": 59205.0,
-      "change_pct": -1.976
+      "change_pct": -2.314
     },
     "NASDAQ": {
       "name": "NASDAQ",
       "ticker": "^IXIC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-19T20:48:15+00:00",
-      "age_minutes": 0.1,
-      "price": 23917.918,
+      "as_of_utc": "2026-11-19T22:15:59+00:00",
+      "age_minutes": 26.0,
+      "price": 23879.2,
       "previous_close": 25366.09,
-      "change_pct": -5.709
+      "change_pct": -5.862
     },
     "SP500": {
       "name": "SP500",
       "ticker": "^GSPC",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-19T20:48:17+00:00",
-      "age_minutes": 0.0,
-      "price": 7183.36,
+      "as_of_utc": "2026-11-19T21:59:18+00:00",
+      "age_minutes": 42.7,
+      "price": 7175.83,
       "previous_close": 7592.4,
-      "change_pct": -5.387
+      "change_pct": -5.487
     },
     "VIX": {
       "name": "VIX",
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-19T20:33:16+00:00",
-      "age_minutes": 15.0,
-      "price": 28.34,
+      "as_of_utc": "2026-11-19T21:15:01+00:00",
+      "age_minutes": 87.0,
+      "price": 28.44,
       "previous_close": 19.3,
-      "change_pct": 46.839
+      "change_pct": 47.358
     }
   },
   "recommended_actions": [
