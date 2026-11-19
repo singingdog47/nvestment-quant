@@ -1,14 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-19T03:44:08.331836+00:00",
-  "risk_level": "CRITICAL",
+  "generated_at_utc": "2026-11-19T07:37:56.052952+00:00",
+  "risk_level": "DEFENSIVE",
   "market_decision": "RISK_REDUCTION_REVIEW",
   "risk_drivers": [
-    "日経円建て先物とNASDAQが同時に-3%以下",
-    "日経円建て先物(CME)が-3%以下",
     "NASDAQが-3%以下",
     "S&P500が-2.5%以下",
-    "日経円建て先物(CME)が-1.5%以下",
     "NASDAQが-2%以下",
     "S&P500が-1.5%以下",
     "VIXが20以上"
@@ -25,11 +22,11 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-19T03:33:58+00:00",
-      "age_minutes": 10.2,
-      "price": 59150.0,
-      "previous_close": 61065.0,
-      "change_pct": -3.136
+      "as_of_utc": "2026-11-19T07:27:29+00:00",
+      "age_minutes": 10.5,
+      "price": 59975.0,
+      "previous_close": 59205.0,
+      "change_pct": 1.301
     },
     "NASDAQ": {
       "name": "NASDAQ",
@@ -37,7 +34,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-18T22:15:59+00:00",
-      "age_minutes": 328.2,
+      "age_minutes": 562.0,
       "price": 24429.885,
       "previous_close": 25466.19,
       "change_pct": -4.069
@@ -48,7 +45,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-18T21:57:25+00:00",
-      "age_minutes": 346.7,
+      "age_minutes": 580.5,
       "price": 7323.63,
       "previous_close": 7619.38,
       "change_pct": -3.882
@@ -59,17 +56,16 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-18T21:15:01+00:00",
-      "age_minutes": 389.1,
+      "age_minutes": 622.9,
       "price": 24.56,
       "previous_close": 18.7,
       "change_pct": 31.337
     }
   },
   "recommended_actions": [
-    "新規買い停止",
-    "既存買い指値の取消を優先審査",
-    "下落に弱い保有銘柄の利益確定・縮小を寄り前に審査",
-    "防衛資金維持"
+    "新規買い原則停止",
+    "未約定買い注文を再評価",
+    "保有銘柄の撤退条件と売却数量を決定"
   ],
   "execution": "ADVISORY_ONLY",
   "private_portfolio_used": false,
