@@ -1,6 +1,6 @@
 # Investment Quant Validation Report v2.1
 
-Generated: 2026-11-20T16:12:00+00:00
+Generated: 2026-11-23T19:18:09+00:00
 
 This report evaluates recorded decisions ex post. It is diagnostic evidence, not a trading instruction.
 Benchmark-relative metrics are preferred for judging signal quality; missing benchmark data is not imputed.
@@ -9,18 +9,19 @@ Benchmark-relative metrics are preferred for judging signal quality; missing ben
 
 | Horizon | N | Avg return | Win rate | Benchmark N | Avg excess return | Outperform rate |
 |---|---:|---:|---:|---:|---:|---:|
-| 1w | 613 | -0.34% | 46.98% | 613 | -0.33% | 46.00% |
-| 1m | 487 | -2.05% | 34.29% | 487 | -0.86% | 43.53% |
-| 3m | 0 | n/a | n/a | 0 | n/a | n/a |
+| 1w | 618 | -0.36% | 46.60% | 618 | -0.33% | 45.95% |
+| 1m | 502 | -2.26% | 33.27% | 502 | -0.94% | 43.03% |
+| 3m | 30 | -9.87% | 50.00% | 30 | -4.75% | 50.00% |
 
 ## Outcome by market regime
 
 | Regime | Horizon | N | Avg return | Benchmark N | Avg excess | Outperform |
 |---|---|---:|---:|---:|---:|---:|
-| CONSTRUCTIVE | 1m | 437 | -1.92% | 437 | -0.83% | 43.25% |
+| CONSTRUCTIVE | 1m | 442 | -2.00% | 442 | -0.87% | 42.99% |
 | CONSTRUCTIVE | 1w | 434 | 0.14% | 434 | -0.12% | 47.93% |
-| DEFENSIVE | 1w | 4 | -0.45% | 4 | 0.63% | 50.00% |
-| NEUTRAL | 1m | 40 | -3.69% | 40 | -1.36% | 40.00% |
+| CONSTRUCTIVE | 3m | 30 | -9.87% | 30 | -4.75% | 50.00% |
+| DEFENSIVE | 1w | 9 | -1.72% | 9 | 0.00% | 44.44% |
+| NEUTRAL | 1m | 50 | -4.67% | 50 | -1.73% | 38.00% |
 | NEUTRAL | 1w | 170 | -1.69% | 170 | -1.00% | 40.00% |
 | RISK_ON | 1m | 10 | -1.42% | 10 | -0.27% | 70.00% |
 | RISK_ON | 1w | 5 | 4.42% | 5 | 3.45% | 80.00% |
@@ -29,10 +30,12 @@ Benchmark-relative metrics are preferred for judging signal quality; missing ben
 
 | Action | Horizon | N | Avg return | Benchmark N | Avg excess | Outperform |
 |---|---|---:|---:|---:|---:|---:|
-| REVIEW | 1m | 457 | -2.10% | 457 | -0.80% | 43.11% |
-| REVIEW | 1w | 601 | -0.42% | 601 | -0.37% | 44.93% |
+| REVIEW | 1m | 472 | -2.32% | 472 | -0.89% | 42.58% |
+| REVIEW | 1w | 606 | -0.44% | 606 | -0.37% | 44.88% |
+| REVIEW | 3m | 12 | -9.64% | 12 | -4.34% | 50.00% |
 | WAIT_DATA_QUALITY | 1m | 30 | -1.31% | 30 | -1.81% | 50.00% |
 | WAIT_DATA_QUALITY | 1w | 12 | 4.05% | 12 | 1.98% | 100.00% |
+| WAIT_DATA_QUALITY | 3m | 18 | -10.02% | 18 | -5.03% | 50.00% |
 
 ## Interpretation guardrails
 

@@ -19,13 +19,12 @@ code,ticker,name,source,document_id,filed_date,status,net_sales_jpy,operating_in
 8704,8704.T,"TRADERS HOLDINGS CO.,LTD.",screening,,,missing,0,0,0,0,0,0
 3252,3252.T,"JINUSHI Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
 8892,8892.T,ES-CON JAPAN Ltd.,screening,,,missing,0,0,0,0,0,0
-2121,2121.T,"MIXI,Inc.",screening,S100YE1D,2026-06-19,complete,1,1,1,1,1,1
 3932,3932.T,Akatsuki Inc.,screening,S100YLRB,2026-06-26,complete,1,1,1,1,1,1
 4507,4507.T,"Shionogi & Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
-9639,9639.T,"SANKYO FRONTIER CO.,LTD.",screening,,,missing,0,0,0,0,0,0
-4771,4771.T,"F&M CO.,LTD.",screening,,,missing,0,0,0,0,0,0
-5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",screening,S100YFV6,2026-06-22,complete,1,1,1,1,1,1
+2121,2121.T,"MIXI,Inc.",screening,S100YE1D,2026-06-19,complete,1,1,1,1,1,1
 8739,8739.T,"SPARX Group Co.,Ltd.",screening,,,missing,0,0,0,0,0,0
+5351,5351.T,"SHINAGAWA REFRA CO.,LTD.",screening,S100YFV6,2026-06-22,complete,1,1,1,1,1,1
+9639,9639.T,"SANKYO FRONTIER CO.,LTD.",screening,,,missing,0,0,0,0,0,0
 2726,2726.T,パルグループホールディングス,watchlist,,,missing,0,0,0,0,0,0
 215A,215A.T,タイミー,watchlist,,,missing,0,0,0,0,0,0
 4996,4996.T,クミアイ化学工業,watchlist,S100XH23,2026-01-27,complete,1,1,1,1,1,1

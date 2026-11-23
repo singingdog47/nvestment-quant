@@ -254,6 +254,94 @@
           "symbol": "8707.T"
         }
       ]
+    },
+    "3m": {
+      "average_benchmark_return": -0.04988130698479561,
+      "average_excess_return": -0.05030343346709032,
+      "average_return": -0.10018474045188593,
+      "benchmark_coverage_n": 6,
+      "evaluated_at": "2026-11-23T19:17:30+00:00",
+      "n": 6,
+      "symbols": [
+        {
+          "benchmark_return": -0.04990788772328125,
+          "benchmark_symbol": "SPY",
+          "end_price": 28.459999084472656,
+          "evaluated_price_date": "2026-11-23",
+          "excess_return": -0.030596129346376233,
+          "max_down": -0.08306502029717844,
+          "max_up": 0.03187379545682134,
+          "rank": 1.0,
+          "return": -0.08050401706965749,
+          "start_price": 30.951738357543945,
+          "symbol": "CARE"
+        },
+        {
+          "benchmark_return": -0.04987599083709848,
+          "benchmark_symbol": "SPY",
+          "end_price": 100.04499816894531,
+          "evaluated_price_date": "2026-11-23",
+          "excess_return": 0.1015927514261099,
+          "max_down": -0.06283144610414959,
+          "max_up": 0.31447515731722087,
+          "rank": 2.0,
+          "return": 0.051716760589011423,
+          "start_price": 95.12541961669922,
+          "symbol": "INSW"
+        },
+        {
+          "benchmark_return": -0.04987599083709848,
+          "benchmark_symbol": "SPY",
+          "end_price": 24.93000030517578,
+          "evaluated_price_date": "2026-11-23",
+          "excess_return": -0.10591509308180835,
+          "max_down": -0.2814234897602732,
+          "max_up": 0.04949193743508018,
+          "rank": 3.0,
+          "return": -0.15579108391890684,
+          "start_price": 29.53060531616211,
+          "symbol": "MRP"
+        },
+        {
+          "benchmark_return": -0.04987599083709848,
+          "benchmark_symbol": "SPY",
+          "end_price": 20.924999237060547,
+          "evaluated_price_date": "2026-11-23",
+          "excess_return": 0.11098146576934265,
+          "max_down": -0.07099389793498556,
+          "max_up": 0.3483773366351486,
+          "rank": 4.0,
+          "return": 0.061105474932244164,
+          "start_price": 19.719999313354492,
+          "symbol": "DHT"
+        },
+        {
+          "benchmark_return": -0.04987599083709848,
+          "benchmark_symbol": "SPY",
+          "end_price": 34.119998931884766,
+          "evaluated_price_date": "2026-11-23",
+          "excess_return": 0.06008646186980138,
+          "max_down": -0.031084995962254114,
+          "max_up": 0.10080969510783322,
+          "rank": 5.0,
+          "return": 0.010210471032702895,
+          "start_price": 33.77513885498047,
+          "symbol": "NWFL"
+        },
+        {
+          "benchmark_return": -0.04987599083709848,
+          "benchmark_symbol": "SPY",
+          "end_price": 4.880000114440918,
+          "evaluated_price_date": "2026-11-23",
+          "excess_return": -0.43797005743961126,
+          "max_down": -0.5088359938650233,
+          "max_up": 0.0,
+          "rank": 8.0,
+          "return": -0.48784604827670974,
+          "start_price": 9.528385162353516,
+          "symbol": "ADAM"
+        }
+      ]
     }
   },
   "policy_guardrails": {
