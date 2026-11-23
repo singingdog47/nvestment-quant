@@ -1,10 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-23T02:56:17.084445+00:00",
-  "risk_level": "CRITICAL",
+  "generated_at_utc": "2026-11-23T07:52:42.861061+00:00",
+  "risk_level": "DEFENSIVE",
   "market_decision": "RISK_REDUCTION_REVIEW",
   "risk_drivers": [
-    "日経円建て先物(CME)が-5%以下",
     "日経円建て先物(CME)が-3%以下",
     "日経円建て先物(CME)が-1.5%以下"
   ],
@@ -17,11 +16,11 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-23T02:46:06+00:00",
-      "age_minutes": 10.2,
-      "price": 55725.0,
-      "previous_close": 58890.0,
-      "change_pct": -5.374
+      "as_of_utc": "2026-11-23T07:42:37+00:00",
+      "age_minutes": 10.1,
+      "price": 56210.0,
+      "previous_close": 58835.0,
+      "change_pct": -4.462
     },
     "NASDAQ": {
       "name": "NASDAQ",
@@ -29,7 +28,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-20T22:15:59+00:00",
-      "age_minutes": 3160.3,
+      "age_minutes": 3456.7,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "SP500": {
@@ -38,7 +37,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-20T21:35:54+00:00",
-      "age_minutes": 3200.4,
+      "age_minutes": 3496.8,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "VIX": {
@@ -47,15 +46,14 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-20T21:15:01+00:00",
-      "age_minutes": 3221.3,
+      "age_minutes": 3517.7,
       "reason": "stale or future timestamp; excluded from decisions"
     }
   },
   "recommended_actions": [
-    "新規買い停止",
-    "既存買い指値の取消を優先審査",
-    "下落に弱い保有銘柄の利益確定・縮小を寄り前に審査",
-    "防衛資金維持"
+    "新規買い原則停止",
+    "未約定買い注文を再評価",
+    "保有銘柄の撤退条件と売却数量を決定"
   ],
   "execution": "ADVISORY_ONLY",
   "private_portfolio_used": false,
