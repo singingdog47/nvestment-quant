@@ -1,19 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-22T21:07:43.061555+00:00",
-  "risk_level": "UNVERIFIED",
-  "market_decision": "VERIFY_DATA",
-  "risk_drivers": [],
-  "verified_feeds": [],
+  "generated_at_utc": "2026-11-23T02:56:17.084445+00:00",
+  "risk_level": "CRITICAL",
+  "market_decision": "RISK_REDUCTION_REVIEW",
+  "risk_drivers": [
+    "日経円建て先物(CME)が-5%以下",
+    "日経円建て先物(CME)が-3%以下",
+    "日経円建て先物(CME)が-1.5%以下"
+  ],
+  "verified_feeds": [
+    "NIKKEI_FUT"
+  ],
   "feeds": {
     "NIKKEI_FUT": {
       "name": "NIKKEI_FUT",
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
-      "status": "UNVERIFIED",
-      "as_of_utc": "2026-11-20T21:59:51+00:00",
-      "age_minutes": 2827.9,
-      "reason": "stale or future timestamp; excluded from decisions"
+      "status": "OK",
+      "as_of_utc": "2026-11-23T02:46:06+00:00",
+      "age_minutes": 10.2,
+      "price": 55725.0,
+      "previous_close": 58890.0,
+      "change_pct": -5.374
     },
     "NASDAQ": {
       "name": "NASDAQ",
@@ -21,7 +29,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-20T22:15:59+00:00",
-      "age_minutes": 2811.7,
+      "age_minutes": 3160.3,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "SP500": {
@@ -30,7 +38,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-20T21:35:54+00:00",
-      "age_minutes": 2851.8,
+      "age_minutes": 3200.4,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "VIX": {
@@ -39,13 +47,15 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-20T21:15:01+00:00",
-      "age_minutes": 2872.7,
+      "age_minutes": 3221.3,
       "reason": "stale or future timestamp; excluded from decisions"
     }
   },
   "recommended_actions": [
-    "データ未確認。安全と断定しない",
-    "板・取引所の先物・信頼できる現在値で照合"
+    "新規買い停止",
+    "既存買い指値の取消を優先審査",
+    "下落に弱い保有銘柄の利益確定・縮小を寄り前に審査",
+    "防衛資金維持"
   ],
   "execution": "ADVISORY_ONLY",
   "private_portfolio_used": false,
