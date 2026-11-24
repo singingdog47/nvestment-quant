@@ -4,21 +4,21 @@
 
 **新規購入より、既存ポジションのリスク確認を優先する日です。**
 
-市場レジームは**DEFENSIVE**、総合スコアは35.7です。
+市場レジームは**DEFENSIVE**、総合スコアは35.2です。
 地合いの分類は変わっていませんが、流動性が前回より低下しています。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
 
 ## 前回から何が変わった？
 
-- 総合スコア：-1.4ポイント
-- トレンド：+0.0ポイント
-- 市場参加の広がり：+0.0ポイント
-- 流動性：-17.7ポイント
-- Frontline Plc Ordinary Shares、SandRidge Energy, Inc. Common Stock、National Health Investors, Inc. Common Stockの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
+- 総合スコア：-1.7ポイント
+- トレンド：-0.0ポイント
+- 市場参加の広がり：+1.4ポイント
+- 流動性：-14.7ポイント
+- CMB.TECH NV Ordinary Sharesの順位上昇が目立ちます。材料と現在価格を確認する優先候補です。
 
 ## 今の相場を人間の言葉で
 
 日本はFinancialsが5銘柄。米国はFinancialsが10銘柄で、上位銘柄に偏りがあります。市場のストレスと参加の広がりを見ながら、個別銘柄を選別する局面です。
-米国債金利の実現ボラは年率100.3bp、過去観測の上位3%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
+米国債金利の実現ボラは年率99.4bp、過去観測の上位3%です。ICE MOVEではありませんが、金利ショックへの警戒が必要です。
 同じテーマの上位銘柄を複数買うと、銘柄数が増えても実質的な分散にならない点に注意してください。
 
 ## SQ・短期需給
@@ -28,20 +28,20 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 
 ## 個別銘柄の需給
 
-監視対象の浮動株比率カバレッジは75.0%、空売り需給は26.9%、当日出来高比較は76.9%です。 例外観測はKDDI（VOLUME_EXPANSION|PRICE_DOWN_ON_VOLUME_EXPANSION）、東京海上ホールディングス（TIGHT_FLOAT|HIGH_FLOAT_TURNOVER|TIGHT_FLOAT_HIGH_TURNOVER）、Carter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、LTC Properties, Inc. Common Stock（SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
+監視対象の浮動株比率カバレッジは75.0%、空売り需給は26.9%、当日出来高比較は76.9%です。 例外観測は東京海上ホールディングス（TIGHT_FLOAT|HIGH_FLOAT_TURNOVER|TIGHT_FLOAT_HIGH_TURNOVER）、Carter Bankshares, Inc. - Common Stock（SHORT_CROWDING）、LTC Properties, Inc. Common Stock（SHORT_CROWDING）、DHT Holdings, Inc.（HIGH_FLOAT_TURNOVER|SHORT_CROWDING）です。 これは方向予測ではなく、値動きの増幅と執行難易度を確認する補助情報です。
 浮動株・出来高・空売りの観測は、銘柄ランキング、ファンダメンタルズ評価、投資仮説を変更しません。
 
 ## 今日の注意点
 
-- **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
-- **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
-- **WARNING** SEC 10-Q filing — 売買指示ではなく確認対象です。
-- **WARNING** 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** 水戸証券[8622]：自己株式の取得状況および取得終了に関するお知らせ 2026年11月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 — 売買指示ではなく確認対象です。
+- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
+- **WARNING** SEC 6-K filing — 売買指示ではなく確認対象です。
 
 ## 調査の入口
 
-- 日本：MAEZAWA Holdings CO.,LTD.、Strike Group Co.,Ltd.、MIZUHO MEDY CO.,LTD.、ELECOM CO.,LTD.
-- 米国：Carter Bankshares, Inc. - Common Stock、LTC Properties, Inc. Common Stock、Scorpio Tankers Inc. Common Shares、Horizon Bancorp, Inc. - Common Stock
+- 日本：MAEZAWA Holdings CO.,LTD.、Strike Group Co.,Ltd.、MIZUHO MEDY CO.,LTD.、Mito Securities Co.,Ltd.
+- 米国：Carter Bankshares, Inc. - Common Stock、LTC Properties, Inc. Common Stock、Scorpio Tankers Inc. Common Shares、DHT Holdings, Inc.
 
 上記は買いリストではありません。現在価格、最新決算、開示、保有資産との重複を確認するための調査対象です。
 
@@ -57,15 +57,15 @@ SQは短期需給の補助レイヤーです。銘柄ランキング、ファン
 <!-- PAYPAY_SWING_START -->
 ## PayPay Swing
 
-- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは35.7点だが確認閾値未達
-- 上位: スタンダード 35.7 / 金（ゴールド） 32.6 / テクノロジー 31.5
+- 監視判定: **WAIT_RESEARCH** — 首位スタンダードは35.0点だが確認閾値未達
+- 上位: スタンダード 35.0 / 金（ゴールド） 31.4 / テクノロジー 30.0
 - 数か月スイングのため日次は監視、週次でまとめて再評価。WAITを常に有効な選択肢とします。
 - 暗号資産コースはスプレッド負担をコストスコアに反映しています。
 <!-- PAYPAY_SWING_END -->
 
 ## 判断の確からしさ
 
-データ品質は83.8%。9526銘柄中5213銘柄を採点し、価格欠損率は9.3%です。
+データ品質は83.0%。9527銘柄中5227銘柄を採点し、価格欠損率は9.3%です。
 公式財務データが不足する場合は、証券会社画面と企業の公式開示を確認するまで注文しません。
 
-生成時刻（UTC）：2026-11-23T19:19:10+00:00
+生成時刻（UTC）：2026-11-24T18:57:23+00:00

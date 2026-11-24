@@ -1,7 +1,7 @@
 ﻿source,status,fetched_at,records,error,source_tier
-TDnet,ok,2026-11-24T06:06:13+00:00,0,,primary
-EDINET,ok,2026-11-24T06:06:16+00:00,6,,primary
-SEC,ok,2026-11-24T06:06:20+00:00,37,,primary
-CompanyIR,ok,2026-11-24T06:06:23+00:00,0,,primary
-NewsRSS,ok,2026-11-24T06:06:23+00:00,54,,secondary
-yfinance,error,2026-11-24T06:06:31+00:00,0,3635.T:YFRateLimitError | 4063.T:YFRateLimitError | 9433.T:YFRateLimitError | 6701.T:YFRateLimitError | 6965.T:YFRateLimitError | 5032.T:YFRateLimitError | 2585.T:YFRateLimitError | 8766.T:YFRateLimitError | 3099.T:YFRateLimitError | 8377.T:YFRateLimitError | 8622.T:YFRateLimitError | 3563.T:YFRateLimitError | CARE:YFRateLimitError | 575A.T:YFRateLimitError | LTC:YFRateLimitError | 6196.T:YFRateLimitError | STNG:YFRateLimitError | HBNC:YFRateLimitError | 4595.T:YFRateLimitError | DHT:YFRateLimitError | 6750.T:YFRateLimitError | MRP:YFRateLimitError | 8624.T:YFRateLimitError | 8704.T:YFRateLimitError | TEN:YFRateLimitError | 3252.T:YFRateLimitError | 8892.T:YFRateLimitError | 3932.T:YFRateLimitError | 4507.T:YFRateLimitError | SD:YFRateLimitError | TRMD:YFRateLimitError | 2121.T:YFRateLimitError | FRO:YFRateLimitError | NHI:YFRateLimitError | EQBK:YFRateLimitError | IRWD:YFRateLimitError | 8739.T:YFRateLimitError | 5351.T:YFRateLimitError | CEPO:YFRateLimitError | 9639.T:YFRateLimitErro,secondary
+TDnet,ok,2026-11-24T18:55:39+00:00,0,,primary
+EDINET,ok,2026-11-24T18:55:42+00:00,6,,primary
+SEC,ok,2026-11-24T18:55:47+00:00,39,,primary
+CompanyIR,ok,2026-11-24T18:55:49+00:00,0,,primary
+NewsRSS,ok,2026-11-24T18:55:49+00:00,48,,secondary
+yfinance,ok,2026-11-24T18:56:06+00:00,40,,secondary

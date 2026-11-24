@@ -1,25 +1,25 @@
 {
-  "generated_at_utc": "2026-11-24T06:06:29+00:00",
+  "generated_at_utc": "2026-11-24T18:55:57+00:00",
   "population": "JP Company Intelligence targets; not whole-market screening",
   "target_count": 38,
-  "companies_with_any_primary_metric": 16,
-  "companies_with_all_six_metrics": 14,
-  "coverage_any": 0.42105263157894735,
+  "companies_with_any_primary_metric": 15,
+  "companies_with_all_six_metrics": 13,
+  "coverage_any": 0.39473684210526316,
   "metric_counts": {
-    "net_sales_jpy": 14,
-    "operating_income_jpy": 15,
-    "net_income_jpy": 16,
-    "operating_cash_flow_jpy": 16,
-    "assets_jpy": 16,
-    "liabilities_jpy": 16
+    "net_sales_jpy": 13,
+    "operating_income_jpy": 14,
+    "net_income_jpy": 15,
+    "operating_cash_flow_jpy": 15,
+    "assets_jpy": 15,
+    "liabilities_jpy": 15
   },
   "metric_coverage": {
-    "net_sales_jpy": 0.3684210526315789,
-    "operating_income_jpy": 0.39473684210526316,
-    "net_income_jpy": 0.42105263157894735,
-    "operating_cash_flow_jpy": 0.42105263157894735,
-    "assets_jpy": 0.42105263157894735,
-    "liabilities_jpy": 0.42105263157894735
+    "net_sales_jpy": 0.34210526315789475,
+    "operating_income_jpy": 0.3684210526315789,
+    "net_income_jpy": 0.39473684210526316,
+    "operating_cash_flow_jpy": 0.39473684210526316,
+    "assets_jpy": 0.39473684210526316,
+    "liabilities_jpy": 0.39473684210526316
   },
   "note": "A metric is covered only when a verified numeric primary observation exists."
 }

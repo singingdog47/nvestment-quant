@@ -1,25 +1,24 @@
 # Investment Quant Validation Learning v2.1
 
-Generated: 2026-11-23T19:18:09+00:00
+Generated: 2026-11-24T18:56:20+00:00
 
 This is a diagnostic learning layer. It does not automatically change factor weights or issue orders.
 
 ## Model-change gate
-- Matured absolute-return observations: 1150
-- Benchmark-relative observations: 1150
+- Matured absolute-return observations: 1160
+- Benchmark-relative observations: 1160
 - Minimum benchmark-relative observations for review: 60
 - Eligible for human model-change review: True
 
 ## Findings
 - [WATCH] action / REVIEW|1m (n=472): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] action / REVIEW|1w (n=606): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] regime / CONSTRUCTIVE|1m (n=442): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] regime / NEUTRAL|1m (n=50): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] regime / NEUTRAL|1w (n=170): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] rank_bucket / top1|1m (n=100): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [WATCH] rank_bucket / top1|1w (n=126): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
+- [WATCH] rank_bucket / top1|1w (n=127): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
 - [WATCH] rank_bucket / top3|1m (n=195): Benchmark-relative performance is historically weak; review assumptions before increasing its influence.
-- [INFO] rank_bucket / top3|1w (n=242): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
+- [INFO] rank_bucket / top3|1w (n=244): Benchmark-relative performance is historically positive; retain for monitoring, not automatic promotion.
 
 ## Known limits
 - Benchmark assignment is deterministic: Japanese equities use 1306.T (TOPIX-linked ETF proxy); explicit US markets use SPY (S&P 500 ETF proxy). Unknown markets are left without a benchmark rather than inferred.

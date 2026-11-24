@@ -78,7 +78,83 @@
   },
   "market_regime": "DEFENSIVE",
   "model_version": "1.7.0",
-  "outcomes": {},
+  "outcomes": {
+    "1w": {
+      "average_benchmark_return": -0.02049042619528496,
+      "average_excess_return": 0.021852499372478816,
+      "average_return": 0.0013620731771938565,
+      "benchmark_coverage_n": 5,
+      "evaluated_at": "2026-11-24T18:56:08+00:00",
+      "n": 5,
+      "symbols": [
+        {
+          "benchmark_return": -0.020479493132544935,
+          "benchmark_symbol": "SPY",
+          "end_price": 28.260000228881836,
+          "evaluated_price_date": "2026-11-24",
+          "excess_return": 0.006178835779177105,
+          "max_down": -0.01430065735336783,
+          "max_up": 0.009068720899544802,
+          "rank": 1.0,
+          "return": -0.01430065735336783,
+          "start_price": 28.670000076293945,
+          "symbol": "CARE"
+        },
+        {
+          "benchmark_return": -0.020493159460969967,
+          "benchmark_symbol": "SPY",
+          "end_price": 43.38999938964844,
+          "evaluated_price_date": "2026-11-24",
+          "excess_return": 0.056027379966288815,
+          "max_down": -0.009028309606344265,
+          "max_up": 0.03553422050531885,
+          "rank": 2.0,
+          "return": 0.03553422050531885,
+          "start_price": 41.90107727050781,
+          "symbol": "LTC"
+        },
+        {
+          "benchmark_return": -0.020493159460969967,
+          "benchmark_symbol": "SPY",
+          "end_price": 20.075000762939453,
+          "evaluated_price_date": "2026-11-24",
+          "excess_return": 0.002155751832135344,
+          "max_down": -0.03960886763187521,
+          "max_up": 0.0,
+          "rank": 3.0,
+          "return": -0.018337407628834623,
+          "start_price": 20.450000762939453,
+          "symbol": "HBNC"
+        },
+        {
+          "benchmark_return": -0.020493159460969967,
+          "benchmark_symbol": "SPY",
+          "end_price": 79.46029663085938,
+          "evaluated_price_date": "2026-11-24",
+          "excess_return": 0.005253281243840946,
+          "max_down": -0.032593937330988476,
+          "max_up": 0.0,
+          "rank": 4.0,
+          "return": -0.015239878217129021,
+          "start_price": 80.69000244140625,
+          "symbol": "STNG"
+        },
+        {
+          "benchmark_return": -0.020493159460969967,
+          "benchmark_symbol": "SPY",
+          "end_price": 25.540000915527344,
+          "evaluated_price_date": "2026-11-24",
+          "excess_return": 0.03964724804095188,
+          "max_down": -0.023543502201176292,
+          "max_up": 0.01915408857998191,
+          "rank": 5.0,
+          "return": 0.01915408857998191,
+          "start_price": 25.059999465942383,
+          "symbol": "MRP"
+        }
+      ]
+    }
+  },
   "policy_guardrails": {
     "absolute_defense_cash_jpy": 500000,
     "cash_target_range": [
