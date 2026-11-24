@@ -1,22 +1,22 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.838** / actionable=True
+Generated quality score: **0.688** / actionable=False
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-23T19:16:14+00:00",
-  "generated_at_utc": "2026-11-23T19:16:14+00:00",
+  "generated_at": "2026-11-24T06:05:31+00:00",
+  "generated_at_utc": "2026-11-24T06:05:31+00:00",
   "date_jst": "2026-11-24",
   "data_status": "ok",
   "regime_label": "DEFENSIVE",
-  "regime_score": 35.74,
-  "confidence": 1.0,
+  "regime_score": 36.92,
+  "confidence": 0.925,
   "actionable": true,
   "actionability": {
     "minimum_confidence": 0.6,
-    "critical_market_series_available": 3,
+    "critical_market_series_available": 2,
     "critical_market_series_expected": 3,
     "missing_core_context": [],
     "reasons": []
@@ -30,34 +30,34 @@ Generated quality score: **0.838** / actionable=True
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 0.0,
-    "stress": 62.66750017166137,
+    "trend": 0.028752371118972775,
+    "stress": 63.39499937057495,
     "participation": 32.13334876721843,
-    "liquidity": 49.0351474172597,
+    "liquidity": 55.65665972883321,
     "positioning": 62.86284683617225
   },
   "evidence": {
-    "trend_series": 4,
-    "vix": 27.489999771118164,
+    "trend_series": 3,
+    "vix": 26.6200008392334,
     "hy_oas": 3.76,
     "ig_oas": 0.98,
-    "treasury_volatility_proxy": 100.289,
-    "treasury_volatility_percentile_rank": 0.9722,
-    "treasury_volatility_stress_score": 27.08,
-    "treasury_volatility_as_of_date": "2026-11-20",
+    "treasury_volatility_proxy": 99.353,
+    "treasury_volatility_percentile_rank": 0.9683,
+    "treasury_volatility_stress_score": 27.38,
+    "treasury_volatility_as_of_date": "2026-11-23",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9526,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-11-23T19:16:11.764792+00:00",
     "nfci": -0.478,
-    "volume_ratio20_mean": 0.8922286854314925,
+    "volume_ratio20_mean": 1.0577664932208304,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
     },
     "component_coverage": {
-      "trend": 1.0,
+      "trend": 0.75,
       "stress": 1.0,
       "participation": 1.0,
       "liquidity": 1.0,
@@ -69,7 +69,7 @@ Generated quality score: **0.838** / actionable=True
       "expected": 3,
       "multiplier": 1.0
     },
-    "base_weighted_coverage": 1.0,
+    "base_weighted_coverage": 0.925,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
     "jpx_official_turnover_date": "2026-11-20",
     "jpx_official_turnover_million_jpy": 9521475.0,
@@ -94,7 +94,7 @@ Generated quality score: **0.838** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 56436.6484375,
+        "spot": null,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -144,13 +144,13 @@ Generated quality score: **0.838** / actionable=True
   "lifestyle_bucket_max_weight": 0.05,
   "exploration_bucket_max_weight": 0.1,
   "new_capital_top_rank_only": 5,
-  "decision_gate": "OPEN_FOR_ANALYSIS",
+  "decision_gate": "BLOCK_DATA_QUALITY",
   "note": "Guardrail only. This file never places orders."
 }
 
 ## Integration health
 {
-  "generated_at": "2026-11-23T19:17:29+00:00",
+  "generated_at": "2026-11-24T06:06:31+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -195,10 +195,10 @@ Generated quality score: **0.838** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=6 / tier=primary
-- SEC: ok / records=38 / tier=primary
+- SEC: ok / records=37 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=40 / tier=secondary
-- yfinance: ok / records=40 / tier=secondary
+- NewsRSS: ok / records=54 / tier=secondary
+- yfinance: error / records=0 / tier=secondary / 3635.T:YFRateLimitError | 4063.T:YFRateLimitError | 9433.T:YFRateLimitError | 6701.T:YFRateLimitError | 6965.T:YFRateLimitError | 5032.T:YFRateLimitError | 2585
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
@@ -272,8 +272,9 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
+- [CRITICAL] 4063 信越化学工業 | Fri, 30 Oct 2026 | guidance | 信越化学工業(4063) 電子材料部門の想定以上の好調を受け、業績予想を上方修正 - QUICK Money World | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiVkFVX3lxTFBtU0QtZkNiejUtR1BiQTdQZHYtUzAtMlRJcEZ0dXpTQnZxV0dlX2w1VFo2QmZjd2tlSkJ5d3lDal8wekM1UE1lTjg3b0hKQlJYUjRVbldn?oc=5
+- [CRITICAL] 3635 コーエーテクモホールディングス | Mon, 26 Oct 2026 | earnings | コーエーテクモホールディングス[3635]：令和９年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE81MFUxNWxkd1lSOFc0SEQwUnc0LWVpTWZMMWoxTmxFTGZPaW9HYm5hTmQ2bG9zSGNzbndwaUwzbldXTTVLTk9UZ3pXUlM1MURtcl9qaEUwdVlWa2VTV1J1dVZOY0EtM3UzS1E?oc=5
 - [CRITICAL] 4063 信越化学工業 | Tue, 27 Oct 2026 | earnings | 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1KcDR4STR3TU1xeG02UW10bGtTVjVjQ2Qzbmw3ZkFIQWhadTdhRFI4aTFHYXR0bVlyYmFmc0R0SXgySE01WGNyenJPT0hVNTIxZGtDcVJaSmF3UzViVDNuZkdNTmJCUWQ0dkE?oc=5
-- [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-09 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006837/p15110413_6-k.htm
 - [HIGH] DHT DHT Holdings, Inc. | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1331284/000095015726001092/form6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006892/p15111556_6-k.htm
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-10-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526421701/eqbk-20261014.htm
@@ -319,6 +320,8 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] FRO Frontline Plc Ordinary Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000091957426008221/p15160196_6-k.htm
 - [HIGH] 8622 水戸証券 | Mon, 02 Nov 2026 | buyback | 水戸証券[8622]：自己株式の取得状況に関するお知らせ 2026年11月2日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE96bHMwcS0zNVhKMUNXNGhmS0FYb3dSbGFkWDRGR2lLVkhadjRSUzEwcXdiVldIMDBGYjZlMVVSckRSVVhOWEpSdnlXTFhpT2VHNFB5YlR0WFFsYXUtUV81dnloWU1qUUNuRnc?oc=5
 - [HIGH] 8622 水戸証券 | Mon, 09 Mar 2026 | dividend | 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QRlFKekV1VHlONVFFNmFzTzBKQ1FiajFfb2RmSjJIdE9qZmR4MkJ4RnEtRGhVLU51ZFo0dzRkMGJJNjY3d242azlHN19TLXZ6R1V3?oc=5
+- [HIGH] 9433 KDDI | Mon, 23 Nov 2026 | dividend | KDDI・NTT並み増配への「壁」 配当性向約70%のソフトバンク株【新NISA】 - 現代ビジネス | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DM05xZlI0YlJEc3JyaE92eFdSOC1QaExOWVRyN1RTMFBFUThtMTE0dlRNUXZHQ0V0aWVENnZULWF4Zmdtam0wTTdndUJ2NU0?oc=5
+- [HIGH] 8766 東京海上ホールディングス | Thu, 19 Nov 2026 | buyback | 東京海上ホールディングス[8766]：自己株式取得に係る事項の決定に関するお知らせ 2026年11月19日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5OVFRVVXpON2NFRWMxQlNNWnA4TkFQM1NJYnZLU3JDQkdSd1hZaTJxSnp2OEg0VzdJWm9yZEM3c0dHQ1pMVFFqaGtCQ2VoM3I3ODYwS3ZjSHh0cFJBY1Z4bjgxZWdiZ2JJcFE?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
