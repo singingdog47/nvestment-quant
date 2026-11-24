@@ -1,11 +1,10 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-24T00:02:41.511202+00:00",
+  "generated_at_utc": "2026-11-24T02:26:35.327988+00:00",
   "risk_level": "DEFENSIVE",
   "market_decision": "RISK_REDUCTION_REVIEW",
   "risk_drivers": [
     "VIXが25以上",
-    "日経円建て先物(CME)が-1.5%以下",
     "S&P500が-1.5%以下",
     "VIXが20以上"
   ],
@@ -21,11 +20,11 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-23T23:52:38+00:00",
-      "age_minutes": 10.1,
-      "price": 57615.0,
+      "as_of_utc": "2026-11-24T02:16:23+00:00",
+      "age_minutes": 10.2,
+      "price": 58635.0,
       "previous_close": 58835.0,
-      "change_pct": -2.074
+      "change_pct": -0.34
     },
     "NASDAQ": {
       "name": "NASDAQ",
@@ -33,7 +32,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-23T22:15:59+00:00",
-      "age_minutes": 106.7,
+      "age_minutes": 250.6,
       "price": 24089.559,
       "previous_close": 24509.76,
       "change_pct": -1.714
@@ -44,7 +43,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-23T21:42:33+00:00",
-      "age_minutes": 140.1,
+      "age_minutes": 284.0,
       "price": 7237.17,
       "previous_close": 7416.59,
       "change_pct": -2.419
@@ -55,7 +54,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
       "as_of_utc": "2026-11-23T21:15:01+00:00",
-      "age_minutes": 167.7,
+      "age_minutes": 311.6,
       "price": 26.62,
       "previous_close": 25.46,
       "change_pct": 4.556
