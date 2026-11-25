@@ -1,6 +1,6 @@
 # Supply / Demand Context v1.0
 
-Generated (UTC): 2026-11-25T04:55:05+00:00
+Generated (UTC): 2026-11-25T18:00:18+00:00
 Data status: **partial**
 Scope: public watchlist plus screening leaders; private portfolio excluded
 
@@ -9,23 +9,23 @@ Scope: public watchlist plus screening leaders; private portfolio excluded
 - Targets: 52
 - Status: ok=39, partial=1, missing=12
 - Free-float ratio: 75.0%
-- Short-interest context: 26.9%
+- Short-interest context: 28.8%
 - Current/average volume: 76.9%
 - Company snapshot input: ok
 - Manual override input: not_provided
 
 ## Notable contexts
 
-- [US] Ironwood Pharmaceuticals, Inc. - Class A Common Stock: SHORT_CROWDING|VOLUME_EXPANSION|PRICE_UP_ON_VOLUME_EXPANSION|POTENTIAL_SHORT_SQUEEZE_CONTEXT (float=82.2%, float turnover=1.6%, volume ratio=1.61836373158458)
-- [JP] 東京海上ホールディングス: TIGHT_FLOAT|HIGH_FLOAT_TURNOVER|TIGHT_FLOAT_HIGH_TURNOVER (float=6.7%, float turnover=4.7%, volume ratio=0.6578224156283704)
-- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=97.3%, float turnover=1.0%, volume ratio=1.0153681334618299)
-- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING (float=98.0%, float turnover=1.2%, volume ratio=0.8590129061025304)
-- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.4%, float turnover=3.3%, volume ratio=0.8569397558340799)
-- [US] SandRidge Energy, Inc. Common Stock: SHORT_CROWDING (float=97.9%, float turnover=1.0%, volume ratio=0.8688385075321192)
-- [US] National Health Investors, Inc. Common Stock: SHORT_CROWDING (float=97.6%, float turnover=0.8%, volume ratio=0.9441204743845107)
-- [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.7%, float turnover=1.2%, volume ratio=0.6916573494448266)
-- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.0%, float turnover=2.5%, volume ratio=0.6648304809494067)
-- [US] Millrose Properties, Inc. Class A Common Stock: SHORT_INTEREST_RISING (float=99.3%, float turnover=1.6%, volume ratio=0.5012309126208476)
+- [JP] 東京海上ホールディングス: TIGHT_FLOAT|HIGH_FLOAT_TURNOVER|TIGHT_FLOAT_HIGH_TURNOVER (float=6.7%, float turnover=4.7%, volume ratio=1.1285194708137551)
+- [US] Carter Bankshares, Inc. - Common Stock: SHORT_CROWDING (float=97.3%, float turnover=1.0%, volume ratio=0.3673664300829604)
+- [US] LTC Properties, Inc. Common Stock: SHORT_CROWDING (float=98.0%, float turnover=1.2%, volume ratio=0.20309290230392796)
+- [US] DHT Holdings, Inc.: HIGH_FLOAT_TURNOVER|SHORT_CROWDING (float=89.4%, float turnover=3.3%, volume ratio=0.4527115713862884)
+- [US] Horizon Bancorp, Inc. - Common Stock: SHORT_CROWDING (float=97.7%, float turnover=1.1%, volume ratio=0.41357605963669597)
+- [US] National Health Investors, Inc. Common Stock: SHORT_CROWDING (float=97.6%, float turnover=0.8%, volume ratio=0.3626350531086758)
+- [US] Ironwood Pharmaceuticals, Inc. - Class A Common Stock: SHORT_CROWDING (float=82.2%, float turnover=1.6%, volume ratio=0.3941659471325798)
+- [US] Radian Group Inc. Common Stock: SHORT_CROWDING (float=98.2%, float turnover=1.2%, volume ratio=0.19452477412574373)
+- [JP] コーエーテクモホールディングス: TIGHT_FLOAT (float=27.7%, float turnover=1.3%, volume ratio=1.1516425873645)
+- [US] Scorpio Tankers Inc. Common Shares: HIGH_FLOAT_TURNOVER (float=77.0%, float turnover=2.5%, volume ratio=0.14756805020027236)
 
 ## Governance
 
