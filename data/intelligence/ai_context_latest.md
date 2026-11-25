@@ -6,12 +6,12 @@ Generated quality score: **0.830** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-24T18:54:57+00:00",
-  "generated_at_utc": "2026-11-24T18:54:57+00:00",
+  "generated_at": "2026-11-25T04:53:57+00:00",
+  "generated_at_utc": "2026-11-25T04:53:57+00:00",
   "date_jst": "2026-11-25",
   "data_status": "ok",
   "regime_label": "DEFENSIVE",
-  "regime_score": 35.19,
+  "regime_score": 35.66,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,27 +31,27 @@ Generated quality score: **0.830** / actionable=True
   ],
   "components": {
     "trend": 0.0,
-    "stress": 64.215,
+    "stress": 64.13249954223633,
     "participation": 33.543571345909044,
-    "liquidity": 40.91288150585088,
+    "liquidity": 44.20864205418884,
     "positioning": 62.86284683617225
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 26.25,
+    "vix": 26.360000610351562,
     "hy_oas": 3.63,
     "ig_oas": 0.97,
-    "treasury_volatility_proxy": 99.353,
+    "treasury_volatility_proxy": 99.527,
     "treasury_volatility_percentile_rank": 0.9683,
     "treasury_volatility_stress_score": 27.38,
-    "treasury_volatility_as_of_date": "2026-11-23",
+    "treasury_volatility_as_of_date": "2026-11-24",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9527,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-11-24T18:54:54.869151+00:00",
     "nfci": -0.478,
-    "volume_ratio20_mean": 0.6891720376462722,
+    "volume_ratio20_mean": 0.7715660513547211,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -94,7 +94,7 @@ Generated quality score: **0.830** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 56436.6484375,
+        "spot": 57047.69140625,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +150,7 @@ Generated quality score: **0.830** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-11-24T18:56:06+00:00",
+  "generated_at": "2026-11-25T04:55:05+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -195,9 +195,9 @@ Generated quality score: **0.830** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=6 / tier=primary
-- SEC: ok / records=39 / tier=primary
+- SEC: ok / records=41 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=48 / tier=secondary
+- NewsRSS: ok / records=57 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -306,8 +306,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-12 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426007620/p15153826_6-k.htm
 - [HIGH] NHI National Health Investors, Inc. Common Stock | 2026-11-13 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/877860/000087786026000230/nhi-20261109.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426008175/p15156436_6-k.htm
-- [HIGH] 9639 SANKYO FRONTIER CO.,LTD. | 2026-11-18 | filing | 訂正有価証券届出書（参照方式） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZIKT
-- [HIGH] 9639 SANKYO FRONTIER CO.,LTD. | 2026-11-18 | filing | 訂正有価証券届出書（参照方式） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZIOR
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-18 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426008184/p15157214_6-k.htm
 - [HIGH] 8766 東京海上ホールディングス | 2026-11-19 | filing | 半期報告書－第25期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZIN2
 - [HIGH] 8766 東京海上ホールディングス | 2026-11-19 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZIN7
@@ -317,9 +315,13 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] TEN Tsakos Energy Navigation Ltd Common Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1166663/000119312526470357/d138948d6k.htm
 - [HIGH] TEN Tsakos Energy Navigation Ltd Common Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1166663/000119312526470281/d140309d6k.htm
 - [HIGH] FRO Frontline Plc Ordinary Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000091957426008221/p15160196_6-k.htm
+- [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426008240/p15165454_6-k.htm
+- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426008238/p15165084_6-k.htm
+- [HIGH] 9433 KDDI | 2026-11-25 | filing | 発行登録追補書類（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJQK
+- [HIGH] 9433 KDDI | 2026-11-25 | filing | 発行登録追補書類（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJQO
+- [HIGH] 4063 信越化学工業 | Fri, 13 Nov 2026 | buyback | 信越化学工業[4063]：自己株式取得に係る事項の決定に関するお知らせ 2026年11月13日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE43dmtOZ3Nydzh1QVRXOGtpSHNHa2ZGVFAxUmtGTkRyU3psY25mRE8tTXA4dG9aMm1JQWVSWGFMdU1TYkI4S3Y5YXBNMDluZ2ZHbDNnWVVTbUVqb3Y2LWdiMmdNU05XTjVuN2c?oc=5
+- [HIGH] 8622 水戸証券 | Mon, 09 Mar 2026 | dividend | 水戸証券、株主優待を新設して、配当＋優待利回り＝6.4％に！ 3月末に1000株以上の保有で地域特産品がもらえるが、来期以降は｢1年以上の継続保有｣が必須に - ダイヤモンド・オンライン | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiU0FVX3lxTE1QRlFKekV1VHlONVFFNmFzTzBKQ1FiajFfb2RmSjJIdE9qZmR4MkJ4RnEtRGhVLU51ZFo0dzRkMGJJNjY3d242azlHN19TLXZ6R1V3?oc=5
 - [HIGH] 8766 東京海上ホールディングス | Thu, 19 Nov 2026 | buyback | 東京海上ホールディングス[8766]：自己株式取得に係る事項の決定に関するお知らせ 2026年11月19日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5OVFRVVXpON2NFRWMxQlNNWnA4TkFQM1NJYnZLU3JDQkdSd1hZaTJxSnp2OEg0VzdJWm9yZEM3c0dHQ1pMVFFqaGtCQ2VoM3I3ODYwS3ZjSHh0cFJBY1Z4bjgxZWdiZ2JJcFE?oc=5
-- [HIGH] 8766 東京海上ホールディングス | Tue, 24 Nov 2026 | buyback | 東京海上HD(8766)の株価を支えるのは何か｜自社株買い2,800億円と今後の保険利益 - 日本投資機構株式会社 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiWkFVX3lxTE02Rl9zZHhhMEJzOEpSaDFidWE0SmFQOEtHOW9FMkhMTUxLaFk0WWtIOU9wY3hBR3MwMEIwS3VHVWhJNDNxOGVnU3BPX2VkOUVSbVdVaURrMlhHZw?oc=5
-- [HIGH] 8622 水戸証券 | Tue, 24 Nov 2026 | buyback | 水戸証券[8622]：自己株式の取得状況および取得終了に関するお知らせ 2026年11月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTFBvd3h5MDRTLXM4UmZ2NEptR3RfcmU3WkN2dGhPSmhfWTFHcU5DLVg0TVdGcUtDNUNrbGtPeVYxMVhtRkpJMFdtNVRPdWN3SGR0blFHTVZPRERBdmJNcHREakhzTjNWRmZ6Q3c?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
