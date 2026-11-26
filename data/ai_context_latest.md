@@ -1,17 +1,17 @@
 # AI Decision Context — Investment Quant v1.6
 
-Generated quality score: **0.830** / actionable=True
+Generated quality score: **0.838** / actionable=True
 
 ## Market Regime v1.5
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-26T04:10:16+00:00",
-  "generated_at_utc": "2026-11-26T04:10:16+00:00",
-  "date_jst": "2026-11-26",
+  "generated_at": "2026-11-26T17:44:56+00:00",
+  "generated_at_utc": "2026-11-26T17:44:56+00:00",
+  "date_jst": "2026-11-27",
   "data_status": "ok",
   "regime_label": "DEFENSIVE",
-  "regime_score": 35.29,
+  "regime_score": 36.6,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,14 +31,14 @@ Generated quality score: **0.830** / actionable=True
   ],
   "components": {
     "trend": 0.0,
-    "stress": 62.13499931335449,
-    "participation": 33.50885314199745,
-    "liquidity": 45.103253677233155,
+    "stress": 63.25250057220459,
+    "participation": 34.2957990973267,
+    "liquidity": 50.96739436276711,
     "positioning": 62.86284683617225
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 28.290000915527344,
+    "vix": 26.799999237060547,
     "hy_oas": 3.72,
     "ig_oas": 0.98,
     "treasury_volatility_proxy": 100.661,
@@ -49,9 +49,9 @@ Generated quality score: **0.830** / actionable=True
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9526,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-11-25T17:59:05.621794+00:00",
+    "breadth_source_as_of_utc": "2026-11-26T17:44:54.682825+00:00",
     "nfci": -0.444,
-    "volume_ratio20_mean": 0.7998813419308288,
+    "volume_ratio20_mean": 0.9464848590691776,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -71,8 +71,8 @@ Generated quality score: **0.830** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-11-25",
-    "jpx_official_turnover_million_jpy": 8146247.0,
+    "jpx_official_turnover_date": "2026-11-26",
+    "jpx_official_turnover_million_jpy": 7402449.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
@@ -80,9 +80,9 @@ Generated quality score: **0.830** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-11-26",
+      "as_of_date": "2026-11-27",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 15,
+      "days_to_sq": 14,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -94,7 +94,7 @@ Generated quality score: **0.830** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 57760.30859375,
+        "spot": 57011.62109375,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +150,7 @@ Generated quality score: **0.830** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-11-26T04:11:33+00:00",
+  "generated_at": "2026-11-26T17:46:00+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -161,25 +161,25 @@ Generated quality score: **0.830** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.03,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.03,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.03,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.03,
+      "age_hours": 0.02,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -203,7 +203,7 @@ Generated quality score: **0.830** / actionable=True
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-11-25T17:59:05.621794+00:00
+- Data retrieved (UTC): 2026-11-26T17:44:54.682825+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -239,26 +239,26 @@ Generated quality score: **0.830** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 575A.T | MAEZAWA Holdings CO.,LTD. | Other | 78.4 | 100.0 | unchanged |
-| JP | 2 | 6196.T | Strike Group Co.,Ltd. | Other | 75.3 | 100.0 | unchanged |
-| JP | 3 | 4595.T | MIZUHO MEDY CO.,LTD. | Other | 75.2 | 99.9 | unchanged |
-| JP | 4 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.9 | unchanged |
-| JP | 5 | 8622.T | Mito Securities Co.,Ltd. | Financials | 73.4 | 99.8 | unchanged |
-| JP | 6 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 72.6 | 99.8 | unchanged |
-| JP | 7 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 71.7 | 99.7 | unchanged |
-| JP | 8 | 3252.T | JINUSHI Co.,Ltd. | Other | 71.3 | 99.7 | unchanged |
-| JP | 10 | 8892.T | ES-CON JAPAN Ltd. | Other | 71.2 | 99.6 | unchanged |
-| JP | 11 | 2121.T | MIXI,Inc. | Other | 70.9 | 99.5 | unchanged |
+| JP | 1 | 575A.T | MAEZAWA Holdings CO.,LTD. | Other | 78.5 | 100.0 | unchanged |
+| JP | 2 | 6196.T | Strike Group Co.,Ltd. | Other | 75.0 | 100.0 | unchanged |
+| JP | 3 | 4595.T | MIZUHO MEDY CO.,LTD. | Other | 74.9 | 99.9 | unchanged |
+| JP | 4 | 8622.T | Mito Securities Co.,Ltd. | Financials | 73.3 | 99.9 | unchanged |
+| JP | 5 | 6750.T | ELECOM CO.,LTD. | Other | 72.9 | 99.8 | unchanged |
+| JP | 6 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 72.7 | 99.8 | unchanged |
+| JP | 7 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 72.4 | 99.7 | unchanged |
+| JP | 8 | 3252.T | JINUSHI Co.,Ltd. | Other | 71.8 | 99.7 | unchanged |
+| JP | 9 | 2121.T | MIXI,Inc. | Other | 71.4 | 99.6 | unchanged |
+| JP | 12 | 8739.T | SPARX Group Co.,Ltd. | Other | 70.9 | 99.5 | unchanged |
 | US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
-| US | 2 | LTC | LTC Properties, Inc. Common Stock | Other | 84.1 | 100.0 | unchanged |
-| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.7 | 99.9 | unchanged |
+| US | 2 | LTC | LTC Properties, Inc. Common Stock | Other | 83.9 | 100.0 | unchanged |
+| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.6 | 99.9 | unchanged |
 | US | 4 | DHT | DHT Holdings, Inc. | Shipping | 81.9 | 99.9 | unchanged |
 | US | 6 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.5 | 99.8 | unchanged |
-| US | 7 | HBNC | Horizon Bancorp, Inc. - Common Stock | Financials | 81.4 | 99.8 | unchanged |
+| US | 7 | HBNC | Horizon Bancorp, Inc. - Common Stock | Financials | 81.3 | 99.8 | unchanged |
 | US | 11 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 80.5 | 99.7 | unchanged |
 | US | 18 | TRMD | TORM plc - Class A Common Stock | Other | 79.1 | 99.5 | unchanged |
-| US | 20 | SD | SandRidge Energy, Inc. Common Stock | Other | 79.1 | 99.4 | unchanged |
-| US | 21 | NHI | National Health Investors, Inc. Common Stock | Other | 78.9 | 99.4 | unchanged |
+| US | 20 | SD | SandRidge Energy, Inc. Common Stock | Other | 78.9 | 99.4 | unchanged |
+| US | 21 | NHI | National Health Investors, Inc. Common Stock | Other | 78.8 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 
@@ -272,6 +272,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
+- [CRITICAL] 4063 信越化学工業 | Tue, 27 Oct 2026 | earnings | 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1KcDR4STR3TU1xeG02UW10bGtTVjVjQ2Qzbmw3ZkFIQWhadTdhRFI4aTFHYXR0bVlyYmFmc0R0SXgySE01WGNyenJPT0hVNTIxZGtDcVJaSmF3UzViVDNuZkdNTmJCUWQ0dkE?oc=5
 - [HIGH] DHT DHT Holdings, Inc. | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1331284/000095015726001092/form6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006892/p15111556_6-k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426006891/p15111557_6-k.htm
@@ -320,8 +321,7 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] FRO Frontline Plc Ordinary Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000091957426008221/p15160196_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426008240/p15165454_6-k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426008238/p15165084_6-k.htm
-- [HIGH] 4559 ZERIA PHARMACEUTICAL CO.,LTD. | 2026-11-25 | filing | 訂正半期報告書－第73期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJK9
-- [HIGH] 4559 ZERIA PHARMACEUTICAL CO.,LTD. | 2026-11-25 | filing | 訂正確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJKE
+- [HIGH] 9433 KDDI | 2026-11-25 | filing | 発行登録追補書類（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJQK
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
