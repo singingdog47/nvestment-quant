@@ -6,12 +6,12 @@ Generated quality score: **0.830** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-25T17:59:07+00:00",
-  "generated_at_utc": "2026-11-25T17:59:07+00:00",
+  "generated_at": "2026-11-26T04:10:16+00:00",
+  "generated_at_utc": "2026-11-26T04:10:16+00:00",
   "date_jst": "2026-11-26",
   "data_status": "ok",
   "regime_label": "DEFENSIVE",
-  "regime_score": 34.42,
+  "regime_score": 35.29,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -31,27 +31,27 @@ Generated quality score: **0.830** / actionable=True
   ],
   "components": {
     "trend": 0.0,
-    "stress": 61.239999771118164,
+    "stress": 62.13499931335449,
     "participation": 33.50885314199745,
-    "liquidity": 40.83104559617841,
+    "liquidity": 45.103253677233155,
     "positioning": 62.86284683617225
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 29.68000030517578,
+    "vix": 28.290000915527344,
     "hy_oas": 3.72,
     "ig_oas": 0.98,
-    "treasury_volatility_proxy": 99.527,
-    "treasury_volatility_percentile_rank": 0.9683,
-    "treasury_volatility_stress_score": 27.38,
-    "treasury_volatility_as_of_date": "2026-11-24",
+    "treasury_volatility_proxy": 100.661,
+    "treasury_volatility_percentile_rank": 0.9762,
+    "treasury_volatility_stress_score": 26.79,
+    "treasury_volatility_as_of_date": "2026-11-25",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
     "breadth_n": 9526,
     "breadth_status": "ok",
     "breadth_source_as_of_utc": "2026-11-25T17:59:05.621794+00:00",
     "nfci": -0.444,
-    "volume_ratio20_mean": 0.6930761399044604,
+    "volume_ratio20_mean": 0.7998813419308288,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -94,7 +94,7 @@ Generated quality score: **0.830** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 58644.62890625,
+        "spot": 57760.30859375,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +150,7 @@ Generated quality score: **0.830** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-11-25T18:00:18+00:00",
+  "generated_at": "2026-11-26T04:11:33+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -161,25 +161,25 @@ Generated quality score: **0.830** / actionable=True
     "v1_3_screening": {
       "status": "ok",
       "path": "data/screening_latest.csv",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_screening_full": {
       "status": "ok",
       "path": "data/screening_full.csv.gz",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_quality": {
       "status": "ok",
       "path": "data/quality_report.json",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "v1_3_daily_report": {
       "status": "ok",
       "path": "data/daily_report.md",
-      "age_hours": 0.02,
+      "age_hours": 0.03,
       "stale_limit_hours": 36
     },
     "fundamentals": {
@@ -194,10 +194,10 @@ Generated quality score: **0.830** / actionable=True
 
 ## Source health
 - TDnet: ok / records=0 / tier=primary
-- EDINET: ok / records=9 / tier=primary
+- EDINET: ok / records=7 / tier=primary
 - SEC: ok / records=46 / tier=primary
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=56 / tier=secondary
+- NewsRSS: ok / records=58 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
@@ -272,7 +272,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
-- [CRITICAL] 4063 信越化学工業 | Tue, 27 Oct 2026 | earnings | 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1KcDR4STR3TU1xeG02UW10bGtTVjVjQ2Qzbmw3ZkFIQWhadTdhRFI4aTFHYXR0bVlyYmFmc0R0SXgySE01WGNyenJPT0hVNTIxZGtDcVJaSmF3UzViVDNuZkdNTmJCUWQ0dkE?oc=5
 - [HIGH] DHT DHT Holdings, Inc. | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1331284/000095015726001092/form6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006892/p15111556_6-k.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426006891/p15111557_6-k.htm
@@ -313,8 +312,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] NHI National Health Investors, Inc. Common Stock | 2026-11-13 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/877860/000087786026000230/nhi-20261109.htm
 - [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426008175/p15156436_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-18 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426008184/p15157214_6-k.htm
-- [HIGH] 8766 東京海上ホールディングス | 2026-11-19 | filing | 半期報告書－第25期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZIN2
-- [HIGH] 8766 東京海上ホールディングス | 2026-11-19 | filing | 確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZIN7
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-11-19 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526468835/eqbk-20261119.htm
 - [HIGH] 2802 味の素 | 2026-11-20 | filing | 発行登録追補書類（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJ44
 - [HIGH] 6196 Strike Group Co.,Ltd. | 2026-11-20 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJBN
@@ -322,6 +319,9 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] TEN Tsakos Energy Navigation Ltd Common Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1166663/000119312526470281/d140309d6k.htm
 - [HIGH] FRO Frontline Plc Ordinary Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000091957426008221/p15160196_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426008240/p15165454_6-k.htm
+- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426008238/p15165084_6-k.htm
+- [HIGH] 4559 ZERIA PHARMACEUTICAL CO.,LTD. | 2026-11-25 | filing | 訂正半期報告書－第73期(2026/04/01－2027/03/31) | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJK9
+- [HIGH] 4559 ZERIA PHARMACEUTICAL CO.,LTD. | 2026-11-25 | filing | 訂正確認書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJKE
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.
