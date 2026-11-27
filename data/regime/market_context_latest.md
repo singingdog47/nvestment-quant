@@ -1,17 +1,17 @@
 # Market Regime v1.5
 
 - Label: **DEFENSIVE**
-- Score: **36.6**
+- Score: **36.12**
 - Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
 - Flags: TREASURY_VOLATILITY_SHOCK
 
 ## Components
-- trend: 0.0
+- trend: 0.17878531879483806
 - stress: 63.25250057220459
 - participation: 34.2957990973267
-- liquidity: 50.96739436276711
+- liquidity: 47.41552277765207
 - positioning: 62.86284683617225
 
 ## SQ execution overlay
@@ -41,7 +41,7 @@
   "breadth_status": "ok",
   "breadth_source_as_of_utc": "2026-11-26T17:44:54.682825+00:00",
   "nfci": -0.444,
-  "volume_ratio20_mean": 0.9464848590691776,
+  "volume_ratio20_mean": 0.8576880694413018,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22
