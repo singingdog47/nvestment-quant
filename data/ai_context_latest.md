@@ -6,12 +6,12 @@ Generated quality score: **0.838** / actionable=True
 {
   "version": "1.5.3",
   "engine_version": "1.5.3",
-  "generated_at": "2026-11-27T04:17:04+00:00",
-  "generated_at_utc": "2026-11-27T04:17:04+00:00",
-  "date_jst": "2026-11-27",
+  "generated_at": "2026-11-27T17:29:05+00:00",
+  "generated_at_utc": "2026-11-27T17:29:05+00:00",
+  "date_jst": "2026-11-28",
   "data_status": "ok",
   "regime_label": "DEFENSIVE",
-  "regime_score": 36.12,
+  "regime_score": 33.69,
   "confidence": 1.0,
   "actionable": true,
   "actionability": {
@@ -23,22 +23,23 @@ Generated quality score: **0.838** / actionable=True
   },
   "overheated_flag": false,
   "stress_flag": false,
-  "thin_liquidity_flag": false,
+  "thin_liquidity_flag": true,
   "treasury_volatility_shock_flag": true,
   "sq_execution_caution_flag": false,
   "regime_flags": [
+    "THIN_LIQUIDITY",
     "TREASURY_VOLATILITY_SHOCK"
   ],
   "components": {
-    "trend": 0.17878531879483806,
-    "stress": 63.25250057220459,
-    "participation": 34.2957990973267,
-    "liquidity": 47.41552277765207,
+    "trend": 0.2270644574769225,
+    "stress": 64.68500045776368,
+    "participation": 35.36119472100023,
+    "liquidity": 27.248391190155882,
     "positioning": 62.86284683617225
   },
   "evidence": {
     "trend_series": 4,
-    "vix": 26.799999237060547,
+    "vix": 24.889999389648438,
     "hy_oas": 3.72,
     "ig_oas": 0.98,
     "treasury_volatility_proxy": 100.661,
@@ -47,11 +48,11 @@ Generated quality score: **0.838** / actionable=True
     "treasury_volatility_as_of_date": "2026-11-25",
     "treasury_volatility_status": "ok",
     "treasury_volatility_is_ice_move": false,
-    "breadth_n": 9526,
+    "breadth_n": 9524,
     "breadth_status": "ok",
-    "breadth_source_as_of_utc": "2026-11-26T17:44:54.682825+00:00",
+    "breadth_source_as_of_utc": "2026-11-27T17:29:02.668031+00:00",
     "nfci": -0.444,
-    "volume_ratio20_mean": 0.8576880694413018,
+    "volume_ratio20_mean": 0.35350977975389697,
     "positioning_sources": {
       "jpx_raw_healthy": 4,
       "cftc_normalized_values": 22
@@ -71,8 +72,8 @@ Generated quality score: **0.838** / actionable=True
     },
     "base_weighted_coverage": 1.0,
     "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-    "jpx_official_turnover_date": "2026-11-26",
-    "jpx_official_turnover_million_jpy": 7402449.0,
+    "jpx_official_turnover_date": "2026-11-27",
+    "jpx_official_turnover_million_jpy": 8358949.0,
     "jpx_official_turnover_status": "ok"
   },
   "execution_overlay": {
@@ -80,9 +81,9 @@ Generated quality score: **0.838** / actionable=True
       "version": "1.0",
       "enabled": true,
       "active": false,
-      "as_of_date": "2026-11-27",
+      "as_of_date": "2026-11-28",
       "next_major_sq_date": "2026-12-11",
-      "days_to_sq": 14,
+      "days_to_sq": 13,
       "event_proximity_score": 0.0,
       "pressure_intensity_score": 0.0,
       "confidence": 0.4,
@@ -94,7 +95,7 @@ Generated quality score: **0.838** / actionable=True
       "execution_stance": "NORMAL",
       "directional_bias": "UNDETERMINED",
       "price_structure": {
-        "spot": 58546.1015625,
+        "spot": 57499.16015625,
         "put_wall": null,
         "call_wall": null,
         "magnet_strike": null,
@@ -150,7 +151,7 @@ Generated quality score: **0.838** / actionable=True
 
 ## Integration health
 {
-  "generated_at": "2026-11-27T04:18:09+00:00",
+  "generated_at": "2026-11-27T17:30:10+00:00",
   "components": {
     "market_regime": {
       "status": "ok",
@@ -195,15 +196,15 @@ Generated quality score: **0.838** / actionable=True
 ## Source health
 - TDnet: ok / records=0 / tier=primary
 - EDINET: ok / records=5 / tier=primary
-- SEC: ok / records=46 / tier=primary
+- SEC: partial / records=40 / tier=primary / RCBC:CIK missing
 - CompanyIR: ok / records=0 / tier=primary
-- NewsRSS: ok / records=58 / tier=secondary
+- NewsRSS: ok / records=57 / tier=secondary
 - yfinance: ok / records=40 / tier=secondary
 
 ## v1.3 Daily Quant Screen report (existing output; preserved)
 # Daily Quant Report
 
-- Data retrieved (UTC): 2026-11-26T17:44:54.682825+00:00
+- Data retrieved (UTC): 2026-11-27T17:29:02.668031+00:00
 - Price basis: TradingView scanner close; exact exchange timestamp unavailable.
 - This report is for research. A high score is not a buy signal.
 
@@ -229,8 +230,8 @@ Generated quality score: **0.838** / actionable=True
 
 | Market | Theme | Names in top 20 |
 |---|---|---:|
-| JP | Financials | 5 |
-| JP | Other | 15 |
+| JP | Financials | 6 |
+| JP | Other | 14 |
 | US | Financials | 10 |
 | US | Other | 5 |
 | US | Shipping | 5 |
@@ -239,26 +240,26 @@ Generated quality score: **0.838** / actionable=True
 
 | Market | Mkt Rank | Ticker | Name | Theme | Raw score | Cross-mkt pct | Daily change |
 |---|---:|---|---|---|---:|---:|---|
-| JP | 1 | 575A.T | MAEZAWA Holdings CO.,LTD. | Other | 78.5 | 100.0 | unchanged |
-| JP | 2 | 6196.T | Strike Group Co.,Ltd. | Other | 75.0 | 100.0 | unchanged |
-| JP | 3 | 4595.T | MIZUHO MEDY CO.,LTD. | Other | 74.9 | 99.9 | unchanged |
-| JP | 4 | 8622.T | Mito Securities Co.,Ltd. | Financials | 73.3 | 99.9 | unchanged |
-| JP | 5 | 6750.T | ELECOM CO.,LTD. | Other | 72.9 | 99.8 | unchanged |
-| JP | 6 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 72.7 | 99.8 | unchanged |
-| JP | 7 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 72.4 | 99.7 | unchanged |
-| JP | 8 | 3252.T | JINUSHI Co.,Ltd. | Other | 71.8 | 99.7 | unchanged |
-| JP | 9 | 2121.T | MIXI,Inc. | Other | 71.4 | 99.6 | unchanged |
-| JP | 12 | 8739.T | SPARX Group Co.,Ltd. | Other | 70.9 | 99.5 | unchanged |
-| US | 1 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
-| US | 2 | LTC | LTC Properties, Inc. Common Stock | Other | 83.9 | 100.0 | unchanged |
-| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.6 | 99.9 | unchanged |
-| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 81.9 | 99.9 | unchanged |
-| US | 6 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.5 | 99.8 | unchanged |
-| US | 7 | HBNC | Horizon Bancorp, Inc. - Common Stock | Financials | 81.3 | 99.8 | unchanged |
-| US | 11 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 80.5 | 99.7 | unchanged |
-| US | 18 | TRMD | TORM plc - Class A Common Stock | Other | 79.1 | 99.5 | unchanged |
-| US | 20 | SD | SandRidge Energy, Inc. Common Stock | Other | 78.9 | 99.4 | unchanged |
-| US | 21 | NHI | National Health Investors, Inc. Common Stock | Other | 78.8 | 99.4 | unchanged |
+| JP | 1 | 575A.T | MAEZAWA Holdings CO.,LTD. | Other | 79.9 | 100.0 | unchanged |
+| JP | 2 | 4595.T | MIZUHO MEDY CO.,LTD. | Other | 75.1 | 100.0 | unchanged |
+| JP | 3 | 6196.T | Strike Group Co.,Ltd. | Other | 74.9 | 99.9 | unchanged |
+| JP | 4 | 8704.T | TRADERS HOLDINGS CO.,LTD. | Other | 73.8 | 99.9 | unchanged |
+| JP | 5 | 8622.T | Mito Securities Co.,Ltd. | Financials | 73.6 | 99.8 | unchanged |
+| JP | 6 | 6750.T | ELECOM CO.,LTD. | Other | 73.4 | 99.8 | unchanged |
+| JP | 7 | 8624.T | Ichiyoshi Securities Co.,Ltd. | Financials | 73.4 | 99.7 | unchanged |
+| JP | 8 | 3252.T | JINUSHI Co.,Ltd. | Other | 71.9 | 99.7 | unchanged |
+| JP | 10 | 2121.T | MIXI,Inc. | Other | 71.5 | 99.6 | unchanged |
+| JP | 12 | 8739.T | SPARX Group Co.,Ltd. | Other | 71.4 | 99.5 | unchanged |
+| US | 1 | LTC | LTC Properties, Inc. Common Stock | Other | 84.3 | 100.0 | unchanged |
+| US | 2 | CARE | Carter Bankshares, Inc. - Common Stock | Financials | 84.2 | 100.0 | unchanged |
+| US | 3 | STNG | Scorpio Tankers Inc. Common Shares | Shipping | 82.3 | 99.9 | unchanged |
+| US | 4 | DHT | DHT Holdings, Inc. | Shipping | 81.8 | 99.9 | unchanged |
+| US | 5 | MRP | Millrose Properties, Inc. Class A Common Stock | Other | 81.5 | 99.9 | unchanged |
+| US | 7 | RCBC | River City Bank - Common stock | Financials | 81.0 | 99.8 | new_entry |
+| US | 10 | TEN | Tsakos Energy Navigation Ltd Common Shares | Other | 80.5 | 99.7 | unchanged |
+| US | 19 | SD | SandRidge Energy, Inc. Common Stock | Other | 78.7 | 99.4 | unchanged |
+| US | 20 | TRMD | TORM plc - Class A Common Stock | Other | 78.7 | 99.4 | unchanged |
+| US | 21 | NHI | National Health Investors, Inc. Common Stock | Other | 78.6 | 99.4 | unchanged |
 
 ## Required manual checks before an order
 
@@ -272,21 +273,23 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 
 
 ## Critical / high company events
+- [CRITICAL] 3635 コーエーテクモホールディングス | Mon, 26 Oct 2026 | earnings | コーエーテクモホールディングス[3635]：令和９年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE81MFUxNWxkd1lSOFc0SEQwUnc0LWVpTWZMMWoxTmxFTGZPaW9HYm5hTmQ2bG9zSGNzbndwaUwzbldXTTVLTk9UZ3pXUlM1MURtcl9qaEUwdVlWa2VTV1J1dVZOY0EtM3UzS1E?oc=5
+- [CRITICAL] 3635 コーエーテクモホールディングス | Mon, 26 Oct 2026 | guidance | コーエーテクモホールディングス[3635]：業績予想及び配当予想の修正に関するお知らせ 2026年10月26日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9IdklGSEFRZnFvTkNReG5vRkZlVG91V2ItS2dWQXluQXVsZjRLeUMwVGFiV3F4V2dFcTNvaHRlZzBTTlViVFFvT09PV2g3NVJMZHloUks2cVlZc2kwQkJ5QkIwRFBrcndDZlE?oc=5
+- [CRITICAL] 4063 信越化学工業 | Tue, 27 Oct 2026 | earnings | 信越化学工業[4063]：2027年３月期 第２四半期（中間期）決算短信〔日本基準〕（連結） 2026年10月27日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE1KcDR4STR3TU1xeG02UW10bGtTVjVjQ2Qzbmw3ZkFIQWhadTdhRFI4aTFHYXR0bVlyYmFmc0R0SXgySE01WGNyenJPT0hVNTIxZGtDcVJaSmF3UzViVDNuZkdNTmJCUWQ0dkE?oc=5
+- [CRITICAL] 4063 信越化学工業 | Tue, 28 Apr 2026 | earnings | 信越化学工業[4063]：2026年３月期決算短信〔日本基準〕（連結） 2026年4月28日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE9YU0drSkNQX0wta25uTlZNY08xZ0FXWk9pbFJoVFhMeVhocTZuNkpEZ3dMX0xMUDkzYTNUWVNYOTdlMlhLSnRIbGNIQTFfcXJRdW5FSWFFcWN1Y2pfN2JaVTBad3hDdk1neGc?oc=5
 - [HIGH] DHT DHT Holdings, Inc. | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1331284/000095015726001092/form6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426006892/p15111556_6-k.htm
-- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-10-13 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426006891/p15111557_6-k.htm
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-10-14 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526421701/eqbk-20261014.htm
 - [HIGH] IRWD Ironwood Pharmaceuticals, Inc. - Class A Common Stock | 2026-10-16 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1446847/000110465926116423/tm2627624d1_8k.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-10-19 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026066288/stng6k-10192026.htm
-- [HIGH] HBNC Horizon Bancorp, Inc. - Common Stock | 2026-10-21 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/706129/000070612926000082/hbnc-20261021.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-10-27 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526432747/ck0002017206-20261026.htm
 - [HIGH] STNG Scorpio Tankers Inc. Common Shares | 2026-10-28 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1483934/000162828026067899/stng6k-q32026epr.htm
 - [HIGH] RDN Radian Group Inc. Common Stock | 2026-10-28 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/890926/000119312526436266/d100432d8k.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-10-29 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000090/care-20261028.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-10-29 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000089/care-20261029.htm
-- [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-11-03 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000094/care-20261103.htm
 - [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-11-03 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926122146/ltc-20260930x10q.htm
 - [HIGH] LTC LTC Properties, Inc. Common Stock | 2026-11-03 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/887905/000110465926122029/ltc-20261103x8k.htm
+- [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-11-03 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000094/care-20261103.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-03 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426007363/p15146295_6-k.htm
 - [HIGH] RDN Radian Group Inc. Common Stock | 2026-11-03 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/890926/000119312526445390/d136707d8k.htm
 - [HIGH] MRP Millrose Properties, Inc. Class A Common Stock | 2026-11-04 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/2017206/000119312526447297/ck0002017206-20260930.htm
@@ -296,7 +299,6 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] IRWD Ironwood Pharmaceuticals, Inc. - Class A Common Stock | 2026-11-05 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1446847/000110465926123319/irwd-20260930x10q.htm
 - [HIGH] IRWD Ironwood Pharmaceuticals, Inc. - Class A Common Stock | 2026-11-05 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1446847/000110465926123029/tm2629044d1_8k.htm
 - [HIGH] RDN Radian Group Inc. Common Stock | 2026-11-05 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/890926/000119312526448639/rdn-20261104.htm
-- [HIGH] HBNC Horizon Bancorp, Inc. - Common Stock | 2026-11-06 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/706129/000070612926000087/hbnc-20260930.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-06 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426007482/p15147800_6-k.htm
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-11-06 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526451860/eqbk-20260930.htm
 - [HIGH] RDN Radian Group Inc. Common Stock | 2026-11-06 | earnings | SEC 10-Q filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/890926/000119312526451985/rdn-20260930.htm
@@ -308,20 +310,19 @@ No official cross-market earnings-calendar source is connected. Earnings-date al
 - [HIGH] RDN Radian Group Inc. Common Stock | 2026-11-10 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/890926/000119312526455690/d139362d8k.htm
 - [HIGH] CARE Carter Bankshares, Inc. - Common Stock | 2026-11-12 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1829576/000182957626000100/care-20261109.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-12 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426007622/p15153820_6-k.htm
-- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-12 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426007620/p15153826_6-k.htm
 - [HIGH] NHI National Health Investors, Inc. Common Stock | 2026-11-13 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/877860/000087786026000230/nhi-20261109.htm
-- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-17 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426008175/p15156436_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-18 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426008184/p15157214_6-k.htm
 - [HIGH] EQBK Equity Bancshares, Inc. Class A Common Stock | 2026-11-19 | filing | SEC 8-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1227500/000119312526468835/eqbk-20261119.htm
 - [HIGH] TEN Tsakos Energy Navigation Ltd Common Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1166663/000119312526470357/d138948d6k.htm
 - [HIGH] TEN Tsakos Energy Navigation Ltd Common Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1166663/000119312526470281/d140309d6k.htm
 - [HIGH] FRO Frontline Plc Ordinary Shares | 2026-11-20 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/913290/000091957426008221/p15160196_6-k.htm
 - [HIGH] TRMD TORM plc - Class A Common Stock | 2026-11-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1655891/000091957426008240/p15165454_6-k.htm
-- [HIGH] CMBT CMB.TECH NV Ordinary Shares | 2026-11-24 | filing | SEC 6-K filing | SEC EDGAR (primary) | status=ok | https://www.sec.gov/Archives/edgar/data/1604481/000091957426008238/p15165084_6-k.htm
 - [HIGH] 9433 KDDI | 2026-11-25 | filing | 発行登録追補書類（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJQK
 - [HIGH] 9433 KDDI | 2026-11-25 | filing | 発行登録追補書類（株券､社債券等） | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJQO
 - [HIGH] 2802 味の素 | 2026-11-26 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJ24
 - [HIGH] 2802 味の素 | 2026-11-26 | filing | 訂正発行登録書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZJ28
+- [HIGH] 3932 Akatsuki Inc. | 2026-11-26 | filing | 臨時報告書 | EDINET (primary) | status=ok | https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docID=S100ZKC8
+- [HIGH] 2585 ライフドリンク カンパニー | Fri, 24 Jul 2026 | buyback | ライフドリンクカンパニー[2585]：取締役等に対する譲渡制限付株式としての自己株式処分の払込完了に関するお知らせ 2026年7月24日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞 | Google News RSS (secondary) | status=unverified | https://news.google.com/rss/articles/CBMiakFVX3lxTE5SUG04Uzk0LXJKbHYtX2tjcWs3YlE3NUZ3dnlhQ1U1cF9majRBeHo1LXdxLVJfYlZEbnBXZmxfbXBqWUNaUTM0eDJjWTlvRHZ0d1RsQ3VlNW9QckdFSDRXN2xsajRzbFc4N3c?oc=5
 
 ## Mandatory AI rules
 - Primary source > secondary news > model inference.

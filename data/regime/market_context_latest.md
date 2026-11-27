@@ -1,23 +1,23 @@
 # Market Regime v1.5
 
 - Label: **DEFENSIVE**
-- Score: **36.12**
+- Score: **33.69**
 - Confidence: **1.0**
 - Actionable: **True**
 - Data status: **ok**
-- Flags: TREASURY_VOLATILITY_SHOCK
+- Flags: THIN_LIQUIDITY, TREASURY_VOLATILITY_SHOCK
 
 ## Components
-- trend: 0.17878531879483806
-- stress: 63.25250057220459
-- participation: 34.2957990973267
-- liquidity: 47.41552277765207
+- trend: 0.2270644574769225
+- stress: 64.68500045776368
+- participation: 35.36119472100023
+- liquidity: 27.248391190155882
 - positioning: 62.86284683617225
 
 ## SQ execution overlay
 - Active: **False**
 - Next major SQ: **2026-12-11**
-- Days to SQ: **14**
+- Days to SQ: **13**
 - Execution caution: **0.0/15.0**
 - Confidence: **0.4**
 - Data status: **partial**
@@ -28,7 +28,7 @@
 ## Evidence
 {
   "trend_series": 4,
-  "vix": 26.799999237060547,
+  "vix": 24.889999389648438,
   "hy_oas": 3.72,
   "ig_oas": 0.98,
   "treasury_volatility_proxy": 100.661,
@@ -37,11 +37,11 @@
   "treasury_volatility_as_of_date": "2026-11-25",
   "treasury_volatility_status": "ok",
   "treasury_volatility_is_ice_move": false,
-  "breadth_n": 9526,
+  "breadth_n": 9524,
   "breadth_status": "ok",
-  "breadth_source_as_of_utc": "2026-11-26T17:44:54.682825+00:00",
+  "breadth_source_as_of_utc": "2026-11-27T17:29:02.668031+00:00",
   "nfci": -0.444,
-  "volume_ratio20_mean": 0.8576880694413018,
+  "volume_ratio20_mean": 0.35350977975389697,
   "positioning_sources": {
     "jpx_raw_healthy": 4,
     "cftc_normalized_values": 22
@@ -61,8 +61,8 @@
   },
   "base_weighted_coverage": 1.0,
   "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
-  "jpx_official_turnover_date": "2026-11-26",
-  "jpx_official_turnover_million_jpy": 7402449.0,
+  "jpx_official_turnover_date": "2026-11-27",
+  "jpx_official_turnover_million_jpy": 8358949.0,
   "jpx_official_turnover_status": "ok"
 }
 

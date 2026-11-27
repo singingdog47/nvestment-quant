@@ -1,0 +1,306 @@
+{
+  "actual_human_action": null,
+  "actual_human_action_note": "Private join field; do not commit brokerage activity to a public repository.",
+  "captured_at": "2026-11-27T17:30:11+00:00",
+  "data_actionable": true,
+  "decision_gate": "OPEN_FOR_ANALYSIS",
+  "decision_id": "7bdd1e14d190a2ef4537",
+  "input_manifest": [
+    {
+      "mtime_utc": "2026-11-27T17:30:11+00:00",
+      "path": "data/decision_context_latest.json",
+      "sha256": "d8b4185e76dda941c67238fbee196d58a51a3fcc4e8673f7ff35dff725cf514a",
+      "size": 95295
+    },
+    {
+      "mtime_utc": "2026-11-27T17:29:47+00:00",
+      "path": "data/regime/market_regime_latest.json",
+      "sha256": "d1539e4b8432235dcfaba4dad0b09b6b8d235f5a5abc435b365cab058ad54564",
+      "size": 4284
+    },
+    {
+      "mtime_utc": "2026-11-27T17:30:10+00:00",
+      "path": "data/intelligence/data_quality_latest.json",
+      "sha256": "addf301dbf07c7ab543e7f59490ed80ce50e224a62f27aa37c4248e6b47d2098",
+      "size": 740
+    },
+    {
+      "mtime_utc": "2026-11-27T17:29:04+00:00",
+      "path": "data/screening_latest.csv",
+      "sha256": "65a2a523c474533b70867aafca117e3da2ddeabb93cf2f901e7de5ceeb1d03f8",
+      "size": 128833
+    },
+    {
+      "mtime_utc": "2026-11-27T17:29:04+00:00",
+      "path": "data/quality_report.json",
+      "sha256": "0e985640bd3e5de4a5aecf0df2a9a932ec367c13feb23e945e1bc282e48ed085",
+      "size": 1656
+    }
+  ],
+  "market_evidence": {
+    "base_weighted_coverage": 1.0,
+    "breadth_n": 9524,
+    "breadth_source_as_of_utc": "2026-11-27T17:29:02.668031+00:00",
+    "breadth_status": "ok",
+    "component_coverage": {
+      "liquidity": 1.0,
+      "participation": 1.0,
+      "positioning": 1.0,
+      "stress": 1.0,
+      "trend": 1.0
+    },
+    "confidence_method": "weighted subcomponent coverage x critical FRED context multiplier",
+    "critical_context_coverage": {
+      "available": 3,
+      "expected": 3,
+      "fred_credit_financial_conditions": 1.0,
+      "multiplier": 1.0
+    },
+    "hy_oas": 3.72,
+    "ig_oas": 0.98,
+    "jpx_official_turnover_date": "2026-11-27",
+    "jpx_official_turnover_million_jpy": 8358949.0,
+    "jpx_official_turnover_status": "ok",
+    "nfci": -0.444,
+    "positioning_sources": {
+      "cftc_normalized_values": 22,
+      "jpx_raw_healthy": 4
+    },
+    "treasury_volatility_as_of_date": "2026-11-25",
+    "treasury_volatility_is_ice_move": false,
+    "treasury_volatility_percentile_rank": 0.9762,
+    "treasury_volatility_proxy": 100.661,
+    "treasury_volatility_status": "ok",
+    "treasury_volatility_stress_score": 26.79,
+    "trend_series": 4,
+    "vix": 24.889999389648438,
+    "volume_ratio20_mean": 0.35350977975389697
+  },
+  "market_regime": "DEFENSIVE",
+  "model_version": "1.7.0",
+  "outcomes": {},
+  "policy_guardrails": {
+    "absolute_defense_cash_jpy": 500000,
+    "cash_target_range": [
+      0.15,
+      0.18
+    ],
+    "max_single_stock_weight": 0.05
+  },
+  "quality": {
+    "actionable": true,
+    "configured_primary_sources": 4,
+    "effective_fundamental_coverage": 0.808,
+    "events": 102,
+    "fundamental_coverage": 0.308,
+    "fundamental_evidence_tier": "mixed",
+    "generated_at": "2026-11-27T17:30:10+00:00",
+    "missing_primary_configuration": [],
+    "optional_primary_sources_unconfigured": [],
+    "portfolio_primary_event_presence": 1.0,
+    "portfolio_targets": 0,
+    "primary_fundamental_coverage": 0.308,
+    "primary_source_health": 1.0,
+    "quality_score": 0.838,
+    "rule": "Optional primary feeds improve confidence but their absence alone must not block conclusions. Missing data still must not be converted into unsupported buy/sell conclusions.",
+    "secondary_fundamental_coverage": 0.769,
+    "targets": 52
+  },
+  "quality_score": 0.838,
+  "recommended_action": "REVIEW",
+  "regime_components": {
+    "liquidity": 27.248391190155882,
+    "participation": 35.36119472100023,
+    "positioning": 62.86284683617225,
+    "stress": 64.68500045776368,
+    "trend": 0.2270644574769225
+  },
+  "regime_score": 33.69,
+  "risk_flags": [
+    "THIN_LIQUIDITY",
+    "TREASURY_VOLATILITY_SHOCK"
+  ],
+  "schema_version": "1.0",
+  "top_screening": [
+    {
+      "code": "LTC",
+      "factors": {
+        "growth_score": 95.95302746604592,
+        "liquidity_score": 65.49210206561361,
+        "momentum_score": 76.72518159806296,
+        "pre_score": 78.3358821036885,
+        "quality_score": 74.16997949988222,
+        "risk_score": 89.90783134003473,
+        "total_score": 84.28924716151286,
+        "value_score": 86.24477941047383
+      },
+      "market": "US",
+      "name": "LTC Properties, Inc. Common Stock",
+      "price": 43.38,
+      "rank": 1.0,
+      "ticker": "LTC"
+    },
+    {
+      "code": "575A",
+      "factors": {
+        "growth_score": 91.40659100829332,
+        "liquidity_score": 72.6161369193154,
+        "momentum_score": 75.69595328625746,
+        "pre_score": 73.97702129835358,
+        "quality_score": 73.50115094802128,
+        "risk_score": 70.66811515480718,
+        "total_score": 79.8912339228375,
+        "value_score": 85.12007087205528
+      },
+      "market": "JP",
+      "name": "MAEZAWA Holdings CO.,LTD.",
+      "price": 1898.0,
+      "rank": 1.0,
+      "ticker": "575A.T"
+    },
+    {
+      "code": "CARE",
+      "factors": {
+        "growth_score": 91.88852985560887,
+        "liquidity_score": 45.76751721344674,
+        "momentum_score": 67.43845843422115,
+        "pre_score": 69.70882790241225,
+        "quality_score": 91.64402934592492,
+        "risk_score": 89.52250103945019,
+        "total_score": 84.21739155810138,
+        "value_score": 77.53813731779076
+      },
+      "market": "US",
+      "name": "Carter Bankshares, Inc. - Common Stock",
+      "price": 28.87,
+      "rank": 2.0,
+      "ticker": "CARE"
+    },
+    {
+      "code": "4595",
+      "factors": {
+        "growth_score": 63.45450227231879,
+        "liquidity_score": 58.16354251562076,
+        "momentum_score": 64.5097772949484,
+        "pre_score": 67.54514517419265,
+        "quality_score": 93.47804318166965,
+        "risk_score": 80.45898967952199,
+        "total_score": 75.087148778453,
+        "value_score": 69.12568992960504
+      },
+      "market": "JP",
+      "name": "MIZUHO MEDY CO.,LTD.",
+      "price": 1713.0,
+      "rank": 2.0,
+      "ticker": "4595.T"
+    },
+    {
+      "code": "STNG",
+      "factors": {
+        "growth_score": 90.91469514602616,
+        "liquidity_score": 76.65046577561766,
+        "momentum_score": 68.49273607748184,
+        "pre_score": 70.686016071738,
+        "quality_score": 86.17717401413788,
+        "risk_score": 72.37121823562501,
+        "total_score": 82.30310910392697,
+        "value_score": 85.785133696885
+      },
+      "market": "US",
+      "name": "Scorpio Tankers Inc. Common Shares",
+      "price": 79.635,
+      "rank": 3.0,
+      "ticker": "STNG"
+    },
+    {
+      "code": "6196",
+      "factors": {
+        "growth_score": 84.64205629873076,
+        "liquidity_score": 83.37408312958435,
+        "momentum_score": 95.23356871265617,
+        "pre_score": 86.23370616851423,
+        "quality_score": 93.98177736174041,
+        "risk_score": 66.34980988593155,
+        "total_score": 74.89982515871733,
+        "value_score": 40.95385107499168
+      },
+      "market": "JP",
+      "name": "Strike Group Co.,Ltd.",
+      "price": 1800.0,
+      "rank": 3.0,
+      "ticker": "6196.T"
+    },
+    {
+      "code": "DHT",
+      "factors": {
+        "growth_score": 95.15830703158873,
+        "liquidity_score": 82.21952207371406,
+        "momentum_score": 77.42635189669087,
+        "pre_score": 74.73895589928809,
+        "quality_score": 86.62320173677934,
+        "risk_score": 63.8008658008658,
+        "total_score": 81.78512351121552,
+        "value_score": 79.65431606427765
+      },
+      "market": "US",
+      "name": "DHT Holdings, Inc.",
+      "price": 21.77,
+      "rank": 4.0,
+      "ticker": "DHT"
+    },
+    {
+      "code": "8704",
+      "factors": {
+        "growth_score": 93.20748923751081,
+        "liquidity_score": 61.287693561532194,
+        "momentum_score": 62.95491580662683,
+        "pre_score": 53.11765158990609,
+        "quality_score": 93.89970319668525,
+        "risk_score": 24.60619228680065,
+        "total_score": 73.77000808893469,
+        "value_score": 74.0776729129883
+      },
+      "market": "JP",
+      "name": "TRADERS HOLDINGS CO.,LTD.",
+      "price": 1208.0,
+      "rank": 4.0,
+      "ticker": "8704.T"
+    },
+    {
+      "code": "MRP",
+      "factors": {
+        "growth_score": 93.30003124719926,
+        "liquidity_score": 72.96476306196841,
+        "momentum_score": 55.3773204196933,
+        "pre_score": 65.539799694211,
+        "quality_score": 73.74330315731916,
+        "risk_score": 85.47477193239905,
+        "total_score": 81.53564053879767,
+        "value_score": 93.24797858885668
+      },
+      "market": "US",
+      "name": "Millrose Properties, Inc. Class A Common Stock",
+      "price": 26.165,
+      "rank": 5.0,
+      "ticker": "MRP"
+    },
+    {
+      "code": "8622",
+      "factors": {
+        "growth_score": 88.12215960150975,
+        "liquidity_score": 65.14534093996197,
+        "momentum_score": 59.45138511678436,
+        "pre_score": 58.153115643981806,
+        "quality_score": 79.39589621941592,
+        "risk_score": 50.84193373166757,
+        "total_score": 73.58009082200357,
+        "value_score": 78.25074807831945
+      },
+      "market": "JP",
+      "name": "Mito Securities Co.,Ltd.",
+      "price": 720.0,
+      "rank": 5.0,
+      "ticker": "8622.T"
+    }
+  ]
+}
