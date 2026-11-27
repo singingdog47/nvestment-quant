@@ -1,6 +1,6 @@
 # 売買判断優先・市場急変チェック
 
-生成（UTC）：2026-11-26T23:55:32.513456+00:00
+生成（UTC）：2026-11-27T04:23:31.742019+00:00
 **危機判定：DEFENSIVE**
 **判断：RISK_REDUCTION_REVIEW**
 
@@ -9,10 +9,10 @@
 - VIXが20以上
 
 ## データ基準時刻・品質
-- NIKKEI_FUT: OK / 5.994% / 2026-11-26T23:45:24+00:00 / 
+- NIKKEI_FUT: OK / 7.378% / 2026-11-27T04:13:01+00:00 / 
 - NASDAQ: UNVERIFIED / N/A% / 2026-11-25T22:15:59+00:00 / stale or future timestamp; excluded from decisions
 - SP500: UNVERIFIED / N/A% / 2026-11-25T21:32:06+00:00 / stale or future timestamp; excluded from decisions
-- VIX: OK / -25.327% / 2026-11-26T16:30:00+00:00 / 
+- VIX: OK / -25.327% / 2026-11-26T21:15:00+00:00 / 
 
 ## 売買判断まとめ
 - 新規買い原則停止
