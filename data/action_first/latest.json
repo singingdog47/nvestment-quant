@@ -1,10 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-11-27T04:23:31.742019+00:00",
-  "risk_level": "DEFENSIVE",
-  "market_decision": "RISK_REDUCTION_REVIEW",
+  "generated_at_utc": "2026-11-27T08:47:42.028166+00:00",
+  "risk_level": "CAUTION",
+  "market_decision": "NO_FORCED_TRADE",
   "risk_drivers": [
-    "VIXが25以上",
     "VIXが20以上"
   ],
   "verified_feeds": [
@@ -17,11 +16,11 @@
       "ticker": "NIY=F",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-27T04:13:01+00:00",
-      "age_minutes": 10.5,
-      "price": 58580.0,
+      "as_of_utc": "2026-11-27T08:37:24+00:00",
+      "age_minutes": 10.3,
+      "price": 58700.0,
       "previous_close": 54555.0,
-      "change_pct": 7.378
+      "change_pct": 7.598
     },
     "NASDAQ": {
       "name": "NASDAQ",
@@ -29,7 +28,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-25T22:15:59+00:00",
-      "age_minutes": 1807.5,
+      "age_minutes": 2071.7,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "SP500": {
@@ -38,7 +37,7 @@
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "UNVERIFIED",
       "as_of_utc": "2026-11-25T21:32:06+00:00",
-      "age_minutes": 1851.4,
+      "age_minutes": 2115.6,
       "reason": "stale or future timestamp; excluded from decisions"
     },
     "VIX": {
@@ -46,17 +45,16 @@
       "ticker": "^VIX",
       "source": "Yahoo Finance chart (unofficial, secondary)",
       "status": "OK",
-      "as_of_utc": "2026-11-26T21:15:00+00:00",
-      "age_minutes": 428.5,
-      "price": 26.8,
-      "previous_close": 35.89,
-      "change_pct": -25.327
+      "as_of_utc": "2026-11-27T08:32:31+00:00",
+      "age_minutes": 15.2,
+      "price": 24.96,
+      "previous_close": 26.62,
+      "change_pct": -6.236
     }
   },
   "recommended_actions": [
-    "新規買い原則停止",
-    "未約定買い注文を再評価",
-    "保有銘柄の撤退条件と売却数量を決定"
+    "新規買いは期待値とリスクを再検討",
+    "保有銘柄の損失制限条件を点検"
   ],
   "execution": "ADVISORY_ONLY",
   "private_portfolio_used": false,
